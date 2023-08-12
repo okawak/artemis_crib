@@ -1,0 +1,60 @@
+// K.Okawa created <okawa@cns.s.u-tokyo.ac.jp>
+#ifndef LINKDEF_USER_H
+#define LINKDEF_USER_H
+
+#ifdef __CINT__
+
+#pragma link off all globals;
+#pragma link off all classes;
+#pragma link off all functions;
+
+// segment and category
+// main
+#pragma link C++ class art::TF1PPACProcessor;
+#pragma link C++ class art::TTimingChargeAllMappingProcessor;
+#pragma link C++ class art::TTimingDataMappingProcessor;
+#pragma link C++ class art::TBranchCopyProcessor;
+#pragma link C++ class art::TEvtNumProcessor;
+#pragma link C++ class art::TReadROOTFile;
+// MUX
+#pragma link C++ class art::TMUXData + ;
+#pragma link C++ class art::TMUXDataMappingProcessor;
+#pragma link C++ class art::TMUXPositionConverter;
+#pragma link C++ class art::TMUXPositionValidator;
+#pragma link C++ class art::TMUXCalibrationProcessor;
+// telescope
+#pragma link C++ class art::TTelescopeData + ;
+#pragma link C++ class art::TTelescopeParameter;
+#pragma link C++ class art::TTelescopeProcessor;
+// TGTIK
+//#pragma link C++ class art::TTGTIKData + ;
+//#pragma link C++ class art::TTGTIKPrepData + ;
+//#pragma link C++ class art::TTGTIKPrepProcessor;
+#pragma link C++ class art::TTGTIKProcessor;
+#pragma link C++ class art::TEffectiveThickness;
+//  commands
+#pragma link C++ class TCatCmdLoopStart;
+#pragma link C++ class TCatCmdLoopStop;
+#pragma link C++ class art::TCmdXfitg;
+#pragma link C++ class art::TCmdXstatus;
+#pragma link C++ class art::TCmdXYblow;
+#pragma link C++ class art::TCmdXblow;
+#pragma link C++ class TCatCmdTCutG;
+#pragma link C++ class art::TCmdErase;
+#pragma link C++ class art::TCmdDraw;
+// geo
+#pragma link C++ class art::TUserGeoInitializer;
+#pragma link C++ class art::TDetectorParameter+;
+// simulation
+#pragma link C++ class art::TDetectParticleProcessor;
+#pragma link C++ class art::TNBodyReactionProcessor;
+#pragma link C++ class art::TParticleInfo+;
+#pragma link C++ class art::TRandomBeamGenerator;
+#pragma link C++ class art::TReactionInfo+;
+#pragma link C++ class art::TSolidAngleProcessor;
+//#pragma link C++ class art::TTwoBodyScattering;
+
+
+#endif // __CINT__
+
+#endif // LINKDEF_USER_H

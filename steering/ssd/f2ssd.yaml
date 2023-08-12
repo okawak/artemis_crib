@@ -1,0 +1,26 @@
+Processor:
+  - name: proc_f2si_ch2MeV
+    type: art::TParameterArrayLoader
+    parameter:
+      Name: prm_f2si_ch2MeV
+      Type: art::TAffineConverter
+      FileName: prm/ssd/f2ch2MeV.dat
+      OutputTransparency: 1
+
+
+  - name: proc_f2ssdraw
+    type: art::TSimpleDataMappingProcessor
+    parameter:
+      CatID:         5
+      DataTypeID:    0
+      Sparse:        1
+      OutputCollection: f2ssd_raw
+
+
+  - name: proc_f2ssd
+    type: art::TTimingChargeCalibrationProcessor
+    parameter:
+      InputCollection:      f2ssd_raw
+      OutputCollection:     f2ssd_cal
+      ChargeConverterArray: prm_f2si_ch2MeV
+

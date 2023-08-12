@@ -1,0 +1,9 @@
+Processor:
+### J1 V1190B
+  - name: proc_tref_v1190_j1
+    type: art::TTimeReferenceProcessor
+    parameter:
+      # [[device] [focus] [detector] [geo] [ch]]
+      RefConfig: [12, 0,  7, 16, 5]
+      SegConfig: [12, 0,  7, 16]
+

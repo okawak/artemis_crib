@@ -1,0 +1,10 @@
+# map for ADC of dssd
+# [category] [id] [[device] [focus] [detector] [module] [ch]] ....
+#
+# Map: energy
+#
+# CREATED for CRIB Exp. 2022.06.29 K.Okawa
+#
+#--------------------------------------------------------------------
+33, 0, 12 0  6   6  20, 12 0  7  16  20 # E1 
+33, 1, 12 0  6   6  21, 12 0  7  16  21 # E2 

@@ -1,0 +1,16 @@
+anchor:
+- &ecm ["reconst.fEnergy", 50, 0., 10.]
+- &thetacm ["reconst.fTheta", 180, 0., 180.]
+- &ecmerror ["reconst.fEnergy - reaction_light.fEnergy", 100, -10., 10.]
+alias:
+group:
+- name: yield
+  title: yield
+  contents:
+  - name: reconst.fEnergy:reconst.fTheta
+    title: reconst.fEnergy:reconst.fTheta
+    x: *ecm
+    y: *thetacm
+  - name: reconst.fEnergy
+    title: reconst.fEnergy
+    x: *ecm

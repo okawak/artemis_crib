@@ -1,0 +1,32 @@
+Processor:
+  - include: ssd/lowgain.yaml
+
+  - include: ssd/multiMUX.yaml
+
+  - include:
+      name: ssd/tel1.yaml
+
+  - include:
+      name: ssd/tel2.yaml
+      replace:
+        NAME: @NAME@
+        NUM: @NUM@
+
+  - include:
+      name: ssd/tel3.yaml
+      replace:
+        NAME: @NAME@
+        NUM: @NUM@
+
+  - include:
+      name: ssd/tel4.yaml
+      replace:
+        NAME: @NAME@
+        NUM: @NUM@
+
+  - include:
+      name: ssd/tel5.yaml
+      replace:
+        NAME: @NAME@
+        NUM: @NUM@
+

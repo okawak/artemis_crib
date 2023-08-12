@@ -1,0 +1,18 @@
+anchor:
+- &tel1dE ["tel1.fdE", 100, 0., 20.]
+- &tel1Etot ["tel1.fEtotal", 100, 0., 20.]
+alias:
+group:
+- name: ssd_test
+  title: ssd_test
+  contents:
+  - name: tel1.fdE:tel1.fEtotal
+    title: tel1.fdE:tel1.fEtotal
+    x: *tel1dE
+    y: *tel1Etot
+  - name: tel1.fdE
+    title: tel1.fdE
+    x: *tel1dE
+  - name: tel1.fEtotal
+    title: tel1.fEtotal
+    x: *tel1Etot
