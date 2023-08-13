@@ -1,0 +1,4 @@
+theme = "relearn"
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'CRIB artemmis'
