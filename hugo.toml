@@ -1,4 +1,4 @@
 theme = "relearn"
-baseURL = 'https://okawak.github.io/artemis_crib'
+baseURL = 'https://okawak.github.io/artemis_crib/'
 languageCode = 'en-us'
 title = 'CRIB artemis'
