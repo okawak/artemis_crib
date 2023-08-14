@@ -2,3 +2,41 @@ theme = "relearn"
 baseURL = 'https://okawak.github.io/artemis_crib/'
 languageCode = 'en-us'
 title = 'CRIB artemis'
+
+[params]
+  # This controls whether submenus will be expanded (true), or collapsed (false) in the
+  # menu; if no setting is given, the first menu level is set to false, all others to true;
+  # this can be overridden in the pages frontmatter
+  alwaysopen = false
+  # Author of the site, will be used in meta information
+  author = ""
+  # If set to false, load the MathJax module on every page regardless if a MathJax shortcode is present
+  disableMathJax = false
+  # Specifies the remote location of the MathJax js
+  customMathJaxURL = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  # Initialization parameter for MathJax, see MathJax documentation
+  mathJaxInitialize = "{}"
+
+
+
+# For search functionality
+[outputs]
+  home = [ "HTML", "RSS", "SEARCH", "PRINT", "SEARCHPAGE"]
+  section = ["HTML", "RSS", "PRINT"]
+  page = ["HTML", "RSS", "PRINT"]
+
+# For menu extra shortcuts
+[[menu.shortcuts]]
+  name = "<i class='fab fa-fw fa-github'></i> Our GitHub repo"
+  identifier = "ds"
+  url = "https://github.com/okawak/artemis_crib"
+  weight = 10
+[[menu.shortcuts]]
+  name = "<i class='fas fa-fw fa-bookmark'></i> Hugo Documentation"
+  identifier = "hugodoc"
+  url = "https://gohugo.io/"
+  weight = 20
+[[menu.shortcuts]]
+  name = "<i class='fas fa-fw fa-tags'></i> Tags"
+  url = "tags/"
+  weight = 30
