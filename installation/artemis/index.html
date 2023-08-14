@@ -6,8 +6,9 @@
     <meta name="generator" content="Hugo 0.117.0">
     <meta name="generator" content="Relearn 5.19.0+tip">
     <meta name="description" content="">
-    <title>Categories :: CRIB artemis</title>
-    <link href="/artemis_crib/categories/index.xml" rel="alternate" type="application/rss+xml" title="Categories :: CRIB artemis">
+    <title>Artemis :: CRIB artemis</title>
+    <link href="/artemis_crib/installation/artemis/index.xml" rel="alternate" type="application/rss+xml" title="Artemis :: CRIB artemis">
+    <link href="/artemis_crib/installation/artemis/index.print.html" rel="alternate" type="text/html" title="Artemis :: CRIB artemis">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
     <link href="/artemis_crib/css/fontawesome-all.min.css?1691993939" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1691993939" rel="stylesheet"></noscript>
     <link href="/artemis_crib/css/nucleus.css?1691993939" rel="stylesheet">
@@ -39,17 +40,22 @@
       window.variants && variants.init( [ 'auto' ] );
     </script>
   </head>
-  <body class="mobile-support html" data-url="/artemis_crib/categories/index.html">
+  <body class="mobile-support html" data-url="/artemis_crib/installation/artemis/index.html">
     <div id="body" class="default-animation">
       <div id="sidebar-overlay"></div>
       <div id="toc-overlay"></div>
       <nav id="topbar" class="highlightable">
         <div>
           <div class="navigation">
-            <span class="nav nav-next topbar-link"><i class="fa fa-chevron-right fa-fw"></i></span>
+            <a class="nav nav-next topbar-link" href="/artemis_crib/installation/directory/index.html" title="Directory (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
           </div>
           <div class="navigation">
-            <a class="nav nav-prev topbar-link" href="/artemis_crib/index.html" title=" (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
+            <a class="nav nav-prev topbar-link" href="/artemis_crib/installation/yaml-cpp/index.html" title="Yaml-cpp (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
+          </div>
+          <div id="top-print-link">
+            <a class="print-link topbar-link" title='Print whole chapter (CTRL+ALT+p)' href="/artemis_crib/installation/artemis/index.print.html">
+              <i class="fas fa-print fa-fw"></i>
+            </a>
           </div>
           <div id="breadcrumbs">
             <span id="sidebar-toggle-span">
@@ -57,21 +63,69 @@
             </span>
             <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
               <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/index.html"><span itemprop="name">CRIB artemis</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Categories</span><meta itemprop="position" content="2"></li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/installation/index.html"><span itemprop="name">Installation</span></a><meta itemprop="position" content="2"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Artemis</span><meta itemprop="position" content="3"></li>
             </ol>
           </div>
         </div>
       </nav>
       <main id="body-inner" class="highlightable default" tabindex="-1">
         <div class="flex-block-wrapper">
-          <article>
+          <article class="default">
             <header class="headline">
             </header>
-<h1 id="categories">Categories</h1>
+<h1 id="artemis">Artemis</h1>
+
+<p>From the current situation, CRIB experiment doesn&rsquo;t use GET system,
+so we describe how to install it without linking it to GET decoder.</p>
+<p>Also, it can link to <code>openMPI</code>, but the below commands assume not using openMPI.
+See <a href="https://github.com/artemis-dev/artemis/blob/develop/README.md" target="_blank">artemis repo</a> for more information.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd hoge
+</span></span><span style="display:flex;"><span>git clone https://github.com/artemis-dev/artemis.git -b develop
+</span></span><span style="display:flex;"><span>cd artemis
+</span></span><span style="display:flex;"><span>mkdir build
+</span></span><span style="display:flex;"><span>cd build
+</span></span><span style="display:flex;"><span>cmake -DCMAKE_INSTALL_PREFIX<span style="color:#f92672">=</span>../install ..
+</span></span><span style="display:flex;"><span>make -j8
+</span></span><span style="display:flex;"><span>make install</span></span></code></pre></div><p>Then, <code>&lt;CMAKE_INSTALL_PREFIX&gt;/bin/thisartemis.sh</code> will be created
+and this shell script can configure the environment (ROOT, yaml-cpp, artemis libraries) to use artemis.</p>
+<p>(It means you don&rsquo;t have to write like <code>export PATH=${yaml-cpp path}:$PATH</code> or <code>source thisroot.sh</code> in .zshrc or .bashrc.)</p>
+<p>Another option is to use <code>module</code> command to manage the environment.
+It is also written in <a href="https://github.com/artemis-dev/artemis/blob/develop/README.md" target="_blank">artemis repo</a>.</p>
+<hr>
+<p><strong>The following methods are not recommended!!</strong></p>
+<p>For Ubuntu case, somehow it seems that there are some linking problem.</p>
+<p>To avoid it, if I changed like below, the artemis will work well&hellip;</p>
+<ul>
+<li>[Mod] artemis/sources/main/CMakeLists.txt</li>
+</ul>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">- add_executable(artemis main.cc TArtRint.cc)
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+ add_executable(artemis main.cc dummy.cc TArtRint.cc)
+</span></span></span></code></pre></div><ul>
+<li>[Add] artemis/sources/main/dummy.cc</li>
+</ul>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;TModuleDecoderV1190.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;TParameterLoader.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;TTreeProjection.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;TRDFEventStore.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;TRIDFEventStore.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// any class seems okay
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dummy</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  art<span style="color:#f92672">::</span>TModuleDecoderV1190 <span style="color:#f92672">*</span>dummy_decoder <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> art<span style="color:#f92672">::</span>TModuleDecoderV1190();
+</span></span><span style="display:flex;"><span>  art<span style="color:#f92672">::</span>TParameterLoader <span style="color:#f92672">*</span>dummy_param <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> art<span style="color:#f92672">::</span>TParameterLoader();
+</span></span><span style="display:flex;"><span>  art<span style="color:#f92672">::</span>TTreeProjection <span style="color:#f92672">*</span>dummy_hist <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> art<span style="color:#f92672">::</span>TTreeProjection();
+</span></span><span style="display:flex;"><span>  art<span style="color:#f92672">::</span>TRDFEventStore <span style="color:#f92672">*</span>dummy_rdf <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> art<span style="color:#f92672">::</span>TRDFEventStore();
+</span></span><span style="display:flex;"><span>  art<span style="color:#f92672">::</span>TRIDFEventStore <span style="color:#f92672">*</span>dummy_ridf <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> art<span style="color:#f92672">::</span>TRIDFEventStore();
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Libraries that are not directly involved in the artemis executable do not seem to be linked,
+despite using target_link_library(hoge) in CMakeLists.txt.</p>
 
             <footer class="footline">
+
             </footer>
-          </article>        </div>
+          </article>
+        </div>
       </main>
     </div>
     <aside id="sidebar" class="default-animation">
@@ -166,11 +220,11 @@
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics enlarge morespace">
-          <li data-nav-id="/artemis_crib/installation/index.html" class=""><a class="padding" href="/artemis_crib/installation/index.html">Installation</a><ul id="subsections-07cca5796d23f5bae96340e1eaa52bc5" class="morespace">
+          <li data-nav-id="/artemis_crib/installation/index.html" class="parent "><a class="padding" href="/artemis_crib/installation/index.html">Installation</a><ul id="subsections-07cca5796d23f5bae96340e1eaa52bc5" class="morespace">
           <li data-nav-id="/artemis_crib/installation/requirements/index.html" class=""><a class="padding" href="/artemis_crib/installation/requirements/index.html">Requirements</a></li>
           <li data-nav-id="/artemis_crib/installation/root/index.html" class=""><a class="padding" href="/artemis_crib/installation/root/index.html">Root</a></li>
           <li data-nav-id="/artemis_crib/installation/yaml-cpp/index.html" class=""><a class="padding" href="/artemis_crib/installation/yaml-cpp/index.html">Yaml-cpp</a></li>
-          <li data-nav-id="/artemis_crib/installation/artemis/index.html" class=""><a class="padding" href="/artemis_crib/installation/artemis/index.html">Artemis</a></li>
+          <li data-nav-id="/artemis_crib/installation/artemis/index.html" class="active"><a class="padding" href="/artemis_crib/installation/artemis/index.html">Artemis</a></li>
           <li data-nav-id="/artemis_crib/installation/directory/index.html" class=""><a class="padding" href="/artemis_crib/installation/directory/index.html">Directory</a></li>
           <li data-nav-id="/artemis_crib/installation/art_analysis/index.html" class=""><a class="padding" href="/artemis_crib/installation/art_analysis/index.html">Art_analysis</a></li>
           <li data-nav-id="/artemis_crib/installation/energyloss_calculator/index.html" class=""><a class="padding" href="/artemis_crib/installation/energyloss_calculator/index.html">Energyloss_calculator</a></li></ul></li>

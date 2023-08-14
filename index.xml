@@ -5,6 +5,49 @@
     <link>https://okawak.github.io/artemis_crib/index.html</link>
     <description>Recent content on CRIB artemis</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://okawak.github.io/artemis_crib/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Aug 2023 15:14:43 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Installation</title>
+      <link>https://okawak.github.io/artemis_crib/installation/index.html</link>
+      <pubDate>Mon, 14 Aug 2023 15:14:43 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/installation/index.html</guid>
+      <description>This chapter describes how to set up the artemis environment for the CRIB experiment.</description>
+    </item>
+    <item>
+      <title>Setting</title>
+      <link>https://okawak.github.io/artemis_crib/setting/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/setting/index.html</guid>
+      <description>Lorem Ipsum.</description>
+    </item>
+    <item>
+      <title>Basic</title>
+      <link>https://okawak.github.io/artemis_crib/basic/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/basic/index.html</guid>
+      <description>Lorem Ipsum.</description>
+    </item>
+    <item>
+      <title>CRIB_parts</title>
+      <link>https://okawak.github.io/artemis_crib/crib_parts/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/crib_parts/index.html</guid>
+      <description>Lorem Ipsum.</description>
+    </item>
+    <item>
+      <title>Processors</title>
+      <link>https://okawak.github.io/artemis_crib/processors/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/processors/index.html</guid>
+      <description>Lorem Ipsum.</description>
+    </item>
+    <item>
+      <title>Example</title>
+      <link>https://okawak.github.io/artemis_crib/example/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/index.html</guid>
+      <description>Lorem Ipsum.</description>
+    </item>
   </channel>
 </rss>
