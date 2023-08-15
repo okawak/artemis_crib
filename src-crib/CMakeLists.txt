@@ -7,6 +7,7 @@ set(CRIBSOURCES
     TBranchCopyProcessor.cc
     TEvtNumProcessor.cc
     TReadROOTFile.cc
+    TTreePeriodicEventStore.cc
     # mux
     mux/TMUXCalibrationProcessor.cc
     mux/TMUXData.cc
@@ -41,6 +42,7 @@ set(CRIBSOURCES
     simulation/TNBodyReactionProcessor.cc
     simulation/TParticleInfo.cc
     simulation/TRandomBeamGenerator.cc
+    simulation/TTreeBeamGenerator.cc
     simulation/TReactionInfo.cc
     simulation/TSolidAngleProcessor.cc
     #simulation/TTwoBodyScattering.cc
@@ -53,6 +55,7 @@ set(CRIBHEADERS
     TBranchCopyProcessor.h
     TEvtNumProcessor.h
     TReadROOTFile.h
+    TTreePeriodicEventStore.h
     # mux
     mux/TMUXCalibrationProcessor.h
     mux/TMUXData.h
@@ -87,6 +90,7 @@ set(CRIBHEADERS
     simulation/TNBodyReactionProcessor.h
     simulation/TParticleInfo.h
     simulation/TRandomBeamGenerator.h
+    simulation/TTreeBeamGenerator.h
     simulation/TReactionInfo.h
     simulation/TSolidAngleProcessor.h
     #simulation/TTwoBodyScattering.h

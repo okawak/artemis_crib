@@ -177,7 +177,7 @@ void TDetectParticleProcessor::Process()
 
       // prepare output branch
       TTelescopeData *outData = static_cast<TTelescopeData *>(fOutData->ConstructedAt(itr));
-      outData->SetID(det_id.Atoi());
+      outData->SetID(det_id.Atoi() + 1); // 1 start (not 0)
       TVector3 det_position(distance * velocity.X(), distance * velocity.Y(), distance * velocity.Z());
       det_position += first_position;
       outData->SetPosition(det_position);

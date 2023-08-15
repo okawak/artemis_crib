@@ -16,6 +16,7 @@
 #pragma link C++ class art::TBranchCopyProcessor;
 #pragma link C++ class art::TEvtNumProcessor;
 #pragma link C++ class art::TReadROOTFile;
+#pragma link C++ class art::TTreePeriodicEventStore;
 // MUX
 #pragma link C++ class art::TMUXData + ;
 #pragma link C++ class art::TMUXDataMappingProcessor;
@@ -50,6 +51,7 @@
 #pragma link C++ class art::TNBodyReactionProcessor;
 #pragma link C++ class art::TParticleInfo+;
 #pragma link C++ class art::TRandomBeamGenerator;
+#pragma link C++ class art::TTreeBeamGenerator;
 #pragma link C++ class art::TReactionInfo+;
 #pragma link C++ class art::TSolidAngleProcessor;
 //#pragma link C++ class art::TTwoBodyScattering;
