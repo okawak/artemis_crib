@@ -6,6 +6,8 @@ author: "Kodai Okawa"
 weight: 4
 ---
 
+{{% badge style="warning" %}}Not recommended{{% /badge %}}
+
 From the current situation, CRIB experiment doesn't use GET system, 
 so we describe how to install it without linking it to GET decoder.
 

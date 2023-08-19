@@ -5,3 +5,15 @@ this manual is going to be made by using [HUGO](https://gohugo.io/) and [relearn
 create a file in the content folder and fill it with Markdown content
 * inside a folder named by the page’s title like <TITLE>/_index.md or <TITLE>/index.md
 * named by the page’s title like <TITLE>.md
+
+# template
+```
+---
+title: "title"
+date: 2023-08-18
+draft: false
+author: "Kodai Okawa"
+weight: 1
+categories: ["hoge", "foo"]
+tags: ["var", "huga"]
+```
