@@ -7,9 +7,9 @@
     <meta name="generator" content="Relearn 5.19.0+tip">
     <meta name="description" content="">
     <meta name="author" content="Kodai Okawa">
-    <title>Yaml-cpp :: CRIB artemis</title>
-    <link href="/artemis_crib/installation/yaml-cpp/index.xml" rel="alternate" type="application/rss+xml" title="Yaml-cpp :: CRIB artemis">
-    <link href="/artemis_crib/installation/yaml-cpp/index.print.html" rel="alternate" type="text/html" title="Yaml-cpp :: CRIB artemis">
+    <title>TReactionInfo :: CRIB artemis</title>
+    <link href="/artemis_crib/processors/simulation/treactioninfo/index.xml" rel="alternate" type="application/rss+xml" title="TReactionInfo :: CRIB artemis">
+    <link href="/artemis_crib/processors/simulation/treactioninfo/index.print.html" rel="alternate" type="text/html" title="TReactionInfo :: CRIB artemis">
     <link href="/artemis_crib/images/logo.png?1692440235" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
     <link href="/artemis_crib/css/fontawesome-all.min.css?1692440235" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1692440235" rel="stylesheet"></noscript>
@@ -42,25 +42,25 @@
       window.variants && variants.init( [ 'auto' ] );
     </script>
   </head>
-  <body class="mobile-support html" data-url="/artemis_crib/installation/yaml-cpp/index.html">
+  <body class="mobile-support html" data-url="/artemis_crib/processors/simulation/treactioninfo/index.html">
     <div id="body" class="default-animation">
       <div id="sidebar-overlay"></div>
       <div id="toc-overlay"></div>
       <nav id="topbar" class="highlightable">
         <div>
           <div class="navigation">
-            <a class="nav nav-next topbar-link" href="/artemis_crib/installation/artemis/index.html" title="Artemis (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
+            <a class="nav nav-next topbar-link" href="/artemis_crib/processors/simulation/tparticleinfo/index.html" title="TParticleInfo (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
           </div>
           <div class="navigation">
-            <a class="nav nav-prev topbar-link" href="/artemis_crib/installation/root/index.html" title="Root (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
+            <a class="nav nav-prev topbar-link" href="/artemis_crib/processors/telescope/ttelescopedata/index.html" title="TTelescopeData (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
           </div>
           <div id="top-print-link">
-            <a class="print-link topbar-link" title='Print whole chapter (CTRL+ALT+p)' href="/artemis_crib/installation/yaml-cpp/index.print.html">
+            <a class="print-link topbar-link" title='Print whole chapter (CTRL+ALT+p)' href="/artemis_crib/processors/simulation/treactioninfo/index.print.html">
               <i class="fas fa-print fa-fw"></i>
             </a>
           </div>
           <div id="top-github-link">
-            <a class="github-link topbar-link" title='Edit (CTRL+ALT+w)' href="https://github.com/okawak/artemis_crib/tree/pages-build/content/installation/yaml-cpp.md" target="_blank">
+            <a class="github-link topbar-link" title='Edit (CTRL+ALT+w)' href="https://github.com/okawak/artemis_crib/tree/pages-build/content/processors/simulation/TReactionInfo.md" target="_blank">
               <i class="fas fa-pen fa-fw"></i>
             </a>
           </div>
@@ -68,11 +68,20 @@
             <span id="sidebar-toggle-span">
               <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
             </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
             <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
               <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/index.html"><span itemprop="name">CRIB artemis</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/installation/index.html"><span itemprop="name">Installation</span></a><meta itemprop="position" content="2"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Yaml-cpp</span><meta itemprop="position" content="3"></li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/processors/index.html"><span itemprop="name">Processors</span></a><meta itemprop="position" content="2"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">TReactionInfo</span><meta itemprop="position" content="3"></li>
             </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="toc-wrapper"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#treactioninfo">TReactionInfo</a></li>
+  </ul>
+</nav>
+            </div>
           </div>
         </div>
       </nav>
@@ -80,22 +89,49 @@
         <div class="flex-block-wrapper">
           <article class="default">
             <header class="headline">
+<div class="tags">
+  <a class="tag-link" href="/artemis_crib/tags/data_class/index.html">data_class</a>
+</div>
             </header>
-<h1 id="yaml-cpp">Yaml-cpp</h1>
+<h1 id="treactioninfo">TReactionInfo</h1>
 
-<p>Current version of the artemis use yaml-cpp-0.7.
-If your package system (like <code>apt</code> or <code>dnf</code>) cannot install version 0.7, please install from the source.</p>
-<p>See also <a href="https://github.com/jbeder/yaml-cpp" target="_blank">Github repo</a> and <a href="https://github.com/artemis-dev/artemis/blob/develop/README.md" target="_blank">README of the artemis</a>
-Please install it as a shared object like below commands.</p>
-<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> path/to/the/directory/you/want/to/install/yaml-cpp
-</span></span><span class="line"><span class="cl">git clone https://github.com/jbeder/yaml-cpp.git
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> yaml-cpp
-</span></span><span class="line"><span class="cl">mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
-</span></span><span class="line"><span class="cl">cmake -DYAML_BUILD_SHARED_LIBS<span class="o">=</span>ON -DBUILD_TESTING<span class="o">=</span>OFF ..
-</span></span><span class="line"><span class="cl">make
-</span></span><span class="line"><span class="cl">sudo make install</span></span></code></pre></div><p>Default install path is <code>/usr/local/lib</code> or <code>/usr/local/lib64</code>.
-If you do not want to pollute the general environment, specify <code>CMAKE_INSTALL_PREFIX</code> and set <strong>PATH</strong> environment variable.</p>
-<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cmake -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/foo/bar -DYAML_BUILD_SHARED_LIBS<span class="o">=</span>ON -DBUILD_TESTING<span class="o">=</span>OFF ..</span></span></code></pre></div>
+<h2 id="treactioninfo">TReactionInfo</h2>
+<ul>
+<li>Data member</li>
+</ul>
+<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// center of the mass system
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Double_t</span> <span class="n">fEnergy</span><span class="p">;</span> <span class="c1">// kinetic energy 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Double_t</span> <span class="n">fTheta</span><span class="p">;</span> <span class="c1">// theta
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Double_t</span> <span class="n">fPhi</span><span class="p">;</span> <span class="c1">// phi
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// reaction position
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Double_t</span> <span class="n">fX</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="n">fY</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="n">fZ</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// if you define excited statas, the information stored this value
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Int_t</span> <span class="n">fExcitedID</span><span class="p">;</span></span></span></code></pre></div><ul>
+<li>Methods</li>
+</ul>
+<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetEnergy</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fEnergy</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetEnergy</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span> <span class="n">fEnergy</span> <span class="o">=</span> <span class="n">arg</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetTheta</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fTheta</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetTheta</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span> <span class="n">fTheta</span> <span class="o">=</span> <span class="n">arg</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetPhi</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fPhi</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetPhi</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span> <span class="n">fPhi</span> <span class="o">=</span> <span class="n">arg</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetX</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fX</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetY</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fY</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetZ</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fZ</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetXYZ</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">x</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">y</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">z</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="n">fX</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">   <span class="n">fY</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">   <span class="n">fZ</span> <span class="o">=</span> <span class="n">z</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Int_t</span> <span class="nf">GetExID</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fExcitedID</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetExID</span><span class="p">(</span><span class="n">Int_t</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span> <span class="n">fExcitedID</span> <span class="o">=</span> <span class="n">arg</span><span class="p">;</span> <span class="p">}</span></span></span></code></pre></div>
             <footer class="footline">
 
             </footer>
@@ -134,10 +170,10 @@ If you do not want to pollute the general environment, specify <code>CMAKE_INSTA
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics enlarge morespace">
-          <li data-nav-id="/artemis_crib/installation/index.html" class="parent "><a class="padding" href="/artemis_crib/installation/index.html">Installation</a><ul id="subsections-07cca5796d23f5bae96340e1eaa52bc5" class="morespace">
+          <li data-nav-id="/artemis_crib/installation/index.html" class=""><a class="padding" href="/artemis_crib/installation/index.html">Installation</a><ul id="subsections-07cca5796d23f5bae96340e1eaa52bc5" class="morespace">
           <li data-nav-id="/artemis_crib/installation/requirements/index.html" class=""><a class="padding" href="/artemis_crib/installation/requirements/index.html">Requirements</a></li>
           <li data-nav-id="/artemis_crib/installation/root/index.html" class=""><a class="padding" href="/artemis_crib/installation/root/index.html">Root</a></li>
-          <li data-nav-id="/artemis_crib/installation/yaml-cpp/index.html" class="active"><a class="padding" href="/artemis_crib/installation/yaml-cpp/index.html">Yaml-cpp</a></li>
+          <li data-nav-id="/artemis_crib/installation/yaml-cpp/index.html" class=""><a class="padding" href="/artemis_crib/installation/yaml-cpp/index.html">Yaml-cpp</a></li>
           <li data-nav-id="/artemis_crib/installation/artemis/index.html" class=""><a class="padding" href="/artemis_crib/installation/artemis/index.html">Artemis</a></li>
           <li data-nav-id="/artemis_crib/installation/directory/index.html" class=""><a class="padding" href="/artemis_crib/installation/directory/index.html">Directory</a></li>
           <li data-nav-id="/artemis_crib/installation/art_analysis/index.html" class=""><a class="padding" href="/artemis_crib/installation/art_analysis/index.html">Art_analysis</a></li>
@@ -145,9 +181,9 @@ If you do not want to pollute the general environment, specify <code>CMAKE_INSTA
           <li data-nav-id="/artemis_crib/setting/index.html" class=""><a class="padding" href="/artemis_crib/setting/index.html">Setting</a></li>
           <li data-nav-id="/artemis_crib/basic/index.html" class=""><a class="padding" href="/artemis_crib/basic/index.html">Basic</a></li>
           <li data-nav-id="/artemis_crib/crib_parts/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/index.html">CRIB_parts</a></li>
-          <li data-nav-id="/artemis_crib/processors/index.html" class=""><a class="padding" href="/artemis_crib/processors/index.html">Processors</a><ul id="subsections-cfffc24f33a4f511c19f2e9819c7da90" class="morespace">
+          <li data-nav-id="/artemis_crib/processors/index.html" class="parent "><a class="padding" href="/artemis_crib/processors/index.html">Processors</a><ul id="subsections-cfffc24f33a4f511c19f2e9819c7da90" class="morespace">
           <li data-nav-id="/artemis_crib/processors/telescope/ttelescopedata/index.html" class=""><a class="padding" href="/artemis_crib/processors/telescope/ttelescopedata/index.html">TTelescopeData</a></li>
-          <li data-nav-id="/artemis_crib/processors/simulation/treactioninfo/index.html" class=""><a class="padding" href="/artemis_crib/processors/simulation/treactioninfo/index.html">TReactionInfo</a></li>
+          <li data-nav-id="/artemis_crib/processors/simulation/treactioninfo/index.html" class="active"><a class="padding" href="/artemis_crib/processors/simulation/treactioninfo/index.html">TReactionInfo</a></li>
           <li data-nav-id="/artemis_crib/processors/simulation/tparticleinfo/index.html" class=""><a class="padding" href="/artemis_crib/processors/simulation/tparticleinfo/index.html">TParticleInfo</a></li></ul></li>
           <li data-nav-id="/artemis_crib/example/index.html" class=""><a class="padding" href="/artemis_crib/example/index.html">Example</a></li>
         </ul>

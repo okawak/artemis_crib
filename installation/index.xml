@@ -40,7 +40,7 @@ cd path/to/the/directory/you/want/to/install/yaml-cpp git clone https://github.c
       <link>https://okawak.github.io/artemis_crib/installation/artemis/index.html</link>
       <pubDate>Mon, 14 Aug 2023 14:28:33 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/artemis/index.html</guid>
-      <description>From the current situation, CRIB experiment doesn&amp;rsquo;t use GET system, so we describe how to install it without linking it to GET decoder.
+      <description>WarningNot recommended From the current situation, CRIB experiment doesn&amp;rsquo;t use GET system, so we describe how to install it without linking it to GET decoder.
 Also, it can link to openMPI, but the below commands assume not using openMPI. See artemis repo for more information.
 cd hoge git clone https://github.com/artemis-dev/artemis.git -b develop cd artemis mkdir build cd build cmake -DCMAKE_INSTALL_PREFIX=../install .. make -j8 make installThen, &amp;lt;CMAKE_INSTALL_PREFIX&amp;gt;/bin/thisartemis.sh will be created and this shell script can configure the environment (ROOT, yaml-cpp, artemis libraries) to use artemis.</description>
     </item>

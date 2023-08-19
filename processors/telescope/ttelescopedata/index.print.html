@@ -7,9 +7,9 @@
     <meta name="generator" content="Relearn 5.19.0+tip">
     <meta name="description" content="">
     <meta name="author" content="Kodai Okawa">
-    <title>Processors :: CRIB artemis</title>
-    <link href="https://okawak.github.io/artemis_crib/processors/index.html" rel="canonical" type="text/html" title="Processors :: CRIB artemis">
-    <link href="/artemis_crib/processors/index.xml" rel="alternate" type="application/rss+xml" title="Processors :: CRIB artemis">
+    <title>TTelescopeData :: CRIB artemis</title>
+    <link href="https://okawak.github.io/artemis_crib/processors/telescope/ttelescopedata/index.html" rel="canonical" type="text/html" title="TTelescopeData :: CRIB artemis">
+    <link href="/artemis_crib/processors/telescope/ttelescopedata/index.xml" rel="alternate" type="application/rss+xml" title="TTelescopeData :: CRIB artemis">
     <link href="/artemis_crib/images/logo.png?1692440235" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
     <link href="/artemis_crib/css/fontawesome-all.min.css?1692440236" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1692440236" rel="stylesheet"></noscript>
@@ -43,7 +43,7 @@
       window.variants && variants.init( [ 'auto' ] );
     </script>
   </head>
-  <body class="mobile-support print" data-url="/artemis_crib/processors/index.html">
+  <body class="mobile-support print" data-url="/artemis_crib/processors/telescope/ttelescopedata/index.html">
     <div id="body" class="default-animation">
       <div id="sidebar-overlay"></div>
       <div id="toc-overlay"></div>
@@ -55,28 +55,14 @@
             </span>
             <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
               <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/index.html"><span itemprop="name">CRIB artemis</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Processors</span><meta itemprop="position" content="2"></li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/processors/index.html"><span itemprop="name">Processors</span></a><meta itemprop="position" content="2"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">TTelescopeData</span><meta itemprop="position" content="3"></li>
             </ol>
           </div>
         </div>
       </nav>
-      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
+      <main id="body-inner" class="highlightable default" tabindex="-1">
         <div class="flex-block-wrapper">
-          <article class="chapter">
-            <header class="headline">
-            </header>
-<div class="article-subheading">Chapter 5</div>
-<h1 id="processors">Processors</h1>
-
-<p>Lorem Ipsum.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          <section>
-            <h1 class="a11y-only">Subsections of Processors</h1>
           <article class="default">
             <header class="headline">
 <div class="tags">
@@ -158,158 +144,6 @@
             </footer>
           </article>
 
-          <article class="default">
-            <header class="headline">
-<div class="tags">
-  <a class="tag-link" href="/artemis_crib/tags/data_class/index.html">data_class</a>
-</div>
-            </header>
-<h1 id="treactioninfo">TReactionInfo</h1>
-
-<h2 id="treactioninfo">TReactionInfo</h2>
-<ul>
-<li>Data member</li>
-</ul>
-<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// center of the mass system
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Double_t</span> <span class="n">fEnergy</span><span class="p">;</span> <span class="c1">// kinetic energy 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Double_t</span> <span class="n">fTheta</span><span class="p">;</span> <span class="c1">// theta
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Double_t</span> <span class="n">fPhi</span><span class="p">;</span> <span class="c1">// phi
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="c1">// reaction position
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Double_t</span> <span class="n">fX</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="n">fY</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="n">fZ</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// if you define excited statas, the information stored this value
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Int_t</span> <span class="n">fExcitedID</span><span class="p">;</span></span></span></code></pre></div><ul>
-<li>Methods</li>
-</ul>
-<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetEnergy</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fEnergy</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetEnergy</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span> <span class="n">fEnergy</span> <span class="o">=</span> <span class="n">arg</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetTheta</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fTheta</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetTheta</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span> <span class="n">fTheta</span> <span class="o">=</span> <span class="n">arg</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetPhi</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fPhi</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetPhi</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span> <span class="n">fPhi</span> <span class="o">=</span> <span class="n">arg</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetX</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fX</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetY</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fY</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetZ</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fZ</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetXYZ</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">x</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">y</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">z</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">   <span class="n">fX</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">   <span class="n">fY</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">   <span class="n">fZ</span> <span class="o">=</span> <span class="n">z</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">Int_t</span> <span class="nf">GetExID</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fExcitedID</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetExID</span><span class="p">(</span><span class="n">Int_t</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span> <span class="n">fExcitedID</span> <span class="o">=</span> <span class="n">arg</span><span class="p">;</span> <span class="p">}</span></span></span></code></pre></div>
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          <article class="default">
-            <header class="headline">
-<div class="tags">
-  <a class="tag-link" href="/artemis_crib/tags/data_class/index.html">data_class</a>
-</div>
-            </header>
-<h1 id="tparticleinfo">TParticleInfo</h1>
-
-<h2 id="tparticleinfo">TParticleInfo</h2>
-<ul>
-<li>Data member</li>
-</ul>
-
-  
-<div class="tab-panel" data-tab-group="97d2fbea48414b80683a63b76339b1d4">
-  <div class="tab-nav">
-    <div class="tab-nav-title">&#8203;</div>
-    <button
-      data-tab-item="TParticleInfo.cc"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('97d2fbea48414b80683a63b76339b1d4','TParticleInfo.cc')"
-    >
-      <div>
-        <div class="tab-nav-hidden">TParticleInfo.cc</div>
-        <div class="tab-nav-text">TParticleInfo.cc</div>
-      </div>
-    </button>
-  </div>
-  <div class="tab-content-container">
-    <div
-      data-tab-item="TParticleInfo.cc"
-      class="tab-content tab-panel-style cstyle initial active">
-      <div class="tab-content-text">
-
-<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">Int_t</span> <span class="n">fMassNumber</span><span class="p">;</span> <span class="c1">// A: particle mass number
-</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1"></span><span class="n">Int_t</span> <span class="n">fAtomicNumber</span><span class="p">;</span> <span class="c1">// Z: particle atomic number
-</span></span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1"></span><span class="n">Int_t</span> <span class="n">fCharge</span><span class="p">;</span> <span class="c1">// Q: particle charge
-</span></span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="n">Double_t</span> <span class="n">fCurrentZ</span><span class="p">;</span> <span class="c1">// particle z position
-</span></span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="c1"></span><span class="n">Double_t</span> <span class="n">fEnergy</span><span class="p">;</span> <span class="c1">// particle &#34;kinetic&#34; energy
-</span></span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="n">TTrack</span> <span class="n">fTrack</span><span class="p">;</span> <span class="c1">// tracking information
-</span></span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="c1"></span><span class="n">TLorentzVector</span> <span class="n">fVec</span><span class="p">;</span> <span class="c1">// relativistic momentum and energy
-</span></span></span></code></pre></div></div>
-    </div>
-  </div>
-</div><ul>
-<li>Method (Getter and Setter)</li>
-</ul>
-
-  
-<div class="tab-panel" data-tab-group="22b3b64bc836c3a086085f8d6b81432a">
-  <div class="tab-nav">
-    <div class="tab-nav-title">&#8203;</div>
-    <button
-      data-tab-item="TParticleInfo.cc"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('22b3b64bc836c3a086085f8d6b81432a','TParticleInfo.cc')"
-    >
-      <div>
-        <div class="tab-nav-hidden">TParticleInfo.cc</div>
-        <div class="tab-nav-text">TParticleInfo.cc</div>
-      </div>
-    </button>
-  </div>
-  <div class="tab-content-container">
-    <div
-      data-tab-item="TParticleInfo.cc"
-      class="tab-content tab-panel-style cstyle initial active">
-      <div class="tab-content-text">
-
-<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kt">void</span> <span class="nf">SetMassNumber</span><span class="p">(</span><span class="n">Int_t</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span> <span class="n">fMassNumber</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">Int_t</span> <span class="nf">GetMassNumber</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fMassNumber</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kt">void</span> <span class="nf">SetAtomicNumber</span><span class="p">(</span><span class="n">Int_t</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span> <span class="n">fAtomicNumber</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">Int_t</span> <span class="nf">GetAtomicNumber</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fAtomicNumber</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="kt">void</span> <span class="nf">SetCharge</span><span class="p">(</span><span class="n">Int_t</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span> <span class="n">fCharge</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="n">Int_t</span> <span class="nf">GetCharge</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fCharge</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="kt">void</span> <span class="nf">SetCurrentZ</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span> <span class="n">fCurrentZ</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="n">Double_t</span> <span class="nf">GetCurrentZ</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fCurrentZ</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="kt">void</span> <span class="nf">SetEnergy</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span> <span class="n">fEnergy</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="n">Double_t</span> <span class="nf">GetEnergy</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fEnergy</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln">12</span><span class="cl">
-</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="kt">void</span> <span class="nf">SetLorentzVector</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">x</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">y</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">z</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span> <span class="n">fVec</span><span class="p">.</span><span class="n">SetXYZT</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="kt">void</span> <span class="nf">SetLorentzVector</span><span class="p">(</span><span class="n">TLorentzVector</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span> <span class="n">fVec</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="n">TLorentzVector</span> <span class="nf">GetLorentzVector</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fVec</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln">16</span><span class="cl">
-</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="kt">void</span> <span class="nf">SetTrack</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">x</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">y</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">z</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">a</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">b</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="ln">19</span><span class="cl">   <span class="n">fTrack</span><span class="p">.</span><span class="n">SetPos</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln">20</span><span class="cl">   <span class="n">fTrack</span><span class="p">.</span><span class="n">SetAngle</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="n">TTrack</span> <span class="nf">GetTrack</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fTrack</span><span class="p">;</span> <span class="p">}</span></span></span></code></pre></div></div>
-    </div>
-  </div>
-</div>
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          </section>
         </div>
       </main>
     </div>
