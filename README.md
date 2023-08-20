@@ -2,18 +2,16 @@
 this manual is going to be made by using [HUGO](https://gohugo.io/) and [relearn theme](https://github.com/McShelby/hugo-theme-relearn).
 
 # How to post new contents
-create a file in the content folder and fill it with Markdown content
-* inside a folder named by the page’s title like <TITLE>/_index.md or <TITLE>/index.md
-* named by the page’s title like <TITLE>.md
+**After checking your local environment**, please push your commits.
 
-# template
-```
----
-title: "title"
-date: 2023-08-18
-draft: false
-author: "Kodai Okawa"
-weight: 1
-categories: ["hoge", "foo"]
-tags: ["var", "huga"]
+```shell
+git clone --recursive https://github.com/okawak/artemis_crib.git -b pages-build
+cd artemis_crib
+hugo new chapter/hoge.md
+vim content/chapter/hoge.md
+hugo serve
+
+git add content/chapter/hoge.md
+git commit -m "commit message"
+git push
 ```
