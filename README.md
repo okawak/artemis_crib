@@ -38,4 +38,4 @@ In this run, one thousands of random numbers between 0 and 10 will be generated 
 # Manual for CRIB experiment 
 
 under preparation
-[manual](https://okawak.github.io/artemis_crib/)
+[manual](https://okawak.github.io/artemis_crib/){:target="_blank"}
