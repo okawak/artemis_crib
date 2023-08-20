@@ -6,7 +6,7 @@ author: "Kodai Okawa"
 weight: 4
 ---
 
-{{% badge style="warning" %}}Not recommended{{% /badge %}}
+{{% badge %}}{{< signature >}}{{% /badge %}}
 
 From the current situation, CRIB experiment doesn't use GET system, 
 so we describe how to install it without linking it to GET decoder.
@@ -35,7 +35,9 @@ It is also written in [artemis repo](https://github.com/artemis-dev/artemis/blob
 
 ---
 
+{{% notice style="warning" %}}
 **The following methods are not recommended!!**
+{{% /notice %}}
 
 For Ubuntu case, somehow it seems that there are some linking problem.
 

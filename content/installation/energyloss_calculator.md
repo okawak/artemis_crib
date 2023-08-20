@@ -6,3 +6,4 @@ author: "Kodai Okawa"
 weight: 7
 ---
 
+{{% badge %}}{{< signature >}}{{% /badge %}}

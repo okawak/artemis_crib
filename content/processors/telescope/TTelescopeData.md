@@ -7,6 +7,8 @@ weight: 1
 tags: ["data_class"]
 ---
 
+{{% badge %}}{{< signature >}}{{% /badge %}}
+
 under develop (possibly we will update this data class)
 
 ## TTelescopeData

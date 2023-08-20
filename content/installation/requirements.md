@@ -1,10 +1,12 @@
 ---
 title: "Requirements"
 date: 2023-08-14T13:36:14+09:00
+author: "Kodai Okawa"
 draft: false
-tags: "environment"
 weight: 1
 ---
+
+{{% badge %}}{{< signature >}}{{% /badge %}}
 
 The following machines have been tested for operation.
 

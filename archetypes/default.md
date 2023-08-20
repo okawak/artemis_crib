@@ -2,7 +2,8 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: false
-author: "Kodai Okawa"
+author: ""
 weight: 1
 ---
 
+{{% badge %}}{{< signature >}}{{% /badge %}}
