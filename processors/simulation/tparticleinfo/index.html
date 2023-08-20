@@ -9,21 +9,21 @@
     <meta name="author" content="Kodai Okawa">
     <title>TParticleInfo :: CRIB artemis</title>
     <link href="/artemis_crib/processors/simulation/tparticleinfo/index.xml" rel="alternate" type="application/rss+xml" title="TParticleInfo :: CRIB artemis">
-    <link href="/artemis_crib/processors/simulation/tparticleinfo/index.print.html" rel="alternate" type="text/html" title="TParticleInfo :: CRIB artemis">
-    <link href="/artemis_crib/images/logo.png?1692440235" rel="icon" type="image/png">
+    <link href="/artemis_crib/processors/simulation/tparticleinfo/index.print.html" rel="alternate" type="text/html" title="TParticleInfo :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
+
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1692440235" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1692440235" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1692440235" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1692440235" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1692440235" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1692440235" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1692440235" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1692440235" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1692440235" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-auto.css?1692440235" rel="stylesheet" id="variant-style">
-    <link href="/artemis_crib/css/variant.css?1692440235" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1692440235" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/ie.css?1692440235" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1692440235"></script>
-    <script src="/artemis_crib/js/variant.js?1692440235"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1692508906" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1692508906" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1692508906" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1692508906" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1692508906" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1692508906" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1692508906" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1692508906" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1692508906" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-artemis_crib.css?1692508906" rel="stylesheet" id="variant-style">
+    <link href="/artemis_crib/css/variant.css?1692508906" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1692508906" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/ie.css?1692508906" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1692508906"></script>
+    <script src="/artemis_crib/js/variant.js?1692508906"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -39,7 +39,7 @@
       window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/okawak.github.io\/artemis_crib/';
-      window.variants && variants.init( [ 'auto' ] );
+      window.variants && variants.init( [ 'artemis_crib' ] );
     </script>
   </head>
   <body class="mobile-support html" data-url="/artemis_crib/processors/simulation/tparticleinfo/index.html">
@@ -101,13 +101,13 @@
 </ul>
 
   
-<div class="tab-panel" data-tab-group="97d2fbea48414b80683a63b76339b1d4">
+<div class="tab-panel" data-tab-group="4dcd95de03e04fe375f263e884ac99b4">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="TParticleInfo.cc"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('97d2fbea48414b80683a63b76339b1d4','TParticleInfo.cc')"
+      onclick="switchTab('4dcd95de03e04fe375f263e884ac99b4','TParticleInfo.cc')"
     >
       <div>
         <div class="tab-nav-hidden">TParticleInfo.cc</div>
@@ -121,15 +121,15 @@
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">Int_t</span> <span class="n">fMassNumber</span><span class="p">;</span> <span class="c1">// A: particle mass number
-</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1"></span><span class="n">Int_t</span> <span class="n">fAtomicNumber</span><span class="p">;</span> <span class="c1">// Z: particle atomic number
-</span></span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1"></span><span class="n">Int_t</span> <span class="n">fCharge</span><span class="p">;</span> <span class="c1">// Q: particle charge
-</span></span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="n">Double_t</span> <span class="n">fCurrentZ</span><span class="p">;</span> <span class="c1">// particle z position
-</span></span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="c1"></span><span class="n">Double_t</span> <span class="n">fEnergy</span><span class="p">;</span> <span class="c1">// particle &#34;kinetic&#34; energy
-</span></span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="n">TTrack</span> <span class="n">fTrack</span><span class="p">;</span> <span class="c1">// tracking information
-</span></span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="c1"></span><span class="n">TLorentzVector</span> <span class="n">fVec</span><span class="p">;</span> <span class="c1">// relativistic momentum and energy
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>Int_t fMassNumber; <span style="color:#75715e">// A: particle mass number
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span>Int_t fAtomicNumber; <span style="color:#75715e">// Z: particle atomic number
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#75715e"></span>Int_t fCharge; <span style="color:#75715e">// Q: particle charge
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>Double_t fCurrentZ; <span style="color:#75715e">// particle z position
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#75715e"></span>Double_t fEnergy; <span style="color:#75715e">// particle &#34;kinetic&#34; energy
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>TTrack fTrack; <span style="color:#75715e">// tracking information
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span><span style="color:#75715e"></span>TLorentzVector fVec; <span style="color:#75715e">// relativistic momentum and energy
 </span></span></span></code></pre></div></div>
     </div>
   </div>
@@ -138,13 +138,13 @@
 </ul>
 
   
-<div class="tab-panel" data-tab-group="22b3b64bc836c3a086085f8d6b81432a">
+<div class="tab-panel" data-tab-group="05d8346a5fe4000024e2579ef1370722">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="TParticleInfo.cc"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('22b3b64bc836c3a086085f8d6b81432a','TParticleInfo.cc')"
+      onclick="switchTab('05d8346a5fe4000024e2579ef1370722','TParticleInfo.cc')"
     >
       <div>
         <div class="tab-nav-hidden">TParticleInfo.cc</div>
@@ -158,28 +158,28 @@
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kt">void</span> <span class="nf">SetMassNumber</span><span class="p">(</span><span class="n">Int_t</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span> <span class="n">fMassNumber</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">Int_t</span> <span class="nf">GetMassNumber</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fMassNumber</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kt">void</span> <span class="nf">SetAtomicNumber</span><span class="p">(</span><span class="n">Int_t</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span> <span class="n">fAtomicNumber</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">Int_t</span> <span class="nf">GetAtomicNumber</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fAtomicNumber</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="kt">void</span> <span class="nf">SetCharge</span><span class="p">(</span><span class="n">Int_t</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span> <span class="n">fCharge</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="n">Int_t</span> <span class="nf">GetCharge</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fCharge</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="kt">void</span> <span class="nf">SetCurrentZ</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span> <span class="n">fCurrentZ</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="n">Double_t</span> <span class="nf">GetCurrentZ</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fCurrentZ</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="kt">void</span> <span class="nf">SetEnergy</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span> <span class="n">fEnergy</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="n">Double_t</span> <span class="nf">GetEnergy</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fEnergy</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln">12</span><span class="cl">
-</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="kt">void</span> <span class="nf">SetLorentzVector</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">x</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">y</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">z</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span> <span class="n">fVec</span><span class="p">.</span><span class="n">SetXYZT</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="kt">void</span> <span class="nf">SetLorentzVector</span><span class="p">(</span><span class="n">TLorentzVector</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span> <span class="n">fVec</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="n">TLorentzVector</span> <span class="nf">GetLorentzVector</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fVec</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="ln">16</span><span class="cl">
-</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="kt">void</span> <span class="nf">SetTrack</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">x</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">y</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">z</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">a</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">b</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="ln">19</span><span class="cl">   <span class="n">fTrack</span><span class="p">.</span><span class="n">SetPos</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln">20</span><span class="cl">   <span class="n">fTrack</span><span class="p">.</span><span class="n">SetAngle</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="n">TTrack</span> <span class="nf">GetTrack</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fTrack</span><span class="p">;</span> <span class="p">}</span></span></span></code></pre></div></div>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetMassNumber</span>(Int_t val) { fMassNumber <span style="color:#f92672">=</span> val; }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>Int_t <span style="color:#a6e22e">GetMassNumber</span>() <span style="color:#66d9ef">const</span> { <span style="color:#66d9ef">return</span> fMassNumber; }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetAtomicNumber</span>(Int_t val) { fAtomicNumber <span style="color:#f92672">=</span> val; }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>Int_t <span style="color:#a6e22e">GetAtomicNumber</span>() <span style="color:#66d9ef">const</span> { <span style="color:#66d9ef">return</span> fAtomicNumber; }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetCharge</span>(Int_t val) { fCharge <span style="color:#f92672">=</span> val; }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>Int_t <span style="color:#a6e22e">GetCharge</span>() <span style="color:#66d9ef">const</span> { <span style="color:#66d9ef">return</span> fCharge; }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetCurrentZ</span>(Double_t val) { fCurrentZ <span style="color:#f92672">=</span> val; }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>Double_t <span style="color:#a6e22e">GetCurrentZ</span>() <span style="color:#66d9ef">const</span> { <span style="color:#66d9ef">return</span> fCurrentZ; }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetEnergy</span>(Double_t val) { fEnergy <span style="color:#f92672">=</span> val; }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>Double_t <span style="color:#a6e22e">GetEnergy</span>() <span style="color:#66d9ef">const</span> { <span style="color:#66d9ef">return</span> fEnergy; }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetLorentzVector</span>(Double_t x, Double_t y, Double_t z, Double_t t) { fVec.SetXYZT(x, y, z, t); }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetLorentzVector</span>(TLorentzVector val) { fVec <span style="color:#f92672">=</span> val; }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>TLorentzVector <span style="color:#a6e22e">GetLorentzVector</span>() <span style="color:#66d9ef">const</span> { <span style="color:#66d9ef">return</span> fVec; }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetTrack</span>(Double_t x, Double_t y, Double_t z, Double_t a, Double_t b)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>   fTrack.SetPos(x, y, z);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>   fTrack.SetAngle(a, b);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>TTrack <span style="color:#a6e22e">GetTrack</span>() <span style="color:#66d9ef">const</span> { <span style="color:#66d9ef">return</span> fTrack; }</span></span></code></pre></div></div>
     </div>
   </div>
 </div>
@@ -194,7 +194,8 @@
       <div id="header-wrapper" class="default-animation">
         <div id="header" class="default-animation">
 <a id="logo" href="/artemis_crib">
-  <img src="/images/logo.png">
+  <p style="font-family: Arial; font-weight: bold; font-size: 2.0rem; mergin: 0;">CRIB artemis</p>
+  
 </a>
 
         </div>
@@ -207,17 +208,12 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/artemis_crib/js/auto-complete.js?1692440235" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.min.js?1692440235" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1692440235" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1692440235" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1692440235" defer></script>
-        <script src="/artemis_crib/js/search.js?1692440235" defer></script>
-      </div>
-      <div id="homelinks" class="default-animation">
-        <ul>
-          <li><a class="padding" href="/artemis_crib/index.html"><i class="fas fa-home"></i> Home</a></li>
-        </ul>
+        <script src="/artemis_crib/js/auto-complete.js?1692508907" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.min.js?1692508907" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1692508907" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1692508907" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1692508907" defer></script>
+        <script src="/artemis_crib/js/search.js?1692508907" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics enlarge morespace">
@@ -269,7 +265,7 @@
                 <div class="control-style">
                   <label class="a11y-only" for="select-variant">Theme</label>
                   <select id="select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                    <option id="auto" value="auto" selected>Auto</option>
+                    <option id="artemis_crib" value="artemis_crib" selected>Artemis Crib</option>
                   </select>
                 </div>
                 <div class="clear"></div>
@@ -295,8 +291,8 @@
         </div>
       </div>
     </aside>
-    <script src="/artemis_crib/js/clipboard.min.js?1692440235" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1692440235" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1692508907" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1692508907" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -326,6 +322,6 @@
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1692440235" defer></script>
+    <script src="/artemis_crib/js/theme.js?1692508907" defer></script>
   </body>
 </html>

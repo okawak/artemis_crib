@@ -9,21 +9,21 @@
     <meta name="author" content="Kodai Okawa">
     <title>Root :: CRIB artemis</title>
     <link href="/artemis_crib/installation/root/index.xml" rel="alternate" type="application/rss+xml" title="Root :: CRIB artemis">
-    <link href="/artemis_crib/installation/root/index.print.html" rel="alternate" type="text/html" title="Root :: CRIB artemis">
-    <link href="/artemis_crib/images/logo.png?1692440235" rel="icon" type="image/png">
+    <link href="/artemis_crib/installation/root/index.print.html" rel="alternate" type="text/html" title="Root :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
+
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1692440235" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1692440235" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1692440235" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1692440235" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1692440235" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1692440235" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1692440235" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1692440235" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1692440235" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-auto.css?1692440235" rel="stylesheet" id="variant-style">
-    <link href="/artemis_crib/css/variant.css?1692440235" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1692440235" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/ie.css?1692440235" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1692440235"></script>
-    <script src="/artemis_crib/js/variant.js?1692440235"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1692508906" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1692508906" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1692508906" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1692508906" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1692508906" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1692508906" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1692508906" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1692508906" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1692508906" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-artemis_crib.css?1692508906" rel="stylesheet" id="variant-style">
+    <link href="/artemis_crib/css/variant.css?1692508906" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1692508906" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/ie.css?1692508906" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1692508906"></script>
+    <script src="/artemis_crib/js/variant.js?1692508906"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -39,7 +39,7 @@
       window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/okawak.github.io\/artemis_crib/';
-      window.variants && variants.init( [ 'auto' ] );
+      window.variants && variants.init( [ 'artemis_crib' ] );
     </script>
   </head>
   <body class="mobile-support html" data-url="/artemis_crib/installation/root/index.html">
@@ -88,14 +88,14 @@
 so we recommend to build from the sources.</p>
 <p>For detailded information, please refer <a href="https://root.cern/install/" target="_blank">Installing ROOT</a>
 Recommendations are described below.</p>
-<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># The latest stable branch gets updated automatically on each release.</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># You may update your local copy by issuing a `git pull` command from within `root_src/`.</span>
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> hoge <span class="c1"># where you want to install ROOT</span>
-</span></span><span class="line"><span class="cl">git clone --branch latest-stable --depth<span class="o">=</span><span class="m">1</span> https://github.com/root-project/root.git root_src
-</span></span><span class="line"><span class="cl">mkdir root_build root_install <span class="o">&amp;&amp;</span> <span class="nb">cd</span> root_build
-</span></span><span class="line"><span class="cl">cmake -DCMAKE_INSTALL_PREFIX<span class="o">=</span>../root_install ../root_src <span class="c1"># &amp;&amp; check cmake configuration output for warnings or errors</span>
-</span></span><span class="line"><span class="cl">cmake --build . -- install -j4 <span class="c1"># if you have 4 cores available for compilation</span>
-</span></span><span class="line"><span class="cl"><span class="nb">source</span> ../root_install/bin/thisroot.sh <span class="c1"># or thisroot.{fish,csh}</span></span></span></code></pre></div><p>If there are any problems at the compile, additional packages may need to be installed.
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># The latest stable branch gets updated automatically on each release.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># You may update your local copy by issuing a `git pull` command from within `root_src/`.</span>
+</span></span><span style="display:flex;"><span>cd hoge <span style="color:#75715e"># where you want to install ROOT</span>
+</span></span><span style="display:flex;"><span>git clone --branch latest-stable --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> https://github.com/root-project/root.git root_src
+</span></span><span style="display:flex;"><span>mkdir root_build root_install <span style="color:#f92672">&amp;&amp;</span> cd root_build
+</span></span><span style="display:flex;"><span>cmake -DCMAKE_INSTALL_PREFIX<span style="color:#f92672">=</span>../root_install ../root_src <span style="color:#75715e"># &amp;&amp; check cmake configuration output for warnings or errors</span>
+</span></span><span style="display:flex;"><span>cmake --build . -- install -j4 <span style="color:#75715e"># if you have 4 cores available for compilation</span>
+</span></span><span style="display:flex;"><span>source ../root_install/bin/thisroot.sh <span style="color:#75715e"># or thisroot.{fish,csh}</span></span></span></code></pre></div><p>If there are any problems at the compile, additional packages may need to be installed.
 See also <a href="https://root.cern/install/dependencies/" target="_blank">dependencies</a>.</p>
 <p><code>source thisroot.sh</code> part will be written in thisartemis.sh (this is created after artemis installation),
 so you don&rsquo;t have to execute this command for each time.</p>
@@ -111,7 +111,8 @@ so you don&rsquo;t have to execute this command for each time.</p>
       <div id="header-wrapper" class="default-animation">
         <div id="header" class="default-animation">
 <a id="logo" href="/artemis_crib">
-  <img src="/images/logo.png">
+  <p style="font-family: Arial; font-weight: bold; font-size: 2.0rem; mergin: 0;">CRIB artemis</p>
+  
 </a>
 
         </div>
@@ -124,17 +125,12 @@ so you don&rsquo;t have to execute this command for each time.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/artemis_crib/js/auto-complete.js?1692440235" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.min.js?1692440235" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1692440235" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1692440235" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1692440235" defer></script>
-        <script src="/artemis_crib/js/search.js?1692440235" defer></script>
-      </div>
-      <div id="homelinks" class="default-animation">
-        <ul>
-          <li><a class="padding" href="/artemis_crib/index.html"><i class="fas fa-home"></i> Home</a></li>
-        </ul>
+        <script src="/artemis_crib/js/auto-complete.js?1692508907" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.min.js?1692508907" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1692508907" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1692508907" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1692508907" defer></script>
+        <script src="/artemis_crib/js/search.js?1692508907" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics enlarge morespace">
@@ -186,7 +182,7 @@ so you don&rsquo;t have to execute this command for each time.</p>
                 <div class="control-style">
                   <label class="a11y-only" for="select-variant">Theme</label>
                   <select id="select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                    <option id="auto" value="auto" selected>Auto</option>
+                    <option id="artemis_crib" value="artemis_crib" selected>Artemis Crib</option>
                   </select>
                 </div>
                 <div class="clear"></div>
@@ -212,8 +208,8 @@ so you don&rsquo;t have to execute this command for each time.</p>
         </div>
       </div>
     </aside>
-    <script src="/artemis_crib/js/clipboard.min.js?1692440235" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1692440235" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1692508907" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1692508907" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -243,6 +239,6 @@ so you don&rsquo;t have to execute this command for each time.</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1692440235" defer></script>
+    <script src="/artemis_crib/js/theme.js?1692508907" defer></script>
   </body>
 </html>

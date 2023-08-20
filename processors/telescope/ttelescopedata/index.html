@@ -9,21 +9,21 @@
     <meta name="author" content="Kodai Okawa">
     <title>TTelescopeData :: CRIB artemis</title>
     <link href="/artemis_crib/processors/telescope/ttelescopedata/index.xml" rel="alternate" type="application/rss+xml" title="TTelescopeData :: CRIB artemis">
-    <link href="/artemis_crib/processors/telescope/ttelescopedata/index.print.html" rel="alternate" type="text/html" title="TTelescopeData :: CRIB artemis">
-    <link href="/artemis_crib/images/logo.png?1692440235" rel="icon" type="image/png">
+    <link href="/artemis_crib/processors/telescope/ttelescopedata/index.print.html" rel="alternate" type="text/html" title="TTelescopeData :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
+
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1692440235" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1692440235" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1692440235" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1692440235" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1692440235" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1692440235" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1692440235" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1692440235" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1692440235" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-auto.css?1692440235" rel="stylesheet" id="variant-style">
-    <link href="/artemis_crib/css/variant.css?1692440235" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1692440235" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/ie.css?1692440235" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1692440235"></script>
-    <script src="/artemis_crib/js/variant.js?1692440235"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1692508906" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1692508906" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1692508906" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1692508906" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1692508906" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1692508906" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1692508906" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1692508906" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1692508906" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-artemis_crib.css?1692508906" rel="stylesheet" id="variant-style">
+    <link href="/artemis_crib/css/variant.css?1692508906" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1692508906" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/ie.css?1692508906" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1692508906"></script>
+    <script src="/artemis_crib/js/variant.js?1692508906"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -39,7 +39,7 @@
       window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/okawak.github.io\/artemis_crib/';
-      window.variants && variants.init( [ 'auto' ] );
+      window.variants && variants.init( [ 'artemis_crib' ] );
     </script>
   </head>
   <body class="mobile-support html" data-url="/artemis_crib/processors/telescope/ttelescopedata/index.html">
@@ -100,69 +100,69 @@
 <ul>
 <li>Data members</li>
 </ul>
-<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">TVector3</span> <span class="n">fPos</span><span class="p">;</span> <span class="c1">// detected position (x, y, z)
-</span></span></span><span class="line"><span class="cl"><span class="c1">// simulation: actual position
-</span></span></span><span class="line"><span class="cl"><span class="c1">// from data: calculated from strip ID
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">Int_t</span> <span class="n">fXID</span><span class="p">;</span> <span class="c1">// X strip ID
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Int_t</span> <span class="n">fYID</span><span class="p">;</span> <span class="c1">// Y strip ID
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="n">fdE</span><span class="p">;</span> <span class="c1">// total energy deposit of dE detector
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Double_t</span> <span class="n">fE</span><span class="p">;</span> <span class="c1">// total energy deposit of E detector
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Double_t</span> <span class="n">fEtotal</span><span class="p">;</span> <span class="c1">// total energy deposit of the telescope
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">DoubleVec_t</span> <span class="n">fEnergyArray</span><span class="p">;</span> <span class="c1">// energy array of all the telescope
-</span></span></span><span class="line"><span class="cl"><span class="c1">// DoubleVec_t fTimingArray; // not impremented
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="c1">//===============================================================
-</span></span></span><span class="line"><span class="cl"><span class="c1">// no need??
-</span></span></span><span class="line"><span class="cl"><span class="c1">// kMAXNPARAMETER = 4 (can be settable)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Int_t</span> <span class="n">fNE</span><span class="p">;</span> <span class="c1">// number of thick E detector
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Double_t</span> <span class="n">fdEX</span><span class="p">;</span> <span class="c1">// energy of the first dE detector
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Double_t</span> <span class="n">fdEY</span><span class="p">;</span> <span class="c1">// energy of the seconde dE detector
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Double_t</span> <span class="n">fdEXTiming</span><span class="p">;</span> <span class="c1">// timing of the first dE detector
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Double_t</span> <span class="n">fdEYTiming</span><span class="p">;</span> <span class="c1">// timing of the second dE detector
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="n">fEvec</span><span class="p">[</span><span class="n">kMAXNPARAMETER</span><span class="p">];</span> <span class="c1">// energy array of the E detector
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Double_t</span> <span class="n">fETimingvec</span><span class="p">[</span><span class="n">kMAXNPARAMETER</span><span class="p">];</span> <span class="c1">// timing array of the E detector
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>TVector3 fPos; <span style="color:#75715e">// detected position (x, y, z)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// simulation: actual position
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// from data: calculated from strip ID
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>Int_t fXID; <span style="color:#75715e">// X strip ID
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Int_t fYID; <span style="color:#75715e">// Y strip ID
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>Double_t fdE; <span style="color:#75715e">// total energy deposit of dE detector
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Double_t fE; <span style="color:#75715e">// total energy deposit of E detector
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Double_t fEtotal; <span style="color:#75715e">// total energy deposit of the telescope
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>DoubleVec_t fEnergyArray; <span style="color:#75715e">// energy array of all the telescope
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// DoubleVec_t fTimingArray; // not impremented
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//===============================================================
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// no need??
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// kMAXNPARAMETER = 4 (can be settable)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Int_t fNE; <span style="color:#75715e">// number of thick E detector
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Double_t fdEX; <span style="color:#75715e">// energy of the first dE detector
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Double_t fdEY; <span style="color:#75715e">// energy of the seconde dE detector
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Double_t fdEXTiming; <span style="color:#75715e">// timing of the first dE detector
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Double_t fdEYTiming; <span style="color:#75715e">// timing of the second dE detector
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>Double_t fEvec[kMAXNPARAMETER]; <span style="color:#75715e">// energy array of the E detector
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Double_t fETimingvec[kMAXNPARAMETER]; <span style="color:#75715e">// timing array of the E detector
 </span></span></span></code></pre></div><ul>
 <li>Methods</li>
 </ul>
-<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">TVector3</span> <span class="nf">GetPosition</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fPos</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetPosition</span><span class="p">(</span><span class="n">TVector3</span> <span class="n">vec</span><span class="p">)</span> <span class="p">{</span> <span class="n">fPos</span> <span class="o">=</span> <span class="n">vec</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetPosition</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">x</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">y</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">z</span><span class="p">)</span> <span class="p">{</span> <span class="n">fPos</span><span class="p">.</span><span class="n">SetXYZ</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">);</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">Int_t</span> <span class="nf">GetXID</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span><span class="k">return</span> <span class="n">fXID</span><span class="p">;}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetXID</span><span class="p">(</span><span class="n">Int_t</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span> <span class="n">fXID</span> <span class="o">=</span> <span class="n">arg</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="n">Int_t</span> <span class="nf">GetYID</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span><span class="k">return</span> <span class="n">fYID</span><span class="p">;}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetYID</span><span class="p">(</span><span class="n">Int_t</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span> <span class="n">fYID</span> <span class="o">=</span> <span class="n">arg</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetdEX</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span><span class="k">return</span> <span class="n">fdEX</span><span class="p">;}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetdEX</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span> <span class="n">fdEX</span> <span class="o">=</span> <span class="n">arg</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetdEY</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span><span class="k">return</span> <span class="n">fdEY</span><span class="p">;}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetdEY</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span> <span class="n">fdEY</span> <span class="o">=</span> <span class="n">arg</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetdEXTiming</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span><span class="k">return</span> <span class="n">fdEXTiming</span><span class="p">;}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetdEXTiming</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span> <span class="n">fdEXTiming</span> <span class="o">=</span> <span class="n">arg</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetdEYTiming</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span><span class="k">return</span> <span class="n">fdEYTiming</span><span class="p">;}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetdEYTiming</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span> <span class="n">fdEYTiming</span> <span class="o">=</span> <span class="n">arg</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetEvec</span><span class="p">(</span><span class="n">Int_t</span> <span class="n">idx</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fEvec</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetEvec</span><span class="p">(</span><span class="n">Int_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span> <span class="n">fEvec</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="n">Int_t</span> <span class="nf">GetEvecSize</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fNE</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetETimingvec</span><span class="p">(</span><span class="n">Int_t</span> <span class="n">idx</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">fETimingvec</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetETimingvec</span><span class="p">(</span><span class="n">Int_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">Double_t</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span> <span class="n">fETimingvec</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetdE</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span><span class="k">return</span> <span class="n">fdE</span><span class="p">;}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetdE</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span> <span class="n">fdE</span> <span class="o">=</span> <span class="n">arg</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetE</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span><span class="k">return</span> <span class="n">fE</span><span class="p">;}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetE</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span> <span class="n">fE</span> <span class="o">=</span> <span class="n">arg</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="n">Double_t</span> <span class="nf">GetEtotal</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span><span class="k">return</span> <span class="n">fEtotal</span><span class="p">;}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetEtotal</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span> <span class="n">fEtotal</span> <span class="o">=</span> <span class="n">arg</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">DoubleVec_t</span> <span class="nf">GetEnergyArray</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span><span class="k">return</span> <span class="n">fEnergyArray</span><span class="p">;}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SetEnergyArray</span><span class="p">(</span><span class="n">Double_t</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span> <span class="n">fEnergyArray</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">arg</span><span class="p">);</span> <span class="p">}</span></span></span></code></pre></div>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>TVector3 <span style="color:#a6e22e">GetPosition</span>() <span style="color:#66d9ef">const</span> { <span style="color:#66d9ef">return</span> fPos; }
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetPosition</span>(TVector3 vec) { fPos <span style="color:#f92672">=</span> vec; }
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetPosition</span>(Double_t x, Double_t y, Double_t z) { fPos.SetXYZ(x, y, z); }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Int_t <span style="color:#a6e22e">GetXID</span>() <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> fXID;}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetXID</span>(Int_t arg) { fXID <span style="color:#f92672">=</span> arg; }
+</span></span><span style="display:flex;"><span>Int_t <span style="color:#a6e22e">GetYID</span>() <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> fYID;}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetYID</span>(Int_t arg) { fYID <span style="color:#f92672">=</span> arg; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Double_t <span style="color:#a6e22e">GetdEX</span>() <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> fdEX;}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetdEX</span>(Double_t arg) { fdEX <span style="color:#f92672">=</span> arg; }
+</span></span><span style="display:flex;"><span>Double_t <span style="color:#a6e22e">GetdEY</span>() <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> fdEY;}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetdEY</span>(Double_t arg) { fdEY <span style="color:#f92672">=</span> arg; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Double_t <span style="color:#a6e22e">GetdEXTiming</span>() <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> fdEXTiming;}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetdEXTiming</span>(Double_t arg) { fdEXTiming <span style="color:#f92672">=</span> arg; }
+</span></span><span style="display:flex;"><span>Double_t <span style="color:#a6e22e">GetdEYTiming</span>() <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> fdEYTiming;}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetdEYTiming</span>(Double_t arg) { fdEYTiming <span style="color:#f92672">=</span> arg; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Double_t <span style="color:#a6e22e">GetEvec</span>(Int_t idx) <span style="color:#66d9ef">const</span> { <span style="color:#66d9ef">return</span> fEvec[idx]; }
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetEvec</span>(Int_t idx, Double_t val) { fEvec[idx] <span style="color:#f92672">=</span> val; }
+</span></span><span style="display:flex;"><span>Int_t <span style="color:#a6e22e">GetEvecSize</span>() { <span style="color:#66d9ef">return</span> fNE; }
+</span></span><span style="display:flex;"><span>Double_t <span style="color:#a6e22e">GetETimingvec</span>(Int_t idx) <span style="color:#66d9ef">const</span> { <span style="color:#66d9ef">return</span> fETimingvec[idx]; }
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetETimingvec</span>(Int_t idx, Double_t val) { fETimingvec[idx] <span style="color:#f92672">=</span> val; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Double_t <span style="color:#a6e22e">GetdE</span>() <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> fdE;}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetdE</span>(Double_t arg) { fdE <span style="color:#f92672">=</span> arg; }
+</span></span><span style="display:flex;"><span>Double_t <span style="color:#a6e22e">GetE</span>() <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> fE;}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetE</span>(Double_t arg) { fE <span style="color:#f92672">=</span> arg; }
+</span></span><span style="display:flex;"><span>Double_t <span style="color:#a6e22e">GetEtotal</span>() <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> fEtotal;}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetEtotal</span>(Double_t arg) { fEtotal <span style="color:#f92672">=</span> arg; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DoubleVec_t <span style="color:#a6e22e">GetEnergyArray</span>() <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> fEnergyArray;}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SetEnergyArray</span>(Double_t arg) { fEnergyArray.emplace_back(arg); }</span></span></code></pre></div>
             <footer class="footline">
 
             </footer>
@@ -174,7 +174,8 @@
       <div id="header-wrapper" class="default-animation">
         <div id="header" class="default-animation">
 <a id="logo" href="/artemis_crib">
-  <img src="/images/logo.png">
+  <p style="font-family: Arial; font-weight: bold; font-size: 2.0rem; mergin: 0;">CRIB artemis</p>
+  
 </a>
 
         </div>
@@ -187,17 +188,12 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/artemis_crib/js/auto-complete.js?1692440235" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.min.js?1692440235" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1692440235" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1692440235" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1692440235" defer></script>
-        <script src="/artemis_crib/js/search.js?1692440235" defer></script>
-      </div>
-      <div id="homelinks" class="default-animation">
-        <ul>
-          <li><a class="padding" href="/artemis_crib/index.html"><i class="fas fa-home"></i> Home</a></li>
-        </ul>
+        <script src="/artemis_crib/js/auto-complete.js?1692508907" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.min.js?1692508907" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1692508907" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1692508907" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1692508907" defer></script>
+        <script src="/artemis_crib/js/search.js?1692508907" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics enlarge morespace">
@@ -249,7 +245,7 @@
                 <div class="control-style">
                   <label class="a11y-only" for="select-variant">Theme</label>
                   <select id="select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                    <option id="auto" value="auto" selected>Auto</option>
+                    <option id="artemis_crib" value="artemis_crib" selected>Artemis Crib</option>
                   </select>
                 </div>
                 <div class="clear"></div>
@@ -275,8 +271,8 @@
         </div>
       </div>
     </aside>
-    <script src="/artemis_crib/js/clipboard.min.js?1692440235" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1692440235" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1692508907" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1692508907" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -306,6 +302,6 @@
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1692440235" defer></script>
+    <script src="/artemis_crib/js/theme.js?1692508907" defer></script>
   </body>
 </html>
