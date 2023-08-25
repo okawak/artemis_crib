@@ -6,5 +6,42 @@
     <description>Recent content in Example on CRIB artemis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://okawak.github.io/artemis_crib/example/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Beam_generator</title>
+      <link>https://okawak.github.io/artemis_crib/example/beam_generator/index.html</link>
+      <pubDate>Fri, 25 Aug 2023 18:45:16 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/beam_generator/index.html</guid>
+      <description>last modified: 2023-08-25 by Kodai Okawa </description>
+    </item>
+    <item>
+      <title>Nbodyreaction</title>
+      <link>https://okawak.github.io/artemis_crib/example/nbodyreaction/index.html</link>
+      <pubDate>Fri, 25 Aug 2023 18:46:12 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/nbodyreaction/index.html</guid>
+      <description>last modified: 2023-08-25 by Kodai Okawa </description>
+    </item>
+    <item>
+      <title>Geometry</title>
+      <link>https://okawak.github.io/artemis_crib/example/geometry/index.html</link>
+      <pubDate>Fri, 25 Aug 2023 16:34:00 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/geometry/index.html</guid>
+      <description>last modified: 2023-08-25 by Kodai Okawa In this page, I will explain how to determine the detecter geometry configration.
+Firstly, let&amp;rsquo;s prepare the parameter file like this:
+&amp;#8203; prm/geo/example.yaml prm/geo/example.yaml material: - name: Vaccum # id=0 atomic_mass: 0.0 atomic_num: 0.0 density: 0.0 # g/cm3 - name: Si # id=1 atomic_mass: 28.084 atomic_num: 14.0 density: 2.321 # Note: beam axis -&amp;gt; z, upper direction -&amp;gt; y conposition: detector: - name: tel1 strip: [16, 16] center_rotation: [0.</description>
+    </item>
+    <item>
+      <title>Detect_particle</title>
+      <link>https://okawak.github.io/artemis_crib/example/detect_particle/index.html</link>
+      <pubDate>Fri, 25 Aug 2023 18:46:55 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/detect_particle/index.html</guid>
+      <description>last modified: 2023-08-25 by Kodai Okawa </description>
+    </item>
+    <item>
+      <title>Solidangle</title>
+      <link>https://okawak.github.io/artemis_crib/example/solidangle/index.html</link>
+      <pubDate>Fri, 25 Aug 2023 18:47:18 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/solidangle/index.html</guid>
+      <description>last modified: 2023-08-25 by KodaiOkawa Beam_generator Nbodyreaction Geometry Detect_particle As an application of the above four sections, I would like to explain how to calculate solid angles using Monte Carlo methods!</description>
+    </item>
   </channel>
 </rss>

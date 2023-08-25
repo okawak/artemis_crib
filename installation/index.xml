@@ -11,7 +11,7 @@
       <link>https://okawak.github.io/artemis_crib/installation/requirements/index.html</link>
       <pubDate>Mon, 14 Aug 2023 13:36:14 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/requirements/index.html</guid>
-      <description>last modified: 2023-08-20 by Kodai Okawa The following machines have been tested for operation.
+      <description>last modified: 2023-08-25 by Kodai Okawa The following machines have been tested for operation.
 Almalinux 9.2 zsh 5.8 gcc 11.3.1 cmake 3.20.2 ROOT 6.28/04 yaml-cpp 0.7.0 Scripts for some automate operation are written in zsh format.
 As for the Ubuntu 22.04 (LTS), there appeared to be a linking problem and a dummy file had to be set up to force the link.</description>
     </item>
@@ -20,7 +20,7 @@ As for the Ubuntu 22.04 (LTS), there appeared to be a linking problem and a dumm
       <link>https://okawak.github.io/artemis_crib/installation/root/index.html</link>
       <pubDate>Mon, 14 Aug 2023 12:27:52 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/root/index.html</guid>
-      <description>last modified: 2023-08-20 by Kodai Okawa Artemis uses ROOT library.
+      <description>last modified: 2023-08-25 by Kodai Okawa Artemis uses ROOT library.
 We confirmed that version 6.28 of the ROOT will work well, but if the ROOT updates, we are not sure that the ARTEMIS will work well, so we recommend to build from the sources.
 For detailded information, please refer Installing ROOT Recommendations are described below.
 # The latest stable branch gets updated automatically on each release. # You may update your local copy by issuing a `git pull` command from within `root_src/`.</description>
@@ -30,7 +30,7 @@ For detailded information, please refer Installing ROOT Recommendations are desc
       <link>https://okawak.github.io/artemis_crib/installation/yaml-cpp/index.html</link>
       <pubDate>Mon, 14 Aug 2023 13:57:35 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/yaml-cpp/index.html</guid>
-      <description>last modified: 2023-08-20 by Kodai Okawa Current version of the artemis use yaml-cpp-0.7. If your package system (like apt or dnf) cannot install version 0.7, please install from the source.
+      <description>last modified: 2023-08-25 by Kodai Okawa Current version of the artemis use yaml-cpp-0.7. If your package system (like apt or dnf) cannot install version 0.7, please install from the source.
 See also Github repo and README of the artemis Please install it as a shared object like below commands.
 cd path/to/the/directory/you/want/to/install/yaml-cpp git clone https://github.com/jbeder/yaml-cpp.git cd yaml-cpp mkdir build &amp;amp;&amp;amp; cd build cmake -DYAML_BUILD_SHARED_LIBS=ON -DBUILD_TESTING=OFF .. make sudo make installDefault install path is /usr/local/lib or /usr/local/lib64.</description>
     </item>
@@ -39,7 +39,7 @@ cd path/to/the/directory/you/want/to/install/yaml-cpp git clone https://github.c
       <link>https://okawak.github.io/artemis_crib/installation/artemis/index.html</link>
       <pubDate>Mon, 14 Aug 2023 14:28:33 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/artemis/index.html</guid>
-      <description>last modified: 2023-08-20 by Kodai Okawa From the current situation, CRIB experiment doesn&amp;rsquo;t use GET system, so we describe how to install it without linking it to GET decoder.
+      <description>last modified: 2023-08-25 by Kodai Okawa From the current situation, CRIB experiment doesn&amp;rsquo;t use GET system, so we describe how to install it without linking it to GET decoder.
 Also, it can link to openMPI, but the below commands assume not using openMPI. See artemis repo for more information.
 cd hoge git clone https://github.com/artemis-dev/artemis.git -b develop cd artemis mkdir build cd build cmake -DCMAKE_INSTALL_PREFIX=../install .. make -j8 make installThen, &amp;lt;CMAKE_INSTALL_PREFIX&amp;gt;/bin/thisartemis.sh will be created and this shell script can configure the environment (ROOT, yaml-cpp, artemis libraries) to use artemis.</description>
     </item>
@@ -48,21 +48,21 @@ cd hoge git clone https://github.com/artemis-dev/artemis.git -b develop cd artem
       <link>https://okawak.github.io/artemis_crib/installation/directory/index.html</link>
       <pubDate>Mon, 14 Aug 2023 15:14:29 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/directory/index.html</guid>
-      <description>last modified: 2023-08-20 by Kodai Okawa </description>
+      <description>last modified: 2023-08-25 by Kodai Okawa </description>
     </item>
     <item>
       <title>Art_analysis</title>
       <link>https://okawak.github.io/artemis_crib/installation/art_analysis/index.html</link>
       <pubDate>Mon, 14 Aug 2023 15:14:43 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/art_analysis/index.html</guid>
-      <description>last modified: 2023-08-20 by Kodai Okawa </description>
+      <description>last modified: 2023-08-25 by Kodai Okawa </description>
     </item>
     <item>
       <title>Energyloss_calculator</title>
       <link>https://okawak.github.io/artemis_crib/installation/energyloss_calculator/index.html</link>
       <pubDate>Mon, 14 Aug 2023 15:14:00 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/energyloss_calculator/index.html</guid>
-      <description>last modified: 2023-08-20 by Kodai Okawa </description>
+      <description>last modified: 2023-08-25 by Kodai Okawa </description>
     </item>
   </channel>
 </rss>

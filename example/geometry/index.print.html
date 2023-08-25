@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.117.0">
+    <meta name="generator" content="Relearn 5.19.0+tip">
+    <meta name="description" content="">
+    <meta name="author" content="Kodai Okawa">
+    <title>Geometry :: CRIB artemis</title>
+    <link href="https://okawak.github.io/artemis_crib/example/geometry/index.html" rel="canonical" type="text/html" title="Geometry :: CRIB artemis">
+    <link href="/artemis_crib/example/geometry/index.xml" rel="alternate" type="application/rss+xml" title="Geometry :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
+
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1692957374" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1692957374" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1692957374" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1692957374" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1692957374" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1692957374" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1692957374" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1692957374" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1692957374" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-artemis_crib.css?1692957374" rel="stylesheet" id="variant-style">
+    <link href="/artemis_crib/css/variant.css?1692957374" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1692957374" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/format-print.css?1692957374" rel="stylesheet">
+    <link href="/artemis_crib/css/ie.css?1692957374" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1692957374"></script>
+    <script src="/artemis_crib/js/variant.js?1692957374"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="/artemis_crib/index.search.js";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/okawak.github.io\/artemis_crib/';
+      window.variants && variants.init( [ 'artemis_crib' ] );
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/artemis_crib/example/geometry/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/index.html"><span itemprop="name">CRIB artemis</span></a><meta itemprop="position" content="1"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/example/index.html"><span itemprop="name">Example</span></a><meta itemprop="position" content="2"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Geometry</span><meta itemprop="position" content="3"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="geometry">Geometry</h1>
+
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-08-25 by Kodai Okawa</span></span>
+<p>In this page, I will explain how to determine the detecter geometry configration.</p>
+<hr>
+<p>Firstly, let&rsquo;s prepare the parameter file like this:</p>
+
+  
+<div class="tab-panel" data-tab-group="b715d3b603f32a16782d03cb056d267f">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="prm/geo/example.yaml"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('b715d3b603f32a16782d03cb056d267f','prm\/geo\/example.yaml')"
+    >
+      <div>
+        <div class="tab-nav-hidden">prm/geo/example.yaml</div>
+        <div class="tab-nav-text">prm/geo/example.yaml</div>
+      </div>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="prm/geo/example.yaml"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">material</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Vaccum</span> <span style="color:#75715e"># id=0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">atomic_mass</span>: <span style="color:#ae81ff">0.0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">atomic_num</span>: <span style="color:#ae81ff">0.0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">density</span>: <span style="color:#ae81ff">0.0</span> <span style="color:#75715e"># g/cm3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Si</span> <span style="color:#75715e"># id=1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">atomic_mass</span>: <span style="color:#ae81ff">28.084</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">atomic_num</span>: <span style="color:#ae81ff">14.0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">density</span>: <span style="color:#ae81ff">2.321</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Note: beam axis -&gt; z, upper direction -&gt; y</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">conposition</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">detector</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">tel1</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">strip</span>: [<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">16</span>]
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">center_rotation</span>: [<span style="color:#ae81ff">0</span><span style="color:#ae81ff">., 0., 322.0]</span> <span style="color:#75715e"># mm</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">offset</span>: [<span style="color:#ae81ff">0</span><span style="color:#ae81ff">., 0., 0.]</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">distance</span>: <span style="color:#ae81ff">244.0</span> 
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">angle</span>: -<span style="color:#ae81ff">4.0</span> <span style="color:#75715e"># deg</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">thickness</span>: [<span style="color:#ae81ff">0.02</span>, <span style="color:#ae81ff">0.301</span>, <span style="color:#ae81ff">1.494</span>, <span style="color:#ae81ff">1.486</span>]
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">material</span>: [<span style="color:#ae81ff">Si]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">tel2</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">strip</span>: [<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">16</span>]
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">center_rotation</span>: [<span style="color:#ae81ff">0</span><span style="color:#ae81ff">., 0., 322.0]</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">offset</span>: [<span style="color:#ae81ff">0</span><span style="color:#ae81ff">., 0., 0.]</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">distance</span>: <span style="color:#ae81ff">154.5</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">angle</span>: <span style="color:#ae81ff">27.0</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">thickness</span>: [<span style="color:#ae81ff">0.02</span>, <span style="color:#ae81ff">0.300</span>, <span style="color:#ae81ff">1.494</span>, <span style="color:#ae81ff">1.485</span>]
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">material</span>: [<span style="color:#ae81ff">Si]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">volume</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">top</span>: <span style="color:#75715e"># detector world</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">TOP</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">box</span> <span style="color:#75715e"># now only box is available</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">material</span>: <span style="color:#ae81ff">0</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">size</span>: [<span style="color:#ae81ff">400.0</span>, <span style="color:#ae81ff">200.0</span>, <span style="color:#ae81ff">1288.0</span>] <span style="color:#75715e"># mm</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">detector</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">tel1</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">type</span>: <span style="color:#ae81ff">box</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">material</span>: <span style="color:#ae81ff">1</span> 
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">size</span>: [<span style="color:#ae81ff">50.0</span>, <span style="color:#ae81ff">50.0</span>, <span style="color:#ae81ff">1.0</span>] <span style="color:#75715e"># mm</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">tel2</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">type</span>: <span style="color:#ae81ff">box</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">material</span>: <span style="color:#ae81ff">1</span> 
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">size</span>: [<span style="color:#ae81ff">50.0</span>, <span style="color:#ae81ff">50.0</span>, <span style="color:#ae81ff">1.0</span>] <span style="color:#75715e"># mm</span></span></span></code></pre></div></div>
+    </div>
+  </div>
+</div><p>There are many components to explain!
+The <code>material</code> node is used to define <code>TGeoMaterial</code> and <code>TGeoMedium</code> classes.
+(But they are not directly used.)
+From <strong>name</strong> to <strong>density</strong> node are used to make a instance of this object.
+This values are not used in the current processors.</p>
+<p>The next <code>conposition</code> node define the detector configuration!
+General telescopes of the CRIB experiment consist of <strong>DSSSD</strong> and <strong>SSD</strong> (single-pad),
+and the node below defines the SSD of the telescope.</p>
+<ul>
+<li>name: Name of the telescope. For example tel1, tel2, and so on.</li>
+<li>strip: X x Y strip number. It is defined as an array like [16, 32], this means X:16 strips and Y:32 strips</li>
+<li>thickness: Thickness of the each layer. If there are two layer, the size of the array become two. You can add to any size. The unit is <strong>mm</strong>.</li>
+<li>material: material of the each layer. The string is used in <code>SRIMlib</code> calculation. This node is defined as a array for each layer, but if it is one, the same material is applied. For example, in example.yaml, [Si] means [Si, Si, Si, Si]. (You need to prepare SRIMlib setting beforehand!)</li>
+</ul>
+<p>Let&rsquo;s move on to the geometry part!
+The node is <code>center_rotation</code>, <code>offset</code>, <code>distance</code> and <code>angle</code>.
+Please look at this figure.</p>
+<figure><img src="/artemis_crib/example/geometry/../geo_example.png"/>
+</figure>
+
+<p>Please not that the center_rotation and offset are defined in (x, y, z) coordinate (-&gt; [x, y, z]), but distance and angle is scalar value.
+The unit of length is <code>mm</code>, angle is <code>deg</code>.</p>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+
+<p>The sign of the angle is defined as positive at this figure.
+And generally, we set z=0 at target position. (For the gas target, we set 0 at window position.)</p>
+</div>
+</div>
+<p>The last part is <code>volume</code> node!
+In this parts, the shape of the detector will be defined by using <code>TGeoVolume</code> class.
+The TGeoVolume needs <strong>name</strong>, <strong>type</strong>, <strong>material</strong> and <strong>size</strong>.
+For the type, I only prepared &ldquo;box&rdquo;. (It means the code use only vol-&gt;MakeBox method.)</p>
+<p>The first <code>top</code> node must be set because it defined &ldquo;detector world&rdquo;.
+Generally, the material is okay to set vaccum.
+And the material is defined in the <code>material</code> node, and the id (the order) can be used.
+So the format is like <code>material: 0</code>.
+And the size is generally set to the size of the scattering chamber, but for the safety, it is okay to set larger number.
+Also the unit is <code>mm</code> and format is (x, y, z).</p>
+<p>Next, at the <code>volume/detector</code> node, we can define the detector size.
+Please NOTE that the name should be the same with <code>conposition/detector/name</code> node.</p>
+<hr>
+<p>Then, let&rsquo;s check if the parameter file can be correctly used!
+Please prepare the steering file.</p>
+
+  
+<div class="tab-panel" data-tab-group="52a1d2d9e6c3dab7c27b85639ec6f049">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="steering/geo_example.yaml"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('52a1d2d9e6c3dab7c27b85639ec6f049','steering\/geo_example.yaml')"
+    >
+      <div>
+        <div class="tab-nav-hidden">steering/geo_example.yaml</div>
+        <div class="tab-nav-text">steering/geo_example.yaml</div>
+      </div>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="steering/geo_example.yaml"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Anchor</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Processor</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">detector_initialize</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TUserGeoInitializer</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">parameter</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Name</span>: <span style="color:#ae81ff">prm_detector</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">FileName</span>: <span style="color:#ae81ff">prm/geo/example.yaml</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">OutputTransparency</span>: <span style="color:#ae81ff">1</span></span></span></code></pre></div></div>
+    </div>
+  </div>
+</div><p>This steering file doesn&rsquo;t use event loop.
+Just we want to check the parameter file works well or not.</p>
+<p>Then let&rsquo;s see in the artemis!</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>acd
+</span></span><span style="display:flex;"><span>a
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>-- snip --
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> add steering/geo_example.yaml
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>-- snip --
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> ls
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> artemis
+</span></span><span style="display:flex;"><span>&gt;   <span style="color:#ae81ff">0</span> TGeoVolume TOP             Top volume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>2<span style="color:#f92672">]</span></span></span></code></pre></div><p>The detector geometry object is successfully generated!
+In order to check the object, please use <a href="https://github.com/okawak/artemis_crib/blob/main/src-crib/commands/TCmdDraw.cc" target="_blank">draw</a> command for example.
+(It is defined only in CRIB artemis, to draw not only histogram object. This is under development.)</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> draw <span style="color:#ae81ff">0</span></span></span></code></pre></div><figure><img src="/artemis_crib/example/geometry/../geo_canvas.png"/>
+</figure>
+
+<p>The red box is the TOP, and the black boxes are detectors.
+If the detector is placed where you expect it to be, the parameters have been successfully set!</p>
+<p>In the event loop process, if you want to use the detector geometry information, you can use <code>prm_detector</code> in the steering files.
+I will explain the next session!</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/artemis_crib/js/clipboard.min.js?1692957374" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1692957374" defer></script>
+    <script>
+      function useMathJax( config ){
+        if( !Object.assign ){
+          
+          return;
+        }
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          loader: {
+            load: ['[tex]/mhchem']
+          },
+          startup: {
+            elements: [
+              '.math'
+            ]
+          },
+          tex: {
+            inlineMath: [
+              ['$', '$'], 
+              ['\\(', '\\)']
+            ]
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/artemis_crib/js/theme.js?1692957374" defer></script>
+  </body>
+</html>
