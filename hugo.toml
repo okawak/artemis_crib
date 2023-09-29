@@ -3,6 +3,8 @@ baseURL = 'https://okawak.github.io/artemis_crib/'
 languageCode = 'en-us'
 title = 'CRIB artemis'
 
+googleAnalytics = "G-MZF67K577Y"
+
 [params]
   editURL = "https://github.com/okawak/artemis_crib/tree/pages-build/content/"
   themeVariant = "artemis_crib"

@@ -11,6 +11,11 @@ tags: []
 
 In this page, I will explain how to determine the detecter geometry configration.
 
+Requirement:
+
+- [src-crib/geo/TUserGeoInitializer](https://github.com/okawak/artemis_crib/blob/main/src-crib/geo/TUserGeoInitializer.h)
+- [src-crib/geo/TDetectorParameter](https://github.com/okawak/artemis_crib/blob/main/src-crib/geo/TUserGeoInitializer.h)
+
 ---
 
 Firstly, let's prepare the parameter file like this:
