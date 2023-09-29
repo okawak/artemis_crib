@@ -7,9 +7,9 @@
     <meta name="generator" content="Relearn 5.19.0+tip">
     <meta name="description" content="">
     <meta name="author" content="Kodai Okawa">
-    <title>Example :: CRIB artemis</title>
-    <link href="https://okawak.github.io/artemis_crib/example/index.html" rel="canonical" type="text/html" title="Example :: CRIB artemis">
-    <link href="/artemis_crib/example/index.xml" rel="alternate" type="application/rss+xml" title="Example :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
+    <title>Geometry :: CRIB artemis</title>
+    <link href="https://okawak.github.io/artemis_crib/example/simulation/geometry/index.html" rel="canonical" type="text/html" title="Geometry :: CRIB artemis">
+    <link href="/artemis_crib/example/simulation/geometry/index.xml" rel="alternate" type="application/rss+xml" title="Geometry :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
     <link href="/artemis_crib/css/fontawesome-all.min.css?1695962882" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1695962882" rel="stylesheet"></noscript>
@@ -43,7 +43,7 @@
       window.variants && variants.init( [ 'artemis_crib' ] );
     </script>
   </head>
-  <body class="mobile-support print" data-url="/artemis_crib/example/index.html">
+  <body class="mobile-support print" data-url="/artemis_crib/example/simulation/geometry/index.html">
     <div id="body" class="default-animation">
       <div id="sidebar-overlay"></div>
       <div id="toc-overlay"></div>
@@ -55,151 +55,15 @@
             </span>
             <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
               <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/index.html"><span itemprop="name">CRIB artemis</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Example</span><meta itemprop="position" content="2"></li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/example/index.html"><span itemprop="name">Example</span></a><meta itemprop="position" content="2"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/example/simulation/index.html"><span itemprop="name">Simulation</span></a><meta itemprop="position" content="3"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Geometry</span><meta itemprop="position" content="4"></li>
             </ol>
           </div>
         </div>
       </nav>
-      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
+      <main id="body-inner" class="highlightable default" tabindex="-1">
         <div class="flex-block-wrapper">
-          <article class="chapter">
-            <header class="headline">
-            </header>
-<div class="article-subheading">Chapter 6</div>
-<h1 id="example">Example</h1>
-
-<p>Lorem Ipsum.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          <section>
-            <h1 class="a11y-only">Subsections of Example</h1>
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="preparation">preparation</h1>
-
-<p>This section explain the example of preparation by using some useful macro.</p>
-
-<ul class="children children-li children-sort-weight">
-	
-</ul>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="online_analysis">online_analysis</h1>
-
-<p>This section explain the example of the online analysis in the CRIB experiment.</p>
-
-<ul class="children children-li children-sort-weight">
-	
-</ul>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="offline_analysis">offline_analysis</h1>
-
-<p>This section explain the example of the offline analysis (some useful processors).</p>
-
-<ul class="children children-li children-sort-weight">
-	
-</ul>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="simulation">Simulation</h1>
-
-<p>This section explain the example of the simulation by using artemis.</p>
-
-<ul class="children children-li children-sort-weight">
-	
-<li><a href="/artemis_crib/example/simulation/beam_generator/index.html">Beam_generator</a></li>
-<li><a href="/artemis_crib/example/simulation/nbodyreaction/index.html">Nbodyreaction</a></li>
-<li><a href="/artemis_crib/example/simulation/geometry/index.html">Geometry</a></li>
-<li><a href="/artemis_crib/example/simulation/detect_particle/index.html">Detect_particle</a></li>
-<li><a href="/artemis_crib/example/simulation/solidangle/index.html">Solidangle</a></li>
-</ul>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          <section>
-            <h1 class="a11y-only">Subsections of Simulation</h1>
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="beam_generator">Beam_generator</h1>
-
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by Kodai Okawa</span></span>
-<p>The previous sections have described how to loop events from a <code>ridf</code> file or <code>root</code> file, but now I will describe how to generate events to use as a simulation.</p>
-<p>Requirements:</p>
-<ul>
-<li>src-crib/simulation/TRandomBeamGenerator</li>
-<li>src-crib/simulation/TTreeBeamGenerator</li>
-<li>src-crib/simulation/TParticleInfo</li>
-</ul>
-<hr>
-<p>As you know, an &ldquo;event store&rdquo; must be used to analyse the event loop.
-For example, in the online analysis, we used <code>TRIDFEventStore</code>, and in the offline analysis, we used <code>TTreeEventStore</code>.</p>
-<p>But when we want to simulate something, there are no data file.
-In that case, we can use <code>TCounterEventStore</code> or <code>TRandomNumberEventStore</code>.</p>
-<ul>
-<li>TCounterEventStore: generate numbers in sequence from 0 to N.</li>
-<li>TRandomNumberEventStore: generate number from 0.0 to 1.0 randomly.</li>
-</ul>
-<p>Here I will simply describe a simulation using TCounterEventStore.</p>
-
-<div class="box notices cstyle info">
-  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
-  <div class="box-content">
-
-<p>As I explained in <code>CRIB_parts</code> before, in the current artemis version, the TCounterEventStore does not seem to be recognised as EventStore.
-So if we use this EventStore, &ldquo;no event store&rdquo; comments will output.
-I don&rsquo;t think it makes problem, so it is okay comment out the part of TLoop.cc that prints &ldquo;no event store&rdquo;.
-(Possibly a problem with your environment).</p>
-</div>
-</div>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="nbodyreaction">Nbodyreaction</h1>
-
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by Kodai Okawa</span></span>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
           <article class="default">
             <header class="headline">
             </header>
@@ -399,39 +263,6 @@ I will explain the next session!</p>
             </footer>
           </article>
 
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="detect_particle">Detect_particle</h1>
-
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by Kodai Okawa</span></span>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="solidangle">Solidangle</h1>
-
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by KodaiOkawa</span></span>
-<ul>
-<li>Beam_generator</li>
-<li>Nbodyreaction</li>
-<li>Geometry</li>
-<li>Detect_particle</li>
-</ul>
-<p>As an application of the above four sections, I would like to explain how to calculate solid angles using Monte Carlo methods!</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          </section>
-          </section>
         </div>
       </main>
     </div>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.117.0">
+    <meta name="generator" content="Hugo 0.119.0">
     <meta name="generator" content="Relearn 5.19.0+tip">
     <meta name="description" content="">
     <meta name="author" content="Kodai Okawa">
@@ -12,19 +12,19 @@
     <link href="/artemis_crib/installation/index.xml" rel="alternate" type="application/rss+xml" title="Installation :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1692957374" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1692957374" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1692957374" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1692957374" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1692957374" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1692957374" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1692957374" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1692957374" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1692957374" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-artemis_crib.css?1692957374" rel="stylesheet" id="variant-style">
-    <link href="/artemis_crib/css/variant.css?1692957374" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1692957374" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/format-print.css?1692957374" rel="stylesheet">
-    <link href="/artemis_crib/css/ie.css?1692957374" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1692957374"></script>
-    <script src="/artemis_crib/js/variant.js?1692957374"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1695962882" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1695962882" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1695962882" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1695962882" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1695962882" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1695962882" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1695962882" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1695962882" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1695962882" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-artemis_crib.css?1695962882" rel="stylesheet" id="variant-style">
+    <link href="/artemis_crib/css/variant.css?1695962882" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1695962882" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/format-print.css?1695962882" rel="stylesheet">
+    <link href="/artemis_crib/css/ie.css?1695962882" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1695962882"></script>
+    <script src="/artemis_crib/js/variant.js?1695962882"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -82,7 +82,7 @@
             </header>
 <h1 id="requirements">Requirements</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-08-25 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by Kodai Okawa</span></span>
 <p>The following machines have been tested for operation.</p>
 <ul>
 <li>Almalinux 9.2</li>
@@ -106,7 +106,7 @@
             </header>
 <h1 id="root">Root</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-08-25 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by Kodai Okawa</span></span>
 <p>Artemis uses <a href="https://root.cern/" target="_blank">ROOT library</a>.</p>
 <p>We confirmed that version 6.28 of the ROOT will work well, but if the ROOT updates, we are not sure that the ARTEMIS will work well,
 so we recommend to build from the sources.</p>
@@ -134,7 +134,7 @@ so you don&rsquo;t have to execute this command for each time.</p>
             </header>
 <h1 id="yaml-cpp">Yaml-cpp</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-08-25 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by Kodai Okawa</span></span>
 <p>Current version of the artemis use yaml-cpp-0.7.
 If your package system (like <code>apt</code> or <code>dnf</code>) cannot install version 0.7, please install from the source.</p>
 <p>See also <a href="https://github.com/jbeder/yaml-cpp" target="_blank">Github repo</a> and <a href="https://github.com/artemis-dev/artemis/blob/develop/README.md" target="_blank">README of the artemis</a>
@@ -158,7 +158,7 @@ If you do not want to pollute the general environment, specify <code>CMAKE_INSTA
             </header>
 <h1 id="artemis">Artemis</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-08-25 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by Kodai Okawa</span></span>
 <p>From the current situation, CRIB experiment doesn&rsquo;t use GET system,
 so we describe how to install it without linking it to GET decoder.</p>
 <p>Also, it can link to <code>openMPI</code>, but the below commands assume not using openMPI.
@@ -221,7 +221,55 @@ despite using target_link_library(hoge) in CMakeLists.txt.</p>
             </header>
 <h1 id="directory">Directory</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-08-25 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by Kodai Okawa</span></span>
+<p>For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory.
+So first, we need to make raw data directory.</p>
+<p>There are three option to do so.</p>
+<ol>
+<li>put the files in the same storage</li>
+<li>put the files in the external storage</li>
+<li>use network file system (NFS) and mount it (like xfs)</li>
+</ol>
+<p>If you have large size of main storage, the one option is easiest way.
+Just like:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd ~
+</span></span><span style="display:flex;"><span>mkdir data <span style="color:#f92672">(</span>or where you want to put<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>cd data
+</span></span><span style="display:flex;"><span>rsync hoge <span style="color:#f92672">(</span>cp or scp to put the raw data<span style="color:#f92672">)</span></span></span></code></pre></div><p>The symbolic link process will be done in the next process.</p>
+<hr>
+<p>When your main storage is not so large, you may think to use external storage.
+For example, main storage is used for OS installation and external storage is used for experimental data.
+(I think this case is for personal analysis using your own PC.)</p>
+<p>In that case, you need to do:</p>
+<ol>
+<li>mount the external storage</li>
+<li>check and set the file permission to be able to read or write it.</li>
+</ol>
+<p>The format and mount process is very depend on the situation, so please check the way in other place.
+One important point is that we have output root file when we start to analysis, so it may need to make the directory for outputed root files in the external storage.</p>
+<hr>
+<p>When you have file server, we can use network file system (NFS).
+This is CRIB online analysis case, so let me explain it in detail.</p>
+
+<div class="mermaid align-center">
+---
+title: Network system of CRIB
+---
+graph LR;
+    A(MPV E7) --&gt; D{&lt;strong&gt;DAQ main PC&lt;/strong&gt;&lt;p&gt;&lt;/p&gt;file server}
+    B(MPV1 J1) --&gt; D
+    C(MPV2 J1) --&gt; D
+    D --&gt; E[Analysis PC]
+</div>
+<p>As this figure, we use file server in the DAQ main PC.</p>
+<h4 id="server-setting">server setting</h4>
+<p>Actually now the PC is CentOS7, but for future setting, I will note the setting for newer OS.
+First, please install required package.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo dnf install -y rpcbind nfs-utils</span></span></code></pre></div><p>Then prepare the directory for share.
+Any name and place is okay.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir /share or /data </span></span></code></pre></div><p>And setting file for nfs is <code>/etc/exports</code>, and here is the example.</p>
+<div class="wrap-code highlight"><pre tabindex="0"><code>/share/exp1 192.168.0.5/10(rw,no_root_squash,async)
+mkdir /share or /data </code></pre></div><h4 id="cliant-setting">cliant setting</h4>
 
             <footer class="footline">
 
@@ -233,7 +281,7 @@ despite using target_link_library(hoge) in CMakeLists.txt.</p>
             </header>
 <h1 id="art_analysis">Art_analysis</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-08-25 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by Kodai Okawa</span></span>
 
             <footer class="footline">
 
@@ -245,7 +293,7 @@ despite using target_link_library(hoge) in CMakeLists.txt.</p>
             </header>
 <h1 id="energyloss_calculator">Energyloss_calculator</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-08-25 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by Kodai Okawa</span></span>
 
             <footer class="footline">
 
@@ -256,8 +304,8 @@ despite using target_link_library(hoge) in CMakeLists.txt.</p>
         </div>
       </main>
     </div>
-    <script src="/artemis_crib/js/clipboard.min.js?1692957374" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1692957374" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1695962882" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1695962882" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -287,6 +335,20 @@ despite using target_link_library(hoge) in CMakeLists.txt.</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1692957374" defer></script>
+    <script src="/artemis_crib/js/d3/d3-color.min.js?1695962882" defer></script>
+    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1695962882" defer></script>
+    <script src="/artemis_crib/js/d3/d3-drag.min.js?1695962882" defer></script>
+    <script src="/artemis_crib/js/d3/d3-ease.min.js?1695962882" defer></script>
+    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1695962882" defer></script>
+    <script src="/artemis_crib/js/d3/d3-selection.min.js?1695962882" defer></script>
+    <script src="/artemis_crib/js/d3/d3-timer.min.js?1695962882" defer></script>
+    <script src="/artemis_crib/js/d3/d3-transition.min.js?1695962882" defer></script>
+    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1695962882" defer></script>
+    <script src="/artemis_crib/js/js-yaml.min.js?1695962882" defer></script>
+    <script src="/artemis_crib/js/mermaid.min.js?1695962882" defer></script>
+    <script>
+      window.themeUseMermaid = JSON.parse("{}");
+    </script>
+    <script src="/artemis_crib/js/theme.js?1695962882" defer></script>
   </body>
 </html>

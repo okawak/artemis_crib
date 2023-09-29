@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nbodyreaction on CRIB artemis</title>
-    <link>https://okawak.github.io/artemis_crib/example/nbodyreaction/index.html</link>
+    <link>https://okawak.github.io/artemis_crib/example/simulation/nbodyreaction/index.html</link>
     <description>Recent content in Nbodyreaction on CRIB artemis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Aug 2023 18:46:12 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/example/nbodyreaction/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Aug 2023 18:46:12 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/example/simulation/nbodyreaction/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

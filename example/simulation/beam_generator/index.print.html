@@ -7,9 +7,9 @@
     <meta name="generator" content="Relearn 5.19.0+tip">
     <meta name="description" content="">
     <meta name="author" content="Kodai Okawa">
-    <title>Energyloss_calculator :: CRIB artemis</title>
-    <link href="https://okawak.github.io/artemis_crib/installation/energyloss_calculator/index.html" rel="canonical" type="text/html" title="Energyloss_calculator :: CRIB artemis">
-    <link href="/artemis_crib/installation/energyloss_calculator/index.xml" rel="alternate" type="application/rss+xml" title="Energyloss_calculator :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
+    <title>Beam_generator :: CRIB artemis</title>
+    <link href="https://okawak.github.io/artemis_crib/example/simulation/beam_generator/index.html" rel="canonical" type="text/html" title="Beam_generator :: CRIB artemis">
+    <link href="/artemis_crib/example/simulation/beam_generator/index.xml" rel="alternate" type="application/rss+xml" title="Beam_generator :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
     <link href="/artemis_crib/css/fontawesome-all.min.css?1695962882" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1695962882" rel="stylesheet"></noscript>
@@ -43,7 +43,7 @@
       window.variants && variants.init( [ 'artemis_crib' ] );
     </script>
   </head>
-  <body class="mobile-support print" data-url="/artemis_crib/installation/energyloss_calculator/index.html">
+  <body class="mobile-support print" data-url="/artemis_crib/example/simulation/beam_generator/index.html">
     <div id="body" class="default-animation">
       <div id="sidebar-overlay"></div>
       <div id="toc-overlay"></div>
@@ -55,8 +55,9 @@
             </span>
             <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
               <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/index.html"><span itemprop="name">CRIB artemis</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/installation/index.html"><span itemprop="name">Installation</span></a><meta itemprop="position" content="2"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Energyloss_calculator</span><meta itemprop="position" content="3"></li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/example/index.html"><span itemprop="name">Example</span></a><meta itemprop="position" content="2"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/example/simulation/index.html"><span itemprop="name">Simulation</span></a><meta itemprop="position" content="3"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Beam_generator</span><meta itemprop="position" content="4"></li>
             </ol>
           </div>
         </div>
@@ -66,9 +67,37 @@
           <article class="default">
             <header class="headline">
             </header>
-<h1 id="energyloss_calculator">Energyloss_calculator</h1>
+<h1 id="beam_generator">Beam_generator</h1>
 
 <span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by Kodai Okawa</span></span>
+<p>The previous sections have described how to loop events from a <code>ridf</code> file or <code>root</code> file, but now I will describe how to generate events to use as a simulation.</p>
+<p>Requirements:</p>
+<ul>
+<li>src-crib/simulation/TRandomBeamGenerator</li>
+<li>src-crib/simulation/TTreeBeamGenerator</li>
+<li>src-crib/simulation/TParticleInfo</li>
+</ul>
+<hr>
+<p>As you know, an &ldquo;event store&rdquo; must be used to analyse the event loop.
+For example, in the online analysis, we used <code>TRIDFEventStore</code>, and in the offline analysis, we used <code>TTreeEventStore</code>.</p>
+<p>But when we want to simulate something, there are no data file.
+In that case, we can use <code>TCounterEventStore</code> or <code>TRandomNumberEventStore</code>.</p>
+<ul>
+<li>TCounterEventStore: generate numbers in sequence from 0 to N.</li>
+<li>TRandomNumberEventStore: generate number from 0.0 to 1.0 randomly.</li>
+</ul>
+<p>Here I will simply describe a simulation using TCounterEventStore.</p>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+
+<p>As I explained in <code>CRIB_parts</code> before, in the current artemis version, the TCounterEventStore does not seem to be recognised as EventStore.
+So if we use this EventStore, &ldquo;no event store&rdquo; comments will output.
+I don&rsquo;t think it makes problem, so it is okay comment out the part of TLoop.cc that prints &ldquo;no event store&rdquo;.
+(Possibly a problem with your environment).</p>
+</div>
+</div>
 
             <footer class="footline">
 
