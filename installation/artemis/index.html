@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.119.0">
-    <meta name="generator" content="Relearn 5.19.0+tip">
+    <meta name="generator" content="Relearn 5.22.0+tip">
     <meta name="description" content="">
     <meta name="author" content="Kodai Okawa">
     <title>Artemis :: CRIB artemis</title>
@@ -12,18 +12,18 @@
     <link href="/artemis_crib/installation/artemis/index.print.html" rel="alternate" type="text/html" title="Artemis :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1695964783" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1695964783" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1695964783" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1695964783" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1695964783" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1695964783" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1695964783" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1695964783" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1695964783" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-artemis_crib.css?1695964783" rel="stylesheet" id="variant-style">
-    <link href="/artemis_crib/css/variant.css?1695964783" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1695964783" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/ie.css?1695964783" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1695964783"></script>
-    <script src="/artemis_crib/js/variant.js?1695964783"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1696125788" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1696125788" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1696125788" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1696125788" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1696125788" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1696125788" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1696125788" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1696125788" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1696125788" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-artemis_crib.css?1696125788" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/variant.css?1696125788" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1696125788" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/ie.css?1696125788" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1696125788"></script>
+    <script src="/artemis_crib/js/variant.js?1696125788"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -35,6 +35,7 @@
       window.T_Copied_to_clipboard = 'Copied to clipboard!';
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_Reset_view = 'Reset view';
       window.T_No_results_found = 'No results found for \u0022{0}\u0022';
       window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
@@ -57,47 +58,75 @@
 
   </head>
   <body class="mobile-support html" data-url="/artemis_crib/installation/artemis/index.html">
-    <div id="body" class="default-animation">
-      <div id="sidebar-overlay"></div>
-      <div id="toc-overlay"></div>
-      <nav id="topbar" class="highlightable">
-        <div>
-          <div class="navigation">
-            <a class="nav nav-next topbar-link" href="/artemis_crib/installation/directory/index.html" title="Directory (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+              <button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)">
+                <i class="fa-fw fas fa-bars"></i>
+              </button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+              <button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)">
+                <i class="fa-fw fas fa-list-alt"></i>
+              </button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="navigation">
-            <a class="nav nav-prev topbar-link" href="/artemis_crib/installation/yaml-cpp/index.html" title="Yaml-cpp (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
-          </div>
-          <div id="top-print-link">
-            <a class="print-link topbar-link" title='Print whole chapter (CTRL+ALT+p)' href="/artemis_crib/installation/artemis/index.print.html">
-              <i class="fas fa-print fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-github-link">
-            <a class="github-link topbar-link" title='Edit (CTRL+ALT+w)' href="https://github.com/okawak/artemis_crib/tree/pages-build/content/installation/artemis.md" target="_blank">
-              <i class="fas fa-pen fa-fw"></i>
-            </a>
-          </div>
-          <div id="breadcrumbs">
-            <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
-            </span>
-            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/index.html"><span itemprop="name">CRIB artemis</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/installation/index.html"><span itemprop="name">Installation</span></a><meta itemprop="position" content="2"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Artemis</span><meta itemprop="position" content="3"></li>
-            </ol>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/installation/index.html"><span itemprop="name">Installation</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Artemis</span><meta itemprop="position" content="2"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+              <a class="topbar-control" href="https://github.com/okawak/artemis_crib/tree/pages-build/content/installation/artemis.md" target="_blank" title="Edit (CTRL&#43;ALT&#43;w)">
+                <i class="fa-fw fas fa-pen"></i>
+              </a>
+            </div>
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+              <a class="topbar-control" href="/artemis_crib/installation/artemis/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)">
+                <i class="fa-fw fas fa-print"></i>
+              </a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+              <a class="topbar-control" href="/artemis_crib/installation/yaml-cpp/index.html" title="Yaml-cpp (🡐)">
+                <i class="fa-fw fas fa-chevron-left"></i>
+              </a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+              <a class="topbar-control" href="/artemis_crib/installation/directory/index.html" title="Directory (🡒)">
+                <i class="fa-fw fas fa-chevron-right"></i>
+              </a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+              <button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More">
+                <i class="fa-fw fas fa-ellipsis-v"></i>
+              </button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
-      <main id="body-inner" class="highlightable default" tabindex="-1">
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
         <div class="flex-block-wrapper">
           <article class="default">
             <header class="headline">
             </header>
 <h1 id="artemis">Artemis</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-08-20 by Kodai Okawa</span></span>
 <p>From the current situation, CRIB experiment doesn&rsquo;t use GET system,
 so we describe how to install it without linking it to GET decoder.</p>
 <p>Also, it can link to <code>openMPI</code>, but the below commands assume not using openMPI.
@@ -157,10 +186,10 @@ despite using target_link_library(hoge) in CMakeLists.txt.</p>
         </div>
       </main>
     </div>
-    <aside id="sidebar" class="default-animation">
-      <div id="header-topbar" class="default-animation"></div>
-      <div id="header-wrapper" class="default-animation">
-        <div id="header" class="default-animation">
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
 <a id="logo" href="/artemis_crib">
   <p style="font-family: Arial; font-weight: bold; font-size: 2.0rem; mergin: 0;">CRIB artemis</p>
   
@@ -169,27 +198,27 @@ despite using target_link_library(hoge) in CMakeLists.txt.</p>
         </div>
         <form action="/artemis_crib/search.html" method="get"><div class="searchbox default-animation">
           <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
-          <label class="a11y-only" for="search-by">Search</label>
-          <input data-search-input id="search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+          <label class="a11y-only" for="R-search-by">Search</label>
+          <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
           <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
         </div></form>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/artemis_crib/js/auto-complete.js?1695964783" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.min.js?1695964783" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1695964783" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1695964783" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1695964783" defer></script>
-        <script src="/artemis_crib/js/search.js?1695964783" defer></script>
+        <script src="/artemis_crib/js/auto-complete.js?1696125788" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.min.js?1696125788" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1696125788" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1696125788" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1696125788" defer></script>
+        <script src="/artemis_crib/js/search.js?1696125788" defer></script>
       </div>
-      <div id="homelinks" class="default-animation">
+      <div id="R-homelinks" class="default-animation">
         <hr class="padding">
       </div>
-      <div id="content-wrapper" class="highlightable">
-        <div id="topics">
-          <ul class="enlarge morespace">
-          <li data-nav-id="/artemis_crib/installation/index.html" class="parent "><a class="padding" href="/artemis_crib/installation/index.html">Installation</a><ul id="subsections-07cca5796d23f5bae96340e1eaa52bc5" class="morespace">
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+          <li data-nav-id="/artemis_crib/installation/index.html" class="parent "><a class="padding" href="/artemis_crib/installation/index.html">Installation</a><ul id="R-subsections-07cca5796d23f5bae96340e1eaa52bc5" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/installation/requirements/index.html" class=""><a class="padding" href="/artemis_crib/installation/requirements/index.html">Requirements</a></li>
           <li data-nav-id="/artemis_crib/installation/root/index.html" class=""><a class="padding" href="/artemis_crib/installation/root/index.html">Root</a></li>
           <li data-nav-id="/artemis_crib/installation/yaml-cpp/index.html" class=""><a class="padding" href="/artemis_crib/installation/yaml-cpp/index.html">Yaml-cpp</a></li>
@@ -200,15 +229,15 @@ despite using target_link_library(hoge) in CMakeLists.txt.</p>
           <li data-nav-id="/artemis_crib/setting/index.html" class=""><a class="padding" href="/artemis_crib/setting/index.html">Setting</a></li>
           <li data-nav-id="/artemis_crib/basic/index.html" class=""><a class="padding" href="/artemis_crib/basic/index.html">Basic</a></li>
           <li data-nav-id="/artemis_crib/crib_parts/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/index.html">CRIB_parts</a></li>
-          <li data-nav-id="/artemis_crib/processors/index.html" class=""><a class="padding" href="/artemis_crib/processors/index.html">Processors</a><ul id="subsections-cfffc24f33a4f511c19f2e9819c7da90" class="morespace">
+          <li data-nav-id="/artemis_crib/processors/index.html" class=""><a class="padding" href="/artemis_crib/processors/index.html">Processors</a><ul id="R-subsections-cfffc24f33a4f511c19f2e9819c7da90" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/processors/telescope/ttelescopedata/index.html" class=""><a class="padding" href="/artemis_crib/processors/telescope/ttelescopedata/index.html">TTelescopeData</a></li>
           <li data-nav-id="/artemis_crib/processors/simulation/treactioninfo/index.html" class=""><a class="padding" href="/artemis_crib/processors/simulation/treactioninfo/index.html">TReactionInfo</a></li>
           <li data-nav-id="/artemis_crib/processors/simulation/tparticleinfo/index.html" class=""><a class="padding" href="/artemis_crib/processors/simulation/tparticleinfo/index.html">TParticleInfo</a></li></ul></li>
-          <li data-nav-id="/artemis_crib/example/index.html" class=""><a class="padding" href="/artemis_crib/example/index.html">Example</a><ul id="subsections-daee4b63470ea20ac3f41145e3651181" class="morespace">
+          <li data-nav-id="/artemis_crib/example/index.html" class=""><a class="padding" href="/artemis_crib/example/index.html">Example</a><ul id="R-subsections-daee4b63470ea20ac3f41145e3651181" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/example/preparation/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/index.html">preparation</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/index.html">online_analysis</a></li>
           <li data-nav-id="/artemis_crib/example/offline_analysis/index.html" class=""><a class="padding" href="/artemis_crib/example/offline_analysis/index.html">offline_analysis</a></li>
-          <li data-nav-id="/artemis_crib/example/simulation/index.html" class=""><a class="padding" href="/artemis_crib/example/simulation/index.html">Simulation</a><ul id="subsections-5a1dec365fec379b9ed16a056ece98a8" class="morespace">
+          <li data-nav-id="/artemis_crib/example/simulation/index.html" class=""><a class="padding" href="/artemis_crib/example/simulation/index.html">Simulation</a><ul id="R-subsections-5a1dec365fec379b9ed16a056ece98a8" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/example/simulation/beam_generator/index.html" class=""><a class="padding" href="/artemis_crib/example/simulation/beam_generator/index.html">Beam_generator</a></li>
           <li data-nav-id="/artemis_crib/example/simulation/nbodyreaction/index.html" class=""><a class="padding" href="/artemis_crib/example/simulation/nbodyreaction/index.html">Nbodyreaction</a></li>
           <li data-nav-id="/artemis_crib/example/simulation/geometry/index.html" class=""><a class="padding" href="/artemis_crib/example/simulation/geometry/index.html">Geometry</a></li>
@@ -216,7 +245,7 @@ despite using target_link_library(hoge) in CMakeLists.txt.</p>
           <li data-nav-id="/artemis_crib/example/simulation/solidangle/index.html" class=""><a class="padding" href="/artemis_crib/example/simulation/solidangle/index.html">Solidangle</a></li></ul></li></ul></li>
           </ul>
         </div>
-        <div id="shortcuts">
+        <div id="R-shortcuts">
           <div class="nav-title padding">Link</div>
           <ul class="space">
             <li><a class="padding" href="https://github.com/okawak/artemis_crib"><i class='fab fa-fw fa-github'></i> Our GitHub repo</a></li>
@@ -225,30 +254,30 @@ despite using target_link_library(hoge) in CMakeLists.txt.</p>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
-        <div id="menu-footer">
+        <div id="R-menu-footer">
           <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
-          <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
             <ul>
-              <li id="select-language-container" class="footerLangSwitch">
+              <li id="R-select-language-container" class="footerLangSwitch">
                 <div class="padding menu-control">
                   <i class="fas fa-language fa-fw"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
-                    <label class="a11y-only" for="select-language">Language</label>
-                    <select id="select-language" onchange="location = baseUri + this.value;">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = baseUri + this.value;">
                     </select>
                   </div>
                   <div class="clear"></div>
                 </div>
               </li>
-              <li id="select-variant-container" class="footerVariantSwitch">
+              <li id="R-select-variant-container" class="footerVariantSwitch">
                 <div class="padding menu-control">
                   <i class="fas fa-paint-brush fa-fw"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
-                    <label class="a11y-only" for="select-variant">Theme</label>
-                    <select id="select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                      <option id="artemis_crib" value="artemis_crib" selected>Artemis Crib</option>
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-artemis_crib" value="artemis_crib" selected>Artemis Crib</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -267,7 +296,7 @@ despite using target_link_library(hoge) in CMakeLists.txt.</p>
               </li>
             </ul>
           </div>
-          <div id="footer" class="footerFooter showFooter"><p>2023-2023 CRIB collabolators</p>
+          <div id="R-footer" class="footerFooter showFooter"><p>2023-2023 CRIB collabolators</p>
 <p style="font-size: 0.7rem">Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
 <p style="font-size: 0.7rem">Visit the official artemis github repo <a href="https://github.com/artemis-dev">github.com/artemis-dev</a> for more information.</p>
 
@@ -275,8 +304,8 @@ despite using target_link_library(hoge) in CMakeLists.txt.</p>
         </div>
       </div>
     </aside>
-    <script src="/artemis_crib/js/clipboard.min.js?1695964783" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1695964783" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1696125788" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1696125788" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -306,6 +335,6 @@ despite using target_link_library(hoge) in CMakeLists.txt.</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1695964783" defer></script>
+    <script src="/artemis_crib/js/theme.js?1696125788" defer></script>
   </body>
 </html>
