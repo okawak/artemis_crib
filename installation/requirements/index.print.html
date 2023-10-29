@@ -12,19 +12,19 @@
     <link href="/artemis_crib/installation/requirements/index.xml" rel="alternate" type="application/rss+xml" title="Requirements :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1696400562" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1696400562" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1696400562" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1696400562" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1696400562" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1696400562" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1696400562" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1696400562" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1696400562" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-artemis_crib.css?1696400562" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/variant.css?1696400562" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1696400562" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/format-print.css?1696400562" rel="stylesheet">
-    <link href="/artemis_crib/css/ie.css?1696400562" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1696400562"></script>
-    <script src="/artemis_crib/js/variant.js?1696400562"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1698572089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1698572089" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1698572089" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1698572089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1698572089" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1698572089" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1698572089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1698572089" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1698572089" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-artemis_crib.css?1698572089" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/variant.css?1698572089" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1698572089" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/format-print.css?1698572089" rel="stylesheet">
+    <link href="/artemis_crib/css/ie.css?1698572089" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1698572089"></script>
+    <script src="/artemis_crib/js/variant.js?1698572089"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -87,8 +87,9 @@
             </header>
 <h1 id="requirements">Requirements</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-08-20 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-10-29 by Kodai Okawa</span></span>
 <p>The following machines have been tested for operation.</p>
+<h3 id="1-writers-okawas-machine">1. Writer&rsquo;s (Okawa&rsquo;s) machine</h3>
 <ul>
 <li>Almalinux 9.2</li>
 <li>zsh 5.8</li>
@@ -97,9 +98,21 @@
 <li>ROOT 6.28/04</li>
 <li>yaml-cpp 0.7.0</li>
 </ul>
-<p>Scripts for some automate operation are written in <code>zsh</code> format.</p>
+<h3 id="2-cribs-analysis-machine">2. CRIB&rsquo;s analysis machine</h3>
+<ul>
+<li>CentOS Linux release 7.9.2009 (Core)</li>
+<li>zsh 5.5.1</li>
+<li>gcc 9.3.1 (using devtoolset-9)</li>
+<li>cmake 3.28 (install manually)</li>
+<li>ROOT 6.28/06</li>
+<li>yaml-cpp 0.8.0</li>
+</ul>
 <hr>
-<p>As for the <code>Ubuntu</code> 22.04 (LTS), there appeared to be a linking problem and a dummy file had to be set up to force the link.</p>
+<p>NOTE:</p>
+<ul>
+<li>From 2023/10, Ubuntu system is also avaliable. (<a href="https://github.com/artemis-dev/artemis/pull/48" target="_blank">issue48</a>)</li>
+<li>Scripts for some automate operation are written in <code>zsh</code> format.</li>
+</ul>
 
             <footer class="footline">
 
@@ -109,8 +122,8 @@
         </div>
       </main>
     </div>
-    <script src="/artemis_crib/js/clipboard.min.js?1696400562" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1696400562" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1698572089" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1698572089" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -140,6 +153,6 @@
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1696400562" defer></script>
+    <script src="/artemis_crib/js/theme.js?1698572089" defer></script>
   </body>
 </html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CRIB on CRIB artemis</title>
+    <link>https://okawak.github.io/artemis_crib/tags/crib/index.html</link>
+    <description>Recent content in CRIB on CRIB artemis</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Aug 2023 14:28:33 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/tags/crib/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Artemis</title>
+      <link>https://okawak.github.io/artemis_crib/installation/artemis/index.html</link>
+      <pubDate>Mon, 14 Aug 2023 14:28:33 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/installation/artemis/index.html</guid>
+      <description>last modified: 2023-10-29 by Kodai Okawa From the current situation, CRIB experiment doesn&amp;rsquo;t use GET system, so we describe how to install it without linking it to GET decoder.
+Also, it can link to openMPI, but the below commands assume not using openMPI. See artemis repo for more information.
+cd hoge git clone https://github.com/artemis-dev/artemis.git -b develop cd artemis mkdir build cd build cmake -DCMAKE_INSTALL_PREFIX=../install .. make -j8 make install source .</description>
+    </item>
+  </channel>
+</rss>
