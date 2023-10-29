@@ -3,7 +3,8 @@ title: "Artemis"
 date: 2023-08-14T14:28:33+09:00
 draft: false
 author: "Kodai Okawa"
-weight: 4
+tags: ["CRIB"]
+weight: 5
 ---
 
 {{% badge %}}{{< signature >}}{{% /badge %}}
@@ -23,6 +24,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX=../install ..
 make -j8
 make install
+source ../install/bin/thisartemis.sh
 ```
 
 Then, `<CMAKE_INSTALL_PREFIX>/bin/thisartemis.sh` will be created 
@@ -34,41 +36,21 @@ Another option is to use `module` command to manage the environment.
 It is also written in [artemis repo](https://github.com/artemis-dev/artemis/blob/develop/README.md).
 
 ---
-
-{{% notice style="warning" %}}
-**The following methods are not recommended!!**
+{{% notice style="note" %}}
+This is 2023/10/29 current information 
 {{% /notice %}}
 
-For Ubuntu case, somehow it seems that there are some linking problem.
+Okawa think there is a grammatical error in the **sources/main/thisartemis.sh.in**, so I changed like:
 
-To avoid it, if I changed like below, the artemis will work well...
-
-- [Mod] artemis/sources/main/CMakeLists.txt
 
 ```diff
-- add_executable(artemis main.cc TArtRint.cc)
-+ add_executable(artemis main.cc dummy.cc TArtRint.cc)
+-if [ "@BUILD_GET@" == "ON" ]; then
++if [[ "@BUILD_GET@" == "ON" ]]; then
+     export LD_LIBRARY_PATH=@GET_LIB_DIR@:$LD_LIBRARY_PATH
+ fi
+
+-if [ "@MPI_CXX_FOUND@" == "TRUE" ]; then
++if [[ "@MPI_CXX_FOUND@" == "TRUE" ]]; then
+     dir=@MPI_CXX_LIBRARIES@
+     libdir="$(dirname $dir)"
 ```
-
-- [Add] artemis/sources/main/dummy.cc
-
-```cpp
-#include <TModuleDecoderV1190.h>
-#include <TParameterLoader.h>
-#include <TTreeProjection.h>
-#include <TRDFEventStore.h>
-#include <TRIDFEventStore.h>
-
-// any class seems okay
-void dummy()
-{
-  art::TModuleDecoderV1190 *dummy_decoder = new art::TModuleDecoderV1190();
-  art::TParameterLoader *dummy_param = new art::TParameterLoader();
-  art::TTreeProjection *dummy_hist = new art::TTreeProjection();
-  art::TRDFEventStore *dummy_rdf = new art::TRDFEventStore();
-  art::TRIDFEventStore *dummy_ridf = new art::TRIDFEventStore();
-}
-```
-
-Libraries that are not directly involved in the artemis executable do not seem to be linked, 
-despite using target_link_library(hoge) in CMakeLists.txt.

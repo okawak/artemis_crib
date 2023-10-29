@@ -3,7 +3,7 @@ title: "Root"
 date: 2023-08-14T12:27:52+09:00
 author: "Kodai Okawa"
 draft: false
-weight: 2
+weight: 3
 ---
 
 {{% badge %}}{{< signature >}}{{% /badge %}}
@@ -30,5 +30,11 @@ source ../root_install/bin/thisroot.sh # or thisroot.{fish,csh}
 If there are any problems at the compile, additional packages may need to be installed.
 See also [dependencies](https://root.cern/install/dependencies/).
 
-`source thisroot.sh` part will be written in thisartemis.sh (this is created after artemis installation), 
-so you don't have to execute this command for each time.
+{{% notice style="info" %}}
+If errors related to xrootd, TBB and clad occur, the cmake options `-Dxrootd=OFF`, `-Dimt=OFF` and `-Dclad=OFF` may work respectively.
+{{% /notice %}}
+
+`source thisroot.sh` part will be written in thisartemis.sh (this is created after artemis installation),
+but before installing artemis, you need to type this once.
+
+after completing the installation of the artemis, you don't have to execute this command for each time.
