@@ -113,11 +113,13 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Installation",
-    "content": "last modified: 2023-10-29 by Kodai Okawa For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory. So first, we need to make raw data directory.\nThere are three option to do so.\nput the files in the same storage put the files in the external storage use network file system (NFS) and mount it (like xfs) If you have large size of main storage, the one option is easiest way. Just like:\ncd ~ mkdir data (or where you want to put) cd data rsync hoge (cp or scp to put the raw data)The symbolic link process will be done in the next process.\nWhen your main storage is not so large, you may think to use external storage. For example, main storage is used for OS installation and external storage is used for experimental data. (I think this case is for personal analysis using your own PC.)\nIn that case, you need to do:\nmount the external storage check and set the file permission to be able to read or write it. The format and mount process is very depend on the situation, so please check the way in other place. One important point is that we have output root file when we start to analysis, so it may need to make the directory for outputed root files in the external storage.\nWhen you have file server, we can use network file system (NFS). This is CRIB online analysis case, so let me explain it in detail.\n--- title: Network system of CRIB --- graph LR; A(MPV E7) --\u003e D{\u003cstrong\u003eDAQ main PC\u003c/strong\u003e\u003cp\u003e\u003c/p\u003efile server} B(MPV1 J1) --\u003e D C(MPV2 J1) --\u003e D D --\u003e E[Analysis PC] As this figure, we use file server in the DAQ main PC.\nserver setting Actually now the PC is CentOS7, but for future setting, I will note the setting for newer OS. First, please install required package.\nsudo dnf install -y rpcbind nfs-utilsThen prepare the directory for share. Any name and place is okay.\nmkdir /share or /data And setting file for nfs is /etc/exports, and here is the example.\n/share/exp1 192.168.0.5/10(rw,no_root_squash,async) mkdir /share or /data cliant setting ",
+    "content": "last modified: 2023-10-30 by Kodai Okawa For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory. So first, we need to make raw data directory.\nThere are three option to do so.\nuse the default SSD/HDD of analysis PC use the external SSD/HDD of analysis PC (need to mount it) use network file system (NFS) and mount it 1 and 2 options are mainly used for offline analysis, while 3 option is used for online analysis.\n1. use the default SSD/HDD of analysis PC If you have large size of main storage, the one option is easiest way. Just like:\ncd ~ mkdir data (or where you want to put) cd data rsync hoge (cp or scp to put the raw data)The symbolic link process will be done in the next process.\n2. use the external SSD/HDD of analysis PC (need to mount it) When your main storage is not so large, you may think to use external storage. For example, main storage is used for OS installation and external storage is used for experimental data. (I think this case is for personal analysis using your own PC.)\nIn that case, you need to do:\nmount the external storage check and set the file permission to be able to read or write it. The format and mount process is very depend on the situation, so please check the way in other place. One important point is that we have output root file when we start to analysis, so it may need to make the directory for outputed root files in the external storage.\n3. use network file system (NFS) and mount it For online analysis, the best option is to get the data via a file server, as there is no time to transfer the raw data files each time.\nThis is example of CRIB system.\n--- title: Network system of CRIB --- graph LR; A(MPV E7) --\u003e D{\u003cstrong\u003eDAQ main PC\u003c/strong\u003e\u003cbr\u003e\u003c/br\u003efile server} B(MPV1 J1) --\u003e D C(MPV2 J1) --\u003e D D --\u003e E[Analysis PC] As this figure, we use file server in the DAQ main PC.\n3.1 server setting The OS of the DAQ PC is CentOS7, but I think it can be applied for current OS. (like yum -\u003e dnf) First, please install required package.\nsudo yum install -y rpcbind nfs-utilsThen prepare the raw data file directory for sharing.\nmkdir /data (any location) And setting file for nfs is /etc/exports, and here is the example.\n/data 192.168.1.5 /data 192.168.2.0/24(rw)The first one means the host of 192.168.1.5 can access the shared directory “/data”. In the default setting, users cannot write to this directory.\nThe host of the second line means the range that can access. If we add rw option, users can write to this directory. For the other options, please check the official site.\nFinally, the following command is used to reflect the settings.\nfirewall-cmd --permanent --zone=public --add-service=nfs firewall-cmd --reload systemctl start rpcbind systemctl enable rpcbind systemctl start nfs systemctl enable nfsIf you do not have a firewall set up, you do not need the relevant commands.\n3.2 client setting The package is also needed for client PC.\nsudo yum install -y nfs-utilsPrepare the mounted directory and mount it.\nmkdir /mnt/data sudo mount -t nfs host_IP_address:/data /mnt/data df -hIf you see the mounted configuration, your nfs configuration is complete.\nTo reflect the mount settings when the system is rebooted, add a setting to /etc/fstab.\n​ /etc/fstab /etc/fstab + host_IP_address:/data /mnt/data nfs defaults 0 0 sudo mount -a",
     "description": "",
-    "tags": null,
-    "title": "Directory",
-    "uri": "/artemis_crib/installation/directory/index.html"
+    "tags": [
+      "CRIB"
+    ],
+    "title": "Mount setting",
+    "uri": "/artemis_crib/installation/mount/index.html"
   },
   {
     "breadcrumb": "",
@@ -129,17 +131,22 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Installation",
-    "content": "last modified: 2023-08-20 by Kodai Okawa ",
+    "content": "last modified: 2023-10-30 by Kodai Okawa Some CRIB-specific files use energy loss libraries. In particular, a library called SRIMlib has been developed by Okawa and contains settings to load this library.\ngit clone https://github.com/okawak/SRIMlib.git cd SRIMlib mkdir build cd build cmake .. make make installBefore using this library, you need to make database file (just .root file)\ncd .. source thisSRIMlib.sh updateIf you want to make energy loss figures, “f” option will work.\nupdate -f",
     "description": "",
-    "tags": null,
+    "tags": [
+      "CRIB"
+    ],
     "title": "Energyloss_calculator",
     "uri": "/artemis_crib/installation/energyloss_calculator/index.html"
   },
   {
     "breadcrumb": "Installation",
-    "content": "last modified: 2023-10-29 by Kodai Okawa ",
+    "content": "last modified: 2023-10-30 by Kodai Okawa With this command, all settings are made interactively.\ncurl --proto '=https' --tlsv1.2 -sSf https://okawak.github.io/artemis_crib/installation/init.sh | sh",
     "description": "",
-    "tags": null,
+    "tags": [
+      "CRIB",
+      "unsettled"
+    ],
     "title": "Art_analysis",
     "uri": "/artemis_crib/installation/art_analysis/index.html"
   },
@@ -238,6 +245,14 @@ var relearn_search_index = [
     "tags": null,
     "title": "Tag :: CRIB",
     "uri": "/artemis_crib/tags/crib/index.html"
+  },
+  {
+    "breadcrumb": "Tags",
+    "content": "",
+    "description": "",
+    "tags": null,
+    "title": "Tag :: unsettled",
+    "uri": "/artemis_crib/tags/unsettled/index.html"
   },
   {
     "breadcrumb": "",

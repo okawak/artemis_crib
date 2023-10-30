@@ -54,27 +54,30 @@ Also, it can link to openMPI, but the below commands assume not using openMPI. S
 cd hoge git clone https://github.com/artemis-dev/artemis.git -b develop cd artemis mkdir build cd build cmake -DCMAKE_INSTALL_PREFIX=../install .. make -j8 make install source .</description>
     </item>
     <item>
-      <title>Directory</title>
-      <link>https://okawak.github.io/artemis_crib/installation/directory/index.html</link>
+      <title>Mount setting</title>
+      <link>https://okawak.github.io/artemis_crib/installation/mount/index.html</link>
       <pubDate>Mon, 14 Aug 2023 15:14:29 +0900</pubDate>
-      <guid>https://okawak.github.io/artemis_crib/installation/directory/index.html</guid>
-      <description>last modified: 2023-10-29 by Kodai Okawa For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory. So first, we need to make raw data directory.
+      <guid>https://okawak.github.io/artemis_crib/installation/mount/index.html</guid>
+      <description>last modified: 2023-10-30 by Kodai Okawa For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory. So first, we need to make raw data directory.
 There are three option to do so.
-put the files in the same storage put the files in the external storage use network file system (NFS) and mount it (like xfs) If you have large size of main storage, the one option is easiest way.</description>
+use the default SSD/HDD of analysis PC use the external SSD/HDD of analysis PC (need to mount it) use network file system (NFS) and mount it 1 and 2 options are mainly used for offline analysis, while 3 option is used for online analysis.</description>
     </item>
     <item>
       <title>Energyloss_calculator</title>
       <link>https://okawak.github.io/artemis_crib/installation/energyloss_calculator/index.html</link>
       <pubDate>Mon, 14 Aug 2023 15:14:00 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/energyloss_calculator/index.html</guid>
-      <description>last modified: 2023-08-20 by Kodai Okawa </description>
+      <description>last modified: 2023-10-30 by Kodai Okawa Some CRIB-specific files use energy loss libraries. In particular, a library called SRIMlib has been developed by Okawa and contains settings to load this library.
+git clone https://github.com/okawak/SRIMlib.git cd SRIMlib mkdir build cd build cmake .. make make installBefore using this library, you need to make database file (just .root file)
+cd .. source thisSRIMlib.sh updateIf you want to make energy loss figures, &amp;ldquo;f&amp;rdquo; option will work.</description>
     </item>
     <item>
       <title>Art_analysis</title>
       <link>https://okawak.github.io/artemis_crib/installation/art_analysis/index.html</link>
       <pubDate>Mon, 14 Aug 2023 15:14:43 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/art_analysis/index.html</guid>
-      <description>last modified: 2023-10-29 by Kodai Okawa </description>
+      <description>last modified: 2023-10-30 by Kodai Okawa With this command, all settings are made interactively.
+curl --proto &amp;#39;=https&amp;#39; --tlsv1.2 -sSf https://okawak.github.io/artemis_crib/installation/init.sh | sh</description>
     </item>
   </channel>
 </rss>
