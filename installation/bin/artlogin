@@ -1,0 +1,133 @@
+#!/bin/sh
+
+
+if [ x$ART_EXP_NAME = x"" ] ; then
+    echo " set environmental value ART_EXP_NAME"
+    return 1
+else
+    exp_name=$ART_EXP_NAME
+fi
+
+if [ _$1 = _ ] ; then
+    echo "--default user: ${exp_name}"
+    username=$exp_name
+else
+    username=$1
+fi
+
+if [ x$ART_ANALYSIS_DIR = x"" ] ; then
+    echo " set environmental value ART_ANALYSIS_DIR"
+    return 1
+else
+    artemis_dir=$ART_ANALYSIS_DIR
+fi
+
+if [ x$ART_USER_REPOS = x"" ] ; then
+    echo " set environmental value ART_USER_REPOS to point the URL of user source repository"
+    return 1
+else
+    reposdir=${ART_USER_REPOS}
+fi
+
+if [ -z ${ART_DATA_DIR+x} ]; then
+    echo " set ART_DATA_DIR to point the data directory"
+    return 1
+fi
+
+userdir=$artemis_dir/$exp_name/$username
+
+if [ ! -d $artemis_dir/$exp_name ] ; then
+    echo "please make new work directory by configure.sh"
+    return 1
+fi
+
+if [ -d $userdir ] ; then
+    cd $userdir
+    export ART_USER_FULLNAME="`git config user.name`"
+    export ART_USER_EMAIL=`git config user.email`
+    export ARTEMIS_WORKDIR=$userdir
+    export ARTEMIS_USER=$username
+    alias acd='cd ${ARTEMIS_WORKDIR}'
+
+    if [ -e ${ARTEMIS_WORKDIR}/thisartemis-crib.sh ] ; then
+      source ${ARTEMIS_WORKDIR}/thisartemis-crib.sh
+    fi
+
+    return 0
+elif [ -e $userdir ] ; then
+    echo "error: file $userdir exist."
+    return 1
+fi
+
+echo "user '$username' not found."
+while true; do
+    echo -n "create new user? (y/n): "
+    read answer
+    case $answer in
+        y)
+            break
+            ;;
+        n)
+            echo "cancelled."
+            return 0
+            ;;
+    esac
+done
+
+export ARTEMIS_WORKDIR=$userdir
+export ARTEMIS_USER=$username
+git clone $reposdir $userdir
+
+cd $userdir
+alias acd='cd ${ARTEMIS_WORKDIR}'
+
+echo "make local git config"
+while true; do
+    echo -n "input fullname: "
+    read fullname
+    echo -n "OK? (y/n): "
+    read answer
+    case $answer in
+        y)
+            break
+            ;;
+    esac
+done
+
+git config user.name "$fullname"
+
+while true; do
+    echo -n "input email address: "
+    read email
+    echo -n "OK? (y/n): "
+    read answer
+    case $answer in
+        y)
+            break
+            ;;
+    esac
+done
+
+git config user.email "$email"
+
+
+if [ -z ${ART_DATA_DIR+x} ]; then
+else
+    if [ -d ${ART_DATA_DIR} ]; then
+        ln -fs $ART_DATA_DIR ridf
+    else
+        echo Warning: directory ${ART_DATA_DIR} does not exist
+    fi
+fi
+
+if [ ! -d $OUTPUT_PATH/$username/output ] ; then
+    mkdir -p $OUTPUT_PATH/$username/output
+fi
+
+if [ ! -d $OUTPUT_PATH/$username/rootfile ] ; then
+    mkdir -p $OUTPUT_PATH/$username/rootfile
+fi
+
+ln -fs $OUTPUT_PATH/$username/output output
+ln -fs $OUTPUT_PATH/$username/rootfile rootfile
+
