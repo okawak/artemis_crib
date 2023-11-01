@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -u
-
 if [ -z "$1" ]; then
     username=${EXP_NAME}
 else
@@ -36,7 +34,8 @@ fi
 
 printf "\33[1martlogin\33[0m: user '$username' not found.\n"
 while true; do
-    read -p "create new user? (y/n): " _answer
+    printf "create new user? (y/n): "
+    read _answer
     case ${_answer} in
         y)
             break
@@ -57,8 +56,10 @@ alias acd='cd ${ARTEMIS_WORKDIR}'
 
 printf "\33[1martlogin\33[0m: making local git config\n"
 while true; do
-    read -p "Input fullname: " _fullname
-    read -p "Is it Okay? (y/n): " _answer
+    printf "Input fullname: "
+    read _fullname
+    printf "Is it Okay? (y/n): "
+    read _answer
     case ${_answer} in
         y)
             break
@@ -69,8 +70,10 @@ done
 git config user.name "${_fullname}"
 
 while true; do
-    read -p "Input email address: " _email
-    read -p "Is it Okay? (y/n): " _answer
+    printf "Input email address: "
+    read _email
+    printf "Is it Okay? (y/n): "
+    read _answer
     case ${_answer} in
         y)
             break
