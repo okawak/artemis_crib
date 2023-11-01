@@ -1,0 +1,42 @@
+#!/bin/sh
+
+a() {
+    if [ -f .vncdisplay ] ; then
+        DISPLAY=:\`cat .vncdisplay\` artemis -l \$*
+    else
+        artemis -l \$*
+    fi
+}
+
+
+artlogin() {
+    source ${HOME}/art_analysis/.conf/${EXP_NAME}.sh
+    source ${HOME}/art_analysis/.conf/artlogin.sh $1
+}
+
+art_usage() {
+    cat <<EOF
+USAGE:
+    1. artlogin
+
+
+    2. a
+
+
+    3. art_usage (this)
+EOF
+}
+
+
+while (( $# > 0 ))
+do
+    case $1 in
+        -h)
+            art_usage
+            ;;
+        *)
+            exit 0
+            ;;
+    esac
+    shift
+done

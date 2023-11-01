@@ -90,7 +90,7 @@ main() {
                                 ensure rm -rf ${gitdir}
                             fi
                             ensure mv -f ${seed}/${default_name}.git ${gitdir}
-                            ensure git add . 1> /dev/null
+                            ensure git add .
                             ensure git commit -m "Initial commit" 1> /dev/null
                             ensure git push -u ${gitdir} master
                             
@@ -113,7 +113,7 @@ main() {
                             cd ${seed}
                             ensure rm -rf .git/
                             ensure git init
-                            ensure git add . 1> /dev/null
+                            ensure git add .
                             ensure git commit -m "Initial commit" 1> /dev/null
                             ensure git branch -M main
                             ensure git remote add origin ${art_remote_repos_url}
@@ -146,7 +146,6 @@ main() {
     
     cat << EOF >> ${ART_ANALYSIS_DIR}/.conf/${default_name}.sh
 # artemis configuration for ${default_name} experiment
-export ART_EXP_NAME=${default_name}
 export ART_ANALYSIS_DIR=${ART_ANALYSIS_DIR}
 export ART_USER_REPOS=${user_repos}
 export ART_DATA_DIR=${rawdata_dir}
@@ -154,18 +153,9 @@ export OUTPUT_PATH=${outdata_dir}
 export ROOT_INCLUDE_PATH=\${ROOT_INCLUDE_PATH}:src
 EOF
 
-    usage
+    printf "\n\33[1mart_analysis setting for ${default_name} is finished!\33[0m\n"
 }
 
-usage() {
-    printf "\n\n"
-    cat <<EOF
-art_analysis setting is finished!
-before start artemis, add this script to the .zshrc
-
-source ${ART_ANALYSIS_DIR}/.conf/${default_name}.sh
-EOF
-}
 
 check_initialize() {
     while true; do
@@ -208,7 +198,7 @@ readline() {
 }
 
 say() {
-    printf 'artnew: %s\n' "$1"
+    printf "\33[1martnew\33[0m: %s\n" "$1"
 }
 
 err() {
