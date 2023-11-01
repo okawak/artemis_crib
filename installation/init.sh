@@ -48,6 +48,7 @@ The setup script for CRIB's art_analysis
 USAGE:
     add these sentence to the .zshrc or .bashrc
     > export EXP_NAME="expname" # your experiment
+    > export EXP_NAME_OLD="expname" # this is option
     > export PATH="\${HOME}/art_analysis/bin:\${PATH}"
     > source \${HOME}/art_analysis/bin/art_setting
 EOF
