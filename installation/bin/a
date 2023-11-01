@@ -1,7 +1,0 @@
-#!/bin/sh
-
-if [ -f .vncdisplay ] ; then
-    DISPLAY=:\`cat .vncdisplay\` artemis -l \$*
-else
-    artemis -l \$*
-fi

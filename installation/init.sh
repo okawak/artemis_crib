@@ -6,8 +6,8 @@ set -u
 
 VERSION="0.1"
 DATE="2023-10-31"
-URL_BASE="https://okawak.github.io/artemis_crib/installation"
-#URL_BASE="http://localhost:56313/artemis_crib/installation"
+#URL_BASE="https://okawak.github.io/artemis_crib/installation"
+URL_BASE="http://localhost:56313/artemis_crib/installation"
 ART_ANALYSIS_DIR="${HOME}/art_analysis"
 
 
@@ -26,8 +26,8 @@ main() {
     ensure mkdir -p "${ART_ANALYSIS_DIR}/bin"
     ensure mkdir -p "${ART_ANALYSIS_DIR}/.conf"
 
-    ensure wget -P "${ART_ANALYSIS_DIR}/bin" -nv "${URL_BASE}/bin/artlogin"
-    ensure chmod u+x "${ART_ANALYSIS_DIR}/bin/artlogin"
+    ensure wget -P "${ART_ANALYSIS_DIR}/bin" -nv "${URL_BASE}/bin/art_setting"
+    ensure chmod u+x "${ART_ANALYSIS_DIR}/bin/art_setting"
 
     ensure wget -P "${ART_ANALYSIS_DIR}/bin" -nv "${URL_BASE}/bin/artnew"
     ensure chmod u+x "${ART_ANALYSIS_DIR}/bin/artnew"
@@ -35,8 +35,8 @@ main() {
     ensure wget -P "${ART_ANALYSIS_DIR}/bin" -nv "${URL_BASE}/bin/art_check"
     ensure chmod u+x "${ART_ANALYSIS_DIR}/bin/art_check"
 
-    ensure wget -P "${ART_ANALYSIS_DIR}/bin" -nv "${URL_BASE}/bin/a"
-    ensure chmod u+x "${ART_ANALYSIS_DIR}/bin/a"
+    ensure wget -P "${ART_ANALYSIS_DIR}/.conf" -nv "${URL_BASE}/bin/artlogin.sh"
+    ensure chmod u+x "${ART_ANALYSIS_DIR}/.conf/artlogin.sh"
 
     usage
 }
@@ -48,23 +48,15 @@ art_init: version ${VERSION} (${DATE})
 The setup script for CRIB's art_analysis
 
 USAGE:
-    add this sentence to the .zshrc or .bashrc
+    add these sentence to the .zshrc or .bashrc
+    > export EXP_NAME="expname" # your experiment
     > export PATH="\${HOME}/art_analysis/bin:\${PATH}"
-
-SHELLSCRIPTS:
-    checking artemis environment
-    > art_check
-
-    when you want to make a new experimental directory,
-    > artnew
-
-    when you want to enter the artemis environment,
-    > artlogin usename
+    > source \${HOME}/art_analysis/bin/art_setting
 EOF
 }
 
 say() {
-    printf 'art_init: %s\n' "$1"
+    printf "\33[1mart_init\33[0m: %s\n" "$1"
 }
 
 err() {
