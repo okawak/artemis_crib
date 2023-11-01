@@ -6,10 +6,8 @@ set -u
 
 VERSION="0.1"
 DATE="2023-10-31"
-#URL_BASE="https://okawak.github.io/artemis_crib/installation"
-URL_BASE="http://localhost:56313/artemis_crib/installation"
+URL_BASE="https://okawak.github.io/artemis_crib/installation"
 ART_ANALYSIS_DIR="${HOME}/art_analysis"
-
 
 main() {
     need_cmd wget
