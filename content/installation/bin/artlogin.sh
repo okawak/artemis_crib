@@ -1,15 +1,15 @@
 #!/bin/sh
 
 if [ -z "$1" ]; then
-    username=${EXP_NAME}
+    username=${ART_EXP_NAME}
 else
     username=$1
 fi
     
-userdir=${ART_ANALYSIS_DIR}/${EXP_NAME}/${username}
+userdir=${ART_ANALYSIS_DIR}/${ART_EXP_NAME}/${username}
     
-if [ ! -d ${ART_ANALYSIS_DIR}/${EXP_NAME} ] ; then
-    printf "please make new ${EXP_NAME} work directory by the \"artnew\" command\n"
+if [ ! -d ${ART_ANALYSIS_DIR}/${ART_EXP_NAME} ] ; then
+    printf "please make new ${ART_EXP_NAME} work directory by the \"artnew\" command\n"
     return 1
 fi
 
