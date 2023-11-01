@@ -14,10 +14,10 @@ artlogin() {
         source ${HOME}/art_analysis/.conf/${EXP_NAME}.sh
     else
         printf "\33[1martlogin\33[0m: make ${EXP_NAME} environment by using \"artnew\" command.\n"
-        exit 1
+        return 1
     fi
 
-    source ${HOME}/art_analysis/.conf/artlogin.sh $1
+    source ${HOME}/art_analysis/.conf/artlogin.sh $@
 }
 
 art_usage() {
