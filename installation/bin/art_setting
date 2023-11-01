@@ -1,7 +1,7 @@
 #!/bin/sh
 
 a() {
-    if [ -f .vncdisplay ] ; then
+    if [ -f .vncdisplay ]; then
         DISPLAY=:\`cat .vncdisplay\` artemis -l \$*
     else
         artemis -l \$*
@@ -10,7 +10,13 @@ a() {
 
 
 artlogin() {
-    source ${HOME}/art_analysis/.conf/${EXP_NAME}.sh
+    if [ -e ${HOME}/art_analysis/.conf/${EXP_NAME}.sh ]; then
+        source ${HOME}/art_analysis/.conf/${EXP_NAME}.sh
+    else
+        printf "\33[1martlogin\33[0m: make ${EXP_NAME} environment by using \"artnew\" command.\n"
+        exit 1
+    fi
+
     source ${HOME}/art_analysis/.conf/artlogin.sh $1
 }
 
