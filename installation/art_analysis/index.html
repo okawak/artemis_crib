@@ -12,18 +12,18 @@
     <link href="/artemis_crib/installation/art_analysis/index.print.html" rel="alternate" type="text/html" title="art_analysis :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1698901922" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1698901922" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1698901922" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1698901922" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1698901922" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1698901922" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1698901922" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1698901922" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1698901922" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-artemis_crib.css?1698901922" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/variant.css?1698901922" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1698901922" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/ie.css?1698901922" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1698901922"></script>
-    <script src="/artemis_crib/js/variant.js?1698901922"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1698911710" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1698911710" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1698911710" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1698911710" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1698911710" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1698911710" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1698911710" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1698911710" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1698911710" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-artemis_crib.css?1698911710" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/variant.css?1698911710" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1698911710" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/ie.css?1698911710" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1698911710"></script>
+    <script src="/artemis_crib/js/variant.js?1698911710"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -144,6 +144,28 @@
 <span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-02 by Kodai Okawa</span></span>
 <p>With this command, all initial settings of &ldquo;art_analysis&rdquo; are made.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl --proto <span style="color:#e6db74">&#39;=https&#39;</span> --tlsv1.2 -sSf https://okawak.github.io/artemis_crib/installation/init.sh | sh</span></span></code></pre></div><p>After that, please add the following lines to the .bashrc/.zshrc.</p>
+
+  
+<div class="tab-panel" data-tab-group="9d3e6f8dc5d895013a390f16fad6a22f">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="bashrczshrc"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('9d3e6f8dc5d895013a390f16fad6a22f','bashrczshrc')"
+    >
+      <span>
+        <span class="tab-nav-hidden">.bashrc/.zshrc</span>
+        <span class="tab-nav-text">.bashrc/.zshrc</span>
+      </span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="bashrczshrc"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># this is option</span>
 </span></span><span style="display:flex;"><span>source <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/Cern/root/root_install/bin/thisroot.sh &amp;&gt; /dev/null
 </span></span><span style="display:flex;"><span>source <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/repos/artemis/install/bin/thisartemis.sh &amp;&gt; /dev/null
@@ -153,7 +175,10 @@
 </span></span><span style="display:flex;"><span>export EXP_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;expname&#34;</span> <span style="color:#75715e"># your experiment</span>
 </span></span><span style="display:flex;"><span>export EXP_NAME_OLD<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;expname&#34;</span> <span style="color:#75715e"># this is option</span>
 </span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span><span style="color:#e6db74">/art_analysis/bin:</span><span style="color:#e6db74">${</span>PATH<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>source <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/art_analysis/bin/art_setting -q</span></span></code></pre></div><p>The setting is all!</p>
+</span></span><span style="display:flex;"><span>source <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/art_analysis/bin/art_setting -q</span></span></code></pre></div></div>
+    </div>
+  </div>
+</div><p>The setting is all!</p>
 <p>Then, the following commands (shellscript) will be downloaded.</p>
 <hr>
 <h3 id="artloginsh">artlogin.sh</h3>
@@ -191,12 +216,12 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/artemis_crib/js/auto-complete.js?1698901922" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.min.js?1698901922" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1698901922" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1698901922" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1698901922" defer></script>
-        <script src="/artemis_crib/js/search.js?1698901922" defer></script>
+        <script src="/artemis_crib/js/auto-complete.js?1698911710" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.min.js?1698911710" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1698911710" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1698911710" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1698911710" defer></script>
+        <script src="/artemis_crib/js/search.js?1698911710" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -214,7 +239,10 @@
           <li data-nav-id="/artemis_crib/installation/energyloss_calculator/index.html" class=""><a class="padding" href="/artemis_crib/installation/energyloss_calculator/index.html">energyloss_calculator</a></li>
           <li data-nav-id="/artemis_crib/installation/art_analysis/index.html" class="active"><a class="padding" href="/artemis_crib/installation/art_analysis/index.html">art_analysis</a></li></ul></li>
           <li data-nav-id="/artemis_crib/setting/index.html" class=""><a class="padding" href="/artemis_crib/setting/index.html">Setting</a><ul id="R-subsections-bdf3fda0e51c6ffa88f0a13ff3e1d51f" class="morespace collapsible-menu">
-          <li data-nav-id="/artemis_crib/setting/new_directory/index.html" class=""><a class="padding" href="/artemis_crib/setting/new_directory/index.html">new_directory</a></li></ul></li>
+          <li data-nav-id="/artemis_crib/setting/new_experiment/index.html" class=""><a class="padding" href="/artemis_crib/setting/new_experiment/index.html">new_experiment</a></li>
+          <li data-nav-id="/artemis_crib/setting/new_user/index.html" class=""><a class="padding" href="/artemis_crib/setting/new_user/index.html">new_user</a></li>
+          <li data-nav-id="/artemis_crib/setting/build/index.html" class=""><a class="padding" href="/artemis_crib/setting/build/index.html">Build</a></li>
+          <li data-nav-id="/artemis_crib/setting/map_config/index.html" class=""><a class="padding" href="/artemis_crib/setting/map_config/index.html">map_config</a></li></ul></li>
           <li data-nav-id="/artemis_crib/crib_parts/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/index.html">CRIB_parts</a></li>
           <li data-nav-id="/artemis_crib/processors/index.html" class=""><a class="padding" href="/artemis_crib/processors/index.html">Processors</a><ul id="R-subsections-cfffc24f33a4f511c19f2e9819c7da90" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/processors/telescope/ttelescopedata/index.html" class=""><a class="padding" href="/artemis_crib/processors/telescope/ttelescopedata/index.html">TTelescopeData</a></li>
@@ -291,8 +319,8 @@
         </div>
       </div>
     </aside>
-    <script src="/artemis_crib/js/clipboard.min.js?1698901922" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1698901922" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1698911710" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1698911710" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -322,6 +350,6 @@
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1698901922" defer></script>
+    <script src="/artemis_crib/js/theme.js?1698911710" defer></script>
   </body>
 </html>

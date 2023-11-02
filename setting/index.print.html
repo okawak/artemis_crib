@@ -12,19 +12,19 @@
     <link href="/artemis_crib/setting/index.xml" rel="alternate" type="application/rss+xml" title="Setting :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1698901922" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1698901922" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1698901922" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1698901922" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1698901922" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1698901922" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1698901922" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1698901922" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1698901922" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-artemis_crib.css?1698901922" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/variant.css?1698901922" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1698901922" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/format-print.css?1698901922" rel="stylesheet">
-    <link href="/artemis_crib/css/ie.css?1698901922" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1698901922"></script>
-    <script src="/artemis_crib/js/variant.js?1698901922"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1698911710" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1698911710" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1698911710" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1698911710" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1698911710" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1698911710" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1698911710" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1698911710" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1698911710" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-artemis_crib.css?1698911710" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/variant.css?1698911710" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1698911710" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/format-print.css?1698911710" rel="stylesheet">
+    <link href="/artemis_crib/css/ie.css?1698911710" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1698911710"></script>
+    <script src="/artemis_crib/js/variant.js?1698911710"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -103,15 +103,303 @@ If you have already some CRIB artemis environment, Please see from here for init
   <a class="tag-link" href="/artemis_crib/tags/crib/index.html">CRIB</a>
 </div>
             </header>
-<h1 id="new_directory">new_directory</h1>
+<h1 id="new_experiment">new_experiment</h1>
 
 <span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-02 by Kodai Okawa</span></span>
 <p>If you installed with &ldquo;curl&rdquo; command explained previous chapter, you should have <code>artnew</code> command.
 This command will make new experiment directory interactively.</p>
-<p>Before using this command, please check the <strong>directory structure</strong>!</p>
+<p>Before using this command, please check and make the <strong>directory structure</strong>!</p>
+<ul>
+<li>rawdata directory (like /mnt/data or /data? Create it to suit your situation.)</li>
+<li>output rootfile directory (like /data/art_output?)</li>
+<li>git repository
+<ul>
+<li>local repository: suit for online analysis</li>
+<li>remote repository: suit for offline analysis</li>
+</ul>
+</li>
+</ul>
 <hr>
-<p>Let&rsquo;s start <code>artnew</code> command!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>artnew</span></span></code></pre></div>
+<h3 id="lets-start-artnew-command">Let&rsquo;s start &ldquo;artnew&rdquo; command!</h3>
+<p>The word after &ldquo;:&rdquo; is your input.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; artnew</span></span></code></pre></div><ol>
+<li>Input the experiment name</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>create new artemis work directory? (y/n): y
+</span></span><span style="display:flex;"><span>Input experimental name: test
+</span></span><span style="display:flex;"><span>Is it OK? (y/n): y
+</span></span><span style="display:flex;"><span>Input value: test</span></span></code></pre></div><ol start="2">
+<li>Check the base directory (default value is fine!)
+<strong>If there are no input, the default value will be used</strong>.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>artnew: If no input is provided, the default value is used.
+</span></span><span style="display:flex;"><span>Input repository path or URL (default: https://github.com/okawak/artemis_crib.git):
+</span></span><span style="display:flex;"><span>Is it OK? (y/n): y
+</span></span><span style="display:flex;"><span>Input value: https://github.com/okawak/artemis_crib.git</span></span></code></pre></div><ol start="3">
+<li>Input the rawdata directory</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>Input rawdata directory path (default: /data/test/ridf):
+</span></span><span style="display:flex;"><span>Is it OK? (y/n): y
+</span></span><span style="display:flex;"><span>Input value: /data/test/ridf</span></span></code></pre></div><ol start="4">
+<li>Input the output directory</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>Input output data directory path (default: /data/test/user):
+</span></span><span style="display:flex;"><span>Is it OK? (y/n): y
+</span></span><span style="display:flex;"><span>Input value: /data/test/user</span></span></code></pre></div><ol start="5">
+<li>Input the git setting (PLEASE MAKE your own repository. Local repository will be fine)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>Based on the repository, do you make your own repository? (y/n): y
+</span></span><span style="display:flex;"><span>is it local repository (y/n): y
+</span></span><span style="display:flex;"><span>artnew: making LOCAL repository of test
+</span></span><span style="display:flex;"><span>Input the local repository path (default: $HOME/repos/exp):
+</span></span><span style="display:flex;"><span>Is it OK? (y/n): y
+</span></span><span style="display:flex;"><span>Input value: /home/crib/repos/exp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>-- snip --
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>art_analysis setting for test is finished!</span></span></code></pre></div><p>The initial setting is completed!!</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+          <article class="default">
+            <header class="headline">
+<div class="tags">
+  <a class="tag-link" href="/artemis_crib/tags/crib/index.html">CRIB</a>
+</div>
+            </header>
+<h1 id="new_user">new_user</h1>
+
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-02 by Kodai Okawa</span></span>
+<p>After <code>artnew</code> command, you can see new directory of config files.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span> &gt; tree -a art_analysis
+</span></span><span style="display:flex;"><span> art_analysis
+</span></span><span style="display:flex;"><span> ├── .conf
+</span></span><span style="display:flex;"><span> │   ├── artlogin.sh
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">+│   └── test.sh
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span> ├── bin
+</span></span><span style="display:flex;"><span> │   ├── art_check
+</span></span><span style="display:flex;"><span> │   ├── art_setting
+</span></span><span style="display:flex;"><span> │   └── artnew
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">+└── test
+</span></span></span></code></pre></div><p>This is experiment name &ldquo;test&rdquo; example.
+In order to load this script <code>test.sh</code>, please modify &ldquo;EXP_NAME&rdquo; environment valiable in .zshrc.</p>
+
+  
+<div class="tab-panel" data-tab-group="8e6069fd833df994017c6df5ba55891e">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="bashrczshrc"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('8e6069fd833df994017c6df5ba55891e','bashrczshrc')"
+    >
+      <span>
+        <span class="tab-nav-hidden">.bashrc/.zshrc</span>
+        <span class="tab-nav-text">.bashrc/.zshrc</span>
+      </span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="bashrczshrc"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>export EXP_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test&#34;</span> <span style="color:#75715e"># your experiment</span></span></span></code></pre></div></div>
+    </div>
+  </div>
+</div><p>And load the config file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; source ~/.zshrc</span></span></code></pre></div><p>Then you can make your own work directory by using <code>artlogin</code> command!</p>
+<h3 id="lets-start-artlogin-command">Let&rsquo;s start &ldquo;artlogin&rdquo; command!</h3>
+<p>For example, let&rsquo;s make default user (user name is the same with experiment name)!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; artlogin</span></span></code></pre></div><p>If you want to make your own directory, the following will work.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; artlogin yourname</span></span></code></pre></div><ol>
+<li>Check if you really want to make your work directory</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>artlogin: user &#39;test&#39; not found.
+</span></span><span style="display:flex;"><span>create new user? (y/n): y
+</span></span><span style="display:flex;"><span>Cloning into &#39;/Users/okawa/art_analysis/test/test&#39;...
+</span></span><span style="display:flex;"><span>done.</span></span></code></pre></div><ol start="2">
+<li>Git setting</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>artlogin: making local git config
+</span></span><span style="display:flex;"><span>Input fullname: KodaiOkawa
+</span></span><span style="display:flex;"><span>Is it Okay? (y/n): y
+</span></span><span style="display:flex;"><span>Input email address: okawa@cns.s.u-tokyo.ac.jp
+</span></span><span style="display:flex;"><span>Is it Okay? (y/n): y</span></span></code></pre></div><ol start="3">
+<li>Symbolic link setting. If there are no problem, the current directory move to your artemis work directory</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; pwd
+</span></span><span style="display:flex;"><span>/home/crib/art_analysis/test/test
+</span></span><span style="display:flex;"><span>&gt; ls -l</span></span></code></pre></div><p>If your synbolic link seems okay, the setting is all!</p>
+<hr>
+<p>If <code>artnew</code> setting have problem, the error message will appear.
+Typical examples are as follows.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>mkdir: /data: Read-only file system</span></span></code></pre></div><p>This is a case of the directory permissions not being set correctly.
+Use the <code>chmod</code> command or similar to set them correctly and try again.</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+          <article class="default">
+            <header class="headline">
+<div class="tags">
+  <a class="tag-link" href="/artemis_crib/tags/crib/index.html">CRIB</a>
+</div>
+            </header>
+<h1 id="build">Build</h1>
+
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-02 by Kodai Okawa</span></span>
+<p>Before starting analysis, you need to build.
+The current version of the artemis use &ldquo;cmake&rdquo; so the following steps must be taken.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; artlogin <span style="color:#f92672">(</span>username<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>&gt; mkdir build <span style="color:#f92672">&amp;&amp;</span> cd build
+</span></span><span style="display:flex;"><span>&gt; cmake ..
+</span></span><span style="display:flex;"><span>&gt; make -j4
+</span></span><span style="display:flex;"><span>&gt; make install
+</span></span><span style="display:flex;"><span>&gt; acd</span></span></code></pre></div><p><code>acd</code> is the alias command that is definded after artlogin command. (acd = cd your_work_directory)
+Also if you changed some processor, you need to do these process.</p>
+<p>Then some important configuration files are automatically created.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span> &gt; tree -L 1
+</span></span><span style="display:flex;"><span> .
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">+├── artemislogon.C
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+├── thisartemis-crib.sh
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>
+</span></span><span style="display:flex;"><span> -- snip --
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> └── run_artemis.cpp
+</span></span></code></pre></div><p>Before starting artemis, you need to load the <code>thisartemis-crib.sh</code>.
+The <code>artlogin</code> command is also used to read this script, so run this command again after the build.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; artlogin <span style="color:#f92672">(</span>usename<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>&gt; a</span></span></code></pre></div><p>Then you can start artemis by using <code>a</code> command!</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+          <article class="default">
+            <header class="headline">
+<div class="tags">
+  <a class="tag-link" href="/artemis_crib/tags/crib/index.html">CRIB</a>
+</div>
+            </header>
+<h1 id="map_config">map_config</h1>
+
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-02 by Kodai Okawa</span></span>
+<p>From this section, we start to configure the settings according to the actual experimental setup.
+The setting files are followings:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>&gt; tree
+</span></span><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── mapper.conf
+</span></span><span style="display:flex;"><span>├── conf
+</span></span><span style="display:flex;"><span>│   ├── map
+</span></span><span style="display:flex;"><span>│   │   ├── ppac
+</span></span><span style="display:flex;"><span>│   │   │   ├── dlppac.map
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>-- snip --
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>│   └── seg
+</span></span><span style="display:flex;"><span>│       ├── modulelist.yaml
+</span></span><span style="display:flex;"><span>│       └── seglist.yaml
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>-- snip --</span></span></code></pre></div><h3 id="1-what-is-the-map-file">1. What is the map file?</h3>
+<p>The data obtained from an ADC/TDC is in the form of, for example,
+&ldquo;The data coming into channel 10 of an ADC with an ID of 1 is 100&rdquo;.</p>
+
+<div class="mermaid align-center">
+---
+title: Data flow example
+---
+graph LR;
+    A{detector} --&gt;|signal| B(TDC/ADC&lt;br&gt;&lt;/br&gt;ID=1, ch=10)
+    B --&gt;|value=100| C[DAQ]
+</div>
+<p>The role of the map file is to map this value of &ldquo;100&rdquo; to an ID that is easy to analyse.
+An ID that is easy to analyse means, for example,
+that even if signals from the same detector are acquired with different ADCs/TDCs,
+the same ID is easier to handle in the analysis.</p>
+
+<div class="mermaid align-center">
+---
+title: Data flow example
+---
+graph LR;
+    A(TDC/ADC&lt;br&gt;&lt;/br&gt;ID=1, ch=10) --&gt;|value=100| B[DAQ]
+    B --&gt;|value=100 mapping to| C(analysis&lt;br&gt;&lt;/br&gt;ID=2, ch=20)
+</div>
+<p>After mapping, we can check the data of this &ldquo;100&rdquo; from ID=2 and ch=20.
+This ID and channel (2, 20) are provided for convenience, so you can freely set them.</p>
+<p>So, in summary, the map file role is like this:</p>
+
+<div class="mermaid align-center">
+---
+title: role of the map file
+---
+graph LR;
+    A(DAQ ID&lt;br&gt;&lt;/br&gt;ID=1, ch=10) &lt;--&gt;|mapping| B(analysis ID&lt;br&gt;&lt;/br&gt;ID=2, ch=20)
+</div>
+<h3 id="2-map-files">2. map files</h3>
+<p>CRIB is using <a href="https://ribf.riken.jp/RIBFDAQ/index.php?FrontPage" target="_blank">Babirl</a> for the DAQ system.
+In this system, the DAQ ID represented in the example is determined by five parameters.</p>
+<ul>
+<li>device ID (dev)</li>
+<li>focal plane (fp)</li>
+<li>detector ID (det)</li>
+<li>geometry ID (geo)</li>
+<li>channel (ch)</li>
+</ul>
+<p>The dev, fp, det and geo parameters can be set from DAQ setting.
+For the CRIB experiment, conventionally we set dev=12, fp=0&ndash;2 (for each MPV), det=6,7 (6=energy, 7=timing) and geo=from 0.
+But you can change it freely.</p>
+<p>And analysis ID represented in the example is determined by two parameters.</p>
+<ul>
+<li>Category ID (CatID, cid)</li>
+<li>id (fID)</li>
+</ul>
+<p>Of cource you can also set the value freely.</p>
+<p>The format of the map file is followings:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span># [category] [id] [[device] [focus] [detector] [geo] [ch]] ....
+</span></span><span style="display:flex;"><span>   1,   0,  12,   1,  6,   0,   0</span></span></code></pre></div>
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+
+<ul>
+<li>The id should start from &ldquo;0&rdquo;.</li>
+<li>The ADC/TDC channel start from &ldquo;0&rdquo;.</li>
+<li>The leading &ldquo;#&rdquo; is treated as a comment statement.</li>
+<li>you can set several &ldquo;DAQ ID&rdquo; to one &ldquo;analysis ID&rdquo; like this:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span># map for SSD
+</span></span><span style="display:flex;"><span># [category] [id] [[device] [focus] [detector] [geo] [ch]] ....
+</span></span><span style="display:flex;"><span>#
+</span></span><span style="display:flex;"><span># Map: energy, timing
+</span></span><span style="display:flex;"><span>#
+</span></span><span style="display:flex;"><span>#--------------------------------------------------------------------
+</span></span><span style="display:flex;"><span>   1,   0,  12,   1,  6,   0,   0,  12,   2,  7,   0,   0</span></span></code></pre></div></div>
+</div>
+<p>Please create map files for all detectors like this!</p>
+<h3 id="3-mapperconf">3. mapper.conf</h3>
+<p>You can select the map file to be loaded with this file.
+This is especially useful when separating map files for testing from map files for the experiment.</p>
+<p>The format is followings: (<code>path/to/the/map/file number</code>)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span># file path for configuration, relative to the working directory
+</span></span><span style="display:flex;"><span># (path to the map file) (Number of columns)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># cid = 1: rf
+</span></span><span style="display:flex;"><span>conf/map/rf/rf.map 1</span></span></code></pre></div><p>In the note example above, the number is 2.</p>
+<p>Please do not forget to add to the mapper.conf after you add some map files.</p>
+<h3 id="4-option-segment-files">4. (option) segment files</h3>
+<p>This conf files are used when you use &ldquo;chkseg.yaml&rdquo; steering file.
+This steering file create raw data 2D histograms.
+I will describe in the <a href="https://okawak.github.io/artemis_crib/example/online_analysis/check_rawdata/index.html" target="_blank">Example: online_analysis/check_rawdata</a> in detail.</p>
+
             <footer class="footline">
 
             </footer>
@@ -121,8 +409,8 @@ This command will make new experiment directory interactively.</p>
         </div>
       </main>
     </div>
-    <script src="/artemis_crib/js/clipboard.min.js?1698901922" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1698901922" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1698911710" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1698911710" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -152,6 +440,20 @@ This command will make new experiment directory interactively.</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1698901922" defer></script>
+    <script src="/artemis_crib/js/d3/d3-color.min.js?1698911710" defer></script>
+    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1698911710" defer></script>
+    <script src="/artemis_crib/js/d3/d3-drag.min.js?1698911710" defer></script>
+    <script src="/artemis_crib/js/d3/d3-ease.min.js?1698911710" defer></script>
+    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1698911710" defer></script>
+    <script src="/artemis_crib/js/d3/d3-selection.min.js?1698911710" defer></script>
+    <script src="/artemis_crib/js/d3/d3-timer.min.js?1698911710" defer></script>
+    <script src="/artemis_crib/js/d3/d3-transition.min.js?1698911710" defer></script>
+    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1698911710" defer></script>
+    <script src="/artemis_crib/js/js-yaml.min.js?1698911710" defer></script>
+    <script src="/artemis_crib/js/mermaid.min.js?1698911710" defer></script>
+    <script>
+      window.themeUseMermaid = JSON.parse("{}");
+    </script>
+    <script src="/artemis_crib/js/theme.js?1698911710" defer></script>
   </body>
 </html>

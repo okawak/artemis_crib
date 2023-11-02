@@ -1,13 +1,13 @@
 var relearn_search_index = [
   {
     "breadcrumb": "Setting",
-    "content": "last modified: 2023-11-02 by Kodai Okawa If you installed with “curl” command explained previous chapter, you should have artnew command. This command will make new experiment directory interactively.\nBefore using this command, please check the directory structure!\nLet’s start artnew command!\nartnew",
+    "content": "last modified: 2023-11-02 by Kodai Okawa If you installed with “curl” command explained previous chapter, you should have artnew command. This command will make new experiment directory interactively.\nBefore using this command, please check and make the directory structure!\nrawdata directory (like /mnt/data or /data? Create it to suit your situation.) output rootfile directory (like /data/art_output?) git repository local repository: suit for online analysis remote repository: suit for offline analysis Let’s start “artnew” command! The word after “:” is your input.\n\u003e artnew Input the experiment name create new artemis work directory? (y/n): y Input experimental name: test Is it OK? (y/n): y Input value: test Check the base directory (default value is fine!) If there are no input, the default value will be used. artnew: If no input is provided, the default value is used. Input repository path or URL (default: https://github.com/okawak/artemis_crib.git): Is it OK? (y/n): y Input value: https://github.com/okawak/artemis_crib.git Input the rawdata directory Input rawdata directory path (default: /data/test/ridf): Is it OK? (y/n): y Input value: /data/test/ridf Input the output directory Input output data directory path (default: /data/test/user): Is it OK? (y/n): y Input value: /data/test/user Input the git setting (PLEASE MAKE your own repository. Local repository will be fine) Based on the repository, do you make your own repository? (y/n): y is it local repository (y/n): y artnew: making LOCAL repository of test Input the local repository path (default: $HOME/repos/exp): Is it OK? (y/n): y Input value: /home/crib/repos/exp -- snip -- art_analysis setting for test is finished!The initial setting is completed!!\n",
     "description": "",
     "tags": [
       "CRIB"
     ],
-    "title": "new_directory",
-    "uri": "/artemis_crib/setting/new_directory/index.html"
+    "title": "new_experiment",
+    "uri": "/artemis_crib/setting/new_experiment/index.html"
   },
   {
     "breadcrumb": "Processors",
@@ -56,6 +56,16 @@ var relearn_search_index = [
     "uri": "/artemis_crib/installation/index.html"
   },
   {
+    "breadcrumb": "Setting",
+    "content": "last modified: 2023-11-02 by Kodai Okawa After artnew command, you can see new directory of config files.\n\u003e tree -a art_analysis art_analysis ├── .conf │ ├── artlogin.sh +│ └── test.sh ├── bin │ ├── art_check │ ├── art_setting │ └── artnew +└── test This is experiment name “test” example. In order to load this script test.sh, please modify “EXP_NAME” environment valiable in .zshrc.\n​ .bashrc/.zshrc .bashrc/.zshrc export EXP_NAME=\"test\" # your experiment And load the config file.\n\u003e source ~/.zshrcThen you can make your own work directory by using artlogin command!\nLet’s start “artlogin” command! For example, let’s make default user (user name is the same with experiment name)!\n\u003e artloginIf you want to make your own directory, the following will work.\n\u003e artlogin yourname Check if you really want to make your work directory artlogin: user 'test' not found. create new user? (y/n): y Cloning into '/Users/okawa/art_analysis/test/test'... done. Git setting artlogin: making local git config Input fullname: KodaiOkawa Is it Okay? (y/n): y Input email address: okawa@cns.s.u-tokyo.ac.jp Is it Okay? (y/n): y Symbolic link setting. If there are no problem, the current directory move to your artemis work directory \u003e pwd /home/crib/art_analysis/test/test \u003e ls -lIf your synbolic link seems okay, the setting is all!\nIf artnew setting have problem, the error message will appear. Typical examples are as follows.\nmkdir: /data: Read-only file systemThis is a case of the directory permissions not being set correctly. Use the chmod command or similar to set them correctly and try again.\n",
+    "description": "",
+    "tags": [
+      "CRIB"
+    ],
+    "title": "new_user",
+    "uri": "/artemis_crib/setting/new_user/index.html"
+  },
+  {
     "breadcrumb": "Installation",
     "content": "last modified: 2023-11-02 by Kodai Okawa Generally, dnf install cmake or brew install cmake support latest version of the cmake, but for some older machine like CentOS7, it is too old to install ROOT.\nThe latest ROOT require CMake 3.16 or higher, and if your system doesn’t support this version, you need to install manually.\nYou can get more information from here.\ncd hoge git clone https://github.com/Kitware/Cmake.git cd Cmake ./bootstrap make -j8 sudo make installIf you want to set the version, you can change the branch (tag). The default branch is master.\n",
     "description": "",
@@ -72,12 +82,32 @@ var relearn_search_index = [
     "uri": "/artemis_crib/setting/index.html"
   },
   {
+    "breadcrumb": "Setting",
+    "content": "last modified: 2023-11-02 by Kodai Okawa Before starting analysis, you need to build. The current version of the artemis use “cmake” so the following steps must be taken.\n\u003e artlogin (username) \u003e mkdir build \u0026\u0026 cd build \u003e cmake .. \u003e make -j4 \u003e make install \u003e acdacd is the alias command that is definded after artlogin command. (acd = cd your_work_directory) Also if you changed some processor, you need to do these process.\nThen some important configuration files are automatically created.\n\u003e tree -L 1 . +├── artemislogon.C +├── thisartemis-crib.sh -- snip -- └── run_artemis.cpp Before starting artemis, you need to load the thisartemis-crib.sh. The artlogin command is also used to read this script, so run this command again after the build.\n\u003e artlogin (usename) \u003e aThen you can start artemis by using a command!\n",
+    "description": "",
+    "tags": [
+      "CRIB"
+    ],
+    "title": "Build",
+    "uri": "/artemis_crib/setting/build/index.html"
+  },
+  {
     "breadcrumb": "Installation",
     "content": "last modified: 2023-11-02 by Kodai Okawa Artemis uses ROOT library.\nWe confirmed that version 6.28 of the ROOT will work well, but if the ROOT updates, we are not sure that the ARTEMIS will work well, so we recommend to build from the sources.\nFor detailded information, please refer Installing ROOT Recommendations are described below.\n# The latest stable branch gets updated automatically on each release. # You may update your local copy by issuing a `git pull` command from within `root_src/`. cd hoge git clone --branch latest-stable --depth=1 https://github.com/root-project/root.git root_src mkdir root_build root_install \u0026\u0026 cd root_build cmake -DCMAKE_INSTALL_PREFIX=../root_install ../root_src # \u0026\u0026 check cmake configuration output for warnings or errors cmake --build . -- install -j4 # if you have 4 cores available for compilation source ../root_install/bin/thisroot.sh # or thisroot.{fish,csh}If there are any problems at the compile, additional packages may need to be installed. See also dependencies.\nInfo If errors related to xrootd, TBB and clad occur, the cmake options -Dxrootd=OFF, -Dimt=OFF and -Dclad=OFF may work respectively.\nI recommend to write source thisroot.sh part in the .bashrc/.zshrc to load this library.\n",
     "description": "",
     "tags": null,
     "title": "ROOT",
     "uri": "/artemis_crib/installation/root/index.html"
+  },
+  {
+    "breadcrumb": "Setting",
+    "content": "last modified: 2023-11-02 by Kodai Okawa From this section, we start to configure the settings according to the actual experimental setup. The setting files are followings:\n\u003e tree . ├── mapper.conf ├── conf │ ├── map │ │ ├── ppac │ │ │ ├── dlppac.map -- snip -- │ └── seg │ ├── modulelist.yaml │ └── seglist.yaml -- snip --1. What is the map file? The data obtained from an ADC/TDC is in the form of, for example, “The data coming into channel 10 of an ADC with an ID of 1 is 100”.\n--- title: Data flow example --- graph LR; A{detector} --\u003e|signal| B(TDC/ADC\u003cbr\u003e\u003c/br\u003eID=1, ch=10) B --\u003e|value=100| C[DAQ] The role of the map file is to map this value of “100” to an ID that is easy to analyse. An ID that is easy to analyse means, for example, that even if signals from the same detector are acquired with different ADCs/TDCs, the same ID is easier to handle in the analysis.\n--- title: Data flow example --- graph LR; A(TDC/ADC\u003cbr\u003e\u003c/br\u003eID=1, ch=10) --\u003e|value=100| B[DAQ] B --\u003e|value=100 mapping to| C(analysis\u003cbr\u003e\u003c/br\u003eID=2, ch=20) After mapping, we can check the data of this “100” from ID=2 and ch=20. This ID and channel (2, 20) are provided for convenience, so you can freely set them.\nSo, in summary, the map file role is like this:\n--- title: role of the map file --- graph LR; A(DAQ ID\u003cbr\u003e\u003c/br\u003eID=1, ch=10) \u003c--\u003e|mapping| B(analysis ID\u003cbr\u003e\u003c/br\u003eID=2, ch=20) 2. map files CRIB is using Babirl for the DAQ system. In this system, the DAQ ID represented in the example is determined by five parameters.\ndevice ID (dev) focal plane (fp) detector ID (det) geometry ID (geo) channel (ch) The dev, fp, det and geo parameters can be set from DAQ setting. For the CRIB experiment, conventionally we set dev=12, fp=0–2 (for each MPV), det=6,7 (6=energy, 7=timing) and geo=from 0. But you can change it freely.\nAnd analysis ID represented in the example is determined by two parameters.\nCategory ID (CatID, cid) id (fID) Of cource you can also set the value freely.\nThe format of the map file is followings:\n# [category] [id] [[device] [focus] [detector] [geo] [ch]] .... 1, 0, 12, 1, 6, 0, 0 Note The id should start from “0”. The ADC/TDC channel start from “0”. The leading “#” is treated as a comment statement. you can set several “DAQ ID” to one “analysis ID” like this: # map for SSD # [category] [id] [[device] [focus] [detector] [geo] [ch]] .... # # Map: energy, timing # #-------------------------------------------------------------------- 1, 0, 12, 1, 6, 0, 0, 12, 2, 7, 0, 0 Please create map files for all detectors like this!\n3. mapper.conf You can select the map file to be loaded with this file. This is especially useful when separating map files for testing from map files for the experiment.\nThe format is followings: (path/to/the/map/file number)\n# file path for configuration, relative to the working directory # (path to the map file) (Number of columns) # cid = 1: rf conf/map/rf/rf.map 1In the note example above, the number is 2.\nPlease do not forget to add to the mapper.conf after you add some map files.\n4. (option) segment files This conf files are used when you use “chkseg.yaml” steering file. This steering file create raw data 2D histograms. I will describe in the Example: online_analysis/check_rawdata in detail.\n",
+    "description": "",
+    "tags": [
+      "CRIB"
+    ],
+    "title": "map_config",
+    "uri": "/artemis_crib/setting/map_config/index.html"
   },
   {
     "breadcrumb": "Installation",
@@ -143,7 +173,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Installation",
-    "content": "last modified: 2023-11-02 by Kodai Okawa With this command, all initial settings of “art_analysis” are made.\ncurl --proto '=https' --tlsv1.2 -sSf https://okawak.github.io/artemis_crib/installation/init.sh | shAfter that, please add the following lines to the .bashrc/.zshrc.\n# this is option source ${HOME}/Cern/root/root_install/bin/thisroot.sh \u0026\u003e /dev/null source ${HOME}/repos/artemis/install/bin/thisartemis.sh \u0026\u003e /dev/null source ${HOME}/repos/SRIMlib/thisSRIMlib.sh \u0026\u003e /dev/null # need from this line! export EXP_NAME=\"expname\" # your experiment export EXP_NAME_OLD=\"expname\" # this is option export PATH=\"${HOME}/art_analysis/bin:${PATH}\" source ${HOME}/art_analysis/bin/art_setting -qThe setting is all!\nThen, the following commands (shellscript) will be downloaded.\nartlogin.sh This is loaded when you command artlogin. This command is described in the next chapter.\nartnew With this command, new artemis environment will be created interactively.\nart_setting This is like a library. The shellscript function artlogin, a etc. are written.\nart_check Checking these shellscript is updatable or not.\n",
+    "content": "last modified: 2023-11-02 by Kodai Okawa With this command, all initial settings of “art_analysis” are made.\ncurl --proto '=https' --tlsv1.2 -sSf https://okawak.github.io/artemis_crib/installation/init.sh | shAfter that, please add the following lines to the .bashrc/.zshrc.\n​ .bashrc/.zshrc .bashrc/.zshrc # this is option source ${HOME}/Cern/root/root_install/bin/thisroot.sh \u0026\u003e /dev/null source ${HOME}/repos/artemis/install/bin/thisartemis.sh \u0026\u003e /dev/null source ${HOME}/repos/SRIMlib/thisSRIMlib.sh \u0026\u003e /dev/null # need from this line! export EXP_NAME=\"expname\" # your experiment export EXP_NAME_OLD=\"expname\" # this is option export PATH=\"${HOME}/art_analysis/bin:${PATH}\" source ${HOME}/art_analysis/bin/art_setting -q The setting is all!\nThen, the following commands (shellscript) will be downloaded.\nartlogin.sh This is loaded when you command artlogin. This command is described in the next chapter.\nartnew With this command, new artemis environment will be created interactively.\nart_setting This is like a library. The shellscript function artlogin, a etc. are written.\nart_check Checking these shellscript is updatable or not.\n",
     "description": "",
     "tags": [
       "CRIB",
