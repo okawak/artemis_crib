@@ -17,7 +17,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://okawak.github.io/artemis_crib/insta
 
 After that, please add the following lines to the .bashrc/.zshrc.
 
-```shell { wrap="false" }
+```shell { title=".bashrc/.zshrc" wrap="false" }
 # this is option
 source ${HOME}/Cern/root/root_install/bin/thisroot.sh &> /dev/null
 source ${HOME}/repos/artemis/install/bin/thisartemis.sh &> /dev/null
