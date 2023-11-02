@@ -1,5 +1,15 @@
 var relearn_search_index = [
   {
+    "breadcrumb": "Setting",
+    "content": "last modified: 2023-11-02 by Kodai Okawa If you installed with “curl” command explained previous chapter, you should have artnew command. This command will make new experiment directory interactively.\nBefore using this command, please check the directory structure!\nLet’s start artnew command!\nartnew",
+    "description": "",
+    "tags": [
+      "CRIB"
+    ],
+    "title": "new_directory",
+    "uri": "/artemis_crib/setting/new_directory/index.html"
+  },
+  {
     "breadcrumb": "Processors",
     "content": "last modified: 2023-08-20 by Kodai Okawa under develop (possibly we will update this data class)\nTTelescopeData Data members TVector3 fPos; // detected position (x, y, z) // simulation: actual position // from data: calculated from strip ID Int_t fXID; // X strip ID Int_t fYID; // Y strip ID Double_t fdE; // total energy deposit of dE detector Double_t fE; // total energy deposit of E detector Double_t fEtotal; // total energy deposit of the telescope DoubleVec_t fEnergyArray; // energy array of all the telescope // DoubleVec_t fTimingArray; // not impremented //=============================================================== // no need?? // kMAXNPARAMETER = 4 (can be settable) Int_t fNE; // number of thick E detector Double_t fdEX; // energy of the first dE detector Double_t fdEY; // energy of the seconde dE detector Double_t fdEXTiming; // timing of the first dE detector Double_t fdEYTiming; // timing of the second dE detector Double_t fEvec[kMAXNPARAMETER]; // energy array of the E detector Double_t fETimingvec[kMAXNPARAMETER]; // timing array of the E detector Methods TVector3 GetPosition() const { return fPos; } void SetPosition(TVector3 vec) { fPos = vec; } void SetPosition(Double_t x, Double_t y, Double_t z) { fPos.SetXYZ(x, y, z); } Int_t GetXID() const {return fXID;} void SetXID(Int_t arg) { fXID = arg; } Int_t GetYID() const {return fYID;} void SetYID(Int_t arg) { fYID = arg; } Double_t GetdEX() const {return fdEX;} void SetdEX(Double_t arg) { fdEX = arg; } Double_t GetdEY() const {return fdEY;} void SetdEY(Double_t arg) { fdEY = arg; } Double_t GetdEXTiming() const {return fdEXTiming;} void SetdEXTiming(Double_t arg) { fdEXTiming = arg; } Double_t GetdEYTiming() const {return fdEYTiming;} void SetdEYTiming(Double_t arg) { fdEYTiming = arg; } Double_t GetEvec(Int_t idx) const { return fEvec[idx]; } void SetEvec(Int_t idx, Double_t val) { fEvec[idx] = val; } Int_t GetEvecSize() { return fNE; } Double_t GetETimingvec(Int_t idx) const { return fETimingvec[idx]; } void SetETimingvec(Int_t idx, Double_t val) { fETimingvec[idx] = val; } Double_t GetdE() const {return fdE;} void SetdE(Double_t arg) { fdE = arg; } Double_t GetE() const {return fE;} void SetE(Double_t arg) { fE = arg; } Double_t GetEtotal() const {return fEtotal;} void SetEtotal(Double_t arg) { fEtotal = arg; } DoubleVec_t GetEnergyArray() const {return fEnergyArray;} void SetEnergyArray(Double_t arg) { fEnergyArray.emplace_back(arg); }",
     "description": "",
@@ -31,7 +41,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Installation",
-    "content": "last modified: 2023-10-29 by Kodai Okawa The following machines have been tested for operation.\n1. Writer’s (Okawa’s) machine Almalinux 9.2 zsh 5.8 gcc 11.3.1 cmake 3.20.2 ROOT 6.28/04 yaml-cpp 0.7.0 2. CRIB’s analysis machine CentOS Linux release 7.9.2009 (Core) zsh 5.5.1 gcc 9.3.1 (using devtoolset-9) cmake 3.28 (install manually) ROOT 6.28/06 yaml-cpp 0.8.0 NOTE:\nFrom 2023/10, Ubuntu system is also avaliable. (issue48) Scripts for some automate operation are written in zsh format. ",
+    "content": "last modified: 2023-11-02 by Kodai Okawa The following machines have been tested for operation.\n1. Writer’s (Okawa’s) machine Almalinux 9.2 zsh 5.8 gcc 11.3.1 cmake 3.20.2 ROOT 6.28/04 yaml-cpp 0.7.0 2. CRIB’s analysis machine CentOS Linux release 7.9.2009 (Core) zsh 5.5.1 gcc 9.3.1 (using devtoolset-9) cmake 3.28 (install manually) ROOT 6.28/06 yaml-cpp 0.8.0 NOTE:\nFrom 2023/10, Ubuntu system is also avaliable. (issue48) Scripts for some automate operation are written in zsh format. Installation seems to be difficult on macOS (because of clang not gcc) in the current version. ",
     "description": "",
     "tags": null,
     "title": "Requirements",
@@ -39,7 +49,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "This chapter describes how to set up the artemis environment for the CRIB experiment.\n",
+    "content": "This chapter describes how to set up the artemis environment for the CRIB experiment. See from here for initial settings.\n",
     "description": "",
     "tags": null,
     "title": "Installation",
@@ -47,15 +57,15 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Installation",
-    "content": "last modified: 2023-10-29 by Kodai Okawa Generally, dnf install cmake or brew install cmake support latest version of the cmake, but for some older machine like CentOS 7, it is too old to install ROOT.\nThe latest ROOT require CMake 3.16 or higher, and if your system doesn’t support this version, you need to install manually.\nYou can get more information from here.\ngit clone https://github.com/Kitware/Cmake.git cd Cmake ./bootstrap make -j8 sudo make installIf you want to set the version, you can change the branch. The default branch is master.\n",
+    "content": "last modified: 2023-11-02 by Kodai Okawa Generally, dnf install cmake or brew install cmake support latest version of the cmake, but for some older machine like CentOS7, it is too old to install ROOT.\nThe latest ROOT require CMake 3.16 or higher, and if your system doesn’t support this version, you need to install manually.\nYou can get more information from here.\ncd hoge git clone https://github.com/Kitware/Cmake.git cd Cmake ./bootstrap make -j8 sudo make installIf you want to set the version, you can change the branch (tag). The default branch is master.\n",
     "description": "",
     "tags": [],
-    "title": "Cmake",
+    "title": "cmake",
     "uri": "/artemis_crib/installation/cmake/index.html"
   },
   {
     "breadcrumb": "",
-    "content": "Lorem Ipsum.\n",
+    "content": "This chapter describes how to prepare the configuration file for the experiment. If you have already some CRIB artemis environment, Please see from here for initial settings.\n",
     "description": "",
     "tags": null,
     "title": "Setting",
@@ -63,26 +73,18 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Installation",
-    "content": "last modified: 2023-10-29 by Kodai Okawa Artemis uses ROOT library.\nWe confirmed that version 6.28 of the ROOT will work well, but if the ROOT updates, we are not sure that the ARTEMIS will work well, so we recommend to build from the sources.\nFor detailded information, please refer Installing ROOT Recommendations are described below.\n# The latest stable branch gets updated automatically on each release. # You may update your local copy by issuing a `git pull` command from within `root_src/`. cd hoge # where you want to install ROOT git clone --branch latest-stable --depth=1 https://github.com/root-project/root.git root_src mkdir root_build root_install \u0026\u0026 cd root_build cmake -DCMAKE_INSTALL_PREFIX=../root_install ../root_src # \u0026\u0026 check cmake configuration output for warnings or errors cmake --build . -- install -j4 # if you have 4 cores available for compilation source ../root_install/bin/thisroot.sh # or thisroot.{fish,csh}If there are any problems at the compile, additional packages may need to be installed. See also dependencies.\nInfo If errors related to xrootd, TBB and clad occur, the cmake options -Dxrootd=OFF, -Dimt=OFF and -Dclad=OFF may work respectively.\nsource thisroot.sh part will be written in thisartemis.sh (this is created after artemis installation), but before installing artemis, you need to type this once.\nafter completing the installation of the artemis, you don’t have to execute this command for each time.\n",
+    "content": "last modified: 2023-11-02 by Kodai Okawa Artemis uses ROOT library.\nWe confirmed that version 6.28 of the ROOT will work well, but if the ROOT updates, we are not sure that the ARTEMIS will work well, so we recommend to build from the sources.\nFor detailded information, please refer Installing ROOT Recommendations are described below.\n# The latest stable branch gets updated automatically on each release. # You may update your local copy by issuing a `git pull` command from within `root_src/`. cd hoge git clone --branch latest-stable --depth=1 https://github.com/root-project/root.git root_src mkdir root_build root_install \u0026\u0026 cd root_build cmake -DCMAKE_INSTALL_PREFIX=../root_install ../root_src # \u0026\u0026 check cmake configuration output for warnings or errors cmake --build . -- install -j4 # if you have 4 cores available for compilation source ../root_install/bin/thisroot.sh # or thisroot.{fish,csh}If there are any problems at the compile, additional packages may need to be installed. See also dependencies.\nInfo If errors related to xrootd, TBB and clad occur, the cmake options -Dxrootd=OFF, -Dimt=OFF and -Dclad=OFF may work respectively.\nI recommend to write source thisroot.sh part in the .bashrc/.zshrc to load this library.\n",
     "description": "",
     "tags": null,
-    "title": "Root",
+    "title": "ROOT",
     "uri": "/artemis_crib/installation/root/index.html"
   },
   {
-    "breadcrumb": "",
-    "content": "Lorem Ipsum.\n",
-    "description": "",
-    "tags": null,
-    "title": "Basic",
-    "uri": "/artemis_crib/basic/index.html"
-  },
-  {
     "breadcrumb": "Installation",
-    "content": "last modified: 2023-10-29 by Kodai Okawa Current version of the artemis use yaml-cpp-0.7. If your package system (like apt or dnf) cannot install version 0.7, please install from the source.\nSee also Github repo and README of the artemis Please install it as a shared object like below commands.\ncd path/to/the/directory/you/want/to/install/yaml-cpp git clone https://github.com/jbeder/yaml-cpp.git cd yaml-cpp mkdir build \u0026\u0026 cd build cmake -DYAML_BUILD_SHARED_LIBS=ON -DBUILD_TESTING=OFF .. make sudo make installDefault install path is /usr/local/lib or /usr/local/lib64. If you do not want to pollute the general environment, specify CMAKE_INSTALL_PREFIX and set PATH environment variable.\ncmake -DCMAKE_INSTALL_PREFIX=/foo/bar -DYAML_BUILD_SHARED_LIBS=ON -DBUILD_TESTING=OFF ..",
+    "content": "last modified: 2023-11-02 by Kodai Okawa Info The yaml-cpp can be installed by some package manager like apt or dnf, but I’m not sure it will work or not in the installation of the artemis.\nCurrent version of the artemis use yaml-cpp-0.7 or higher. In order to use this library, please install from the repository.\nSee also Github repo and README of the artemis Please install it as a shared object like below commands.\ncd hoge git clone https://github.com/jbeder/yaml-cpp.git cd yaml-cpp mkdir build \u0026\u0026 cd build cmake -DYAML_BUILD_SHARED_LIBS=ON -DBUILD_TESTING=OFF .. make sudo make installDefault install path is /usr/local/lib or /usr/local/lib64. If you do not want to pollute the general environment, specify CMAKE_INSTALL_PREFIX and set PATH environment variable.\ncmake -DCMAKE_INSTALL_PREFIX=/foo/bar -DYAML_BUILD_SHARED_LIBS=ON -DBUILD_TESTING=OFF ..",
     "description": "",
     "tags": null,
-    "title": "Yaml-cpp",
+    "title": "yaml-cpp",
     "uri": "/artemis_crib/installation/yaml-cpp/index.html"
   },
   {
@@ -95,12 +97,12 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Installation",
-    "content": "last modified: 2023-10-29 by Kodai Okawa From the current situation, CRIB experiment doesn’t use GET system, so we describe how to install it without linking it to GET decoder.\nAlso, it can link to openMPI, but the below commands assume not using openMPI. See artemis repo for more information.\ncd hoge git clone https://github.com/artemis-dev/artemis.git -b develop cd artemis mkdir build cd build cmake -DCMAKE_INSTALL_PREFIX=../install .. make -j8 make install source ../install/bin/thisartemis.shThen, \u003cCMAKE_INSTALL_PREFIX\u003e/bin/thisartemis.sh will be created and this shell script can configure the environment (ROOT, yaml-cpp, artemis libraries) to use artemis.\n(It means you don’t have to write like export PATH=${yaml-cpp path}:$PATH or source thisroot.sh in .zshrc or .bashrc.)\nAnother option is to use module command to manage the environment. It is also written in artemis repo.\nNote This is 2023/10/29 current information\nOkawa think there is a grammatical error in the sources/main/thisartemis.sh.in, so I changed like:\n-if [ \"@BUILD_GET@\" == \"ON\" ]; then +if [[ \"@BUILD_GET@\" == \"ON\" ]]; then export LD_LIBRARY_PATH=@GET_LIB_DIR@:$LD_LIBRARY_PATH fi -if [ \"@MPI_CXX_FOUND@\" == \"TRUE\" ]; then +if [[ \"@MPI_CXX_FOUND@\" == \"TRUE\" ]]; then dir=@MPI_CXX_LIBRARIES@ libdir=\"$(dirname $dir)\" ",
+    "content": "last modified: 2023-11-02 by Kodai Okawa From the current situation, CRIB experiment doesn’t use GET system, so we describe how to install it without linking it to GET decoder.\nAlso, it can link to openMPI, but the below commands assume not using openMPI. See artemis repo for more information.\ncd hoge git clone https://github.com/artemis-dev/artemis.git -b develop cd artemis mkdir build cd build cmake -DCMAKE_INSTALL_PREFIX=../install .. make -j8 make install source ../install/bin/thisartemis.shThen, \u003cCMAKE_INSTALL_PREFIX\u003e/bin/thisartemis.sh will be created and this shell script can configure the environment (ROOT, yaml-cpp, artemis libraries) to use artemis.\nAlso, I recommend to write source thisartemis.sh part in the .bashrc/.zshrc to load this library.\nAnother option is to use module command to manage the environment. It is also written in artemis repo.\nNote This is 2023/10/29 current information\nOkawa think there is a grammatical error in the sources/main/thisartemis.sh.in, so I changed like:\n-if [ \"@BUILD_GET@\" == \"ON\" ]; then +if [[ \"@BUILD_GET@\" == \"ON\" ]]; then export LD_LIBRARY_PATH=@GET_LIB_DIR@:$LD_LIBRARY_PATH fi -if [ \"@MPI_CXX_FOUND@\" == \"TRUE\" ]; then +if [[ \"@MPI_CXX_FOUND@\" == \"TRUE\" ]]; then dir=@MPI_CXX_LIBRARIES@ libdir=\"$(dirname $dir)\" ",
     "description": "",
     "tags": [
       "CRIB"
     ],
-    "title": "Artemis",
+    "title": "artemis",
     "uri": "/artemis_crib/installation/artemis/index.html"
   },
   {
@@ -113,12 +115,12 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Installation",
-    "content": "last modified: 2023-10-30 by Kodai Okawa For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory. So first, we need to make raw data directory.\nThere are three option to do so.\nuse the default SSD/HDD of analysis PC use the external SSD/HDD of analysis PC (need to mount it) use network file system (NFS) and mount it 1 and 2 options are mainly used for offline analysis, while 3 option is used for online analysis.\n1. use the default SSD/HDD of analysis PC If you have large size of main storage, the one option is easiest way. Just like:\ncd ~ mkdir data (or where you want to put) cd data rsync hoge (cp or scp to put the raw data)The symbolic link process will be done in the next process.\n2. use the external SSD/HDD of analysis PC (need to mount it) When your main storage is not so large, you may think to use external storage. For example, main storage is used for OS installation and external storage is used for experimental data. (I think this case is for personal analysis using your own PC.)\nIn that case, you need to do:\nmount the external storage check and set the file permission to be able to read or write it. The format and mount process is very depend on the situation, so please check the way in other place. One important point is that we have output root file when we start to analysis, so it may need to make the directory for outputed root files in the external storage.\n3. use network file system (NFS) and mount it For online analysis, the best option is to get the data via a file server, as there is no time to transfer the raw data files each time.\nThis is example of CRIB system.\n--- title: Network system of CRIB --- graph LR; A(MPV E7) --\u003e D{\u003cstrong\u003eDAQ main PC\u003c/strong\u003e\u003cbr\u003e\u003c/br\u003efile server} B(MPV1 J1) --\u003e D C(MPV2 J1) --\u003e D D --\u003e E[Analysis PC] As this figure, we use file server in the DAQ main PC.\n3.1 server setting The OS of the DAQ PC is CentOS7, but I think it can be applied for current OS. (like yum -\u003e dnf) First, please install required package.\nsudo yum install -y rpcbind nfs-utilsThen prepare the raw data file directory for sharing.\nmkdir /data (any location) And setting file for nfs is /etc/exports, and here is the example.\n/data 192.168.1.5 /data 192.168.2.0/24(rw)The first one means the host of 192.168.1.5 can access the shared directory “/data”. In the default setting, users cannot write to this directory.\nThe host of the second line means the range that can access. If we add rw option, users can write to this directory. For the other options, please check the official site.\nFinally, the following command is used to reflect the settings.\nfirewall-cmd --permanent --zone=public --add-service=nfs firewall-cmd --reload systemctl start rpcbind systemctl enable rpcbind systemctl start nfs systemctl enable nfsIf you do not have a firewall set up, you do not need the relevant commands.\n3.2 client setting The package is also needed for client PC.\nsudo yum install -y nfs-utilsPrepare the mounted directory and mount it.\nmkdir /mnt/data sudo mount -t nfs host_IP_address:/data /mnt/data df -hIf you see the mounted configuration, your nfs configuration is complete.\nTo reflect the mount settings when the system is rebooted, add a setting to /etc/fstab.\n​ /etc/fstab /etc/fstab + host_IP_address:/data /mnt/data nfs defaults 0 0 sudo mount -a",
+    "content": "last modified: 2023-11-02 by Kodai Okawa For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory. So first, we need to make raw data directory.\nThere are three option to do so.\nuse the default SSD/HDD of analysis PC use the external SSD/HDD of analysis PC (need to mount it) use network file system (NFS) and mount it 1 and 2 options are mainly used for offline analysis, while 3 option is used for online analysis.\n1. use the default SSD/HDD of analysis PC If you have large size of main storage, the one option is easiest way. Just like:\ncd ~ mkdir data (or where you want to put) cd data rsync hoge (cp or scp to put the raw data)The symbolic link process will be done in the next process.\n2. use the external SSD/HDD of analysis PC (need to mount it) When your main storage is not so large, you may think to use external storage. For example, main storage is used for OS installation and external storage is used for experimental data. (I think this case is for personal analysis using your own PC.)\nIn that case, you need to do:\nmount the external storage check and set the file permission to be able to read or write it. The format and mount process is very depend on the situation, so please check the way in other place. One important point is that we have output root file when we start to analysis, so it may need to make the directory for outputed root files in the external storage.\n3. use network file system (NFS) and mount it For online analysis, the best option is to get the data via a file server, as there is no time to transfer the raw data files each time.\nThis is example of CRIB system.\n--- title: Network system of CRIB --- graph LR; A(MPV E7) --\u003e D{\u003cstrong\u003eDAQ main PC\u003c/strong\u003e\u003cbr\u003e\u003c/br\u003efile server} B(MPV1 J1) --\u003e D C(MPV2 J1) --\u003e D D --\u003e E[Analysis PC] As this figure, we use file server in the DAQ main PC.\n3.1 server setting The OS of the DAQ PC is CentOS7, but I think it can be applied for current OS. (like yum -\u003e dnf) First, please install required package.\nsudo yum install -y rpcbind nfs-utilsThen prepare the raw data file directory for sharing.\nmkdir /data (any location) And setting file for nfs is /etc/exports, and here is the example.\n/data 192.168.1.5 /data 192.168.2.0/24(rw)The first one means the host of 192.168.1.5 can access the shared directory “/data”. In the default setting, users cannot write to this directory.\nThe host of the second line means the range that can access. If we add rw option, users can write to this directory. For the other options, please check the official site.\nFinally, the following command is used to reflect the settings.\nfirewall-cmd --permanent --zone=public --add-service=nfs firewall-cmd --reload systemctl start rpcbind systemctl enable rpcbind systemctl start nfs systemctl enable nfsIf you do not have a firewall set up, you do not need the relevant commands.\n3.2 client setting The package is also needed for client PC.\nsudo yum install -y nfs-utilsPrepare the mounted directory and mount it.\nmkdir /mnt/data sudo mount -t nfs host_IP_address:/data /mnt/data df -hIf you see the mounted configuration, your nfs configuration is complete.\nTo reflect the mount settings when the system is rebooted, add a setting to /etc/fstab.\n​ /etc/fstab /etc/fstab + host_IP_address:/data /mnt/data nfs defaults 0 0 sudo mount -a",
     "description": "",
     "tags": [
       "CRIB"
     ],
-    "title": "Mount setting",
+    "title": "mount setting",
     "uri": "/artemis_crib/installation/mount/index.html"
   },
   {
@@ -131,23 +133,23 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Installation",
-    "content": "last modified: 2023-10-30 by Kodai Okawa Some CRIB-specific files use energy loss libraries. In particular, a library called SRIMlib has been developed by Okawa and contains settings to load this library.\ngit clone https://github.com/okawak/SRIMlib.git cd SRIMlib mkdir build cd build cmake .. make make installBefore using this library, you need to make database file (just .root file)\ncd .. source thisSRIMlib.sh updateIf you want to make energy loss figures, “f” option will work.\nupdate -f",
+    "content": "last modified: 2023-11-02 by Kodai Okawa Some CRIB-specific files use energy loss libraries. In particular, a library called SRIMlib has been developed by Okawa and some processors need to load this library.\ngit clone https://github.com/okawak/SRIMlib.git cd SRIMlib mkdir build cd build cmake .. make make installBefore using this library, you need to make database file (just .root file)\ncd .. source thisSRIMlib.sh updateIf you want to make energy loss figures, “f” option will work.\nupdate -fAlso, I recommend to write source thisSRIMlib.sh part in the .bashrc/.zshrc to load this library.\n",
     "description": "",
     "tags": [
       "CRIB"
     ],
-    "title": "Energyloss_calculator",
+    "title": "energyloss_calculator",
     "uri": "/artemis_crib/installation/energyloss_calculator/index.html"
   },
   {
     "breadcrumb": "Installation",
-    "content": "last modified: 2023-10-30 by Kodai Okawa With this command, all settings are made interactively.\ncurl --proto '=https' --tlsv1.2 -sSf https://okawak.github.io/artemis_crib/installation/init.sh | sh",
+    "content": "last modified: 2023-11-02 by Kodai Okawa With this command, all initial settings of “art_analysis” are made.\ncurl --proto '=https' --tlsv1.2 -sSf https://okawak.github.io/artemis_crib/installation/init.sh | shAfter that, please add the following lines to the .bashrc/.zshrc.\n# this is option source ${HOME}/Cern/root/root_install/bin/thisroot.sh \u0026\u003e /dev/null source ${HOME}/repos/artemis/install/bin/thisartemis.sh \u0026\u003e /dev/null source ${HOME}/repos/SRIMlib/thisSRIMlib.sh \u0026\u003e /dev/null # need from this line! export EXP_NAME=\"expname\" # your experiment export EXP_NAME_OLD=\"expname\" # this is option export PATH=\"${HOME}/art_analysis/bin:${PATH}\" source ${HOME}/art_analysis/bin/art_setting -qThe setting is all!\nThen, the following commands (shellscript) will be downloaded.\nartlogin.sh This is loaded when you command artlogin. This command is described in the next chapter.\nartnew With this command, new artemis environment will be created interactively.\nart_setting This is like a library. The shellscript function artlogin, a etc. are written.\nart_check Checking these shellscript is updatable or not.\n",
     "description": "",
     "tags": [
       "CRIB",
       "unsettled"
     ],
-    "title": "Art_analysis",
+    "title": "art_analysis",
     "uri": "/artemis_crib/installation/art_analysis/index.html"
   },
   {
@@ -227,8 +229,8 @@ var relearn_search_index = [
     "content": "",
     "description": "",
     "tags": null,
-    "title": "Tag :: data_class",
-    "uri": "/artemis_crib/tags/data_class/index.html"
+    "title": "Tag :: CRIB",
+    "uri": "/artemis_crib/tags/crib/index.html"
   },
   {
     "breadcrumb": "",
@@ -243,8 +245,8 @@ var relearn_search_index = [
     "content": "",
     "description": "",
     "tags": null,
-    "title": "Tag :: CRIB",
-    "uri": "/artemis_crib/tags/crib/index.html"
+    "title": "Tag :: data_class",
+    "uri": "/artemis_crib/tags/data_class/index.html"
   },
   {
     "breadcrumb": "Tags",

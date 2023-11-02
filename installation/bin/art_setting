@@ -41,11 +41,29 @@ art_usage() {
 USAGE:
     1. artlogin
 
+        enter the artemis environment
+        > artlogin 
+        this is for default (shared) user
+        > artlogin username
+        make a new user or enter personal environment
+
+        after this command, "acd" alias is available
+        > acd
+        acd = cd "your artemis work directory"
 
     2. a
 
+        start the artemis
+        NOTE: need to execute after artlogin command
+        > artlogin
+        > a
+
+        this can be used when you want to use macro files
+        > a 'macro/somefile.C("hoge")'
 
     3. art_usage (this)
+        
+        show the USAGE
 EOF
 }
 
@@ -53,11 +71,11 @@ EOF
 while (( $# > 0 ))
 do
     case $1 in
-        -h)
-            art_usage
+        -q)
+            return 0
             ;;
         *)
-            exit 0
+            art_usage
             ;;
     esac
     shift

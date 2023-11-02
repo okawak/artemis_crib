@@ -13,7 +13,8 @@
 
    /* adjusted to relearn-dark chroma style */
    --CODE-BLOCK-color: #f8f8f8; /* fallback text color of block code; should be adjusted to your selected chroma style */
-   --CODE-BLOCK-BG-color: #2b2b2b; /* fallback background color of block code; should be adjusted to your selected chroma style */
+   /*--CODE-BLOCK-BG-color: #2b2b2b;*/ /* fallback background color of block code; should be adjusted to your selected chroma style */
+   --CODE-BLOCK-BG-color: #424242; /* fallback background color of block code; should be adjusted to your selected chroma style */
 
    --CODE-INLINE-color: #82e550; /* text color of inline code */
    --CODE-INLINE-BG-color: #2d2d2d; /* background color of inline code */

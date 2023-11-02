@@ -6,41 +6,51 @@
     <description>Recent content in CRIB on CRIB artemis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Aug 2023 15:14:43 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/tags/crib/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Nov 2023 13:58:35 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/tags/crib/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Artemis</title>
+      <title>new_directory</title>
+      <link>https://okawak.github.io/artemis_crib/setting/new_directory/index.html</link>
+      <pubDate>Thu, 02 Nov 2023 13:58:35 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/setting/new_directory/index.html</guid>
+      <description>last modified: 2023-11-02 by Kodai Okawa If you installed with &amp;ldquo;curl&amp;rdquo; command explained previous chapter, you should have artnew command. This command will make new experiment directory interactively.
+Before using this command, please check the directory structure!
+Let&amp;rsquo;s start artnew command!</description>
+    </item>
+    <item>
+      <title>artemis</title>
       <link>https://okawak.github.io/artemis_crib/installation/artemis/index.html</link>
       <pubDate>Mon, 14 Aug 2023 14:28:33 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/artemis/index.html</guid>
-      <description>last modified: 2023-10-29 by Kodai Okawa From the current situation, CRIB experiment doesn&amp;rsquo;t use GET system, so we describe how to install it without linking it to GET decoder.
+      <description>last modified: 2023-11-02 by Kodai Okawa From the current situation, CRIB experiment doesn&amp;rsquo;t use GET system, so we describe how to install it without linking it to GET decoder.
 Also, it can link to openMPI, but the below commands assume not using openMPI. See artemis repo for more information.
 cd hoge git clone https://github.com/artemis-dev/artemis.git -b develop cd artemis mkdir build cd build cmake -DCMAKE_INSTALL_PREFIX=../install .. make -j8 make install source .</description>
     </item>
     <item>
-      <title>Mount setting</title>
+      <title>mount setting</title>
       <link>https://okawak.github.io/artemis_crib/installation/mount/index.html</link>
       <pubDate>Mon, 14 Aug 2023 15:14:29 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/mount/index.html</guid>
-      <description>last modified: 2023-10-30 by Kodai Okawa For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory. So first, we need to make raw data directory.
+      <description>last modified: 2023-11-02 by Kodai Okawa For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory. So first, we need to make raw data directory.
 There are three option to do so.
 use the default SSD/HDD of analysis PC use the external SSD/HDD of analysis PC (need to mount it) use network file system (NFS) and mount it 1 and 2 options are mainly used for offline analysis, while 3 option is used for online analysis.</description>
     </item>
     <item>
-      <title>Energyloss_calculator</title>
+      <title>energyloss_calculator</title>
       <link>https://okawak.github.io/artemis_crib/installation/energyloss_calculator/index.html</link>
       <pubDate>Mon, 14 Aug 2023 15:14:00 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/energyloss_calculator/index.html</guid>
-      <description>last modified: 2023-10-30 by Kodai Okawa Some CRIB-specific files use energy loss libraries. In particular, a library called SRIMlib has been developed by Okawa and contains settings to load this library.
+      <description>last modified: 2023-11-02 by Kodai Okawa Some CRIB-specific files use energy loss libraries. In particular, a library called SRIMlib has been developed by Okawa and some processors need to load this library.
 git clone https://github.com/okawak/SRIMlib.git cd SRIMlib mkdir build cd build cmake .. make make installBefore using this library, you need to make database file (just .root file)
 cd .. source thisSRIMlib.sh updateIf you want to make energy loss figures, &amp;ldquo;f&amp;rdquo; option will work.</description>
     </item>
     <item>
-      <title>Art_analysis</title>
+      <title>art_analysis</title>
       <link>https://okawak.github.io/artemis_crib/installation/art_analysis/index.html</link>
       <pubDate>Mon, 14 Aug 2023 15:14:43 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/art_analysis/index.html</guid>
-      <description>last modified: 2023-10-30 by Kodai Okawa With this command, all settings are made interactively.
-curl --proto &amp;#39;=https&amp;#39; --tlsv1.2 -sSf https://okawak.github.io/artemis_crib/installation/init.sh | sh</description>
+      <description>last modified: 2023-11-02 by Kodai Okawa With this command, all initial settings of &amp;ldquo;art_analysis&amp;rdquo; are made.
+curl --proto &amp;#39;=https&amp;#39; --tlsv1.2 -sSf https://okawak.github.io/artemis_crib/installation/init.sh | shAfter that, please add the following lines to the .bashrc/.zshrc.
+# this is option source ${HOME}/Cern/root/root_install/bin/thisroot.sh &amp;amp;&amp;gt; /dev/null source ${HOME}/repos/artemis/install/bin/thisartemis.sh &amp;amp;&amp;gt; /dev/null source ${HOME}/repos/SRIMlib/thisSRIMlib.sh &amp;amp;&amp;gt; /dev/null # need from this line! export EXP_NAME=&amp;#34;expname&amp;#34; # your experiment export EXP_NAME_OLD=&amp;#34;expname&amp;#34; # this is option export PATH=&amp;#34;${HOME}/art_analysis/bin:${PATH}&amp;#34; source ${HOME}/art_analysis/bin/art_setting -qThe setting is all!</description>
     </item>
   </channel>
 </rss>

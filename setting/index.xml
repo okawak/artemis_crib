@@ -6,5 +6,14 @@
     <description>Recent content in Setting on CRIB artemis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://okawak.github.io/artemis_crib/setting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>new_directory</title>
+      <link>https://okawak.github.io/artemis_crib/setting/new_directory/index.html</link>
+      <pubDate>Thu, 02 Nov 2023 13:58:35 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/setting/new_directory/index.html</guid>
+      <description>last modified: 2023-11-02 by Kodai Okawa If you installed with &amp;ldquo;curl&amp;rdquo; command explained previous chapter, you should have artnew command. This command will make new experiment directory interactively.
+Before using this command, please check the directory structure!
+Let&amp;rsquo;s start artnew command!</description>
+    </item>
   </channel>
 </rss>
