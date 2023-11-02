@@ -1,5 +1,5 @@
 ---
-title: "Root"
+title: "ROOT"
 date: 2023-08-14T12:27:52+09:00
 author: "Kodai Okawa"
 draft: false
@@ -16,10 +16,10 @@ so we recommend to build from the sources.
 For detailded information, please refer [Installing ROOT](https://root.cern/install/)
 Recommendations are described below.
 
-```shell
+```shell { wrap="false" }
 # The latest stable branch gets updated automatically on each release.
 # You may update your local copy by issuing a `git pull` command from within `root_src/`.
-cd hoge # where you want to install ROOT
+cd hoge
 git clone --branch latest-stable --depth=1 https://github.com/root-project/root.git root_src
 mkdir root_build root_install && cd root_build
 cmake -DCMAKE_INSTALL_PREFIX=../root_install ../root_src # && check cmake configuration output for warnings or errors
@@ -34,7 +34,4 @@ See also [dependencies](https://root.cern/install/dependencies/).
 If errors related to xrootd, TBB and clad occur, the cmake options `-Dxrootd=OFF`, `-Dimt=OFF` and `-Dclad=OFF` may work respectively.
 {{% /notice %}}
 
-`source thisroot.sh` part will be written in thisartemis.sh (this is created after artemis installation),
-but before installing artemis, you need to type this once.
-
-after completing the installation of the artemis, you don't have to execute this command for each time.
+I recommend to write `source thisroot.sh` part in the .bashrc/.zshrc to load this library.

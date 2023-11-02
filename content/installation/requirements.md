@@ -33,4 +33,4 @@ The following machines have been tested for operation.
 NOTE:
 - From 2023/10, Ubuntu system is also avaliable. ([issue48](https://github.com/artemis-dev/artemis/pull/48))
 - Scripts for some automate operation are written in `zsh` format.
-
+- Installation seems to be difficult on `macOS` (because of `clang` not `gcc`) in the current version.

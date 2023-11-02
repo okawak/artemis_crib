@@ -1,5 +1,5 @@
 ---
-title: "Energyloss_calculator"
+title: "energyloss_calculator"
 date: 2023-08-14T15:14:00+09:00
 draft: false
 author: "Kodai Okawa"
@@ -10,10 +10,10 @@ weight: 7
 {{% badge %}}{{< signature >}}{{% /badge %}}
 
 Some CRIB-specific files use energy loss libraries.
-In particular, a library called [SRIMlib](https://github.com/okawak/SRIMlib) has been developed by Okawa and contains settings to load this library.
+In particular, a library called [SRIMlib](https://github.com/okawak/SRIMlib) has been developed by Okawa and some processors need to load this library.
 
 
-```shell
+```shell { wrap="false" }
 git clone https://github.com/okawak/SRIMlib.git
 cd SRIMlib
 mkdir build
@@ -25,7 +25,7 @@ make install
 
 Before using this library, you need to make database file (just .root file)
 
-```shell
+```shell { wrap="false" }
 cd ..
 source thisSRIMlib.sh
 update
@@ -33,6 +33,8 @@ update
 
 If you want to make energy loss figures, "f" option will work.
 
-```shell
+```shell { wrap="false" }
 update -f
 ```
+
+Also, I recommend to write `source thisSRIMlib.sh` part in the .bashrc/.zshrc to load this library.

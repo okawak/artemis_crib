@@ -1,5 +1,5 @@
 ---
-title: "Artemis"
+title: "artemis"
 date: 2023-08-14T14:28:33+09:00
 draft: false
 author: "Kodai Okawa"
@@ -15,7 +15,7 @@ so we describe how to install it without linking it to GET decoder.
 Also, it can link to `openMPI`, but the below commands assume not using openMPI.
 See [artemis repo](https://github.com/artemis-dev/artemis/blob/develop/README.md) for more information.
 
-```shell
+```shell { wrap="false" }
 cd hoge
 git clone https://github.com/artemis-dev/artemis.git -b develop
 cd artemis
@@ -30,12 +30,13 @@ source ../install/bin/thisartemis.sh
 Then, `<CMAKE_INSTALL_PREFIX>/bin/thisartemis.sh` will be created 
 and this shell script can configure the environment (ROOT, yaml-cpp, artemis libraries) to use artemis.
 
-(It means you don't have to write like `export PATH=${yaml-cpp path}:$PATH` or `source thisroot.sh` in .zshrc or .bashrc.)
+Also, I recommend to write `source thisartemis.sh` part in the .bashrc/.zshrc to load this library.
 
 Another option is to use `module` command to manage the environment.
 It is also written in [artemis repo](https://github.com/artemis-dev/artemis/blob/develop/README.md).
 
 ---
+
 {{% notice style="note" %}}
 This is 2023/10/29 current information 
 {{% /notice %}}
@@ -43,7 +44,7 @@ This is 2023/10/29 current information
 Okawa think there is a grammatical error in the **sources/main/thisartemis.sh.in**, so I changed like:
 
 
-```diff
+```diff { wrap="false" }
 -if [ "@BUILD_GET@" == "ON" ]; then
 +if [[ "@BUILD_GET@" == "ON" ]]; then
      export LD_LIBRARY_PATH=@GET_LIB_DIR@:$LD_LIBRARY_PATH

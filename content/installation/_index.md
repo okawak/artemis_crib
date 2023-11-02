@@ -6,3 +6,5 @@ weight = 1
 +++
 
 This chapter describes how to set up the artemis environment for the CRIB experiment.
+See from here for initial settings.
+

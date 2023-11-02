@@ -1,5 +1,5 @@
 ---
-title: "Mount setting"
+title: "mount setting"
 date: 2023-08-14T15:14:29+09:00
 draft: false
 author: "Kodai Okawa"
@@ -25,7 +25,7 @@ There are three option to do so.
 If you have large size of main storage, the one option is easiest way.
 Just like:
 
-```shell
+```shell { wrap="false" }
 cd ~
 mkdir data (or where you want to put)
 cd data
@@ -72,19 +72,19 @@ As this figure, we use file server in the DAQ main PC.
 The OS of the DAQ PC is CentOS7, but I think it can be applied for current OS. (like `yum` -> `dnf`)
 First, please install required package.
 
-```shell
+```shell { wrap="false" }
 sudo yum install -y rpcbind nfs-utils
 ```
 
 Then prepare the raw data file directory for sharing.
 
-```shell
+```shell { wrap="false" }
 mkdir /data (any location) 
 ```
 
 And setting file for nfs is `/etc/exports`, and here is the example.
 
-```
+```txt { wrap="false" }
 /data 192.168.1.5
 /data 192.168.2.0/24(rw)
 ```
@@ -98,7 +98,7 @@ For the other options, please check [the official site](https://access.redhat.co
 
 Finally, the following command is used to reflect the settings.
 
-```shell
+```shell { wrap="false" }
 firewall-cmd --permanent --zone=public --add-service=nfs
 firewall-cmd --reload
 systemctl start rpcbind
@@ -113,13 +113,13 @@ If you do not have a firewall set up, you do not need the relevant commands.
 
 The package is also needed for client PC.
 
-```shell
+```shell { wrap="false" }
 sudo yum install -y nfs-utils
 ```
 
 Prepare the mounted directory and mount it.
 
-```shell
+```shell { wrap="false" }
 mkdir /mnt/data
 sudo mount -t nfs host_IP_address:/data /mnt/data
 df -h
@@ -128,11 +128,11 @@ If you see the mounted configuration, your nfs configuration is complete.
 
 To reflect the mount settings when the system is rebooted, add a setting to `/etc/fstab`.
 
-```diff { title="/etc/fstab" }
+```diff { wrap="false" title="/etc/fstab" }
 + host_IP_address:/data   /mnt/data   nfs   defaults   0 0
 ```
 
-```shell
+```shell { wrap="false" }
 sudo mount -a
 ```
 
