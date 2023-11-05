@@ -8,20 +8,20 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Nov 2023 15:31:58 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/tags/crib/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>new_experiment</title>
+      <title>New experiment</title>
       <link>https://okawak.github.io/artemis_crib/setting/new_experiment/index.html</link>
       <pubDate>Thu, 02 Nov 2023 13:58:35 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/setting/new_experiment/index.html</guid>
-      <description>last modified: 2023-11-02 by Kodai Okawa If you installed with &amp;ldquo;curl&amp;rdquo; command explained previous chapter, you should have artnew command. This command will make new experiment directory interactively.
+      <description>last modified: 2023-11-05 by Kodai Okawa If you installed with &amp;ldquo;curl&amp;rdquo; command explained previous chapter, you should have artnew command. This command will make new experiment directory interactively.
 Before using this command, please check and make the directory structure!
 rawdata directory (like /mnt/data or /data? Create it to suit your situation.) output rootfile directory (like /data/art_output?) git repository local repository: suit for online analysis remote repository: suit for offline analysis Let&amp;rsquo;s start &amp;ldquo;artnew&amp;rdquo; command!</description>
     </item>
     <item>
-      <title>new_user</title>
+      <title>New user</title>
       <link>https://okawak.github.io/artemis_crib/setting/new_user/index.html</link>
       <pubDate>Thu, 02 Nov 2023 14:42:56 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/setting/new_user/index.html</guid>
-      <description>last modified: 2023-11-02 by Kodai Okawa After artnew command, you can see new directory of config files.
+      <description>last modified: 2023-11-05 by Kodai Okawa After artnew command, you can see new directory of config files.
 &amp;gt; tree -a art_analysis art_analysis ├── .conf │ ├── artlogin.sh +│ └── test.sh ├── bin │ ├── art_check │ ├── art_setting │ └── artnew +└── test This is experiment name &amp;ldquo;test&amp;rdquo; example. In order to load this script test.sh, please modify &amp;ldquo;EXP_NAME&amp;rdquo; environment valiable in .zshrc.
 &amp;#8203; .bashrc/.zshrc .bashrc/.zshrc export EXP_NAME=&amp;#34;test&amp;#34; # your experiment And load the config file.</description>
     </item>
@@ -34,11 +34,11 @@ rawdata directory (like /mnt/data or /data? Create it to suit your situation.) o
 &amp;gt; artlogin (username) &amp;gt; mkdir build &amp;amp;&amp;amp; cd build &amp;gt; cmake .. &amp;gt; make -j4 &amp;gt; make install &amp;gt; acdacd is the alias command that is definded after artlogin command. (acd = cd your_work_directory) Also if you changed some processor, you need to do these process.</description>
     </item>
     <item>
-      <title>map_config</title>
+      <title>Map configuration</title>
       <link>https://okawak.github.io/artemis_crib/setting/map_config/index.html</link>
       <pubDate>Thu, 02 Nov 2023 15:31:58 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/setting/map_config/index.html</guid>
-      <description>last modified: 2023-11-02 by Kodai Okawa From this section, we start to configure the settings according to the actual experimental setup. The setting files are followings:
+      <description>last modified: 2023-11-05 by Kodai Okawa From this section, we start to configure the settings according to the actual experimental setup. The setting files are followings:
 &amp;gt; tree . ├── mapper.conf ├── conf │ ├── map │ │ ├── ppac │ │ │ ├── dlppac.map -- snip -- │ └── seg │ ├── modulelist.yaml │ └── seglist.yaml -- snip --1. What is the map file? The data obtained from an ADC/TDC is in the form of, for example, &amp;ldquo;The data coming into channel 10 of an ADC with an ID of 1 is 100&amp;rdquo;.</description>
     </item>
     <item>
@@ -60,11 +60,11 @@ There are three option to do so.
 use the default SSD/HDD of analysis PC use the external SSD/HDD of analysis PC (need to mount it) use network file system (NFS) and mount it 1 and 2 options are mainly used for offline analysis, while 3 option is used for online analysis.</description>
     </item>
     <item>
-      <title>energyloss_calculator</title>
+      <title>energyloss calculator</title>
       <link>https://okawak.github.io/artemis_crib/installation/energyloss_calculator/index.html</link>
       <pubDate>Mon, 14 Aug 2023 15:14:00 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/energyloss_calculator/index.html</guid>
-      <description>last modified: 2023-11-02 by Kodai Okawa Some CRIB-specific files use energy loss libraries. In particular, a library called SRIMlib has been developed by Okawa and some processors need to load this library.
+      <description>last modified: 2023-11-05 by Kodai Okawa Some CRIB-specific files use energy loss libraries. In particular, a library called SRIMlib has been developed by Okawa and some processors need to load this library.
 git clone https://github.com/okawak/SRIMlib.git cd SRIMlib mkdir build cd build cmake .. make make installBefore using this library, you need to make database file (just .root file)
 cd .. source thisSRIMlib.sh updateIf you want to make energy loss figures, &amp;ldquo;f&amp;rdquo; option will work.</description>
     </item>

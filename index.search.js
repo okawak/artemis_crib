@@ -1,12 +1,12 @@
 var relearn_search_index = [
   {
     "breadcrumb": "Setting",
-    "content": "last modified: 2023-11-02 by Kodai Okawa If you installed with “curl” command explained previous chapter, you should have artnew command. This command will make new experiment directory interactively.\nBefore using this command, please check and make the directory structure!\nrawdata directory (like /mnt/data or /data? Create it to suit your situation.) output rootfile directory (like /data/art_output?) git repository local repository: suit for online analysis remote repository: suit for offline analysis Let’s start “artnew” command! The word after “:” is your input.\n\u003e artnew Input the experiment name create new artemis work directory? (y/n): y Input experimental name: test Is it OK? (y/n): y Input value: test Check the base directory (default value is fine!) If there are no input, the default value will be used. artnew: If no input is provided, the default value is used. Input repository path or URL (default: https://github.com/okawak/artemis_crib.git): Is it OK? (y/n): y Input value: https://github.com/okawak/artemis_crib.git Input the rawdata directory Input rawdata directory path (default: /data/test/ridf): Is it OK? (y/n): y Input value: /data/test/ridf Input the output directory Input output data directory path (default: /data/test/user): Is it OK? (y/n): y Input value: /data/test/user Input the git setting (PLEASE MAKE your own repository. Local repository will be fine) Based on the repository, do you make your own repository? (y/n): y is it local repository (y/n): y artnew: making LOCAL repository of test Input the local repository path (default: $HOME/repos/exp): Is it OK? (y/n): y Input value: /home/crib/repos/exp -- snip -- art_analysis setting for test is finished!The initial setting is completed!!\n",
+    "content": "last modified: 2023-11-05 by Kodai Okawa If you installed with “curl” command explained previous chapter, you should have artnew command. This command will make new experiment directory interactively.\nBefore using this command, please check and make the directory structure!\nrawdata directory (like /mnt/data or /data? Create it to suit your situation.) output rootfile directory (like /data/art_output?) git repository local repository: suit for online analysis remote repository: suit for offline analysis Let’s start “artnew” command! The word after “:” is your input.\n\u003e artnew Input the experiment name create new artemis work directory? (y/n): y Input experimental name: test Is it OK? (y/n): y Input value: test Check the base directory (default value is fine!) If there are no input, the default value will be used. artnew: If no input is provided, the default value is used. Input repository path or URL (default: https://github.com/okawak/artemis_crib.git): Is it OK? (y/n): y Input value: https://github.com/okawak/artemis_crib.git Input the rawdata directory Input rawdata directory path (default: /data/test/ridf): Is it OK? (y/n): y Input value: /data/test/ridf Input the output directory Input output data directory path (default: /data/test/user): Is it OK? (y/n): y Input value: /data/test/user Input the git setting (PLEASE MAKE your own repository. Local repository will be fine) Based on the repository, do you make your own repository? (y/n): y is it local repository (y/n): y artnew: making LOCAL repository of test Input the local repository path (default: $HOME/repos/exp): Is it OK? (y/n): y Input value: /home/crib/repos/exp -- snip -- art_analysis setting for test is finished!The initial setting is completed!!\n",
     "description": "",
     "tags": [
       "CRIB"
     ],
-    "title": "new_experiment",
+    "title": "New experiment",
     "uri": "/artemis_crib/setting/new_experiment/index.html"
   },
   {
@@ -57,12 +57,12 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Setting",
-    "content": "last modified: 2023-11-02 by Kodai Okawa After artnew command, you can see new directory of config files.\n\u003e tree -a art_analysis art_analysis ├── .conf │ ├── artlogin.sh +│ └── test.sh ├── bin │ ├── art_check │ ├── art_setting │ └── artnew +└── test This is experiment name “test” example. In order to load this script test.sh, please modify “EXP_NAME” environment valiable in .zshrc.\n​ .bashrc/.zshrc .bashrc/.zshrc export EXP_NAME=\"test\" # your experiment And load the config file.\n\u003e source ~/.zshrcThen you can make your own work directory by using artlogin command!\nLet’s start “artlogin” command! For example, let’s make default user (user name is the same with experiment name)!\n\u003e artloginIf you want to make your own directory, the following will work.\n\u003e artlogin yourname Check if you really want to make your work directory artlogin: user 'test' not found. create new user? (y/n): y Cloning into '/Users/okawa/art_analysis/test/test'... done. Git setting artlogin: making local git config Input fullname: KodaiOkawa Is it Okay? (y/n): y Input email address: okawa@cns.s.u-tokyo.ac.jp Is it Okay? (y/n): y Symbolic link setting. If there are no problem, the current directory move to your artemis work directory \u003e pwd /home/crib/art_analysis/test/test \u003e ls -lIf your synbolic link seems okay, the setting is all!\nIf artnew setting have problem, the error message will appear. Typical examples are as follows.\nmkdir: /data: Read-only file systemThis is a case of the directory permissions not being set correctly. Use the chmod command or similar to set them correctly and try again.\n",
+    "content": "last modified: 2023-11-05 by Kodai Okawa After artnew command, you can see new directory of config files.\n\u003e tree -a art_analysis art_analysis ├── .conf │ ├── artlogin.sh +│ └── test.sh ├── bin │ ├── art_check │ ├── art_setting │ └── artnew +└── test This is experiment name “test” example. In order to load this script test.sh, please modify “EXP_NAME” environment valiable in .zshrc.\n​ .bashrc/.zshrc .bashrc/.zshrc export EXP_NAME=\"test\" # your experiment And load the config file.\n\u003e source ~/.zshrcThen you can make your own work directory by using artlogin command!\nLet’s start “artlogin” command! For example, let’s make default user (user name is the same with experiment name)!\n\u003e artloginIf you want to make your own directory, the following will work.\n\u003e artlogin yourname Check if you really want to make your work directory artlogin: user 'test' not found. create new user? (y/n): y Cloning into '/Users/okawa/art_analysis/test/test'... done. Git setting artlogin: making local git config Input fullname: KodaiOkawa Is it Okay? (y/n): y Input email address: okawa@cns.s.u-tokyo.ac.jp Is it Okay? (y/n): y Symbolic link setting. If there are no problem, the current directory move to your artemis work directory \u003e pwd /home/crib/art_analysis/test/test \u003e ls -lIf your synbolic link seems okay, the setting is all!\nIf artnew setting have problem, the error message will appear. Typical examples are as follows.\nmkdir: /data: Read-only file systemThis is a case of the directory permissions not being set correctly. Use the chmod command or similar to set them correctly and try again.\n",
     "description": "",
     "tags": [
       "CRIB"
     ],
-    "title": "new_user",
+    "title": "New user",
     "uri": "/artemis_crib/setting/new_user/index.html"
   },
   {
@@ -100,13 +100,21 @@ var relearn_search_index = [
     "uri": "/artemis_crib/installation/root/index.html"
   },
   {
+    "breadcrumb": "",
+    "content": "Lorem Ipsum.\n",
+    "description": "",
+    "tags": null,
+    "title": "CRIB_parts",
+    "uri": "/artemis_crib/crib_parts/index.html"
+  },
+  {
     "breadcrumb": "Setting",
-    "content": "last modified: 2023-11-02 by Kodai Okawa From this section, we start to configure the settings according to the actual experimental setup. The setting files are followings:\n\u003e tree . ├── mapper.conf ├── conf │ ├── map │ │ ├── ppac │ │ │ ├── dlppac.map -- snip -- │ └── seg │ ├── modulelist.yaml │ └── seglist.yaml -- snip --1. What is the map file? The data obtained from an ADC/TDC is in the form of, for example, “The data coming into channel 10 of an ADC with an ID of 1 is 100”.\n--- title: Data flow example --- graph LR; A{detector} --\u003e|signal| B(TDC/ADC\u003cbr\u003e\u003c/br\u003eID=1, ch=10) B --\u003e|value=100| C[DAQ] The role of the map file is to map this value of “100” to an ID that is easy to analyse. An ID that is easy to analyse means, for example, that even if signals from the same detector are acquired with different ADCs/TDCs, the same ID is easier to handle in the analysis.\n--- title: Data flow example --- graph LR; A(TDC/ADC\u003cbr\u003e\u003c/br\u003eID=1, ch=10) --\u003e|value=100| B[DAQ] B --\u003e|value=100 mapping to| C(analysis\u003cbr\u003e\u003c/br\u003eID=2, ch=20) After mapping, we can check the data of this “100” from ID=2 and ch=20. This ID and channel (2, 20) are provided for convenience, so you can freely set them.\nSo, in summary, the map file role is like this:\n--- title: role of the map file --- graph LR; A(DAQ ID\u003cbr\u003e\u003c/br\u003eID=1, ch=10) \u003c--\u003e|mapping| B(analysis ID\u003cbr\u003e\u003c/br\u003eID=2, ch=20) 2. map files CRIB is using Babirl for the DAQ system. In this system, the DAQ ID represented in the example is determined by five parameters.\ndevice ID (dev) focal plane (fp) detector ID (det) geometry ID (geo) channel (ch) The dev, fp, det and geo parameters can be set from DAQ setting. For the CRIB experiment, conventionally we set dev=12, fp=0–2 (for each MPV), det=6,7 (6=energy, 7=timing) and geo=from 0. But you can change it freely.\nAnd analysis ID represented in the example is determined by two parameters.\nCategory ID (CatID, cid) id (fID) Of cource you can also set the value freely.\nThe format of the map file is followings:\n# [category] [id] [[device] [focus] [detector] [geo] [ch]] .... 1, 0, 12, 1, 6, 0, 0 Note The id should start from “0”. The ADC/TDC channel start from “0”. The leading “#” is treated as a comment statement. you can set several “DAQ ID” to one “analysis ID” like this: # map for SSD # [category] [id] [[device] [focus] [detector] [geo] [ch]] .... # # Map: energy, timing # #-------------------------------------------------------------------- 1, 0, 12, 1, 6, 0, 0, 12, 2, 7, 0, 0 Please create map files for all detectors like this!\n3. mapper.conf You can select the map file to be loaded with this file. This is especially useful when separating map files for testing from map files for the experiment.\nThe format is followings: (path/to/the/map/file number)\n# file path for configuration, relative to the working directory # (path to the map file) (Number of columns) # cid = 1: rf conf/map/rf/rf.map 1In the note example above, the number is 2.\nPlease do not forget to add to the mapper.conf after you add some map files.\n4. (option) segment files This conf files are used when you use “chkseg.yaml” steering file. This steering file create raw data 2D histograms. I will describe in the Example: online_analysis/check_rawdata in detail.\n",
+    "content": "last modified: 2023-11-05 by Kodai Okawa From this section, we start to configure the settings according to the actual experimental setup. The setting files are followings:\n\u003e tree . ├── mapper.conf ├── conf │ ├── map │ │ ├── ppac │ │ │ ├── dlppac.map -- snip -- │ └── seg │ ├── modulelist.yaml │ └── seglist.yaml -- snip --1. What is the map file? The data obtained from an ADC/TDC is in the form of, for example, “The data coming into channel 10 of an ADC with an ID of 1 is 100”.\n--- title: Data flow example --- graph LR; A{detector} --\u003e|signal| B(TDC/ADC\u003cbr\u003e\u003c/br\u003eID=1, ch=10) B --\u003e|value=100| C[\u003cstrong\u003eData build\u003c/strong\u003e\\nridf file] The role of the map file is to map this value of “100” to an ID that is easy to analyse. An ID that is easy to analyse means, for example, that even if signals from the same detector are acquired with different ADCs/TDCs, the same ID is easier to handle in the analysis.\n--- title: Data flow example --- graph LR; A(TDC/ADC\u003cbr\u003e\u003c/br\u003eID=1, ch=10) --\u003e|value=100| B[\u003cstrong\u003eData build\u003c/strong\u003e\\nridf file] B --\u003e|value=100 mapping to| C(analysis\u003cbr\u003e\u003c/br\u003eID=2, ch=20) After mapping, we can check the data of this “100” from ID=2 and ch=20. This ID and channel (2, 20) are provided for convenience, so you can freely set them.\nSo, in summary, the map file role is like this:\n--- title: role of the map file --- graph LR; A(DAQ ID\u003cbr\u003e\u003c/br\u003eID=1, ch=10) \u003c--\u003e|mapping| B(analysis ID\u003cbr\u003e\u003c/br\u003eID=2, ch=20) 2. map files CRIB is using Babirl for the DAQ system. In this system, the DAQ ID represented in the example is determined by five parameters.\ndevice ID (dev) focal plane (fp) detector ID (det) geometry ID (geo) channel (ch) The dev, fp, det and geo parameters can be set from DAQ setting. For the CRIB experiment, conventionally we set dev=12, fp=0–2 (for each MPV), det=6,7 (6=energy, 7=timing) and geo=from 0. But you can change it freely.\nAnd analysis ID represented in the example is determined by two parameters.\nCategory ID (CatID, cid) id (fID) Of cource you can also set the value freely.\nThe format of the map file is followings:\n# [category] [id] [[device] [focus] [detector] [geo] [ch]] .... 1, 0, 12, 1, 6, 0, 0 Note The id should start from “0”. The ADC/TDC channel start from “0”. The leading “#” is treated as a comment statement. you can set several “DAQ ID” to one “analysis ID” like this: # map for SSD # [category] [id] [[device] [focus] [detector] [geo] [ch]] .... # # Map: energy, timing # #-------------------------------------------------------------------- 1, 0, 12, 1, 6, 0, 0, 12, 2, 7, 0, 0 Please create map files for all detectors like this!\n3. mapper.conf You can select the map file to be loaded with this file. This is especially useful when separating map files for testing from map files for the experiment.\nThe format is followings: (path/to/the/map/file number)\n# file path for configuration, relative to the working directory # (path to the map file) (Number of columns) # cid = 1: rf conf/map/rf/rf.map 1In the note example above, the number is 2.\nPlease do not forget to add to the mapper.conf after you add some map files.\n4. (option) segment files This conf files are used when you use “chkseg.yaml” steering file. This steering file create raw data 2D histograms. I will describe in the Example: online_analysis/check_rawdata in detail.\n",
     "description": "",
     "tags": [
       "CRIB"
     ],
-    "title": "map_config",
+    "title": "Map configuration",
     "uri": "/artemis_crib/setting/map_config/index.html"
   },
   {
@@ -122,8 +130,16 @@ var relearn_search_index = [
     "content": "Lorem Ipsum.\n",
     "description": "",
     "tags": null,
-    "title": "CRIB_parts",
-    "uri": "/artemis_crib/crib_parts/index.html"
+    "title": "Processors",
+    "uri": "/artemis_crib/processors/index.html"
+  },
+  {
+    "breadcrumb": "Setting",
+    "content": "last modified: 2023-11-05 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "Steering",
+    "uri": "/artemis_crib/setting/steering/index.html"
   },
   {
     "breadcrumb": "Installation",
@@ -140,8 +156,16 @@ var relearn_search_index = [
     "content": "Lorem Ipsum.\n",
     "description": "",
     "tags": null,
-    "title": "Processors",
-    "uri": "/artemis_crib/processors/index.html"
+    "title": "Example",
+    "uri": "/artemis_crib/example/index.html"
+  },
+  {
+    "breadcrumb": "Setting",
+    "content": "last modified: 2023-11-05 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "Histograms",
+    "uri": "/artemis_crib/setting/histograms/index.html"
   },
   {
     "breadcrumb": "Installation",
@@ -154,21 +178,21 @@ var relearn_search_index = [
     "uri": "/artemis_crib/installation/mount/index.html"
   },
   {
-    "breadcrumb": "",
-    "content": "Lorem Ipsum.\n",
+    "breadcrumb": "Setting",
+    "content": "last modified: 2023-11-05 by Kodai Okawa need to consider…\n",
     "description": "",
-    "tags": null,
-    "title": "Example",
-    "uri": "/artemis_crib/example/index.html"
+    "tags": [],
+    "title": "VNC server",
+    "uri": "/artemis_crib/setting/vncserver/index.html"
   },
   {
     "breadcrumb": "Installation",
-    "content": "last modified: 2023-11-02 by Kodai Okawa Some CRIB-specific files use energy loss libraries. In particular, a library called SRIMlib has been developed by Okawa and some processors need to load this library.\ngit clone https://github.com/okawak/SRIMlib.git cd SRIMlib mkdir build cd build cmake .. make make installBefore using this library, you need to make database file (just .root file)\ncd .. source thisSRIMlib.sh updateIf you want to make energy loss figures, “f” option will work.\nupdate -fAlso, I recommend to write source thisSRIMlib.sh part in the .bashrc/.zshrc to load this library.\n",
+    "content": "last modified: 2023-11-05 by Kodai Okawa Some CRIB-specific files use energy loss libraries. In particular, a library called SRIMlib has been developed by Okawa and some processors need to load this library.\ngit clone https://github.com/okawak/SRIMlib.git cd SRIMlib mkdir build cd build cmake .. make make installBefore using this library, you need to make database file (just .root file)\ncd .. source thisSRIMlib.sh updateIf you want to make energy loss figures, “f” option will work.\nupdate -fAlso, I recommend to write source thisSRIMlib.sh part in the .bashrc/.zshrc to load this library.\n",
     "description": "",
     "tags": [
       "CRIB"
     ],
-    "title": "energyloss_calculator",
+    "title": "energyloss calculator",
     "uri": "/artemis_crib/installation/energyloss_calculator/index.html"
   },
   {
