@@ -45,3 +45,4 @@ The `artlogin` command is also used to read this script, so run this command aga
 ```
 
 Then you can start artemis by using `a` command!
+If you want to make sure it works correctly, please look at [Example: preparation/general](https://okawak.github.io/artemis_crib/example/preparation/general/).

@@ -37,7 +37,11 @@ enableGitInfo = true
 
 # For menu extra shortcuts
 [[menu.shortcuts]]
-  name = "<i class='fab fa-fw fa-github'></i> Our GitHub repo"
+  name = "<i class='fas  fa-home'></i> CRIB homepage"
+  url = "https://www.cns.s.u-tokyo.ac.jp/crib/crib-new/"
+  weight = 1
+[[menu.shortcuts]]
+  name = "<i class='fab fa-fw fa-github'></i> GitHub repository"
   identifier = "ds"
   url = "https://github.com/okawak/artemis_crib"
   weight = 10

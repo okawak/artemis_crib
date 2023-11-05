@@ -144,6 +144,6 @@ Please do not forget to add to the mapper.conf after you add some map files.
 
 This conf files are used when you use "chkseg.yaml" steering file.
 This steering file create raw data 2D histograms.
-I will describe in the [Example: online_analysis/check_rawdata](https://okawak.github.io/artemis_crib/example/online_analysis/check_rawdata/index.html) in detail.
+I will describe in the [Example: online_analysis/Check raw data](https://okawak.github.io/artemis_crib/example/online_analysis/check_rawdata/) in detail.
 
 
