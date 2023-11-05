@@ -1,7 +1,7 @@
 +++
 archetype = "chapter"
 title = "CRIB_parts"
-weight = 4
+weight = 3
 +++
 
 Lorem Ipsum.

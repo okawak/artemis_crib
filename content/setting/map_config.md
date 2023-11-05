@@ -1,5 +1,5 @@
 ---
-title: "map_config"
+title: "Map configuration"
 date: 2023-11-02T15:31:58+09:00
 draft: false
 author: "Kodai Okawa"
@@ -42,7 +42,7 @@ title: Data flow example
 ---
 graph LR;
     A{detector} -->|signal| B(TDC/ADC<br></br>ID=1, ch=10)
-    B -->|value=100| C[DAQ]
+    B -->|value=100| C[<strong>Data build</strong>\nridf file]
 {{< /mermaid >}}
 
 The role of the map file is to map this value of "100" to an ID that is easy to analyse. 
@@ -55,7 +55,7 @@ the same ID is easier to handle in the analysis.
 title: Data flow example
 ---
 graph LR;
-    A(TDC/ADC<br></br>ID=1, ch=10) -->|value=100| B[DAQ]
+    A(TDC/ADC<br></br>ID=1, ch=10) -->|value=100| B[<strong>Data build</strong>\nridf file]
     B -->|value=100 mapping to| C(analysis<br></br>ID=2, ch=20)
 {{< /mermaid >}}
 

@@ -1,5 +1,5 @@
 ---
-title: "new_experiment"
+title: "New experiment"
 date: 2023-11-02T13:58:35+09:00
 draft: false
 author: "Kodai Okawa"
