@@ -45,7 +45,7 @@ rawdata directory (like /mnt/data or /data? Create it to suit your situation.) o
       <link>https://okawak.github.io/artemis_crib/setting/steering/index.html</link>
       <pubDate>Thu, 02 Nov 2023 17:03:39 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/setting/steering/index.html</guid>
-      <description>last modified: 2023-11-05 by Kodai Okawa The steering file (yaml format) is a file that directs the process of how the obtained data is to be processed. The artemis is an object-oriented program whose components are called processors, which are combined to process data.
+      <description>last modified: 2023-11-12 by Kodai Okawa The steering file (yaml format) is a file that directs the process of how the obtained data is to be processed. The artemis is an object-oriented program whose components are called processors, which are combined to process data.
 The main role of the &amp;ldquo;processor&amp;rdquo; is to process data from an input data called InputCollection and create an output data called OutputCollection. This &amp;ldquo;OutputCollection&amp;rdquo; will be stored into the root file as a &amp;ldquo;tree&amp;rdquo;.</description>
     </item>
     <item>
