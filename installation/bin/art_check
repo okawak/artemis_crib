@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -u
 
@@ -26,28 +26,27 @@ main() {
 
 check_diff() {
     _file=${ART_ANALYSIS_DIR}/.tmp/$1.txt
-    diff "${ART_ANALYSIS_DIR}/.tmp/$1" "${ART_ANALYSIS_DIR}/$2/$1" > ${_file}
-    if [ -s ${_file} ]; then
+    diff "${ART_ANALYSIS_DIR}/.tmp/$1" "${ART_ANALYSIS_DIR}/$2/$1" >"${_file}"
+    if [ -s "${_file}" ]; then
         while true; do
-            read -p "find newer version of \"$1\", update it? (y/n): " _answer
+            read -rp "find newer version of \"$1\", update it? (y/n): " _answer
             case ${_answer} in
-                y)
-                    say "$1: get a newer version..."
-                    ensure mv -f "${ART_ANALYSIS_DIR}/.tmp/$1" "${ART_ANALYSIS_DIR}/$2/$1"
-                    ensure chmod u+x "${ART_ANALYSIS_DIR}/$2/$1"
-                    break
-                    ;;
-                n)
-                    say "cancelled"
-                    break
-                    ;;
+            y)
+                say "$1: get a newer version..."
+                ensure mv -f "${ART_ANALYSIS_DIR}/.tmp/$1" "${ART_ANALYSIS_DIR}/$2/$1"
+                ensure chmod u+x "${ART_ANALYSIS_DIR}/$2/$1"
+                break
+                ;;
+            n)
+                say "cancelled"
+                break
+                ;;
             esac
         done
     else
         say "$1: Already up-to-date"
     fi
 }
-
 
 say() {
     printf "\33[1mart_check\33[0m: %s\n" "$1"
@@ -65,7 +64,7 @@ need_cmd() {
 }
 
 check_cmd() {
-    command -v "$1" > /dev/null 2>&1
+    command -v "$1" >/dev/null 2>&1
 }
 
 # Run a command that should never fail. If the command fails execution
@@ -74,6 +73,5 @@ check_cmd() {
 ensure() {
     if ! "$@"; then err "command failed: $*"; fi
 }
-
 
 main "$@" || exit 1

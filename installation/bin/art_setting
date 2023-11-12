@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 a() {
     if [ ! -e artemislogon.C ]; then
@@ -9,42 +9,40 @@ a() {
         printf "\t>make -j4\n"
         printf "\t>make install\n"
         return 1
-    fi 
+    fi
 
     if [ -f .vncdisplay ]; then
-        DISPLAY=:`cat .vncdisplay` artemis -l $@
+        DISPLAY=:$(cat .vncdisplay) artemis -l "$@"
     else
-        artemis -l $@
+        artemis -l "$@"
     fi
 }
 
-
 artlogin() {
-    export ART_EXP_NAME=${EXP_NAME}
+    export ART_EXP_NAME="${EXP_NAME}"
 
-    if [ -e ${HOME}/art_analysis/.conf/${ART_EXP_NAME}.sh ]; then
-        source ${HOME}/art_analysis/.conf/${ART_EXP_NAME}.sh
+    if [ -e "${HOME}/art_analysis/.conf/${ART_EXP_NAME}.sh" ]; then
+        source "${HOME}/art_analysis/.conf/${ART_EXP_NAME}.sh"
     else
-        printf "\33[1martlogin\33[0m: make ${ART_EXP_NAME} environment by using \"artnew\" command.\n"
+        printf "\33[1martlogin\33[0m: make %s environment by using \"artnew\" command.\n" "${ART_EXP_NAME}"
         return 1
     fi
 
-    source ${HOME}/art_analysis/.conf/artlogin.sh $@
+    source "${HOME}/art_analysis/.conf/artlogin.sh" "$@"
 }
 
 artlogin2() {
     export ART_EXP_NAME=${EXP_NAME_OLD}
 
-    if [ -e ${HOME}/art_analysis/.conf/${ART_EXP_NAME}.sh ]; then
-        source ${HOME}/art_analysis/.conf/${ART_EXP_NAME}.sh
+    if [ -e "${HOME}/art_analysis/.conf/${ART_EXP_NAME}.sh" ]; then
+        source "${HOME}/art_analysis/.conf/${ART_EXP_NAME}.sh"
     else
-        printf "\33[1martlogin\33[0m: make ${ART_EXP_NAME} environment by using \"artnew\" command.\n"
+        printf "\33[1martlogin\33[0m: make %s environment by using \"artnew\" command.\n" "${ART_EXP_NAME}"
         return 1
     fi
 
-    source ${HOME}/art_analysis/.conf/artlogin.sh $@
+    source "${HOME}/art_analysis/.conf/artlogin.sh" "$@"
 }
-
 
 art_usage() {
     cat <<EOF
@@ -77,17 +75,18 @@ USAGE:
 EOF
 }
 
-
-while (( $# > 0 ))
-do
-    case $1 in
-        -q)
-            return 0
-            ;;
-        *)
-            ;;
+while getopts ":q" OPT; do
+    case $OPT in
+    q)
+        return 0
+        ;;
+    :)
+        break
+        ;;
+    \?)
+        break
+        ;;
     esac
-    shift
 done
 
 art_usage

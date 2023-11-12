@@ -1,7 +1,6 @@
 #!/bin/sh
 # reference: https://sh.rustup.rs
 
-
 set -u
 
 VERSION="0.1"
@@ -14,8 +13,8 @@ main() {
     need_cmd chmod
     need_cmd mkdir
 
-    if [ ! -d ${ART_ANALYSIS_DIR} ]; then
-        ensure mkdir -p ${ART_ANALYSIS_DIR}
+    if [ ! -d "${ART_ANALYSIS_DIR}" ]; then
+        ensure mkdir -p "${ART_ANALYSIS_DIR}"
         say "NEW ${ART_ANALYSIS_DIR}"
     else
         err "Setup is already completed."
@@ -70,7 +69,7 @@ need_cmd() {
 }
 
 check_cmd() {
-    command -v "$1" > /dev/null 2>&1
+    command -v "$1" >/dev/null 2>&1
 }
 
 # Run a command that should never fail. If the command fails execution
@@ -79,6 +78,5 @@ check_cmd() {
 ensure() {
     if ! "$@"; then err "command failed: $*"; fi
 }
-
 
 main "$@" || exit 1
