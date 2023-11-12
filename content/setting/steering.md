@@ -219,36 +219,29 @@ Processor:
 {{% /notice %}}
 
 
-  
----
+### 4. Split files
 
-### Summary
+If you want to analyse a large number of detectors, not just Si detectors, 
+writing everything in one steering file will result in a large amount of content that is difficult to read.
 
-The whole steering file is as follows:
+In that case, we can use "include" node!
 
-```yaml { wrap="false" title="chkssd.yaml"}
-Anchor:
- - &input ridf/@NAME@@NUM@.ridf
- - &output output/@NAME@/@NUM@/chkssd@NAME@@NUM@.root
- - &histout output/@NAME@/@NUM@/chkssd@NAME@@NUM@.hist.root
+In the examples we have written so far, let's only use a separate file for the part related to the analysis of the Si detector.
+
+```yaml { wrap="false" title="chkssd.yaml" }
+# -- snip --
 
 Processor:
-  - name: timer
-    type: art::TTimerProcessor
 
-  - name: ridf
-    type: art::TRIDFEventStore
-    parameter:
-      OutputTransparency: 1
-      InputFiles:
-        - *input
-      SHMID: 0
+# -- snip --
 
-  - name: mapper
-    type: art::TMappingProcessor
-    parameter:
-      OutputTransparency: 1
+  - include: ssd/ssd_single.yaml
 
+# -- snip --
+```
+
+```yaml { wrap="false" title="ssd/ssd_single.yaml" }
+Processor:
 # parameter files
   - name: proc_ssd_ch2MeV
     type: art::TParameterArrayLoader
@@ -284,6 +277,65 @@ Processor:
       OutputCollection:     ssd_cal
       ChargeConverterArray: prm_ssd_ch2MeV
       TimingConverterArray: prm_ssd_ch2ns
+```
+In this way, the contents of "chkssd.yaml" can be kept concise, while the same process is carried out.
+Note that the file paths here are relative to the paths from the steering directory.
+Parameter files, for example, are relative paths from the working directory (one level down).
+
+Utilising file splitting also makes it easier to check the steering files that analyse a large number of detectors like this.
+
+```yaml { wrap="false" title="chkall.yaml" }
+# -- snip --
+
+Processor:
+
+# -- snip --
+
+  - include: rf/rf.yaml
+  - include: ppac/f1ppac.yaml
+  - include: ppac/dlppac.yaml
+  - include: mwdc/mwdc.yaml
+  - include: ssd/ssd_all.yaml
+
+# -- snip --
+```
+
+{{% notice style="info" %}}
+When you include other files, you can set arguments. This can be used, for example, to share variables.
+Details will be introduced in the example section.
+{{% /notice %}}
+
+
+---
+
+### Summary
+
+The whole steering file is as follows:
+
+```yaml { wrap="false" title="chkssd.yaml"}
+Anchor:
+ - &input ridf/@NAME@@NUM@.ridf
+ - &output output/@NAME@/@NUM@/chkssd@NAME@@NUM@.root
+ - &histout output/@NAME@/@NUM@/chkssd@NAME@@NUM@.hist.root
+
+Processor:
+  - name: timer
+    type: art::TTimerProcessor
+
+  - name: ridf
+    type: art::TRIDFEventStore
+    parameter:
+      OutputTransparency: 1
+      InputFiles:
+        - *input
+      SHMID: 0
+
+  - name: mapper
+    type: art::TMappingProcessor
+    parameter:
+      OutputTransparency: 1
+
+  - include: ssd/ssd_single.yaml
 
 # output root file
   - name: outputtree
@@ -291,6 +343,45 @@ Processor:
     parameter:
       FileName:
         - *output
+```
+
+```yaml { wrap="false" title="ssd/ssd_single.yaml" }
+Processor:
+# parameter files
+  - name: proc_ssd_ch2MeV
+    type: art::TParameterArrayLoader
+    parameter:
+      Name: prm_ssd_ch2MeV
+      Type: art::TAffineConverter
+      FileName: prm/ssd/ch2MeV.dat
+      OutputTransparency: 1
+
+  - name: proc_ssd_ch2ns
+    type: art::TParameterArrayLoader
+    parameter:
+      Name: prm_ssd_ch2ns
+      Type: art::TAffineConverter
+      FileName: prm/ssd/ch2ns.dat
+      OutputTransparency: 1
+
+# data process
+  - name: proc_ssd_raw
+    type: art::TTimingChargeMappingProcessor
+    parameter:
+      CatID:         1
+      ChargeType:    1
+      ChargeTypeID:  0
+      TimingTypeID:  1
+      Sparse:        1
+      OutputCollection: ssd_raw
+
+  - name: proc_ssd
+    type: art::TTimingChargeCalibrationProcessor
+    parameter:
+      InputCollection:      ssd_raw
+      OutputCollection:     ssd_cal
+      ChargeConverterArray: prm_ssd_ch2MeV
+      TimingConverterArray: prm_ssd_ch2ns
 ```
 
 ```shell { wrap="false" }
