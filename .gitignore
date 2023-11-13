@@ -3,7 +3,7 @@
 *.swp
 *.root
 artemislogon.C
-thisartemiscrib.sh
+thisartemis-crib.sh
 c1.png
 .venv
 .vscode
