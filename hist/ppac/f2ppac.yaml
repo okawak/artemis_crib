@@ -1,26 +1,27 @@
+anchor:
+  - &f2ppacx ["f2ppac.fX",200,-50.,50.]
+  - &f2ppacy ["f2ppac.fY",200,-50.,50.]
+  - &f2ppacx1 ["f2ppac.fTX1",200,-50.,50.]
+  - &f2ppacx2 ["f2ppac.fTX2",200,-50.,50.]
+  - &f2ppacy1 ["f2ppac.fTX1",200,-50.,50.]
+  - &f2ppacy2 ["f2ppac.fTX2",200,-50.,50.]
+  - &f2ppacx_sum ["f2ppac.fTXsum",200,-50.,50.]
+  - &f2ppacy_sum ["f2ppac.fTYsum",200,-50.,50.]
+alias:
+#  ex_cut: example.fval > 0;
 group:
-  - name: f2ppac
-    title: dlppac
+  - name: f2tuning
+    title: f2tuning
     contents:
-      - name: f2ppac_anode
-        title: f2ppac Anode
-        x: ["f2ppac.fTAnode", 200, -80, -60]
-      - name: f2ppac_x1_x2
-        title: f2ppac X1 Vs X2
-        x: ["f2ppac.fTX2",100,-50,50]
-        y: ["f2ppac.fTX1",100,-50,50]
-      - name: f2ppac_y1_y2
-        title: f2ppac Y1 Vs Y2
-        x: ["f2ppac.fTY2",100,-50,50]
-        y: ["f2ppac.fTY1",100,-50,50]
-      - name: f2ppac_xdiff
-        title: f2ppac XDiff
-        x: ["f2ppac.fTXDiff",200,-100.,100.]
-      - name: f2ppac_ydiff
-        title: f2ppac YDiff
-        x: ["f2ppac.fTYDiff",200,-100.,100.]
-      - name: f2ppac_y_x
-        title: f2ppac GetY Vs GetX
-        x: ["f2ppac.GetX()",200,-10.,10.]
-        y: ["f2ppac.GetY()",200,-10.,10.]
+      - name: F2PPAC X
+        title: f2ppac x
+        x: *f2ppacx
+#        cut: ex_cut
+      - name: F2PPAC Y
+        title: f2ppac y
+        x: *f2ppacy
+      - name: F2PPAC XY
+        title: f2ppac Y Vs X
+        x: *f2ppacx
+        y: *f2ppacy
 

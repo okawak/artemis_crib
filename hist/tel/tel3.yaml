@@ -1,0 +1,106 @@
+anchor:
+  - &ex_raw ["tel3dEX_raw.fCharge",1024,0.,4095.]
+  - &ey_raw ["tel3dEY_raw.fCharge",1024,0.,4095.]
+  - &t_raw ["tel3dEX_raw.fTiming",3500,0.,7000.]
+  - &tel3dEX_ID ["tel3dEX_cal.fID",16,-0.5,15.5]
+  - &tel3dEY_ID ["tel3dEY_cal.fID",16,-0.5,15.5]
+  - &tel3E_ID ["tel3E_cal.fID",3,-0.5,2.5]
+  - &tel_XID ["tel3.fXID",16,-0.5,15.5]
+  - &tel_YID ["tel3.fYID",16,-0.5,15.5]
+  - &tel3dEX_E ["tel3dEX_cal.fCharge",1000,0.,30.]
+  - &tel3dEY_E ["tel3dEY_cal.fCharge",1000,0.,30.]
+  - &tel3E_E ["tel3E_cal.fCharge",1000,0.,40.]
+  - &tel3dEX_T ["tel3dEX_cal.fTiming",1000,-1000.,1000.]
+#  - &tel3dEY_T ["tel3dEY_cal.fTiming",1000,-1000.,1000.]
+  - &tel3E_T ["tel3E_cal.fTiming",1000,-1000.,1000.]
+  - &tel3_dE ["tel3.fdE",500,0.,12.]
+  - &tel3_Eb ["tel3.fEvec[0]",500,0.,40.]
+#  - &tel3_Ec ["tel3.fEvec[1]",500,0.,40.]
+  - &tel3_Ec ["tel3E_cal.fCharge[1]",500,0.,40.]
+  - &tel3_E ["tel3.fE",500,0.,30.]
+  - &tel3_Etotal ["tel3.fEtotal",500,0.,30.]
+
+alias:
+  single: single.fID == 0;
+  coin: coin.fID == 0;
+  pileup: pileup.fID == 0;
+
+group:
+  - name: tel3
+    title: tel3
+    contents:
+      - name: dEXraw vs ID
+        title: tel3dEX_raw EX vs ID
+        x: *tel3dEX_ID
+        y: *ex_raw
+#        cut: ex_cut
+
+      - name: dEYraw vs ID
+        title: tel3dEY_raw EY vs ID
+        x: *tel3dEY_ID
+        y: *ey_raw
+
+      - name: dEX_Traw vs ID
+        title: tel3dEX_raw T vs ID
+        x: *tel3dEX_ID
+        y: *t_raw
+
+      - name: dEY fID vs dEX fID
+        title: tel3dEY fID vs dEX fID
+        x: *tel_XID
+        y: *tel_YID
+
+      - name: dEXcal vs ID
+        title: tel3dEX_cal vs ID
+        x: *tel3dEX_ID
+        y: *tel3dEX_E
+
+      - name: dEYcal vs ID
+        title: tel3dEY_cal vs ID
+        x: *tel3dEY_ID
+        y: *tel3dEY_E
+
+      - name: Ecal vs ID
+        title: tel3E_cal vs ID
+        x: *tel3E_ID
+        y: *tel3E_E
+
+      - name: dEX_Tcal vs ID
+        title: tel3dEX_cal T vs ID
+        x: *tel3dEX_ID
+        y: *tel3dEX_T
+
+      #- name: dEY_Tcal vs ID
+      #  title: tel3dEY_cal T vs ID
+      #  x: *tel3dEY_ID
+      #  y: *tel3dEY_T
+
+      - name: E_Tcal vs ID
+        title: tel3E_cal T vs ID
+        x: *tel3E_ID
+        y: *tel3E_T
+
+      - name: Etotal vs dEa
+        title: tel3 Etotal vs dEa
+        x: *tel3_dE
+        y: *tel3_Etotal
+
+      - name: Eb vs dEa
+        title: tel3 Eb vs dEa
+        x: *tel3_dE
+        y: *tel3_Eb
+
+      - name: Ec vs Eb
+        title: tel3 Ec vs Eb
+        x: *tel3_Eb
+        y: *tel3_Ec
+
+      - name: three E vs dEa
+        title: tel3 three E vs dEa
+        x: *tel3_dE
+        y: *tel3_E
+
+      - name: three E vs Eb
+        title: tel3 three E vs Eb
+        x: *tel3_Eb
+        y: *tel3_E

@@ -1,51 +1,20 @@
-anchor: 
-#  - &si_raw_id ["si_raw.fID",16,-0.5,15.5] 
-#  - &si_id ["si_cal.fID",16,-0.5,15.5] 
-#  - &si_raw_charge ["si_raw.fCharge",500,-0.5,4095.5] 
-#  - &si_charge ["si_cal.fCharge",500,0.,1000.] 
-#  - &si_ecl_raw_id ["si_ecl_raw.fID",16,-0.5,15.5]	
-#  - &si_ecl_raw_timing ["si_ecl_raw.fTiming",1000,-7000.,10000.]
-#  - &si_max_id ["ssd_test.fXID",16,-0.5,15.5] 
-#  - &si_max_charge ["ssd_test.fEx",500,0.,1000.] 
-#  - &tf3s0 ["sr0_a_cal.fTiming - dia3pad[0].fTiming-1066",200,-30.,90.]
+anchor:
+  - &rf0 ["rf_cal_0.fTiming",200,0.,120.]
+  - &rf1 ["rf_cal_1.fTiming",200,0.,120.]
 alias:
-#  tof30 : sr0_a_cal.fTiming - dia3pad[0].fTiming;
-#  tof32 : dias2pad[0].fTiming - dia3pad[0].fTiming;
-#  s0.fX : sr0_xc0[0].fPosition + 49.28;
-#  s0xc  : s0.fX-24.0*(tof30-1066.);
-#  s2de  : 1.03827*S2ssd.fEx*0.866;
-#  s2brho: 4.4147*(1-sr0_x[0].fPosition/14856);
-#  s2beta: 103499.78 / ( 299.79 * tof32 - 299.79 * 1455. );
-#  s2gamma: 1/TMath::Sqrt(1-(s2beta)*(s2beta));
-#  s2aq  : s2brho * 299.79 / (s2gamma * s2beta * 931.49);
-#  de_v  : TMath::Log(5907.5*s2beta*s2beta)-TMath::Log(1.-s2beta*s2beta)-s2beta*s2beta;
-#  s2z   : -0.0513 + 7.451*TMath::Sqrt(s2de/de_v) * s2beta;
-#  z20cut: TMath::Abs(s2z-20)<0.74;
-#  z21cut: TMath::Abs(s2z-21)<0.74;
-#  z22cut: TMath::Abs(s2z-22)<0.74;
-#  z23cut: TMath::Abs(s2z-23)<0.74;
-#  fecut: TMath::Abs(s2z-26)<0.74;
-#  vcut: TMath::Abs(s2z-25)<0.74;
-#  ticut: TMath::Abs(s2z-24)<0.74;
+#  ex_cut: example.fval > 0;
 group:
   - name: rf
     title: rf
     contents:
-      - name: rf_raw
-        title: rf_raw
-        x: ["rf_raw.fTiming", 200, 0, 4000]
-      - name: rf1_cal
-        title: rf1_cal
-        x: ["rf_cal_0.fTiming", 200, 0, 100]
-        cut: t1_he6
-      - name: rf2_cal
-        title: rf2_cal
-        x: ["rf_cal_1.fTiming", 200, 0, 100]
-        #      - name: si_ecl_raw_t_q
-        #        title: raw Timing vs. cal Charge
-        #        x: ["si_ecl_raw.fTiming",500,-7000.,10000.]
-        #        y: ["si_cal.fCharge",500,0.,500.] 
-        #      - name: si_ecl_raw_t_q_max
-        #        title: raw Timing vs. max Charge
-        #        x: ["si_ecl_raw.fTiming",500,-7000.,10000.]
-        #        y: ["ssd_test.fEx",500,0.,500.] 
+      - name: rf1
+        title: rf1
+        x: *rf0
+#        cut: ex_cut
+      - name: rf2
+        title: rf2
+        x: *rf1
+      - name: rf1 rf2
+        title: rf2 vs rf1
+        x: *rf0
+        x: *rf1

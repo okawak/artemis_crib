@@ -1,21 +1,23 @@
 anchor:
   - &f1ppacx ["f1ppac.fX",400,-75.,75.]
   - &f1ppacy ["f1ppac.fY",400,-75.,75.]
-  - &f1ppacx1 ["f1ppac.fTX1",1000,0.,4000.]
-  - &f1ppacx2 ["f1ppac.fTX2",1000,0.,4000.]
-  - &f1ppacy1 ["f1ppac.fTY1",1000,0.,4000.]
-  - &f1ppacy2 ["f1ppac.fTY2",1000,0.,4000.]
+  - &f1ppacx1 ["f1ppac.fTX1",500,0.,2000.]
+  - &f1ppacx2 ["f1ppac.fTX2",500,0.,2000.]
+  - &f1ppacy1 ["f1ppac.fTY1",500,0.,2000.]
+  - &f1ppacy2 ["f1ppac.fTY2",500,0.,2000.]
+  - &rf0 ["rf_cal_0.fTiming",200,0.,120.]
+  - &rf1 ["rf_cal_1.fTiming",200,0.,120.]
 alias:
 #  ex_cut: example.fval > 0;
 group:
-  - name: f1ppac
-    title: f1_ppac
+  - name: f1check
+    title: f1_check
     contents:
-      - name: f1ppac_x
+      - name: f1ppac_X
         title: f1ppac X
         x: *f1ppacx
 #        cut: ex_cut
-      - name: f1ppac_y
+      - name: f1ppac_Y
         title: f1ppac Y
         x: *f1ppacy
       - name: f1ppac_X1raw
@@ -32,15 +34,19 @@ group:
         x: *f1ppacy2
 
       - name: f1ppac_x_y
-        title: f1ppac Y Vs X
+        title: f1ppac X vs Y
         x: *f1ppacx
         y: *f1ppacy
+      - name: f1ppac_x_rf
+        title: f1ppac X vs RF
+        x: *f1ppacx
+        y: *rf0
       - name: f1ppac_x1_x2
-        title: f1ppac x2 Vs x1
+        title: f1ppac x1 vs x2
         x: *f1ppacx1
         y: *f1ppacx2
       - name: f1ppac_y1_y2
-        title: f1ppac y2 Vs y1
+        title: f1ppac y1 vs y2
         x: *f1ppacy1
         y: *f1ppacy2
 

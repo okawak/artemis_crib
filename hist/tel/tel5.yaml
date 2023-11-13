@@ -1,0 +1,90 @@
+anchor:
+  - &tel5dEX_E1_raw ["tel5dEX_raw.fE1",200,0.,7000.]
+  - &tel5dEX_E2_raw ["tel5dEX_raw.fE2",200,0.,7000.]
+  - &tel5dEX_P1_raw ["tel5dEX_raw.fP1",400,3000.,3550.]
+  - &tel5dEX_P2_raw ["tel5dEX_raw.fP2",400,3000.,3550.]
+  - &tel5dEY_E1_raw ["tel5dEY_raw.fE1",200,0.,7000.]
+  - &tel5dEY_E2_raw ["tel5dEY_raw.fE2",200,0.,7000.]
+  - &tel5dEY_P1_raw ["tel5dEY_raw.fP1",400,2550,3100.]
+  - &tel5dEY_P2_raw ["tel5dEY_raw.fP2",400,2550,3100.]
+  - &tel5dEX_ID ["tel5dEX_cal.fID",16,-0.5,15.5]
+  - &tel5dEY_ID ["tel5dEY_cal.fID",16,-0.5,15.5]
+  - &tel5dEX_E ["tel5dEX_cal.fCharge",1000,0.,30.]
+  - &tel5dEY_E ["tel5dEY_cal.fCharge",1000,0.,30.]
+  - &tel5E_E ["tel5E_cal.fCharge",1000,0.,40.]
+  - &tel5dEX_T ["tel5dEX_cal.fTiming",1000,-1000.,1000.]
+  - &tel5dEY_T ["tel5dEY_cal.fTiming",1000,-1000.,1000.]
+  - &tel5E_T ["tel5E_cal.fTiming",1000,-1000.,1000.]
+  - &tel5_dE ["tel5.fdE",500,0.,10.]
+  - &tel5_E ["tel5.fE",500,0.,25.]
+  - &tel5_Etotal ["tel5.fEtotal",1000,0.,25.]
+
+alias:
+  single: single.fID == 0;
+  coin: coin.fID == 0;
+  pileup: pileup.fID == 0;
+  ex_cut: tel5dEX_raw.fE1 > 220;
+  ex_cut2: tel5dEY_raw.fE1 > 180;
+
+group:
+  - name: tel5
+    title: tel5
+    contents:
+      - name: tel5dEX E1 vs pos1
+        title: tel5dEX E1 vs pos1
+        x: *tel5dEX_P1_raw
+        y: *tel5dEX_E1_raw
+#        cut: ex_cut
+
+      - name: tel5dEX E2 vs pos2
+        title: tel5dEX E2 vs pos2
+        x: *tel5dEX_P2_raw
+        y: *tel5dEX_E2_raw
+
+      - name: tel5dEY E1 vs pos1
+        title: tel5dEY E1 vs pos1
+        x: *tel5dEY_P1_raw
+        y: *tel5dEY_E1_raw
+
+      - name: tel5dEY E2 vs pos2
+        title: tel5dEY E2 vs pos2
+        x: *tel5dEY_P2_raw
+        y: *tel5dEY_E2_raw
+
+      - name: tel5dEY fID vs dEX fID
+        title: tel5dEY fID vs dEX fID
+        x: *tel5dEX_ID
+        y: *tel5dEY_ID
+
+      - name: tel5dEX energy vs fID
+        title: tel5dEX energy vs fID
+        x: *tel5dEX_ID
+        y: *tel5dEX_E
+
+      - name: tel5dEY energy vs fID
+        title: tel5dEY energy vs fID
+        x: *tel5dEY_ID
+        y: *tel5dEY_E
+
+      - name: tel5E energy
+        title: tel5E energy
+        x: *tel5E_E
+
+      - name: tel5dEX timing vs fID
+        title: tel5dEX timing vs fID
+        x: *tel5dEX_ID
+        y: *tel5dEX_T
+
+      - name: tel5dEY timing vs fID
+        title: tel5dEY timing vs fID
+        x: *tel5dEY_ID
+        y: *tel5dEY_T
+
+      - name: tel5E timing
+        title: tel5E timing
+        x: *tel5E_T
+
+      - name: tel5 Etotal vs dEa
+        title: tel5 Etotal vs dEa
+        x: *tel5_dE
+        y: *tel5_Etotal

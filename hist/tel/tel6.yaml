@@ -1,0 +1,103 @@
+anchor:
+  - &tel6dEX_E1_raw ["tel6dEX_raw.fE1",200,0.,7000.]
+  - &tel6dEX_E2_raw ["tel6dEX_raw.fE2",200,0.,7000.]
+  - &tel6dEX_P1_raw ["tel6dEX_raw.fP1",400,1850.,2350.]
+  - &tel6dEX_P2_raw ["tel6dEX_raw.fP2",400,1850.,2350.]
+  - &tel6dEY_E1_raw ["tel6dEY_raw.fE1",200,0.,7000.]
+  - &tel6dEY_E2_raw ["tel6dEY_raw.fE2",200,0.,7000.]
+  - &tel6dEY_P1_raw ["tel6dEY_raw.fP1",400,1500.,2000.]
+  - &tel6dEY_P2_raw ["tel6dEY_raw.fP2",400,1500, 2000]
+  - &tel6dEX_ID ["tel6dEX_cal.fID",16,-0.5,15.5]
+  - &tel6dEY_ID ["tel6dEY_cal.fID",16,-0.5,15.5]
+  - &tel6dEX_E ["tel6dEX_cal.fCharge",1000,0.,30.]
+  - &tel6dEY_E ["tel6dEY_cal.fCharge",1000,0.,30.]
+  - &tel6E_E ["tel6E_cal.fCharge",1000,0.,40.]
+  - &tel6dEX_T ["tel6dEX_cal.fTiming",1000,-1000.,1000.]
+  - &tel6dEY_T ["tel6dEY_cal.fTiming",1000,-1000.,1000.]
+  - &tel6E_T ["tel6E_cal.fTiming",1000,-1000.,1000.]
+  - &tel6_dE ["tel6.fdE",500,0.,8.]
+  - &tel6_E ["tel6.fE",500,0.,25.]
+  - &tel6_Etotal ["tel6.fEtotal",500,0.,25.]
+
+alias:
+  single: single.fID == 0;
+  coin: coin.fID == 0;
+  pileup: pileup.fID == 0;
+  ex_cut: tel6dEX_raw.fE1 > 300;
+  ex_cut2: tel6dEY_raw.fE1 > 300;
+
+group:
+  - name: tel6
+    title: tel6
+    contents:
+      - name: tel6dEX E1 vs pos1
+        title: tel6dEX E1 vs pos1
+        x: *tel6dEX_P1_raw
+        y: *tel6dEX_E1_raw
+#        cut: ex_cut
+
+      - name: tel6dEX E2 vs pos2
+        title: tel6dEX E2 vs pos2
+        x: *tel6dEX_P2_raw
+        y: *tel6dEX_E2_raw
+
+      - name: tel6dEY E1 vs pos1
+        title: tel6dEY E1 vs pos1
+        x: *tel6dEY_P1_raw
+        y: *tel6dEY_E1_raw
+
+      - name: tel6dEY E2 vs pos2
+        title: tel6dEY E2 vs pos2
+        x: *tel6dEY_P2_raw
+        y: *tel6dEY_E2_raw
+
+      - name: tel6dEY fID vs dEX fID
+        title: tel6dEY fID vs dEX fID
+        x: *tel6dEX_ID
+        y: *tel6dEY_ID
+
+      - name: tel6dEX energy vs fID
+        title: tel6dEX energy vs fID
+        x: *tel6dEX_ID
+        y: *tel6dEX_E
+
+      - name: tel6dEY energy vs fID
+        title: tel6dEY energy vs fID
+        x: *tel6dEY_ID
+        y: *tel6dEY_E
+
+      - name: tel6E energy
+        title: tel6E energy
+        x: *tel6E_E
+
+      - name: tel6dEX timing vs fID
+        title: tel6dEX timing vs fID
+        x: *tel6dEX_ID
+        y: *tel6dEX_T
+
+      - name: tel6dEY timing vs fID
+        title: tel6dEY timing vs fID
+        x: *tel6dEY_ID
+        y: *tel6dEY_T
+
+      - name: tel6E timing
+        title: tel6E timing
+        x: *tel6E_T
+
+      - name: tel6 Etotal vs dEa
+        title: tel6 Etotal vs dEa
+        x: *tel6_dE
+        y: *tel6_Etotal
+
+      - name: tel6dEX E1 vs pos1 - noise cut (>300)
+        title: tel6dEX E1 vs pos1 - noise cut (>300)
+        x: *tel6dEX_P1_raw
+        y: *tel6dEX_E1_raw
+        cut: ex_cut
+
+
+      - name: tel6dEY E1 vs pos1 - noise cut (>300)
+        title: tel6dEY E1 vs pos1 - noise cut (>300)
+        x: *tel6dEY_P1_raw
+        y: *tel6dEY_E1_raw
+        cut: ex_cut2
