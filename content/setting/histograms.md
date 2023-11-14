@@ -18,7 +18,7 @@ artemis [2] zone 2 2  # make a "artemis" 2x2 canvas
 artemis [3] tree->Draw("ssd_cal.fCharge:ssd_cal.fTiming>(100,0.,100., 100,0.,100)","ssd_cal.fCharge > 1.0","colz")
 ```
 
-This would take time if there was a diagram that you wanted to display immediately...
+This would take time if there are some histograms that you want to display immediately...
 
 Therefore, if you know in advance the diagram you want to see, it is useful to predefine its histogram!
 The processor used is `TTreeProjectionProcessor`.
@@ -278,23 +278,4 @@ This is useful when there are more objects to check!
 # -- snip --
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+File splitting using "include" nodes, as described in the section on steeling, can also be used in the same way.
