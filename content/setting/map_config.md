@@ -3,7 +3,7 @@ title: "Map configuration"
 date: 2023-11-02T15:31:58+09:00
 draft: false
 author: "Kodai Okawa"
-weight: 4
+weight: 5
 tags: ["CRIB"]
 ---
 

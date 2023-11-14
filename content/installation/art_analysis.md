@@ -12,7 +12,7 @@ weight: 8
 With this command, all initial settings of "art_analysis" are made.
 
 ```shell { wrap="false" }
-curl --proto '=https' --tlsv1.2 -sSf https://okawak.github.io/artemis_crib/installation/init.sh | sh
+curl --proto '=https' --tlsv1.2 -sSf https://okawak.github.io/artemis_crib/bin/init.sh | sh
 ```
 
 After that, please add the following lines to the .bashrc/.zshrc.
