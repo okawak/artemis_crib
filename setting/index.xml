@@ -29,7 +29,7 @@ rawdata directory (like /mnt/data or /data? Create it to suit your situation.) o
       <link>https://okawak.github.io/artemis_crib/setting/build/index.html</link>
       <pubDate>Thu, 02 Nov 2023 15:11:33 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/setting/build/index.html</guid>
-      <description>last modified: 2023-11-05 by Kodai Okawa Before starting analysis, you need to build. The current version of the artemis use &amp;ldquo;cmake&amp;rdquo; so the following steps must be taken.
+      <description>last modified: 2023-11-14 by Kodai Okawa Before starting analysis, you need to build. The current version of the artemis use &amp;ldquo;cmake&amp;rdquo; so the following steps must be taken.
 &amp;gt; artlogin (username) &amp;gt; mkdir build &amp;amp;&amp;amp; cd build &amp;gt; cmake .. &amp;gt; make -j4 &amp;gt; make install &amp;gt; acdacd is the alias command that is definded after artlogin command. (acd = cd your_work_directory) Also if you changed some processor, you need to do these process.</description>
     </item>
     <item>
@@ -37,7 +37,9 @@ rawdata directory (like /mnt/data or /data? Create it to suit your situation.) o
       <link>https://okawak.github.io/artemis_crib/setting/artemis_commands/index.html</link>
       <pubDate>Tue, 14 Nov 2023 11:23:31 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/setting/artemis_commands/index.html</guid>
-      <description>last modified: 2023-11-14 by Kodai Okawa </description>
+      <description>last modified: 2023-11-14 by Kodai Okawa Before configuring the settings according to your experiment, let&amp;rsquo;s check that artemis is working!
+&amp;gt; artlogin (username) &amp;gt; a # start the artemis!Then the prompt change to the artemis [0]. This means you are in artemis console!
+Analysis using artemis use event loop. It is therefore necessary to load a file that specifies what kind of analysis is to be performed. This file is called the steering file.</description>
     </item>
     <item>
       <title>Map configuration</title>
@@ -61,7 +63,7 @@ The main role of the &amp;ldquo;processor&amp;rdquo; is to process data from an 
       <pubDate>Thu, 02 Nov 2023 17:03:45 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/setting/histograms/index.html</guid>
       <description>last modified: 2023-11-14 by Kodai Okawa In the online analysis, it is important to have immediate access to data. The artemis can produce TTree object but long commands are needed to access, for example,
-artemis [1] fcd 0 # move to the created rootfile artemis [2] zone 2 2 # make a &amp;#34;artemis&amp;#34; 2x2 canvas artemis [3] tree-&amp;gt;Draw(&amp;#34;ssd_cal.fCharge:ssd_cal.fTiming&amp;gt;(100,0.,100., 100,0.,100)&amp;#34;,&amp;#34;ssd_cal.fCharge &amp;gt; 1.0&amp;#34;,&amp;#34;colz&amp;#34;)This would take time if there was a diagram that you wanted to display immediately&amp;hellip;</description>
+artemis [1] fcd 0 # move to the created rootfile artemis [2] zone 2 2 # make a &amp;#34;artemis&amp;#34; 2x2 canvas artemis [3] tree-&amp;gt;Draw(&amp;#34;ssd_cal.fCharge:ssd_cal.fTiming&amp;gt;(100,0.,100., 100,0.,100)&amp;#34;,&amp;#34;ssd_cal.fCharge &amp;gt; 1.0&amp;#34;,&amp;#34;colz&amp;#34;)This would take time if there are some histograms that you want to display immediately&amp;hellip;</description>
     </item>
     <item>
       <title>VNC server</title>
