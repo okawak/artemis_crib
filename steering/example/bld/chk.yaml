@@ -1,7 +1,0 @@
-Processor:
-    
-  - include: mwdc/chkall.yaml
-  - include: mwdc/caliball.yaml
-
-
-
