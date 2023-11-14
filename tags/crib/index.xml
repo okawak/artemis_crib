@@ -38,7 +38,7 @@ rawdata directory (like /mnt/data or /data? Create it to suit your situation.) o
       <link>https://okawak.github.io/artemis_crib/setting/map_config/index.html</link>
       <pubDate>Thu, 02 Nov 2023 15:31:58 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/setting/map_config/index.html</guid>
-      <description>last modified: 2023-11-05 by Kodai Okawa From this section, we start to configure the settings according to the actual experimental setup. The setting files are followings:
+      <description>last modified: 2023-11-14 by Kodai Okawa From this section, we start to configure the settings according to the actual experimental setup. The setting files are followings:
 &amp;gt; tree . ├── mapper.conf ├── conf │ ├── map │ │ ├── ppac │ │ │ ├── dlppac.map -- snip -- │ └── seg │ ├── modulelist.yaml │ └── seglist.yaml -- snip --1. What is the map file? The data obtained from an ADC/TDC is in the form of, for example, &amp;ldquo;The data coming into channel 10 of an ADC with an ID of 1 is 100&amp;rdquo;.</description>
     </item>
     <item>
@@ -73,8 +73,8 @@ cd .. source thisSRIMlib.sh updateIf you want to make energy loss figures, &amp;
       <link>https://okawak.github.io/artemis_crib/installation/art_analysis/index.html</link>
       <pubDate>Mon, 14 Aug 2023 15:14:43 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/art_analysis/index.html</guid>
-      <description>last modified: 2023-11-02 by Kodai Okawa With this command, all initial settings of &amp;ldquo;art_analysis&amp;rdquo; are made.
-curl --proto &amp;#39;=https&amp;#39; --tlsv1.2 -sSf https://okawak.github.io/artemis_crib/installation/init.sh | shAfter that, please add the following lines to the .bashrc/.zshrc.
+      <description>last modified: 2023-11-14 by Kodai Okawa With this command, all initial settings of &amp;ldquo;art_analysis&amp;rdquo; are made.
+curl --proto &amp;#39;=https&amp;#39; --tlsv1.2 -sSf https://okawak.github.io/artemis_crib/bin/init.sh | shAfter that, please add the following lines to the .bashrc/.zshrc.
 &amp;#8203; .bashrc/.zshrc .bashrc/.zshrc # this is option source ${HOME}/Cern/root/root_install/bin/thisroot.sh &amp;amp;&amp;gt; /dev/null source ${HOME}/repos/artemis/install/bin/thisartemis.sh &amp;amp;&amp;gt; /dev/null source ${HOME}/repos/SRIMlib/thisSRIMlib.sh &amp;amp;&amp;gt; /dev/null # need from this line! export EXP_NAME=&amp;#34;expname&amp;#34; # your experiment export EXP_NAME_OLD=&amp;#34;expname&amp;#34; # this is option export PATH=&amp;#34;${HOME}/art_analysis/bin:${PATH}&amp;#34; source ${HOME}/art_analysis/bin/art_setting -q The setting is all!</description>
     </item>
   </channel>

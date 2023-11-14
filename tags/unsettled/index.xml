@@ -12,8 +12,8 @@
       <link>https://okawak.github.io/artemis_crib/installation/art_analysis/index.html</link>
       <pubDate>Mon, 14 Aug 2023 15:14:43 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/art_analysis/index.html</guid>
-      <description>last modified: 2023-11-02 by Kodai Okawa With this command, all initial settings of &amp;ldquo;art_analysis&amp;rdquo; are made.
-curl --proto &amp;#39;=https&amp;#39; --tlsv1.2 -sSf https://okawak.github.io/artemis_crib/installation/init.sh | shAfter that, please add the following lines to the .bashrc/.zshrc.
+      <description>last modified: 2023-11-14 by Kodai Okawa With this command, all initial settings of &amp;ldquo;art_analysis&amp;rdquo; are made.
+curl --proto &amp;#39;=https&amp;#39; --tlsv1.2 -sSf https://okawak.github.io/artemis_crib/bin/init.sh | shAfter that, please add the following lines to the .bashrc/.zshrc.
 &amp;#8203; .bashrc/.zshrc .bashrc/.zshrc # this is option source ${HOME}/Cern/root/root_install/bin/thisroot.sh &amp;amp;&amp;gt; /dev/null source ${HOME}/repos/artemis/install/bin/thisartemis.sh &amp;amp;&amp;gt; /dev/null source ${HOME}/repos/SRIMlib/thisSRIMlib.sh &amp;amp;&amp;gt; /dev/null # need from this line! export EXP_NAME=&amp;#34;expname&amp;#34; # your experiment export EXP_NAME_OLD=&amp;#34;expname&amp;#34; # this is option export PATH=&amp;#34;${HOME}/art_analysis/bin:${PATH}&amp;#34; source ${HOME}/art_analysis/bin/art_setting -q The setting is all!</description>
     </item>
   </channel>

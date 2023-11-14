@@ -2,7 +2,7 @@
 
 set -u
 
-URL_BASE="https://okawak.github.io/artemis_crib/installation"
+URL_BASE="https://okawak.github.io/artemis_crib"
 ART_ANALYSIS_DIR="${HOME}/art_analysis"
 
 main() {
