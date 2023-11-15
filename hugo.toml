@@ -10,6 +10,7 @@ enableGitInfo = true
   editURL = "https://github.com/okawak/artemis_crib/tree/pages-build/content/"
   themeVariant = "artemis_crib"
   alwaysopen = false
+  #author.name = "Kodai Okawa"
   author = "Kodai Okawa"
   disableMathJax = false
   customMathJaxURL = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"

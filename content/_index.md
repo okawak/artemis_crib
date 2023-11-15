@@ -3,11 +3,13 @@ archetype = "home"
 title = ""
 +++
 
+## Manual for the CRIB ARTEMIS
+
 Document author: Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
 
 I am not an artemis developer, but a user, so please let me know if the description is wrong in any way.
 
-## Manual for the CRIB ARTEMIS
+## Contents
 
 {{% children style="h4" description="true" %}}
 
