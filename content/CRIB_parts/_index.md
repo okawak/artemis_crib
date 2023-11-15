@@ -5,3 +5,5 @@ weight = 3
 +++
 
 Lorem Ipsum.
+
+{{% children %}}
