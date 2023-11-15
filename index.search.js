@@ -57,7 +57,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "This chapter describes how to set up the artemis environment for the CRIB experiment. See from here for initial settings.\n",
+    "content": "This chapter describes how to set up the artemis environment for the CRIB experiment. See from here for initial settings.\nRequirements cmake ROOT yaml-cpp artemis mount setting energyloss calculator art_analysis ",
     "description": "",
     "tags": null,
     "title": "Installation",
@@ -83,7 +83,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "This chapter describes how to prepare the configuration file for the experiment. If you have already some CRIB artemis environment, Please see from here for initial settings.\n",
+    "content": "This chapter describes how to prepare the configuration file for the experiment. If you have already some CRIB artemis environment, Please see from here for initial settings.\nNew experiment New user Build artemis commands Map configuration Steering Histograms VNC server ",
     "description": "",
     "tags": null,
     "title": "Setting",
@@ -133,7 +133,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "Lorem Ipsum.\n",
+    "content": "Lorem Ipsum.\nTTelescopeData TReactionInfo TParticleInfo ",
     "description": "",
     "tags": null,
     "title": "Processors",
@@ -161,7 +161,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "Lorem Ipsum.\n",
+    "content": "Lorem Ipsum.\npreparation online_analysis Check raw data offline_analysis Simulation Beam_generator Nbodyreaction Geometry Detect_particle Solidangle ",
     "description": "",
     "tags": null,
     "title": "Example",
@@ -205,7 +205,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Setting",
-    "content": "last modified: 2023-11-14 by Kodai Okawa need to consider…\n",
+    "content": "last modified: 2023-11-15 by Kodai Okawa When we start the analysis, there are many situations where the analysis server on which artemis is installed is not only operated directly, but also remotely using “ssh”. In such cases, there are various settings that need to be made in order for the figure to be displayed on the local computer, and some of these methods are described in this section. We recommended to use VNC server currently, but note that policies may change in the future.\nThis is a list of ways to display the figures.\nX11Forwarding VNC server Save figure and check by using VScode Web browser (THttpServer) X11Forwarding This is the simplest method. Simply transfer the remote X to the local.\n​ your local PC your local PC ssh -X analysisPC This “X” option allow the X11Forwarding.\nHowever, the problem with this method is that it takes a long time to process, and it takes longer from the time the command is typed until it is drawn. It is also not recommended as the process can become slow if a large number of people use it at the same time.\nHowever, it is simpler than other methods and should be used when necessary, e.g. for debugging.\nVNC server Info This is old version of VNC server (TigerVNC). Latest version supports more secure method, so this method may no longer be avaliable in the future…\nSave figure and check by using VScode Web browser (THttpServer) ",
     "description": "",
     "tags": [],
     "title": "VNC server",

@@ -11,14 +11,16 @@
       <link>https://okawak.github.io/artemis_crib/installation/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/index.html</guid>
-      <description>This chapter describes how to set up the artemis environment for the CRIB experiment. See from here for initial settings.</description>
+      <description>This chapter describes how to set up the artemis environment for the CRIB experiment. See from here for initial settings.
+Requirements cmake ROOT yaml-cpp artemis mount setting energyloss calculator art_analysis </description>
     </item>
     <item>
       <title>Setting</title>
       <link>https://okawak.github.io/artemis_crib/setting/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://okawak.github.io/artemis_crib/setting/index.html</guid>
-      <description>This chapter describes how to prepare the configuration file for the experiment. If you have already some CRIB artemis environment, Please see from here for initial settings.</description>
+      <description>This chapter describes how to prepare the configuration file for the experiment. If you have already some CRIB artemis environment, Please see from here for initial settings.
+New experiment New user Build artemis commands Map configuration Steering Histograms VNC server </description>
     </item>
     <item>
       <title>CRIB_parts</title>
@@ -32,14 +34,16 @@
       <link>https://okawak.github.io/artemis_crib/processors/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://okawak.github.io/artemis_crib/processors/index.html</guid>
-      <description>Lorem Ipsum.</description>
+      <description>Lorem Ipsum.
+TTelescopeData TReactionInfo TParticleInfo </description>
     </item>
     <item>
       <title>Example</title>
       <link>https://okawak.github.io/artemis_crib/example/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/index.html</guid>
-      <description>Lorem Ipsum.</description>
+      <description>Lorem Ipsum.
+preparation online_analysis Check raw data offline_analysis Simulation Beam_generator Nbodyreaction Geometry Detect_particle Solidangle </description>
     </item>
   </channel>
 </rss>

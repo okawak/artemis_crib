@@ -70,7 +70,7 @@ artemis [1] fcd 0 # move to the created rootfile artemis [2] zone 2 2 # make a &
       <link>https://okawak.github.io/artemis_crib/setting/vncserver/index.html</link>
       <pubDate>Thu, 02 Nov 2023 17:23:05 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/setting/vncserver/index.html</guid>
-      <description>last modified: 2023-11-14 by Kodai Okawa need to consider&amp;hellip;</description>
+      <description>last modified: 2023-11-15 by Kodai Okawa When we start the analysis, there are many situations where the analysis server on which artemis is installed is not only operated directly, but also remotely using &amp;ldquo;ssh&amp;rdquo;. In such cases, there are various settings that need to be made in order for the figure to be displayed on the local computer, and some of these methods are described in this section. We recommended to use VNC server currently, but note that policies may change in the future.</description>
     </item>
   </channel>
 </rss>
