@@ -1,5 +1,0 @@
-Processor:
-  - name: mapper
-    type: art::TBeamEnergyCalculation
-    parameter:
-      OutputTransparency: 1

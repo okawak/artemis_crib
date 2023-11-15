@@ -1,5 +1,0 @@
-Processor:
-  - name: mapper
-    type: art::TEnergyLossCheck
-    parameter:
-      OutputTransparency: 1
