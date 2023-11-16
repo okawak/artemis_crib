@@ -23,11 +23,12 @@ Requirements cmake ROOT yaml-cpp artemis mount setting energyloss calculator art
 New experiment New user Build artemis commands Map configuration Steering Histograms VNC server </description>
     </item>
     <item>
-      <title>CRIB_parts</title>
+      <title>CRIB Configuration</title>
       <link>https://okawak.github.io/artemis_crib/crib_parts/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://okawak.github.io/artemis_crib/crib_parts/index.html</guid>
-      <description>Lorem Ipsum.</description>
+      <description>How artemis is used varies from experiment to experiment. We would like to explain in this chapter how they are configured and used in CRIB and the specific settings of CRIB.
+Analysis environment </description>
     </item>
     <item>
       <title>Processors</title>

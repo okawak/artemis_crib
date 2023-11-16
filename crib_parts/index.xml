@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CRIB_parts on CRIB artemis</title>
+    <title>CRIB Configuration on CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/crib_parts/index.html</link>
-    <description>Recent content in CRIB_parts on CRIB artemis</description>
+    <description>Recent content in CRIB Configuration on CRIB artemis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://okawak.github.io/artemis_crib/crib_parts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Analysis environment</title>
+      <link>https://okawak.github.io/artemis_crib/crib_parts/environment/index.html</link>
+      <pubDate>Thu, 16 Nov 2023 16:36:56 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/crib_parts/environment/index.html</guid>
+      <description>last modified: 2023-11-16 by Kodai Okawa CRIB shares the analysis environment of all experiments under one user account (username crib). Therefore, when you want to check data from an old experiment or when several people are analysing the data, you need to log in to the same user account.
+Of course, the analysis environment varies according to the experiment (and even different environments for different users within the same experiment!) and these have to be managed well.</description>
+    </item>
   </channel>
 </rss>

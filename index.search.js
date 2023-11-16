@@ -1,5 +1,13 @@
 var relearn_search_index = [
   {
+    "breadcrumb": "CRIB Configuration",
+    "content": "last modified: 2023-11-16 by Kodai Okawa CRIB shares the analysis environment of all experiments under one user account (username crib). Therefore, when you want to check data from an old experiment or when several people are analysing the data, you need to log in to the same user account.\nOf course, the analysis environment varies according to the experiment (and even different environments for different users within the same experiment!) and these have to be managed well. The “.bashrc/.zshrc” and “artlogin (artlogin2)” commands set them up. Currently we are using “zsh (.zshrc)”.\nExperimental environment ​ .bashrc/.zshrc .bashrc/.zshrc export EXP_NAME=\"current\" # your experiment export EXP_NAME_OLD=\"previous\" # old experiment The EXP_NAME is current experiment and you can enter the environment by using artlogin command. At the same time, the EXP_NAME_OLD is the old experiment and you can use artlogin2 command.\nIn the current version, we support two experimental environment and if you want to check other experimental data, please change EXP_NAME_OLD.\nWarning When you modify “.bashrc/.zshrc”, all people’s settings will change. Therefore please do not change EXP_NAME as much as possible, because we want to set this environment variable as the active experiment. If you change this, please report it so that CRIB members are aware of it.\nInfo Commands may be created in the future to enter the environment of all experiments flexibly, not just two. (like artoldlogin {expname} {username}?)\nThen you can enter the different analysis environment like this:\n\u003e artlogin (username) \u003e artlogin2 (username)User environment CRIB uses a default user as well as individual analysis environments. The username of the default user is the same with experiment name.\nIf you set the name of the experiment to “si26a” (EXP_NAME), then the username “si26a” will be the default user. The user’s environment can be entered with the “artlogin” command with no arguments.\n\u003e artlogin \u003e pwd /home/crib/art_analysis/si26a/si26aIf you want to test something by changing files, or if you want to use your own VNC server, you can enter that environment by specifying its name as an argument.\n\u003e artlogin okawa # if this is the first time to command, you will see setup comments. \u003e pwd /home/crib/art_analysis/si26a/okawa Warning When using the default user, try to avoid using a VNC server (do not create .vncdisplay files). The main reason for creating a default user is to analyse locally (for shifters) in the online analysis, and using a VNC server makes it impossible to view the figures locally.\nDirectory structure The directory structure comprising artemis is as follows. (The location of artemis itself is omitted).\n\u003e tree -L 2 ~/art_analysis /home/crib/art_analysis ├── current # accessed by \"artlogin\" │ ├── current # default user │ └── okawa # individual user ├── previous # accessed by \"artlogin2\" │ ├── previous │ └── okawa ├── old1 │ ├── old1 │ └── okawa └── old2 # -- snip --",
+    "description": "",
+    "tags": [],
+    "title": "Analysis environment",
+    "uri": "/artemis_crib/crib_parts/environment/index.html"
+  },
+  {
     "breadcrumb": "Example \u003e online_analysis",
     "content": "last modified: 2023-11-05 by Kodai Okawa ",
     "description": "",
@@ -109,10 +117,10 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "Lorem Ipsum.\n",
+    "content": "How artemis is used varies from experiment to experiment. We would like to explain in this chapter how they are configured and used in CRIB and the specific settings of CRIB.\nAnalysis environment ",
     "description": "",
     "tags": null,
-    "title": "CRIB_parts",
+    "title": "CRIB Configuration",
     "uri": "/artemis_crib/crib_parts/index.html"
   },
   {
