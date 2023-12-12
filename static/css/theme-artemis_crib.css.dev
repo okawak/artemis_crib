@@ -1,0 +1,46 @@
+/* Main color scheme */
+:root {
+
+    --MAIN-font: "Arial";
+    --MAIN-TEXT-color:#323232; /* Color of text by default */
+    --MAIN-TITLES-TEXT-color: #5e5e5e; /* Color of titles h2-h3-h4-h5 */
+    --MAIN-LINK-HOVER-color: #1a0dab; /* 940c23 Color of hovered links */
+    --MAIN-ANCHOR-color: #4e9f3d; /* color of anchors on titles */
+
+    --MENU-HOME-LINK-color: #323232; /* Color of the home button text */
+    --MENU-HOME-LINK-HOVER-color: #5e5e5e; /* Color of the hovered home button text */
+
+    --MENU-HEADER-BG-color:#4e9f3d; /* Background color of menu header */
+    --MENU-HEADER-BORDER-color:#00360b; /*Color of menu header border */
+
+    --MENU-SEARCH-BG-color:#004923; /* Search field background color (by default borders + icons) */
+    --MENU-SEARCH-BOX-color: #ffffff; /* Override search field border color */
+    --MENU-SEARCH-BOX-ICONS-color: #ffffff; /* Override search field icons color */
+
+    --MENU-SECTIONS-ACTIVE-BG-color:#20272b; /* Background color of the active section and its children */
+    --MENU-SECTIONS-BG-color:#252c31; /* Background color of other sections */
+    --MENU-SECTIONS-LINK-color: #ccc; /* Color of links in menu */
+    --MENU-SECTIONS-LINK-HOVER-color: #e6e6e6;  /* Color of links in menu, when hovered */
+    --MENU-SECTION-ACTIVE-CATEGORY-color: #777; /* Color of active category text */
+    --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #fff; /* Color of background for the active category (only) */
+
+    --MENU-VISITED-color: #e4003a; /* Color of 'page visited' icons in menu */
+    --MENU-SECTION-HR-color: #20272b; /* Color of <hr> separator in menu */
+}
+/* main color #4e9f3d */
+/* General */
+body h1 {
+    text-transform: unset;
+}
+
+/* Footer */
+#footer {
+    padding-top: 3rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.65rem;
+    text-align: center;
+}
+
+#footer p {
+    margin: 0;
+}
