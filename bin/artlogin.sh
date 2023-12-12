@@ -100,3 +100,10 @@ fi
 
 ln -fs "${OUTPUT_PATH}/${username}/output" "${ARTEMIS_WORKDIR}/output"
 ln -fs "${OUTPUT_PATH}/${username}/rootfile" "${ARTEMIS_WORKDIR}/rootfile"
+
+printf "before starting artemis,\n"
+printf "> mkdir build && cd build\n"
+printf "> cmake ..\n"
+printf "> make -j4\n"
+printf "> make install\n"
+printf "> artlogin username\n"

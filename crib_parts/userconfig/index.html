@@ -3,27 +3,27 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.120.4">
+    <meta name="generator" content="Hugo 0.121.1">
     <meta name="generator" content="Relearn 5.22.0">
     <meta name="description" content="">
     <meta name="author" content="Kodai Okawa">
-    <title>Processors :: CRIB artemis</title>
-    <link href="/artemis_crib/processors/index.xml" rel="alternate" type="application/rss+xml" title="Processors :: CRIB artemis">
-    <link href="/artemis_crib/processors/index.print.html" rel="alternate" type="text/html" title="Processors :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
+    <title>User config :: CRIB artemis</title>
+    <link href="/artemis_crib/crib_parts/userconfig/index.xml" rel="alternate" type="application/rss+xml" title="User config :: CRIB artemis">
+    <link href="/artemis_crib/crib_parts/userconfig/index.print.html" rel="alternate" type="text/html" title="User config :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1700123767" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1700123767" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1700123767" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1700123767" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1700123767" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1700123767" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1700123767" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1700123767" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1700123767" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-artemis_crib.css?1700123767" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/variant.css?1700123767" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1700123767" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/ie.css?1700123767" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1700123767"></script>
-    <script src="/artemis_crib/js/variant.js?1700123767"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1702365924" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1702365924" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1702365924" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1702365924" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1702365924" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1702365924" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1702365924" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1702365924" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1702365924" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-artemis_crib.css?1702365924" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/variant.css?1702365924" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1702365924" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/ie.css?1702365924" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1702365924"></script>
+    <script src="/artemis_crib/js/variant.js?1702365924"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -57,7 +57,7 @@
 
 
   </head>
-  <body class="mobile-support html" data-url="/artemis_crib/processors/index.html">
+  <body class="mobile-support html" data-url="/artemis_crib/crib_parts/userconfig/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -74,32 +74,41 @@
                 <i class="fa-fw fas fa-list-alt"></i>
               </button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#userlogonc">userlogon.C</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Processors</span><meta itemprop="position" content="1"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/crib_parts/index.html"><span itemprop="name">CRIB Configuration</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">User config</span><meta itemprop="position" content="2"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
-              <a class="topbar-control" href="https://github.com/okawak/artemis_crib/tree/pages-build/content/processors/_index.md" target="_blank" title="Edit (CTRL&#43;ALT&#43;w)">
+              <a class="topbar-control" href="https://github.com/okawak/artemis_crib/tree/pages-build/content/crib_parts/userconfig.md" target="_blank" title="Edit (CTRL&#43;ALT&#43;w)">
                 <i class="fa-fw fas fa-pen"></i>
               </a>
             </div>
             <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
-              <a class="topbar-control" href="/artemis_crib/processors/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)">
+              <a class="topbar-control" href="/artemis_crib/crib_parts/userconfig/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)">
                 <i class="fa-fw fas fa-print"></i>
               </a>
             </div>
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-              <a class="topbar-control" href="/artemis_crib/crib_parts/environment/index.html" title="Analysis environment (🡐)">
+              <a class="topbar-control" href="/artemis_crib/crib_parts/onlinemode/index.html" title="Online-mode analysis (🡐)">
                 <i class="fa-fw fas fa-chevron-left"></i>
               </a>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-              <a class="topbar-control" href="/artemis_crib/processors/telescope/ttelescopedata/index.html" title="TTelescopeData (🡒)">
+              <a class="topbar-control" href="/artemis_crib/crib_parts/newcommand/index.html" title="New commands (🡒)">
                 <i class="fa-fw fas fa-chevron-right"></i>
               </a>
             </div>
@@ -118,22 +127,135 @@
         </div>
       </nav>
       <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable chapter narrow" tabindex="-1">
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
         <div class="flex-block-wrapper">
-          <article class="chapter">
+          <article class="default">
             <header class="headline">
+<div class="tags">
+  <a class="tag-link" href="/artemis_crib/tags/crib/index.html">CRIB</a>
+</div>
             </header>
-<div class="article-subheading">Chapter 4</div>
-<h1 id="processors">Processors</h1>
+<h1 id="user-config">User config</h1>
 
-<p>Lorem Ipsum.</p>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-12 by Kodai Okawa</span></span>
 
-<ul class="children children-li children-sort-">
-	
-<li><a href="/artemis_crib/processors/telescope/ttelescopedata/index.html">TTelescopeData</a></li>
-<li><a href="/artemis_crib/processors/simulation/treactioninfo/index.html">TReactionInfo</a></li>
-<li><a href="/artemis_crib/processors/simulation/tparticleinfo/index.html">TParticleInfo</a></li>
-</ul>
+<div class="box notices cstyle warning">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
+  <div class="box-content">
+
+<p>still under consideration in this part!</p>
+</div>
+</div>
+<p>CRIB often wants to customise artemis because it originally used ANAPAW and wants to perform analysis like ANAPAW.
+However, we do not want to make too many changes to the source code of artemis itself, and we want to make it work in the user-defined part. (it means in the <strong>artemis work directory</strong>)</p>
+<p>In particular, it is often the case that we want to create a new artemis command, but writing the command source on the work directory and registering it in <code>artemislogon.C</code> did not work somehow&hellip;</p>
+<p>Also, artemislogon.C is automatically generated (from .artemislogon.C.in) by the cmake functionality, and even if this itself is changed, it will revert when cmake is redone.</p>
+<p>Therefore, a file called <code>userlogon.C</code> was prepared, which only took out the user-defined part from artemislogon.C.
+The following files have been modified to read this.</p>
+
+  
+<div class="tab-panel" data-tab-group="9ea6ccbc9e0138f1719581a7d44e93ea">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="artemissourcesmaintartrintcc"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('9ea6ccbc9e0138f1719581a7d44e93ea','artemissourcesmaintartrintcc')"
+    >
+      <span>
+        <span class="tab-nav-hidden">artemis/sources/main/TArtRint.cc</span>
+        <span class="tab-nav-text">artemis/sources/main/TArtRint.cc</span>
+      </span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="artemissourcesmaintartrintcc"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span> #include &lt;TInterpreter.h&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span><span style="color:#a6e22e">+#include &lt;TSystem.h&gt;
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span><span style="color:#a6e22e"></span> #include &#34;TLoopManager.h&#34;
+</span></span></code></pre></div></div>
+    </div>
+  </div>
+</div>
+  
+<div class="tab-panel" data-tab-group="36aa17c5051ef48ac2ded76c7fe1c2d9">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="artemissourcesmaintartrintcc"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('36aa17c5051ef48ac2ded76c7fe1c2d9','artemissourcesmaintartrintcc')"
+    >
+      <span>
+        <span class="tab-nav-hidden">artemis/sources/main/TArtRint.cc</span>
+        <span class="tab-nav-text">artemis/sources/main/TArtRint.cc</span>
+      </span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="artemissourcesmaintartrintcc"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span>    TRint::ProcessLine(&#34;.x artemislogon.C&#34;);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span><span style="color:#a6e22e">+   FileStat_t info;
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span><span style="color:#a6e22e">+   if (gSystem-&gt;GetPathInfo(&#34;userlogon.C&#34;, info)==0) {
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span><span style="color:#a6e22e">+      TRint::ProcessLine(&#34;.x userlogon.C&#34;);
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span><span style="color:#a6e22e">+   }
+</span></span></span></code></pre></div></div>
+    </div>
+  </div>
+</div><p>If there is a <code>userlogon.C</code> file in the work directory, it is loaded, otherwise artemis can be used as usual.</p>
+<h3 id="userlogonc">userlogon.C</h3>
+<p>This file can be used freely!
+What we wanted to do most is to register user-defined commands, which can be done as follows.</p>
+
+  
+<div class="tab-panel" data-tab-group="38b190537c47102cea6b00fd254bc4bd">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="userlogonc"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('38b190537c47102cea6b00fd254bc4bd','userlogonc')"
+    >
+      <span>
+        <span class="tab-nav-hidden">userlogon.C</span>
+        <span class="tab-nav-text">userlogon.C</span>
+      </span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="userlogonc"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">// User commands register
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#75715e">// cf definition: TCatCmdFactory *cf = TCatCmdFactory::Instance();
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   cf<span style="color:#f92672">-&gt;</span>Register(TCatCmdLoopStart<span style="color:#f92672">::</span>Instance());
+</span></span><span style="display:flex;"><span>   cf<span style="color:#f92672">-&gt;</span>Register(TCatCmdLoopStop<span style="color:#f92672">::</span>Instance());
+</span></span><span style="display:flex;"><span>   cf<span style="color:#f92672">-&gt;</span>Register(<span style="color:#66d9ef">new</span> art<span style="color:#f92672">::</span>TCmdXfitg);
+</span></span><span style="display:flex;"><span>   cf<span style="color:#f92672">-&gt;</span>Register(<span style="color:#66d9ef">new</span> art<span style="color:#f92672">::</span>TCmdXstatus);
+</span></span><span style="display:flex;"><span>   cf<span style="color:#f92672">-&gt;</span>Register(<span style="color:#66d9ef">new</span> art<span style="color:#f92672">::</span>TCmdXYblow);
+</span></span><span style="display:flex;"><span>   cf<span style="color:#f92672">-&gt;</span>Register(<span style="color:#66d9ef">new</span> art<span style="color:#f92672">::</span>TCmdXblow);
+</span></span><span style="display:flex;"><span>   cf<span style="color:#f92672">-&gt;</span>Register(TCatCmdTCutG<span style="color:#f92672">::</span>Instance());
+</span></span><span style="display:flex;"><span>   cf<span style="color:#f92672">-&gt;</span>Register(<span style="color:#66d9ef">new</span> art<span style="color:#f92672">::</span>TCmdErase);
+</span></span><span style="display:flex;"><span>   cf<span style="color:#f92672">-&gt;</span>Register(<span style="color:#66d9ef">new</span> art<span style="color:#f92672">::</span>TCmdDraw);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">// TTree merge setting
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   TTree<span style="color:#f92672">::</span>SetMaxTreeSize( <span style="color:#ae81ff">1000000000000LL</span> ); <span style="color:#75715e">// 1TB
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}</span></span></code></pre></div></div>
+    </div>
+  </div>
+</div><p>(For some reason, an error occurred when writing in artemislogon.C.)
+You can also customise it in other ways to make it easier for you. For example, when creating a TTree, a setting to increase the file size limit is also included by default.</p>
 
             <footer class="footline">
 
@@ -161,12 +283,12 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/artemis_crib/js/auto-complete.js?1700123768" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.min.js?1700123768" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1700123768" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1700123768" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1700123768" defer></script>
-        <script src="/artemis_crib/js/search.js?1700123768" defer></script>
+        <script src="/artemis_crib/js/auto-complete.js?1702365924" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.min.js?1702365924" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1702365924" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1702365924" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1702365924" defer></script>
+        <script src="/artemis_crib/js/search.js?1702365924" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -192,12 +314,12 @@
           <li data-nav-id="/artemis_crib/setting/steering/index.html" class=""><a class="padding" href="/artemis_crib/setting/steering/index.html">Steering</a></li>
           <li data-nav-id="/artemis_crib/setting/histograms/index.html" class=""><a class="padding" href="/artemis_crib/setting/histograms/index.html">Histograms</a></li>
           <li data-nav-id="/artemis_crib/setting/vncserver/index.html" class=""><a class="padding" href="/artemis_crib/setting/vncserver/index.html">VNC server</a></li></ul></li>
-          <li data-nav-id="/artemis_crib/crib_parts/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/index.html">CRIB Configuration</a><ul id="R-subsections-d4973dcfcc3f30831277a8c3b1c88c30" class="morespace collapsible-menu">
-          <li data-nav-id="/artemis_crib/crib_parts/environment/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/environment/index.html">Analysis environment</a></li></ul></li>
-          <li data-nav-id="/artemis_crib/processors/index.html" class="active parent "><a class="padding" href="/artemis_crib/processors/index.html">Processors</a><ul id="R-subsections-cfffc24f33a4f511c19f2e9819c7da90" class="morespace collapsible-menu">
-          <li data-nav-id="/artemis_crib/processors/telescope/ttelescopedata/index.html" class=""><a class="padding" href="/artemis_crib/processors/telescope/ttelescopedata/index.html">TTelescopeData</a></li>
-          <li data-nav-id="/artemis_crib/processors/simulation/treactioninfo/index.html" class=""><a class="padding" href="/artemis_crib/processors/simulation/treactioninfo/index.html">TReactionInfo</a></li>
-          <li data-nav-id="/artemis_crib/processors/simulation/tparticleinfo/index.html" class=""><a class="padding" href="/artemis_crib/processors/simulation/tparticleinfo/index.html">TParticleInfo</a></li></ul></li>
+          <li data-nav-id="/artemis_crib/crib_parts/index.html" class="parent "><a class="padding" href="/artemis_crib/crib_parts/index.html">CRIB Configuration</a><ul id="R-subsections-4941edf201ef3fa2f1906f4604bad9ba" class="morespace collapsible-menu">
+          <li data-nav-id="/artemis_crib/crib_parts/environment/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/environment/index.html">Analysis environment</a></li>
+          <li data-nav-id="/artemis_crib/crib_parts/onlinemode/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/onlinemode/index.html">Online-mode analysis</a></li>
+          <li data-nav-id="/artemis_crib/crib_parts/userconfig/index.html" class="active"><a class="padding" href="/artemis_crib/crib_parts/userconfig/index.html">User config</a></li>
+          <li data-nav-id="/artemis_crib/crib_parts/newcommand/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/newcommand/index.html">New commands</a></li>
+          <li data-nav-id="/artemis_crib/crib_parts/minor_change/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/minor_change/index.html">Minor changes</a></li></ul></li>
           <li data-nav-id="/artemis_crib/example/index.html" class=""><a class="padding" href="/artemis_crib/example/index.html">Example</a><ul id="R-subsections-daee4b63470ea20ac3f41145e3651181" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/example/preparation/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/index.html">preparation</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/index.html">online_analysis</a><ul id="R-subsections-772ca07ab897727f34ea5e7af1bcd1b0" class="morespace collapsible-menu">
@@ -271,8 +393,8 @@
         </div>
       </div>
     </aside>
-    <script src="/artemis_crib/js/clipboard.min.js?1700123768" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1700123768" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1702365924" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1702365924" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -302,6 +424,6 @@
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1700123768" defer></script>
+    <script src="/artemis_crib/js/theme.js?1702365924" defer></script>
   </body>
 </html>

@@ -3,11 +3,6 @@
 a() {
     if [ ! -e artemislogon.C ]; then
         printf "\33[1ma\33[0m: not found artemislogin.C\n"
-        printf "\t>artlogin (username)\n"
-        printf "\t>mkdir build && cd build\n"
-        printf "\t>cmake ..\n"
-        printf "\t>make -j4\n"
-        printf "\t>make install\n"
         return 1
     fi
 

@@ -1,7 +1,7 @@
 var relearn_search_index = [
   {
     "breadcrumb": "CRIB Configuration",
-    "content": "last modified: 2023-11-16 by Kodai Okawa CRIB shares the analysis environment of all experiments under one user account (username crib). Therefore, when you want to check data from an old experiment or when several people are analysing the data, you need to log in to the same user account.\nOf course, the analysis environment varies according to the experiment (and even different environments for different users within the same experiment!) and these have to be managed well. The “.bashrc/.zshrc” and “artlogin (artlogin2)” commands set them up. Currently we are using “zsh (.zshrc)”.\nExperimental environment ​ .bashrc/.zshrc .bashrc/.zshrc export EXP_NAME=\"current\" # your experiment export EXP_NAME_OLD=\"previous\" # old experiment The EXP_NAME is current experiment and you can enter the environment by using artlogin command. At the same time, the EXP_NAME_OLD is the old experiment and you can use artlogin2 command.\nIn the current version, we support two experimental environment and if you want to check other experimental data, please change EXP_NAME_OLD.\nWarning When you modify “.bashrc/.zshrc”, all people’s settings will change. Therefore please do not change EXP_NAME as much as possible, because we want to set this environment variable as the active experiment. If you change this, please report it so that CRIB members are aware of it.\nInfo Commands may be created in the future to enter the environment of all experiments flexibly, not just two. (like artoldlogin {expname} {username}?)\nThen you can enter the different analysis environment like this:\n\u003e artlogin (username) \u003e artlogin2 (username)User environment CRIB uses a default user as well as individual analysis environments. The username of the default user is the same with experiment name.\nIf you set the name of the experiment to “si26a” (EXP_NAME), then the username “si26a” will be the default user. The user’s environment can be entered with the “artlogin” command with no arguments.\n\u003e artlogin \u003e pwd /home/crib/art_analysis/si26a/si26aIf you want to test something by changing files, or if you want to use your own VNC server, you can enter that environment by specifying its name as an argument.\n\u003e artlogin okawa # if this is the first time to command, you will see setup comments. \u003e pwd /home/crib/art_analysis/si26a/okawa Warning When using the default user, try to avoid using a VNC server (do not create .vncdisplay files). The main reason for creating a default user is to analyse locally (for shifters) in the online analysis, and using a VNC server makes it impossible to view the figures locally.\nDirectory structure The directory structure comprising artemis is as follows. (The location of artemis itself is omitted).\n\u003e tree -L 2 ~/art_analysis /home/crib/art_analysis ├── current # accessed by \"artlogin\" │ ├── current # default user │ └── okawa # individual user ├── previous # accessed by \"artlogin2\" │ ├── previous │ └── okawa ├── old1 │ ├── old1 │ └── okawa └── old2 # -- snip --",
+    "content": "last modified: 2023-12-12 by Kodai Okawa CRIB shares the analysis environment of all experiments under one user account (username crib). Therefore, when you want to check data from an old experiment or when several people are analysing the data, you need to log in to the same user account.\nOf course, the analysis environment varies according to the experiment (and even different environments for different users within the same experiment!) and these have to be managed well. The “.bashrc/.zshrc” and “artlogin (artlogin2)” commands set them up. Currently we are using “zsh (.zshrc)”.\nExperimental environment ​ .bashrc/.zshrc .bashrc/.zshrc export EXP_NAME=\"current\" # your experiment export EXP_NAME_OLD=\"previous\" # old experiment The EXP_NAME is current experiment and you can enter the environment by using artlogin command. At the same time, the EXP_NAME_OLD is the old experiment and you can use artlogin2 command.\nIn the current version, we support two experimental environment and if you want to check other experimental data, please change EXP_NAME_OLD.\nWarning When you modify “.bashrc/.zshrc”, all people’s settings will change. Therefore please do not change EXP_NAME as much as possible, because we want to set this environment variable as the active experiment. If you change this, please report it so that CRIB members are aware of it.\nInfo Commands may be created in the future to enter the environment of all experiments flexibly, not just two. (like artoldlogin {expname} {username}?)\nThen you can enter the different analysis environment like this:\n\u003e artlogin (username) \u003e artlogin2 (username)User environment CRIB uses a default user as well as individual analysis environments. The username of the default user is the same with experiment name.\nIf you set the name of the experiment to “si26a” (EXP_NAME), then the username “si26a” will be the default user. The user’s environment can be entered with the “artlogin” command with no arguments.\n\u003e artlogin \u003e pwd /home/crib/art_analysis/si26a/si26aIf you want to test something by changing files, or if you want to use your own VNC server, you can enter that environment by specifying its name as an argument.\n\u003e artlogin okawa # if this is the first time to command, you will see setup comments. \u003e pwd /home/crib/art_analysis/si26a/okawa Warning When using the default user, try to avoid using a VNC server (do not create .vncdisplay files). The main reason for creating a default user is to analyse locally (for shifters) in the online analysis, and using a VNC server makes it impossible to view the figures locally.\nDirectory structure The directory structure comprising artemis is as follows. (The location of artemis itself is omitted).\n\u003e tree -L 2 ~/art_analysis /home/crib/art_analysis ├── current # accessed by \"artlogin\" │ ├── current # default user │ └── okawa # individual user ├── previous # accessed by \"artlogin2\" │ ├── previous │ └── okawa ├── old1 │ ├── old1 │ └── okawa └── old2 # -- snip --",
     "description": "",
     "tags": [],
     "title": "Analysis environment",
@@ -26,36 +26,6 @@ var relearn_search_index = [
     "uri": "/artemis_crib/setting/new_experiment/index.html"
   },
   {
-    "breadcrumb": "Processors",
-    "content": "last modified: 2023-08-20 by Kodai Okawa under develop (possibly we will update this data class)\nTTelescopeData Data members TVector3 fPos; // detected position (x, y, z) // simulation: actual position // from data: calculated from strip ID Int_t fXID; // X strip ID Int_t fYID; // Y strip ID Double_t fdE; // total energy deposit of dE detector Double_t fE; // total energy deposit of E detector Double_t fEtotal; // total energy deposit of the telescope DoubleVec_t fEnergyArray; // energy array of all the telescope // DoubleVec_t fTimingArray; // not impremented //=============================================================== // no need?? // kMAXNPARAMETER = 4 (can be settable) Int_t fNE; // number of thick E detector Double_t fdEX; // energy of the first dE detector Double_t fdEY; // energy of the seconde dE detector Double_t fdEXTiming; // timing of the first dE detector Double_t fdEYTiming; // timing of the second dE detector Double_t fEvec[kMAXNPARAMETER]; // energy array of the E detector Double_t fETimingvec[kMAXNPARAMETER]; // timing array of the E detector Methods TVector3 GetPosition() const { return fPos; } void SetPosition(TVector3 vec) { fPos = vec; } void SetPosition(Double_t x, Double_t y, Double_t z) { fPos.SetXYZ(x, y, z); } Int_t GetXID() const {return fXID;} void SetXID(Int_t arg) { fXID = arg; } Int_t GetYID() const {return fYID;} void SetYID(Int_t arg) { fYID = arg; } Double_t GetdEX() const {return fdEX;} void SetdEX(Double_t arg) { fdEX = arg; } Double_t GetdEY() const {return fdEY;} void SetdEY(Double_t arg) { fdEY = arg; } Double_t GetdEXTiming() const {return fdEXTiming;} void SetdEXTiming(Double_t arg) { fdEXTiming = arg; } Double_t GetdEYTiming() const {return fdEYTiming;} void SetdEYTiming(Double_t arg) { fdEYTiming = arg; } Double_t GetEvec(Int_t idx) const { return fEvec[idx]; } void SetEvec(Int_t idx, Double_t val) { fEvec[idx] = val; } Int_t GetEvecSize() { return fNE; } Double_t GetETimingvec(Int_t idx) const { return fETimingvec[idx]; } void SetETimingvec(Int_t idx, Double_t val) { fETimingvec[idx] = val; } Double_t GetdE() const {return fdE;} void SetdE(Double_t arg) { fdE = arg; } Double_t GetE() const {return fE;} void SetE(Double_t arg) { fE = arg; } Double_t GetEtotal() const {return fEtotal;} void SetEtotal(Double_t arg) { fEtotal = arg; } DoubleVec_t GetEnergyArray() const {return fEnergyArray;} void SetEnergyArray(Double_t arg) { fEnergyArray.emplace_back(arg); }",
-    "description": "",
-    "tags": [
-      "data_class"
-    ],
-    "title": "TTelescopeData",
-    "uri": "/artemis_crib/processors/telescope/ttelescopedata/index.html"
-  },
-  {
-    "breadcrumb": "Processors",
-    "content": "last modified: 2023-08-20 by Kodai Okawa TReactionInfo Data member // center of the mass system Double_t fEnergy; // kinetic energy Double_t fTheta; // theta Double_t fPhi; // phi // reaction position Double_t fX; Double_t fY; Double_t fZ; // if you define excited statas, the information stored this value Int_t fExcitedID; Methods Double_t GetEnergy() const { return fEnergy; } void SetEnergy(Double_t arg) { fEnergy = arg; } Double_t GetTheta() const { return fTheta; } void SetTheta(Double_t arg) { fTheta = arg; } Double_t GetPhi() const { return fPhi; } void SetPhi(Double_t arg) { fPhi = arg; } Double_t GetX() const { return fX; } Double_t GetY() const { return fY; } Double_t GetZ() const { return fZ; } void SetXYZ(Double_t x, Double_t y, Double_t z) { fX = x; fY = y; fZ = z; } Int_t GetExID() const { return fExcitedID; } void SetExID(Int_t arg) { fExcitedID = arg; }",
-    "description": "",
-    "tags": [
-      "data_class"
-    ],
-    "title": "TReactionInfo",
-    "uri": "/artemis_crib/processors/simulation/treactioninfo/index.html"
-  },
-  {
-    "breadcrumb": "Processors",
-    "content": "last modified: 2023-08-20 by Kodai Okawa TParticleInfo Data member ​ TParticleInfo.cc TParticleInfo.cc 1Int_t fMassNumber; // A: particle mass number 2Int_t fAtomicNumber; // Z: particle atomic number 3Int_t fCharge; // Q: particle charge 4 5Double_t fCurrentZ; // particle z position 6Double_t fEnergy; // particle \"kinetic\" energy 7 8TTrack fTrack; // tracking information 9TLorentzVector fVec; // relativistic momentum and energy Method (Getter and Setter) ​ TParticleInfo.cc TParticleInfo.cc 1void SetMassNumber(Int_t val) { fMassNumber = val; } 2Int_t GetMassNumber() const { return fMassNumber; } 3void SetAtomicNumber(Int_t val) { fAtomicNumber = val; } 4Int_t GetAtomicNumber() const { return fAtomicNumber; } 5void SetCharge(Int_t val) { fCharge = val; } 6Int_t GetCharge() const { return fCharge; } 7 8void SetCurrentZ(Double_t val) { fCurrentZ = val; } 9Double_t GetCurrentZ() const { return fCurrentZ; } 10void SetEnergy(Double_t val) { fEnergy = val; } 11Double_t GetEnergy() const { return fEnergy; } 12 13void SetLorentzVector(Double_t x, Double_t y, Double_t z, Double_t t) { fVec.SetXYZT(x, y, z, t); } 14void SetLorentzVector(TLorentzVector val) { fVec = val; } 15TLorentzVector GetLorentzVector() const { return fVec; } 16 17void SetTrack(Double_t x, Double_t y, Double_t z, Double_t a, Double_t b) 18{ 19 fTrack.SetPos(x, y, z); 20 fTrack.SetAngle(a, b); 21} 22TTrack GetTrack() const { return fTrack; } ",
-    "description": "",
-    "tags": [
-      "data_class"
-    ],
-    "title": "TParticleInfo",
-    "uri": "/artemis_crib/processors/simulation/tparticleinfo/index.html"
-  },
-  {
     "breadcrumb": "Installation",
     "content": "last modified: 2023-11-02 by Kodai Okawa The following machines have been tested for operation.\n1. Writer’s (Okawa’s) machine Almalinux 9.2 zsh 5.8 gcc 11.3.1 cmake 3.20.2 ROOT 6.28/04 yaml-cpp 0.7.0 2. CRIB’s analysis machine CentOS Linux release 7.9.2009 (Core) zsh 5.5.1 gcc 9.3.1 (using devtoolset-9) cmake 3.28 (install manually) ROOT 6.28/06 yaml-cpp 0.8.0 NOTE:\nFrom 2023/10, Ubuntu system is also avaliable. (issue48) Scripts for some automate operation are written in zsh format. Installation seems to be difficult on macOS (because of clang not gcc) in the current version. ",
     "description": "",
@@ -70,6 +40,16 @@ var relearn_search_index = [
     "tags": null,
     "title": "Installation",
     "uri": "/artemis_crib/installation/index.html"
+  },
+  {
+    "breadcrumb": "CRIB Configuration",
+    "content": "last modified: 2023-12-12 by Kodai Okawa We often use “nssta” (non-save mode start) analysis in the beam tuning. It is not necessary to take data, but we need to check the beam condition by using artemis. In this case, TRIDFEventStore can be used as online mode.\nBy default, if we don’t add an input file name and set the SHMID (Shared Memory ID), artemis will use online mode. However, it is necessary to use different types of steering files, one for use in online-mode and the other for use from a file, which can be complicated…\nTherefore, the same steering file was changed to automatically go online mode when the ridf file was not present.\n# from ridf files artemis [0] add steering/hoge.yaml NAME=hoge NUM=0000# online-mode artemis [0] add steering/hoge.yaml # no argumentTo achieve this, the original file was changed as follows.\n​ artemis/sources/loop/ridf/TRIDFEventStore.cc artemis/sources/loop/ridf/TRIDFEventStore.cc 129 for (Int_t i=0; i!=n;i++) { 130 printf(\"file = %s\\n\",fFileName[i].Data()); 131+ if(!gSystem-\u003eFindFile(\".\", fFileName[i])) { 132+ Info(\"Init\", \"No input file -\u003e Online mode\"); 133+ fIsOnline = kTRUE; 134+ } 135 } steering file We always use SHMID=0, so it works simply by adding the following sentence.\n- name: ridf type: art::TRIDFEventStore parameter: OutputTransparency: 1 InputFiles: - *input SHMID: 0",
+    "description": "",
+    "tags": [
+      "CRIB"
+    ],
+    "title": "Online-mode analysis",
+    "uri": "/artemis_crib/crib_parts/onlinemode/index.html"
   },
   {
     "breadcrumb": "Setting",
@@ -98,6 +78,16 @@ var relearn_search_index = [
     "uri": "/artemis_crib/setting/index.html"
   },
   {
+    "breadcrumb": "CRIB Configuration",
+    "content": "last modified: 2023-12-12 by Kodai Okawa Warning still under consideration in this part!\nCRIB often wants to customise artemis because it originally used ANAPAW and wants to perform analysis like ANAPAW. However, we do not want to make too many changes to the source code of artemis itself, and we want to make it work in the user-defined part. (it means in the artemis work directory)\nIn particular, it is often the case that we want to create a new artemis command, but writing the command source on the work directory and registering it in artemislogon.C did not work somehow…\nAlso, artemislogon.C is automatically generated (from .artemislogon.C.in) by the cmake functionality, and even if this itself is changed, it will revert when cmake is redone.\nTherefore, a file called userlogon.C was prepared, which only took out the user-defined part from artemislogon.C. The following files have been modified to read this.\n​ artemis/sources/main/TArtRint.cc artemis/sources/main/TArtRint.cc 14 #include \u003cTInterpreter.h\u003e 15+#include \u003cTSystem.h\u003e 16 #include \"TLoopManager.h\" ​ artemis/sources/main/TArtRint.cc artemis/sources/main/TArtRint.cc 44 TRint::ProcessLine(\".x artemislogon.C\"); 45+ FileStat_t info; 46+ if (gSystem-\u003eGetPathInfo(\"userlogon.C\", info)==0) { 47+ TRint::ProcessLine(\".x userlogon.C\"); 48+ } If there is a userlogon.C file in the work directory, it is loaded, otherwise artemis can be used as usual.\nuserlogon.C This file can be used freely! What we wanted to do most is to register user-defined commands, which can be done as follows.\n​ userlogon.C userlogon.C { // User commands register // cf definition: TCatCmdFactory *cf = TCatCmdFactory::Instance(); cf-\u003eRegister(TCatCmdLoopStart::Instance()); cf-\u003eRegister(TCatCmdLoopStop::Instance()); cf-\u003eRegister(new art::TCmdXfitg); cf-\u003eRegister(new art::TCmdXstatus); cf-\u003eRegister(new art::TCmdXYblow); cf-\u003eRegister(new art::TCmdXblow); cf-\u003eRegister(TCatCmdTCutG::Instance()); cf-\u003eRegister(new art::TCmdErase); cf-\u003eRegister(new art::TCmdDraw); // TTree merge setting TTree::SetMaxTreeSize( 1000000000000LL ); // 1TB } (For some reason, an error occurred when writing in artemislogon.C.) You can also customise it in other ways to make it easier for you. For example, when creating a TTree, a setting to increase the file size limit is also included by default.\n",
+    "description": "",
+    "tags": [
+      "CRIB"
+    ],
+    "title": "User config",
+    "uri": "/artemis_crib/crib_parts/userconfig/index.html"
+  },
+  {
     "breadcrumb": "Setting",
     "content": "last modified: 2023-11-14 by Kodai Okawa Before starting analysis, you need to build. The current version of the artemis use “cmake” so the following steps must be taken.\n\u003e artlogin (username) \u003e mkdir build \u0026\u0026 cd build \u003e cmake .. \u003e make -j4 \u003e make install \u003e acdacd is the alias command that is definded after artlogin command. (acd = cd your_work_directory) Also if you changed some processor, you need to do these process.\nThen some important configuration files are automatically created.\n\u003e tree -L 1 . +├── artemislogon.C +├── thisartemis-crib.sh -- snip -- └── run_artemis.cpp Before starting artemis, you need to load the thisartemis-crib.sh. The artlogin command is also used to read this script, so run this command again after the build.\n\u003e artlogin (usename) \u003e aThen you can start artemis by using a command!\n",
     "description": "",
@@ -117,11 +107,21 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "How artemis is used varies from experiment to experiment. We would like to explain in this chapter how they are configured and used in CRIB and the specific settings of CRIB.\nAnalysis environment ",
+    "content": "How artemis is used varies from experiment to experiment. We would like to explain in this chapter how they are configured and used in CRIB and the specific settings of CRIB.\nAnalysis environment Online-mode analysis User config New commands Minor changes ",
     "description": "",
     "tags": null,
     "title": "CRIB Configuration",
     "uri": "/artemis_crib/crib_parts/index.html"
+  },
+  {
+    "breadcrumb": "CRIB Configuration",
+    "content": "last modified: 2023-12-12 by Kodai Okawa Various commands (mainly the same with ANAPAW commands) have been developed for CRIB experiment. For more information, please click here (art-work-dir/src-crib/commands). These commands are registered in userlogon.C. (See previous section.)\nThis section explains how to use them.\nstart stop xfitg xblow xyblow xstatus tcutg erase draw the default figures: start This is exactly the same as the resume command, because ANAPAW starts the event loop with start instead of resume.\nstop This is exactly the same as the suspend command, because ANAPAW stops the event loop with stop instead of suspend.\nxfitg For 1D histograms, by selecting the two ends of two points, the peak between them is fitted with a Gaussian.\nartemis [7] xf Info in \u003cart::TCmdXfitg::Cmd\u003e: click on the lowest edge: Info in \u003cart::TCmdXfitg::Cmd\u003e: click on the highest edge: Info in \u003cart::TCmdXfitg::Cmd\u003e: X1: -1437.56, X2: -1419.11 FCN=81.6642 FROM MIGRAD STATUS=CONVERGED 71 CALLS 72 TOTAL EDM=3.35095e-09 STRATEGY= 1 ERROR MATRIX ACCURATE EXT PARAMETER STEP FIRST NO. NAME VALUE ERROR SIZE DERIVATIVE 1 Constant 1.16439e+03 2.43862e+01 8.08454e-02 9.04256e-07 2 Mean -1.43081e+03 4.54001e-02 6.82262e-04 -1.74034e-03 3 Sigma 2.81435e+00 4.07888e-02 1.55351e-05 -3.15946e-03 artemis [8] xblow For 1D histograms, select both ends and crop the histogram between them.\nartemis [10] xblo Info in \u003cart::TCmdXblow::Run\u003e: click on the lowest edge: Info in \u003cart::TCmdXblow::Run\u003e: click on the highest edge: Info in \u003cart::TCmdXblow::Run\u003e: X1: -1439.3, X2: -1417.37 Info in \u003cart::TCmdXblow::Run\u003e: id = 2 hist is created artemis [11] xyblow For 2D histograms, select both corners and crop the histogram between them.\nartemis [60] xyblo Info in \u003cart::TCmdXYblow::Run\u003e: click on one corner: Info in \u003cart::TCmdXYblow::Run\u003e: X1: 9.2154, Y1: 46.6159 Info in \u003cart::TCmdXYblow::Run\u003e: click on the other corner: Info in \u003cart::TCmdXYblow::Run\u003e: X2: 21.7032, Y2: 23.952 Info in \u003cart::TCmdXYblow::Run\u003e: id = 6 hist is created artemis [61] xstatus For 2D histograms, select both corners and determine the ratio of the total number of events.\nartemis [8] xs Info in \u003cart::TCmdXstatus::Cmd\u003e: click on one corner: Info in \u003cart::TCmdXstatus::Cmd\u003e: X1: 14.1496, Y1: 41.4826 Info in \u003cart::TCmdXstatus::Cmd\u003e: click on the other corner: Info in \u003cart::TCmdXstatus::Cmd\u003e: X2: 21.0941, Y2: 31.9909 ------------------ selected = 976, total = 7526 ratio = 0.129684 (12.9684%) artemis [9] —under development— tcutg erase draw ",
+    "description": "",
+    "tags": [
+      "CRIB"
+    ],
+    "title": "New commands",
+    "uri": "/artemis_crib/crib_parts/newcommand/index.html"
   },
   {
     "breadcrumb": "Setting",
@@ -141,11 +141,11 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "Lorem Ipsum.\nTTelescopeData TReactionInfo TParticleInfo ",
+    "content": "Lorem Ipsum.\npreparation online_analysis Check raw data offline_analysis Simulation Beam_generator Nbodyreaction Geometry Detect_particle Solidangle ",
     "description": "",
     "tags": null,
-    "title": "Processors",
-    "uri": "/artemis_crib/processors/index.html"
+    "title": "Example",
+    "uri": "/artemis_crib/example/index.html"
   },
   {
     "breadcrumb": "Setting",
@@ -166,14 +166,6 @@ var relearn_search_index = [
     ],
     "title": "artemis",
     "uri": "/artemis_crib/installation/artemis/index.html"
-  },
-  {
-    "breadcrumb": "",
-    "content": "Lorem Ipsum.\npreparation online_analysis Check raw data offline_analysis Simulation Beam_generator Nbodyreaction Geometry Detect_particle Solidangle ",
-    "description": "",
-    "tags": null,
-    "title": "Example",
-    "uri": "/artemis_crib/example/index.html"
   },
   {
     "breadcrumb": "Setting",
@@ -263,6 +255,16 @@ var relearn_search_index = [
     "uri": "/artemis_crib/example/simulation/index.html"
   },
   {
+    "breadcrumb": "CRIB Configuration",
+    "content": "last modified: 2023-12-12 by Kodai Okawa thisartemis.sh.in Grammar issue I think.\n​ artemis/sources/main/thisartemis.sh.in artemis/sources/main/thisartemis.sh.in export LD_LIBRARY_PATH=$TARTSYS/lib:$LD_LIBRARY_PATH -if [ \"@BUILD_GET@\" == \"ON\" ]; then +if [[ \"@BUILD_GET@\" == \"ON\" ]]; then export LD_LIBRARY_PATH=@GET_LIB_DIR@:$LD_LIBRARY_PATH fi -if [ \"@MPI_CXX_FOUND@\" == \"TRUE\" ]; then +if [[ \"@MPI_CXX_FOUND@\" == \"TRUE\" ]]; then dir=@MPI_CXX_LIBRARIES@ libdir=\"$(dirname $dir)\" xval command Add cross hair.\n​ artemis/sources/commands/TCatCmdXval.cc artemis/sources/commands/TCatCmdXval.cc 84 void TCatCmdXval::GetEvent() 85 { 86+ dynamic_cast\u003cTPad *\u003e(gPad)-\u003eDrawCrosshair(); 87 const int event = gPad-\u003eGetEvent(); pr (projection) command After the command, the projected histogram will automatically be displayed.\n​ artemis/sources/commands/TCatCmdPr.cc artemis/sources/commands/TCatCmdPr.cc 55 if (!obj-\u003eInheritsFrom(TH2::Class())) { 56 // TArtCore::Info(\"TCatCmdPr::Run\",\"%s is not 2D histogram\", 57 // obj-\u003eGetName()); 58+ Info(\"Run\", \"%s is not 2D histogram\", obj-\u003eGetName()); 59 continue; 60 } 61+ Int_t nid = (gDirectory-\u003eGetList())-\u003eGetEntries(); 62 Run((TH2*) obj, opt); 63+ Info(\"Run\", \"id = %d hist is created\", nid); 64+ TCatHistManager::Instance()-\u003eDrawObject(nid); 65 } 66 return 1; 67 } TCatPadManager bug???\n​ artemis/sources/core/TCatPadManager.cc artemis/sources/core/TCatPadManager.cc 232 void TCatPadManager::SetCurrentPadId(Int_t id) 233 { 234- if (id \u003c 1 || id \u003e GetNumChild()) return; 235+ if (id \u003c 0 || id \u003e GetNumChild()) return; // mod 236 fCurrentPadId = id; 237 } ",
+    "description": "",
+    "tags": [
+      "CRIB"
+    ],
+    "title": "Minor changes",
+    "uri": "/artemis_crib/crib_parts/minor_change/index.html"
+  },
+  {
     "breadcrumb": "Example \u003e Simulation",
     "content": "last modified: 2023-09-29 by Kodai Okawa The previous sections have described how to loop events from a ridf file or root file, but now I will describe how to generate events to use as a simulation.\nRequirements:\nsrc-crib/simulation/TRandomBeamGenerator src-crib/simulation/TTreeBeamGenerator src-crib/simulation/TParticleInfo As you know, an “event store” must be used to analyse the event loop. For example, in the online analysis, we used TRIDFEventStore, and in the offline analysis, we used TTreeEventStore.\nBut when we want to simulate something, there are no data file. In that case, we can use TCounterEventStore or TRandomNumberEventStore.\nTCounterEventStore: generate numbers in sequence from 0 to N. TRandomNumberEventStore: generate number from 0.0 to 1.0 randomly. Here I will simply describe a simulation using TCounterEventStore.\nInfo As I explained in CRIB_parts before, in the current artemis version, the TCounterEventStore does not seem to be recognised as EventStore. So if we use this EventStore, “no event store” comments will output. I don’t think it makes problem, so it is okay comment out the part of TLoop.cc that prints “no event store”. (Possibly a problem with your environment).\n",
     "description": "",
@@ -317,14 +319,6 @@ var relearn_search_index = [
     "tags": null,
     "title": "Tags",
     "uri": "/artemis_crib/tags/index.html"
-  },
-  {
-    "breadcrumb": "Tags",
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "Tag :: data_class",
-    "uri": "/artemis_crib/tags/data_class/index.html"
   },
   {
     "breadcrumb": "Tags",

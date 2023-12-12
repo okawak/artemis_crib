@@ -6,7 +6,7 @@
     <description>Recent content in CRIB on CRIB artemis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Nov 2023 15:31:58 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/tags/crib/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Dec 2023 13:53:50 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/tags/crib/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>New experiment</title>
       <link>https://okawak.github.io/artemis_crib/setting/new_experiment/index.html</link>
@@ -15,6 +15,14 @@
       <description>last modified: 2023-11-05 by Kodai Okawa If you installed with &amp;ldquo;curl&amp;rdquo; command explained previous chapter, you should have artnew command. This command will make new experiment directory interactively.
 Before using this command, please check and make the directory structure!
 rawdata directory (like /mnt/data or /data? Create it to suit your situation.) output rootfile directory (like /data/art_output?) git repository local repository: suit for online analysis remote repository: suit for offline analysis Let&amp;rsquo;s start &amp;ldquo;artnew&amp;rdquo; command!</description>
+    </item>
+    <item>
+      <title>Online-mode analysis</title>
+      <link>https://okawak.github.io/artemis_crib/crib_parts/onlinemode/index.html</link>
+      <pubDate>Tue, 12 Dec 2023 13:13:43 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/crib_parts/onlinemode/index.html</guid>
+      <description>last modified: 2023-12-12 by Kodai Okawa We often use “nssta” (non-save mode start) analysis in the beam tuning. It is not necessary to take data, but we need to check the beam condition by using artemis. In this case, TRIDFEventStore can be used as online mode.
+By default, if we don&amp;rsquo;t add an input file name and set the SHMID (Shared Memory ID), artemis will use online mode. However, it is necessary to use different types of steering files, one for use in online-mode and the other for use from a file, which can be complicated&amp;hellip;</description>
     </item>
     <item>
       <title>New user</title>
@@ -26,12 +34,30 @@ rawdata directory (like /mnt/data or /data? Create it to suit your situation.) o
 &amp;#8203; .bashrc/.zshrc .bashrc/.zshrc export EXP_NAME=&amp;#34;test&amp;#34; # your experiment And load the config file.</description>
     </item>
     <item>
+      <title>User config</title>
+      <link>https://okawak.github.io/artemis_crib/crib_parts/userconfig/index.html</link>
+      <pubDate>Tue, 12 Dec 2023 13:43:31 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/crib_parts/userconfig/index.html</guid>
+      <description>last modified: 2023-12-12 by Kodai Okawa Warning still under consideration in this part!
+CRIB often wants to customise artemis because it originally used ANAPAW and wants to perform analysis like ANAPAW. However, we do not want to make too many changes to the source code of artemis itself, and we want to make it work in the user-defined part. (it means in the artemis work directory)
+In particular, it is often the case that we want to create a new artemis command, but writing the command source on the work directory and registering it in artemislogon.</description>
+    </item>
+    <item>
       <title>Build</title>
       <link>https://okawak.github.io/artemis_crib/setting/build/index.html</link>
       <pubDate>Thu, 02 Nov 2023 15:11:33 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/setting/build/index.html</guid>
       <description>last modified: 2023-11-14 by Kodai Okawa Before starting analysis, you need to build. The current version of the artemis use &amp;ldquo;cmake&amp;rdquo; so the following steps must be taken.
 &amp;gt; artlogin (username) &amp;gt; mkdir build &amp;amp;&amp;amp; cd build &amp;gt; cmake .. &amp;gt; make -j4 &amp;gt; make install &amp;gt; acdacd is the alias command that is definded after artlogin command. (acd = cd your_work_directory) Also if you changed some processor, you need to do these process.</description>
+    </item>
+    <item>
+      <title>New commands</title>
+      <link>https://okawak.github.io/artemis_crib/crib_parts/newcommand/index.html</link>
+      <pubDate>Tue, 12 Dec 2023 13:53:50 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/crib_parts/newcommand/index.html</guid>
+      <description>last modified: 2023-12-12 by Kodai Okawa Various commands (mainly the same with ANAPAW commands) have been developed for CRIB experiment. For more information, please click here (art-work-dir/src-crib/commands). These commands are registered in userlogon.C. (See previous section.)
+This section explains how to use them.
+start stop xfitg xblow xyblow xstatus tcutg erase draw the default figures: start This is exactly the same as the resume command, because ANAPAW starts the event loop with start instead of resume.</description>
     </item>
     <item>
       <title>Map configuration</title>
@@ -76,6 +102,15 @@ cd .. source thisSRIMlib.sh updateIf you want to make energy loss figures, &amp;
       <description>last modified: 2023-11-14 by Kodai Okawa With this command, all initial settings of &amp;ldquo;art_analysis&amp;rdquo; are made.
 curl --proto &amp;#39;=https&amp;#39; --tlsv1.2 -sSf https://okawak.github.io/artemis_crib/bin/init.sh | shAfter that, please add the following lines to the .bashrc/.zshrc.
 &amp;#8203; .bashrc/.zshrc .bashrc/.zshrc # this is option source ${HOME}/Cern/root/root_install/bin/thisroot.sh &amp;amp;&amp;gt; /dev/null source ${HOME}/repos/artemis/install/bin/thisartemis.sh &amp;amp;&amp;gt; /dev/null source ${HOME}/repos/SRIMlib/thisSRIMlib.sh &amp;amp;&amp;gt; /dev/null # need from this line! export EXP_NAME=&amp;#34;expname&amp;#34; # your experiment export EXP_NAME_OLD=&amp;#34;expname&amp;#34; # this is option export PATH=&amp;#34;${HOME}/art_analysis/bin:${PATH}&amp;#34; source ${HOME}/art_analysis/bin/art_setting -q The setting is all!</description>
+    </item>
+    <item>
+      <title>Minor changes</title>
+      <link>https://okawak.github.io/artemis_crib/crib_parts/minor_change/index.html</link>
+      <pubDate>Wed, 22 Nov 2023 15:05:52 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/crib_parts/minor_change/index.html</guid>
+      <description>last modified: 2023-12-12 by Kodai Okawa thisartemis.sh.in Grammar issue I think.
+&amp;#8203; artemis/sources/main/thisartemis.sh.in artemis/sources/main/thisartemis.sh.in export LD_LIBRARY_PATH=$TARTSYS/lib:$LD_LIBRARY_PATH -if [ &amp;#34;@BUILD_GET@&amp;#34; == &amp;#34;ON&amp;#34; ]; then +if [[ &amp;#34;@BUILD_GET@&amp;#34; == &amp;#34;ON&amp;#34; ]]; then export LD_LIBRARY_PATH=@GET_LIB_DIR@:$LD_LIBRARY_PATH fi -if [ &amp;#34;@MPI_CXX_FOUND@&amp;#34; == &amp;#34;TRUE&amp;#34; ]; then +if [[ &amp;#34;@MPI_CXX_FOUND@&amp;#34; == &amp;#34;TRUE&amp;#34; ]]; then dir=@MPI_CXX_LIBRARIES@ libdir=&amp;#34;$(dirname $dir)&amp;#34; xval command Add cross hair.
+&amp;#8203; artemis/sources/commands/TCatCmdXval.cc artemis/sources/commands/TCatCmdXval.cc 84 void TCatCmdXval::GetEvent() 85 { 86+ dynamic_cast&amp;lt;TPad *&amp;gt;(gPad)-&amp;gt;DrawCrosshair(); 87 const int event = gPad-&amp;gt;GetEvent(); pr (projection) command After the command, the projected histogram will automatically be displayed.</description>
     </item>
   </channel>
 </rss>

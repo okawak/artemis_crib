@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.120.4">
+    <meta name="generator" content="Hugo 0.121.1">
     <meta name="generator" content="Relearn 5.22.0">
     <meta name="description" content="">
     <meta name="author" content="Kodai Okawa">
@@ -12,19 +12,19 @@
     <link href="/artemis_crib/crib_parts/index.xml" rel="alternate" type="application/rss+xml" title="CRIB Configuration :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1700123768" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1700123768" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1700123768" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1700123768" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1700123768" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1700123768" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1700123768" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1700123768" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1700123768" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-artemis_crib.css?1700123768" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/variant.css?1700123768" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1700123768" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/format-print.css?1700123768" rel="stylesheet">
-    <link href="/artemis_crib/css/ie.css?1700123768" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1700123768"></script>
-    <script src="/artemis_crib/js/variant.js?1700123768"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1702365924" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1702365924" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1702365924" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1702365924" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1702365924" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1702365924" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1702365924" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1702365924" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1702365924" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-artemis_crib.css?1702365924" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/variant.css?1702365924" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1702365924" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/format-print.css?1702365924" rel="stylesheet">
+    <link href="/artemis_crib/css/ie.css?1702365924" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1702365924"></script>
+    <script src="/artemis_crib/js/variant.js?1702365924"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -93,6 +93,10 @@ We would like to explain in this chapter how they are configured and used in CRI
 <ul class="children children-li children-sort-">
 	
 <li><a href="/artemis_crib/crib_parts/environment/index.html">Analysis environment</a></li>
+<li><a href="/artemis_crib/crib_parts/onlinemode/index.html">Online-mode analysis</a></li>
+<li><a href="/artemis_crib/crib_parts/userconfig/index.html">User config</a></li>
+<li><a href="/artemis_crib/crib_parts/newcommand/index.html">New commands</a></li>
+<li><a href="/artemis_crib/crib_parts/minor_change/index.html">Minor changes</a></li>
 </ul>
 
             <footer class="footline">
@@ -107,7 +111,7 @@ We would like to explain in this chapter how they are configured and used in CRI
             </header>
 <h1 id="analysis-environment">Analysis environment</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-16 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-12 by Kodai Okawa</span></span>
 <p>CRIB shares the analysis environment of all experiments under one user account (username crib).
 Therefore, when you want to check data from an old experiment or when several people are analysing the data, you need to log in to the same user account.</p>
 <p>Of course, the analysis environment varies according to the experiment (and even different environments for different users within the same experiment!) and these have to be managed well.
@@ -116,13 +120,13 @@ Currently we are using &ldquo;zsh (.zshrc)&rdquo;.</p>
 <h4 id="experimental-environment">Experimental environment</h4>
 
   
-<div class="tab-panel" data-tab-group="89db5d64c92eba3ed40fb3f90880a4f7">
+<div class="tab-panel" data-tab-group="c032f1d4ea411de41862e3d957e9aff4">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="bashrczshrc"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('89db5d64c92eba3ed40fb3f90880a4f7','bashrczshrc')"
+      onclick="switchTab('c032f1d4ea411de41862e3d957e9aff4','bashrczshrc')"
     >
       <span>
         <span class="tab-nav-hidden">.bashrc/.zshrc</span>
@@ -204,12 +208,462 @@ The main reason for creating a default user is to analyse locally (for shifters)
             </footer>
           </article>
 
+          <article class="default">
+            <header class="headline">
+<div class="tags">
+  <a class="tag-link" href="/artemis_crib/tags/crib/index.html">CRIB</a>
+</div>
+            </header>
+<h1 id="online-mode-analysis">Online-mode analysis</h1>
+
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-12 by Kodai Okawa</span></span>
+<p>We often use “nssta” (non-save mode start) analysis in the beam tuning.
+It is not necessary to take data, but we need to check the beam condition by using artemis.
+In this case, <code>TRIDFEventStore</code> can be used as online mode.</p>
+<p>By default, if we don&rsquo;t add an input file name and set the SHMID (Shared Memory ID), artemis will use online mode.
+However, it is necessary to use different types of steering files, one for use in online-mode and the other for use from a file, which can be complicated&hellip;</p>
+<p>Therefore, the same steering file was changed to automatically go online mode when the ridf file was not present.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># from ridf files</span>
+</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> add steering/hoge.yaml NAME<span style="color:#f92672">=</span>hoge NUM<span style="color:#f92672">=</span><span style="color:#ae81ff">0000</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># online-mode</span>
+</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> add steering/hoge.yaml <span style="color:#75715e"># no argument</span></span></span></code></pre></div><p>To achieve this, the original file was changed as follows.</p>
+
+  
+<div class="tab-panel" data-tab-group="f60da34f2b63cd6949bca1136ec8179e">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="artemissourcesloopridftridfeventstorecc"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('f60da34f2b63cd6949bca1136ec8179e','artemissourcesloopridftridfeventstorecc')"
+    >
+      <span>
+        <span class="tab-nav-hidden">artemis/sources/loop/ridf/TRIDFEventStore.cc</span>
+        <span class="tab-nav-text">artemis/sources/loop/ridf/TRIDFEventStore.cc</span>
+      </span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="artemissourcesloopridftridfeventstorecc"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129</span><span>    for (Int_t i=0; i!=n;i++) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130</span><span>       printf(&#34;file = %s\n&#34;,fFileName[i].Data());
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131</span><span><span style="color:#a6e22e">+      if(!gSystem-&gt;FindFile(&#34;.&#34;, fFileName[i])) {
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132</span><span><span style="color:#a6e22e">+         Info(&#34;Init&#34;, &#34;No input file -&gt; Online mode&#34;);
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133</span><span><span style="color:#a6e22e">+         fIsOnline = kTRUE;
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134</span><span><span style="color:#a6e22e">+      }
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135</span><span><span style="color:#a6e22e"></span>    }
+</span></span></code></pre></div></div>
+    </div>
+  </div>
+</div><h4 id="steering-file">steering file</h4>
+<p>We always use SHMID=0, so it works simply by adding the following sentence.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>   - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ridf</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TRIDFEventStore</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">parameter</span>:
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">OutputTransparency</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">InputFiles</span>:
+</span></span><span style="display:flex;"><span>         - <span style="color:#75715e">*input</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>       <span style="color:#f92672">SHMID</span>: <span style="color:#ae81ff">0</span></span></span></code></pre></div>
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+          <article class="default">
+            <header class="headline">
+<div class="tags">
+  <a class="tag-link" href="/artemis_crib/tags/crib/index.html">CRIB</a>
+</div>
+            </header>
+<h1 id="user-config">User config</h1>
+
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-12 by Kodai Okawa</span></span>
+
+<div class="box notices cstyle warning">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
+  <div class="box-content">
+
+<p>still under consideration in this part!</p>
+</div>
+</div>
+<p>CRIB often wants to customise artemis because it originally used ANAPAW and wants to perform analysis like ANAPAW.
+However, we do not want to make too many changes to the source code of artemis itself, and we want to make it work in the user-defined part. (it means in the <strong>artemis work directory</strong>)</p>
+<p>In particular, it is often the case that we want to create a new artemis command, but writing the command source on the work directory and registering it in <code>artemislogon.C</code> did not work somehow&hellip;</p>
+<p>Also, artemislogon.C is automatically generated (from .artemislogon.C.in) by the cmake functionality, and even if this itself is changed, it will revert when cmake is redone.</p>
+<p>Therefore, a file called <code>userlogon.C</code> was prepared, which only took out the user-defined part from artemislogon.C.
+The following files have been modified to read this.</p>
+
+  
+<div class="tab-panel" data-tab-group="9ea6ccbc9e0138f1719581a7d44e93ea">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="artemissourcesmaintartrintcc"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('9ea6ccbc9e0138f1719581a7d44e93ea','artemissourcesmaintartrintcc')"
+    >
+      <span>
+        <span class="tab-nav-hidden">artemis/sources/main/TArtRint.cc</span>
+        <span class="tab-nav-text">artemis/sources/main/TArtRint.cc</span>
+      </span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="artemissourcesmaintartrintcc"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span> #include &lt;TInterpreter.h&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span><span style="color:#a6e22e">+#include &lt;TSystem.h&gt;
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span><span style="color:#a6e22e"></span> #include &#34;TLoopManager.h&#34;
+</span></span></code></pre></div></div>
+    </div>
+  </div>
+</div>
+  
+<div class="tab-panel" data-tab-group="36aa17c5051ef48ac2ded76c7fe1c2d9">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="artemissourcesmaintartrintcc"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('36aa17c5051ef48ac2ded76c7fe1c2d9','artemissourcesmaintartrintcc')"
+    >
+      <span>
+        <span class="tab-nav-hidden">artemis/sources/main/TArtRint.cc</span>
+        <span class="tab-nav-text">artemis/sources/main/TArtRint.cc</span>
+      </span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="artemissourcesmaintartrintcc"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span>    TRint::ProcessLine(&#34;.x artemislogon.C&#34;);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span><span style="color:#a6e22e">+   FileStat_t info;
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span><span style="color:#a6e22e">+   if (gSystem-&gt;GetPathInfo(&#34;userlogon.C&#34;, info)==0) {
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span><span style="color:#a6e22e">+      TRint::ProcessLine(&#34;.x userlogon.C&#34;);
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span><span style="color:#a6e22e">+   }
+</span></span></span></code></pre></div></div>
+    </div>
+  </div>
+</div><p>If there is a <code>userlogon.C</code> file in the work directory, it is loaded, otherwise artemis can be used as usual.</p>
+<h3 id="userlogonc">userlogon.C</h3>
+<p>This file can be used freely!
+What we wanted to do most is to register user-defined commands, which can be done as follows.</p>
+
+  
+<div class="tab-panel" data-tab-group="38b190537c47102cea6b00fd254bc4bd">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="userlogonc"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('38b190537c47102cea6b00fd254bc4bd','userlogonc')"
+    >
+      <span>
+        <span class="tab-nav-hidden">userlogon.C</span>
+        <span class="tab-nav-text">userlogon.C</span>
+      </span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="userlogonc"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">// User commands register
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#75715e">// cf definition: TCatCmdFactory *cf = TCatCmdFactory::Instance();
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   cf<span style="color:#f92672">-&gt;</span>Register(TCatCmdLoopStart<span style="color:#f92672">::</span>Instance());
+</span></span><span style="display:flex;"><span>   cf<span style="color:#f92672">-&gt;</span>Register(TCatCmdLoopStop<span style="color:#f92672">::</span>Instance());
+</span></span><span style="display:flex;"><span>   cf<span style="color:#f92672">-&gt;</span>Register(<span style="color:#66d9ef">new</span> art<span style="color:#f92672">::</span>TCmdXfitg);
+</span></span><span style="display:flex;"><span>   cf<span style="color:#f92672">-&gt;</span>Register(<span style="color:#66d9ef">new</span> art<span style="color:#f92672">::</span>TCmdXstatus);
+</span></span><span style="display:flex;"><span>   cf<span style="color:#f92672">-&gt;</span>Register(<span style="color:#66d9ef">new</span> art<span style="color:#f92672">::</span>TCmdXYblow);
+</span></span><span style="display:flex;"><span>   cf<span style="color:#f92672">-&gt;</span>Register(<span style="color:#66d9ef">new</span> art<span style="color:#f92672">::</span>TCmdXblow);
+</span></span><span style="display:flex;"><span>   cf<span style="color:#f92672">-&gt;</span>Register(TCatCmdTCutG<span style="color:#f92672">::</span>Instance());
+</span></span><span style="display:flex;"><span>   cf<span style="color:#f92672">-&gt;</span>Register(<span style="color:#66d9ef">new</span> art<span style="color:#f92672">::</span>TCmdErase);
+</span></span><span style="display:flex;"><span>   cf<span style="color:#f92672">-&gt;</span>Register(<span style="color:#66d9ef">new</span> art<span style="color:#f92672">::</span>TCmdDraw);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">// TTree merge setting
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   TTree<span style="color:#f92672">::</span>SetMaxTreeSize( <span style="color:#ae81ff">1000000000000LL</span> ); <span style="color:#75715e">// 1TB
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}</span></span></code></pre></div></div>
+    </div>
+  </div>
+</div><p>(For some reason, an error occurred when writing in artemislogon.C.)
+You can also customise it in other ways to make it easier for you. For example, when creating a TTree, a setting to increase the file size limit is also included by default.</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+          <article class="default">
+            <header class="headline">
+<div class="tags">
+  <a class="tag-link" href="/artemis_crib/tags/crib/index.html">CRIB</a>
+</div>
+            </header>
+<h1 id="new-commands">New commands</h1>
+
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-12 by Kodai Okawa</span></span>
+<p>Various commands (mainly the same with ANAPAW commands) have been developed for CRIB experiment.
+For more information, please click <a href="https://github.com/okawak/artemis_crib/tree/main/src-crib/commands" target="_blank">here (art-work-dir/src-crib/commands)</a>.
+These commands are registered in userlogon.C. (See previous section.)</p>
+<p>This section explains how to use them.</p>
+<ul>
+<li>start</li>
+<li>stop</li>
+<li>xfitg</li>
+<li>xblow</li>
+<li>xyblow</li>
+<li>xstatus</li>
+<li>tcutg</li>
+<li>erase</li>
+<li>draw</li>
+</ul>
+<p>the default figures:
+<figure><img src="/artemis_crib/crib_parts/newcommand/default.png" width="1000"/>
+</figure>
+</p>
+<h3 id="start">start</h3>
+<p>This is exactly the same as the <code>resume</code> command, because ANAPAW starts the event loop with <code>start</code> instead of resume.</p>
+<h3 id="stop">stop</h3>
+<p>This is exactly the same as the <code>suspend</code> command, because ANAPAW stops the event loop with <code>stop</code> instead of suspend.</p>
+<h3 id="xfitg">xfitg</h3>
+<p>For <code>1D</code> histograms, by selecting the two ends of two points, the peak between them is fitted with a Gaussian.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>7<span style="color:#f92672">]</span> xf
+</span></span><span style="display:flex;"><span>Info in &lt;art::TCmdXfitg::Cmd&gt;: click on the lowest edge:
+</span></span><span style="display:flex;"><span>Info in &lt;art::TCmdXfitg::Cmd&gt;: click on the highest edge:
+</span></span><span style="display:flex;"><span>Info in &lt;art::TCmdXfitg::Cmd&gt;: X1: -1437.56, X2: -1419.11
+</span></span><span style="display:flex;"><span> FCN<span style="color:#f92672">=</span>81.6642 FROM MIGRAD    STATUS<span style="color:#f92672">=</span>CONVERGED      <span style="color:#ae81ff">71</span> CALLS          <span style="color:#ae81ff">72</span> TOTAL
+</span></span><span style="display:flex;"><span>                     EDM<span style="color:#f92672">=</span>3.35095e-09    STRATEGY<span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>      ERROR MATRIX ACCURATE
+</span></span><span style="display:flex;"><span>  EXT PARAMETER                                   STEP         FIRST
+</span></span><span style="display:flex;"><span>  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">1</span>  Constant     1.16439e+03   2.43862e+01   8.08454e-02   9.04256e-07
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">2</span>  Mean        -1.43081e+03   4.54001e-02   6.82262e-04  -1.74034e-03
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">3</span>  Sigma        2.81435e+00   4.07888e-02   1.55351e-05  -3.15946e-03
+</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>8<span style="color:#f92672">]</span></span></span></code></pre></div><figure><img src="/artemis_crib/crib_parts/newcommand/xfitg.png" width="600"/>
+</figure>
+
+<h3 id="xblow">xblow</h3>
+<p>For <code>1D</code> histograms, select both ends and crop the histogram between them.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>10<span style="color:#f92672">]</span> xblo
+</span></span><span style="display:flex;"><span>Info in &lt;art::TCmdXblow::Run&gt;: click on the lowest edge: 
+</span></span><span style="display:flex;"><span>Info in &lt;art::TCmdXblow::Run&gt;: click on the highest edge: 
+</span></span><span style="display:flex;"><span>Info in &lt;art::TCmdXblow::Run&gt;: X1: -1439.3, X2: -1417.37
+</span></span><span style="display:flex;"><span>Info in &lt;art::TCmdXblow::Run&gt;: id <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> hist is created
+</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>11<span style="color:#f92672">]</span></span></span></code></pre></div><figure><img src="/artemis_crib/crib_parts/newcommand/xblow.png" width="600"/>
+</figure>
+
+<h3 id="xyblow">xyblow</h3>
+<p>For <code>2D</code> histograms, select both corners and crop the histogram between them.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>60<span style="color:#f92672">]</span> xyblo
+</span></span><span style="display:flex;"><span>Info in &lt;art::TCmdXYblow::Run&gt;: click on one corner: 
+</span></span><span style="display:flex;"><span>Info in &lt;art::TCmdXYblow::Run&gt;: X1: 9.2154, Y1: 46.6159
+</span></span><span style="display:flex;"><span>Info in &lt;art::TCmdXYblow::Run&gt;: click on the other corner: 
+</span></span><span style="display:flex;"><span>Info in &lt;art::TCmdXYblow::Run&gt;: X2: 21.7032, Y2: 23.952
+</span></span><span style="display:flex;"><span>Info in &lt;art::TCmdXYblow::Run&gt;: id <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span> hist is created
+</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>61<span style="color:#f92672">]</span></span></span></code></pre></div><figure><img src="/artemis_crib/crib_parts/newcommand/xyblow.png" width="600"/>
+</figure>
+
+<h3 id="xstatus">xstatus</h3>
+<p>For <code>2D</code> histograms, select both corners and determine the ratio of the total number of events.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>8<span style="color:#f92672">]</span> xs
+</span></span><span style="display:flex;"><span>Info in &lt;art::TCmdXstatus::Cmd&gt;: click on one corner: 
+</span></span><span style="display:flex;"><span>Info in &lt;art::TCmdXstatus::Cmd&gt;: X1: 14.1496, Y1: 41.4826
+</span></span><span style="display:flex;"><span>Info in &lt;art::TCmdXstatus::Cmd&gt;: click on the other corner: 
+</span></span><span style="display:flex;"><span>Info in &lt;art::TCmdXstatus::Cmd&gt;: X2: 21.0941, Y2: 31.9909
+</span></span><span style="display:flex;"><span>------------------
+</span></span><span style="display:flex;"><span>selected <span style="color:#f92672">=</span> 976, total <span style="color:#f92672">=</span> <span style="color:#ae81ff">7526</span>
+</span></span><span style="display:flex;"><span>ratio  <span style="color:#f92672">=</span> 0.129684 <span style="color:#f92672">(</span>12.9684%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>9<span style="color:#f92672">]</span></span></span></code></pre></div><figure><img src="/artemis_crib/crib_parts/newcommand/xstatus.png" width="600"/>
+</figure>
+
+<hr>
+<h2 id="---under-development---">&mdash;under development&mdash;</h2>
+<h3 id="tcutg">tcutg</h3>
+<h3 id="erase">erase</h3>
+<h3 id="draw">draw</h3>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+          <article class="default">
+            <header class="headline">
+<div class="tags">
+  <a class="tag-link" href="/artemis_crib/tags/crib/index.html">CRIB</a>
+</div>
+            </header>
+<h1 id="minor-changes">Minor changes</h1>
+
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-12 by Kodai Okawa</span></span>
+<h3 id="thisartemisshin">thisartemis.sh.in</h3>
+<p>Grammar issue I think.</p>
+
+  
+<div class="tab-panel" data-tab-group="15736e5f5d0a3024a2f8cc2b1ff65cc3">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="artemissourcesmainthisartemisshin"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('15736e5f5d0a3024a2f8cc2b1ff65cc3','artemissourcesmainthisartemisshin')"
+    >
+      <span>
+        <span class="tab-nav-hidden">artemis/sources/main/thisartemis.sh.in</span>
+        <span class="tab-nav-text">artemis/sources/main/thisartemis.sh.in</span>
+      </span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="artemissourcesmainthisartemisshin"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span> export LD_LIBRARY_PATH=$TARTSYS/lib:$LD_LIBRARY_PATH
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-if [ &#34;@BUILD_GET@&#34; == &#34;ON&#34; ]; then
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+if [[ &#34;@BUILD_GET@&#34; == &#34;ON&#34; ]]; then
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>     export LD_LIBRARY_PATH=@GET_LIB_DIR@:$LD_LIBRARY_PATH
+</span></span><span style="display:flex;"><span> fi
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-if [ &#34;@MPI_CXX_FOUND@&#34; == &#34;TRUE&#34; ]; then
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+if [[ &#34;@MPI_CXX_FOUND@&#34; == &#34;TRUE&#34; ]]; then
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>     dir=@MPI_CXX_LIBRARIES@
+</span></span><span style="display:flex;"><span>     libdir=&#34;$(dirname $dir)&#34;
+</span></span></code></pre></div></div>
+    </div>
+  </div>
+</div><h3 id="xval-command">xval command</h3>
+<p>Add cross hair.</p>
+
+  
+<div class="tab-panel" data-tab-group="644351100eeee6604f4060a5bc8d7377">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="artemissourcescommandstcatcmdxvalcc"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('644351100eeee6604f4060a5bc8d7377','artemissourcescommandstcatcmdxvalcc')"
+    >
+      <span>
+        <span class="tab-nav-hidden">artemis/sources/commands/TCatCmdXval.cc</span>
+        <span class="tab-nav-text">artemis/sources/commands/TCatCmdXval.cc</span>
+      </span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="artemissourcescommandstcatcmdxvalcc"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84</span><span> void TCatCmdXval::GetEvent()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85</span><span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86</span><span><span style="color:#a6e22e">+   dynamic_cast&lt;TPad *&gt;(gPad)-&gt;DrawCrosshair();
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87</span><span><span style="color:#a6e22e"></span>    const int event = gPad-&gt;GetEvent();
+</span></span></code></pre></div></div>
+    </div>
+  </div>
+</div><figure><img src="/artemis_crib/crib_parts/minor_change/crosshair.png" width="600"/>
+</figure>
+
+<h3 id="pr-projection-command">pr (projection) command</h3>
+<p>After the command, the projected histogram will automatically be displayed.</p>
+
+  
+<div class="tab-panel" data-tab-group="bc68769411f77da79854ad24c2073558">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="artemissourcescommandstcatcmdprcc"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('bc68769411f77da79854ad24c2073558','artemissourcescommandstcatcmdprcc')"
+    >
+      <span>
+        <span class="tab-nav-hidden">artemis/sources/commands/TCatCmdPr.cc</span>
+        <span class="tab-nav-text">artemis/sources/commands/TCatCmdPr.cc</span>
+      </span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="artemissourcescommandstcatcmdprcc"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span><span>       if (!obj-&gt;InheritsFrom(TH2::Class())) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span><span>          // TArtCore::Info(&#34;TCatCmdPr::Run&#34;,&#34;%s is not 2D histogram&#34;,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span><span>          //               obj-&gt;GetName());
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58</span><span><span style="color:#a6e22e">+        Info(&#34;Run&#34;, &#34;%s is not 2D histogram&#34;, obj-&gt;GetName());
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59</span><span><span style="color:#a6e22e"></span>          continue;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60</span><span>       }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61</span><span><span style="color:#a6e22e">+      Int_t nid = (gDirectory-&gt;GetList())-&gt;GetEntries();
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62</span><span><span style="color:#a6e22e"></span>       Run((TH2*) obj, opt);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63</span><span><span style="color:#a6e22e">+      Info(&#34;Run&#34;, &#34;id = %d hist is created&#34;, nid);
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64</span><span><span style="color:#a6e22e">+      TCatHistManager::Instance()-&gt;DrawObject(nid);
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65</span><span><span style="color:#a6e22e"></span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66</span><span>    return 1;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67</span><span> }
+</span></span></code></pre></div></div>
+    </div>
+  </div>
+</div><h3 id="tcatpadmanager">TCatPadManager</h3>
+<p>bug???</p>
+
+  
+<div class="tab-panel" data-tab-group="bdd4c081da8a729da6a3ece420733596">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="artemissourcescoretcatpadmanagercc"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('bdd4c081da8a729da6a3ece420733596','artemissourcescoretcatpadmanagercc')"
+    >
+      <span>
+        <span class="tab-nav-hidden">artemis/sources/core/TCatPadManager.cc</span>
+        <span class="tab-nav-text">artemis/sources/core/TCatPadManager.cc</span>
+      </span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="artemissourcescoretcatpadmanagercc"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">232</span><span> void TCatPadManager::SetCurrentPadId(Int_t id)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">233</span><span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">234</span><span><span style="color:#f92672">-   if (id &lt; 1 || id &gt; GetNumChild()) return;
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">235</span><span><span style="color:#f92672"></span><span style="color:#a6e22e">+   if (id &lt; 0 || id &gt; GetNumChild()) return; // mod
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">236</span><span><span style="color:#a6e22e"></span>    fCurrentPadId = id;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">237</span><span> }
+</span></span></code></pre></div></div>
+    </div>
+  </div>
+</div>
+            <footer class="footline">
+
+            </footer>
+          </article>
+
           </section>
         </div>
       </main>
     </div>
-    <script src="/artemis_crib/js/clipboard.min.js?1700123768" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1700123768" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1702365924" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1702365924" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -239,6 +693,6 @@ The main reason for creating a default user is to analyse locally (for shifters)
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1700123768" defer></script>
+    <script src="/artemis_crib/js/theme.js?1702365924" defer></script>
   </body>
 </html>
