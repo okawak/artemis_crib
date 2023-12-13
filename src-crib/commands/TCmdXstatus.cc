@@ -113,14 +113,9 @@ Long_t TCmdXstatus::Cmd(vector<TString>)
    if (total != 0) {
       ratio = (Double_t)selected / total;
       std::cout << "ratio  = " << ratio << " (" << ratio * 100 << "%)" << std::endl;
+      TCmdComment::Instance()->Run(TString::Format("[xstatus] %d/%d: ratio=%g", selected, total, ratio * 100.0));
    } else {
-      std::cout << "ratio  = "
-                << "NaN" << std::endl;
-   }
-
-   if (total != 0) {
-      TCmdComment::Instance()->Run(TString::Format("[xstatus] %d/%d: ratio=%g \%", selected, total, ratio * 100.0));
-   } else {
+      std::cout << "ratio  = " << "NaN" << std::endl;
       TCmdComment::Instance()->Run(TString::Format("[xstatus] %d/%d: ratio=NaN", selected, total));
    }
 
