@@ -1,19 +1,27 @@
 var relearn_search_index = [
   {
+    "breadcrumb": "Example \u003e Online analysis",
+    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "F1",
+    "uri": "/artemis_crib/example/online_analysis/f1/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Preparation",
+    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "Basic",
+    "uri": "/artemis_crib/example/preparation/basic/index.html"
+  },
+  {
     "breadcrumb": "CRIB Configuration",
     "content": "last modified: 2023-12-12 by Kodai Okawa CRIB shares the analysis environment of all experiments under one user account (username crib). Therefore, when you want to check data from an old experiment or when several people are analysing the data, you need to log in to the same user account.\nOf course, the analysis environment varies according to the experiment (and even different environments for different users within the same experiment!) and these have to be managed well. The “.bashrc/.zshrc” and “artlogin (artlogin2)” commands set them up. Currently we are using “zsh (.zshrc)”.\nExperimental environment ​ .bashrc/.zshrc .bashrc/.zshrc export EXP_NAME=\"current\" # your experiment export EXP_NAME_OLD=\"previous\" # old experiment The EXP_NAME is current experiment and you can enter the environment by using artlogin command. At the same time, the EXP_NAME_OLD is the old experiment and you can use artlogin2 command.\nIn the current version, we support two experimental environment and if you want to check other experimental data, please change EXP_NAME_OLD.\nWarning When you modify “.bashrc/.zshrc”, all people’s settings will change. Therefore please do not change EXP_NAME as much as possible, because we want to set this environment variable as the active experiment. If you change this, please report it so that CRIB members are aware of it.\nInfo Commands may be created in the future to enter the environment of all experiments flexibly, not just two. (like artoldlogin {expname} {username}?)\nThen you can enter the different analysis environment like this:\n\u003e artlogin (username) \u003e artlogin2 (username)User environment CRIB uses a default user as well as individual analysis environments. The username of the default user is the same with experiment name.\nIf you set the name of the experiment to “si26a” (EXP_NAME), then the username “si26a” will be the default user. The user’s environment can be entered with the “artlogin” command with no arguments.\n\u003e artlogin \u003e pwd /home/crib/art_analysis/si26a/si26aIf you want to test something by changing files, or if you want to use your own VNC server, you can enter that environment by specifying its name as an argument.\n\u003e artlogin okawa # if this is the first time to command, you will see setup comments. \u003e pwd /home/crib/art_analysis/si26a/okawa Warning When using the default user, try to avoid using a VNC server (do not create .vncdisplay files). The main reason for creating a default user is to analyse locally (for shifters) in the online analysis, and using a VNC server makes it impossible to view the figures locally.\nDirectory structure The directory structure comprising artemis is as follows. (The location of artemis itself is omitted).\n\u003e tree -L 2 ~/art_analysis /home/crib/art_analysis ├── current # accessed by \"artlogin\" │ ├── current # default user │ └── okawa # individual user ├── previous # accessed by \"artlogin2\" │ ├── previous │ └── okawa ├── old1 │ ├── old1 │ └── okawa └── old2 # -- snip --",
     "description": "",
     "tags": [],
     "title": "Analysis environment",
     "uri": "/artemis_crib/crib_parts/environment/index.html"
-  },
-  {
-    "breadcrumb": "Example \u003e online_analysis",
-    "content": "last modified: 2023-11-05 by Kodai Okawa ",
-    "description": "",
-    "tags": [],
-    "title": "Check raw data",
-    "uri": "/artemis_crib/example/online_analysis/check_rawdata/index.html"
   },
   {
     "breadcrumb": "Setting",
@@ -40,6 +48,22 @@ var relearn_search_index = [
     "tags": null,
     "title": "Installation",
     "uri": "/artemis_crib/installation/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Online analysis",
+    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "F2",
+    "uri": "/artemis_crib/example/online_analysis/f2/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Preparation",
+    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "PPAC calibration",
+    "uri": "/artemis_crib/example/preparation/ppac_calibration/index.html"
   },
   {
     "breadcrumb": "CRIB Configuration",
@@ -78,6 +102,22 @@ var relearn_search_index = [
     "uri": "/artemis_crib/setting/index.html"
   },
   {
+    "breadcrumb": "Example \u003e Online analysis",
+    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "PPAC",
+    "uri": "/artemis_crib/example/online_analysis/ppac/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Preparation",
+    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "MWDC calibration",
+    "uri": "/artemis_crib/example/preparation/mwdc_calibration/index.html"
+  },
+  {
     "breadcrumb": "CRIB Configuration",
     "content": "last modified: 2023-12-12 by Kodai Okawa Warning still under consideration in this part!\nCRIB often wants to customise artemis because it originally used ANAPAW and wants to perform analysis like ANAPAW. However, we do not want to make too many changes to the source code of artemis itself, and we want to make it work in the user-defined part. (it means in the artemis work directory)\nIn particular, it is often the case that we want to create a new artemis command, but writing the command source on the work directory and registering it in artemislogon.C did not work somehow…\nAlso, artemislogon.C is automatically generated (from .artemislogon.C.in) by the cmake functionality, and even if this itself is changed, it will revert when cmake is redone.\nTherefore, a file called userlogon.C was prepared, which only took out the user-defined part from artemislogon.C. The following files have been modified to read this.\n​ artemis/sources/main/TArtRint.cc artemis/sources/main/TArtRint.cc 14 #include \u003cTInterpreter.h\u003e 15+#include \u003cTSystem.h\u003e 16 #include \"TLoopManager.h\" ​ artemis/sources/main/TArtRint.cc artemis/sources/main/TArtRint.cc 44 TRint::ProcessLine(\".x artemislogon.C\"); 45+ FileStat_t info; 46+ if (gSystem-\u003eGetPathInfo(\"userlogon.C\", info)==0) { 47+ TRint::ProcessLine(\".x userlogon.C\"); 48+ } If there is a userlogon.C file in the work directory, it is loaded, otherwise artemis can be used as usual.\nuserlogon.C This file can be used freely! What we wanted to do most is to register user-defined commands, which can be done as follows.\n​ userlogon.C userlogon.C { // User commands register // cf definition: TCatCmdFactory *cf = TCatCmdFactory::Instance(); cf-\u003eRegister(TCatCmdLoopStart::Instance()); cf-\u003eRegister(TCatCmdLoopStop::Instance()); cf-\u003eRegister(new art::TCmdXfitg); cf-\u003eRegister(new art::TCmdXstatus); cf-\u003eRegister(new art::TCmdXYblow); cf-\u003eRegister(new art::TCmdXblow); cf-\u003eRegister(TCatCmdTCutG::Instance()); cf-\u003eRegister(new art::TCmdErase); cf-\u003eRegister(new art::TCmdDraw); // TTree merge setting TTree::SetMaxTreeSize( 1000000000000LL ); // 1TB } (For some reason, an error occurred when writing in artemislogon.C.) You can also customise it in other ways to make it easier for you. For example, when creating a TTree, a setting to increase the file size limit is also included by default.\n",
     "description": "",
@@ -114,6 +154,22 @@ var relearn_search_index = [
     "uri": "/artemis_crib/crib_parts/index.html"
   },
   {
+    "breadcrumb": "Example \u003e Online analysis",
+    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "MWDC",
+    "uri": "/artemis_crib/example/online_analysis/mwdc/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Preparation",
+    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "Alpha calibration",
+    "uri": "/artemis_crib/example/preparation/alpha_calibration/index.html"
+  },
+  {
     "breadcrumb": "CRIB Configuration",
     "content": "last modified: 2023-12-12 by Kodai Okawa Various commands (mainly the same with ANAPAW commands) have been developed for CRIB experiment. For more information, please click here (art-work-dir/src-crib/commands). These commands are registered in userlogon.C. (See previous section.)\nThis section explains how to use them.\nstart stop xfitg xblow xyblow xstatus tcutg erase draw the default figures: start This is exactly the same as the resume command, because ANAPAW starts the event loop with start instead of resume.\nstop This is exactly the same as the suspend command, because ANAPAW stops the event loop with stop instead of suspend.\nxfitg For 1D histograms, by selecting the two ends of two points, the peak between them is fitted with a Gaussian.\nartemis [7] xf Info in \u003cart::TCmdXfitg::Cmd\u003e: click on the lowest edge: Info in \u003cart::TCmdXfitg::Cmd\u003e: click on the highest edge: Info in \u003cart::TCmdXfitg::Cmd\u003e: X1: -1437.56, X2: -1419.11 FCN=81.6642 FROM MIGRAD STATUS=CONVERGED 71 CALLS 72 TOTAL EDM=3.35095e-09 STRATEGY= 1 ERROR MATRIX ACCURATE EXT PARAMETER STEP FIRST NO. NAME VALUE ERROR SIZE DERIVATIVE 1 Constant 1.16439e+03 2.43862e+01 8.08454e-02 9.04256e-07 2 Mean -1.43081e+03 4.54001e-02 6.82262e-04 -1.74034e-03 3 Sigma 2.81435e+00 4.07888e-02 1.55351e-05 -3.15946e-03 artemis [8] xblow For 1D histograms, select both ends and crop the histogram between them.\nartemis [10] xblo Info in \u003cart::TCmdXblow::Run\u003e: click on the lowest edge: Info in \u003cart::TCmdXblow::Run\u003e: click on the highest edge: Info in \u003cart::TCmdXblow::Run\u003e: X1: -1439.3, X2: -1417.37 Info in \u003cart::TCmdXblow::Run\u003e: id = 2 hist is created artemis [11] xyblow For 2D histograms, select both corners and crop the histogram between them.\nartemis [60] xyblo Info in \u003cart::TCmdXYblow::Run\u003e: click on one corner: Info in \u003cart::TCmdXYblow::Run\u003e: X1: 9.2154, Y1: 46.6159 Info in \u003cart::TCmdXYblow::Run\u003e: click on the other corner: Info in \u003cart::TCmdXYblow::Run\u003e: X2: 21.7032, Y2: 23.952 Info in \u003cart::TCmdXYblow::Run\u003e: id = 6 hist is created artemis [61] xstatus For 2D histograms, select both corners and determine the ratio of the total number of events.\nartemis [8] xs Info in \u003cart::TCmdXstatus::Cmd\u003e: click on one corner: Info in \u003cart::TCmdXstatus::Cmd\u003e: X1: 14.1496, Y1: 41.4826 Info in \u003cart::TCmdXstatus::Cmd\u003e: click on the other corner: Info in \u003cart::TCmdXstatus::Cmd\u003e: X2: 21.0941, Y2: 31.9909 ------------------ selected = 976, total = 7526 ratio = 0.129684 (12.9684%) artemis [9] —under development— tcutg erase draw ",
     "description": "",
@@ -141,11 +197,27 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "Lorem Ipsum.\npreparation online_analysis Check raw data offline_analysis Simulation Beam_generator Nbodyreaction Geometry Detect_particle Solidangle ",
+    "content": "Up to now, we have specifically introduced you to the installation and concepts of artemis, This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is sufficient to start reading here.\nPreparation Basic PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git Online analysis F1 F2 PPAC MWDC SSD F3 Shiter task Check raw data Offline analysis Simulation Beam_generator Nbodyreaction Geometry Detect_particle Solidangle ",
     "description": "",
     "tags": null,
     "title": "Example",
     "uri": "/artemis_crib/example/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Online analysis",
+    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "SSD",
+    "uri": "/artemis_crib/example/online_analysis/ssd/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Preparation",
+    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "MUX calibration",
+    "uri": "/artemis_crib/example/preparation/mux_calibration/index.html"
   },
   {
     "breadcrumb": "Setting",
@@ -168,6 +240,30 @@ var relearn_search_index = [
     "uri": "/artemis_crib/installation/artemis/index.html"
   },
   {
+    "breadcrumb": "",
+    "content": "question and answer\n",
+    "description": "",
+    "tags": null,
+    "title": "Q\u0026A",
+    "uri": "/artemis_crib/q_and_a/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Online analysis",
+    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "F3",
+    "uri": "/artemis_crib/example/online_analysis/f3/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Preparation",
+    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "Set parameters",
+    "uri": "/artemis_crib/example/preparation/set_parameter/index.html"
+  },
+  {
     "breadcrumb": "Setting",
     "content": "last modified: 2023-11-14 by Kodai Okawa The steering file (yaml format) is a file that directs the process of how the obtained data is to be processed. The artemis is an object-oriented program whose components are called processors, which are combined to process data.\nThe main role of the “processor” is to process data from an input data called InputCollection and create an output data called OutputCollection. This “OutputCollection” will be stored into the root file as a “tree”. Complex processing can be performed by using “processor” in multiple steps.\nI will explain how to create this “steering” file using Si detector data as an example.\n--- title: example of the data process structure --- graph TD; subgraph event loop A--\u003eB(mapping processor\u003cbr\u003e\u003c/br\u003eInputCollection: decoded data\\nOutputCollection: Si raw data) B--\u003eC(calibration processor\u003cbr\u003e\u003c/br\u003eInputCollection: Si raw data\\nOutputCollection: Si calibrated data) C--\u003eX((event end)) X--\u003eA end subgraph DAQ D(Raw binary data)--\u003eA(decode processor\u003cbr\u003e\u003c/br\u003eInputCollection: raw data\\nOutputCollection: decoded data) end Steering file: Silicon data case First, I describe what is the Anchor and how to use command line arguments. See example here.\n​ chkssd.yaml chkssd.yaml Anchor: - \u0026input ridf/@NAME@@NUM@.ridf - \u0026output output/@NAME@/@NUM@/chkssd@NAME@@NUM@.root - \u0026histout output/@NAME@/@NUM@/chkssd@NAME@@NUM@.hist.root You can use variables from elsewhere in the steering file by declaring them as such. For example if you write:\nsomething: *inputThis unfolds as follows:\nsomething: ridf/@NAME@@NUM@.ridfVariables enclosed in @ can also be specified by command line arguments. For example, If you command like the following in the artemis console,\nartemis [1] add steering/chkssd.yaml NAME=run NUM=0000it is considered as\n​ chkssd.yaml chkssd.yaml Anchor: - \u0026input ridf/run0000.ridf - \u0026output output/run/0000/chkssdrun0000.root - \u0026histout output/run/0000/chkssdrun0000.hist.root 1. General processor When using the “Babirl”, the data file will be in the form of “ridf”. In this case, the beginning and end of the steering file is usually as follows.\n​ chkssd.yaml chkssd.yaml Processor: - name: timer type: art::TTimerProcessor - name: ridf type: art::TRIDFEventStore parameter: OutputTransparency: 1 InputFiles: - *input SHMID: 0 - name: mapper type: art::TMappingProcessor parameter: OutputTransparency: 1 # -- snip -- - name: outputtree type: art::TOutputTreeProcessor parameter: FileName: - *output TTimerProcessor: measure the time taken to process data TRIDFEventStore: decode the ridf file and store the value in EventStore (see below) TMappingProcessor: read mapper.conf for mapping TOutputTreeProcessor: writes data to the root file OutputTransparency is set to 1, indicating that “OutputCollection” is not exported to the root file.\n2. Mapping processor The “mapping processor” puts the data stored in the “EventStore” into a certain data class based on “mapper.conf”. Assume the following map file is used.\n# map for SSD # [category] [id] [[device] [focus] [detector] [geo] [ch]] .... # # Map: energy, timing # #-------------------------------------------------------------------- 1, 0, 12, 1, 6, 0, 0, 12, 2, 7, 0, 0In this case, since we are assuming data from the Si detector, let’s consider putting it in a data class that stores energy and timing data, “TTimingChargeData”! The processor mapping to this data class is “TTimingChargeMappingProcessor”.\n​ chkssd.yaml chkssd.yaml Processor: - name: proc_ssd_raw type: art::TTimingChargeMappingProcessor parameter: CatID: 1 ChargeType: 1 ChargeTypeID: 0 TimingTypeID: 1 Sparse: 1 OutputCollection: ssd_raw CatID: enter here the same number as the cid (category ID) in the map file. ChargeType: there are various ways to store energy (charge) and timing using this processor, but this time “1” is specified to use the processing method using ADC and TDC. Charge/TimingTypeID: The map file has two sets of five parameters that specify the DAQ ID. Which of these parameters specifies which represents the energy (charge) and timing. (it start from “0”) Sparse: parameter for the output data structure OutputCollection: name of the data class to be output Then, you can access the ssd_raw data by using like tree-\u003eDraw(\"ssd_raw.fCharge\")\n3. Calibration processor While the data in the “ssd_raw” are raw channel of the ADC and TDC, it is important to see the data calibrated to energy and time. I will explain the details in Example: preparation/macro, but here I will discuss the calibration processors assuming that the following appropriate calibration files have been created.\nprm/ssd/ch2MeV.dat prm/ssd/ch2ns.dat Now, let’s load these files.\n​ chkssd.yaml chkssd.yaml Processor: - name: proc_ssd_ch2MeV type: art::TParameterArrayLoader parameter: Name: prm_ssd_ch2MeV Type: art::TAffineConverter FileName: prm/ssd/ch2MeV.dat OutputTransparency: 1 - name: proc_ssd_ch2ns type: art::TParameterArrayLoader parameter: Name: prm_ssd_ch2ns Type: art::TAffineConverter FileName: prm/ssd/ch2ns.dat OutputTransparency: 1 To calibrate data contained in a TTimingChargeData class, a TTimingChargeCalibrationProcessor processor is used.\n​ chkssd.yaml chkssd.yaml Processor: - name: proc_ssd type: art::TTimingChargeCalibrationProcessor parameter: InputCollection: ssd_raw OutputCollection: ssd_cal ChargeConverterArray: prm_ssd_ch2MeV TimingConverterArray: prm_ssd_ch2ns Note here that “InputCollection”, “ChargeConverterArray”, and “TimingConverterArray” use the same names as the highlighted lines in the code block above.\nInfo The arguments to be used will vary depending on the processor used, so please check and write them according to the situation. If you want to check from artemis console, you can use “processordescription” command like this\n\u003e artlogin (username) \u003e a artemis [0] processordescription art::TTimingChargeCalibrationProcessor Processor: - name: MyTTimingChargeCalibrationProcessor type: art::TTimingChargeCalibrationProcessor parameter: ChargeConverterArray: no_conversion # [TString] normally output of TAffineConverterArrayGenerator InputCollection: plastic_raw # [TString] array of objects inheriting from art::ITiming and/or art::ICharge InputIsDigital: 1 # [Bool_t] whether input is digital or not OutputCollection: plastic # [TString] output class will be the same as input OutputTransparency: 0 # [Bool_t] Output is persistent if false (default) TimingConverterArray: no_conversion # [TString] normally output of TAffineConverterArrayGenerator Verbose: 1 # [Int_t] verbose level (default 1 : non quiet) 4. Split files If you want to analyse a large number of detectors, not just Si detectors, writing everything in one steering file will result in a large amount of content that is difficult to read.\nIn that case, we can use “include” node!\nIn the examples we have written so far, let’s only use a separate file for the part related to the analysis of the Si detector.\n​ chkssd.yaml chkssd.yaml # -- snip -- Processor: # -- snip -- - include: ssd/ssd_single.yaml # -- snip -- ​ ssd/ssd_single.yaml ssd/ssd_single.yaml Processor: # parameter files - name: proc_ssd_ch2MeV type: art::TParameterArrayLoader parameter: Name: prm_ssd_ch2MeV Type: art::TAffineConverter FileName: prm/ssd/ch2MeV.dat OutputTransparency: 1 - name: proc_ssd_ch2ns type: art::TParameterArrayLoader parameter: Name: prm_ssd_ch2ns Type: art::TAffineConverter FileName: prm/ssd/ch2ns.dat OutputTransparency: 1 # data process - name: proc_ssd_raw type: art::TTimingChargeMappingProcessor parameter: CatID: 1 ChargeType: 1 ChargeTypeID: 0 TimingTypeID: 1 Sparse: 1 OutputCollection: ssd_raw - name: proc_ssd type: art::TTimingChargeCalibrationProcessor parameter: InputCollection: ssd_raw OutputCollection: ssd_cal ChargeConverterArray: prm_ssd_ch2MeV TimingConverterArray: prm_ssd_ch2ns In this way, the contents of “chkssd.yaml” can be kept concise, while the same process is carried out. Note that the file paths here are relative to the paths from the steering directory. Parameter files, for example, are relative paths from the working directory (one level down).\nUtilising file splitting also makes it easier to check the steering files that analyse a large number of detectors like this.\n​ chkall.yaml chkall.yaml # -- snip -- Processor: # -- snip -- - include: rf/rf.yaml - include: ppac/f1ppac.yaml - include: ppac/dlppac.yaml - include: mwdc/mwdc.yaml - include: ssd/ssd_all.yaml # -- snip -- Info When you include other files, you can set arguments. This can be used, for example, to share variables. Details will be introduced in the example section.\nSummary The whole steering file is as follows:\n​ chkssd.yaml chkssd.yaml Anchor: - \u0026input ridf/@NAME@@NUM@.ridf - \u0026output output/@NAME@/@NUM@/chkssd@NAME@@NUM@.root - \u0026histout output/@NAME@/@NUM@/chkssd@NAME@@NUM@.hist.root Processor: - name: timer type: art::TTimerProcessor - name: ridf type: art::TRIDFEventStore parameter: OutputTransparency: 1 InputFiles: - *input SHMID: 0 - name: mapper type: art::TMappingProcessor parameter: OutputTransparency: 1 - include: ssd/ssd_single.yaml # output root file - name: outputtree type: art::TOutputTreeProcessor parameter: FileName: - *output ​ ssd/ssd_single.yaml ssd/ssd_single.yaml Processor: # parameter files - name: proc_ssd_ch2MeV type: art::TParameterArrayLoader parameter: Name: prm_ssd_ch2MeV Type: art::TAffineConverter FileName: prm/ssd/ch2MeV.dat OutputTransparency: 1 - name: proc_ssd_ch2ns type: art::TParameterArrayLoader parameter: Name: prm_ssd_ch2ns Type: art::TAffineConverter FileName: prm/ssd/ch2ns.dat OutputTransparency: 1 # data process - name: proc_ssd_raw type: art::TTimingChargeMappingProcessor parameter: CatID: 1 ChargeType: 1 ChargeTypeID: 0 TimingTypeID: 1 Sparse: 1 OutputCollection: ssd_raw - name: proc_ssd type: art::TTimingChargeCalibrationProcessor parameter: InputCollection: ssd_raw OutputCollection: ssd_cal ChargeConverterArray: prm_ssd_ch2MeV TimingConverterArray: prm_ssd_ch2ns \u003e acd \u003e a artemis [0] add steering/chkssd.yaml NAME=run NUM=0000",
     "description": "",
@@ -184,6 +280,22 @@ var relearn_search_index = [
     ],
     "title": "mount setting",
     "uri": "/artemis_crib/installation/mount/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Online analysis",
+    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "Shiter task",
+    "uri": "/artemis_crib/example/online_analysis/shift/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Preparation",
+    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "Git",
+    "uri": "/artemis_crib/example/preparation/git/index.html"
   },
   {
     "breadcrumb": "Setting",
@@ -223,19 +335,27 @@ var relearn_search_index = [
     "uri": "/artemis_crib/installation/art_analysis/index.html"
   },
   {
+    "breadcrumb": "Example \u003e Online analysis",
+    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "Check raw data",
+    "uri": "/artemis_crib/example/online_analysis/check_rawdata/index.html"
+  },
+  {
     "breadcrumb": "Example",
-    "content": "This section explain the example of preparation by using some useful macro.\n",
+    "content": "This section explain the example of preparation by using some useful macro.\nBasic PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git ",
     "description": "",
     "tags": null,
-    "title": "preparation",
+    "title": "Preparation",
     "uri": "/artemis_crib/example/preparation/index.html"
   },
   {
     "breadcrumb": "Example",
-    "content": "This section explain the example of the online analysis in the CRIB experiment.\nCheck raw data ",
+    "content": "This section explain the example of the online analysis in the CRIB experiment.\nF1 F2 PPAC MWDC SSD F3 Shiter task Check raw data ",
     "description": "",
     "tags": null,
-    "title": "online_analysis",
+    "title": "Online analysis",
     "uri": "/artemis_crib/example/online_analysis/index.html"
   },
   {
@@ -243,7 +363,7 @@ var relearn_search_index = [
     "content": "This section explain the example of the offline analysis (some useful processors).\n",
     "description": "",
     "tags": null,
-    "title": "offline_analysis",
+    "title": "Offline analysis",
     "uri": "/artemis_crib/example/offline_analysis/index.html"
   },
   {
@@ -256,7 +376,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "CRIB Configuration",
-    "content": "last modified: 2023-12-12 by Kodai Okawa thisartemis.sh.in Grammar issue I think.\n​ artemis/sources/main/thisartemis.sh.in artemis/sources/main/thisartemis.sh.in export LD_LIBRARY_PATH=$TARTSYS/lib:$LD_LIBRARY_PATH -if [ \"@BUILD_GET@\" == \"ON\" ]; then +if [[ \"@BUILD_GET@\" == \"ON\" ]]; then export LD_LIBRARY_PATH=@GET_LIB_DIR@:$LD_LIBRARY_PATH fi -if [ \"@MPI_CXX_FOUND@\" == \"TRUE\" ]; then +if [[ \"@MPI_CXX_FOUND@\" == \"TRUE\" ]]; then dir=@MPI_CXX_LIBRARIES@ libdir=\"$(dirname $dir)\" xval command Add cross hair.\n​ artemis/sources/commands/TCatCmdXval.cc artemis/sources/commands/TCatCmdXval.cc 84 void TCatCmdXval::GetEvent() 85 { 86+ dynamic_cast\u003cTPad *\u003e(gPad)-\u003eDrawCrosshair(); 87 const int event = gPad-\u003eGetEvent(); pr (projection) command After the command, the projected histogram will automatically be displayed.\n​ artemis/sources/commands/TCatCmdPr.cc artemis/sources/commands/TCatCmdPr.cc 55 if (!obj-\u003eInheritsFrom(TH2::Class())) { 56 // TArtCore::Info(\"TCatCmdPr::Run\",\"%s is not 2D histogram\", 57 // obj-\u003eGetName()); 58+ Info(\"Run\", \"%s is not 2D histogram\", obj-\u003eGetName()); 59 continue; 60 } 61+ Int_t nid = (gDirectory-\u003eGetList())-\u003eGetEntries(); 62 Run((TH2*) obj, opt); 63+ Info(\"Run\", \"id = %d hist is created\", nid); 64+ TCatHistManager::Instance()-\u003eDrawObject(nid); 65 } 66 return 1; 67 } TCatPadManager bug???\n​ artemis/sources/core/TCatPadManager.cc artemis/sources/core/TCatPadManager.cc 232 void TCatPadManager::SetCurrentPadId(Int_t id) 233 { 234- if (id \u003c 1 || id \u003e GetNumChild()) return; 235+ if (id \u003c 0 || id \u003e GetNumChild()) return; // mod 236 fCurrentPadId = id; 237 } ",
+    "content": "last modified: 2023-12-13 by Kodai Okawa thisartemis.sh.in Grammar issue I think.\n​ artemis/sources/main/thisartemis.sh.in artemis/sources/main/thisartemis.sh.in export LD_LIBRARY_PATH=$TARTSYS/lib:$LD_LIBRARY_PATH -if [ \"@BUILD_GET@\" == \"ON\" ]; then +if [[ \"@BUILD_GET@\" == \"ON\" ]]; then export LD_LIBRARY_PATH=@GET_LIB_DIR@:$LD_LIBRARY_PATH fi -if [ \"@MPI_CXX_FOUND@\" == \"TRUE\" ]; then +if [[ \"@MPI_CXX_FOUND@\" == \"TRUE\" ]]; then dir=@MPI_CXX_LIBRARIES@ libdir=\"$(dirname $dir)\" xval command Add cross hair.\n​ artemis/sources/commands/TCatCmdXval.cc artemis/sources/commands/TCatCmdXval.cc 84 void TCatCmdXval::GetEvent() 85 { 86+ dynamic_cast\u003cTPad *\u003e(gPad)-\u003eDrawCrosshair(); 87 const int event = gPad-\u003eGetEvent(); pr (projection) command After the command, the projected histogram will automatically be displayed.\n​ artemis/sources/commands/TCatCmdPr.cc artemis/sources/commands/TCatCmdPr.cc 55 if (!obj-\u003eInheritsFrom(TH2::Class())) { 56 // TArtCore::Info(\"TCatCmdPr::Run\",\"%s is not 2D histogram\", 57 // obj-\u003eGetName()); 58+ Info(\"Run\", \"%s is not 2D histogram\", obj-\u003eGetName()); 59 continue; 60 } 61+ Int_t nid = (gDirectory-\u003eGetList())-\u003eGetEntries(); 62 Run((TH2*) obj, opt); 63+ Info(\"Run\", \"id = %d hist is created\", nid); 64+ TCatHistManager::Instance()-\u003eDrawObject(nid); 65 } 66 return 1; 67 } ",
     "description": "",
     "tags": [
       "CRIB"

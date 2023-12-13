@@ -11,43 +11,35 @@
       <link>https://okawak.github.io/artemis_crib/crib_parts/environment/index.html</link>
       <pubDate>Thu, 16 Nov 2023 16:36:56 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/crib_parts/environment/index.html</guid>
-      <description>last modified: 2023-12-12 by Kodai Okawa CRIB shares the analysis environment of all experiments under one user account (username crib). Therefore, when you want to check data from an old experiment or when several people are analysing the data, you need to log in to the same user account.
-Of course, the analysis environment varies according to the experiment (and even different environments for different users within the same experiment!) and these have to be managed well.</description>
+      <description>last modified: 2023-12-12 by Kodai Okawa CRIB shares the analysis environment of all experiments under one user account (username crib).</description>
     </item>
     <item>
       <title>Online-mode analysis</title>
       <link>https://okawak.github.io/artemis_crib/crib_parts/onlinemode/index.html</link>
       <pubDate>Tue, 12 Dec 2023 13:13:43 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/crib_parts/onlinemode/index.html</guid>
-      <description>last modified: 2023-12-12 by Kodai Okawa We often use “nssta” (non-save mode start) analysis in the beam tuning. It is not necessary to take data, but we need to check the beam condition by using artemis. In this case, TRIDFEventStore can be used as online mode.
-By default, if we don&amp;rsquo;t add an input file name and set the SHMID (Shared Memory ID), artemis will use online mode. However, it is necessary to use different types of steering files, one for use in online-mode and the other for use from a file, which can be complicated&amp;hellip;</description>
+      <description>last modified: 2023-12-12 by Kodai Okawa We often use “nssta” (non-save mode start) analysis in the beam tuning.</description>
     </item>
     <item>
       <title>User config</title>
       <link>https://okawak.github.io/artemis_crib/crib_parts/userconfig/index.html</link>
       <pubDate>Tue, 12 Dec 2023 13:43:31 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/crib_parts/userconfig/index.html</guid>
-      <description>last modified: 2023-12-12 by Kodai Okawa Warning still under consideration in this part!
-CRIB often wants to customise artemis because it originally used ANAPAW and wants to perform analysis like ANAPAW. However, we do not want to make too many changes to the source code of artemis itself, and we want to make it work in the user-defined part. (it means in the artemis work directory)
-In particular, it is often the case that we want to create a new artemis command, but writing the command source on the work directory and registering it in artemislogon.</description>
+      <description>last modified: 2023-12-12 by Kodai Okawa Warning still under consideration in this part!</description>
     </item>
     <item>
       <title>New commands</title>
       <link>https://okawak.github.io/artemis_crib/crib_parts/newcommand/index.html</link>
       <pubDate>Tue, 12 Dec 2023 13:53:50 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/crib_parts/newcommand/index.html</guid>
-      <description>last modified: 2023-12-12 by Kodai Okawa Various commands (mainly the same with ANAPAW commands) have been developed for CRIB experiment. For more information, please click here (art-work-dir/src-crib/commands). These commands are registered in userlogon.C. (See previous section.)
-This section explains how to use them.
-start stop xfitg xblow xyblow xstatus tcutg erase draw the default figures: start This is exactly the same as the resume command, because ANAPAW starts the event loop with start instead of resume.</description>
+      <description>last modified: 2023-12-12 by Kodai Okawa Various commands (mainly the same with ANAPAW commands) have been developed for CRIB experiment.</description>
     </item>
     <item>
       <title>Minor changes</title>
       <link>https://okawak.github.io/artemis_crib/crib_parts/minor_change/index.html</link>
       <pubDate>Wed, 22 Nov 2023 15:05:52 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/crib_parts/minor_change/index.html</guid>
-      <description>last modified: 2023-12-12 by Kodai Okawa thisartemis.sh.in Grammar issue I think.
-&amp;#8203; artemis/sources/main/thisartemis.sh.in artemis/sources/main/thisartemis.sh.in export LD_LIBRARY_PATH=$TARTSYS/lib:$LD_LIBRARY_PATH -if [ &amp;#34;@BUILD_GET@&amp;#34; == &amp;#34;ON&amp;#34; ]; then +if [[ &amp;#34;@BUILD_GET@&amp;#34; == &amp;#34;ON&amp;#34; ]]; then export LD_LIBRARY_PATH=@GET_LIB_DIR@:$LD_LIBRARY_PATH fi -if [ &amp;#34;@MPI_CXX_FOUND@&amp;#34; == &amp;#34;TRUE&amp;#34; ]; then +if [[ &amp;#34;@MPI_CXX_FOUND@&amp;#34; == &amp;#34;TRUE&amp;#34; ]]; then dir=@MPI_CXX_LIBRARIES@ libdir=&amp;#34;$(dirname $dir)&amp;#34; xval command Add cross hair.
-&amp;#8203; artemis/sources/commands/TCatCmdXval.cc artemis/sources/commands/TCatCmdXval.cc 84 void TCatCmdXval::GetEvent() 85 { 86+ dynamic_cast&amp;lt;TPad *&amp;gt;(gPad)-&amp;gt;DrawCrosshair(); 87 const int event = gPad-&amp;gt;GetEvent(); pr (projection) command After the command, the projected histogram will automatically be displayed.</description>
+      <description>last modified: 2023-12-13 by Kodai Okawa thisartemis.sh.in Grammar issue I think.</description>
     </item>
   </channel>
 </rss>

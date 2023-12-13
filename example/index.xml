@@ -7,22 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://okawak.github.io/artemis_crib/example/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>preparation</title>
+      <title>Preparation</title>
       <link>https://okawak.github.io/artemis_crib/example/preparation/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/preparation/index.html</guid>
       <description>This section explain the example of preparation by using some useful macro.</description>
     </item>
     <item>
-      <title>online_analysis</title>
+      <title>Online analysis</title>
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/index.html</guid>
-      <description>This section explain the example of the online analysis in the CRIB experiment.
-Check raw data </description>
+      <description>This section explain the example of the online analysis in the CRIB experiment.</description>
     </item>
     <item>
-      <title>offline_analysis</title>
+      <title>Offline analysis</title>
       <link>https://okawak.github.io/artemis_crib/example/offline_analysis/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/offline_analysis/index.html</guid>
@@ -33,8 +32,7 @@ Check raw data </description>
       <link>https://okawak.github.io/artemis_crib/example/simulation/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/simulation/index.html</guid>
-      <description>This section explain the example of the simulation by using artemis.
-Beam_generator Nbodyreaction Geometry Detect_particle Solidangle </description>
+      <description>This section explain the example of the simulation by using artemis.</description>
     </item>
   </channel>
 </rss>

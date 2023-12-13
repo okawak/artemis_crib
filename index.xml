@@ -11,32 +11,35 @@
       <link>https://okawak.github.io/artemis_crib/installation/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/index.html</guid>
-      <description>This chapter describes how to set up the artemis environment for the CRIB experiment. See from here for initial settings.
-Requirements cmake ROOT yaml-cpp artemis mount setting energyloss calculator art_analysis </description>
+      <description>This chapter describes how to set up the artemis environment for the CRIB experiment.</description>
     </item>
     <item>
       <title>Setting</title>
       <link>https://okawak.github.io/artemis_crib/setting/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://okawak.github.io/artemis_crib/setting/index.html</guid>
-      <description>This chapter describes how to prepare the configuration file for the experiment. If you have already some CRIB artemis environment, Please see from here for initial settings.
-New experiment New user Build artemis commands Map configuration Steering Histograms VNC server </description>
+      <description>This chapter describes how to prepare the configuration file for the experiment.</description>
     </item>
     <item>
       <title>CRIB Configuration</title>
       <link>https://okawak.github.io/artemis_crib/crib_parts/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://okawak.github.io/artemis_crib/crib_parts/index.html</guid>
-      <description>How artemis is used varies from experiment to experiment. We would like to explain in this chapter how they are configured and used in CRIB and the specific settings of CRIB.
-Analysis environment Online-mode analysis User config New commands Minor changes </description>
+      <description>How artemis is used varies from experiment to experiment. We would like to explain in this chapter how they are configured and used in CRIB and the specific settings of CRIB.</description>
     </item>
     <item>
       <title>Example</title>
       <link>https://okawak.github.io/artemis_crib/example/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/index.html</guid>
-      <description>Lorem Ipsum.
-preparation online_analysis Check raw data offline_analysis Simulation Beam_generator Nbodyreaction Geometry Detect_particle Solidangle </description>
+      <description>Up to now, we have specifically introduced you to the installation and concepts of artemis, This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is sufficient to start reading here.</description>
+    </item>
+    <item>
+      <title>Q&amp;A</title>
+      <link>https://okawak.github.io/artemis_crib/q_and_a/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/q_and_a/index.html</guid>
+      <description>question and answer</description>
     </item>
   </channel>
 </rss>

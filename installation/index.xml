@@ -11,74 +11,56 @@
       <link>https://okawak.github.io/artemis_crib/installation/requirements/index.html</link>
       <pubDate>Mon, 14 Aug 2023 13:36:14 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/requirements/index.html</guid>
-      <description>last modified: 2023-11-02 by Kodai Okawa The following machines have been tested for operation.
-1. Writer&amp;rsquo;s (Okawa&amp;rsquo;s) machine Almalinux 9.2 zsh 5.8 gcc 11.3.1 cmake 3.20.2 ROOT 6.28/04 yaml-cpp 0.7.0 2. CRIB&amp;rsquo;s analysis machine CentOS Linux release 7.9.2009 (Core) zsh 5.5.1 gcc 9.3.1 (using devtoolset-9) cmake 3.28 (install manually) ROOT 6.28/06 yaml-cpp 0.8.0 NOTE:
-From 2023/10, Ubuntu system is also avaliable. (issue48) Scripts for some automate operation are written in zsh format.</description>
+      <description>last modified: 2023-11-02 by Kodai Okawa The following machines have been tested for operation.</description>
     </item>
     <item>
       <title>cmake</title>
       <link>https://okawak.github.io/artemis_crib/installation/cmake/index.html</link>
       <pubDate>Sun, 29 Oct 2023 16:03:04 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/cmake/index.html</guid>
-      <description>last modified: 2023-11-02 by Kodai Okawa Generally, dnf install cmake or brew install cmake support latest version of the cmake, but for some older machine like CentOS7, it is too old to install ROOT.
-The latest ROOT require CMake 3.16 or higher, and if your system doesn&amp;rsquo;t support this version, you need to install manually.
-You can get more information from here.
-cd hoge git clone https://github.com/Kitware/Cmake.git cd Cmake ./bootstrap make -j8 sudo make installIf you want to set the version, you can change the branch (tag).</description>
+      <description>last modified: 2023-11-02 by Kodai Okawa Generally, dnf install cmake or brew install cmake support latest version of the cmake, but for some older machine like CentOS7, it is too old to install ROOT.</description>
     </item>
     <item>
       <title>ROOT</title>
       <link>https://okawak.github.io/artemis_crib/installation/root/index.html</link>
       <pubDate>Mon, 14 Aug 2023 12:27:52 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/root/index.html</guid>
-      <description>last modified: 2023-11-02 by Kodai Okawa Artemis uses ROOT library.
-We confirmed that version 6.28 of the ROOT will work well, but if the ROOT updates, we are not sure that the ARTEMIS will work well, so we recommend to build from the sources.
-For detailded information, please refer Installing ROOT Recommendations are described below.
-# The latest stable branch gets updated automatically on each release. # You may update your local copy by issuing a `git pull` command from within `root_src/`.</description>
+      <description>last modified: 2023-11-02 by Kodai Okawa Artemis uses ROOT library.</description>
     </item>
     <item>
       <title>yaml-cpp</title>
       <link>https://okawak.github.io/artemis_crib/installation/yaml-cpp/index.html</link>
       <pubDate>Mon, 14 Aug 2023 13:57:35 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/yaml-cpp/index.html</guid>
-      <description>last modified: 2023-11-02 by Kodai Okawa Info The yaml-cpp can be installed by some package manager like apt or dnf, but I&amp;rsquo;m not sure it will work or not in the installation of the artemis.
-Current version of the artemis use yaml-cpp-0.7 or higher. In order to use this library, please install from the repository.
-See also Github repo and README of the artemis Please install it as a shared object like below commands.</description>
+      <description>last modified: 2023-11-02 by Kodai Okawa Info The yaml-cpp can be installed by some package manager like apt or dnf, but I&amp;rsquo;m not sure it will work or not in the installation of the artemis.</description>
     </item>
     <item>
       <title>artemis</title>
       <link>https://okawak.github.io/artemis_crib/installation/artemis/index.html</link>
       <pubDate>Mon, 14 Aug 2023 14:28:33 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/artemis/index.html</guid>
-      <description>last modified: 2023-11-02 by Kodai Okawa From the current situation, CRIB experiment doesn&amp;rsquo;t use GET system, so we describe how to install it without linking it to GET decoder.
-Also, it can link to openMPI, but the below commands assume not using openMPI. See artemis repo for more information.
-cd hoge git clone https://github.com/artemis-dev/artemis.git -b develop cd artemis mkdir build cd build cmake -DCMAKE_INSTALL_PREFIX=../install .. make -j8 make install source .</description>
+      <description>last modified: 2023-11-02 by Kodai Okawa From the current situation, CRIB experiment doesn&amp;rsquo;t use GET system, so we describe how to install it without linking it to GET decoder.</description>
     </item>
     <item>
       <title>mount setting</title>
       <link>https://okawak.github.io/artemis_crib/installation/mount/index.html</link>
       <pubDate>Mon, 14 Aug 2023 15:14:29 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/mount/index.html</guid>
-      <description>last modified: 2023-11-02 by Kodai Okawa For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory. So first, we need to make raw data directory.
-There are three option to do so.
-use the default SSD/HDD of analysis PC use the external SSD/HDD of analysis PC (need to mount it) use network file system (NFS) and mount it 1 and 2 options are mainly used for offline analysis, while 3 option is used for online analysis.</description>
+      <description>last modified: 2023-11-02 by Kodai Okawa For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory.</description>
     </item>
     <item>
       <title>energyloss calculator</title>
       <link>https://okawak.github.io/artemis_crib/installation/energyloss_calculator/index.html</link>
       <pubDate>Mon, 14 Aug 2023 15:14:00 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/energyloss_calculator/index.html</guid>
-      <description>last modified: 2023-11-05 by Kodai Okawa Some CRIB-specific files use energy loss libraries. In particular, a library called SRIMlib has been developed by Okawa and some processors need to load this library.
-git clone https://github.com/okawak/SRIMlib.git cd SRIMlib mkdir build cd build cmake .. make make installBefore using this library, you need to make database file (just .root file)
-cd .. source thisSRIMlib.sh updateIf you want to make energy loss figures, &amp;ldquo;f&amp;rdquo; option will work.</description>
+      <description>last modified: 2023-11-05 by Kodai Okawa Some CRIB-specific files use energy loss libraries.</description>
     </item>
     <item>
       <title>art_analysis</title>
       <link>https://okawak.github.io/artemis_crib/installation/art_analysis/index.html</link>
       <pubDate>Mon, 14 Aug 2023 15:14:43 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/art_analysis/index.html</guid>
-      <description>last modified: 2023-11-14 by Kodai Okawa With this command, all initial settings of &amp;ldquo;art_analysis&amp;rdquo; are made.
-curl --proto &amp;#39;=https&amp;#39; --tlsv1.2 -sSf https://okawak.github.io/artemis_crib/bin/init.sh | shAfter that, please add the following lines to the .bashrc/.zshrc.
-&amp;#8203; .bashrc/.zshrc .bashrc/.zshrc # this is option source ${HOME}/Cern/root/root_install/bin/thisroot.sh &amp;amp;&amp;gt; /dev/null source ${HOME}/repos/artemis/install/bin/thisartemis.sh &amp;amp;&amp;gt; /dev/null source ${HOME}/repos/SRIMlib/thisSRIMlib.sh &amp;amp;&amp;gt; /dev/null # need from this line! export EXP_NAME=&amp;#34;expname&amp;#34; # your experiment export EXP_NAME_OLD=&amp;#34;expname&amp;#34; # this is option export PATH=&amp;#34;${HOME}/art_analysis/bin:${PATH}&amp;#34; source ${HOME}/art_analysis/bin/art_setting -q The setting is all!</description>
+      <description>last modified: 2023-11-14 by Kodai Okawa With this command, all initial settings of &amp;ldquo;art_analysis&amp;rdquo; are made.</description>
     </item>
   </channel>
 </rss>

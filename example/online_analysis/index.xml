@@ -1,17 +1,66 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>online_analysis on CRIB artemis</title>
+    <title>Online analysis on CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/online_analysis/index.html</link>
-    <description>Recent content in online_analysis on CRIB artemis</description>
+    <description>Recent content in Online analysis on CRIB artemis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://okawak.github.io/artemis_crib/example/online_analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>F1</title>
+      <link>https://okawak.github.io/artemis_crib/example/online_analysis/f1/index.html</link>
+      <pubDate>Wed, 13 Dec 2023 15:07:40 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/online_analysis/f1/index.html</guid>
+      <description>last modified: 2023-12-13 by Kodai Okawa </description>
+    </item>
+    <item>
+      <title>F2</title>
+      <link>https://okawak.github.io/artemis_crib/example/online_analysis/f2/index.html</link>
+      <pubDate>Wed, 13 Dec 2023 15:07:43 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/online_analysis/f2/index.html</guid>
+      <description>last modified: 2023-12-13 by Kodai Okawa </description>
+    </item>
+    <item>
+      <title>PPAC</title>
+      <link>https://okawak.github.io/artemis_crib/example/online_analysis/ppac/index.html</link>
+      <pubDate>Wed, 13 Dec 2023 15:07:48 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/online_analysis/ppac/index.html</guid>
+      <description>last modified: 2023-12-13 by Kodai Okawa </description>
+    </item>
+    <item>
+      <title>MWDC</title>
+      <link>https://okawak.github.io/artemis_crib/example/online_analysis/mwdc/index.html</link>
+      <pubDate>Wed, 13 Dec 2023 15:07:51 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/online_analysis/mwdc/index.html</guid>
+      <description>last modified: 2023-12-13 by Kodai Okawa </description>
+    </item>
+    <item>
+      <title>SSD</title>
+      <link>https://okawak.github.io/artemis_crib/example/online_analysis/ssd/index.html</link>
+      <pubDate>Wed, 13 Dec 2023 15:08:02 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/online_analysis/ssd/index.html</guid>
+      <description>last modified: 2023-12-13 by Kodai Okawa </description>
+    </item>
+    <item>
+      <title>F3</title>
+      <link>https://okawak.github.io/artemis_crib/example/online_analysis/f3/index.html</link>
+      <pubDate>Wed, 13 Dec 2023 15:08:05 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/online_analysis/f3/index.html</guid>
+      <description>last modified: 2023-12-13 by Kodai Okawa </description>
+    </item>
+    <item>
+      <title>Shiter task</title>
+      <link>https://okawak.github.io/artemis_crib/example/online_analysis/shift/index.html</link>
+      <pubDate>Wed, 13 Dec 2023 15:08:11 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/online_analysis/shift/index.html</guid>
+      <description>last modified: 2023-12-13 by Kodai Okawa </description>
+    </item>
     <item>
       <title>Check raw data</title>
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/check_rawdata/index.html</link>
       <pubDate>Sun, 05 Nov 2023 14:57:50 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/check_rawdata/index.html</guid>
-      <description>last modified: 2023-11-05 by Kodai Okawa </description>
+      <description>last modified: 2023-12-13 by Kodai Okawa </description>
     </item>
   </channel>
 </rss>

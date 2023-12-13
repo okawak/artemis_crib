@@ -1,10 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>preparation on CRIB artemis</title>
+    <title>Preparation on CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/preparation/index.html</link>
-    <description>Recent content in preparation on CRIB artemis</description>
+    <description>Recent content in Preparation on CRIB artemis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://okawak.github.io/artemis_crib/example/preparation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Basic</title>
+      <link>https://okawak.github.io/artemis_crib/example/preparation/basic/index.html</link>
+      <pubDate>Wed, 13 Dec 2023 14:58:34 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/preparation/basic/index.html</guid>
+      <description>last modified: 2023-12-13 by Kodai Okawa </description>
+    </item>
+    <item>
+      <title>PPAC calibration</title>
+      <link>https://okawak.github.io/artemis_crib/example/preparation/ppac_calibration/index.html</link>
+      <pubDate>Wed, 13 Dec 2023 14:58:47 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/preparation/ppac_calibration/index.html</guid>
+      <description>last modified: 2023-12-13 by Kodai Okawa </description>
+    </item>
+    <item>
+      <title>MWDC calibration</title>
+      <link>https://okawak.github.io/artemis_crib/example/preparation/mwdc_calibration/index.html</link>
+      <pubDate>Wed, 13 Dec 2023 14:59:33 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/preparation/mwdc_calibration/index.html</guid>
+      <description>last modified: 2023-12-13 by Kodai Okawa </description>
+    </item>
+    <item>
+      <title>Alpha calibration</title>
+      <link>https://okawak.github.io/artemis_crib/example/preparation/alpha_calibration/index.html</link>
+      <pubDate>Wed, 13 Dec 2023 14:58:43 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/preparation/alpha_calibration/index.html</guid>
+      <description>last modified: 2023-12-13 by Kodai Okawa </description>
+    </item>
+    <item>
+      <title>MUX calibration</title>
+      <link>https://okawak.github.io/artemis_crib/example/preparation/mux_calibration/index.html</link>
+      <pubDate>Wed, 13 Dec 2023 14:58:53 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/preparation/mux_calibration/index.html</guid>
+      <description>last modified: 2023-12-13 by Kodai Okawa </description>
+    </item>
+    <item>
+      <title>Set parameters</title>
+      <link>https://okawak.github.io/artemis_crib/example/preparation/set_parameter/index.html</link>
+      <pubDate>Wed, 13 Dec 2023 14:59:39 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/preparation/set_parameter/index.html</guid>
+      <description>last modified: 2023-12-13 by Kodai Okawa </description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>https://okawak.github.io/artemis_crib/example/preparation/git/index.html</link>
+      <pubDate>Wed, 13 Dec 2023 15:02:26 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/preparation/git/index.html</guid>
+      <description>last modified: 2023-12-13 by Kodai Okawa </description>
+    </item>
   </channel>
 </rss>
