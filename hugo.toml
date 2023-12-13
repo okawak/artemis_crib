@@ -2,6 +2,7 @@ theme = "relearn"
 baseURL = 'https://okawak.github.io/artemis_crib/'
 languageCode = 'en-us'
 title = 'CRIB artemis'
+summaryLength = 10
 
 googleAnalytics = "G-MZF67K577Y"
 enableGitInfo = true

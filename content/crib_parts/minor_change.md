@@ -56,6 +56,7 @@ After the command, the projected histogram will automatically be displayed.
  }
 ```
 
+<!--
 ### TCatPadManager
 bug???
 
@@ -67,3 +68,4 @@ bug???
     fCurrentPadId = id;
  }
 ```
+-->

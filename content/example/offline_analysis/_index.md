@@ -1,5 +1,5 @@
 +++
-title = "offline_analysis"
+title = "Offline analysis"
 weight = 13
 +++
 

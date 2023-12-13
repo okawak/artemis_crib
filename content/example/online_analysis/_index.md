@@ -1,5 +1,5 @@
 +++
-title = "online_analysis"
+title = "Online analysis"
 weight = 12
 +++
 

@@ -1,9 +1,9 @@
 ---
-title: "Check raw data"
-date: 2023-11-05T14:57:50+09:00
+title: "Set parameters"
+date: 2023-12-13T14:59:39+09:00
 draft: false
 author: "Kodai Okawa"
-weight: 9
+weight: 6
 tags: []
 ---
 
