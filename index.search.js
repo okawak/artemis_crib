@@ -197,7 +197,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "Up to now, we have specifically introduced you to the installation and concepts of artemis, This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is sufficient to start reading here.\nPreparation Basic PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git Online analysis F1 F2 PPAC MWDC SSD F3 Shiter task Check raw data Offline analysis Simulation Beam_generator Nbodyreaction Geometry Detect_particle Solidangle ",
+    "content": "Up to now, we have specifically introduced you to the installation and concepts of artemis, This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is sufficient to start reading here.\nPreparation Basic PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git Online analysis F1 F2 PPAC MWDC SSD F3 Shifter task Check raw data Offline analysis Simulation Beam_generator Nbodyreaction Geometry Detect_particle Solidangle ",
     "description": "",
     "tags": null,
     "title": "Example",
@@ -286,12 +286,12 @@ var relearn_search_index = [
     "content": "last modified: 2023-12-13 by Kodai Okawa ",
     "description": "",
     "tags": [],
-    "title": "Shiter task",
+    "title": "Shifter task",
     "uri": "/artemis_crib/example/online_analysis/shift/index.html"
   },
   {
     "breadcrumb": "Example \u003e Preparation",
-    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "content": "last modified: 2023-12-13 by Kodai Okawa Analysis files for each experiment are managed using git. This is so that they can be quickly restored if they are all lost for some reason.\nGit is a bit complicated and you can commit freely if you are knowledgeable, but if you are unfamiliar with it, you don’t have to worry too much. The main use is that if someone creates a useful file, it will be reflected for each user as well.\nHere is a brief description of how to use it.\n",
     "description": "",
     "tags": [],
     "title": "Git",
@@ -352,7 +352,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example",
-    "content": "This section explain the example of the online analysis in the CRIB experiment.\nF1 F2 PPAC MWDC SSD F3 Shiter task Check raw data ",
+    "content": "This section explain the example of the online analysis in the CRIB experiment.\nF1 F2 PPAC MWDC SSD F3 Shifter task Check raw data ",
     "description": "",
     "tags": null,
     "title": "Online analysis",
