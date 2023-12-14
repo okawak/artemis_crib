@@ -16,6 +16,7 @@
 
    // User decoder register
    // df definition: art::TModuleDecoderFactory *df = art::TModuleDecoderFactory::Instance();
+   gInterpreter->ProcessLine("art::TModuleDecoderFactory::Instance()->Register(new art::TModuleDecoderTimestamp);");
 
    // TCutG object (path to rootfile, tcutg object name)
    getAllTCutObject();

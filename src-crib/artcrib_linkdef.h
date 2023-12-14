@@ -17,6 +17,9 @@
 #pragma link C++ class art::TEvtNumProcessor;
 #pragma link C++ class art::TReadROOTFile;
 #pragma link C++ class art::TTreePeriodicEventStore;
+#pragma link C++ class art::TTSData +;
+#pragma link C++ class art::TTSMappingProcessor;
+#pragma link C++ class art::TModuleDecoderTimestamp;
 // MUX
 #pragma link C++ class art::TMUXData + ;
 #pragma link C++ class art::TMUXDataMappingProcessor;

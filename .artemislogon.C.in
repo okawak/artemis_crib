@@ -128,7 +128,7 @@
       df->Register(new art::TModuleDecoderSkip(1));
 
       // mod ID 8 : ???
-      df->Register(new art::TModuleDecoderSkip(8));
+      // df->Register(new art::TModuleDecoderSkip(8));
 
       // mod ID 21 : V7XX
       df->Register(new art::TModuleDecoderV7XX);
