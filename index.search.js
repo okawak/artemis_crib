@@ -1,5 +1,13 @@
 var relearn_search_index = [
   {
+    "breadcrumb": "Example \u003e Offline analysis",
+    "content": "last modified: 2023-12-15 by ",
+    "description": "",
+    "tags": [],
+    "title": "New processors",
+    "uri": "/artemis_crib/example/offline_analysis/new_processor/index.html"
+  },
+  {
     "breadcrumb": "Example \u003e Online analysis",
     "content": "last modified: 2023-12-13 by Kodai Okawa ",
     "description": "",
@@ -59,7 +67,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Preparation",
-    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "content": "last modified: 2023-12-15 by Kodai Okawa CRIB use two kinds of PPAC (Parallel-Plate Avalanche Counter), charge division method or delay-readout method. The PPAC placed at the F1 focal plane is charge-devision type, and the parameters to be converted to position are fixed and do not need to be calibrated. Therefore we explain the calibration method for delay-line PPAC (dl-PPAC).\nPrinciples Here we briefly describe the principle of converting from the obtained signal to position, but for more details, see here1.\nWe will discuss the x-direction because x and y is exactly same. First, define the parameters as follows\n$k_x$ : convert from signal time difference to position [mm/ns] $T_{X1},~T_{X2}$ : time at both ends of delay-line, measured at TDC [ns] $T_{Xin-offset}$ : timing offset come from inside the chamber [ns] $T_{Xout-offset}$ : timing offset come from outside the chamber [ns] (like from cabling) $X_{offset}$ : geometry offset [mm] The artemis codes calculate the X position like this formula (see TPPACProcessor.cc).\n$$ X~\\mathrm{[mm]} = k_x\\left( \\frac{T_{X1} - T_{X2} + T_{Xin-offset} - T_{Xout-offset}}{2} \\right) - X_{offset}$$ Warning Check the sign carefully! We often mistook the direction!!\nFixed parameters The $T_{X1},~T_{X2}$ are measured value by TDC, and $k_x$ and $T_{Xin-offset}$ are specific value to PPAC, so we need to care only $T_{Xout-offset}$ and $X_{offset}$. $X_{offset}$ value depends on where we put the PPAC, so what we have to do is determine the line calibration parameter ( $T_{Xout-offset}$).\nThe following is a list of dl-PPAC parameters used in CRIB experiment.\nPPAC ID $k_x$ [mm/ns] $k_y$ [mm/ns] $T_{Xin-offset}$ $T_{Yin-offset}$ #2 1.256 1.256 0.29 mm 0.18 mm #3 1.264 1.253 0.22 mm 0.30 mm #7 1.240 1.242 0.92 ns 1.58 ns #8 1.241 1.233 0.17 ns 0.11 ns #9 1.257 1.257 0.05 mm 0.04 mm #10 1.257 1.257 0.05 mm 0.04 mm Warning Different units are used for the offset. However, since the effect of this offset is eventually absorbed to the other offset value, it is no problem to use the values if we calibrate it correctly.\nParameter setting PPAC parameters are defined in the following files\nprm/ppac/dlppac.yaml For example, it is like this:\nType: art::TPPACParameter Contents: # #7 PPAC f3bppac: # this is the name of PPAC, should be the same name with the one in steering file! ns2mm: - 1.240 - 1.242 delayoffset: - 0.92 - 1.58 linecalib: - 1.31 - -1.00 # 0: no exchange, 1: X -\u003e Y, Y -\u003e X exchange: 0 # 0: no reflect, 1: X -\u003e -X reflectx: 1 geometry: - 0.0 - 0.5 - 322.0 TXSumLimit: - -800.0 - 2000.0 TYSumLimit: - -800.0 - 2000.0Line calibration We prepared two useful macros to calibrate dl-PPAC.\nmacro/run_PPACLineCalibration.C macro/PPACLineCalibration.C H. Kumagai et al., Nucl. Inst. and Meth. A 470, 562 (2001) ↩︎\n",
     "description": "",
     "tags": [],
     "title": "PPAC calibration",
@@ -197,7 +205,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "Up to now, we have specifically introduced you to the installation and concepts of artemis, This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is sufficient to start reading here.\nPreparation Basic PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git Online analysis F1 F2 PPAC MWDC SSD F3 Shifter task Check raw data Offline analysis Simulation Beam_generator Nbodyreaction Geometry Detect_particle Solidangle ",
+    "content": "Up to now, we have specifically introduced you to the installation and concepts of artemis, This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is sufficient to start reading here.\nPreparation Basic PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git Online analysis F1 F2 PPAC MWDC SSD F3 Shifter task Check raw data Offline analysis New processors Simulation Beam_generator Nbodyreaction Geometry Detect_particle Solidangle ",
     "description": "",
     "tags": null,
     "title": "Example",
@@ -241,7 +249,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "question and answer\n",
+    "content": "Cannot be analysed in online mode… When you start the event loop in online mode and artemis gets stuck, babian may not have been activated. There is a shellscript to run the “babian” in cribana PC.\n~/bin/run_babian ps aux | grep babi # check if the \"babian\" process is working or not “chkridf” command shows “Rev”, “Dev”, “FP”, “Det” and “Mod” ID, but they are different from map file configuration…? chkridf command shows like this:\nchkridf hoge.ridf-- snip -- : Segment Header / blkn=1 hd1 = 0x2100004c ly=2, cid=4, size=76, efn=120 Segment ID = 12600853 (0x00c04615) Rev 0 / Dev 12 / FP 1 / Det 6 / Mod 21 2000 0200 4072 0000 406c 0010 405f 0001 4068 0011 406a 0002 4053 0012 4058 0003 4058 0013 4051 0004 4066 0014 404d 0005 4047 0015 4045 0006 4056 0016 405a 0007 404b 0017 4050 0008 406c 0018 404b 0009 4069 0019 4059 000a 4051 001a 404e 000b 405f 001b 4064 000c 4052 001c 4033 000d 4055 001d 4064 000e 4067 001e 4043 000f 4052 001f 1dd2 0401 1dd2 0601 -- snip -- ",
     "description": "",
     "tags": null,
     "title": "Q\u0026A",
@@ -360,7 +368,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example",
-    "content": "This section explain the example of the offline analysis (some useful processors).\n",
+    "content": "This section explain the example of the offline analysis (some useful processors).\nNew processors ",
     "description": "",
     "tags": null,
     "title": "Offline analysis",
