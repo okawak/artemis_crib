@@ -12,18 +12,18 @@
     <link href="/artemis_crib/example/preparation/ppac_calibration/index.print.html" rel="alternate" type="text/html" title="PPAC calibration :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1702622641" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1702622641" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1702622641" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1702622641" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1702622641" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1702622641" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1702622641" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1702622641" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1702622641" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-artemis_crib.css?1702622641" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/variant.css?1702622641" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1702622641" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/ie.css?1702622641" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1702622641"></script>
-    <script src="/artemis_crib/js/variant.js?1702622641"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1702634346" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1702634346" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1702634346" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1702634346" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1702634346" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1702634346" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1702634346" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1702634346" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1702634346" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-artemis_crib.css?1702634346" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/variant.css?1702634346" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1702634346" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/ie.css?1702634346" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1702634346"></script>
+    <script src="/artemis_crib/js/variant.js?1702634346"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -76,14 +76,10 @@
               <div class="topbar-content">
                 <div class="topbar-content-wrapper"><nav class="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#principles">Principles</a></li>
-        <li><a href="#fixed-parameters">Fixed parameters</a></li>
-        <li><a href="#parameter-setting">Parameter setting</a></li>
-        <li><a href="#line-calibration">Line calibration</a></li>
-      </ul>
-    </li>
+    <li><a href="#principles">Principles</a></li>
+    <li><a href="#fixed-parameters">Fixed parameters</a></li>
+    <li><a href="#parameter-setting">Parameter setting</a></li>
+    <li><a href="#line-calibration">Line calibration</a></li>
   </ul>
 </nav>
                 </div>
@@ -107,7 +103,7 @@
               </a>
             </div>
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-              <a class="topbar-control" href="/artemis_crib/example/preparation/basic/index.html" title="Basic (🡐)">
+              <a class="topbar-control" href="/artemis_crib/example/preparation/tref/index.html" title="Tref for V1190 (🡐)">
                 <i class="fa-fw fas fa-chevron-left"></i>
               </a>
             </div>
@@ -142,7 +138,7 @@
 <p>CRIB use two kinds of PPAC (Parallel-Plate Avalanche Counter), charge division method or delay-readout method.
 The PPAC placed at the F1 focal plane is charge-devision type, and the parameters to be converted to position are fixed and do not need to be calibrated.
 Therefore we explain the calibration method for delay-line PPAC (dl-PPAC).</p>
-<h3 id="principles">Principles</h3>
+<h2 id="principles">Principles</h2>
 <p>Here we briefly describe the principle of converting from the obtained signal to position, but for more details, see here<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
 <p>We will discuss the x-direction because x and y is exactly same.
 First, define the parameters as follows</p>
@@ -168,7 +164,7 @@ First, define the parameters as follows</p>
 <p>Check the sign carefully! We often mistook the direction!!</p>
 </div>
 </div>
-<h3 id="fixed-parameters">Fixed parameters</h3>
+<h2 id="fixed-parameters">Fixed parameters</h2>
 <p>The 
 <span class="math align-center">$T_{X1},~T_{X2}$</span> are measured value by TDC, and 
 <span class="math align-center">$k_x$</span> and 
@@ -246,12 +242,34 @@ First, define the parameters as follows</p>
 <p>Different units are used for the offset. However, since the effect of this offset is eventually absorbed to the other offset value, it is no problem to use the values if we calibrate it correctly.</p>
 </div>
 </div>
-<h3 id="parameter-setting">Parameter setting</h3>
+<h2 id="parameter-setting">Parameter setting</h2>
 <p>PPAC parameters are defined in the following files</p>
 <ul>
 <li><a href="https://github.com/okawak/artemis_crib/blob/main/prm/ppac/dlppac.yaml" target="_blank">prm/ppac/dlppac.yaml</a></li>
 </ul>
 <p>For example, it is like this:</p>
+
+  
+<div class="tab-panel" data-tab-group="7d24870946b90ee7d97e3d231707a754">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="prmppacdlppacyaml"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('7d24870946b90ee7d97e3d231707a754','prmppacdlppacyaml')"
+    >
+      <span>
+        <span class="tab-nav-hidden">prm/ppac/dlppac.yaml</span>
+        <span class="tab-nav-text">prm/ppac/dlppac.yaml</span>
+      </span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="prmppacdlppacyaml"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Type</span>: <span style="color:#ae81ff">art::TPPACParameter</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">Contents</span>:
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># #7 PPAC</span>
@@ -278,11 +296,64 @@ First, define the parameters as follows</p>
 </span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">2000.0</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">TYSumLimit</span>:
 </span></span><span style="display:flex;"><span>    - -<span style="color:#ae81ff">800.0</span>
-</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">2000.0</span></span></span></code></pre></div><h3 id="line-calibration">Line calibration</h3>
-<p>We prepared two useful macros to calibrate dl-PPAC.</p>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">2000.0</span></span></span></code></pre></div></div>
+    </div>
+  </div>
+</div><ul>
+<li>
+<p>ns2mm</p>
+<p>This is 
+<span class="math align-center">$k_x$</span> and 
+<span class="math align-center">$k_y$</span> parameters -&gt; input the fixed value</p>
+</li>
+<li>
+<p>delayoffset</p>
+<p>This is 
+<span class="math align-center">$T_{Xin-offset}$</span> and 
+<span class="math align-center">$T_{Yin-offset}$</span> parameters -&gt; input the fixed value</p>
+</li>
+<li>
+<p>linecalib</p>
+<p>This is explained next.</p>
+</li>
+<li>
+<p>exchange, reflectx</p>
+<p>This parameter should be changed depending on the direction in which the PPAC is placed. The meanings of the parameters are given above as comments.
+
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+
+<p>CRIB takes a coordinate system such that when viewed from downstream of the beam, the x-axis is rightward and the y-axis is upward. In other words, it takes a right-handed coordinate system with the beam as the Z-axis. While looking at the actual data, change these parameters so that the coordinate system becomes this coordinate system.</p>
+</div>
+</div></p>
+</li>
+<li>
+<p>geometry</p>
+<p>In the Line calibration, please set this value to (0,0).
+After Line calibration, if we put the PPAC with some geometry offset, we should change this parameters.
+Please be careful that the parameter will add minus this value for X and Y.
+Z offset will be used for <a href="https://github.com/artemis-dev/artemis/blob/develop/artemis-share/src/ppac/TPPACProcessor.cc" target="_blank">TPPACTrackingProcessor</a>.</p>
+</li>
+<li>
+<p>TXSumLimit, TYSumLimit</p>
+<p>Used to determine if it is a good event or not. Currently not used.</p>
+</li>
+</ul>
+<h2 id="line-calibration">Line calibration</h2>
+<p>Before starting line calibration, please make sure that map file and steering file is correctly set.
+Also we need parameter file of prm/ppac/ch2ns.dat to convert TDC channel to ns unit. (already prepared I think)</p>
+
+<div class="mermaid align-center">
+graph LR;
+    A[TDC channel] --&gt;|prm/ppac/ch2ns.dat| B[ns scale]
+    B --&gt; |prm/ppac/dlppac.yaml|C{PPAC object}
+</div>
+<p>When you complete the setting except for <code>linecalib</code> parameters, let&rsquo;s start calibration!
+We prepared two useful macros to calibrate dl-PPAC.</p>
 <ul>
-<li><a href="https://github.com/okawak/artemis_crib/blob/main/macro/run_PPACLineCalibration.C" target="_blank">macro/run_PPACLineCalibration.C</a></li>
-<li><a href="https://github.com/okawak/artemis_crib/blob/main/macro/PPACLineCalibration.C" target="_blank">macro/PPACLineCalibration.C</a></li>
+<li><a href="https://github.com/okawak/artemis_crib/blob/main/macro/run_PPACLineCalibration.C" target="_blank">macro/run_PPACLineCalibration.C</a> : Macro to actually execute</li>
+<li><a href="https://github.com/okawak/artemis_crib/blob/main/macro/PPACLineCalibration.C" target="_blank">macro/PPACLineCalibration.C</a> : Macro that actually work</li>
 </ul>
 <div class="footnotes" role="doc-endnotes">
 <hr>
@@ -319,12 +390,12 @@ First, define the parameters as follows</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/artemis_crib/js/auto-complete.js?1702622642" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.min.js?1702622642" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1702622642" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1702622642" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1702622642" defer></script>
-        <script src="/artemis_crib/js/search.js?1702622642" defer></script>
+        <script src="/artemis_crib/js/auto-complete.js?1702634347" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.min.js?1702634347" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1702634347" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1702634347" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1702634347" defer></script>
+        <script src="/artemis_crib/js/search.js?1702634347" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -359,6 +430,7 @@ First, define the parameters as follows</p>
           <li data-nav-id="/artemis_crib/example/index.html" class="parent "><a class="padding" href="/artemis_crib/example/index.html">Example</a><ul id="R-subsections-daee4b63470ea20ac3f41145e3651181" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/example/preparation/index.html" class="parent "><a class="padding" href="/artemis_crib/example/preparation/index.html">Preparation</a><ul id="R-subsections-758dfbc2d22339c29b165559a2ff4f50" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/example/preparation/basic/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/basic/index.html">Basic</a></li>
+          <li data-nav-id="/artemis_crib/example/preparation/tref/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/tref/index.html">Tref for V1190</a></li>
           <li data-nav-id="/artemis_crib/example/preparation/ppac_calibration/index.html" class="active"><a class="padding" href="/artemis_crib/example/preparation/ppac_calibration/index.html">PPAC calibration</a></li>
           <li data-nav-id="/artemis_crib/example/preparation/mwdc_calibration/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/mwdc_calibration/index.html">MWDC calibration</a></li>
           <li data-nav-id="/artemis_crib/example/preparation/alpha_calibration/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/alpha_calibration/index.html">Alpha calibration</a></li>
@@ -372,11 +444,17 @@ First, define the parameters as follows</p>
           <li data-nav-id="/artemis_crib/example/online_analysis/mwdc/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/mwdc/index.html">MWDC</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/ssd/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/ssd/index.html">SSD</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/f3/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/f3/index.html">F3</a></li>
+          <li data-nav-id="/artemis_crib/example/online_analysis/gate/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/gate/index.html">Gate</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/shift/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/shift/index.html">Shifter task</a></li>
+          <li data-nav-id="/artemis_crib/example/online_analysis/scaler/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/scaler/index.html">Scaler</a></li>
+          <li data-nav-id="/artemis_crib/example/online_analysis/timestamp/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/timestamp/index.html">Timestamp</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/check_rawdata/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/check_rawdata/index.html">Check raw data</a></li></ul></li>
           <li data-nav-id="/artemis_crib/example/offline_analysis/index.html" class=""><a class="padding" href="/artemis_crib/example/offline_analysis/index.html">Offline analysis</a><ul id="R-subsections-861dc495c5d1ea2fd66d5d79b7b31bfd" class="morespace collapsible-menu">
-          <li data-nav-id="/artemis_crib/example/offline_analysis/new_processor/index.html" class=""><a class="padding" href="/artemis_crib/example/offline_analysis/new_processor/index.html">New processors</a></li></ul></li>
-          <li data-nav-id="/artemis_crib/example/simulation/index.html" class=""><a class="padding" href="/artemis_crib/example/simulation/index.html">Simulation</a><ul id="R-subsections-5a1dec365fec379b9ed16a056ece98a8" class="morespace collapsible-menu">
+          <li data-nav-id="/artemis_crib/example/offline_analysis/new_processor/index.html" class=""><a class="padding" href="/artemis_crib/example/offline_analysis/new_processor/index.html">New processors</a></li>
+          <li data-nav-id="/artemis_crib/example/offline_analysis/merge_files/index.html" class=""><a class="padding" href="/artemis_crib/example/offline_analysis/merge_files/index.html">Merge files</a></li>
+          <li data-nav-id="/artemis_crib/example/offline_analysis/python_environment/index.html" class=""><a class="padding" href="/artemis_crib/example/offline_analysis/python_environment/index.html">Python environment</a></li>
+          <li data-nav-id="/artemis_crib/example/offline_analysis/pyroot/index.html" class=""><a class="padding" href="/artemis_crib/example/offline_analysis/pyroot/index.html">pyROOT</a></li></ul></li>
+          <li data-nav-id="/artemis_crib/example/simulation/index.html" class=""><a class="padding" href="/artemis_crib/example/simulation/index.html">MC Simulation</a><ul id="R-subsections-5a1dec365fec379b9ed16a056ece98a8" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/example/simulation/beam_generator/index.html" class=""><a class="padding" href="/artemis_crib/example/simulation/beam_generator/index.html">Beam_generator</a></li>
           <li data-nav-id="/artemis_crib/example/simulation/nbodyreaction/index.html" class=""><a class="padding" href="/artemis_crib/example/simulation/nbodyreaction/index.html">Nbodyreaction</a></li>
           <li data-nav-id="/artemis_crib/example/simulation/geometry/index.html" class=""><a class="padding" href="/artemis_crib/example/simulation/geometry/index.html">Geometry</a></li>
@@ -445,8 +523,8 @@ First, define the parameters as follows</p>
         </div>
       </div>
     </aside>
-    <script src="/artemis_crib/js/clipboard.min.js?1702622642" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1702622642" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1702634347" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -476,6 +554,20 @@ First, define the parameters as follows</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1702622642" defer></script>
+    <script src="/artemis_crib/js/d3/d3-color.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/d3/d3-drag.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/d3/d3-ease.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/d3/d3-selection.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/d3/d3-timer.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/d3/d3-transition.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/js-yaml.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/mermaid.min.js?1702634347" defer></script>
+    <script>
+      window.themeUseMermaid = JSON.parse("{}");
+    </script>
+    <script src="/artemis_crib/js/theme.js?1702634347" defer></script>
   </body>
 </html>

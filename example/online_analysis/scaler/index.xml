@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scaler on CRIB artemis</title>
+    <link>https://okawak.github.io/artemis_crib/example/online_analysis/scaler/index.html</link>
+    <description>Recent content in Scaler on CRIB artemis</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Dec 2023 17:24:54 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/example/online_analysis/scaler/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

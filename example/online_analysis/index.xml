@@ -49,18 +49,39 @@
       <description>last modified: 2023-12-13 by Kodai Okawa </description>
     </item>
     <item>
+      <title>Gate</title>
+      <link>https://okawak.github.io/artemis_crib/example/online_analysis/gate/index.html</link>
+      <pubDate>Fri, 15 Dec 2023 17:30:58 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/online_analysis/gate/index.html</guid>
+      <description>last modified: 2023-12-15 by Kodai Okawa </description>
+    </item>
+    <item>
       <title>Shifter task</title>
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/shift/index.html</link>
       <pubDate>Wed, 13 Dec 2023 15:08:11 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/shift/index.html</guid>
-      <description>last modified: 2023-12-13 by Kodai Okawa </description>
+      <description>last modified: 2023-12-15 by Kodai Okawa </description>
+    </item>
+    <item>
+      <title>Scaler</title>
+      <link>https://okawak.github.io/artemis_crib/example/online_analysis/scaler/index.html</link>
+      <pubDate>Fri, 15 Dec 2023 17:24:54 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/online_analysis/scaler/index.html</guid>
+      <description>last modified: 2023-12-15 by Kodai Okawa </description>
+    </item>
+    <item>
+      <title>Timestamp</title>
+      <link>https://okawak.github.io/artemis_crib/example/online_analysis/timestamp/index.html</link>
+      <pubDate>Fri, 15 Dec 2023 17:24:58 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/online_analysis/timestamp/index.html</guid>
+      <description>last modified: 2023-12-15 by Kodai Okawa </description>
     </item>
     <item>
       <title>Check raw data</title>
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/check_rawdata/index.html</link>
       <pubDate>Sun, 05 Nov 2023 14:57:50 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/check_rawdata/index.html</guid>
-      <description>last modified: 2023-12-13 by Kodai Okawa </description>
+      <description>last modified: 2023-12-15 by Kodai Okawa </description>
     </item>
   </channel>
 </rss>

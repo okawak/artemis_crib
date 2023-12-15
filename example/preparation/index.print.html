@@ -12,19 +12,19 @@
     <link href="/artemis_crib/example/preparation/index.xml" rel="alternate" type="application/rss+xml" title="Preparation :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1702622642" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1702622642" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1702622642" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1702622642" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1702622642" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1702622642" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1702622642" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1702622642" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1702622642" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-artemis_crib.css?1702622642" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/variant.css?1702622642" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1702622642" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/format-print.css?1702622642" rel="stylesheet">
-    <link href="/artemis_crib/css/ie.css?1702622642" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1702622642"></script>
-    <script src="/artemis_crib/js/variant.js?1702622642"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1702634347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1702634347" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1702634347" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1702634347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1702634347" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1702634347" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1702634347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1702634347" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1702634347" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-artemis_crib.css?1702634347" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/variant.css?1702634347" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1702634347" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/format-print.css?1702634347" rel="stylesheet">
+    <link href="/artemis_crib/css/ie.css?1702634347" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1702634347"></script>
+    <script src="/artemis_crib/js/variant.js?1702634347"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -92,6 +92,7 @@
 <ul class="children children-li children-sort-weight">
 	
 <li><a href="/artemis_crib/example/preparation/basic/index.html">Basic</a></li>
+<li><a href="/artemis_crib/example/preparation/tref/index.html">Tref for V1190</a></li>
 <li><a href="/artemis_crib/example/preparation/ppac_calibration/index.html">PPAC calibration</a></li>
 <li><a href="/artemis_crib/example/preparation/mwdc_calibration/index.html">MWDC calibration</a></li>
 <li><a href="/artemis_crib/example/preparation/alpha_calibration/index.html">Alpha calibration</a></li>
@@ -146,13 +147,13 @@ So create the following config file. The file placed in this directory is automa
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd ~/.ssh
 </span></span><span style="display:flex;"><span>vi config</span></span></code></pre></div>
   
-<div class="tab-panel" data-tab-group="9c79e3c00ec2eae393a8803932803027">
+<div class="tab-panel" data-tab-group="9d2d8f8015ea86101f143fac4f132840">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="sshconfig"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('9c79e3c00ec2eae393a8803932803027','sshconfig')"
+      onclick="switchTab('9d2d8f8015ea86101f143fac4f132840','sshconfig')"
     >
       <span>
         <span class="tab-nav-hidden">~/.ssh/config</span>
@@ -286,13 +287,134 @@ And ask the IP address of the CRIB analysis PC to the CRIB member, and change th
           <article class="default">
             <header class="headline">
             </header>
+<h1 id="tref-for-v1190">Tref for V1190</h1>
+
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-15 by Kodai Okawa</span></span>
+<p>CRIB uses a multi-hit TDC called V1190 to take timing data (<a href="https://drive.google.com/file/d/1YRwkuFTjKFb5OvC1EfxYZtOGGdf-zKkS/view?usp=sharing" target="_blank">manual</a>).
+When a trigger comes into this module, it opens a window with a set time width and records the timing of the data.</p>
+<p>However, even if the signal is sent at exactly the same time to the trigger, due to the uncertainty in opening that window, the resulting channel will vary.
+Since absolute channel values will vary, but relative channel values for a given (especially trigger) timing will remain the same, it is necessary to subtract all data by some reference channel to achieve good timing resolution.</p>
+<p>The signal that serves as the reference for that time is what we call <code>Tref</code>!
+(Time reference)
+Since it is essential that all events contain that data, we put the trigger signal in one of the channels and make it a Tref.</p>
+<p>The &ldquo;tref&rdquo; settings are made in the following file:</p>
+
+  
+<div class="tab-panel" data-tab-group="73f24906abae8b2afaf1514a0c9a89df">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="steeringtrefyaml"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('73f24906abae8b2afaf1514a0c9a89df','steeringtrefyaml')"
+    >
+      <span>
+        <span class="tab-nav-hidden">steering/tref.yaml</span>
+        <span class="tab-nav-text">steering/tref.yaml</span>
+      </span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="steeringtrefyaml"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Processor</span>:
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># J1 V1190A</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">proc_tref_v1190A_j1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TTimeReferenceProcessor</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># [[device] [focus] [detector] [geo] [ch]]</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">RefConfig</span>: [<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">2</span>,  <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">15</span>]
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">SegConfig</span>: [<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">2</span>,  <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">0</span>]</span></span></code></pre></div></div>
+    </div>
+  </div>
+</div><p>Parameters <code>RefConfig</code> and <code>SegConfig</code> are set using the same ID as in the <a href="https://okawak.github.io/artemis_crib/setting/map_config/index.html" target="_blank">map file</a>.</p>
+<p>The &ldquo;RefConfig&rdquo; represents the &ldquo;Tref&rdquo; signal and the &ldquo;SegConfig&rdquo; represents the V1190 module.
+Therefore, the role of the processor is to subtract the &ldquo;Segconfig&rdquo; V1190 all timing signal from the &ldquo;RefConfig&rdquo; tref signal.</p>
+<p>To apply this processor, add the following line to the steering file.
+For example,</p>
+
+  
+<div class="tab-panel" data-tab-group="2ddb30d6ecaf2f62acc360c0fc4fe5b0">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="steeringchkf3yaml"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('2ddb30d6ecaf2f62acc360c0fc4fe5b0','steeringchkf3yaml')"
+    >
+      <span>
+        <span class="tab-nav-hidden">steering/chkf3.yaml</span>
+        <span class="tab-nav-text">steering/chkf3.yaml</span>
+      </span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="steeringchkf3yaml"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Anchor</span>:
+</span></span><span style="display:flex;"><span> - <span style="color:#75715e">&amp;input</span> <span style="color:#ae81ff">ridf/@NAME@@NUM@.ridf</span>
+</span></span><span style="display:flex;"><span> - <span style="color:#75715e">&amp;output</span> <span style="color:#ae81ff">output/chkf3@NAME@@NUM@.root</span>
+</span></span><span style="display:flex;"><span> - <span style="color:#75715e">&amp;histout</span> <span style="color:#ae81ff">output/chkf3@NAME@@NUM@.hist.root</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Processor</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">timer</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TTimerProcessor</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ridf</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TRIDFEventStore</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputTransparency</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">InputFiles</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#75715e">*input</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">mapper</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TMappingProcessor</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputTransparency</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  - <span style="color:#f92672">include</span>: <span style="color:#ae81ff">tref.yaml</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">include</span>: <span style="color:#ae81ff">rf/rf.yaml</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">include</span>: <span style="color:#ae81ff">coin/coin.yaml</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">include</span>: <span style="color:#ae81ff">ppac/dlppac.yaml</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">include</span>: <span style="color:#ae81ff">ssd/f3ssd.yaml</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">outputtree</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TOutputTreeProcessor</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">FileName</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#75715e">*output</span></span></span></code></pre></div></div>
+    </div>
+  </div>
+</div>
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+
+<p>The tref.yaml should be written before the main processor. In this example, it is written right after TMappingProcessor, and we recommend writing it in this position.</p>
+</div>
+</div>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+          <article class="default">
+            <header class="headline">
+            </header>
 <h1 id="ppac-calibration">PPAC calibration</h1>
 
 <span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-15 by Kodai Okawa</span></span>
 <p>CRIB use two kinds of PPAC (Parallel-Plate Avalanche Counter), charge division method or delay-readout method.
 The PPAC placed at the F1 focal plane is charge-devision type, and the parameters to be converted to position are fixed and do not need to be calibrated.
 Therefore we explain the calibration method for delay-line PPAC (dl-PPAC).</p>
-<h3 id="principles">Principles</h3>
+<h2 id="principles">Principles</h2>
 <p>Here we briefly describe the principle of converting from the obtained signal to position, but for more details, see here<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
 <p>We will discuss the x-direction because x and y is exactly same.
 First, define the parameters as follows</p>
@@ -318,7 +440,7 @@ First, define the parameters as follows</p>
 <p>Check the sign carefully! We often mistook the direction!!</p>
 </div>
 </div>
-<h3 id="fixed-parameters">Fixed parameters</h3>
+<h2 id="fixed-parameters">Fixed parameters</h2>
 <p>The 
 <span class="math align-center">$T_{X1},~T_{X2}$</span> are measured value by TDC, and 
 <span class="math align-center">$k_x$</span> and 
@@ -396,12 +518,34 @@ First, define the parameters as follows</p>
 <p>Different units are used for the offset. However, since the effect of this offset is eventually absorbed to the other offset value, it is no problem to use the values if we calibrate it correctly.</p>
 </div>
 </div>
-<h3 id="parameter-setting">Parameter setting</h3>
+<h2 id="parameter-setting">Parameter setting</h2>
 <p>PPAC parameters are defined in the following files</p>
 <ul>
 <li><a href="https://github.com/okawak/artemis_crib/blob/main/prm/ppac/dlppac.yaml" target="_blank">prm/ppac/dlppac.yaml</a></li>
 </ul>
 <p>For example, it is like this:</p>
+
+  
+<div class="tab-panel" data-tab-group="7d24870946b90ee7d97e3d231707a754">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="prmppacdlppacyaml"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('7d24870946b90ee7d97e3d231707a754','prmppacdlppacyaml')"
+    >
+      <span>
+        <span class="tab-nav-hidden">prm/ppac/dlppac.yaml</span>
+        <span class="tab-nav-text">prm/ppac/dlppac.yaml</span>
+      </span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="prmppacdlppacyaml"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Type</span>: <span style="color:#ae81ff">art::TPPACParameter</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">Contents</span>:
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># #7 PPAC</span>
@@ -428,11 +572,64 @@ First, define the parameters as follows</p>
 </span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">2000.0</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">TYSumLimit</span>:
 </span></span><span style="display:flex;"><span>    - -<span style="color:#ae81ff">800.0</span>
-</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">2000.0</span></span></span></code></pre></div><h3 id="line-calibration">Line calibration</h3>
-<p>We prepared two useful macros to calibrate dl-PPAC.</p>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">2000.0</span></span></span></code></pre></div></div>
+    </div>
+  </div>
+</div><ul>
+<li>
+<p>ns2mm</p>
+<p>This is 
+<span class="math align-center">$k_x$</span> and 
+<span class="math align-center">$k_y$</span> parameters -&gt; input the fixed value</p>
+</li>
+<li>
+<p>delayoffset</p>
+<p>This is 
+<span class="math align-center">$T_{Xin-offset}$</span> and 
+<span class="math align-center">$T_{Yin-offset}$</span> parameters -&gt; input the fixed value</p>
+</li>
+<li>
+<p>linecalib</p>
+<p>This is explained next.</p>
+</li>
+<li>
+<p>exchange, reflectx</p>
+<p>This parameter should be changed depending on the direction in which the PPAC is placed. The meanings of the parameters are given above as comments.
+
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+
+<p>CRIB takes a coordinate system such that when viewed from downstream of the beam, the x-axis is rightward and the y-axis is upward. In other words, it takes a right-handed coordinate system with the beam as the Z-axis. While looking at the actual data, change these parameters so that the coordinate system becomes this coordinate system.</p>
+</div>
+</div></p>
+</li>
+<li>
+<p>geometry</p>
+<p>In the Line calibration, please set this value to (0,0).
+After Line calibration, if we put the PPAC with some geometry offset, we should change this parameters.
+Please be careful that the parameter will add minus this value for X and Y.
+Z offset will be used for <a href="https://github.com/artemis-dev/artemis/blob/develop/artemis-share/src/ppac/TPPACProcessor.cc" target="_blank">TPPACTrackingProcessor</a>.</p>
+</li>
+<li>
+<p>TXSumLimit, TYSumLimit</p>
+<p>Used to determine if it is a good event or not. Currently not used.</p>
+</li>
+</ul>
+<h2 id="line-calibration">Line calibration</h2>
+<p>Before starting line calibration, please make sure that map file and steering file is correctly set.
+Also we need parameter file of prm/ppac/ch2ns.dat to convert TDC channel to ns unit. (already prepared I think)</p>
+
+<div class="mermaid align-center">
+graph LR;
+    A[TDC channel] --&gt;|prm/ppac/ch2ns.dat| B[ns scale]
+    B --&gt; |prm/ppac/dlppac.yaml|C{PPAC object}
+</div>
+<p>When you complete the setting except for <code>linecalib</code> parameters, let&rsquo;s start calibration!
+We prepared two useful macros to calibrate dl-PPAC.</p>
 <ul>
-<li><a href="https://github.com/okawak/artemis_crib/blob/main/macro/run_PPACLineCalibration.C" target="_blank">macro/run_PPACLineCalibration.C</a></li>
-<li><a href="https://github.com/okawak/artemis_crib/blob/main/macro/PPACLineCalibration.C" target="_blank">macro/PPACLineCalibration.C</a></li>
+<li><a href="https://github.com/okawak/artemis_crib/blob/main/macro/run_PPACLineCalibration.C" target="_blank">macro/run_PPACLineCalibration.C</a> : Macro to actually execute</li>
+<li><a href="https://github.com/okawak/artemis_crib/blob/main/macro/PPACLineCalibration.C" target="_blank">macro/PPACLineCalibration.C</a> : Macro that actually work</li>
 </ul>
 <div class="footnotes" role="doc-endnotes">
 <hr>
@@ -453,7 +650,7 @@ First, define the parameters as follows</p>
             </header>
 <h1 id="mwdc-calibration">MWDC calibration</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-13 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-15 by Kodai Okawa</span></span>
 
             <footer class="footline">
 
@@ -465,7 +662,7 @@ First, define the parameters as follows</p>
             </header>
 <h1 id="alpha-calibration">Alpha calibration</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-13 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-15 by Kodai Okawa</span></span>
 
             <footer class="footline">
 
@@ -477,7 +674,7 @@ First, define the parameters as follows</p>
             </header>
 <h1 id="mux-calibration">MUX calibration</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-13 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-15 by Kodai Okawa</span></span>
 
             <footer class="footline">
 
@@ -489,7 +686,7 @@ First, define the parameters as follows</p>
             </header>
 <h1 id="set-parameters">Set parameters</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-13 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-15 by Kodai Okawa</span></span>
 
             <footer class="footline">
 
@@ -501,7 +698,7 @@ First, define the parameters as follows</p>
             </header>
 <h1 id="git">Git</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-13 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-15 by Kodai Okawa</span></span>
 <p>Analysis files for each experiment are managed using <code>git</code>.
 This is so that they can be quickly restored if they are all lost for some reason.</p>
 <p><code>Git</code> is a bit complicated and you can commit freely if you are knowledgeable, but if you are unfamiliar with it, you don&rsquo;t have to worry too much.
@@ -517,8 +714,8 @@ The main use is that if someone creates a useful file, it will be reflected for 
         </div>
       </main>
     </div>
-    <script src="/artemis_crib/js/clipboard.min.js?1702622642" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1702622642" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1702634347" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -548,6 +745,20 @@ The main use is that if someone creates a useful file, it will be reflected for 
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1702622642" defer></script>
+    <script src="/artemis_crib/js/d3/d3-color.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/d3/d3-drag.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/d3/d3-ease.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/d3/d3-selection.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/d3/d3-timer.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/d3/d3-transition.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/js-yaml.min.js?1702634347" defer></script>
+    <script src="/artemis_crib/js/mermaid.min.js?1702634347" defer></script>
+    <script>
+      window.themeUseMermaid = JSON.parse("{}");
+    </script>
+    <script src="/artemis_crib/js/theme.js?1702634347" defer></script>
   </body>
 </html>

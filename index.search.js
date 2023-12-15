@@ -58,20 +58,20 @@ var relearn_search_index = [
     "uri": "/artemis_crib/installation/index.html"
   },
   {
+    "breadcrumb": "Example \u003e Preparation",
+    "content": "last modified: 2023-12-15 by Kodai Okawa CRIB uses a multi-hit TDC called V1190 to take timing data (manual). When a trigger comes into this module, it opens a window with a set time width and records the timing of the data.\nHowever, even if the signal is sent at exactly the same time to the trigger, due to the uncertainty in opening that window, the resulting channel will vary. Since absolute channel values will vary, but relative channel values for a given (especially trigger) timing will remain the same, it is necessary to subtract all data by some reference channel to achieve good timing resolution.\nThe signal that serves as the reference for that time is what we call Tref! (Time reference) Since it is essential that all events contain that data, we put the trigger signal in one of the channels and make it a Tref.\nThe “tref” settings are made in the following file:\n​ steering/tref.yaml steering/tref.yaml Processor: # J1 V1190A - name: proc_tref_v1190A_j1 type: art::TTimeReferenceProcessor parameter: # [[device] [focus] [detector] [geo] [ch]] RefConfig: [12, 2, 7, 0, 15] SegConfig: [12, 2, 7, 0] Parameters RefConfig and SegConfig are set using the same ID as in the map file.\nThe “RefConfig” represents the “Tref” signal and the “SegConfig” represents the V1190 module. Therefore, the role of the processor is to subtract the “Segconfig” V1190 all timing signal from the “RefConfig” tref signal.\nTo apply this processor, add the following line to the steering file. For example,\n​ steering/chkf3.yaml steering/chkf3.yaml Anchor: - \u0026input ridf/@NAME@@NUM@.ridf - \u0026output output/chkf3@NAME@@NUM@.root - \u0026histout output/chkf3@NAME@@NUM@.hist.root Processor: - name: timer type: art::TTimerProcessor - name: ridf type: art::TRIDFEventStore parameter: OutputTransparency: 1 InputFiles: - *input - name: mapper type: art::TMappingProcessor parameter: OutputTransparency: 1 - include: tref.yaml - include: rf/rf.yaml - include: coin/coin.yaml - include: ppac/dlppac.yaml - include: ssd/f3ssd.yaml - name: outputtree type: art::TOutputTreeProcessor parameter: FileName: - *output Note The tref.yaml should be written before the main processor. In this example, it is written right after TMappingProcessor, and we recommend writing it in this position.\n",
+    "description": "",
+    "tags": [],
+    "title": "Tref for V1190",
+    "uri": "/artemis_crib/example/preparation/tref/index.html"
+  },
+  {
     "breadcrumb": "Example \u003e Online analysis",
     "content": "last modified: 2023-12-13 by Kodai Okawa ",
     "description": "",
     "tags": [],
     "title": "F2",
     "uri": "/artemis_crib/example/online_analysis/f2/index.html"
-  },
-  {
-    "breadcrumb": "Example \u003e Preparation",
-    "content": "last modified: 2023-12-15 by Kodai Okawa CRIB use two kinds of PPAC (Parallel-Plate Avalanche Counter), charge division method or delay-readout method. The PPAC placed at the F1 focal plane is charge-devision type, and the parameters to be converted to position are fixed and do not need to be calibrated. Therefore we explain the calibration method for delay-line PPAC (dl-PPAC).\nPrinciples Here we briefly describe the principle of converting from the obtained signal to position, but for more details, see here1.\nWe will discuss the x-direction because x and y is exactly same. First, define the parameters as follows\n$k_x$ : convert from signal time difference to position [mm/ns] $T_{X1},~T_{X2}$ : time at both ends of delay-line, measured at TDC [ns] $T_{Xin-offset}$ : timing offset come from inside the chamber [ns] $T_{Xout-offset}$ : timing offset come from outside the chamber [ns] (like from cabling) $X_{offset}$ : geometry offset [mm] The artemis codes calculate the X position like this formula (see TPPACProcessor.cc).\n$$ X~\\mathrm{[mm]} = k_x\\left( \\frac{T_{X1} - T_{X2} + T_{Xin-offset} - T_{Xout-offset}}{2} \\right) - X_{offset}$$ Warning Check the sign carefully! We often mistook the direction!!\nFixed parameters The $T_{X1},~T_{X2}$ are measured value by TDC, and $k_x$ and $T_{Xin-offset}$ are specific value to PPAC, so we need to care only $T_{Xout-offset}$ and $X_{offset}$. $X_{offset}$ value depends on where we put the PPAC, so what we have to do is determine the line calibration parameter ( $T_{Xout-offset}$).\nThe following is a list of dl-PPAC parameters used in CRIB experiment.\nPPAC ID $k_x$ [mm/ns] $k_y$ [mm/ns] $T_{Xin-offset}$ $T_{Yin-offset}$ #2 1.256 1.256 0.29 mm 0.18 mm #3 1.264 1.253 0.22 mm 0.30 mm #7 1.240 1.242 0.92 ns 1.58 ns #8 1.241 1.233 0.17 ns 0.11 ns #9 1.257 1.257 0.05 mm 0.04 mm #10 1.257 1.257 0.05 mm 0.04 mm Warning Different units are used for the offset. However, since the effect of this offset is eventually absorbed to the other offset value, it is no problem to use the values if we calibrate it correctly.\nParameter setting PPAC parameters are defined in the following files\nprm/ppac/dlppac.yaml For example, it is like this:\nType: art::TPPACParameter Contents: # #7 PPAC f3bppac: # this is the name of PPAC, should be the same name with the one in steering file! ns2mm: - 1.240 - 1.242 delayoffset: - 0.92 - 1.58 linecalib: - 1.31 - -1.00 # 0: no exchange, 1: X -\u003e Y, Y -\u003e X exchange: 0 # 0: no reflect, 1: X -\u003e -X reflectx: 1 geometry: - 0.0 - 0.5 - 322.0 TXSumLimit: - -800.0 - 2000.0 TYSumLimit: - -800.0 - 2000.0Line calibration We prepared two useful macros to calibrate dl-PPAC.\nmacro/run_PPACLineCalibration.C macro/PPACLineCalibration.C H. Kumagai et al., Nucl. Inst. and Meth. A 470, 562 (2001) ↩︎\n",
-    "description": "",
-    "tags": [],
-    "title": "PPAC calibration",
-    "uri": "/artemis_crib/example/preparation/ppac_calibration/index.html"
   },
   {
     "breadcrumb": "CRIB Configuration",
@@ -119,11 +119,11 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Preparation",
-    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "content": "last modified: 2023-12-15 by Kodai Okawa CRIB use two kinds of PPAC (Parallel-Plate Avalanche Counter), charge division method or delay-readout method. The PPAC placed at the F1 focal plane is charge-devision type, and the parameters to be converted to position are fixed and do not need to be calibrated. Therefore we explain the calibration method for delay-line PPAC (dl-PPAC).\nPrinciples Here we briefly describe the principle of converting from the obtained signal to position, but for more details, see here1.\nWe will discuss the x-direction because x and y is exactly same. First, define the parameters as follows\n$k_x$ : convert from signal time difference to position [mm/ns] $T_{X1},~T_{X2}$ : time at both ends of delay-line, measured at TDC [ns] $T_{Xin-offset}$ : timing offset come from inside the chamber [ns] $T_{Xout-offset}$ : timing offset come from outside the chamber [ns] (like from cabling) $X_{offset}$ : geometry offset [mm] The artemis codes calculate the X position like this formula (see TPPACProcessor.cc).\n$$ X~\\mathrm{[mm]} = k_x\\left( \\frac{T_{X1} - T_{X2} + T_{Xin-offset} - T_{Xout-offset}}{2} \\right) - X_{offset}$$ Warning Check the sign carefully! We often mistook the direction!!\nFixed parameters The $T_{X1},~T_{X2}$ are measured value by TDC, and $k_x$ and $T_{Xin-offset}$ are specific value to PPAC, so we need to care only $T_{Xout-offset}$ and $X_{offset}$. $X_{offset}$ value depends on where we put the PPAC, so what we have to do is determine the line calibration parameter ( $T_{Xout-offset}$).\nThe following is a list of dl-PPAC parameters used in CRIB experiment.\nPPAC ID $k_x$ [mm/ns] $k_y$ [mm/ns] $T_{Xin-offset}$ $T_{Yin-offset}$ #2 1.256 1.256 0.29 mm 0.18 mm #3 1.264 1.253 0.22 mm 0.30 mm #7 1.240 1.242 0.92 ns 1.58 ns #8 1.241 1.233 0.17 ns 0.11 ns #9 1.257 1.257 0.05 mm 0.04 mm #10 1.257 1.257 0.05 mm 0.04 mm Warning Different units are used for the offset. However, since the effect of this offset is eventually absorbed to the other offset value, it is no problem to use the values if we calibrate it correctly.\nParameter setting PPAC parameters are defined in the following files\nprm/ppac/dlppac.yaml For example, it is like this:\n​ prm/ppac/dlppac.yaml prm/ppac/dlppac.yaml Type: art::TPPACParameter Contents: # #7 PPAC f3bppac: # this is the name of PPAC, should be the same name with the one in steering file! ns2mm: - 1.240 - 1.242 delayoffset: - 0.92 - 1.58 linecalib: - 1.31 - -1.00 # 0: no exchange, 1: X -\u003e Y, Y -\u003e X exchange: 0 # 0: no reflect, 1: X -\u003e -X reflectx: 1 geometry: - 0.0 - 0.5 - 322.0 TXSumLimit: - -800.0 - 2000.0 TYSumLimit: - -800.0 - 2000.0 ns2mm\nThis is $k_x$ and $k_y$ parameters -\u003e input the fixed value\ndelayoffset\nThis is $T_{Xin-offset}$ and $T_{Yin-offset}$ parameters -\u003e input the fixed value\nlinecalib\nThis is explained next.\nexchange, reflectx\nThis parameter should be changed depending on the direction in which the PPAC is placed. The meanings of the parameters are given above as comments. Note CRIB takes a coordinate system such that when viewed from downstream of the beam, the x-axis is rightward and the y-axis is upward. In other words, it takes a right-handed coordinate system with the beam as the Z-axis. While looking at the actual data, change these parameters so that the coordinate system becomes this coordinate system.\ngeometry\nIn the Line calibration, please set this value to (0,0). After Line calibration, if we put the PPAC with some geometry offset, we should change this parameters. Please be careful that the parameter will add minus this value for X and Y. Z offset will be used for TPPACTrackingProcessor.\nTXSumLimit, TYSumLimit\nUsed to determine if it is a good event or not. Currently not used.\nLine calibration Before starting line calibration, please make sure that map file and steering file is correctly set. Also we need parameter file of prm/ppac/ch2ns.dat to convert TDC channel to ns unit. (already prepared I think)\ngraph LR; A[TDC channel] --\u003e|prm/ppac/ch2ns.dat| B[ns scale] B --\u003e |prm/ppac/dlppac.yaml|C{PPAC object} When you complete the setting except for linecalib parameters, let’s start calibration! We prepared two useful macros to calibrate dl-PPAC.\nmacro/run_PPACLineCalibration.C : Macro to actually execute macro/PPACLineCalibration.C : Macro that actually work H. Kumagai et al., Nucl. Inst. and Meth. A 470, 562 (2001) ↩︎\n",
     "description": "",
     "tags": [],
-    "title": "MWDC calibration",
-    "uri": "/artemis_crib/example/preparation/mwdc_calibration/index.html"
+    "title": "PPAC calibration",
+    "uri": "/artemis_crib/example/preparation/ppac_calibration/index.html"
   },
   {
     "breadcrumb": "CRIB Configuration",
@@ -171,11 +171,11 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Preparation",
-    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "content": "last modified: 2023-12-15 by Kodai Okawa ",
     "description": "",
     "tags": [],
-    "title": "Alpha calibration",
-    "uri": "/artemis_crib/example/preparation/alpha_calibration/index.html"
+    "title": "MWDC calibration",
+    "uri": "/artemis_crib/example/preparation/mwdc_calibration/index.html"
   },
   {
     "breadcrumb": "CRIB Configuration",
@@ -205,7 +205,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "Up to now, we have specifically introduced you to the installation and concepts of artemis, This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is sufficient to start reading here.\nPreparation Basic PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git Online analysis F1 F2 PPAC MWDC SSD F3 Shifter task Check raw data Offline analysis New processors Simulation Beam_generator Nbodyreaction Geometry Detect_particle Solidangle ",
+    "content": "Up to now, we have specifically introduced you to the installation and concepts of artemis, This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is sufficient to start reading here.\nPreparation Basic Tref for V1190 PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git Online analysis F1 F2 PPAC MWDC SSD F3 Gate Shifter task Scaler Timestamp Check raw data Offline analysis New processors Merge files Python environment pyROOT MC Simulation Beam_generator Nbodyreaction Geometry Detect_particle Solidangle ",
     "description": "",
     "tags": null,
     "title": "Example",
@@ -221,11 +221,11 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Preparation",
-    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "content": "last modified: 2023-12-15 by Kodai Okawa ",
     "description": "",
     "tags": [],
-    "title": "MUX calibration",
-    "uri": "/artemis_crib/example/preparation/mux_calibration/index.html"
+    "title": "Alpha calibration",
+    "uri": "/artemis_crib/example/preparation/alpha_calibration/index.html"
   },
   {
     "breadcrumb": "Setting",
@@ -264,14 +264,6 @@ var relearn_search_index = [
     "uri": "/artemis_crib/example/online_analysis/f3/index.html"
   },
   {
-    "breadcrumb": "Example \u003e Preparation",
-    "content": "last modified: 2023-12-13 by Kodai Okawa ",
-    "description": "",
-    "tags": [],
-    "title": "Set parameters",
-    "uri": "/artemis_crib/example/preparation/set_parameter/index.html"
-  },
-  {
     "breadcrumb": "Setting",
     "content": "last modified: 2023-11-14 by Kodai Okawa The steering file (yaml format) is a file that directs the process of how the obtained data is to be processed. The artemis is an object-oriented program whose components are called processors, which are combined to process data.\nThe main role of the “processor” is to process data from an input data called InputCollection and create an output data called OutputCollection. This “OutputCollection” will be stored into the root file as a “tree”. Complex processing can be performed by using “processor” in multiple steps.\nI will explain how to create this “steering” file using Si detector data as an example.\n--- title: example of the data process structure --- graph TD; subgraph event loop A--\u003eB(mapping processor\u003cbr\u003e\u003c/br\u003eInputCollection: decoded data\\nOutputCollection: Si raw data) B--\u003eC(calibration processor\u003cbr\u003e\u003c/br\u003eInputCollection: Si raw data\\nOutputCollection: Si calibrated data) C--\u003eX((event end)) X--\u003eA end subgraph DAQ D(Raw binary data)--\u003eA(decode processor\u003cbr\u003e\u003c/br\u003eInputCollection: raw data\\nOutputCollection: decoded data) end Steering file: Silicon data case First, I describe what is the Anchor and how to use command line arguments. See example here.\n​ chkssd.yaml chkssd.yaml Anchor: - \u0026input ridf/@NAME@@NUM@.ridf - \u0026output output/@NAME@/@NUM@/chkssd@NAME@@NUM@.root - \u0026histout output/@NAME@/@NUM@/chkssd@NAME@@NUM@.hist.root You can use variables from elsewhere in the steering file by declaring them as such. For example if you write:\nsomething: *inputThis unfolds as follows:\nsomething: ridf/@NAME@@NUM@.ridfVariables enclosed in @ can also be specified by command line arguments. For example, If you command like the following in the artemis console,\nartemis [1] add steering/chkssd.yaml NAME=run NUM=0000it is considered as\n​ chkssd.yaml chkssd.yaml Anchor: - \u0026input ridf/run0000.ridf - \u0026output output/run/0000/chkssdrun0000.root - \u0026histout output/run/0000/chkssdrun0000.hist.root 1. General processor When using the “Babirl”, the data file will be in the form of “ridf”. In this case, the beginning and end of the steering file is usually as follows.\n​ chkssd.yaml chkssd.yaml Processor: - name: timer type: art::TTimerProcessor - name: ridf type: art::TRIDFEventStore parameter: OutputTransparency: 1 InputFiles: - *input SHMID: 0 - name: mapper type: art::TMappingProcessor parameter: OutputTransparency: 1 # -- snip -- - name: outputtree type: art::TOutputTreeProcessor parameter: FileName: - *output TTimerProcessor: measure the time taken to process data TRIDFEventStore: decode the ridf file and store the value in EventStore (see below) TMappingProcessor: read mapper.conf for mapping TOutputTreeProcessor: writes data to the root file OutputTransparency is set to 1, indicating that “OutputCollection” is not exported to the root file.\n2. Mapping processor The “mapping processor” puts the data stored in the “EventStore” into a certain data class based on “mapper.conf”. Assume the following map file is used.\n# map for SSD # [category] [id] [[device] [focus] [detector] [geo] [ch]] .... # # Map: energy, timing # #-------------------------------------------------------------------- 1, 0, 12, 1, 6, 0, 0, 12, 2, 7, 0, 0In this case, since we are assuming data from the Si detector, let’s consider putting it in a data class that stores energy and timing data, “TTimingChargeData”! The processor mapping to this data class is “TTimingChargeMappingProcessor”.\n​ chkssd.yaml chkssd.yaml Processor: - name: proc_ssd_raw type: art::TTimingChargeMappingProcessor parameter: CatID: 1 ChargeType: 1 ChargeTypeID: 0 TimingTypeID: 1 Sparse: 1 OutputCollection: ssd_raw CatID: enter here the same number as the cid (category ID) in the map file. ChargeType: there are various ways to store energy (charge) and timing using this processor, but this time “1” is specified to use the processing method using ADC and TDC. Charge/TimingTypeID: The map file has two sets of five parameters that specify the DAQ ID. Which of these parameters specifies which represents the energy (charge) and timing. (it start from “0”) Sparse: parameter for the output data structure OutputCollection: name of the data class to be output Then, you can access the ssd_raw data by using like tree-\u003eDraw(\"ssd_raw.fCharge\")\n3. Calibration processor While the data in the “ssd_raw” are raw channel of the ADC and TDC, it is important to see the data calibrated to energy and time. I will explain the details in Example: preparation/macro, but here I will discuss the calibration processors assuming that the following appropriate calibration files have been created.\nprm/ssd/ch2MeV.dat prm/ssd/ch2ns.dat Now, let’s load these files.\n​ chkssd.yaml chkssd.yaml Processor: - name: proc_ssd_ch2MeV type: art::TParameterArrayLoader parameter: Name: prm_ssd_ch2MeV Type: art::TAffineConverter FileName: prm/ssd/ch2MeV.dat OutputTransparency: 1 - name: proc_ssd_ch2ns type: art::TParameterArrayLoader parameter: Name: prm_ssd_ch2ns Type: art::TAffineConverter FileName: prm/ssd/ch2ns.dat OutputTransparency: 1 To calibrate data contained in a TTimingChargeData class, a TTimingChargeCalibrationProcessor processor is used.\n​ chkssd.yaml chkssd.yaml Processor: - name: proc_ssd type: art::TTimingChargeCalibrationProcessor parameter: InputCollection: ssd_raw OutputCollection: ssd_cal ChargeConverterArray: prm_ssd_ch2MeV TimingConverterArray: prm_ssd_ch2ns Note here that “InputCollection”, “ChargeConverterArray”, and “TimingConverterArray” use the same names as the highlighted lines in the code block above.\nInfo The arguments to be used will vary depending on the processor used, so please check and write them according to the situation. If you want to check from artemis console, you can use “processordescription” command like this\n\u003e artlogin (username) \u003e a artemis [0] processordescription art::TTimingChargeCalibrationProcessor Processor: - name: MyTTimingChargeCalibrationProcessor type: art::TTimingChargeCalibrationProcessor parameter: ChargeConverterArray: no_conversion # [TString] normally output of TAffineConverterArrayGenerator InputCollection: plastic_raw # [TString] array of objects inheriting from art::ITiming and/or art::ICharge InputIsDigital: 1 # [Bool_t] whether input is digital or not OutputCollection: plastic # [TString] output class will be the same as input OutputTransparency: 0 # [Bool_t] Output is persistent if false (default) TimingConverterArray: no_conversion # [TString] normally output of TAffineConverterArrayGenerator Verbose: 1 # [Int_t] verbose level (default 1 : non quiet) 4. Split files If you want to analyse a large number of detectors, not just Si detectors, writing everything in one steering file will result in a large amount of content that is difficult to read.\nIn that case, we can use “include” node!\nIn the examples we have written so far, let’s only use a separate file for the part related to the analysis of the Si detector.\n​ chkssd.yaml chkssd.yaml # -- snip -- Processor: # -- snip -- - include: ssd/ssd_single.yaml # -- snip -- ​ ssd/ssd_single.yaml ssd/ssd_single.yaml Processor: # parameter files - name: proc_ssd_ch2MeV type: art::TParameterArrayLoader parameter: Name: prm_ssd_ch2MeV Type: art::TAffineConverter FileName: prm/ssd/ch2MeV.dat OutputTransparency: 1 - name: proc_ssd_ch2ns type: art::TParameterArrayLoader parameter: Name: prm_ssd_ch2ns Type: art::TAffineConverter FileName: prm/ssd/ch2ns.dat OutputTransparency: 1 # data process - name: proc_ssd_raw type: art::TTimingChargeMappingProcessor parameter: CatID: 1 ChargeType: 1 ChargeTypeID: 0 TimingTypeID: 1 Sparse: 1 OutputCollection: ssd_raw - name: proc_ssd type: art::TTimingChargeCalibrationProcessor parameter: InputCollection: ssd_raw OutputCollection: ssd_cal ChargeConverterArray: prm_ssd_ch2MeV TimingConverterArray: prm_ssd_ch2ns In this way, the contents of “chkssd.yaml” can be kept concise, while the same process is carried out. Note that the file paths here are relative to the paths from the steering directory. Parameter files, for example, are relative paths from the working directory (one level down).\nUtilising file splitting also makes it easier to check the steering files that analyse a large number of detectors like this.\n​ chkall.yaml chkall.yaml # -- snip -- Processor: # -- snip -- - include: rf/rf.yaml - include: ppac/f1ppac.yaml - include: ppac/dlppac.yaml - include: mwdc/mwdc.yaml - include: ssd/ssd_all.yaml # -- snip -- Info When you include other files, you can set arguments. This can be used, for example, to share variables. Details will be introduced in the example section.\nSummary The whole steering file is as follows:\n​ chkssd.yaml chkssd.yaml Anchor: - \u0026input ridf/@NAME@@NUM@.ridf - \u0026output output/@NAME@/@NUM@/chkssd@NAME@@NUM@.root - \u0026histout output/@NAME@/@NUM@/chkssd@NAME@@NUM@.hist.root Processor: - name: timer type: art::TTimerProcessor - name: ridf type: art::TRIDFEventStore parameter: OutputTransparency: 1 InputFiles: - *input SHMID: 0 - name: mapper type: art::TMappingProcessor parameter: OutputTransparency: 1 - include: ssd/ssd_single.yaml # output root file - name: outputtree type: art::TOutputTreeProcessor parameter: FileName: - *output ​ ssd/ssd_single.yaml ssd/ssd_single.yaml Processor: # parameter files - name: proc_ssd_ch2MeV type: art::TParameterArrayLoader parameter: Name: prm_ssd_ch2MeV Type: art::TAffineConverter FileName: prm/ssd/ch2MeV.dat OutputTransparency: 1 - name: proc_ssd_ch2ns type: art::TParameterArrayLoader parameter: Name: prm_ssd_ch2ns Type: art::TAffineConverter FileName: prm/ssd/ch2ns.dat OutputTransparency: 1 # data process - name: proc_ssd_raw type: art::TTimingChargeMappingProcessor parameter: CatID: 1 ChargeType: 1 ChargeTypeID: 0 TimingTypeID: 1 Sparse: 1 OutputCollection: ssd_raw - name: proc_ssd type: art::TTimingChargeCalibrationProcessor parameter: InputCollection: ssd_raw OutputCollection: ssd_cal ChargeConverterArray: prm_ssd_ch2MeV TimingConverterArray: prm_ssd_ch2ns \u003e acd \u003e a artemis [0] add steering/chkssd.yaml NAME=run NUM=0000",
     "description": "",
@@ -291,19 +283,19 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Online analysis",
-    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "content": "last modified: 2023-12-15 by Kodai Okawa ",
     "description": "",
     "tags": [],
-    "title": "Shifter task",
-    "uri": "/artemis_crib/example/online_analysis/shift/index.html"
+    "title": "Gate",
+    "uri": "/artemis_crib/example/online_analysis/gate/index.html"
   },
   {
     "breadcrumb": "Example \u003e Preparation",
-    "content": "last modified: 2023-12-13 by Kodai Okawa Analysis files for each experiment are managed using git. This is so that they can be quickly restored if they are all lost for some reason.\nGit is a bit complicated and you can commit freely if you are knowledgeable, but if you are unfamiliar with it, you don’t have to worry too much. The main use is that if someone creates a useful file, it will be reflected for each user as well.\nHere is a brief description of how to use it.\n",
+    "content": "last modified: 2023-12-15 by Kodai Okawa ",
     "description": "",
     "tags": [],
-    "title": "Git",
-    "uri": "/artemis_crib/example/preparation/git/index.html"
+    "title": "MUX calibration",
+    "uri": "/artemis_crib/example/preparation/mux_calibration/index.html"
   },
   {
     "breadcrumb": "Setting",
@@ -322,6 +314,22 @@ var relearn_search_index = [
     ],
     "title": "energyloss calculator",
     "uri": "/artemis_crib/installation/energyloss_calculator/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Online analysis",
+    "content": "last modified: 2023-12-15 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "Shifter task",
+    "uri": "/artemis_crib/example/online_analysis/shift/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Preparation",
+    "content": "last modified: 2023-12-15 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "Set parameters",
+    "uri": "/artemis_crib/example/preparation/set_parameter/index.html"
   },
   {
     "breadcrumb": "Setting",
@@ -344,7 +352,47 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Online analysis",
-    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "content": "last modified: 2023-12-15 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "Scaler",
+    "uri": "/artemis_crib/example/online_analysis/scaler/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Preparation",
+    "content": "last modified: 2023-12-15 by Kodai Okawa Analysis files for each experiment are managed using git. This is so that they can be quickly restored if they are all lost for some reason.\nGit is a bit complicated and you can commit freely if you are knowledgeable, but if you are unfamiliar with it, you don’t have to worry too much. The main use is that if someone creates a useful file, it will be reflected for each user as well.\nHere is a brief description of how to use it.\n",
+    "description": "",
+    "tags": [],
+    "title": "Git",
+    "uri": "/artemis_crib/example/preparation/git/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Offline analysis",
+    "content": "last modified: 2023-12-15 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "Merge files",
+    "uri": "/artemis_crib/example/offline_analysis/merge_files/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Online analysis",
+    "content": "last modified: 2023-12-15 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "Timestamp",
+    "uri": "/artemis_crib/example/online_analysis/timestamp/index.html"
+  },
+  {
+    "breadcrumb": "Example",
+    "content": "This section explain the example of preparation by using some useful macro.\nBasic Tref for V1190 PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git ",
+    "description": "",
+    "tags": null,
+    "title": "Preparation",
+    "uri": "/artemis_crib/example/preparation/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Online analysis",
+    "content": "last modified: 2023-12-15 by Kodai Okawa ",
     "description": "",
     "tags": [],
     "title": "Check raw data",
@@ -352,15 +400,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example",
-    "content": "This section explain the example of preparation by using some useful macro.\nBasic PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git ",
-    "description": "",
-    "tags": null,
-    "title": "Preparation",
-    "uri": "/artemis_crib/example/preparation/index.html"
-  },
-  {
-    "breadcrumb": "Example",
-    "content": "This section explain the example of the online analysis in the CRIB experiment.\nF1 F2 PPAC MWDC SSD F3 Shifter task Check raw data ",
+    "content": "This section explain the example of the online analysis in the CRIB experiment.\nF1 F2 PPAC MWDC SSD F3 Gate Shifter task Scaler Timestamp Check raw data ",
     "description": "",
     "tags": null,
     "title": "Online analysis",
@@ -368,7 +408,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example",
-    "content": "This section explain the example of the offline analysis (some useful processors).\nNew processors ",
+    "content": "This section explain the example of the offline analysis (some useful processors).\nNew processors Merge files Python environment pyROOT ",
     "description": "",
     "tags": null,
     "title": "Offline analysis",
@@ -376,11 +416,27 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example",
-    "content": "This section explain the example of the simulation by using artemis.\nBeam_generator Nbodyreaction Geometry Detect_particle Solidangle ",
+    "content": "This section explain the example of the Monte Carlo simulation by using artemis.\nBeam_generator Nbodyreaction Geometry Detect_particle Solidangle ",
     "description": "",
     "tags": null,
-    "title": "Simulation",
+    "title": "MC Simulation",
     "uri": "/artemis_crib/example/simulation/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Offline analysis",
+    "content": "last modified: 2023-12-15 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "Python environment",
+    "uri": "/artemis_crib/example/offline_analysis/python_environment/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Offline analysis",
+    "content": "last modified: 2023-12-15 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "pyROOT",
+    "uri": "/artemis_crib/example/offline_analysis/pyroot/index.html"
   },
   {
     "breadcrumb": "CRIB Configuration",
@@ -393,7 +449,7 @@ var relearn_search_index = [
     "uri": "/artemis_crib/crib_parts/minor_change/index.html"
   },
   {
-    "breadcrumb": "Example \u003e Simulation",
+    "breadcrumb": "Example \u003e MC Simulation",
     "content": "last modified: 2023-09-29 by Kodai Okawa The previous sections have described how to loop events from a ridf file or root file, but now I will describe how to generate events to use as a simulation.\nRequirements:\nsrc-crib/simulation/TRandomBeamGenerator src-crib/simulation/TTreeBeamGenerator src-crib/simulation/TParticleInfo As you know, an “event store” must be used to analyse the event loop. For example, in the online analysis, we used TRIDFEventStore, and in the offline analysis, we used TTreeEventStore.\nBut when we want to simulate something, there are no data file. In that case, we can use TCounterEventStore or TRandomNumberEventStore.\nTCounterEventStore: generate numbers in sequence from 0 to N. TRandomNumberEventStore: generate number from 0.0 to 1.0 randomly. Here I will simply describe a simulation using TCounterEventStore.\nInfo As I explained in CRIB_parts before, in the current artemis version, the TCounterEventStore does not seem to be recognised as EventStore. So if we use this EventStore, “no event store” comments will output. I don’t think it makes problem, so it is okay comment out the part of TLoop.cc that prints “no event store”. (Possibly a problem with your environment).\n",
     "description": "",
     "tags": [],
@@ -401,7 +457,7 @@ var relearn_search_index = [
     "uri": "/artemis_crib/example/simulation/beam_generator/index.html"
   },
   {
-    "breadcrumb": "Example \u003e Simulation",
+    "breadcrumb": "Example \u003e MC Simulation",
     "content": "last modified: 2023-09-29 by Kodai Okawa ",
     "description": "",
     "tags": [],
@@ -409,7 +465,7 @@ var relearn_search_index = [
     "uri": "/artemis_crib/example/simulation/nbodyreaction/index.html"
   },
   {
-    "breadcrumb": "Example \u003e Simulation",
+    "breadcrumb": "Example \u003e MC Simulation",
     "content": "last modified: 2023-09-29 by Kodai Okawa In this page, I will explain how to determine the detecter geometry configration.\nRequirement:\nsrc-crib/geo/TUserGeoInitializer src-crib/geo/TDetectorParameter Firstly, let’s prepare the parameter file like this:\n​ prm/geo/example.yaml prm/geo/example.yaml material: - name: Vaccum # id=0 atomic_mass: 0.0 atomic_num: 0.0 density: 0.0 # g/cm3 - name: Si # id=1 atomic_mass: 28.084 atomic_num: 14.0 density: 2.321 # Note: beam axis -\u003e z, upper direction -\u003e y conposition: detector: - name: tel1 strip: [16, 16] center_rotation: [0., 0., 322.0] # mm offset: [0., 0., 0.] distance: 244.0 angle: -4.0 # deg thickness: [0.02, 0.301, 1.494, 1.486] material: [Si] - name: tel2 strip: [16, 16] center_rotation: [0., 0., 322.0] offset: [0., 0., 0.] distance: 154.5 angle: 27.0 thickness: [0.02, 0.300, 1.494, 1.485] material: [Si] volume: top: # detector world name: TOP type: box # now only box is available material: 0 size: [400.0, 200.0, 1288.0] # mm detector: - name: tel1 type: box material: 1 size: [50.0, 50.0, 1.0] # mm - name: tel2 type: box material: 1 size: [50.0, 50.0, 1.0] # mm There are many components to explain! The material node is used to define TGeoMaterial and TGeoMedium classes. (But they are not directly used.) From name to density node are used to make a instance of this object. This values are not used in the current processors.\nThe next conposition node define the detector configuration! General telescopes of the CRIB experiment consist of DSSSD and SSD (single-pad), and the node below defines the SSD of the telescope.\nname: Name of the telescope. For example tel1, tel2, and so on. strip: X x Y strip number. It is defined as an array like [16, 32], this means X:16 strips and Y:32 strips thickness: Thickness of the each layer. If there are two layer, the size of the array become two. You can add to any size. The unit is mm. material: material of the each layer. The string is used in SRIMlib calculation. This node is defined as a array for each layer, but if it is one, the same material is applied. For example, in example.yaml, [Si] means [Si, Si, Si, Si]. (You need to prepare SRIMlib setting beforehand!) Let’s move on to the geometry part! The node is center_rotation, offset, distance and angle. Please look at this figure.\nPlease not that the center_rotation and offset are defined in (x, y, z) coordinate (-\u003e [x, y, z]), but distance and angle is scalar value. The unit of length is mm, angle is deg.\nInfo The sign of the angle is defined as positive at this figure. And generally, we set z=0 at target position. (For the gas target, we set 0 at window position.)\nThe last part is volume node! In this parts, the shape of the detector will be defined by using TGeoVolume class. The TGeoVolume needs name, type, material and size. For the type, I only prepared “box”. (It means the code use only vol-\u003eMakeBox method.)\nThe first top node must be set because it defined “detector world”. Generally, the material is okay to set vaccum. And the material is defined in the material node, and the id (the order) can be used. So the format is like material: 0. And the size is generally set to the size of the scattering chamber, but for the safety, it is okay to set larger number. Also the unit is mm and format is (x, y, z).\nNext, at the volume/detector node, we can define the detector size. Please NOTE that the name should be the same with conposition/detector/name node.\nThen, let’s check if the parameter file can be correctly used! Please prepare the steering file.\n​ steering/geo_example.yaml steering/geo_example.yaml Anchor: Processor: - name: detector_initialize type: art::TUserGeoInitializer parameter: Name: prm_detector FileName: prm/geo/example.yaml OutputTransparency: 1 This steering file doesn’t use event loop. Just we want to check the parameter file works well or not.\nThen let’s see in the artemis!\nacd a -- snip -- artemis [0] add steering/geo_example.yaml -- snip -- artemis [1] ls artemis \u003e 0 TGeoVolume TOP Top volume artemis [2]The detector geometry object is successfully generated! In order to check the object, please use draw command for example. (It is defined only in CRIB artemis, to draw not only histogram object. This is under development.)\nartemis [2] draw 0 The red box is the TOP, and the black boxes are detectors. If the detector is placed where you expect it to be, the parameters have been successfully set!\nIn the event loop process, if you want to use the detector geometry information, you can use prm_detector in the steering files. I will explain the next session!\n",
     "description": "",
     "tags": [],
@@ -417,7 +473,7 @@ var relearn_search_index = [
     "uri": "/artemis_crib/example/simulation/geometry/index.html"
   },
   {
-    "breadcrumb": "Example \u003e Simulation",
+    "breadcrumb": "Example \u003e MC Simulation",
     "content": "last modified: 2023-09-29 by Kodai Okawa ",
     "description": "",
     "tags": [],
@@ -425,7 +481,7 @@ var relearn_search_index = [
     "uri": "/artemis_crib/example/simulation/detect_particle/index.html"
   },
   {
-    "breadcrumb": "Example \u003e Simulation",
+    "breadcrumb": "Example \u003e MC Simulation",
     "content": "last modified: 2023-09-29 by KodaiOkawa Beam_generator Nbodyreaction Geometry Detect_particle As an application of the above four sections, I would like to explain how to calculate solid angles using Monte Carlo methods!\n",
     "description": "",
     "tags": [],

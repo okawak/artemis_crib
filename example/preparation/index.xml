@@ -14,6 +14,13 @@
       <description>last modified: 2023-12-13 by Kodai Okawa I would now like to introduce the actual analysis using the CRIB analysis server.</description>
     </item>
     <item>
+      <title>Tref for V1190</title>
+      <link>https://okawak.github.io/artemis_crib/example/preparation/tref/index.html</link>
+      <pubDate>Fri, 15 Dec 2023 17:39:54 +0900</pubDate>
+      <guid>https://okawak.github.io/artemis_crib/example/preparation/tref/index.html</guid>
+      <description>last modified: 2023-12-15 by Kodai Okawa CRIB uses a multi-hit TDC called V1190 to take timing data (manual).</description>
+    </item>
+    <item>
       <title>PPAC calibration</title>
       <link>https://okawak.github.io/artemis_crib/example/preparation/ppac_calibration/index.html</link>
       <pubDate>Wed, 13 Dec 2023 14:58:47 +0900</pubDate>
@@ -25,35 +32,35 @@
       <link>https://okawak.github.io/artemis_crib/example/preparation/mwdc_calibration/index.html</link>
       <pubDate>Wed, 13 Dec 2023 14:59:33 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/preparation/mwdc_calibration/index.html</guid>
-      <description>last modified: 2023-12-13 by Kodai Okawa </description>
+      <description>last modified: 2023-12-15 by Kodai Okawa </description>
     </item>
     <item>
       <title>Alpha calibration</title>
       <link>https://okawak.github.io/artemis_crib/example/preparation/alpha_calibration/index.html</link>
       <pubDate>Wed, 13 Dec 2023 14:58:43 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/preparation/alpha_calibration/index.html</guid>
-      <description>last modified: 2023-12-13 by Kodai Okawa </description>
+      <description>last modified: 2023-12-15 by Kodai Okawa </description>
     </item>
     <item>
       <title>MUX calibration</title>
       <link>https://okawak.github.io/artemis_crib/example/preparation/mux_calibration/index.html</link>
       <pubDate>Wed, 13 Dec 2023 14:58:53 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/preparation/mux_calibration/index.html</guid>
-      <description>last modified: 2023-12-13 by Kodai Okawa </description>
+      <description>last modified: 2023-12-15 by Kodai Okawa </description>
     </item>
     <item>
       <title>Set parameters</title>
       <link>https://okawak.github.io/artemis_crib/example/preparation/set_parameter/index.html</link>
       <pubDate>Wed, 13 Dec 2023 14:59:39 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/preparation/set_parameter/index.html</guid>
-      <description>last modified: 2023-12-13 by Kodai Okawa </description>
+      <description>last modified: 2023-12-15 by Kodai Okawa </description>
     </item>
     <item>
       <title>Git</title>
       <link>https://okawak.github.io/artemis_crib/example/preparation/git/index.html</link>
       <pubDate>Wed, 13 Dec 2023 15:02:26 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/preparation/git/index.html</guid>
-      <description>last modified: 2023-12-13 by Kodai Okawa Analysis files for each experiment are managed using git.</description>
+      <description>last modified: 2023-12-15 by Kodai Okawa Analysis files for each experiment are managed using git.</description>
     </item>
   </channel>
 </rss>
