@@ -1,7 +1,7 @@
 Anchor:
   - &input ridf/@NAME@@NUM@.ridf
-  - &output output/@NAME@/@NUM@/chkf3@NAME@@NUM@.root
-  - &histout output/@NAME@/@NUM@/chkf3@NAME@@NUM@.hist.root
+  - &output output/@NAME@/@NUM@/shift@NAME@@NUM@.root
+  - &histout output/@NAME@/@NUM@/shift@NAME@@NUM@.hist.root
 
 Processor:
   - name: timer
@@ -11,9 +11,9 @@ Processor:
     type: art::TRIDFEventStore
     parameter:
       OutputTransparency: 1
+      MaxEventNum: 10000
       InputFiles:
         - *input
-      SHMID: 0
 
   - name: mapper
     type: art::TMappingProcessor
@@ -26,14 +26,6 @@ Processor:
   - include: mwdc/mwdc_crib.yaml
   - include: ssd/f3ssd.yaml
   - include: scaler/scaler.yaml
-
-  #  - name: proc_trigger
-  #    type: art::TTimingChargeMappingProcessor
-  #    parameter:
-  #      CatID: 200
-  #      TimingTypeID: 0
-  #      OutputCollection: trig_raw
-  #      OutputTransparency: 0
 
   # F3 Hist (include important information)
   - name: projection_f3_all_detector

@@ -1,8 +1,7 @@
-# check only RUNNUM >= 249
 Anchor:
- - &input ridf/@NAME@@NUM@.ridf
- - &output output/single/@GATE@/@NAME@/@GATE@_@NAME@@NUM@.root
- - &histout output/single/@GATE@/@NAME@/@GATE@_@NAME@NUM@.hist.root
+  - &input ridf/@NAME@@NUM@.ridf
+  - &output output/@NAME@/@NUM@/chkts@NAME@@NUM@.root
+  - &histout output/@NAME@/@NUM@/chkts@NAME@@NUM@.hist.root
 
 Processor:
   - name: timer
@@ -14,6 +13,7 @@ Processor:
       OutputTransparency: 1
       InputFiles:
         - *input
+      SHMID: 0
 
   - name: mapper
     type: art::TMappingProcessor
@@ -21,11 +21,7 @@ Processor:
       OutputTransparency: 1
 
   - include: tref.yaml
-  - include: rf/rf.yaml
-  - include: coin/coin.yaml
-  - include: ppac/dlppac.yaml
-
-  - include: gate/single/@GATE@_before.yaml
+  - include: ts/ts.yaml
 
   - name: outputtree
     type: art::TOutputTreeProcessor

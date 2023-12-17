@@ -4,7 +4,7 @@ Processor:
     parameter:
       Name: prm_dl_ppac_ch2ns
       Type: art::TAffineConverter
-      FileName: prm/ppac/ch2ns.prm
+      FileName: prm/ppac/ch2ns_f2.prm
       OutputTransparency: 1
 # ---------------------------------------
   - name: proc_dl_ppac_param
@@ -12,7 +12,7 @@ Processor:
     parameter:
       Name: prm_dl_ppac
       Type: art::TPPACParameter
-      FileName: prm/ppac/dlppac.yaml
+      FileName: prm/ppac/dlppac_f2.yaml
       FileFormat: yaml
       OutputTransparency: 1
 # ---------------------------------------
@@ -27,6 +27,5 @@ Processor:
       OutputCollection: dlppac
       OutputTransparency: 0
       ListOfPPACNames:
-        - f3bppac
-        - f3appac
+        - f2ppac
 

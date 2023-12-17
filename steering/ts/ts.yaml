@@ -1,0 +1,7 @@
+Processor:
+  - name: proc_tsraw
+    type: art::TTSMappingProcessor
+    parameter:
+      CatID:       101
+      OutputCollection: TS
+

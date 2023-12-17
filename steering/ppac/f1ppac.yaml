@@ -6,7 +6,6 @@ Processor:
       Name: prm_f1_ppac_ch2q
       Type: art::TAffineConverter
       FileName: prm/ppac/ch2q.prm
-      OutputTransparency: 1
 # ---------------------------------------
   - name: proc_f1_ppac_param
     type: art::TParameterArrayLoader
@@ -15,7 +14,6 @@ Processor:
       Type: art::TPPACParameter
       FileName: prm/ppac/f1ppac.yaml
       FileFormat: yaml
-      OutputTransparency: 1
 # ---------------------------------------
   - name: proc_f1_ppac
     type: art::TF1PPACProcessor
@@ -29,4 +27,4 @@ Processor:
       OutputTransparency: 0
       ListOfPPACNames:
         - f1ppac
- 
+

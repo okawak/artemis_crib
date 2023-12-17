@@ -1,8 +1,7 @@
-# for RUNNUM >= 249
 Anchor:
- - &input ridf/@NAME@@NUM@.ridf
- - &output output/coin/@GATE@/@NAME@/@GATE@_@NAME@@NUM@.root
- - &histout output/coin/@GATE@/@NAME@/@GATE@_@NAME@NUM@.hist.root
+  - &input ridf/@NAME@@NUM@.ridf
+  - &output output/@NAME@/@NUM@/chkf1@NAME@@NUM@.root
+  - &histout output/@NAME@/@NUM@/chkf1@NAME@@NUM@.hist.root
 
 Processor:
   - name: timer
@@ -14,6 +13,7 @@ Processor:
       OutputTransparency: 1
       InputFiles:
         - *input
+      SHMID: 0
 
   - name: mapper
     type: art::TMappingProcessor
@@ -21,17 +21,16 @@ Processor:
       OutputTransparency: 1
 
   - include: tref.yaml
+  - include: ppac/f1ppac.yaml
   - include: rf/rf.yaml
-  - include: coin/coin.yaml
-  - include: ppac/dlppac.yaml
 
-  - include: 
-      name: ssd/f3ssd.yaml
-      replace:
-        NAME: @NAME@
-        NUM: @NUM@
-
-  - include: gate/coin/raw/@GATE@_after.yaml
+  # F1 Hist
+  - name: projection_rf
+    type: art::TTreeProjectionProcessor
+    parameter:
+      FileName: hist/f1/f1.yaml
+      Type: art::TTreeProjection
+      OutputFilename: *histout
 
   - name: outputtree
     type: art::TOutputTreeProcessor
