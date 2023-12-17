@@ -20,14 +20,6 @@ group:
   - name: f2check
     title: f2_check
     contents:
-      - name: f2PPAC X timing
-        title: X timing
-        x: *f2ppacx1
-        y: *f2ppacx2
-      - name: f2PPAC Y timing
-        title: Y timing
-        x: *f2ppacy1
-        y: *f2ppacy2
       - name: f2PPAC X
         title: f2ppac x
         x: *f2ppacx
