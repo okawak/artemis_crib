@@ -17,7 +17,7 @@
 #pragma link C++ class art::TEvtNumProcessor;
 #pragma link C++ class art::TReadROOTFile;
 #pragma link C++ class art::TTreePeriodicEventStore;
-#pragma link C++ class art::TTSData +;
+#pragma link C++ class art::TTSData + ;
 #pragma link C++ class art::TTSMappingProcessor;
 #pragma link C++ class art::TModuleDecoderTimestamp;
 // MUX
@@ -31,9 +31,9 @@
 #pragma link C++ class art::TTelescopeParameter;
 #pragma link C++ class art::TTelescopeProcessor;
 // TGTIK
-//#pragma link C++ class art::TTGTIKData + ;
-//#pragma link C++ class art::TTGTIKPrepData + ;
-//#pragma link C++ class art::TTGTIKPrepProcessor;
+// #pragma link C++ class art::TTGTIKData + ;
+// #pragma link C++ class art::TTGTIKPrepData + ;
+// #pragma link C++ class art::TTGTIKPrepProcessor;
 #pragma link C++ class art::TTGTIKProcessor;
 #pragma link C++ class art::TEffectiveThickness;
 //  commands
@@ -48,17 +48,17 @@
 #pragma link C++ class art::TCmdDraw;
 // geo
 #pragma link C++ class art::TUserGeoInitializer;
-#pragma link C++ class art::TDetectorParameter+;
+#pragma link C++ class art::TDetectorParameter + ;
 // simulation
 #pragma link C++ class art::TDetectParticleProcessor;
 #pragma link C++ class art::TNBodyReactionProcessor;
-#pragma link C++ class art::TParticleInfo+;
+#pragma link C++ class art::TParticleInfo + ;
 #pragma link C++ class art::TRandomBeamGenerator;
 #pragma link C++ class art::TTreeBeamGenerator;
-#pragma link C++ class art::TReactionInfo+;
+#pragma link C++ class art::TReactionInfo + ;
 #pragma link C++ class art::TSolidAngleProcessor;
-//#pragma link C++ class art::TTwoBodyScattering;
-
+// #pragma link C++ class art::TTwoBodyScattering;
+#pragma link C++ class art::TCRIBPIDProcessor;
 
 #endif // __CINT__
 

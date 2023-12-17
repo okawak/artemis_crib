@@ -49,6 +49,7 @@ set(CRIBSOURCES
     simulation/TReactionInfo.cc
     simulation/TSolidAngleProcessor.cc
     #simulation/TTwoBodyScattering.cc
+    simulation/TCRIBPIDProcessor.cc
 )
 
 set(CRIBHEADERS
@@ -100,6 +101,7 @@ set(CRIBHEADERS
     simulation/TReactionInfo.h
     simulation/TSolidAngleProcessor.h
     #simulation/TTwoBodyScattering.h
+    simulation/TCRIBPIDProcessor.h
 )
 
 add_library(${CRIBLIB_NAME} SHARED ${CRIBSOURCES})
