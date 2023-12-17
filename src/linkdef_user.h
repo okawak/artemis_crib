@@ -8,6 +8,7 @@
  *
  *    Copyright (C) 2013 KAWASE Shoichiro, OTA Shinsuke All rights reserved
  */
+
 #ifndef LINKDEF_USER_H
 #define LINKDEF_USER_H
 
@@ -17,13 +18,9 @@
 #pragma link off all classes;
 #pragma link off all functions;
 
-//hist
-#pragma link C++ class art::TH1FNormalTreeProj+;
-#pragma link C++ class art::TH2FNormalTreeProj+;
-#pragma link C++ class art::TH3FNormalTreeProj+;
-#pragma link C++ class art::TNormalAttTreeProj+;
-#pragma link C++ class art::TNormalTreeProjection+;
-#pragma link C++ class art::TNormalTreeProjectionProcessor;
+// main
+#pragma link C++ class art::TTemplateProcessor;
+#pragma link C++ class art::TTemplateData + ;
 
 #endif // __CINT__
 

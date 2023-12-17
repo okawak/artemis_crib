@@ -1,23 +1,15 @@
 set(USERLIB_NAME user)
 
 set(USERSOURCES
-    #hist
-    hist/TH1FNormalTreeProj.cc
-    hist/TH2FNormalTreeProj.cc
-    hist/TH3FNormalTreeProj.cc
-    hist/TNormalAttTreeProj.cc
-    hist/TNormalTreeProjection.cc
-    hist/TNormalTreeProjectionProcessor.cc
+    # main
+    TTemplateProcessor.cc
+    TTemplateData.cc
 )
 
 set(USERHEADERS
-    #hist
-    hist/TH1FNormalTreeProj.h
-    hist/TH2FNormalTreeProj.h
-    hist/TH3FNormalTreeProj.h
-    hist/TNormalAttTreeProj.h
-    hist/TNormalTreeProjection.h
-    hist/TNormalTreeProjectionProcessor.h
+    # main
+    TTemplateProcessor.h
+    TTemplateData.h
 )
 
 add_library(${USERLIB_NAME} SHARED ${USERSOURCES})
