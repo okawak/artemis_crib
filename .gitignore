@@ -6,7 +6,6 @@ artemislogon.C
 thisartemis-crib.sh
 c1.png
 .venv
-.vscode
 .clangd
 .clang-format
 output

@@ -3,7 +3,7 @@
    @description   :
    @Author        : Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
    @Created date  : 2023-08-01 11:04:20
-   @Last modified : 2023-12-17 14:53:15
+   @Last modified : 2023-12-17 16:09:59
 */
 
 #ifndef _TCRIBPIDPROCESSOR_H_
@@ -41,8 +41,6 @@ protected:
    std::vector<SRIMtable *> fTargetEloss_vec;                       //! [particle_id]
 
 private:
-   Int_t GetStripID(Double_t pos, Int_t max_strip, Double_t size);
-
    TCRIBPIDProcessor(const TCRIBPIDProcessor &rhs);
    TCRIBPIDProcessor &operator=(const TCRIBPIDProcessor &rhs);
 
