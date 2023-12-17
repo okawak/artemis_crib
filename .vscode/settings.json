@@ -15,6 +15,7 @@
         "artemislogon.C": "cpp",
         "proton.C": "cpp",
         "reconst.C": "cpp",
-        "evtloop.C": "cpp"
+        "evtloop.C": "cpp",
+        "processline.C": "cpp"
     },
 }

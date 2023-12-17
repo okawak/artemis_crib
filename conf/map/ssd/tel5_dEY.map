@@ -1,9 +1,8 @@
-# map for ADC of dssd
+# map for dssd using MUX
 # [category] [id] [[device] [focus] [detector] [module] [ch]] ....
 #
+# telescope 5 dEa Y
 # Map: MUX [ene1, ene2, pos1, pos2, timing]
 #
-# CREATED for CRIB Exp. 2022.06.29 K.Okawa
-#
 #--------------------------------------------------------------------
-21,  0, 12 0  6   7   0, 12 0  6   7   1, 12 0  6   7   2, 12 0  6   7   3, 12 0  7  11   2
+51,  0, 12  1  6   4   12, 12  1  6   4   13, 12  1  6   4   14, 12  1  6   4   15, 12  2  7  0   69 
