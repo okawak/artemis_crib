@@ -140,6 +140,143 @@ We prepared two useful macros to calibrate dl-PPAC.
 - [macro/run_PPACLineCalibration.C](https://github.com/okawak/artemis_crib/blob/main/macro/run_PPACLineCalibration.C) : Macro to actually execute
 - [macro/PPACLineCalibration.C](https://github.com/okawak/artemis_crib/blob/main/macro/PPACLineCalibration.C) : Macro that actually work
 
+First, we have to prepare the data with masks on the PPAC like following picture.
+This mask has holes at 12.5 mm intervals.
 
+{{< figure src="PPAC_pic.jpg" width=300 >}}
 
+The position of the alpha line through the central hole can be calculated and the offset adjusted to achieve that position.
+The geometry inside the PPAC is as follows.
+I think all PPAC geometries used by CRIB are the same.
+
+{{< figure src="PPAC_geo.png" width=700 >}}
+
+The parameters required to calculate the coordinates of the position are as follows.
+
+- PPAC ID
+- PPAC direction (first layer is X or Y)
+- alpha source offset X
+- alpha source offset Y
+- distance between the mask and alpha source
+- reflectx in the dlppac.yaml
+
+Using these parameters, the `macro/PPACLineCalibration.C` calculate the theoretical position and how much the parameters should be moved.
+
+## Example
+Let's calibrate PPACa as an example.
+
+- PPAC ID : #2
+- First layer is Y
+- alpha source offset X : 0.0 mm
+- alpha source offset Y : 2.2 mm
+- distance between the mask and alpha source : 92 mm
+- reflectx : 1 (have reflection)
+
+When we set the parameter like this files, the XY figure can be obtained.
+
+```yaml { wrap="false" title="prm/ppac/dlppac.yaml" }
+Type: art::TPPACParameter
+Contents:
+  # #2 PPAC
+  f3appac:
+    ns2mm:
+      - 1.256
+      - 1.256
+    delayoffset:
+      - 0.29
+      - 0.18
+    linecalib:
+      - 0.0
+      - 0.0
+    exchange: 0
+    reflectx: 1
+    geometry:
+      - 0.0
+      - 0.0
+      - -677.0 # user defined
+    TXSumLimit:
+      - -800.0
+      - 2000.0
+    TYSumLimit:
+      - -800.0
+      - 2000.0
+```
+
+{{< figure src="PPAC_before.png" width=600 >}}
+
+Then we can run the macro.
+```shell { wrap="false" }
+> acd
+> vi macro/run_PPACLineCalibraion.C
+# please set the parameters.
+# instruction is written in this file
+
+> a
+artemis [0] add steering/hoge.yaml NAME=hoge NUM=0000
+artemis [1] res
+artemis [2] .x macro/run_PPACLineCalibration.C
+# -- snip --
+
+===================================================
+center position (cal)  : (-0, -0.51413)
+center position (data) : (0.890109, -0.274066)
+difference             : (0.890109, 0.240065)
+move parameters        : (-1.41737, 0.382269)
+===================================================
+```
+
+And please input this value to the dlppac.yaml.
+
+```yaml { wrap="false" title="prm/ppac/dlppac.yaml" hl_lines="12 13" }
+Type: art::TPPACParameter
+Contents:
+  # #2 PPAC
+  f3appac:
+    ns2mm:
+      - 1.256
+      - 1.256
+    delayoffset:
+      - 0.29
+      - 0.18
+    linecalib:
+      - -1.417
+      - 0.382
+    exchange: 0
+    reflectx: 1
+    geometry:
+      - 0.0
+      - 0.0
+      - -677.0 # user defined
+    TXSumLimit:
+      - -800.0
+      - 2000.0
+    TYSumLimit:
+      - -800.0
+      - 2000.0
+```
+
+Then you can complete the line calibration of the PPAC.
+
+```shell { wrap="false" }
+> a
+artemis [0] add steering/hoge.yaml NAME=hoge NUM=0000
+artemis [1] res
+artemis [2] .x macro/run_PPACLineCalibration.C
+# -- snip --
+
+===================================================
+center position (cal)  : (-0, -0.51413)
+center position (data) : (-0.0191028, -0.571067)
+difference             : (-0.0191028, -0.0569366) # <= almost zero!
+move parameters        : (0.0304184, -0.0906633)
+===================================================
+```
+
+{{< figure src="PPAC_after.png" width=600 >}}
+
+{{% notice style="info" %}}
+Because of the accuracy of the fitting, it does not make much sense to move the parameters any further.
+{{% /notice %}}
+
+The PPAC is then ready to be used by measuring how much offset the beamline axis has with respect to the delay-line axis at the position where the PPAC is actually placed, and putting this into the geometry parameters.
 
