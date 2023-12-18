@@ -1,21 +1,22 @@
-void run_PPACLineCalibration(){
-  gStyle->SetOptStat(0);
+// Arguments of PPACLineCalibration
+//    h2         : PPAC x vs y histogram
+//    PPACID     : CRIB PPAC Number
+//    PPACpos    : 1 = PPACa (first layer is Y), 2 = PPACb (first layer is X from alpha source)
+//    x_off      : x offset of alpha source from the PPAC center
+//    y_off      : y offset of alpha source from the PPAC center
+//    distance   : distance between alpha source and mask
+//    xref       : reflectx in dlppac.yaml (0: no reflection 1: has reflection)
 
-  const TString ARTEMIS_WORKDIR = "/home/okawa/art_analysis/user/okawa";
+void run_PPACLineCalibration() {
+    gStyle->SetOptStat(0);
 
-  gROOT->ProcessLine("fcd 0");
-  gROOT->ProcessLine("zone");
+    const TString ARTEMIS_WORKDIR = gSystem->pwd();
 
-  // F3bPPAC(#7) calib0325
-  gROOT->ProcessLine("tree->Draw(\"f3bppac.fY:f3bppac.fX>>hxy(500,-50.,50., 500,-50.,50.)\",\"\",\"colz\")");
-  gROOT->ProcessLine("artcanvas->Print(\"" + ARTEMIS_WORKDIR + "/figure/calib/ppac/ppac#7_f3b_xy.png\")");
-  gROOT->ProcessLine(".x " + ARTEMIS_WORKDIR + "/macro/PPACLineCalibration.C(hxy,7,0.0,0.0,1)");
+    gROOT->ProcessLine("fcd 0");
+    gROOT->ProcessLine("zone");
 
-
-  // F3aPPAC(#2) calib0326
-  //gROOT->ProcessLine("tree->Draw(\"f3appac.fY:f3appac.fX>>hxy(500,-50.,50., 500,-50.,50.)\",\"\",\"colz\")");
-  //gROOT->ProcessLine("artcanvas->Print(\"" + ARTEMIS_WORKDIR + "/figure/calib/ppac/ppac#2_f3a_xy.png\")");
-  //gROOT->ProcessLine(".x " + ARTEMIS_WORKDIR + "/macro/PPACLineCalibration.C(hxy,2,0.0,-0.51,1)");
-
-
+    // F3aPPAC(#2) calib0326
+    gROOT->ProcessLine("tree->Draw(\"f3appac.fY:f3appac.fX>>hxy(500,-50.,50., 500,-50.,50.)\",\"\",\"colz\")");
+    gROOT->ProcessLine("artcanvas->Print(\"" + ARTEMIS_WORKDIR + "/figure/calib/ppac/ppac#2_f3a_xy.png\")");
+    gROOT->ProcessLine(".x " + ARTEMIS_WORKDIR + "/macro/PPACLineCalibration.C(hxy, 2, 1, 0.0, 2.2, 92.0, 1)");
 }
