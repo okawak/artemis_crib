@@ -16,7 +16,7 @@ conposition:
       strip: [16, 16]
       center_rotation: [0., 0., 322.0] # mm
       offset: [0., 0., 0.]
-      distance: 244.0 
+      distance: 244.0
       angle: -4.0 # deg
       thickness: [0.02, 0.301, 1.494, 1.486]
       material: [Si]
@@ -61,46 +61,46 @@ volume:
   top: # detector world
     name: TOP
     type: box # now only box is available
-    material: 0 
+    material: 0
     #size: [320.0, 100.0, 644.0] # mm
     size: [400.0, 200.0, 1288.0] # mm
 
   detector:
     - name: tel1
       type: box
-      material: 1 
+      material: 1
       size: [50.0, 50.0, 1.0] # mm
 
     - name: tel2
       type: box
-      material: 1 
+      material: 1
       size: [50.0, 50.0, 1.0] # mm
 
     - name: tel3
       type: box
-      material: 1 
+      material: 1
       size: [50.0, 50.0, 1.0] # mm
 
     - name: tel4
       type: box
-      material: 1 
+      material: 1
       size: [50.0, 50.0, 1.0] # mm
 
     - name: tel5
       type: box
-      material: 1 
+      material: 1
       size: [50.0, 50.0, 1.0] # mm
 
-# not used
+  # not used
   tracking_detector:
     - name: PPACa
       type: box
-      material: 0 
+      material: 0
       size: [0.0, 0.0, 0.0] # mm
 
     - name: PPACb
       type: box
-      material: 0 
+      material: 0
       size: [0.0, 0.0, 0.0] # mm
 
   target:

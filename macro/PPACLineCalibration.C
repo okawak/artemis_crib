@@ -1,3 +1,11 @@
+/*
+   @File name     : PPACLineCalibration.C
+   @description   :
+   @Author        : Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+   @Created date  : 2023-12-18 17:14:46
+   @Last modified : 2023-12-18 17:15:06
+*/
+
 void PPACLineCalibration(TH2 *h2 = NULL, const Int_t PPACID = 0, const Int_t PPACpos = 0, const Double_t x_off = 0.0, const Double_t y_off = 0.0, const Double_t distance = 0.0, const Int_t xref = 0) {
     const TString ARTEMIS_WORKDIR = gSystem->pwd();
     const TString output_fig_base = ARTEMIS_WORKDIR + "/figure/calib/ppac";
