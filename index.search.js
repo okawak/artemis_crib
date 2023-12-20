@@ -58,20 +58,20 @@ var relearn_search_index = [
     "uri": "/artemis_crib/installation/index.html"
   },
   {
+    "breadcrumb": "Example \u003e Online analysis",
+    "content": "last modified: 2023-12-20 by Kodai Okawa This is almost the same with this web application. This web application uses enewz energy loss calculation, but PID using artemis uses SRIM.\nThese are the source code for the PID calculation.\nTCRIBPIDProcessor.cc TCRIBPIDProcessor.h Principles The simple principle of PID (Particle IDentification) is described.\nFirst, the energies of the various beam ions are determined from the value of the magnetic rigidity ( $B\\rho$) of the dipole magnets. The values are then calculated using relativity.\n$$ m_0\\gamma\\frac{v^2}{\\rho} = qevB $$ $$ B\\rho = \\frac{m_0\\gamma\\beta c}{qe} $$ $$ \\frac{B\\rho qe}{c} = m_0\\frac{\\beta}{\\sqrt{1-\\beta^2}} $$From this equation, solving for $\\beta^2$,\n$$ \\beta^2 = \\frac{1}{1+\\left( \\frac{m_0 c}{B\\rho qe} \\right)^2} $$ $$ \\frac{1}{\\sqrt{1-\\beta^2}} = \\sqrt{1+\\left( \\frac{B\\rho qe}{m_0 c} \\right)^2} $$Relativistic energy $E$ is\n$$ E = \\frac{m_0 c^2}{\\sqrt{1-\\beta^2}} $$ $$ E^2 = \\left(m_0 c^2\\right)^2 + \\left( B\\rho qec \\right)^2 $$Therefore, from this equation, $E$ can be obtained from $B\\rho$ and the kinetic energy can be derived from the following relationship.\n$$ E = E_{kin} + m_0 c^2 $$ $$ E_{kin} = m_0 c^2\\left( \\sqrt{1+\\left( \\frac{B\\rho qec}{m_0 c^2} \\right)^2} -1 \\right) $$The equation for determining velocity from energy using relativity can also be obtained as follows.\n$$ E_{kin} + m_0 c^2 = \\frac{m_0 c^2}{\\sqrt{1-\\left(\\frac{v}{c}\\right)^2}} $$ $$ v = c\\sqrt{1-\\left( \\frac{1}{\\frac{E_{kin}}{m_0 c^2} +1} \\right)^2} $$The energy loss of the detector placed on the beamline is then calculated and the PID diagram is obtained by plotting the possible measured values using these relationships.\nUsage First, please prepare the SRIMlib dataset. You need all input ion for “mylar” and “Si” target energy loss table. For the SRIMlib setting, please refer this page.\nNext, you need input ions and beamline parameter files. The format is like this.\n​ prm/pid/expname.yaml prm/pid/expname.yaml input_ions: - name: 7Li3 charge: 3 mass: 7.01435758 # amu color: 0 # 0 -\u003e red, 1 -\u003e blue, 2 -\u003e black - name: 6He2 charge: 2 mass: 6.01778863 color: 1 - name: 3H1 charge: 1 mass: 3.015500905 color: 2 - name: 2H1 charge: 1 mass: 2.013553496 color: 2 - name: 1H1 charge: 1 mass: 1.007276452 color: 2 - name: 4He2 charge: 2 mass: 4.001506094 color: 2 # BLD parameters f1_parameters: brho: 1.227 # Tm rf_period: 57.0 # ns f2_parameters: PPAC_thickness: 10.0 # um, mylar SSD_thickness: 1500.0 # um f3_parameters: a_thickness: 15.0 # um, mylar, PPACa/MWDCa b_thickness: 15.0 # um, mylar, PPACb/MWDCb distance: 290.5 # mm, between two tracking detectors trigger: 0 # PPACa/MWDCa -\u003e 0, PPACb/MWDCb -\u003e 1 # display parameters f2_display: rf_offset: -6.5 # ns rf_range: [0.0, 120.0] # ns energy_range: [0.0, 100.0] # MeV f3_display: rf_offset: -12.0 # ns tof_offset: -2.7 # ns rf_range: [0.0, 120.0] # ns tof_range: [0.0, 8.0] # ns Info You can add the beam ions freely, but you need to prepare SRIM Output table.\nLastly, let’s prepare the steering file. If you want to do only PID calculation, you can use chkpid.yaml.\n​ steering/chkpid.yaml steering/chkpid.yaml Processor: - name: pid type: art::TCRIBPIDProcessor parameter: FileName: prm/pid/expname.yaml Batch: false OutputTransparency: 1 You can add these sentences for any other steering files. I think it is useful when you want to overlap the data figure and calculation figure. If you set Batch: false, the canvases for F2 PID and F3 PID will appear automatically. Batch: true is quiet mode.\nThis is an example of the automatically generated figure.\nThe process for the calculation is performed in init process (I mean not event loop), so when you add the steering file, the figure will be created.\n\u003e acd \u003e a artemis [0] add steering/chkpid.yaml # process is performed now # if Batch: false, the two PID figure will appear automatically artemis [1] ls artemis \u003e 0 TDirectory pid pid artemis [2] cd 0 artemis [3] ls pid \u003e 0 TMultiGraph F2_PID; F2 RF [ns]; F2 SSD [MeV] 1 TMultiGraph F3_PID; F3 RF [ns]; PPACs/MWDCs TOF [ns] 2 TCanvas F2_canvas F2_canvas 3 TCanvas F3_canvas F3_canvas artemis [4] draw 0 Info There are two kinds of object, TMultiGraph and TCanvas. The ht command cannot draw these object, so I also made draw command to be able to draw “TMultiGraph” objects.\nHOWEVER, even this “draw” command cannot display the “TCanvas” object yet… If you save the object using hstore command or check from THttpServer, you can check the TCanvas objects.\nThis “TMultiGraph” object is useful when you want to overlay th data.\nartemis [*] ht something # this is gaussian example artemis [*] dr 0 p same ",
+    "description": "",
+    "tags": [],
+    "title": "PID",
+    "uri": "/artemis_crib/example/online_analysis/pid/index.html"
+  },
+  {
     "breadcrumb": "Example \u003e Preparation",
     "content": "last modified: 2023-12-15 by Kodai Okawa CRIB uses a multi-hit TDC called V1190 to take timing data (manual). When a trigger comes into this module, it opens a window with a set time width and records the timing of the data.\nHowever, even if the signal is sent at exactly the same time to the trigger, due to the uncertainty in opening that window, the resulting channel will vary. Since absolute channel values will vary, but relative channel values for a given (especially trigger) timing will remain the same, it is necessary to subtract all data by some reference channel to achieve good timing resolution.\nThe signal that serves as the reference for that time is what we call Tref! (Time reference) Since it is essential that all events contain that data, we put the trigger signal in one of the channels and make it a Tref.\nThe “tref” settings are made in the following file:\n​ steering/tref.yaml steering/tref.yaml Processor: # J1 V1190A - name: proc_tref_v1190A_j1 type: art::TTimeReferenceProcessor parameter: # [[device] [focus] [detector] [geo] [ch]] RefConfig: [12, 2, 7, 0, 15] SegConfig: [12, 2, 7, 0] Parameters RefConfig and SegConfig are set using the same ID as in the map file.\nThe “RefConfig” represents the “Tref” signal and the “SegConfig” represents the V1190 module. Therefore, the role of the processor is to subtract the “Segconfig” V1190 all timing signal from the “RefConfig” tref signal.\nTo apply this processor, add the following line to the steering file. For example,\n​ steering/chkf3.yaml steering/chkf3.yaml Anchor: - \u0026input ridf/@NAME@@NUM@.ridf - \u0026output output/chkf3@NAME@@NUM@.root - \u0026histout output/chkf3@NAME@@NUM@.hist.root Processor: - name: timer type: art::TTimerProcessor - name: ridf type: art::TRIDFEventStore parameter: OutputTransparency: 1 InputFiles: - *input - name: mapper type: art::TMappingProcessor parameter: OutputTransparency: 1 - include: tref.yaml - include: rf/rf.yaml - include: coin/coin.yaml - include: ppac/dlppac.yaml - include: ssd/f3ssd.yaml - name: outputtree type: art::TOutputTreeProcessor parameter: FileName: - *output Note The tref.yaml should be written before the main processor. In this example, it is written right after TMappingProcessor, and we recommend writing it in this position.\n",
     "description": "",
     "tags": [],
     "title": "Tref for V1190",
     "uri": "/artemis_crib/example/preparation/tref/index.html"
-  },
-  {
-    "breadcrumb": "Example \u003e Online analysis",
-    "content": "last modified: 2023-12-13 by Kodai Okawa ",
-    "description": "",
-    "tags": [],
-    "title": "F2",
-    "uri": "/artemis_crib/example/online_analysis/f2/index.html"
   },
   {
     "breadcrumb": "CRIB Configuration",
@@ -111,11 +111,11 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Online analysis",
-    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "content": "last modified: 2023-12-20 by Kodai Okawa ",
     "description": "",
     "tags": [],
-    "title": "PPAC",
-    "uri": "/artemis_crib/example/online_analysis/ppac/index.html"
+    "title": "F2",
+    "uri": "/artemis_crib/example/online_analysis/f2/index.html"
   },
   {
     "breadcrumb": "Example \u003e Preparation",
@@ -163,11 +163,11 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Online analysis",
-    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "content": "last modified: 2023-12-20 by Kodai Okawa ",
     "description": "",
     "tags": [],
-    "title": "MWDC",
-    "uri": "/artemis_crib/example/online_analysis/mwdc/index.html"
+    "title": "PPAC",
+    "uri": "/artemis_crib/example/online_analysis/ppac/index.html"
   },
   {
     "breadcrumb": "Example \u003e Preparation",
@@ -205,7 +205,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "Up to now, we have specifically introduced you to the installation and concepts of artemis, This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is sufficient to start reading here.\nPreparation Basic Tref for V1190 PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git Online analysis F1 F2 PPAC MWDC SSD F3 Gate Shifter task Scaler Timestamp Check raw data Offline analysis New processors Merge files Python environment pyROOT MC Simulation Beam_generator Nbodyreaction Geometry Detect_particle Solidangle ",
+    "content": "Up to now, we have specifically introduced you to the installation and concepts of artemis, This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is sufficient to start reading here.\nPreparation Basic Tref for V1190 PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git Online analysis F1 PID F2 PPAC MWDC SSD F3 Gate Shifter task Scaler Timestamp Check raw data Offline analysis New processors Merge files Python environment pyROOT MC Simulation Beam_generator Nbodyreaction Geometry Detect_particle Solidangle ",
     "description": "",
     "tags": null,
     "title": "Example",
@@ -213,11 +213,11 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Online analysis",
-    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "content": "last modified: 2023-12-20 by Kodai Okawa ",
     "description": "",
     "tags": [],
-    "title": "SSD",
-    "uri": "/artemis_crib/example/online_analysis/ssd/index.html"
+    "title": "MWDC",
+    "uri": "/artemis_crib/example/online_analysis/mwdc/index.html"
   },
   {
     "breadcrumb": "Example \u003e Preparation",
@@ -257,11 +257,11 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Online analysis",
-    "content": "last modified: 2023-12-13 by Kodai Okawa ",
+    "content": "last modified: 2023-12-20 by Kodai Okawa ",
     "description": "",
     "tags": [],
-    "title": "F3",
-    "uri": "/artemis_crib/example/online_analysis/f3/index.html"
+    "title": "SSD",
+    "uri": "/artemis_crib/example/online_analysis/ssd/index.html"
   },
   {
     "breadcrumb": "Setting",
@@ -283,11 +283,11 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Online analysis",
-    "content": "last modified: 2023-12-15 by Kodai Okawa ",
+    "content": "last modified: 2023-12-20 by Kodai Okawa ",
     "description": "",
     "tags": [],
-    "title": "Gate",
-    "uri": "/artemis_crib/example/online_analysis/gate/index.html"
+    "title": "F3",
+    "uri": "/artemis_crib/example/online_analysis/f3/index.html"
   },
   {
     "breadcrumb": "Example \u003e Preparation",
@@ -317,11 +317,11 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Online analysis",
-    "content": "last modified: 2023-12-15 by Kodai Okawa ",
+    "content": "last modified: 2023-12-20 by Kodai Okawa ",
     "description": "",
     "tags": [],
-    "title": "Shifter task",
-    "uri": "/artemis_crib/example/online_analysis/shift/index.html"
+    "title": "Gate",
+    "uri": "/artemis_crib/example/online_analysis/gate/index.html"
   },
   {
     "breadcrumb": "Example \u003e Preparation",
@@ -352,15 +352,15 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Online analysis",
-    "content": "last modified: 2023-12-15 by Kodai Okawa ",
+    "content": "last modified: 2023-12-20 by Kodai Okawa ",
     "description": "",
     "tags": [],
-    "title": "Scaler",
-    "uri": "/artemis_crib/example/online_analysis/scaler/index.html"
+    "title": "Shifter task",
+    "uri": "/artemis_crib/example/online_analysis/shift/index.html"
   },
   {
     "breadcrumb": "Example \u003e Preparation",
-    "content": "last modified: 2023-12-15 by Kodai Okawa Analysis files for each experiment are managed using git. This is so that they can be quickly restored if they are all lost for some reason.\nGit is a bit complicated and you can commit freely if you are knowledgeable, but if you are unfamiliar with it, you don’t have to worry too much. The main use is that if someone creates a useful file, it will be reflected for each user as well.\nHere is a brief description of how to use it.\n",
+    "content": "last modified: 2023-12-20 by Kodai Okawa Analysis files for each experiment are managed using git. This is so that they can be quickly restored if they are all lost for some reason.\nGit is a bit complicated and you can commit freely if you are knowledgeable, but if you are unfamiliar with it, you don’t have to worry too much. The main use is that if someone creates a useful file, it will be reflected for each user as well.\nHere is a brief description of how to use it.\nDirectory structure In the CRIB analysis PC, we used local repository. The files related the repository is stored here.\n\u003e cd ~ \u003e tree -L 1 repos/exp repos/exp ├── he6p2024.git ├── he6p.git └── o14a.git # 2023/12/18 current status Warning Note that if you delete the files in this directory, you will lose all backups.\nbasic commands I will describe the most commonly used commands and how to resolve conflicts.\n",
     "description": "",
     "tags": [],
     "title": "Git",
@@ -373,6 +373,14 @@ var relearn_search_index = [
     "tags": [],
     "title": "Merge files",
     "uri": "/artemis_crib/example/offline_analysis/merge_files/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Online analysis",
+    "content": "last modified: 2023-12-20 by Kodai Okawa ",
+    "description": "",
+    "tags": [],
+    "title": "Scaler",
+    "uri": "/artemis_crib/example/online_analysis/scaler/index.html"
   },
   {
     "breadcrumb": "Example \u003e Online analysis",
@@ -400,7 +408,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example",
-    "content": "This section explain the example of the online analysis in the CRIB experiment.\nF1 F2 PPAC MWDC SSD F3 Gate Shifter task Scaler Timestamp Check raw data ",
+    "content": "This section explain the example of the online analysis in the CRIB experiment.\nF1 PID F2 PPAC MWDC SSD F3 Gate Shifter task Scaler Timestamp Check raw data ",
     "description": "",
     "tags": null,
     "title": "Online analysis",

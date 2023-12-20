@@ -7,9 +7,9 @@
     <meta name="generator" content="Relearn 5.22.0">
     <meta name="description" content="">
     <meta name="author" content="Kodai Okawa">
-    <title>Requirements :: CRIB artemis</title>
-    <link href="/artemis_crib/installation/requirements/index.xml" rel="alternate" type="application/rss+xml" title="Requirements :: CRIB artemis">
-    <link href="/artemis_crib/installation/requirements/index.print.html" rel="alternate" type="text/html" title="Requirements :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
+    <title>PID :: CRIB artemis</title>
+    <link href="/artemis_crib/example/online_analysis/pid/index.xml" rel="alternate" type="application/rss+xml" title="PID :: CRIB artemis">
+    <link href="/artemis_crib/example/online_analysis/pid/index.print.html" rel="alternate" type="text/html" title="PID :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
     <link href="/artemis_crib/css/fontawesome-all.min.css?1703079680" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1703079680" rel="stylesheet"></noscript>
@@ -57,7 +57,7 @@
 
 
   </head>
-  <body class="mobile-support html" data-url="/artemis_crib/installation/requirements/index.html">
+  <body class="mobile-support html" data-url="/artemis_crib/example/online_analysis/pid/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -78,8 +78,8 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#1-writers-okawas-machine">1. Writer&rsquo;s (Okawa&rsquo;s) machine</a></li>
-        <li><a href="#2-cribs-analysis-machine">2. CRIB&rsquo;s analysis machine</a></li>
+        <li><a href="#principles">Principles</a></li>
+        <li><a href="#usage">Usage</a></li>
       </ul>
     </li>
   </ul>
@@ -89,27 +89,28 @@
             </div>
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/installation/index.html"><span itemprop="name">Installation</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Requirements</span><meta itemprop="position" content="2"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/example/index.html"><span itemprop="name">Example</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/example/online_analysis/index.html"><span itemprop="name">Online analysis</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">PID</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
-              <a class="topbar-control" href="https://github.com/okawak/artemis_crib/tree/pages-build/content/installation/requirements.md" target="_blank" title="Edit (CTRL&#43;ALT&#43;w)">
+              <a class="topbar-control" href="https://github.com/okawak/artemis_crib/tree/pages-build/content/example/online_analysis/pid.md" target="_blank" title="Edit (CTRL&#43;ALT&#43;w)">
                 <i class="fa-fw fas fa-pen"></i>
               </a>
             </div>
             <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
-              <a class="topbar-control" href="/artemis_crib/installation/requirements/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)">
+              <a class="topbar-control" href="/artemis_crib/example/online_analysis/pid/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)">
                 <i class="fa-fw fas fa-print"></i>
               </a>
             </div>
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-              <a class="topbar-control" href="/artemis_crib/installation/index.html" title="Installation (🡐)">
+              <a class="topbar-control" href="/artemis_crib/example/online_analysis/f1/index.html" title="F1 (🡐)">
                 <i class="fa-fw fas fa-chevron-left"></i>
               </a>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-              <a class="topbar-control" href="/artemis_crib/installation/cmake/index.html" title="cmake (🡒)">
+              <a class="topbar-control" href="/artemis_crib/example/online_analysis/f2/index.html" title="F2 (🡒)">
                 <i class="fa-fw fas fa-chevron-right"></i>
               </a>
             </div>
@@ -133,35 +134,212 @@
           <article class="default">
             <header class="headline">
             </header>
-<h1 id="requirements">Requirements</h1>
+<h1 id="pid">PID</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-02 by Kodai Okawa</span></span>
-<p>The following machines have been tested for operation.</p>
-<h3 id="1-writers-okawas-machine">1. Writer&rsquo;s (Okawa&rsquo;s) machine</h3>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-20 by Kodai Okawa</span></span>
+<p>This is almost the same with <a href="https://www.cns.s.u-tokyo.ac.jp/crib/cgi-bin/pid/CRIB_PID_calc.html" target="_blank">this web application</a>.
+This web application uses <code>enewz</code> energy loss calculation, but PID using artemis uses <code>SRIM</code>.</p>
+<p>These are the source code for the PID calculation.</p>
 <ul>
-<li>Almalinux 9.2</li>
-<li>zsh 5.8</li>
-<li>gcc 11.3.1</li>
-<li>cmake 3.20.2</li>
-<li>ROOT 6.28/04</li>
-<li>yaml-cpp 0.7.0</li>
+<li><a href="https://github.com/okawak/artemis_crib/blob/main/src-crib/simulation/TCRIBPIDProcessor.cc" target="_blank">TCRIBPIDProcessor.cc</a></li>
+<li><a href="https://github.com/okawak/artemis_crib/blob/main/src-crib/simulation/TCRIBPIDProcessor.h" target="_blank">TCRIBPIDProcessor.h</a></li>
 </ul>
-<h3 id="2-cribs-analysis-machine">2. CRIB&rsquo;s analysis machine</h3>
-<ul>
-<li>CentOS Linux release 7.9.2009 (Core)</li>
-<li>zsh 5.5.1</li>
-<li>gcc 9.3.1 (using devtoolset-9)</li>
-<li>cmake 3.28 (install manually)</li>
-<li>ROOT 6.28/06</li>
-<li>yaml-cpp 0.8.0</li>
-</ul>
-<hr>
-<p>NOTE:</p>
-<ul>
-<li>From 2023/10, Ubuntu system is also avaliable. (<a href="https://github.com/artemis-dev/artemis/pull/48" target="_blank">issue48</a>)</li>
-<li>Scripts for some automate operation are written in <code>zsh</code> format.</li>
-<li>Installation seems to be difficult on <code>macOS</code> (because of <code>clang</code> not <code>gcc</code>) in the current version.</li>
-</ul>
+<h3 id="principles">Principles</h3>
+<p>The simple principle of PID (Particle IDentification) is described.</p>
+<p>First, the energies of the various beam ions are determined from the value of the magnetic rigidity (
+<span class="math align-center">$B\rho$</span>) of the dipole magnets.
+The values are then calculated using relativity.</p>
+
+<span class="math align-center">$$ m_0\gamma\frac{v^2}{\rho} = qevB $$
+$$ B\rho = \frac{m_0\gamma\beta c}{qe} $$
+$$ \frac{B\rho qe}{c} = m_0\frac{\beta}{\sqrt{1-\beta^2}} $$</span><p>From this equation, solving for 
+<span class="math align-center">$\beta^2$</span>,</p>
+
+<span class="math align-center">$$ \beta^2 = \frac{1}{1+\left( \frac{m_0 c}{B\rho qe} \right)^2} $$
+$$ \frac{1}{\sqrt{1-\beta^2}} = \sqrt{1+\left( \frac{B\rho qe}{m_0 c} \right)^2} $$</span><p>Relativistic energy 
+<span class="math align-center">$E$</span> is</p>
+
+<span class="math align-center">$$ E = \frac{m_0 c^2}{\sqrt{1-\beta^2}} $$
+$$ E^2 = \left(m_0 c^2\right)^2 + \left( B\rho qec \right)^2 $$</span><p>Therefore, from this equation, 
+<span class="math align-center">$E$</span> can be obtained from 
+<span class="math align-center">$B\rho$</span> and the kinetic energy can be derived from the following relationship.</p>
+
+<span class="math align-center">$$ E = E_{kin} + m_0 c^2 $$
+$$ E_{kin} = m_0 c^2\left( \sqrt{1+\left( \frac{B\rho qec}{m_0 c^2} \right)^2} -1 \right) $$</span><p>The equation for determining velocity from energy using relativity can also be obtained as follows.</p>
+
+<span class="math align-center">$$ E_{kin} + m_0 c^2 = \frac{m_0 c^2}{\sqrt{1-\left(\frac{v}{c}\right)^2}} $$
+$$ v = c\sqrt{1-\left( \frac{1}{\frac{E_{kin}}{m_0 c^2} +1} \right)^2} $$</span><p>The energy loss of the detector placed on the beamline is then calculated and the PID diagram is obtained by plotting the possible measured values using these relationships.</p>
+<h3 id="usage">Usage</h3>
+<p>First, please prepare the SRIMlib dataset.
+You need all input ion for &ldquo;mylar&rdquo; and &ldquo;Si&rdquo; target energy loss table.
+For the SRIMlib setting, please refer <a href="https://okawak.github.io/artemis_crib/installation/energyloss_calculator/index.html" target="_blank">this page</a>.</p>
+<p>Next, you need input ions and beamline parameter files.
+The format is like this.</p>
+
+  
+<div class="tab-panel" data-tab-group="22e0058cda7e29f2bf1b673faa6dc461">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="prmpidexpnameyaml"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('22e0058cda7e29f2bf1b673faa6dc461','prmpidexpnameyaml')"
+    >
+      <span>
+        <span class="tab-nav-hidden">prm/pid/expname.yaml</span>
+        <span class="tab-nav-text">prm/pid/expname.yaml</span>
+      </span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="prmpidexpnameyaml"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">input_ions</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">7Li3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">charge</span>: <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">mass</span>: <span style="color:#ae81ff">7.01435758</span> <span style="color:#75715e"># amu</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">color</span>: <span style="color:#ae81ff">0</span> <span style="color:#75715e"># 0 -&gt; red, 1 -&gt; blue, 2 -&gt; black</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">6He2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">charge</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">mass</span>: <span style="color:#ae81ff">6.01778863</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">color</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">3H1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">charge</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">mass</span>: <span style="color:#ae81ff">3.015500905</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">color</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">2H1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">charge</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">mass</span>: <span style="color:#ae81ff">2.013553496</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">color</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">1H1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">charge</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">mass</span>: <span style="color:#ae81ff">1.007276452</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">color</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">4He2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">charge</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">mass</span>: <span style="color:#ae81ff">4.001506094</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">color</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># BLD parameters</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">f1_parameters</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">brho</span>: <span style="color:#ae81ff">1.227</span> <span style="color:#75715e"># Tm</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">rf_period</span>: <span style="color:#ae81ff">57.0</span> <span style="color:#75715e"># ns</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">f2_parameters</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">PPAC_thickness</span>: <span style="color:#ae81ff">10.0</span> <span style="color:#75715e"># um, mylar</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">SSD_thickness</span>: <span style="color:#ae81ff">1500.0</span> <span style="color:#75715e"># um</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">f3_parameters</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">a_thickness</span>: <span style="color:#ae81ff">15.0</span> <span style="color:#75715e"># um, mylar, PPACa/MWDCa</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">b_thickness</span>: <span style="color:#ae81ff">15.0</span> <span style="color:#75715e"># um, mylar, PPACb/MWDCb</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">distance</span>: <span style="color:#ae81ff">290.5</span> <span style="color:#75715e"># mm, between two tracking detectors</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">0</span> <span style="color:#75715e"># PPACa/MWDCa -&gt; 0, PPACb/MWDCb -&gt; 1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># display parameters</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">f2_display</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">rf_offset</span>: -<span style="color:#ae81ff">6.5</span> <span style="color:#75715e"># ns</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">rf_range</span>: [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">120.0</span>] <span style="color:#75715e"># ns</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">energy_range</span>: [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">100.0</span>] <span style="color:#75715e"># MeV</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">f3_display</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">rf_offset</span>: -<span style="color:#ae81ff">12.0</span> <span style="color:#75715e"># ns</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">tof_offset</span>: -<span style="color:#ae81ff">2.7</span> <span style="color:#75715e"># ns</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">rf_range</span>: [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">120.0</span>] <span style="color:#75715e"># ns</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">tof_range</span>: [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">8.0</span>] <span style="color:#75715e"># ns</span></span></span></code></pre></div></div>
+    </div>
+  </div>
+</div>
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+
+<p>You can add the beam ions freely, but you need to prepare SRIM Output table.</p>
+</div>
+</div>
+<p>Lastly, let&rsquo;s prepare the steering file.
+If you want to do only PID calculation, you can use <code>chkpid.yaml</code>.</p>
+
+  
+<div class="tab-panel" data-tab-group="cc6262a0e3c3525d0f23000d07e87785">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="steeringchkpidyaml"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('cc6262a0e3c3525d0f23000d07e87785','steeringchkpidyaml')"
+    >
+      <span>
+        <span class="tab-nav-hidden">steering/chkpid.yaml</span>
+        <span class="tab-nav-text">steering/chkpid.yaml</span>
+      </span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="steeringchkpidyaml"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Processor</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">pid</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TCRIBPIDProcessor</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">FileName</span>: <span style="color:#ae81ff">prm/pid/expname.yaml</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Batch</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputTransparency</span>: <span style="color:#ae81ff">1</span></span></span></code></pre></div></div>
+    </div>
+  </div>
+</div><p>You can add these sentences for any other steering files.
+I think it is useful when you want to overlap the data figure and calculation figure.
+If you set <code>Batch: false</code>, the canvases for F2 PID and F3 PID will appear automatically.
+<code>Batch: true</code> is quiet mode.</p>
+<p>This is an example of the automatically generated figure.</p>
+<figure><img src="auto.png" width="600"/>
+</figure>
+
+<p>The process for the calculation is performed in init process (I mean not event loop), so when you <code>add</code> the steering file, the figure will be created.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; acd
+</span></span><span style="display:flex;"><span>&gt; a
+</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> add steering/chkpid.yaml
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># process is performed now</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># if Batch: false, the two PID figure will appear automatically </span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> ls
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> artemis
+</span></span><span style="display:flex;"><span>&gt;   <span style="color:#ae81ff">0</span> TDirectory pid             pid       
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> cd <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>3<span style="color:#f92672">]</span> ls
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> pid
+</span></span><span style="display:flex;"><span>&gt;   <span style="color:#ae81ff">0</span> TMultiGraph                 F2_PID; F2 RF <span style="color:#f92672">[</span>ns<span style="color:#f92672">]</span>; F2 SSD <span style="color:#f92672">[</span>MeV<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1</span> TMultiGraph                 F3_PID; F3 RF <span style="color:#f92672">[</span>ns<span style="color:#f92672">]</span>; PPACs/MWDCs TOF <span style="color:#f92672">[</span>ns<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">2</span> TCanvas F2_canvas       F2_canvas 
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">3</span> TCanvas F3_canvas       F3_canvas 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>4<span style="color:#f92672">]</span> draw <span style="color:#ae81ff">0</span></span></span></code></pre></div><figure><img src="multigraph.png" width="600"/>
+</figure>
+
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+
+<p>There are two kinds of object, <code>TMultiGraph</code> and <code>TCanvas</code>.
+The <code>ht</code> command cannot draw these object, so I also made <code>draw</code> command to be able to draw &ldquo;TMultiGraph&rdquo; objects.</p>
+<p>HOWEVER, even this &ldquo;draw&rdquo; command cannot display the &ldquo;TCanvas&rdquo; object yet&hellip;
+If you save the object using <code>hstore</code> command or check from THttpServer, you can check the TCanvas objects.</p>
+</div>
+</div>
+<p>This &ldquo;TMultiGraph&rdquo; object is useful when you want to overlay th data.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> ht something <span style="color:#75715e"># this is gaussian example</span>
+</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> dr <span style="color:#ae81ff">0</span> p same</span></span></code></pre></div><figure><img src="overlap.png" width="600"/>
+</figure>
+
 
             <footer class="footline">
 
@@ -202,8 +380,8 @@
       <div id="R-content-wrapper" class="highlightable">
         <div id="R-topics">
           <ul class="enlarge morespace collapsible-menu">
-          <li data-nav-id="/artemis_crib/installation/index.html" class="parent "><a class="padding" href="/artemis_crib/installation/index.html">Installation</a><ul id="R-subsections-07cca5796d23f5bae96340e1eaa52bc5" class="morespace collapsible-menu">
-          <li data-nav-id="/artemis_crib/installation/requirements/index.html" class="active"><a class="padding" href="/artemis_crib/installation/requirements/index.html">Requirements</a></li>
+          <li data-nav-id="/artemis_crib/installation/index.html" class=""><a class="padding" href="/artemis_crib/installation/index.html">Installation</a><ul id="R-subsections-07cca5796d23f5bae96340e1eaa52bc5" class="morespace collapsible-menu">
+          <li data-nav-id="/artemis_crib/installation/requirements/index.html" class=""><a class="padding" href="/artemis_crib/installation/requirements/index.html">Requirements</a></li>
           <li data-nav-id="/artemis_crib/installation/cmake/index.html" class=""><a class="padding" href="/artemis_crib/installation/cmake/index.html">cmake</a></li>
           <li data-nav-id="/artemis_crib/installation/root/index.html" class=""><a class="padding" href="/artemis_crib/installation/root/index.html">ROOT</a></li>
           <li data-nav-id="/artemis_crib/installation/yaml-cpp/index.html" class=""><a class="padding" href="/artemis_crib/installation/yaml-cpp/index.html">yaml-cpp</a></li>
@@ -226,7 +404,7 @@
           <li data-nav-id="/artemis_crib/crib_parts/userconfig/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/userconfig/index.html">User config</a></li>
           <li data-nav-id="/artemis_crib/crib_parts/newcommand/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/newcommand/index.html">New commands</a></li>
           <li data-nav-id="/artemis_crib/crib_parts/minor_change/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/minor_change/index.html">Minor changes</a></li></ul></li>
-          <li data-nav-id="/artemis_crib/example/index.html" class=""><a class="padding" href="/artemis_crib/example/index.html">Example</a><ul id="R-subsections-daee4b63470ea20ac3f41145e3651181" class="morespace collapsible-menu">
+          <li data-nav-id="/artemis_crib/example/index.html" class="parent "><a class="padding" href="/artemis_crib/example/index.html">Example</a><ul id="R-subsections-daee4b63470ea20ac3f41145e3651181" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/example/preparation/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/index.html">Preparation</a><ul id="R-subsections-758dfbc2d22339c29b165559a2ff4f50" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/example/preparation/basic/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/basic/index.html">Basic</a></li>
           <li data-nav-id="/artemis_crib/example/preparation/tref/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/tref/index.html">Tref for V1190</a></li>
@@ -236,9 +414,9 @@
           <li data-nav-id="/artemis_crib/example/preparation/mux_calibration/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/mux_calibration/index.html">MUX calibration</a></li>
           <li data-nav-id="/artemis_crib/example/preparation/set_parameter/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/set_parameter/index.html">Set parameters</a></li>
           <li data-nav-id="/artemis_crib/example/preparation/git/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/git/index.html">Git</a></li></ul></li>
-          <li data-nav-id="/artemis_crib/example/online_analysis/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/index.html">Online analysis</a><ul id="R-subsections-772ca07ab897727f34ea5e7af1bcd1b0" class="morespace collapsible-menu">
+          <li data-nav-id="/artemis_crib/example/online_analysis/index.html" class="parent "><a class="padding" href="/artemis_crib/example/online_analysis/index.html">Online analysis</a><ul id="R-subsections-772ca07ab897727f34ea5e7af1bcd1b0" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/example/online_analysis/f1/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/f1/index.html">F1</a></li>
-          <li data-nav-id="/artemis_crib/example/online_analysis/pid/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/pid/index.html">PID</a></li>
+          <li data-nav-id="/artemis_crib/example/online_analysis/pid/index.html" class="active"><a class="padding" href="/artemis_crib/example/online_analysis/pid/index.html">PID</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/f2/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/f2/index.html">F2</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/ppac/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/ppac/index.html">PPAC</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/mwdc/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/mwdc/index.html">MWDC</a></li>
