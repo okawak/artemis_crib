@@ -17,4 +17,27 @@ The main use is that if someone creates a useful file, it will be reflected for 
 
 Here is a brief description of how to use it.
 
+## Directory structure
 
+In the CRIB analysis PC, we used local repository.
+The files related the repository is stored here.
+
+```shell { wrap="false" }
+> cd ~
+> tree -L 1 repos/exp
+repos/exp
+├── he6p2024.git
+├── he6p.git
+└── o14a.git
+
+# 2023/12/18 current status
+```
+
+{{% notice style="warning" %}}
+Note that if you delete the files in this directory, you will lose all backups.
+{{% /notice %}}
+
+
+## basic commands
+
+I will describe the most commonly used commands and how to resolve conflicts.
