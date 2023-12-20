@@ -3,7 +3,7 @@
    @description   :
    @Author        : Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
    @Created date  : 2023-06-13 17:51:08
-   @Last modified : 2023-12-20 17:30:25
+   @Last modified : 2023-12-20 21:29:57
 */
 
 #include "TCmdDraw.h"
@@ -55,11 +55,12 @@ Long_t TCmdDraw::Cmd(vector<TString> tokens) {
     } else if (obj->InheritsFrom("TMultiGraph")) {
         TCatPadManager::Instance()->GetCanvas();
         TCatHistManager::Instance()->DrawObject(id, tokens.size() > 2 ? tokens[2] : "ap");
+        gPad->BuildLegend(0.78, 0.70, 0.95, 0.95, "", "p");
         return 1;
-    } else if (obj->InheritsFrom("TCanvas")) {
-        TCanvas *c = (TCanvas *)TCatHistManager::Instance()->GetObject(id);
-        c->Draw();
-        return 1;
+        //} else if (obj->InheritsFrom("TCanvas")) {
+        //    TCatPadManager::Instance()->GetCanvas();
+        //    TCatHistManager::Instance()->DrawObject(id, tokens.size() > 2 ? tokens[2] : "ap");
+        //    return 1;
     } else if (obj && obj->InheritsFrom("TGeoVolume")) {
         TCatPadManager::Instance()->GetCanvas();
         TView3D *vw1 = (TView3D *)TView::CreateView(1);

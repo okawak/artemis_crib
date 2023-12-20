@@ -3,7 +3,7 @@
    @description   :
    @Author        : Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
    @Created date  : 2023-12-19 11:03:25
-   @Last modified : 2023-12-20 19:32:28
+   @Last modified : 2023-12-20 21:37:48
 */
 
 #include "TCRIBPIDProcessor.h"
@@ -13,7 +13,6 @@
 #include <TGraph.h>
 #include <TH1.h>
 #include <TMultiGraph.h>
-#include <TPad.h>
 #include <TText.h>
 #include <constant.h>
 
@@ -117,6 +116,8 @@ void TCRIBPIDProcessor::Init(TEventCollection *col) {
             rf_f2 += rf_period;
         }
         // set TGraph style
+        gr_f2->SetName(Form("%s+", ion_names[i].Data()));
+        gr_f2->SetTitle(Form("%s+", ion_names[i].Data()));
         gr_f2->SetMarkerStyle(20 + i);
         if (ion_colors[i] == 0) {
             gr_f2->SetMarkerColor(kRed);
@@ -150,6 +151,8 @@ void TCRIBPIDProcessor::Init(TEventCollection *col) {
             rf_f3 += rf_period;
         }
         // set TGraph style
+        gr_f3->SetName(Form("%s+", ion_names[i].Data()));
+        gr_f3->SetTitle(Form("%s+", ion_names[i].Data()));
         gr_f3->SetMarkerStyle(20 + i);
         if (ion_colors[i] == 0) {
             gr_f3->SetMarkerColor(kRed);
@@ -162,7 +165,7 @@ void TCRIBPIDProcessor::Init(TEventCollection *col) {
     }
 
     // Save Object
-    TCanvas *c_f2 = new TCanvas("F2_canvas", "F2_canvas", 600, 600);
+    TCanvas *c_f2 = new TCanvas("F2_canvas", "F2_canvas", 800, 800);
     c_f2->cd();
     TMultiGraph *mg_f2 = new TMultiGraph();
     mg_f2->SetTitle("F2_PID; F2 RF [ns]; F2 SSD [MeV]");
@@ -196,7 +199,7 @@ void TCRIBPIDProcessor::Init(TEventCollection *col) {
     gPad->SetGrid();
     c_f2->Update();
 
-    TCanvas *c_f3 = new TCanvas("F3_canvas", "F3_canvas", 600, 600);
+    TCanvas *c_f3 = new TCanvas("F3_canvas", "F3_canvas", 800, 800);
     c_f3->cd();
     TMultiGraph *mg_f3 = new TMultiGraph();
     mg_f3->SetTitle("F3_PID; F3 RF [ns]; PPACs/MWDCs TOF [ns]");
@@ -232,10 +235,10 @@ void TCRIBPIDProcessor::Init(TEventCollection *col) {
 
     gDirectory->mkdir("pid");
     gDirectory->cd("pid");
-    gDirectory->Add(c_f2);
-    gDirectory->Add(c_f3);
     gDirectory->Add(mg_f2);
     gDirectory->Add(mg_f3);
+    gDirectory->Add(c_f2);
+    gDirectory->Add(c_f3);
     gDirectory->cd("..");
 
     if (fIsBatch) {
