@@ -3,7 +3,7 @@
    @description   :
    @Author        : Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
    @Created date  : 2023-12-18 17:14:46
-   @Last modified : 2023-12-18 17:15:06
+   @Last modified : 2023-12-21 23:07:12
 */
 
 void PPACLineCalibration(TH2 *h2 = NULL, const Int_t PPACID = 0, const Int_t PPACpos = 0, const Double_t x_off = 0.0, const Double_t y_off = 0.0, const Double_t distance = 0.0, const Int_t xref = 0) {
@@ -32,6 +32,10 @@ void PPACLineCalibration(TH2 *h2 = NULL, const Int_t PPACID = 0, const Int_t PPA
         gSystem->mkdir(target, kTRUE);
     }
 
+    gROOT->ProcessLine("zone");
+    h2->Draw("colz");
+    gROOT->ProcessLine(Form("artcanvas->Print(\"%s/ppac#%d_xy.png\")", output_fig_base.Data(), PPACID));
+
     Double_t kx, ky;
     if (PPACID == 2) {
         kx = 1.256;
@@ -49,7 +53,7 @@ void PPACLineCalibration(TH2 *h2 = NULL, const Int_t PPACID = 0, const Int_t PPA
         kx = 1.257;
         ky = 1.257;
     } else {
-        std::cout << "--ERROR: Invalid PPACID" << std::endl;
+        std::cerr << "--ERROR: Invalid PPACID" << std::endl;
         return;
     }
 
@@ -61,7 +65,7 @@ void PPACLineCalibration(TH2 *h2 = NULL, const Int_t PPACID = 0, const Int_t PPA
         to_planex = 21.5;
         to_planey = 29.5;
     } else {
-        std::cout << "--ERROR: Invalid PPACpos" << std::endl;
+        std::cerr << "--ERROR: Invalid PPACpos" << std::endl;
     }
 
     Double_t sgn = 1.0;
@@ -89,7 +93,7 @@ void PPACLineCalibration(TH2 *h2 = NULL, const Int_t PPACID = 0, const Int_t PPA
     TSpectrum *s_y = new TSpectrum(1);
     nfound_y = s_y->Search(h1y, 1, "", 0.01);
     if (nfound_x != 1 || nfound_y != 1) {
-        std::cout << "--ERROR: cannot find 1 peak ( found " << nfound_x << " and " << nfound_y << "peaks" << std::endl;
+        std::cerr << "--ERROR: cannot find 1 peak ( found " << nfound_x << " and " << nfound_y << "peaks" << std::endl;
         return;
     }
     xpeak = s_x->GetPositionX();

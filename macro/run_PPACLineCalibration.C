@@ -17,6 +17,5 @@ void run_PPACLineCalibration() {
 
     // F3aPPAC(#2) calib0326
     gROOT->ProcessLine("tree->Draw(\"f3appac.fY:f3appac.fX>>hxy(500,-50.,50., 500,-50.,50.)\",\"\",\"colz\")");
-    gROOT->ProcessLine("artcanvas->Print(\"" + ARTEMIS_WORKDIR + "/figure/calib/ppac/ppac#2_f3a_xy.png\")");
     gROOT->ProcessLine(".x " + ARTEMIS_WORKDIR + "/macro/PPACLineCalibration.C(hxy, 2, 1, 0.0, 2.2, 92.0, 1)");
 }
