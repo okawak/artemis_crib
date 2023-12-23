@@ -51,7 +51,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "This chapter describes how to set up the artemis environment for the CRIB experiment. See from here for initial settings.\nRequirements cmake ROOT yaml-cpp artemis mount setting energyloss calculator art_analysis ",
+    "content": "This chapter describes how to set up the artemis environment for the CRIB experiment.\nRequirements cmake ROOT yaml-cpp artemis mount setting energyloss calculator art_analysis ",
     "description": "",
     "tags": null,
     "title": "Installation",
@@ -103,7 +103,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "This chapter describes how to prepare the configuration file for the experiment. If you have already some CRIB artemis environment, Please see from here for initial settings.\nNew experiment New user Build artemis commands Map configuration Steering Histograms VNC server ",
+    "content": "This chapter describes how to prepare the configuration file for the experiment. If you have already some CRIB artemis environment, please see from here for initial settings.\nNew experiment New user Build artemis commands Map configuration Steering Histograms VNC server ",
     "description": "",
     "tags": null,
     "title": "Setting",
@@ -155,7 +155,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "How artemis is used varies from experiment to experiment. We would like to explain in this chapter how they are configured and used in CRIB and the specific settings of CRIB.\nAnalysis environment Online-mode analysis User config New commands Minor changes ",
+    "content": "Artemis configuration varies from experiment to experiment. We would like to explain in this chapter how they are configured and used in CRIB experiment.\nAnalysis environment Online-mode analysis User config New commands Minor changes ",
     "description": "",
     "tags": null,
     "title": "CRIB Configuration",
@@ -205,7 +205,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "Up to now, we have specifically introduced you to the installation and concepts of artemis, This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is sufficient to start reading here.\nPreparation Basic Tref for V1190 PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git Online analysis F1 PID F2 PPAC MWDC SSD F3 Gate Shifter task Scaler Timestamp Check raw data Offline analysis New processors Merge files Python environment pyROOT MC Simulation Beam_generator Nbodyreaction Geometry Detect_particle Solidangle ",
+    "content": "Up to now, we have introduced the installation and concepts of artemis. This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is no problem to start reading from here.\nPreparation Basic Tref for V1190 PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git Online analysis F1 PID F2 PPAC MWDC SSD F3 Gate Shifter task Scaler Timestamp Check raw data Offline analysis New processors Merge files Python environment pyROOT MC Simulation Beam_generator Nbodyreaction Geometry Detect_particle Solidangle ",
     "description": "",
     "tags": null,
     "title": "Example",
@@ -221,7 +221,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Preparation",
-    "content": "last modified: 2023-12-15 by Kodai Okawa ",
+    "content": "last modified: 2023-12-23 by Kodai Okawa This is the CRIB alpha source information. (unit: MeV)\nID alpha-2 alpha-3 4.780 3.148 5.480 5.462 5.795 5.771 calibration files SSD calibration files need to be set at prm/ssd/ directory. The directory structure is like this:\n$ tree -L 2 prm/ssd prm/ssd ├── ch2MeV.dat # test file ├── ch2ns.dat # test file ├── f2ch2MeV.dat ├── f2ch2MeV_raw.dat ├── f2ch2ns.dat ├── tel1 │ ├── ch2MeV_dEX.dat │ ├── ch2MeV_dEX_raw.dat │ ├── ch2MeV_dEY.dat │ ├── ch2MeV_dEY_raw.dat │ ├── ch2MeV_E.dat │ ├── ch2MeV_E_raw.dat │ ├── ch2ns_dEX.dat │ ├── ch2ns_dEY.dat │ ├── ch2ns_E.dat │ └── tel_conf.yaml # telescope configuration, explain later -- snip --The prm/ssd/ch2MeV.dat and prm/ssd/ch2ns.dat are used for test, so in the beam time measurement, actually this files are not necessory. And prm/ssd/f2* files are used for F2SSD calibration, and files in prm/ssd/tel1/ directory are used for SSDs of a telescope.\nThe ch2ns.dat depends on TDC setting, so basically we don’t have to care so muc (Usually the setting (the value) is same with previous experiment.), so we have to prepare the ch2MeV.dat files!\nNote The file name need to be set like this example. The loaded parameter file name is defined SSD steering file, and we don’t want to change the SSD steering files so much, so please use such file names.\nThe “ch2MeV.dat” file format is like this:\n​ prm/ssd/f2ch2MeV.dat prm/ssd/f2ch2MeV.dat # offset gain 1.7009 0.0173 0.0 1.0 # if there are some SSDs or strip SSD, you can add the line. $$ E~\\mathrm{[MeV]} = \\mathrm{offset} + \\mathrm{gain} \\times \\mathrm{ch} $$Usage We prepared useful macros to calibrate many SSDs. Please check these for more information.\nmacro/AlphaCalibration.C macro/run_AlphaCalibraion.C It is sufficient to use the AlphaCalibration.C, but it is recommended to use the run_AlphaCalibration.C to keep a record of what arguments were used to calibrate.\nAfter you prepared alpha calibration data and steering file (for example steering/calibration.yaml) to show raw data, you can use this macro.\n$ acd $ vi macro/run_AlphaCalibration.C # please set the parameters. # instraction is written in this file $ a artemis [0] add steering/hoge.yaml NAME=hoge NUM=0000 artemis [1] res artemis [2] .x macro/run_AlphaCalibration.CThen the parameter file that defined at the “run_AlphaCalibration.C” and calibration figures will be created automatically.\nThese are example of the figures;\nraw fitting figure (figure/calib/tel*/ch2MeV_*/raw/) calibration line and residual figure (figure/calib/tel*/ch2MeV_*/calibration/) $ a artemis [0] add steering/hoge.yaml NAME=hoge NUM=0000 artemis [1] res artemis [2] fcd 0 artemis [3] zo artemis [4] tree-\u003eDraw(\"...\") # draw calibrated data artemis [5] gStyle-\u003eSetOptStat(0) artemis [6] sa ",
     "description": "",
     "tags": [],
     "title": "Alpha calibration",
