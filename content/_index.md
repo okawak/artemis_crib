@@ -3,13 +3,13 @@ archetype = "home"
 title = ""
 +++
 
-## Manual for the CRIB ARTEMIS
-A RooT Extesion with Modular processor for Instant Swiching
+# Manual for the CRIB ARTEMIS
+ARTEMIS(A RooT Extesion with Modular processor for Instant Swiching) is used at online analysis for the CRIB experiment.
+Everyone can create their own personal directory to analyse the data, so if you want to participate in the CRIB experiment and use this artemis, please check this manual.
 
+But I am not an artemis developer, but only a user, so please let me know if the description is wrong.
 
 Document author: Kodai Okawa, <okawa@cns.s.u-tokyo.ac.jp>
-
-I am not an artemis developer, but a user, so please let me know if the description is wrong in any way.
 
 ## Contents
 
