@@ -10,7 +10,6 @@
     "C_Cpp.intelliSenseEngine": "Tag Parser",
     "lpubsppop01.autoTimeStamp.filenamePattern": ".h|.cc",
     "lpubsppop01.autoTimeStamp.momentFormat": " YYYY-MM-DD HH:mm:ss",
-    "lpubsppop01.autoTimeStamp.birthTimeStart": "   @Created date  :",
+    "lpubsppop01.autoTimeStamp.birthTimeStart": " * @date    ",
     "lpubsppop01.autoTimeStamp.lineLimit": 7,
-    "lpubsppop01.autoTimeStamp.modifiedTimeStart": "   @Last modified :",
 }

@@ -18,13 +18,13 @@
     "write a header of Okawa": {
         "prefix": "header_okawa",
         "body": [
-            "/*",
-            "   @File name     : ${TM_FILENAME}",
-            "   @description   : $1",
-            "   @Author        : Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>",
-            "   @Created date  : ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}",
-            "   @Last modified : ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}",
-            "*/"
+            "/**",
+            " * @file    ${TM_FILENAME}",
+            " * @brief   $1",
+            " * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>",
+            " * @date    ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}",
+            " * @note    $2",
+            " */"
         ],
         "description": "write a header of Okawa name"
     }

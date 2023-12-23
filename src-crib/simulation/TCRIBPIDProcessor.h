@@ -1,10 +1,10 @@
-/*
-   @File name     : TCRIBPIDProcessor.h
-   @description   :
-   @Author        : Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
-   @Created date  : 2023-12-19 11:04:20
-   @Last modified : 2023-12-20 19:31:42
-*/
+/**
+ * @file    TCRIBPIDProcessor.h
+ * @brief   Beam PID at F2 and F3 of CRIB
+ * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2023-12-19 15:30:15
+ * @note
+ */
 
 #ifndef _TCRIBPIDPROCESSOR_H_
 #define _TCRIBPIDPROCESSOR_H_

@@ -1,10 +1,10 @@
-/*
-   @File name     : PPACLineCalibration.C
-   @description   :
-   @Author        : Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
-   @Created date  : 2023-12-18 17:14:46
-   @Last modified : 2023-12-21 23:07:12
-*/
+/**
+ * @file    PPACLineCalibration.C
+ * @brief   PPAC line calibraion macro for CRIB experiment
+ * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2023-12-18 15:17:47
+ * @note
+ */
 
 void PPACLineCalibration(TH2 *h2 = NULL, const Int_t PPACID = 0, const Int_t PPACpos = 0, const Double_t x_off = 0.0, const Double_t y_off = 0.0, const Double_t distance = 0.0, const Int_t xref = 0) {
     const TString ARTEMIS_WORKDIR = gSystem->pwd();
@@ -24,12 +24,10 @@ void PPACLineCalibration(TH2 *h2 = NULL, const Int_t PPACID = 0, const Int_t PPA
         return;
     }
 
-    TString target = gSystem->DirName(output_fig_base);
-    if (gSystem->ChangeDirectory(target)) {
-        // target directory exists
+    if (gSystem->ChangeDirectory(outout_fig_base)) {
         gSystem->ChangeDirectory(ARTEMIS_WORKDIR);
     } else {
-        gSystem->mkdir(target, kTRUE);
+        gSystem->mkdir(outout_fig_base, kTRUE);
     }
 
     gROOT->ProcessLine("zone");

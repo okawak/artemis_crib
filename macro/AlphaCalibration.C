@@ -1,10 +1,10 @@
-/*
-   @File name     : AlphaCalibration.C
-   @description   : updated by Zhang Qian
-   @Author        : Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
-   @Created date  : 2023-12-21 14:20:03
-   @Last modified : 2023-12-21 23:07:29
-*/
+/**
+ * @file    AlphaCalibration.C
+ * @brief   alpha calibration macro for CRIB expereriment
+ * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2023-12-21 14:20:03
+ * @note    updated by Zhang Qian
+ */
 
 void AlphaCalibration(TH2 *h2 = NULL, TString foutpath = "test/test.dat", const Int_t alphaID = 0, const Double_t width = 15.0) {
     TString ARTEMIS_WORKDIR = gSystem->pwd();
@@ -24,18 +24,16 @@ void AlphaCalibration(TH2 *h2 = NULL, TString foutpath = "test/test.dat", const 
         return;
     }
 
-    TString target = gSystem->DirName(output_raw_path);
-    if (gSystem->ChangeDirectory(target)) {
+    if (gSystem->ChangeDirectory(output_raw_path)) {
         gSystem->ChangeDirectory(ARTEMIS_WORKDIR);
     } else {
-        gSystem->mkdir(target, kTRUE);
+        gSystem->mkdir(output_raw_path, kTRUE);
     }
 
-    TString target = gSystem->DirName(output_calibration_path);
-    if (gSystem->ChangeDirectory(target)) {
+    if (gSystem->ChangeDirectory(output_calibration_path)) {
         gSystem->ChangeDirectory(ARTEMIS_WORKDIR);
     } else {
-        gSystem->mkdir(target, kTRUE);
+        gSystem->mkdir(output_calibration_path, kTRUE);
     }
 
     gROOT->ProcessLine("zone");
@@ -56,7 +54,7 @@ void AlphaCalibration(TH2 *h2 = NULL, TString foutpath = "test/test.dat", const 
         return;
     }
 
-    if (output == "test/test.dat") {
+    if (foutpath == "test/test.dat") {
         std::cerr << "--Warning: output file name is DEFAULT" << std::endl;
     }
 
@@ -66,7 +64,7 @@ void AlphaCalibration(TH2 *h2 = NULL, TString foutpath = "test/test.dat", const 
         return;
     }
     std::cout << "--Info: " << output_prm << " is created" << std::endl;
-    fout << "# prm/ssd/" << output << " is created from AlphaCalibration.C" << endl;
+    fout << "# prm/ssd/" << foutpath << " is created from AlphaCalibration.C" << endl;
     fout << "# offset gain" << endl;
 
     // start searching the peaks
