@@ -8,6 +8,8 @@ set(CRIBSOURCES
     TEvtNumProcessor.cc
     TReadROOTFile.cc
     TTreePeriodicEventStore.cc
+    TModuleData.cc
+    TSegmentOutputProcessor.cc
     # mux
     mux/TMUXCalibrationProcessor.cc
     mux/TMUXData.cc
@@ -61,6 +63,8 @@ set(CRIBHEADERS
     TEvtNumProcessor.h
     TReadROOTFile.h
     TTreePeriodicEventStore.h
+    TModuleData.h
+    TSegmentOutputProcessor.h
     # mux
     mux/TMUXCalibrationProcessor.h
     mux/TMUXData.h

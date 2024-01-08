@@ -27,20 +27,20 @@ Processor:
       FileName: conf/seg/seglist.yaml
       FileFormat: yaml
 
-  - name: MyTSegmentCheckProcessor
-    type: art::TSegmentCheckProcessor
+  # Histograms
+  #  - name: SegmentHistogram
+  #    type: art::TSegmentCheckProcessor
+  #    parameter:
+  #      Ignore: # [StringVec_t] ignore segment list
+  #        - ""
+  #      ModuleList: modlist # [TString] name of the module list
+  #      SegmentList: seglist # [TString] name of the segment list
+
+  # TTree
+  - name: SegmentOutputTree
+    type: art::TSegmentOutputProcessor
     parameter:
       Ignore: # [StringVec_t] ignore segment list
         - ""
       ModuleList: modlist # [TString] name of the module list
       SegmentList: seglist # [TString] name of the segment list
-
-  - name: mapper
-    type: art::TMappingProcessor
-    parameter:
-      OutputTransparency: 1
-
-  - name: outputtree
-    type: art::TOutputTreeProcessor
-    parameter:
-      FileName: *output
