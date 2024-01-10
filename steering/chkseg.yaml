@@ -44,3 +44,4 @@ Processor:
         - ""
       ModuleList: modlist # [TString] name of the module list
       SegmentList: seglist # [TString] name of the segment list
+      FileName: *output

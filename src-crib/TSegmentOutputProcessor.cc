@@ -12,13 +12,11 @@
 #include <TArtemisUtil.h>
 #include <TClass.h>
 #include <TClonesArray.h>
-#include <TDirectory.h>
 #include <TEventObject.h>
-#include <TH2F.h>
+#include <TModuleData.h>
 #include <TModuleInfo.h>
 #include <TModuleType.h>
 #include <TROOT.h>
-#include <TRawDataObject.h>
 #include <TSegmentInfo.h>
 #include <TSegmentedData.h>
 #include <TSystem.h>
@@ -46,8 +44,6 @@ TSegmentOutputProcessor::TSegmentOutputProcessor()
     RegisterInputInfo("ModuleList", "name of the module list",
                       fModuleListName, TString("modlist"), &fModuleList, "TClonesArray", "art::TModuleType");
     RegisterProcessorParameter("Ignore", "ignore segment list", fIgnore, defaultignore);
-
-    fObjects = new TList;
 }
 
 TSegmentOutputProcessor::~TSegmentOutputProcessor() {
@@ -56,7 +52,6 @@ TSegmentOutputProcessor::~TSegmentOutputProcessor() {
             fTree->GetUserInfo()->Clear();
         fFile->Close();
     }
-    delete fObjects;
 
     // input processors are deleted elsewhere
     fSegmentedData = NULL;
@@ -82,6 +77,7 @@ void TSegmentOutputProcessor::Init(TEventCollection *col) {
     }
     TAnalysisInfo::AddTo(fFile);
     fTree = new TTree(fTreeName, fTreeName);
+    Info("init", "Created %s", fFileName.Data());
 
     Int_t nSeg = (*fSegmentList)->GetEntriesFast();
     for (Int_t iSeg = 0; iSeg != nSeg; iSeg++) {
@@ -94,24 +90,27 @@ void TSegmentOutputProcessor::Init(TEventCollection *col) {
         if (fIgnore.end() != std::find(fIgnore.begin(), fIgnore.end(), seg->GetName()))
             continue;
 
-        std::pair<int, std::pair<int, std::vector<TModuleInfo *>>> segment;
+        std::pair<int, std::vector<TModuleData *>> segment;
         segment.first = seg->GetSegID();
-        std::pair<int, std::vector<TModuleInfo *>> &module_pairs = fSegments.insert(segment).first->second;
+        std::vector<TModuleData *> &modules = fSegments.insert(segment).first->second;
 
         for (Int_t iMod = 0; iMod != nMod; iMod++) {
-            TModuleInfo *mod = seg->GetModule(iMod);
-            Int_t id = mod->GetID();
-            if (module_pairs.second.size() < (unsigned int)id + 1)
-                module_pairs.second.resize(id + 1);
-            module_pairs.second.at(id) = mod;
+            TModuleInfo *mod_info = seg->GetModule(iMod);
+            TModuleData *mod = new TModuleData(*mod_info);
+            Int_t id = mod->GetID(); // geo ID
+            if (modules.size() < (unsigned int)id + 1)
+                modules.resize(id + 1);
+            modules.at(id) = mod;
             TModuleType *type = (TModuleType *)(*fModuleList)->FindObject(seg->GetModuleType());
             Int_t nCh = type->GetNch();
-            module_pairs.first = nCh;
+            mod->SetCh(nCh);
 
+            Int_t mod_id = type->GetDecoderID();
             // prepare branch (id == 24 or 25 -> multihit TDC)
-            if (id == 24 || id == 25) {
-                std::cout << "test" << std::endl;
+            if (mod_id == 24 || mod_id == 25) {
+                std::cout << "multi" << std::endl;
             } else {
+                std::cout << "single" << std::endl;
             }
         }
     }
@@ -159,4 +158,10 @@ void TSegmentOutputProcessor::Process() {
     //            }
     //        }
     //    }
+}
+
+void TSegmentOutputProcessor::PreLoop() {
+}
+
+void TSegmentOutputProcessor::PostLoop() {
 }

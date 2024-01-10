@@ -18,6 +18,7 @@ class TSegmentOutputProcessor;
 class TSegmentInfo;
 class TSegmentedData;
 class TModuleInfo;
+class TModuleData;
 } // namespace art
 
 class TClonesArray;
@@ -40,7 +41,6 @@ class art::TSegmentOutputProcessor : public TProcessor {
     TString fTreeName;
     TFile *fFile; //! outputed file
     TTree *fTree; //! pure TTree object (not TArtTree)
-    TList *fObjects;
     TString fSegmentListName;
     TString fModuleListName;
     TClonesArray **fSegmentList; //!
@@ -48,13 +48,8 @@ class art::TSegmentOutputProcessor : public TProcessor {
 
     TSegmentedData **fSegmentedData; //!
     TString fSegmentedDataName;
-    StringVec_t fIgnore;                                                     //! list of ignored segment
-    std::map<Int_t, std::pair<Int_t, std::vector<TModuleInfo *>>> fSegments; //!
-    std::vector<std::tuple<Int_t,
-                           Int_t,
-                           std::vector<TModuleInfo *>,
-                           std::vector<std::vector<Int_t>>>>
-        fSegDatas;
+    StringVec_t fIgnore;                                   //! list of ignored segment
+    std::map<Int_t, std::vector<TModuleData *>> fSegments; //!
 
   private:
     ClassDef(TSegmentOutputProcessor, 1) // segment checking processor

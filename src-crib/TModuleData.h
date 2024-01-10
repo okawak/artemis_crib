@@ -17,19 +17,24 @@ class TModuleData;
 
 class art::TModuleData : public art::TModuleInfo {
   public:
-    TModuleData(const art::TModuleInfo &info);
+    TModuleData(const TModuleInfo &info);
     virtual ~TModuleData();
 
     TModuleData(const TModuleData &rhs);
     TModuleData &operator=(const TModuleData &rhs);
 
-  protected:
-    Int_t fNCh;
+    void SetCh(Int_t Nch) {
+        fNCh = Nch;
+    };
+
     std::vector<Int_t> fData1D;
     std::vector<std::vector<Int_t>> fData2D;
 
+  protected:
+    Int_t fNCh;
+
   private:
-    ClassDef(TModuleData, 1) // module information
+    ClassDef(TModuleData, 2) // module information
 };
 
 #endif // _TMODULEDATA_H_

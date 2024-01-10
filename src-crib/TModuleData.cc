@@ -13,7 +13,7 @@ using art::TModuleData;
 
 ClassImp(TModuleData);
 
-TModuleData::TModuleData(const art::TModuleInfo &info)
+TModuleData::TModuleData(const TModuleInfo &info)
     : art::TModuleInfo(info), fNCh(0) {
 }
 
