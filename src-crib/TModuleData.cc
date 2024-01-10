@@ -14,7 +14,7 @@ using art::TModuleData;
 ClassImp(TModuleData);
 
 TModuleData::TModuleData(const TModuleInfo &info)
-    : art::TModuleInfo(info), fNCh(0) {
+    : art::TModuleInfo(info), fNCh(0), fMod(-1) {
 }
 
 TModuleData::~TModuleData() {

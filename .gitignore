@@ -3,6 +3,7 @@
 *.swp
 *.root
 .vscode/
+test
 artemislogon.C
 thisartemis-crib.sh
 c1.png

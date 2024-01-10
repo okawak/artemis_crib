@@ -1,6 +1,6 @@
 Anchor:
-  - &input ridf/@NAME@@NUM@.ridf
-  - &output output/@NAME@/@NUM@/chkseg.root
+  - &input test/run0143.ridf
+  - &output output/chkseg.root
 
 Processor:
   - name: ridf

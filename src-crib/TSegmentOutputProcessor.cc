@@ -17,6 +17,7 @@
 #include <TModuleInfo.h>
 #include <TModuleType.h>
 #include <TROOT.h>
+#include <TRawDataObject.h>
 #include <TSegmentInfo.h>
 #include <TSegmentedData.h>
 #include <TSystem.h>
@@ -69,13 +70,11 @@ TSegmentOutputProcessor &TSegmentOutputProcessor::operator=(const TSegmentOutput
 
 void TSegmentOutputProcessor::Init(TEventCollection *col) {
     Util::PrepareDirectoryFor(fFileName);
-    TDirectory *savedir = gDirectory;
     fFile = TFile::Open(fFileName, "RECREATE");
     if (!fFile) {
         SetStateError(TString::Format("Cannot create file: %s", fFileName.Data()));
         return;
     }
-    TAnalysisInfo::AddTo(fFile);
     fTree = new TTree(fTreeName, fTreeName);
     Info("init", "Created %s", fFileName.Data());
 
@@ -106,11 +105,15 @@ void TSegmentOutputProcessor::Init(TEventCollection *col) {
             mod->SetCh(nCh);
 
             Int_t mod_id = type->GetDecoderID();
+            mod->SetMod(mod_id);
+
             // prepare branch (id == 24 or 25 -> multihit TDC)
             if (mod_id == 24 || mod_id == 25) {
-                std::cout << "multi" << std::endl;
+                Info("Init", "Set %s_%d branch", seg->GetName(), id);
+                fTree->Branch(Form("%s_%d", seg->GetName(), id), &(mod->fData2D));
             } else {
-                std::cout << "single" << std::endl;
+                Info("Init", "Set %s_%d branch", seg->GetName(), id);
+                fTree->Branch(Form("%s_%d", seg->GetName(), id), &(mod->fData1D));
             }
         }
     }
@@ -124,44 +127,79 @@ void TSegmentOutputProcessor::Init(TEventCollection *col) {
 }
 
 void TSegmentOutputProcessor::Process() {
-    //    std::map<int, std::vector<TModuleInfo *>>::iterator it;
-    //    for (it = fSegments.begin(); it != fSegments.end(); it++) {
-    //        Int_t segid = it->first;
-    //        TObjArray *arr = (*fSegmentedData)->FindSegmentByID(segid);
-    //        if (!arr) {
-    //            Warning("Process", "No segment having segid = %d", segid);
-    //            Warning("Process", " Add this segid to Ignore if this semgment is not valid temporarily");
-    //            SetStopLoop();
-    //            return;
-    //        }
-    //        Int_t nHit = arr->GetEntriesFast();
-    //        //      printf("segid = %d, nHit = %d\n",segid,nHit);
-    //        std::vector<TModuleInfo *> &modules = it->second;
-    //        //      printf("size = %u\n",modules.size());
-    //        for (Int_t iHit = 0; iHit != nHit; iHit++) {
-    //            TRawDataObject *data = (TRawDataObject *)arr->UncheckedAt(iHit);
-    //            Int_t geo = data->GetGeo();
-    //            Int_t ch = data->GetCh();
-    //            Int_t nVal = data->GetNumValues();
-    //            //         printf("Data = %s geo = %d ch = %d nVal = %d\n",data->IsA()->GetName(),geo,ch,nVal);
-    //            for (Int_t iVal = 0; iVal != nVal; iVal++) {
-    //                if (modules.size() > geo && modules[geo] != NULL) {
-    //                    TH2F *hist = (TH2F *)modules[geo]->GetHist(iVal);
-    //                    // printf("ival = %d %p\n",iVal,hist);
-    //                    if (!hist) {
-    //                        Warning("Process", "No hist of iVal#% 3d of %3d for module %s", iVal, nVal, modules[geo]->GetModuleType().Data());
-    //                        gSystem->Sleep(10);
-    //                    } else {
-    //                        hist->Fill(ch, data->GetValue(iVal));
-    //                    }
-    //                }
-    //            }
-    //        }
-    //    }
+    std::map<Int_t, std::vector<TModuleData *>>::iterator it;
+
+    for (it = fSegments.begin(); it != fSegments.end(); it++) {
+        std::vector<TModuleData *> &modules = it->second;
+        for (Int_t i = 0; i < modules.size(); i++) {
+            Int_t mod = modules[i]->GetMod();
+            if (mod < 0) {
+                continue;
+            } else if (mod == 24 || mod == 25) {
+                std::vector<Int_t> v;
+                modules[i]->fData2D.assign(modules[i]->GetNCh(), v);
+            } else {
+                modules[i]->fData1D.assign(modules[i]->GetNCh(), -1e+8);
+            }
+        }
+    }
+
+    for (it = fSegments.begin(); it != fSegments.end(); it++) {
+        Int_t segid = it->first;
+        TObjArray *arr = (*fSegmentedData)->FindSegmentByID(segid);
+        if (!arr) {
+            Warning("Process", "No segment having segid = %d", segid);
+            Warning("Process", " Add this segid to Ignore if this semgment is not valid temporarily");
+            SetStopLoop();
+            return;
+        }
+        Int_t nHit = arr->GetEntriesFast();
+        std::vector<TModuleData *> &modules = it->second;
+        for (Int_t iHit = 0; iHit != nHit; iHit++) {
+            TRawDataObject *data = (TRawDataObject *)arr->UncheckedAt(iHit);
+            Int_t geo = data->GetGeo();
+            Int_t ch = data->GetCh();
+
+            // nVal is always 2 (see TRawTiming.h), so only take iVal=0
+#if 0
+            Int_t nVal = data->GetNumValues();
+            Int_t tmp = -100;
+            for (Int_t iVal = 0; iVal < nVal; iVal++) {
+                if (modules.size() > geo && modules[geo] != NULL) {
+                    if (iVal == 0) {
+                        tmp = data->GetValue(iVal);
+                    } else {
+                        if (tmp != data->GetValue(iVal)) {
+                            std::cout << tmp << std::endl;
+                            std::cout << data->GetValue(iVal) << std::endl;
+                        }
+                    }
+                    // std::cout << data->GetValue(iVal) << std::endl;
+                }
+            }
+#endif
+
+            if (modules.size() > geo && modules[geo] != NULL) {
+                Int_t mod = modules[geo]->GetMod();
+                if (mod == 24 || mod == 25) {
+                    modules[geo]->fData2D[ch].emplace_back(data->GetValue(0));
+                } else {
+                    modules[geo]->fData1D[ch] = data->GetValue(0);
+                }
+            }
+        }
+    }
+    fTree->Fill();
 }
 
 void TSegmentOutputProcessor::PreLoop() {
 }
 
 void TSegmentOutputProcessor::PostLoop() {
+    if (!gDirectory)
+        gDirectory = gROOT;
+    TDirectory *saved = gDirectory;
+    fFile->cd();
+    fTree->Write(0, TFile::kOverwrite);
+    saved->cd();
 }

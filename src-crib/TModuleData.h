@@ -23,8 +23,14 @@ class art::TModuleData : public art::TModuleInfo {
     TModuleData(const TModuleData &rhs);
     TModuleData &operator=(const TModuleData &rhs);
 
+    Int_t GetNCh() const { return fNCh; }
     void SetCh(Int_t Nch) {
         fNCh = Nch;
+    };
+
+    Int_t GetMod() const { return fMod; }
+    void SetMod(Int_t mod) {
+        fMod = mod;
     };
 
     std::vector<Int_t> fData1D;
@@ -32,6 +38,7 @@ class art::TModuleData : public art::TModuleInfo {
 
   protected:
     Int_t fNCh;
+    Int_t fMod;
 
   private:
     ClassDef(TModuleData, 2) // module information
