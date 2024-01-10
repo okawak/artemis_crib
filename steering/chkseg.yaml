@@ -28,13 +28,13 @@ Processor:
       FileFormat: yaml
 
   # Histograms
-  #  - name: SegmentHistogram
-  #    type: art::TSegmentCheckProcessor
-  #    parameter:
-  #      Ignore: # [StringVec_t] ignore segment list
-  #        - ""
-  #      ModuleList: modlist # [TString] name of the module list
-  #      SegmentList: seglist # [TString] name of the segment list
+  - name: SegmentHistogram
+    type: art::TSegmentCheckProcessor
+    parameter:
+      Ignore: # [StringVec_t] ignore segment list
+        - ""
+      ModuleList: modlist # [TString] name of the module list
+      SegmentList: seglist # [TString] name of the segment list
 
   # TTree
   - name: SegmentOutputTree
