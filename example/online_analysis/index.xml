@@ -88,7 +88,7 @@
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/check_rawdata/index.html</link>
       <pubDate>Sun, 05 Nov 2023 14:57:50 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/check_rawdata/index.html</guid>
-      <description>last modified: 2023-12-15 by Kodai Okawa </description>
+      <description>last modified: 2024-01-11 by Kodai Okawa Artemis produces mainly TArtTree and the branches are TClonesArray(art::hoge).</description>
     </item>
   </channel>
 </rss>

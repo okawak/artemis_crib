@@ -7,9 +7,9 @@
     <meta name="generator" content="Relearn 5.22.0">
     <meta name="description" content="">
     <meta name="author" content="Kodai Okawa">
-    <title>Beam_generator :: CRIB artemis</title>
-    <link href="/artemis_crib/example/simulation/beam_generator/index.xml" rel="alternate" type="application/rss+xml" title="Beam_generator :: CRIB artemis">
-    <link href="/artemis_crib/example/simulation/beam_generator/index.print.html" rel="alternate" type="text/html" title="Beam_generator :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
+    <title>Segment ID :: CRIB artemis</title>
+    <link href="/artemis_crib/example/segid/index.xml" rel="alternate" type="application/rss+xml" title="Segment ID :: CRIB artemis">
+    <link href="/artemis_crib/example/segid/index.print.html" rel="alternate" type="text/html" title="Segment ID :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
     <link href="/artemis_crib/css/fontawesome-all.min.css?1704980285" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1704980285" rel="stylesheet"></noscript>
@@ -57,7 +57,7 @@
 
 
   </head>
-  <body class="mobile-support html" data-url="/artemis_crib/example/simulation/beam_generator/index.html">
+  <body class="mobile-support html" data-url="/artemis_crib/example/segid/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -81,27 +81,26 @@
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/example/index.html"><span itemprop="name">Example</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/example/simulation/index.html"><span itemprop="name">MC Simulation</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Beam_generator</span><meta itemprop="position" content="3"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Segment ID</span><meta itemprop="position" content="2"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
-              <a class="topbar-control" href="https://github.com/okawak/artemis_crib/tree/pages-build/content/example/simulation/beam_generator.md" target="_blank" title="Edit (CTRL&#43;ALT&#43;w)">
+              <a class="topbar-control" href="https://github.com/okawak/artemis_crib/tree/pages-build/content/example/segid.md" target="_blank" title="Edit (CTRL&#43;ALT&#43;w)">
                 <i class="fa-fw fas fa-pen"></i>
               </a>
             </div>
             <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
-              <a class="topbar-control" href="/artemis_crib/example/simulation/beam_generator/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)">
+              <a class="topbar-control" href="/artemis_crib/example/segid/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)">
                 <i class="fa-fw fas fa-print"></i>
               </a>
             </div>
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-              <a class="topbar-control" href="/artemis_crib/example/simulation/index.html" title="MC Simulation (🡐)">
+              <a class="topbar-control" href="/artemis_crib/example/index.html" title="Example (🡐)">
                 <i class="fa-fw fas fa-chevron-left"></i>
               </a>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-              <a class="topbar-control" href="/artemis_crib/example/simulation/nbodyreaction/index.html" title="Nbodyreaction (🡒)">
+              <a class="topbar-control" href="/artemis_crib/example/preparation/index.html" title="Preparation (🡒)">
                 <i class="fa-fw fas fa-chevron-right"></i>
               </a>
             </div>
@@ -125,38 +124,89 @@
           <article class="default">
             <header class="headline">
             </header>
-<h1 id="beam_generator">Beam_generator</h1>
+<h1 id="segment-id">Segment ID</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by Kodai Okawa</span></span>
-<p>The previous sections have described how to loop events from a <code>ridf</code> file or <code>root</code> file, but now I will describe how to generate events to use as a simulation.</p>
-<p>Requirements:</p>
-<ul>
-<li>src-crib/simulation/TRandomBeamGenerator</li>
-<li>src-crib/simulation/TTreeBeamGenerator</li>
-<li>src-crib/simulation/TParticleInfo</li>
-</ul>
-<hr>
-<p>As you know, an &ldquo;event store&rdquo; must be used to analyse the event loop.
-For example, in the online analysis, we used <code>TRIDFEventStore</code>, and in the offline analysis, we used <code>TTreeEventStore</code>.</p>
-<p>But when we want to simulate something, there are no data file.
-In that case, we can use <code>TCounterEventStore</code> or <code>TRandomNumberEventStore</code>.</p>
-<ul>
-<li>TCounterEventStore: generate numbers in sequence from 0 to N.</li>
-<li>TRandomNumberEventStore: generate number from 0.0 to 1.0 randomly.</li>
-</ul>
-<p>Here I will simply describe a simulation using TCounterEventStore.</p>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2024-01-11 by Kodai Okawa</span></span>
+<p>This is from ANAROOT source (<a href="https://rnc.riken.go.jp/RIBFDAQ/index.php?Tools%2FAnalysis%2FANAROOT%2FInstallation" target="_blank">https://rnc.riken.go.jp/RIBFDAQ/index.php?Tools%2FAnalysis%2FANAROOT%2FInstallation</a>)</p>
 
-<div class="box notices cstyle info">
-  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
-  <div class="box-content">
+  
+<div class="tab-panel" data-tab-group="80933fa2e4d0a1d57e810f65ca0d3f6e">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      data-tab-item="anarootsourcescoreincludesegidlisth"
+      class="tab-nav-button tab-panel-style cstyle initial active"
+      onclick="switchTab('80933fa2e4d0a1d57e810f65ca0d3f6e','anarootsourcescoreincludesegidlisth')"
+    >
+      <span>
+        <span class="tab-nav-hidden">anaroot/sources/Core/include/segidlist.h</span>
+        <span class="tab-nav-text">anaroot/sources/Core/include/segidlist.h</span>
+      </span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      data-tab-item="anarootsourcescoreincludesegidlisth"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
 
-<p>As I explained in <code>CRIB_parts</code> before, in the current artemis version, the TCounterEventStore does not seem to be recognised as EventStore.
-So if we use this EventStore, &ldquo;no event store&rdquo; comments will output.
-I don&rsquo;t think it makes problem, so it is okay comment out the part of TLoop.cc that prints &ldquo;no event store&rdquo;.
-(Possibly a problem with your environment).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// Module  0--255
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> C16        <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> C24        <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> AD413AC    <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;   <span style="color:#75715e">// AD413A + w/o Zero supp.   (CAMAC read)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> AD413ACZ   <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;    <span style="color:#75715e">// AD413A + Zero suppression (CAMAC read)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> AD413AM    <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;    <span style="color:#75715e">// AD413A + w/o Zero supp.   + Memory
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> AD413A     <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;    <span style="color:#75715e">// AD413A + Zero suppression + Memory
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> AD413AMZ   <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;    <span style="color:#75715e">// AD413A + Zero suppression + Memory
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> L3377      <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;    <span style="color:#75715e">// LeCroy 3377 Double word (CAMAC read)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> L3377CW    <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;    <span style="color:#75715e">// LeCroy 3377 Double word (CAMAC read)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> L3377CS    <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;    <span style="color:#75715e">// LeCroy 3377 Single word (CAMAC read)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> C32        <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;    <span style="color:#75715e">// C32 such as SIS32XX series
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> P7166      <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>;    <span style="color:#75715e">// Philips 7166 + w/o Zero supp.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> P716X      <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>;    <span style="color:#75715e">// Philips 7166 + w/o Zero supp.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> P716XZ     <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;    <span style="color:#75715e">// Philips 7166 + Zero suppression
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> CTM405     <span style="color:#f92672">=</span> <span style="color:#ae81ff">11</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> L4300BC    <span style="color:#f92672">=</span> <span style="color:#ae81ff">11</span>;    <span style="color:#75715e">// LeCroy 4300B + w/o Zero supp.   (CAMAC read)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> L4300BCZ   <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>;    <span style="color:#75715e">// LeCroy 4300B + Zero suppression (CAMAC read)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> L4300BM    <span style="color:#f92672">=</span> <span style="color:#ae81ff">13</span>;    <span style="color:#75715e">// LeCroy 4300B + w/o Zero supp.   + Memory
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> L4300BMZ   <span style="color:#f92672">=</span> <span style="color:#ae81ff">14</span>;    <span style="color:#75715e">// LeCroy 4300B + Zero suppression + Memory
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> UNDEFINE15 <span style="color:#f92672">=</span> <span style="color:#ae81ff">15</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> L3377MW    <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>;    <span style="color:#75715e">// LeCroy 3377 Double word   + Memory
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> L3377MS    <span style="color:#f92672">=</span> <span style="color:#ae81ff">17</span>;    <span style="color:#75715e">// LeCroy 3377 Single word   + Memory
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> UNDEFINE18 <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> MDPP19     <span style="color:#f92672">=</span> <span style="color:#ae81ff">19</span>;    <span style="color:#75715e">// Mesytech MDPP-19
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> UNDEFINE20 <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> V775       <span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> V785       <span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> V792       <span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> V550       <span style="color:#f92672">=</span> <span style="color:#ae81ff">22</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> V767       <span style="color:#f92672">=</span> <span style="color:#ae81ff">23</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> V1190      <span style="color:#f92672">=</span> <span style="color:#ae81ff">24</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> V1190A     <span style="color:#f92672">=</span> <span style="color:#ae81ff">24</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> V1190B     <span style="color:#f92672">=</span> <span style="color:#ae81ff">24</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> V1290      <span style="color:#f92672">=</span> <span style="color:#ae81ff">25</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> V1190C     <span style="color:#f92672">=</span> <span style="color:#ae81ff">26</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> V7XXBIGEND <span style="color:#f92672">=</span> <span style="color:#ae81ff">27</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> NEULANDTS  <span style="color:#f92672">=</span> <span style="color:#ae81ff">28</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> DSP        <span style="color:#f92672">=</span> <span style="color:#ae81ff">29</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> V1740      <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> A3100      <span style="color:#f92672">=</span> <span style="color:#ae81ff">31</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> MADC32     <span style="color:#f92672">=</span> <span style="color:#ae81ff">32</span>;    <span style="color:#75715e">// Mesytech ADC
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> MQDC32     <span style="color:#f92672">=</span> <span style="color:#ae81ff">33</span>;    <span style="color:#75715e">// Mesytech QDC
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> MTDC32     <span style="color:#f92672">=</span> <span style="color:#ae81ff">34</span>;    <span style="color:#75715e">// Mesytech TDC
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> UNDEFINE35 <span style="color:#f92672">=</span> <span style="color:#ae81ff">35</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> AMTTDC     <span style="color:#f92672">=</span> <span style="color:#ae81ff">36</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> SIS3301    <span style="color:#f92672">=</span> <span style="color:#ae81ff">37</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> LUPOIO     <span style="color:#f92672">=</span> <span style="color:#ae81ff">41</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> LUPOTS     <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> LUPOMTS    <span style="color:#f92672">=</span> <span style="color:#ae81ff">43</span>;  <span style="color:#75715e">// for dead time monitor
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> MUST2VXI   <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> MINOS      <span style="color:#f92672">=</span> <span style="color:#ae81ff">53</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> TACQUILA   <span style="color:#f92672">=</span> <span style="color:#ae81ff">54</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> A3400      <span style="color:#f92672">=</span> <span style="color:#ae81ff">55</span>;</span></span></code></pre></div></div>
+    </div>
+  </div>
 </div>
-</div>
-
             <footer class="footline">
 
             </footer>
@@ -221,6 +271,7 @@ I don&rsquo;t think it makes problem, so it is okay comment out the part of TLoo
           <li data-nav-id="/artemis_crib/crib_parts/newcommand/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/newcommand/index.html">New commands</a></li>
           <li data-nav-id="/artemis_crib/crib_parts/minor_change/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/minor_change/index.html">Minor changes</a></li></ul></li>
           <li data-nav-id="/artemis_crib/example/index.html" class="parent "><a class="padding" href="/artemis_crib/example/index.html">Example</a><ul id="R-subsections-daee4b63470ea20ac3f41145e3651181" class="morespace collapsible-menu">
+          <li data-nav-id="/artemis_crib/example/segid/index.html" class="active"><a class="padding" href="/artemis_crib/example/segid/index.html">Segment ID</a></li>
           <li data-nav-id="/artemis_crib/example/preparation/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/index.html">Preparation</a><ul id="R-subsections-758dfbc2d22339c29b165559a2ff4f50" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/example/preparation/basic/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/basic/index.html">Basic</a></li>
           <li data-nav-id="/artemis_crib/example/preparation/tref/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/tref/index.html">Tref for V1190</a></li>
@@ -248,8 +299,8 @@ I don&rsquo;t think it makes problem, so it is okay comment out the part of TLoo
           <li data-nav-id="/artemis_crib/example/offline_analysis/merge_files/index.html" class=""><a class="padding" href="/artemis_crib/example/offline_analysis/merge_files/index.html">Merge files</a></li>
           <li data-nav-id="/artemis_crib/example/offline_analysis/python_environment/index.html" class=""><a class="padding" href="/artemis_crib/example/offline_analysis/python_environment/index.html">Python environment</a></li>
           <li data-nav-id="/artemis_crib/example/offline_analysis/pyroot/index.html" class=""><a class="padding" href="/artemis_crib/example/offline_analysis/pyroot/index.html">pyROOT</a></li></ul></li>
-          <li data-nav-id="/artemis_crib/example/simulation/index.html" class="parent "><a class="padding" href="/artemis_crib/example/simulation/index.html">MC Simulation</a><ul id="R-subsections-5a1dec365fec379b9ed16a056ece98a8" class="morespace collapsible-menu">
-          <li data-nav-id="/artemis_crib/example/simulation/beam_generator/index.html" class="active"><a class="padding" href="/artemis_crib/example/simulation/beam_generator/index.html">Beam_generator</a></li>
+          <li data-nav-id="/artemis_crib/example/simulation/index.html" class=""><a class="padding" href="/artemis_crib/example/simulation/index.html">MC Simulation</a><ul id="R-subsections-5a1dec365fec379b9ed16a056ece98a8" class="morespace collapsible-menu">
+          <li data-nav-id="/artemis_crib/example/simulation/beam_generator/index.html" class=""><a class="padding" href="/artemis_crib/example/simulation/beam_generator/index.html">Beam_generator</a></li>
           <li data-nav-id="/artemis_crib/example/simulation/nbodyreaction/index.html" class=""><a class="padding" href="/artemis_crib/example/simulation/nbodyreaction/index.html">Nbodyreaction</a></li>
           <li data-nav-id="/artemis_crib/example/simulation/geometry/index.html" class=""><a class="padding" href="/artemis_crib/example/simulation/geometry/index.html">Geometry</a></li>
           <li data-nav-id="/artemis_crib/example/simulation/detect_particle/index.html" class=""><a class="padding" href="/artemis_crib/example/simulation/detect_particle/index.html">Detect_particle</a></li>
