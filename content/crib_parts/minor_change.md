@@ -56,6 +56,29 @@ After the command, the projected histogram will automatically be displayed.
  }
 ```
 
+### TModuleInfo class
+
+In the CRIB processor, there is a processor that inherits from TModuleInfo, [TModuleData](https://github.com/okawak/artemis_crib/blob/main/src-crib/TModuleData.h).
+In the constractor of this class use `copy constractor` of TModuleInfo, but the default artemis doesn't implement it.
+This class is used when we want to check the raw data.
+For the detail, please see [check raw data page](https://okawak.github.io/artemis_crib/example/online_analysis/check_rawdata/index.html).
+
+Therefore, we modified this like this:
+```diff { wrap="false" title="artemis/sources/loop/TModuleInfo.cc" lineNos="true" lineNoStart="31" }
+  TModuleInfo::TModuleInfo(const TModuleInfo& rhs)
++   : TParameterObject(rhs),
++   fID(rhs.fID),
++   fType(rhs.fType),
++   fHists(nullptr)
+  {
++   if (rhs.fHist) {
++     fHists = new TObjArray(*(rhs.fHists));
++   }
++
++   fRanges = rhs.fRanges;
+  }
+```
+
 <!--
 ### TCatPadManager
 bug???
