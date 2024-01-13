@@ -6,7 +6,9 @@ a() {
         return 1
     fi
 
-    if [ -f .vncdisplay ]; then
+    if [ -z "$SSH_CONNECTION" ]; then
+        artemis -l "$@"
+    elif [ -f .vncdisplay ]; then
         DISPLAY=:$(cat .vncdisplay) artemis -l "$@"
     else
         artemis -l "$@"

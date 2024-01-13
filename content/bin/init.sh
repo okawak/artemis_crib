@@ -3,8 +3,8 @@
 
 set -u
 
-VERSION="0.1"
-DATE="2023-10-31"
+VERSION="0.1.1"
+DATE="2024-01-13"
 URL_BASE="https://okawak.github.io/artemis_crib"
 ART_ANALYSIS_DIR="${HOME}/art_analysis"
 
