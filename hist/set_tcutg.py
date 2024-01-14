@@ -89,7 +89,7 @@ def get_convex_array(polygon):
                     points[(i + 2) % len(points)],
                 )
                 triangle = Polygon(p1, p2, p3)
-                p_in = get_point_inside(polygon, p1, p2)
+                p_in = get_point_inside(triangle, p1, p2)
 
                 if all(
                     not triangle.encloses_point(p)
@@ -122,7 +122,7 @@ def get_inequalities(points):
         sys.exit()
 
     polys = get_convex_array(poly)
-    if all(not pol.is_convex for pol in polys):
+    if any(not pol.is_convex for pol in polys):
         print("failed to make convex object")
         sys.exit()
 
