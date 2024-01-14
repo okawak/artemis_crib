@@ -203,6 +203,7 @@ if __name__ == "__main__":
     points = []
     for i in range(cut.GetN()):
         points.append((cut.GetPointX(i), cut.GetPointY(i)))
+    points.pop()
 
     x, y = symbols(cut.GetVarX() + " " + cut.GetVarY())
     result_inequalities = get_inequalities(points)
