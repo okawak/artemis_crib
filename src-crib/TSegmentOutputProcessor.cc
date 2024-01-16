@@ -23,6 +23,7 @@
 #include <TSystem.h>
 #include <TTree.h>
 #include <algorithm>
+#include <constant.h>
 
 using art::TSegmentOutputProcessor;
 
@@ -137,9 +138,10 @@ void TSegmentOutputProcessor::Process() {
                 continue;
             } else if (mod == 24 || mod == 25) {
                 std::vector<Int_t> v;
+                v.emplace_back(kInvalidI);
                 modules[i]->fData2D.assign(modules[i]->GetNCh(), v);
             } else {
-                modules[i]->fData1D.assign(modules[i]->GetNCh(), -1e+8);
+                modules[i]->fData1D.assign(modules[i]->GetNCh(), kInvalidI);
             }
         }
     }
@@ -182,7 +184,11 @@ void TSegmentOutputProcessor::Process() {
             if (modules.size() > geo && modules[geo] != NULL) {
                 Int_t mod = modules[geo]->GetMod();
                 if (mod == 24 || mod == 25) {
-                    modules[geo]->fData2D[ch].emplace_back(data->GetValue(0));
+                    if (modules[geo]->fData2D[ch].size() == 1) {
+                        modules[geo]->fData2D[ch][0] = data->GetValue(0);
+                    } else {
+                        modules[geo]->fData2D[ch].emplace_back(data->GetValue(0));
+                    }
                 } else {
                     modules[geo]->fData1D[ch] = data->GetValue(0);
                 }

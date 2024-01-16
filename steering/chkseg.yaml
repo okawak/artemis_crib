@@ -3,6 +3,9 @@ Anchor:
   - &output output/@NAME@/@NUM@/chkseg@NAME@@NUM@.root
 
 Processor:
+  - name: timer
+    type: art::TTimerProcessor
+
   - name: ridf
     type: art::TRIDFEventStore
     parameter:
