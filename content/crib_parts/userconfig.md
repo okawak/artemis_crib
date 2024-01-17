@@ -48,6 +48,9 @@ What we wanted to do most is to register user-defined commands, which can be don
 
 ```cpp { wrap="false" title="userlogon.C" }
 {
+   // load user function
+   gROOT->ProcessLine(".L macro/UserUtil.C");
+
    // User commands register
    // cf definition: TCatCmdFactory *cf = TCatCmdFactory::Instance();
    cf->Register(TCatCmdLoopStart::Instance());
@@ -64,5 +67,10 @@ What we wanted to do most is to register user-defined commands, which can be don
    TTree::SetMaxTreeSize( 1000000000000LL ); // 1TB
 }
 ```
+The first line `gROOT->ProcessLine(".L macro/UserUtil.C")` load the user definition function.
+You can add any function to the "macro/UserUtil.C" file, and the function to load TCutG object in "/gate/*.root" directory is written defaultly.
+For more detail, please see [tcutg command](../newcommand) and [gate](../../example/online_analysis/gate) pages.
+
+
 (For some reason, an error occurred when writing in artemislogon.C.)
 You can also customise it in other ways to make it easier for you. For example, when creating a TTree, a setting to increase the file size limit is also included by default.

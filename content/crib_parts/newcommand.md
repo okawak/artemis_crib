@@ -10,7 +10,7 @@ tags: ["CRIB"]
 {{% badge %}}{{< signature >}}{{% /badge %}}
 
 Various commands (mainly the same with ANAPAW commands) have been developed for CRIB experiment. 
-For more information, please click [here (art-work-dir/src-crib/commands)](https://github.com/okawak/artemis_crib/tree/main/src-crib/commands).
+For more information, please click [here (src-crib/commands)](https://github.com/okawak/artemis_crib/tree/main/src-crib/commands).
 These commands are registered in userlogon.C. (See previous section.)
 
 This section explains how to use them.
@@ -102,11 +102,57 @@ artemis [9]
 
 {{< figure src="xstatus.png" width=600 >}}
 
----
-## ---under development---
-
 ### tcutg
+For `2D` histograms, this command create TCutG object and store in a ROOT file.
+If you select to save the object, the file will place to the `gate/*.root` directory.
+There objects are automatically loaded. (please check [user config](../userconfig) page.) 
+
+This is the example how to use this command.
+
+```shell { wrap="false"}
+artemis [] ht something
+artemis [] tc
+Info in <TCatCmdTCutG::Cmd>: Xaxis name : f2ppac.fX  Yaxis name : f2ppac.fY
+Info in <TCatCmdTCutG::Cmd>: When you have finished specifying the area (last point), double-click on it.
+Info in <TCatCmdTCutG::Cmd>: (x, y) = (9.050404, 10.301410)
+Info in <TCatCmdTCutG::Cmd>: (x, y) = (5.047341, -8.294592)
+Info in <TCatCmdTCutG::Cmd>: (x, y) = (-12.183236, -3.839300)
+Info in <TCatCmdTCutG::Cmd>: (x, y) = (3.306878, -15.074384)
+Info in <TCatCmdTCutG::Cmd>: (x, y) = (-3.306878, -32.120720)
+Info in <TCatCmdTCutG::Cmd>: (x, y) = (9.920635, -15.461801)
+Info in <TCatCmdTCutG::Cmd>: (x, y) = (18.274854, -29.989928)
+Info in <TCatCmdTCutG::Cmd>: (x, y) = (16.186299, -11.200217)
+Info in <TCatCmdTCutG::Cmd>: (x, y) = (35.157338, -4.420425)
+Info in <TCatCmdTCutG::Cmd>: (x, y) = (14.271791, -4.807841)
+Info in <TCatCmdTCutG::Cmd>: (x, y) = (10.964912, 9.332869)
+Info in <TCatCmdTCutG::Cmd>: (x, y) = (10.964912, 9.332869)
+if you want to save it, input the TCutG name [name/exit] f2star
+Info in <TCatCmdTCutG::Cmd>: Created gate/f2star.root
+```
+
+{{< figure src="tcutg_raw.png" width=600 >}}
+
+To select an area, click on the vertices of the area you want to select, then double-click at the last vertex.
+If you want to save this object, enter the "cut" name.
+In this example, I input the `f2star` as the object name.
+If you don't want to save, enter "exit".
+
+Then the `gate/f2star.root` will be created.
+And after reload the artemis, the gate will be loaded automatically and we can use histogram definition and "tree->Draw" selection part.
+For the detail please check [gate](../../example/online_analysis/gate) page.
+
+```shell { wrap="false" }
+artemis [] tree->Draw("f2ppac.fY:f2ppac.fX>>(200,-50.,50., 200,-50.,50.)","f2star","colz")
+```
+
+{{< figure src="tcutg.png" width=600 >}}
+
+
+---
+
+## ---under development---
 
 ### erase
 
 ### draw
+
