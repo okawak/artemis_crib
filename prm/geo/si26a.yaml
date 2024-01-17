@@ -57,6 +57,12 @@ conposition:
       thickness: [0.75, 1.489, 1.485]
       material: [Si]
 
+  target:
+    - name: alpha
+      is_gas: true
+      z_position: 0.0 # if it's gas target, not use
+      thickness: 500.0 # mm 
+
 volume:
   top: # detector world
     name: TOP
@@ -91,17 +97,3 @@ volume:
       material: 1
       size: [50.0, 50.0, 1.0] # mm
 
-  # not used
-  tracking_detector:
-    - name: PPACa
-      type: box
-      material: 0
-      size: [0.0, 0.0, 0.0] # mm
-
-    - name: PPACb
-      type: box
-      material: 0
-      size: [0.0, 0.0, 0.0] # mm
-
-  target:
-    - name: alpha

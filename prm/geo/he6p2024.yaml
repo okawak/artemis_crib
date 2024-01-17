@@ -70,7 +70,7 @@ conposition:
   target:
     - name: CH2
       is_gas: false
-      z_position: 0.0
+      z_position: 0.0 # if it's gas target, not use
       thickness: 0.050 # mm 
 
     - name: C
