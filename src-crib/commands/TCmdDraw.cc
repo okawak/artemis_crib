@@ -1,10 +1,10 @@
-/*
-   @File name     : TCmdDraw.cc
-   @description   :
-   @Author        : Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
-   @Created date  : 2023-06-13 17:51:08
-   @Last modified : 2023-12-20 21:29:57
-*/
+/**
+ * @file    TCmdDraw.cc
+ * @brief
+ * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2024-06-13 18:57:52
+ * @note
+ */
 
 #include "TCmdDraw.h"
 

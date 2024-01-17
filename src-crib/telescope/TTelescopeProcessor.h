@@ -1,7 +1,10 @@
-// K.Okawa created <okawa@cns.s.u-tokyo.ac.jp>
-
-/* 
- * if no valid converter given, this processor does nothing.
+/**
+ * @file    TTelescopeProcessor.h
+ * @brief   gather the information to the one object
+ * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2024-01-17 16:53:01
+ * @note    if no valid converter given, this processor does nothing.
+ *          it assume we use DSSSD
  */
 
 #ifndef _TTELESCOPEPROCESSOR_H_
@@ -10,47 +13,46 @@
 #include <TProcessor.h>
 
 namespace art {
-   class TTelescopeProcessor;
-   class TTelescopeParameter;
-}
+class TTelescopeProcessor;
+class TTelescopeParameter;
+} // namespace art
 
 class TClonesArray;
 
 class art::TTelescopeProcessor : public TProcessor {
-public:
-   // Default constructor
-   TTelescopeProcessor();
-   virtual ~TTelescopeProcessor();
+  public:
+    // Default constructor
+    TTelescopeProcessor();
+    virtual ~TTelescopeProcessor();
 
-   virtual void Init(TEventCollection *col);
-   virtual void Process();
+    virtual void Init(TEventCollection *col);
+    virtual void Process();
 
-   Bool_t debug_flag;
+  protected:
+    TString fInputColName1; //! from X strip SSD
+    TString fInputColName2; //! from Y strip SSD
+    TString fInputColName3; //! from thick SSD array
+    TString fOutputColName; //! output object
 
-protected:
-   TString        fInputColName1;
-   TString        fInputColName2;
-   TString        fInputColName3;
-   TString        fOutputColName;
-   TClonesArray **fInData1; //!
-   TClonesArray **fInData2; //!
-   TClonesArray **fInData3; //!
-   TClonesArray  *fOutData; //!
+    TClonesArray **fInData1; //! TTimingChargeData array from X strip SSD
+    TClonesArray **fInData2; //! TTimingChargeData array from Y strip SSD
+    TClonesArray **fInData3; //! TTimingChargeData array from thick SSDs
+    TClonesArray *fOutData;  //! TTelescopeData array
 
-   Bool_t fInputHasData;
+    Bool_t fInputHasData;
 
-   // from parameter file
-   TString fParameterName; 
-   TClonesArray **fParameterSet; //!
-   TTelescopeParameter *fTelescopeParameter;
+    // from parameter file
+    TString fParameterName;
+    TClonesArray **fParameterSet; //!
+    TTelescopeParameter *fTelescopeParameter;
 
-private:
-   // Copy constructor (prohibited)
-   TTelescopeProcessor(const TTelescopeProcessor& rhs);
-   // Assignment operator (prohibited)
-   TTelescopeProcessor& operator=(const TTelescopeProcessor& rhs);
+  private:
+    // Copy constructor (prohibited)
+    TTelescopeProcessor(const TTelescopeProcessor &rhs);
+    // Assignment operator (prohibited)
+    TTelescopeProcessor &operator=(const TTelescopeProcessor &rhs);
 
-   ClassDef(TTelescopeProcessor,2) // processor for calibration of timing and charge data
+    ClassDef(TTelescopeProcessor, 2) // processor for calibration of timing and charge data
 };
 
 #endif // _TTELESCOPEPROCESSOR_H_

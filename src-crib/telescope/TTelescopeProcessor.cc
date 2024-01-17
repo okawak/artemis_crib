@@ -1,229 +1,226 @@
-// K.Okawa created <okawa@cns.s.u-tokyo.ac.jp>
-// treat the largest value of each layor
+/**
+ * @file    TTelescopeProcessor.cc
+ * @brief   gather the information to the one object
+ * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2024-01-17 16:51:53
+ * @note    treat the largest value of each layor
+ */
 
 #include "TTelescopeProcessor.h"
 
-#include "ITiming.h"
 #include "ICharge.h"
-#include "constant.h"
+#include "ITiming.h"
 #include "TDataObject.h"
-#include "TTimingChargeData.h"
 #include "TTelescopeData.h"
 #include "TTelescopeParameter.h"
+#include "TTimingChargeData.h"
+#include "constant.h"
 
-#include <TClonesArray.h>
 #include <TClass.h>
+#include <TClonesArray.h>
 
 using art::TTelescopeProcessor;
 
-ClassImp(art::TTelescopeProcessor)
+ClassImp(art::TTelescopeProcessor);
 
 // Default constructor
 TTelescopeProcessor::TTelescopeProcessor()
-   : fInData1(NULL), fInData2(NULL), fInData3(NULL), fOutData(NULL)
-{
-   RegisterInputCollection("InputCollection1",
-			   "array of objects inheriting from art::TTimingChargeData",
-			   fInputColName1,TString("dEX"));
-   RegisterInputCollection("InputCollection2",
-			   "array of objects inheriting from art::TTimingChargeData",
-			   fInputColName2,TString("dEY"));
-   RegisterInputCollection("InputCollection3",
-			   "array of objects inheriting from art::TTimingChargeData",
-			   fInputColName3,TString("E"));
-   RegisterOutputCollection("OutputCollection","output class will be art::TTelescopeData",
-			   fOutputColName,TString("telescope"));
+    : fInData1(NULL), fInData2(NULL), fInData3(NULL), fOutData(NULL) {
+    RegisterInputCollection("InputCollection1",
+                            "array of objects inheriting from art::TTimingChargeData",
+                            fInputColName1, TString("dEX"));
+    RegisterInputCollection("InputCollection2",
+                            "array of objects inheriting from art::TTimingChargeData",
+                            fInputColName2, TString("dEY"));
+    RegisterInputCollection("InputCollection3",
+                            "array of objects inheriting from art::TTimingChargeData",
+                            fInputColName3, TString("E"));
+    RegisterOutputCollection("OutputCollection", "output class will be art::TTelescopeData",
+                             fOutputColName, TString("telescope"));
 
-   RegisterOptionalInputInfo("TelescopeParameter","name of telescope parameter",fParameterName,
-            TString("prm:telescope"),&fParameterSet,"TClonesArray","art::TTelescopeParameter");
-
+    RegisterOptionalInputInfo("TelescopeParameter", "name of telescope parameter", fParameterName,
+                              TString("prm:telescope"), &fParameterSet, "TClonesArray", "art::TTelescopeParameter");
 }
 
-TTelescopeProcessor::~TTelescopeProcessor()
-{
-   delete fOutData;
-   fOutData = NULL;
+TTelescopeProcessor::~TTelescopeProcessor() {
+    delete fOutData;
+    fOutData = NULL;
 }
 
+void TTelescopeProcessor::Init(TEventCollection *col) {
+    Info("Init", "%s %s %s => %s", fInputColName1.Data(), fInputColName2.Data(), fInputColName3.Data(), fOutputColName.Data());
 
+    // check if X strip SSD object exist or not
+    fInData1 = reinterpret_cast<TClonesArray **>(col->GetObjectRef(fInputColName1.Data()));
+    if (!fInData1) {
+        SetStateError(TString::Format("input not found: %s", fInputColName1.Data()));
+        return;
+    }
 
-void TTelescopeProcessor::Init(TEventCollection *col)
-{
-   Info("Init","%s %s %s => %s",fInputColName1.Data(),fInputColName2.Data(),fInputColName3.Data(),fOutputColName.Data());
-   fInData1 = reinterpret_cast<TClonesArray**>(col->GetObjectRef(fInputColName1.Data()));
-   if (!fInData1) {
-      SetStateError(TString::Format("input not found: %s",fInputColName1.Data()));
-      return;
-   }
+    // check if Y strip SSD object exist or not
+    fInData2 = reinterpret_cast<TClonesArray **>(col->GetObjectRef(fInputColName2.Data()));
+    if (!fInData2) {
+        SetStateError(TString::Format("input not found: %s", fInputColName2.Data()));
+        return;
+    }
 
-   fInData2 = reinterpret_cast<TClonesArray**>(col->GetObjectRef(fInputColName2.Data()));
-   if (!fInData2) {
-      SetStateError(TString::Format("input not found: %s",fInputColName2.Data()));
-      return;
-   }
+    // check if thick SSDs object exist or not
+    fInData3 = reinterpret_cast<TClonesArray **>(col->GetObjectRef(fInputColName3.Data()));
+    if (!fInData3) {
+        SetStateError(TString::Format("input not found: %s", fInputColName3.Data()));
+        return;
+    }
 
-   fInData3 = reinterpret_cast<TClonesArray**>(col->GetObjectRef(fInputColName3.Data()));
-   if (!fInData3) {
-      SetStateError(TString::Format("input not found: %s",fInputColName3.Data()));
-      return;
-   }
+    // get telescope parameter object
+    TTelescopeParameter *prm = dynamic_cast<TTelescopeParameter *>((*fParameterSet)->FindObject(fParameterName));
+    if (!prm) {
+        SetStateError(TString::Format("No such parameter '%s' is found", fParameterName.Data()));
+        return;
+    }
 
-   TTelescopeParameter *prm = dynamic_cast<TTelescopeParameter*>((*fParameterSet)->FindObject(fParameterName));
-   if (!prm) {
-      SetStateError(TString::Format("No such parameter '%s' is found", fParameterName.Data()));
-      return;
-   }
+    // if(prm->GetdE_dE_TimeRange(0) > prm->GetdE_dE_TimeRange(1)) {
+    //    SetStateError("dE_dE timerange : min > max");
+    //    return;
+    // }
 
-   //if(prm->GetdE_dE_TimeRange(0) > prm->GetdE_dE_TimeRange(1)) {
-   //   SetStateError("dE_dE timerange : min > max");
-   //   return;
-   //}
+    // if(prm->GetdE_E_TimeRange(0) > prm->GetdE_E_TimeRange(1)) {
+    //    SetStateError("dE_E timerange : min > max");
+    //    return;
+    // }
 
-   //if(prm->GetdE_E_TimeRange(0) > prm->GetdE_E_TimeRange(1)) {
-   //   SetStateError("dE_E timerange : min > max");
-   //   return;
-   //}
+    fTelescopeParameter = prm;
 
-   fTelescopeParameter = prm;
+    const TClass *const cl1 = (*fInData1)->GetClass();
+    const TClass *const cl2 = (*fInData2)->GetClass();
+    const TClass *const cl3 = (*fInData3)->GetClass();
+    fInputHasData = (cl1->InheritsFrom(art::TTimingChargeData::Class())) && (cl2->InheritsFrom(art::TTimingChargeData::Class())) && (cl3->InheritsFrom(art::TTimingChargeData::Class()));
 
+    if (!fInputHasData) {
+        SetStateError("contents of input array must inherit from art::TTimingChargeData");
+        return;
+    }
 
-   const TClass *const cl1 = (*fInData1)->GetClass();
-   const TClass *const cl2 = (*fInData2)->GetClass();
-   const TClass *const cl3 = (*fInData3)->GetClass();
-   fInputHasData = (cl1->InheritsFrom(art::TTimingChargeData::Class())) && (cl2->InheritsFrom(art::TTimingChargeData::Class())) && (cl3->InheritsFrom(art::TTimingChargeData::Class()));
-
-   if(!fInputHasData){
-      SetStateError("contents of input array must inherit from art::TTimingChargeData");
-      return;
-   }
-
-   fOutData = new TClonesArray("art::TTelescopeData");
-   fOutData->SetName(fOutputColName);
-   col->Add(fOutputColName,fOutData,fOutputIsTransparent);
-
-   debug_flag = kTRUE;
+    fOutData = new TClonesArray("art::TTelescopeData");
+    fOutData->SetName(fOutputColName);
+    col->Add(fOutputColName, fOutData, fOutputIsTransparent);
 }
 
+void TTelescopeProcessor::Process() {
+    fOutData->Clear("C");
 
+    Int_t nData1 = (*fInData1)->GetEntriesFast();
+    Int_t nData2 = (*fInData2)->GetEntriesFast();
+    Int_t nData3 = (*fInData3)->GetEntriesFast();
 
-void TTelescopeProcessor::Process()
-{
-   fOutData->Clear("C");
+    // if no hit, do nothing
+    if (nData1 == 0 && nData2 == 0 && nData3 == 0) {
+        return;
+    }
 
-   Int_t nData1 = (*fInData1)->GetEntriesFast();
-   Int_t nData2 = (*fInData2)->GetEntriesFast();
-   Int_t nData3 = (*fInData3)->GetEntriesFast();
+    TTelescopeParameter *prm = (TTelescopeParameter *)fTelescopeParameter;
+    Int_t numE = prm->GetEdetNum();
+    if (nData3 > numE) {
+        SetStateError(TString::Format("entry of E detector %d is over %d", nData3, numE));
+        return;
+    }
 
-   if(nData1 == 0 && nData2 == 0 && nData3 == 0){ return; }
+    Int_t itr = 0;
+    TTelescopeData *outData = static_cast<TTelescopeData *>(fOutData->ConstructedAt(itr));
+    itr++;
+    outData->Init(numE);
+    outData->SetID(prm->GetTelescopeID());
 
-   TTelescopeParameter *prm = (TTelescopeParameter*) fTelescopeParameter; 
-   Int_t numE = prm->GetEdetNum();
-   if(nData3 > numE){
-      SetStateError(TString::Format("entry of E detector %d is over %d", nData3, numE));
-      return;
-   }
+    Double_t dE = 0.0;
+    Double_t dEX = 0.0;
+    Double_t dEY = 0.0;
+    Double_t E = 0.0;
+    Double_t Etotal = 0.0;
 
-   Int_t itr = 0;
-   TTelescopeData *outData = static_cast<TTelescopeData*>(fOutData->ConstructedAt(itr));
-   itr++;
-   outData->Init(numE);
-   outData->SetID(prm->GetTelescopeID());
+    // dEX process
+    Int_t dEXID = -1;
+    Double_t dEX_tmp = -500.0;
+    for (Int_t iData1 = 0; iData1 < nData1; ++iData1) {
+        const TDataObject *const inData1 = static_cast<TDataObject *>((*fInData1)->At(iData1));
+        const TTimingChargeData *const Data1 = dynamic_cast<const TTimingChargeData *>(inData1);
+        if (dEX_tmp < Data1->GetCharge() && Data1->GetCharge() < 50.0) {
+            dEXID = iData1;
+            dEX_tmp = Data1->GetCharge();
+        }
+    }
 
-   Double_t dE = 0.0;
-   Double_t dEX = 0.0;
-   Double_t dEY = 0.0;
-   Double_t E = 0.0;
-   Double_t Etotal = 0.0;
+    if (nData1 != 0 && dEXID != -1) {
+        const TDataObject *const inData1 = static_cast<TDataObject *>((*fInData1)->At(dEXID));
+        const TTimingChargeData *const Data1 = dynamic_cast<const TTimingChargeData *>(inData1);
+        Double_t energydEX = Data1->GetCharge();
+        if (energydEX > prm->GetdEXEnergyThreshold()) {
+            outData->SetXID(Data1->GetDetID());
+            outData->SetdEX(energydEX);
+            outData->SetdEXTiming(Data1->GetTiming());
+            dEX = energydEX;
+            dE += energydEX;
+            Etotal += energydEX;
+        }
+    }
 
-   // dEX process
-   Int_t dEXID = -1;
-   Double_t dEX_tmp=-500.0;
-   for(Int_t iData1 = 0; iData1 < nData1; ++iData1){
-      const TDataObject *const inData1 = static_cast<TDataObject*>((*fInData1)->At(iData1));
-      const TTimingChargeData *const Data1 = dynamic_cast<const TTimingChargeData*>(inData1);
-      if(dEX_tmp < Data1->GetCharge() && Data1->GetCharge() < 50.0){
-         dEXID = iData1;
-         dEX_tmp = Data1->GetCharge();
-      }
-   }
+    // dEY process
+    Int_t dEYID = -1;
+    Double_t dEY_tmp = -500.0;
+    for (Int_t iData2 = 0; iData2 < nData2; ++iData2) {
+        const TDataObject *const inData2 = static_cast<TDataObject *>((*fInData2)->At(iData2));
+        const TTimingChargeData *const Data2 = dynamic_cast<const TTimingChargeData *>(inData2);
+        if (dEY_tmp < Data2->GetCharge() && Data2->GetCharge() < 50.0) {
+            dEYID = iData2;
+            dEY_tmp = Data2->GetCharge();
+        }
+    }
 
-   if(nData1 != 0 && dEXID != -1){
-      const TDataObject *const inData1 = static_cast<TDataObject*>((*fInData1)->At(dEXID));
-      const TTimingChargeData *const Data1 = dynamic_cast<const TTimingChargeData*>(inData1);
-      Double_t energydEX = Data1->GetCharge();
-      if(energydEX > prm->GetdEXEnergyThreshold()){
-         outData->SetXID( Data1->GetDetID() );
-         outData->SetdEX( energydEX );
-         outData->SetdEXTiming( Data1->GetTiming() );
-         dEX = energydEX;
-         dE += energydEX;
-         Etotal += energydEX;
-      }
-   }
+    if (nData2 != 0 && dEYID != -1) {
+        const TDataObject *const inData2 = static_cast<TDataObject *>((*fInData2)->At(dEYID));
+        const TTimingChargeData *const Data2 = dynamic_cast<const TTimingChargeData *>(inData2);
+        Double_t energydEY = Data2->GetCharge();
+        if (energydEY > prm->GetdEYEnergyThreshold()) {
+            outData->SetYID(Data2->GetDetID());
+            outData->SetdEY(energydEY);
+            outData->SetdEYTiming(Data2->GetTiming());
+            dEY = energydEY;
+            dE += energydEY;
+            Etotal += energydEY;
+        }
+    }
 
-   // dEY process
-   Int_t dEYID = -1;
-   Double_t dEY_tmp=-500.0;
-   for(Int_t iData2 = 0; iData2 < nData2; ++iData2){
-      const TDataObject *const inData2 = static_cast<TDataObject*>((*fInData2)->At(iData2));
-      const TTimingChargeData *const Data2 = dynamic_cast<const TTimingChargeData*>(inData2);
-      if(dEY_tmp < Data2->GetCharge() && Data2->GetCharge() < 50.0){
-         dEYID = iData2;
-         dEY_tmp = Data2->GetCharge();
-      }
-   }
+    // if(prm->GetdEIsDSSD() && TMath::Abs(outData->GetdEX() - outData->GetdEY()) > 3.0){
+    //    return;
+    // }
 
-   if(nData2 != 0 && dEYID != -1){
-      const TDataObject *const inData2 = static_cast<TDataObject*>((*fInData2)->At(dEYID));
-      const TTimingChargeData *const Data2 = dynamic_cast<const TTimingChargeData*>(inData2);
-      Double_t energydEY = Data2->GetCharge();
-      if(energydEY > prm->GetdEYEnergyThreshold()){
-         outData->SetYID( Data2->GetDetID() );
-         outData->SetdEY( energydEY );
-         outData->SetdEYTiming( Data2->GetTiming() );
-         dEY = energydEY;
-         dE += energydEY;
-         Etotal += energydEY;
-      }
-   }
-   
-   //if(prm->GetdEIsDSSD() && TMath::Abs(outData->GetdEX() - outData->GetdEY()) > 3.0){
-   //   return;
-   //}
+    if (prm->GetdEIsDSSD()) {
+        // assume Y position is not separated clearly
+        dE = dEX;
+        Etotal = dEX;
+        //===========end=============
 
-   if(prm->GetdEIsDSSD()){
-      // assume Y position is not separated clearly
-      dE = dEX;
-      Etotal = dEX;
-      //===========end=============
+        // dE /= 2.0;
+        // Etotal /= 2.0;
+    }
 
-      //dE /= 2.0;
-      //Etotal /= 2.0;
-   }
+    // E1, E2, E3 process
+    for (Int_t iData3 = 0; iData3 < nData3; ++iData3) {
+        const TDataObject *const inData3 = static_cast<TDataObject *>((*fInData3)->At(iData3));
+        const TTimingChargeData *const Data3 = dynamic_cast<const TTimingChargeData *>(inData3);
 
+        for (Int_t inE = 0; inE < numE; ++inE) {
+            if (Data3->GetDetID() == inE) {
+                outData->SetEvec(inE, Data3->GetCharge());
+                outData->SetETimingvec(inE, Data3->GetTiming());
+                E += Data3->GetCharge();
+                Etotal += Data3->GetCharge();
+            }
+        }
+    }
 
-
-   // E1, E2, E3 process
-   for(Int_t iData3 = 0; iData3 < nData3; ++iData3){
-      const TDataObject *const inData3 = static_cast<TDataObject*>((*fInData3)->At(iData3));
-      const TTimingChargeData *const Data3 = dynamic_cast<const TTimingChargeData*>(inData3);
-
-      for(Int_t inE = 0; inE < numE; ++inE){
-         if(Data3->GetDetID() == inE){
-            outData->SetEvec(inE, Data3->GetCharge());
-            outData->SetETimingvec(inE, Data3->GetTiming());
-            E += Data3->GetCharge();
-            Etotal += Data3->GetCharge();
-         }
-      }
-   }
-
-   outData->SetdE(dE);
-   outData->SetE(E);
-   outData->SetEtotal(Etotal);
-
+    outData->SetdE(dE);
+    outData->SetE(E);
+    outData->SetEtotal(Etotal);
 }
-
 
 //      //set geometry: start****************************
 //      Double_t z_ref, dis, angle, tmp;
@@ -249,11 +246,10 @@ void TTelescopeProcessor::Process()
 //         angle = -73 * TMath::Pi()/180.0;
 //      }else{
 //         return;
-//      } 
+//      }
 //      tmp = 50.0/16.0/2.0 + (Double_t)(Data1->GetDetID() - 8)*50.0/16.0;
 
 //      outData->SetX(dis * TMath::Sin(angle) + tmp * TMath::Cos(angle));
 //      outData->SetY(50.0/16.0/2.0 + (Double_t)(Data2->GetDetID() - 8)*50.0/16.0);
 //      outData->SetZ(z_ref + dis * TMath::Cos(angle) - tmp * TMath::Sin(angle));
 //      //set geometry: end******************************
-

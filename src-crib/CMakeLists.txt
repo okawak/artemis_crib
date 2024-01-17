@@ -39,6 +39,7 @@ set(CRIBSOURCES
     # geo
     geo/TUserGeoInitializer.cc
     geo/TDetectorParameter.cc
+    geo/TTargetParameter.cc
     # simulation
     simulation/TDetectParticleProcessor.cc
     simulation/TNBodyReactionProcessor.cc
@@ -94,6 +95,7 @@ set(CRIBHEADERS
     # geo
     geo/TUserGeoInitializer.h
     geo/TDetectorParameter.h
+    geo/TTargetParameter.h
     # simulation
     simulation/TDetectParticleProcessor.h
     simulation/TNBodyReactionProcessor.h

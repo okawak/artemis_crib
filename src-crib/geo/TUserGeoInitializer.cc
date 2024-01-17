@@ -1,13 +1,14 @@
-/*
-   @File name     : TUserGeoInitializer.cc
-   @description   :
-   @Author        : Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
-   @Created date  : 2023-08-01 11:02:18
-   @Last modified : 2023-12-19 14:14:06
-*/
+/**
+ * @file    TUserGeoInitializer.cc
+ * @brief
+ * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2024-01-17 21:27:49
+ * @note
+ */
 
 #include "TUserGeoInitializer.h"
 #include "TDetectorParameter.h"
+#include "TTargetParameter.h"
 #include <TArtTypes.h>
 #include <TGeoMaterial.h>
 #include <TGeoMatrix.h>
@@ -39,22 +40,27 @@ const char *kNodeKeyDistance = "distance";
 const char *kNodeKeyAngle = "angle";
 const char *kNodeKeyTop = "top";
 const char *kNodeKeyDetector = "detector";
-const char *kNodeKeyTrackDetector = "tracking_detector"; // not yet
-const char *kNodeKeyTarget = "target";                   // not yet
+const char *kNodeKeyTarget = "target";
 const char *kNodeKeyType = "type";
 const char *kNodeKeySize = "size";
 const char *kNodeKeyOffset = "offset";
 const char *kNodeKeyStrip = "strip";
+const char *kNodeKeyIsGas = "is_gas";
+const char *kNodeKeyZ = "z_position";
 } // namespace
 
 TUserGeoInitializer::TUserGeoInitializer() : fGeom(NULL) {
-    RegisterProcessorParameter("Name", "parameter name", fPrmName, TString(""));
+    RegisterProcessorParameter("DetName", "parameter name of detectors", fDetPrmName, TString("prm_detectors"));
+    RegisterProcessorParameter("TargetName", "parameter name of targets", fTargetPrmName, TString("prm_targets"));
     RegisterProcessorParameter("FileName", "parameter file of detector geometry", fFileName, TString(""));
+
+    RegisterProcessorParameter("Visible", "add artemis directory or not", fIsVisible, false);
 }
 
 TUserGeoInitializer::~TUserGeoInitializer() {
     delete fGeom;
-    delete fParameterArray;
+    delete fDetParameterArray;
+    delete fTargetParameterArray;
 }
 
 void TUserGeoInitializer::Init(TEventCollection *col) {
@@ -63,15 +69,21 @@ void TUserGeoInitializer::Init(TEventCollection *col) {
         delete gGeoManager;
     fGeom = new TGeoManager("geometry", "Detector Geometry");
 
-    Info("Init", "detector parameters are produced to %s", fPrmName.Data());
-    fParameterArray = new TClonesArray("art::TDetectorParameter");
+    Info("Init", "detector parameters are produced to %s", fDetPrmName.Data());
+    fDetParameterArray = new TClonesArray("art::TDetectorParameter");
+
+    Info("Init", "target parameters are produced to %s", fTargetPrmName.Data());
+    fTargetParameterArray = new TClonesArray("art::TTargetParameter");
 
     GeometryFromYaml(fFileName);
 
     col->Add("geom", fGeom, fOutputIsTransparent);
 
-    fParameterArray->SetName(fPrmName);
-    col->AddInfo(fPrmName, fParameterArray, fOutputIsTransparent);
+    fDetParameterArray->SetName(fDetPrmName);
+    col->AddInfo(fDetPrmName, fDetParameterArray, fOutputIsTransparent);
+
+    fTargetParameterArray->SetName(fTargetPrmName);
+    col->AddInfo(fTargetPrmName, fTargetParameterArray, fOutputIsTransparent);
 }
 
 void TUserGeoInitializer::Process() {}
@@ -136,7 +148,7 @@ void TUserGeoInitializer::GeometryFromYaml(TString yamlfile) {
         Int_t det_mat_id = yaml_det[i][kNodeKeyMaterial].as<int>();
         DoubleVec_t det_size = yaml_det[i][kNodeKeySize].as<std::vector<double>>();
         if (det_size.size() != 3) {
-            SetStateError("input yaml error");
+            SetStateError("input yaml error, detector volume size must be 3D");
             return;
         }
 
@@ -146,7 +158,7 @@ void TUserGeoInitializer::GeometryFromYaml(TString yamlfile) {
         DoubleVec_t offset = yaml_prm[i][kNodeKeyOffset].as<std::vector<double>>();
         IntVec_t det_strip = yaml_prm[i][kNodeKeyStrip].as<std::vector<int>>();
         if (rot_point.size() != 3 || offset.size() != 3 || det_strip.size() != 2) {
-            SetStateError("input yaml error");
+            SetStateError("input yaml error, detector conposition setting is wrong");
             return;
         }
         Double_t distance = yaml_prm[i][kNodeKeyDistance].as<double>();
@@ -162,7 +174,7 @@ void TUserGeoInitializer::GeometryFromYaml(TString yamlfile) {
         top->AddNode(det, i, det_trans);
 
         // parameter input
-        TDetectorParameter *prm = static_cast<TDetectorParameter *>(fParameterArray->ConstructedAt(i));
+        TDetectorParameter *prm = static_cast<TDetectorParameter *>(fDetParameterArray->ConstructedAt(i));
         DoubleVec_t thickness = yaml_prm[i][kNodeKeyThickness].as<std::vector<double>>();
         std::vector<std::string> material = yaml_prm[i][kNodeKeyMaterial].as<std::vector<std::string>>();
         StringVec_t material_vec;
@@ -172,13 +184,13 @@ void TUserGeoInitializer::GeometryFromYaml(TString yamlfile) {
             } else if (material.size() == thickness.size()) {
                 material_vec.emplace_back(material[j]);
             } else {
-                SetStateError("input yaml error");
+                SetStateError("input yaml error, composition thickness and material is wrong");
                 return;
             }
         }
 
         if (thickness.size() != material_vec.size()) {
-            SetStateError("system error");
+            SetStateError("something wrong happen...");
             return;
         }
 
@@ -193,9 +205,25 @@ void TUserGeoInitializer::GeometryFromYaml(TString yamlfile) {
         prm->SetStripNum(det_strip);
     }
 
+    // targets setting
+    YAML::Node yaml_target = yaml_all[kNodeKeyConposition][kNodeKeyTarget].as<YAML::Node>();
+    for (Int_t i = 0; i < yaml_target.size(); i++) {
+        TTargetParameter *prm = static_cast<TTargetParameter *>(fTargetParameterArray->ConstructedAt(i));
+        TString name = yaml_target[i][kNodeKeyName].as<std::string>();
+        Bool_t is_gas = yaml_target[i][kNodeKeyIsGas].as<bool>();
+        Double_t z = yaml_target[i][kNodeKeyZ].as<double>();
+        Double_t thickness = yaml_target[i][kNodeKeyThickness].as<double>();
+
+        prm->SetTargetName(name);
+        prm->SetIsGasState(is_gas);
+        prm->SetZ(z);
+        prm->SetThickness(thickness);
+    }
+
     fGeom->CloseGeometry();
     fGeom->SetTopVisible();
     top->SetLineColor(kRed);
 
-    gDirectory->Add(top);
+    if (fIsVisible)
+        gDirectory->Add(top);
 }

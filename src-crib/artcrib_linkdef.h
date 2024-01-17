@@ -48,6 +48,7 @@
 // geo
 #pragma link C++ class art::TUserGeoInitializer;
 #pragma link C++ class art::TDetectorParameter + ;
+#pragma link C++ class art::TTargetParameter + ;
 // simulation
 #pragma link C++ class art::TDetectParticleProcessor;
 #pragma link C++ class art::TNBodyReactionProcessor;
