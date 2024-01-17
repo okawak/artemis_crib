@@ -12,18 +12,18 @@
     <link href="/artemis_crib/crib_parts/newcommand/index.print.html" rel="alternate" type="text/html" title="New commands :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1705116300" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705116300" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1705116300" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1705116300" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1705116300" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1705116300" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1705116300" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1705116300" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1705116300" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-artemis_crib.css?1705116300" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/variant.css?1705116300" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1705116300" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/ie.css?1705116300" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1705116300"></script>
-    <script src="/artemis_crib/js/variant.js?1705116300"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1705477121" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705477121" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1705477121" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1705477121" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1705477121" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1705477121" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1705477121" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1705477121" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1705477121" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-artemis_crib.css?1705477121" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/variant.css?1705477121" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1705477121" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/ie.css?1705477121" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1705477121"></script>
+    <script src="/artemis_crib/js/variant.js?1705477121"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -84,11 +84,11 @@
         <li><a href="#xblow">xblow</a></li>
         <li><a href="#xyblow">xyblow</a></li>
         <li><a href="#xstatus">xstatus</a></li>
+        <li><a href="#tcutg">tcutg</a></li>
       </ul>
     </li>
     <li><a href="#---under-development---">&mdash;under development&mdash;</a>
       <ul>
-        <li><a href="#tcutg">tcutg</a></li>
         <li><a href="#erase">erase</a></li>
         <li><a href="#draw">draw</a></li>
       </ul>
@@ -149,9 +149,9 @@
             </header>
 <h1 id="new-commands">New commands</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-12 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2024-01-17 by Kodai Okawa</span></span>
 <p>Various commands (mainly the same with ANAPAW commands) have been developed for CRIB experiment.
-For more information, please click <a href="https://github.com/okawak/artemis_crib/tree/main/src-crib/commands" target="_blank">here (art-work-dir/src-crib/commands)</a>.
+For more information, please click <a href="https://github.com/okawak/artemis_crib/tree/main/src-crib/commands" target="_blank">here (src-crib/commands)</a>.
 These commands are registered in userlogon.C. (See previous section.)</p>
 <p>This section explains how to use them.</p>
 <ul>
@@ -223,9 +223,43 @@ These commands are registered in userlogon.C. (See previous section.)</p>
 </span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>9<span style="color:#f92672">]</span></span></span></code></pre></div><figure><img src="xstatus.png" width="600"/>
 </figure>
 
+<h3 id="tcutg">tcutg</h3>
+<p>For <code>2D</code> histograms, this command create TCutG object and store in a ROOT file.
+If you select to save the object, the file will place to the <code>gate/*.root</code> directory.
+There objects are automatically loaded. (please check <a href="../userconfig">user config</a> page.)</p>
+<p>This is the example how to use this command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>artemis <span style="color:#f92672">[]</span> ht something
+</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[]</span> tc
+</span></span><span style="display:flex;"><span>Info in &lt;TCatCmdTCutG::Cmd&gt;: Xaxis name : f2ppac.fX  Yaxis name : f2ppac.fY
+</span></span><span style="display:flex;"><span>Info in &lt;TCatCmdTCutG::Cmd&gt;: When you have finished specifying the area <span style="color:#f92672">(</span>last point<span style="color:#f92672">)</span>, double-click on it.
+</span></span><span style="display:flex;"><span>Info in &lt;TCatCmdTCutG::Cmd&gt;: <span style="color:#f92672">(</span>x, y<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>9.050404, 10.301410<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Info in &lt;TCatCmdTCutG::Cmd&gt;: <span style="color:#f92672">(</span>x, y<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>5.047341, -8.294592<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Info in &lt;TCatCmdTCutG::Cmd&gt;: <span style="color:#f92672">(</span>x, y<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>-12.183236, -3.839300<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Info in &lt;TCatCmdTCutG::Cmd&gt;: <span style="color:#f92672">(</span>x, y<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>3.306878, -15.074384<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Info in &lt;TCatCmdTCutG::Cmd&gt;: <span style="color:#f92672">(</span>x, y<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>-3.306878, -32.120720<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Info in &lt;TCatCmdTCutG::Cmd&gt;: <span style="color:#f92672">(</span>x, y<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>9.920635, -15.461801<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Info in &lt;TCatCmdTCutG::Cmd&gt;: <span style="color:#f92672">(</span>x, y<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>18.274854, -29.989928<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Info in &lt;TCatCmdTCutG::Cmd&gt;: <span style="color:#f92672">(</span>x, y<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>16.186299, -11.200217<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Info in &lt;TCatCmdTCutG::Cmd&gt;: <span style="color:#f92672">(</span>x, y<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>35.157338, -4.420425<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Info in &lt;TCatCmdTCutG::Cmd&gt;: <span style="color:#f92672">(</span>x, y<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>14.271791, -4.807841<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Info in &lt;TCatCmdTCutG::Cmd&gt;: <span style="color:#f92672">(</span>x, y<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>10.964912, 9.332869<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Info in &lt;TCatCmdTCutG::Cmd&gt;: <span style="color:#f92672">(</span>x, y<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>10.964912, 9.332869<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> you want to save it, input the TCutG name <span style="color:#f92672">[</span>name/exit<span style="color:#f92672">]</span> f2star
+</span></span><span style="display:flex;"><span>Info in &lt;TCatCmdTCutG::Cmd&gt;: Created gate/f2star.root</span></span></code></pre></div><figure><img src="tcutg_raw.png" width="600"/>
+</figure>
+
+<p>To select an area, click on the vertices of the area you want to select, then double-click at the last vertex.
+If you want to save this object, enter the &ldquo;cut&rdquo; name.
+In this example, I input the <code>f2star</code> as the object name.
+If you don&rsquo;t want to save, enter &ldquo;exit&rdquo;.</p>
+<p>Then the <code>gate/f2star.root</code> will be created.
+And after reload the artemis, the gate will be loaded automatically and we can use histogram definition and &ldquo;tree-&gt;Draw&rdquo; selection part.
+For the detail please check <a href="../../example/online_analysis/gate">gate</a> page.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>artemis <span style="color:#f92672">[]</span> tree-&gt;Draw<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;f2ppac.fY:f2ppac.fX&gt;&gt;(200,-50.,50., 200,-50.,50.)&#34;</span>,<span style="color:#e6db74">&#34;f2star&#34;</span>,<span style="color:#e6db74">&#34;colz&#34;</span><span style="color:#f92672">)</span></span></span></code></pre></div><figure><img src="tcutg.png" width="600"/>
+</figure>
+
 <hr>
 <h2 id="---under-development---">&mdash;under development&mdash;</h2>
-<h3 id="tcutg">tcutg</h3>
 <h3 id="erase">erase</h3>
 <h3 id="draw">draw</h3>
 
@@ -255,12 +289,12 @@ These commands are registered in userlogon.C. (See previous section.)</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/artemis_crib/js/auto-complete.js?1705116300" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.min.js?1705116300" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1705116300" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1705116300" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1705116300" defer></script>
-        <script src="/artemis_crib/js/search.js?1705116300" defer></script>
+        <script src="/artemis_crib/js/auto-complete.js?1705477121" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.min.js?1705477121" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1705477121" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1705477121" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1705477121" defer></script>
+        <script src="/artemis_crib/js/search.js?1705477121" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -389,8 +423,8 @@ These commands are registered in userlogon.C. (See previous section.)</p>
         </div>
       </div>
     </aside>
-    <script src="/artemis_crib/js/clipboard.min.js?1705116300" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1705116300" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1705477121" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1705477121" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -420,6 +454,6 @@ These commands are registered in userlogon.C. (See previous section.)</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1705116300" defer></script>
+    <script src="/artemis_crib/js/theme.js?1705477121" defer></script>
   </body>
 </html>
