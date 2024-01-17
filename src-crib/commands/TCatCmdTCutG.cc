@@ -88,7 +88,8 @@ Long_t TCatCmdTCutG::Cmd(vector<TString>) {
         if (!fisFirst) {
             TLine *line = new TLine(bx, by, x, y);
             lines.push_back(line);
-            lines[i - 1]->SetLineColor(kBlack);
+            lines[i - 1]->SetLineColor(kRed);
+            lines[i - 1]->SetLineWidth(2);
             lines[i - 1]->Draw("same");
         }
         if (fisFirst) {
@@ -108,6 +109,8 @@ Long_t TCatCmdTCutG::Cmd(vector<TString>) {
     for (Int_t l = 0; l < lines.size(); l++) {
         delete lines[l];
     }
+    cutg->SetLineColor(kRed);
+    cutg->SetLineWidth(2);
     cutg->Draw("l same");
     usleep(10000);
     gPad->Update();
@@ -115,7 +118,7 @@ Long_t TCatCmdTCutG::Cmd(vector<TString>) {
     TString input;
     std::cout << "if you want to save it, input the TCutG name [name/exit] ";
     std::cin >> input;
-    if (input == "exit") {
+    if (input == "exit" || input == "") {
         Info("Cmd", "exit, not saved");
         return 1;
     }
