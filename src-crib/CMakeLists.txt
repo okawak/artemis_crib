@@ -19,12 +19,9 @@ set(CRIBSOURCES
     # telescope
     telescope/TTelescopeData.cc
     telescope/TTelescopeProcessor.cc
-    # tgtik
-    #tgtik/TTGTIKData.cc
-    #tgtik/TTGTIKPrepData.cc
-    #tgtik/TTGTIKPrepProcessor.cc
-    tgtik/TTGTIKProcessor.cc
-    tgtik/TEffectiveThickness.cc
+    # reconst
+    reconst/TTGTIKProcessor.cc
+    reconst/TReactionInfo.cc
     # commands
     commands/TCatCmdLoopStart.cc
     commands/TCatCmdLoopStop.cc
@@ -40,12 +37,12 @@ set(CRIBSOURCES
     geo/TDetectorParameter.cc
     geo/TTargetParameter.cc
     # simulation
+    simulation/TEffectiveThickness.cc
     simulation/TDetectParticleProcessor.cc
     simulation/TNBodyReactionProcessor.cc
     simulation/TParticleInfo.cc
     simulation/TRandomBeamGenerator.cc
     simulation/TTreeBeamGenerator.cc
-    simulation/TReactionInfo.cc
     simulation/TSolidAngleProcessor.cc
     #simulation/TTwoBodyScattering.cc
     simulation/TCRIBPIDProcessor.cc
@@ -74,12 +71,9 @@ set(CRIBHEADERS
     # telescope
     telescope/TTelescopeData.h
     telescope/TTelescopeProcessor.h
-    # tgtik
-    #tgtik/TTGTIKData.h
-    #tgtik/TTGTIKPrepData.h
-    #tgtik/TTGTIKPrepProcessor.h
-    tgtik/TTGTIKProcessor.h
-    tgtik/TEffectiveThickness.h
+    # reconst
+    reconst/TTGTIKProcessor.h
+    reconst/TReactionInfo.h
     # commands
     commands/TCatCmdLoopStart.h
     commands/TCatCmdLoopStop.h
@@ -95,12 +89,12 @@ set(CRIBHEADERS
     geo/TDetectorParameter.h
     geo/TTargetParameter.h
     # simulation
+    simulation/TEffectiveThickness.h
     simulation/TDetectParticleProcessor.h
     simulation/TNBodyReactionProcessor.h
     simulation/TParticleInfo.h
     simulation/TRandomBeamGenerator.h
     simulation/TTreeBeamGenerator.h
-    simulation/TReactionInfo.h
     simulation/TSolidAngleProcessor.h
     #simulation/TTwoBodyScattering.h
     simulation/TCRIBPIDProcessor.h

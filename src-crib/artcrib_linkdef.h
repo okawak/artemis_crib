@@ -28,12 +28,9 @@
 // telescope
 #pragma link C++ class art::TTelescopeData + ;
 #pragma link C++ class art::TTelescopeProcessor;
-// TGTIK
-// #pragma link C++ class art::TTGTIKData + ;
-// #pragma link C++ class art::TTGTIKPrepData + ;
-// #pragma link C++ class art::TTGTIKPrepProcessor;
+// reconst
 #pragma link C++ class art::TTGTIKProcessor;
-#pragma link C++ class art::TEffectiveThickness;
+#pragma link C++ class art::TReactionInfo + ;
 //  commands
 #pragma link C++ class TCatCmdLoopStart;
 #pragma link C++ class TCatCmdLoopStop;
@@ -49,12 +46,12 @@
 #pragma link C++ class art::TDetectorParameter + ;
 #pragma link C++ class art::TTargetParameter + ;
 // simulation
+#pragma link C++ class art::TEffectiveThickness;
 #pragma link C++ class art::TDetectParticleProcessor;
 #pragma link C++ class art::TNBodyReactionProcessor;
 #pragma link C++ class art::TParticleInfo + ;
 #pragma link C++ class art::TRandomBeamGenerator;
 #pragma link C++ class art::TTreeBeamGenerator;
-#pragma link C++ class art::TReactionInfo + ;
 #pragma link C++ class art::TSolidAngleProcessor;
 // #pragma link C++ class art::TTwoBodyScattering;
 #pragma link C++ class art::TCRIBPIDProcessor;
