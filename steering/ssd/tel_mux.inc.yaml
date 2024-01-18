@@ -177,22 +177,13 @@ Processor:
 #        - @NAME@E_cal_2
 
 # process telescope
-  - name: proc_@NAME@_parameter
-    type: art::TParameterArrayLoader
-    parameter:
-      Name: prm_@NAME@
-      Type: art::TTelescopeParameter
-      FileName: prm/ssd/@NAME@/tel_conf.yaml
-      FileFormat: yaml
-      OutputTransparency: 1
-
   - name: proc_@NAME@
     type: art::TTelescopeProcessor
     parameter:
-      TelescopeParameter:    prm_@NAME@
       InputCollection1:      @NAME@dEX_cal
       InputCollection2:      @NAME@dEY_cal
       InputCollection3:      @NAME@E_cal
       OutputCollection:      @NAME@
+      IsDSSSD: true
 
 

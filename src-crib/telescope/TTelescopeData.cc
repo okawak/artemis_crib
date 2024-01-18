@@ -15,15 +15,14 @@ ClassImp(art::TTelescopeData);
 
 TTelescopeData::TTelescopeData()
     : fXID(kInvalidI), fYID(kInvalidI), fNE(0),
-      fdEX(0.0), fdEY(0.0), fdEXTiming(kInvalidD), fdEYTiming(kInvalidD),
-      fdE(0.0), fE(0.0), fEtotal(0.0) {
+      fdE(0.0), fdEX(0.0), fdEY(0.0), fE(0.0), fEtotal(0.0),
+      fTiming(kInvalidD), fYTiming(kInvalidD), fTheta_L(kInvalidD) {
     TDataObject::SetID(kInvalidI);
-    for (Int_t i = 0; i < kMAXNPARAMETER; ++i) {
-        fEvec[i] = kInvalidD;
-        fETimingvec[i] = kInvalidD;
-    }
-    fPos.SetXYZ(0., 0., 0.);
+    fPos.SetXYZ(kInvalidD, kInvalidD, kInvalidD);
     fEnergyArray.clear();
+    fEnergyArray.shrink_to_fit();
+    fTimingArray.clear();
+    fTimingArray.shrink_to_fit();
 }
 
 TTelescopeData::~TTelescopeData() {
@@ -35,18 +34,16 @@ TTelescopeData::TTelescopeData(const TTelescopeData &rhs)
       fXID(rhs.fXID),
       fYID(rhs.fYID),
       fNE(rhs.fNE),
+      fdE(rhs.fdE),
       fdEX(rhs.fdEX),
       fdEY(rhs.fdEY),
-      fdEXTiming(rhs.fdEXTiming),
-      fdEYTiming(rhs.fdEYTiming),
-      fdE(rhs.fdE),
       fE(rhs.fE),
+      fEtotal(rhs.fEtotal),
+      fTiming(rhs.fTiming),
+      fYTiming(rhs.fYTiming),
+      fTheta_L(rhs.fTheta_L),
       fEnergyArray(rhs.fEnergyArray),
-      fEtotal(rhs.fEtotal) {
-    for (Int_t i = 0; i < kMAXNPARAMETER; ++i) {
-        fEvec[i] = rhs.fEvec[i];
-        fETimingvec[i] = rhs.fEvec[i];
-    }
+      fTimingArray(rhs.fTimingArray) {
 }
 
 TTelescopeData &TTelescopeData::operator=(const TTelescopeData &rhs) {
@@ -56,60 +53,54 @@ TTelescopeData &TTelescopeData::operator=(const TTelescopeData &rhs) {
     return *this;
 }
 
-void TTelescopeData::Init(const Int_t nE) {
-    if (fNE != nE) {
-        fNE = nE;
-    }
-    Clear();
-}
-
 void TTelescopeData::Copy(TObject &dest) const {
     TDataObject::Copy(dest);
     TTelescopeData &cobj = *(TTelescopeData *)&dest;
 
-    if (fNE != cobj.fNE) {
-        cobj.fNE = fNE;
-    }
-
     cobj.fPos = this->GetPosition();
+
     cobj.fXID = this->GetXID();
     cobj.fYID = this->GetYID();
-
-    cobj.fdEX = this->GetdEX();
-    cobj.fdEY = this->GetdEY();
-    cobj.fdEXTiming = this->GetdEXTiming();
-    cobj.fdEYTiming = this->GetdEYTiming();
-
-    memcpy(cobj.fEvec, fEvec, sizeof(fEvec));
-    memcpy(cobj.fETimingvec, fETimingvec, sizeof(fETimingvec));
+    cobj.fNE = this->GetN();
 
     cobj.fdE = this->GetdE();
+    cobj.fdEX = this->GetdEX();
+    cobj.fdEY = this->GetdEY();
+
     cobj.fE = this->GetE();
     cobj.fEtotal = this->GetEtotal();
+    cobj.fTiming = this->GetTelTiming();
+    cobj.fYTiming = this->GetTelYTiming();
+
+    cobj.fTheta_L = this->GetTheta_L();
 
     cobj.fEnergyArray = this->GetEnergyArray();
+    cobj.fTimingArray = this->GetTimingArray();
 }
 
 void TTelescopeData::Clear(Option_t *opt) {
     TDataObject::Clear(opt);
     TDataObject::SetID(kInvalidI);
 
-    fPos.SetXYZ(0., 0., 0.);
+    fPos.SetXYZ(kInvalidD, kInvalidD, kInvalidD);
+
     fXID = kInvalidI;
     fYID = kInvalidI;
-
-    fdEX = 0.0;
-    fdEY = 0.0;
-    fdEXTiming = kInvalidD;
-    fdEYTiming = kInvalidD;
-
-    for (Int_t i = 0; i < kMAXNPARAMETER; ++i) {
-        fEvec[i] = 0.0;
-        fETimingvec[i] = kInvalidD;
-    }
+    fNE = 0;
 
     fdE = 0.0;
+    fdEX = 0.0;
+    fdEY = 0.0;
+
     fE = 0.0;
     fEtotal = 0.0;
+    fTiming = kInvalidD;
+    fYTiming = kInvalidD;
+
+    fTheta_L = kInvalidD;
+
     fEnergyArray.clear();
+    fEnergyArray.shrink_to_fit();
+    fTimingArray.clear();
+    fTimingArray.shrink_to_fit();
 }

@@ -14,7 +14,8 @@
 
 namespace art {
 class TTelescopeProcessor;
-class TTelescopeParameter;
+class TDetectorParameter;
+class TTargetParameter;
 } // namespace art
 
 class TClonesArray;
@@ -39,12 +40,22 @@ class art::TTelescopeProcessor : public TProcessor {
     TClonesArray **fInData3; //! TTimingChargeData array from thick SSDs
     TClonesArray *fOutData;  //! TTelescopeData array
 
+    Bool_t fIsDSSSD;
+    Bool_t fUseRandom;
     Bool_t fInputHasData;
 
     // from parameter file
-    TString fParameterName;
-    TClonesArray **fParameterSet; //!
-    TTelescopeParameter *fTelescopeParameter;
+    TString fDetPrmName;
+    TString fTargetPrmName;
+    TClonesArray **fDetParameters;      //! all parameter info of TDetectorParameter
+    TClonesArray **fTargetParameters;   //! all parameter info of TTargetParameter
+    TDetectorParameter *fDetParameter;  //! one (this telescope) detector parameter
+    TTargetParameter *fTargetParameter; //! one (default index 0) target parameter
+
+    Bool_t fHasDetPrm;
+    Bool_t fHasTargetPrm;
+
+    Int_t fTelID;
 
   private:
     // Copy constructor (prohibited)

@@ -194,6 +194,8 @@ void TUserGeoInitializer::GeometryFromYaml(TString yamlfile) {
             return;
         }
 
+        prm->SetDetName(det_name);
+        prm->SetN(thickness.size());
         prm->SetMaxRadius(top_size[2]);
         prm->SetMaterial(material_vec);
         prm->SetThickness(thickness);

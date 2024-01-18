@@ -27,7 +27,6 @@
 #pragma link C++ class art::TMUXCalibrationProcessor;
 // telescope
 #pragma link C++ class art::TTelescopeData + ;
-#pragma link C++ class art::TTelescopeParameter;
 #pragma link C++ class art::TTelescopeProcessor;
 // TGTIK
 // #pragma link C++ class art::TTGTIKData + ;

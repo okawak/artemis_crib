@@ -1,10 +1,10 @@
-/*
-   @File name     : TDetectorParameter.h
-   @description   :
-   @Author        : Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
-   @Created date  : 2023-08-01 11:01:52
-   @Last modified : 2023-08-01 11:02:13
-*/
+/**
+ * @file    TDetectorParameter.h
+ * @brief
+ * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2024-01-18 11:32:42
+ * @note
+ */
 
 #ifndef _TDETECTORPARAMETER_H_
 #define _TDETECTORPARAMETER_H_
@@ -16,52 +16,65 @@ class TDetectorParameter;
 }
 
 class art::TDetectorParameter : public TParameterObject {
-public:
-   TDetectorParameter();
-   virtual ~TDetectorParameter();
+  public:
+    TDetectorParameter();
+    virtual ~TDetectorParameter();
 
-   TDetectorParameter(const TDetectorParameter &rhs);
-   TDetectorParameter &operator=(const TDetectorParameter &rhs);
+    TDetectorParameter(const TDetectorParameter &rhs);
+    TDetectorParameter &operator=(const TDetectorParameter &rhs);
 
-   TString GetMaterial(Int_t id) const { return fMaterial[id]; }
-   StringVec_t GetMaterial() const { return fMaterial; }
-   void SetMaterial(StringVec_t vec) { fMaterial = vec; }
-   Double_t GetThickness(Int_t id) const { return fThickness[id]; }
-   void SetThickness(DoubleVec_t vec) { fThickness = vec; }
+    TString GetDetName() const { return fDetName; }
+    void SetDetName(TString str) { fDetName = str; }
 
-   Double_t GetCenterRotPos(Int_t id) const { return fCenterRot[id]; }
-   void SetCenterRotPos(DoubleVec_t vec) { fCenterRot = vec; }
-   Double_t GetOffset(Int_t id) const { return fOffset[id]; }
-   void SetOffset(DoubleVec_t vec) { fOffset = vec; }
+    Int_t GetN() const { return fN; }
+    void SetN(Int_t arg) { fN = arg; }
 
-   Double_t GetSize(Int_t id) const { return fSize[id]; }
-   void SetSize(DoubleVec_t vec) { fSize = vec; }
-   Int_t GetStripNum(Int_t id) const { return fStrip[id]; }
-   void SetStripNum(IntVec_t vec) { fStrip = vec; }
+    TString GetMaterial(Int_t id) const { return fMaterial[id]; }
+    StringVec_t GetMaterial() const { return fMaterial; }
+    void SetMaterial(StringVec_t vec) { fMaterial = vec; }
+    Double_t GetThickness(Int_t id) const { return fThickness[id]; }
+    void SetThickness(DoubleVec_t vec) { fThickness = vec; }
 
-   Double_t GetDistance() const { return fDistance; }
-   void SetDistance(Double_t val) { fDistance = val; }
-   Double_t GetAngle() const { return fAngle; }
-   void SetAngle(Double_t val) { fAngle = val; }
-   Double_t GetMaxRadius() const { return fMaxRadius; }
-   void SetMaxRadius(Double_t val) { fMaxRadius = val; }
+    Double_t GetCenterRotPos(Int_t id) const { return fCenterRot[id]; }
+    DoubleVec_t GetCenterRotPos() const { return fCenterRot; }
+    void SetCenterRotPos(DoubleVec_t vec) { fCenterRot = vec; }
+    Double_t GetOffset(Int_t id) const { return fOffset[id]; }
+    DoubleVec_t GetOffset() const { return fOffset; }
+    void SetOffset(DoubleVec_t vec) { fOffset = vec; }
 
-protected:
-   StringVec_t fMaterial;  //!
-   DoubleVec_t fThickness; //!
+    Double_t GetSize(Int_t id) const { return fSize[id]; }
+    DoubleVec_t GetSize() const { return fSize; }
+    void SetSize(DoubleVec_t vec) { fSize = vec; }
+    Int_t GetStripNum(Int_t id) const { return fStrip[id]; }
+    IntVec_t GetStripNum() const { return fStrip; }
+    void SetStripNum(IntVec_t vec) { fStrip = vec; }
 
-   DoubleVec_t fCenterRot; //!
-   DoubleVec_t fOffset;    //!
+    Double_t GetDistance() const { return fDistance; }
+    void SetDistance(Double_t val) { fDistance = val; }
+    Double_t GetAngle() const { return fAngle; }
+    void SetAngle(Double_t val) { fAngle = val; }
+    Double_t GetMaxRadius() const { return fMaxRadius; }
+    void SetMaxRadius(Double_t val) { fMaxRadius = val; }
 
-   DoubleVec_t fSize;      //!
-   IntVec_t fStrip;        //!
+  protected:
+    TString fDetName;
+    Int_t fN; //! number of SSDs
 
-   Double_t fDistance;
-   Double_t fAngle; // radian
-   Double_t fMaxRadius;
+    StringVec_t fMaterial;  //!
+    DoubleVec_t fThickness; //!
 
-private:
-   ClassDef(TDetectorParameter, 1) // ppac parameter holder
+    DoubleVec_t fCenterRot; //!
+    DoubleVec_t fOffset;    //!
+
+    DoubleVec_t fSize; //!
+    IntVec_t fStrip;   //!
+
+    Double_t fDistance;
+    Double_t fAngle; // radian
+    Double_t fMaxRadius;
+
+  private:
+    ClassDef(TDetectorParameter, 1) // ppac parameter holder
 };
 
 #endif // end of #ifndef _TDETECTORPARAMETER_H_

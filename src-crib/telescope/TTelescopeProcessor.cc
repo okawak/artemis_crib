@@ -4,20 +4,25 @@
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 16:51:53
  * @note    treat the largest value of each layor
+ *          the data of X side is used for DSSSD
+ *          assume beam position (0, 0) and direction (0, 0, 1)
  */
 
 #include "TTelescopeProcessor.h"
 
+#include "../geo/TDetectorParameter.h"
+#include "../geo/TTargetParameter.h"
 #include "ICharge.h"
 #include "ITiming.h"
 #include "TDataObject.h"
 #include "TTelescopeData.h"
-#include "TTelescopeParameter.h"
 #include "TTimingChargeData.h"
 #include "constant.h"
 
 #include <TClass.h>
 #include <TClonesArray.h>
+#include <TMath.h>
+#include <TRandom.h>
 
 using art::TTelescopeProcessor;
 
@@ -25,7 +30,7 @@ ClassImp(art::TTelescopeProcessor);
 
 // Default constructor
 TTelescopeProcessor::TTelescopeProcessor()
-    : fInData1(NULL), fInData2(NULL), fInData3(NULL), fOutData(NULL) {
+    : fInData1(NULL), fInData2(NULL), fInData3(NULL), fOutData(NULL), fTelID(0) {
     RegisterInputCollection("InputCollection1",
                             "array of objects inheriting from art::TTimingChargeData",
                             fInputColName1, TString("dEX"));
@@ -38,8 +43,13 @@ TTelescopeProcessor::TTelescopeProcessor()
     RegisterOutputCollection("OutputCollection", "output class will be art::TTelescopeData",
                              fOutputColName, TString("telescope"));
 
-    RegisterOptionalInputInfo("TelescopeParameter", "name of telescope parameter", fParameterName,
-                              TString("prm:telescope"), &fParameterSet, "TClonesArray", "art::TTelescopeParameter");
+    RegisterProcessorParameter("IsDSSSD", "Bool, true: first layer is DSSSD, false: first and second layer is SSSSD", fIsDSSSD, true);
+    RegisterProcessorParameter("UseRandom", "Bool, true: Uniform distribution in one pixel, false: center of the pixel", fUseRandom, false);
+
+    RegisterOptionalInputInfo("DetectorParameter", "name of detector parameter defined in TUserGeoInitializer", fDetPrmName,
+                              TString("prm_detectors"), &fDetParameters, "TClonesArray", "art::TDetectorParameter");
+    RegisterOptionalInputInfo("TargetParameter", "name of target parameter defined in TUserGeoInitializer", fTargetPrmName,
+                              TString("prm_targets"), &fTargetParameters, "TClonesArray", "art::TTargetParameter");
 }
 
 TTelescopeProcessor::~TTelescopeProcessor() {
@@ -71,25 +81,42 @@ void TTelescopeProcessor::Init(TEventCollection *col) {
         return;
     }
 
-    // get telescope parameter object
-    TTelescopeParameter *prm = dynamic_cast<TTelescopeParameter *>((*fParameterSet)->FindObject(fParameterName));
-    if (!prm) {
-        SetStateError(TString::Format("No such parameter '%s' is found", fParameterName.Data()));
-        return;
+    // detector parameter
+    if (!fDetParameters) {
+        fHasDetPrm = false;
+    } else {
+        fHasDetPrm = true;
+        for (Int_t iDet = 0; iDet < (*fDetParameters)->GetEntriesFast(); iDet++) {
+            TParameterObject *inPrm = static_cast<TParameterObject *>((*fDetParameters)->At(iDet));
+            TDetectorParameter *prm = dynamic_cast<TDetectorParameter *>(inPrm);
+            if (prm->GetDetName() == fOutputColName) {
+                fTelID = iDet + 1;
+                fDetParameter = prm;
+            }
+        }
+        if (fTelID == 0) {
+            Warning("Init", "cannot find %s node, please check TUserGeoInitializer", fOutputColName.Data());
+            fHasDetPrm = false;
+        }
     }
 
-    // if(prm->GetdE_dE_TimeRange(0) > prm->GetdE_dE_TimeRange(1)) {
-    //    SetStateError("dE_dE timerange : min > max");
-    //    return;
-    // }
+    // target parameter
+    if (!fTargetParameters) {
+        fHasTargetPrm = false;
+    } else {
+        fHasTargetPrm = true;
+        if ((*fTargetParameters)->GetEntriesFast() == 0) {
+            Warning("Init", "cannot find target node. please check TUserGeoInitializer");
+            fHasTargetPrm = false;
+        } else {
+            TParameterObject *inPrm = static_cast<TParameterObject *>((*fTargetParameters)->At(0));
+            TTargetParameter *prm = dynamic_cast<TTargetParameter *>(inPrm);
+            fTargetParameter = prm;
+            Info("Init", "use first target %s information (only use the position)", prm->GetTargetName().Data());
+        }
+    }
 
-    // if(prm->GetdE_E_TimeRange(0) > prm->GetdE_E_TimeRange(1)) {
-    //    SetStateError("dE_E timerange : min > max");
-    //    return;
-    // }
-
-    fTelescopeParameter = prm;
-
+    // check if input collection is valid or not
     const TClass *const cl1 = (*fInData1)->GetClass();
     const TClass *const cl2 = (*fInData2)->GetClass();
     const TClass *const cl3 = (*fInData3)->GetClass();
@@ -103,6 +130,8 @@ void TTelescopeProcessor::Init(TEventCollection *col) {
     fOutData = new TClonesArray("art::TTelescopeData");
     fOutData->SetName(fOutputColName);
     col->Add(fOutputColName, fOutData, fOutputIsTransparent);
+
+    gRandom->SetSeed(time(NULL));
 }
 
 void TTelescopeProcessor::Process() {
@@ -117,139 +146,156 @@ void TTelescopeProcessor::Process() {
         return;
     }
 
-    TTelescopeParameter *prm = (TTelescopeParameter *)fTelescopeParameter;
-    Int_t numE = prm->GetEdetNum();
-    if (nData3 > numE) {
-        SetStateError(TString::Format("entry of E detector %d is over %d", nData3, numE));
-        return;
-    }
+    TTelescopeData *outData = static_cast<TTelescopeData *>(fOutData->ConstructedAt(0));
+    outData->Clear();
+    outData->SetID(fTelID);
+    outData->SetN(fDetParameter->GetN());
 
-    Int_t itr = 0;
-    TTelescopeData *outData = static_cast<TTelescopeData *>(fOutData->ConstructedAt(itr));
-    itr++;
-    outData->Init(numE);
-    outData->SetID(prm->GetTelescopeID());
-
-    Double_t dE = 0.0;
-    Double_t dEX = 0.0;
-    Double_t dEY = 0.0;
-    Double_t E = 0.0;
     Double_t Etotal = 0.0;
+    Double_t dE = 0.0;
 
     // dEX process
+    //    search the highest channel
     Int_t dEXID = -1;
-    Double_t dEX_tmp = -500.0;
+    Double_t dEX_tmp = 0.0;
     for (Int_t iData1 = 0; iData1 < nData1; ++iData1) {
         const TDataObject *const inData1 = static_cast<TDataObject *>((*fInData1)->At(iData1));
         const TTimingChargeData *const Data1 = dynamic_cast<const TTimingChargeData *>(inData1);
-        if (dEX_tmp < Data1->GetCharge() && Data1->GetCharge() < 50.0) {
+        /// need to update: care about overflow event more clevar
+        if (dEX_tmp < Data1->GetCharge() && Data1->GetCharge() < 50.0) { // overflow signal should have very large value
             dEXID = iData1;
             dEX_tmp = Data1->GetCharge();
         }
     }
 
+    //    fill the highest channel
     if (nData1 != 0 && dEXID != -1) {
         const TDataObject *const inData1 = static_cast<TDataObject *>((*fInData1)->At(dEXID));
         const TTimingChargeData *const Data1 = dynamic_cast<const TTimingChargeData *>(inData1);
-        Double_t energydEX = Data1->GetCharge();
-        if (energydEX > prm->GetdEXEnergyThreshold()) {
-            outData->SetXID(Data1->GetDetID());
-            outData->SetdEX(energydEX);
-            outData->SetdEXTiming(Data1->GetTiming());
-            dEX = energydEX;
-            dE += energydEX;
-            Etotal += energydEX;
+        Double_t energy = Data1->GetCharge();
+        Double_t timing = Data1->GetTiming();
+
+        outData->SetXID(Data1->GetDetID());
+        if (fIsDSSSD) {
+            outData->SetdE(energy); // now fdE is used the value of dEX
+        } else {
+            dE += energy;
         }
+        outData->SetdEX(energy);
+        outData->SetTelTiming(timing);
+        outData->PushEnergyArray(energy);
+        outData->PushTimingArray(timing);
+        Etotal += energy;
+    } else {
+        outData->PushEnergyArray(0.0);
+        outData->PushTimingArray(kInvalidD);
     }
 
     // dEY process
+    //    search the highest channel
     Int_t dEYID = -1;
-    Double_t dEY_tmp = -500.0;
+    Double_t dEY_tmp = 0.0;
     for (Int_t iData2 = 0; iData2 < nData2; ++iData2) {
         const TDataObject *const inData2 = static_cast<TDataObject *>((*fInData2)->At(iData2));
         const TTimingChargeData *const Data2 = dynamic_cast<const TTimingChargeData *>(inData2);
-        if (dEY_tmp < Data2->GetCharge() && Data2->GetCharge() < 50.0) {
+        /// need to update: care about overflow event more clevar
+        if (dEY_tmp < Data2->GetCharge() && Data2->GetCharge() < 50.0) { // overflow signal should have very large value
             dEYID = iData2;
             dEY_tmp = Data2->GetCharge();
         }
     }
 
+    //    fill the highest channel
     if (nData2 != 0 && dEYID != -1) {
         const TDataObject *const inData2 = static_cast<TDataObject *>((*fInData2)->At(dEYID));
         const TTimingChargeData *const Data2 = dynamic_cast<const TTimingChargeData *>(inData2);
-        Double_t energydEY = Data2->GetCharge();
-        if (energydEY > prm->GetdEYEnergyThreshold()) {
-            outData->SetYID(Data2->GetDetID());
-            outData->SetdEY(energydEY);
-            outData->SetdEYTiming(Data2->GetTiming());
-            dEY = energydEY;
-            dE += energydEY;
-            Etotal += energydEY;
+        Double_t energy = Data2->GetCharge();
+        Double_t timing = Data2->GetTiming();
+
+        outData->SetYID(Data2->GetDetID());
+        if (!fIsDSSSD) {
+            dE += energy;
+            outData->SetdE(dE);
+            outData->PushEnergyArray(energy);
+            outData->PushTimingArray(timing);
+            Etotal += energy;
         }
+        outData->SetdEY(energy);
+        outData->SetTelYTiming(timing);
+    } else if (!fIsDSSSD) {
+        outData->PushEnergyArray(0.0);
+        outData->PushTimingArray(kInvalidD);
     }
 
-    // if(prm->GetdEIsDSSD() && TMath::Abs(outData->GetdEX() - outData->GetdEY()) > 3.0){
-    //    return;
-    // }
+    // geometry process
+    /// for the definition, please check https://okawak.github.io/artemis_crib/example/simulation/geometry/index.html
+    if (IsValid(outData->GetXID()) && IsValid(outData->GetYID())) {
+        Double_t target_z = fTargetParameter->GetZ();
+        TVector3 center_rot(fDetParameter->GetCenterRotPos(0), fDetParameter->GetCenterRotPos(1), fDetParameter->GetCenterRotPos(2));
+        TVector3 offset(fDetParameter->GetOffset(0), fDetParameter->GetOffset(1), fDetParameter->GetOffset(2));
+        DoubleVec_t size = fDetParameter->GetSize();
+        IntVec_t stripN = fDetParameter->GetStripNum();
+        Int_t xid = outData->GetXID();
+        Int_t yid = outData->GetYID();
 
-    if (prm->GetdEIsDSSD()) {
-        // assume Y position is not separated clearly
-        dE = dEX;
-        Etotal = dEX;
-        //===========end=============
+        // (x, y) position before rotation
+        Double_t x = size[0] * (2.0 * (Double_t)xid + 1.0 - (Double_t)stripN[0]) / (2.0 * (Double_t)stripN[0]);
+        if (fUseRandom) {
+            x += gRandom->Uniform(-size[0] / (2.0 * (Double_t)stripN[0]), size[0] / (2.0 * (Double_t)stripN[0]));
+        }
+        Double_t y = size[1] * (2.0 * (Double_t)yid + 1.0 - (Double_t)stripN[1]) / (2.0 * (Double_t)stripN[1]);
+        if (fUseRandom) {
+            y += gRandom->Uniform(-size[1] / (2.0 * (Double_t)stripN[1]), size[1] / (2.0 * (Double_t)stripN[1]));
+        }
 
-        // dE /= 2.0;
-        // Etotal /= 2.0;
+        // rotate the detector
+        TVector3 det_pos(x, y, fDetParameter->GetDistance());
+        det_pos += offset;
+        det_pos.RotateY(fDetParameter->GetAngle()); // radian
+        det_pos += center_rot;
+        outData->SetPosition(det_pos);
+
+        TVector3 target(0., 0., target_z);
+        TVector3 beam(0., 0., 1.);
+        Double_t theta = beam.Angle(det_pos - target);
+        outData->SetTheta_L(theta * TMath::RadToDeg());
     }
 
-    // E1, E2, E3 process
-    for (Int_t iData3 = 0; iData3 < nData3; ++iData3) {
-        const TDataObject *const inData3 = static_cast<TDataObject *>((*fInData3)->At(iData3));
-        const TTimingChargeData *const Data3 = dynamic_cast<const TTimingChargeData *>(inData3);
+    // Thick SSDs process
+    Double_t E = 0.0;
+    Int_t NE = fIsDSSSD ? fDetParameter->GetN() - 1 : fDetParameter->GetN() - 2;
+    if (NE < nData3) {
+        Warning("process", "Thick SSD number is wrong between actual data and define in get/expname.yaml");
+    }
 
-        for (Int_t inE = 0; inE < numE; ++inE) {
-            if (Data3->GetDetID() == inE) {
-                outData->SetEvec(inE, Data3->GetCharge());
-                outData->SetETimingvec(inE, Data3->GetTiming());
-                E += Data3->GetCharge();
-                Etotal += Data3->GetCharge();
+    for (Int_t iE = 0; iE < NE; iE++) {
+        Int_t itr = -1;
+        // get "iE" index object
+        for (Int_t iData3 = 0; iData3 < nData3; ++iData3) {
+            const TDataObject *const inData3 = static_cast<TDataObject *>((*fInData3)->At(iData3));
+            const TTimingChargeData *const Data3 = dynamic_cast<const TTimingChargeData *>(inData3);
+            if (Data3->GetDetID() == iE) {
+                itr = iData3;
+                break;
             }
         }
+
+        if (itr < 0) {
+            outData->PushEnergyArray(0.0);
+            outData->PushTimingArray(kInvalidD);
+        } else {
+            const TDataObject *const inData3 = static_cast<TDataObject *>((*fInData3)->At(itr));
+            const TTimingChargeData *const Data3 = dynamic_cast<const TTimingChargeData *>(inData3);
+            Double_t energy = Data3->GetCharge();
+            Double_t timing = Data3->GetTiming();
+
+            outData->PushEnergyArray(energy);
+            outData->PushTimingArray(timing);
+            E += energy;
+            Etotal += energy;
+        }
     }
 
-    outData->SetdE(dE);
     outData->SetE(E);
     outData->SetEtotal(Etotal);
 }
-
-//      //set geometry: start****************************
-//      Double_t z_ref, dis, angle, tmp;
-//      if(fTelescopeID == 1){
-//         z_ref = 999.0;
-//         dis   = 239.5;
-//         angle = -4.0 * TMath::Pi()/180.0;
-//      }else if(fTelescopeID == 2){
-//         z_ref = 999.0;
-//         dis   = 149.5;
-//         angle = 27.0 * TMath::Pi()/180.0;
-//      }else if(fTelescopeID == 3){
-//         z_ref = 999.0;
-//         dis   = 110.0;
-//         angle = -48.0 * TMath::Pi()/180.0;
-//      }else if(fTelescopeID == 4){
-//         z_ref = 949.0;
-//         dis   = 113.5;
-//         angle = 62.0 * TMath::Pi()/180.0;
-//      }else if(fTelescopeID == 5){
-//         z_ref = 899.0;
-//         dis   = 112.5;
-//         angle = -73 * TMath::Pi()/180.0;
-//      }else{
-//         return;
-//      }
-//      tmp = 50.0/16.0/2.0 + (Double_t)(Data1->GetDetID() - 8)*50.0/16.0;
-
-//      outData->SetX(dis * TMath::Sin(angle) + tmp * TMath::Cos(angle));
-//      outData->SetY(50.0/16.0/2.0 + (Double_t)(Data2->GetDetID() - 8)*50.0/16.0);
-//      outData->SetZ(z_ref + dis * TMath::Cos(angle) - tmp * TMath::Sin(angle));
-//      //set geometry: end******************************

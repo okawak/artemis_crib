@@ -31,68 +31,69 @@ class art::TTelescopeData : public TDataObject {
     TTelescopeData &operator=(const TTelescopeData &rhs);
 
     TVector3 GetPosition() const { return fPos; }
+    Double_t X() const { return fPos.X(); }
+    Double_t Y() const { return fPos.Y(); }
+    Double_t Z() const { return fPos.Z(); }
     void SetPosition(TVector3 vec) { fPos = vec; }
     void SetPosition(Double_t x, Double_t y, Double_t z) { fPos.SetXYZ(x, y, z); }
+
+    Int_t GetN() const { return fNE; }
+    void SetN(Int_t arg) { fNE = arg; }
 
     Int_t GetXID() const { return fXID; }
     void SetXID(Int_t arg) { fXID = arg; }
     Int_t GetYID() const { return fYID; }
     void SetYID(Int_t arg) { fYID = arg; }
 
+    Double_t GetdE() const { return fdE; }
+    void SetdE(Double_t arg) { fdE = arg; }
     Double_t GetdEX() const { return fdEX; }
     void SetdEX(Double_t arg) { fdEX = arg; }
     Double_t GetdEY() const { return fdEY; }
     void SetdEY(Double_t arg) { fdEY = arg; }
 
-    Double_t GetdEXTiming() const { return fdEXTiming; }
-    void SetdEXTiming(Double_t arg) { fdEXTiming = arg; }
-    Double_t GetdEYTiming() const { return fdEYTiming; }
-    void SetdEYTiming(Double_t arg) { fdEYTiming = arg; }
-
-    Double_t GetEvec(Int_t idx) const { return fEvec[idx]; }
-    void SetEvec(Int_t idx, Double_t val) { fEvec[idx] = val; }
-    Int_t GetEvecSize() { return fNE; }
-    Double_t GetETimingvec(Int_t idx) const { return fETimingvec[idx]; }
-    void SetETimingvec(Int_t idx, Double_t val) { fETimingvec[idx] = val; }
-
-    Double_t GetdE() const { return fdE; }
-    void SetdE(Double_t arg) { fdE = arg; }
     Double_t GetE() const { return fE; }
     void SetE(Double_t arg) { fE = arg; }
     Double_t GetEtotal() const { return fEtotal; }
     void SetEtotal(Double_t arg) { fEtotal = arg; }
+    Double_t GetTelTiming() const { return fTiming; }
+    void SetTelTiming(Double_t arg) { fTiming = arg; }
+    Double_t GetTelYTiming() const { return fYTiming; }
+    void SetTelYTiming(Double_t arg) { fYTiming = arg; }
+
+    Double_t GetTheta_L() const { return fTheta_L; }
+    void SetTheta_L(Double_t arg) { fTheta_L = arg; }
 
     DoubleVec_t GetEnergyArray() const { return fEnergyArray; }
-    void SetEnergyArray(Double_t arg) { fEnergyArray.emplace_back(arg); }
+    Double_t GetEnergyArray(Int_t id) const { return fEnergyArray[id]; }
+    void PushEnergyArray(Double_t arg) { fEnergyArray.emplace_back(arg); }
+    DoubleVec_t GetTimingArray() const { return fTimingArray; }
+    Double_t GetTimingArray(Int_t id) const { return fTimingArray[id]; }
+    void PushTimingArray(Double_t arg) { fTimingArray.emplace_back(arg); }
 
     virtual void Copy(TObject &dest) const;
     virtual void Clear(Option_t *opt = "");
 
-    void Init(Int_t nE);
-
-    static const Int_t kMAXNPARAMETER = 3;
-
   protected:
-    TVector3 fPos;
+    /// Int_t fID is used for telescipe ID
+    TVector3 fPos; // detected position (X, Y, Z)
 
-    Int_t fXID;
-    Int_t fYID;
-    Int_t fNE; //! number of thick SSDs
+    Int_t fXID; // X strip number
+    Int_t fYID; // Y strip number
+    Int_t fNE;  // number of all SSDs
 
-    Double_t fdEX;                        // no use?
-    Double_t fdEY;                        // no use?
-    Double_t fdEXTiming;                  // no use?
-    Double_t fdEYTiming;                  // no use?
-    Double_t fEvec[kMAXNPARAMETER];       // no use?
-    Double_t fETimingvec[kMAXNPARAMETER]; // no use?
+    Double_t fdE;      // energy at first layor
+    Double_t fdEX;     // X side energy (=~ fdEY)
+    Double_t fdEY;     // Y side energy (=~ fdEX)
+    Double_t fE;       // added energy at thick SSDs
+    Double_t fEtotal;  // all energy deposit in the telescope
+    Double_t fTiming;  // timing information at the first layor (X side)
+    Double_t fYTiming; // for case that X side have trouble (Y side)
 
-    Double_t fdE;
-    Double_t fE;
-    Double_t fEtotal;
+    Double_t fTheta_L; // reaction angle in LAB system
 
-    Double_t fTheta_L;
-
-    DoubleVec_t fEnergyArray;
+    DoubleVec_t fEnergyArray; // energy array for each SSD
+    DoubleVec_t fTimingArray; // timing array for each SSD
 
     ClassDef(TTelescopeData, 3)
 };

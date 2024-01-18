@@ -18,7 +18,6 @@ set(CRIBSOURCES
     mux/TMUXPositionValidator.cc
     # telescope
     telescope/TTelescopeData.cc
-    telescope/TTelescopeParameter.cc
     telescope/TTelescopeProcessor.cc
     # tgtik
     #tgtik/TTGTIKData.cc
@@ -74,7 +73,6 @@ set(CRIBHEADERS
     mux/TMUXPositionValidator.h
     # telescope
     telescope/TTelescopeData.h
-    telescope/TTelescopeParameter.h
     telescope/TTelescopeProcessor.h
     # tgtik
     #tgtik/TTGTIKData.h

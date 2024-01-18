@@ -20,20 +20,20 @@ Processor:
     parameter:
       OutputTransparency: 1
 
+  - name: detector_initialize
+    type: art::TUserGeoInitializer
+    parameter:
+      FileName: prm/geo/he6p2024.yaml
+      #Visible: false
+      OutputTransparency: 1
+
   - include: tref.yaml
   - include: rf/rf.yaml
   - include: coin/coin.yaml
-  - include: mwdc/mwdc_crib.yaml
+#  - include: mwdc/mwdc_crib.yaml
   - include: ssd/f3ssd.yaml
   - include: scaler/scaler.yaml
 
-  #  - name: proc_trigger
-  #    type: art::TTimingChargeMappingProcessor
-  #    parameter:
-  #      CatID: 200
-  #      TimingTypeID: 0
-  #      OutputCollection: trig_raw
-  #      OutputTransparency: 0
 
   # F3 Hist (include important information)
   - name: projection_f3_all_detector
