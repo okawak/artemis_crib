@@ -116,6 +116,10 @@ void TTelescopeProcessor::Init(TEventCollection *col) {
         }
     }
 
+    if (!fHasDetPrm || !fHasTargetPrm) {
+        Warning("Init", "not initialized by TUserGeoInitializer, not calculate geometry info");
+    }
+
     // check if input collection is valid or not
     const TClass *const cl1 = (*fInData1)->GetClass();
     const TClass *const cl2 = (*fInData2)->GetClass();
@@ -149,7 +153,11 @@ void TTelescopeProcessor::Process() {
     TTelescopeData *outData = static_cast<TTelescopeData *>(fOutData->ConstructedAt(0));
     outData->Clear();
     outData->SetID(fTelID);
-    outData->SetN(fDetParameter->GetN());
+    if (fHasDetPrm && fHasTargetPrm) {
+        outData->SetN(fDetParameter->GetN());
+    } else {
+        outData->SetN(DEFAULT_SSD_MAX_NUMBER);
+    }
 
     Double_t Etotal = 0.0;
     Double_t dE = 0.0;
@@ -229,7 +237,7 @@ void TTelescopeProcessor::Process() {
 
     // geometry process
     /// for the definition, please check https://okawak.github.io/artemis_crib/example/simulation/geometry/index.html
-    if (IsValid(outData->GetXID()) && IsValid(outData->GetYID())) {
+    if (IsValid(outData->GetXID()) && IsValid(outData->GetYID()) && fHasDetPrm && fHasTargetPrm) {
         Double_t target_z = fTargetParameter->GetZ();
         TVector3 center_rot(fDetParameter->GetCenterRotPos(0), fDetParameter->GetCenterRotPos(1), fDetParameter->GetCenterRotPos(2));
         TVector3 offset(fDetParameter->GetOffset(0), fDetParameter->GetOffset(1), fDetParameter->GetOffset(2));
@@ -263,7 +271,13 @@ void TTelescopeProcessor::Process() {
 
     // Thick SSDs process
     Double_t E = 0.0;
-    Int_t NE = fIsDSSSD ? fDetParameter->GetN() - 1 : fDetParameter->GetN() - 2;
+    Int_t NE;
+    if (fHasDetPrm && fHasTargetPrm) {
+        NE = fIsDSSSD ? fDetParameter->GetN() - 1 : fDetParameter->GetN() - 2;
+    } else {
+        NE = fIsDSSSD ? DEFAULT_SSD_MAX_NUMBER - 1 : DEFAULT_SSD_MAX_NUMBER - 2;
+    }
+
     if (NE < nData3) {
         Warning("process", "Thick SSD number is wrong between actual data and define in get/expname.yaml");
     }

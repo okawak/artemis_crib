@@ -29,6 +29,8 @@ class art::TTelescopeProcessor : public TProcessor {
     virtual void Init(TEventCollection *col);
     virtual void Process();
 
+    static const Int_t DEFAULT_SSD_MAX_NUMBER = 4;
+
   protected:
     TString fInputColName1; //! from X strip SSD
     TString fInputColName2; //! from Y strip SSD
