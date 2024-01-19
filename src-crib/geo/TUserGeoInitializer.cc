@@ -47,6 +47,7 @@ const char *kNodeKeyOffset = "offset";
 const char *kNodeKeyStrip = "strip";
 const char *kNodeKeyIsGas = "is_gas";
 const char *kNodeKeyZ = "z_position";
+const char *kNodeKeyPedestal = "pedestal";
 } // namespace
 
 TUserGeoInitializer::TUserGeoInitializer() : fGeom(NULL) {
@@ -176,6 +177,11 @@ void TUserGeoInitializer::GeometryFromYaml(TString yamlfile) {
         // parameter input
         TDetectorParameter *prm = static_cast<TDetectorParameter *>(fDetParameterArray->ConstructedAt(i));
         DoubleVec_t thickness = yaml_prm[i][kNodeKeyThickness].as<std::vector<double>>();
+        DoubleVec_t pedestal = yaml_prm[i][kNodeKeyPedestal].as<std::vector<double>>();
+        if (thickness.size() != pedestal.size()) {
+            SetStateError("input yaml error, thickness and pedestal array size are different");
+            return;
+        }
         std::vector<std::string> material = yaml_prm[i][kNodeKeyMaterial].as<std::vector<std::string>>();
         StringVec_t material_vec;
         for (Int_t j = 0; j < thickness.size(); j++) {
@@ -199,6 +205,7 @@ void TUserGeoInitializer::GeometryFromYaml(TString yamlfile) {
         prm->SetMaxRadius(top_size[2]);
         prm->SetMaterial(material_vec);
         prm->SetThickness(thickness);
+        prm->SetPedestal(pedestal);
         prm->SetCenterRotPos(rot_point);
         prm->SetOffset(offset);
         prm->SetDistance(distance);

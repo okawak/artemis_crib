@@ -34,6 +34,8 @@ class art::TDetectorParameter : public TParameterObject {
     void SetMaterial(StringVec_t vec) { fMaterial = vec; }
     Double_t GetThickness(Int_t id) const { return fThickness[id]; }
     void SetThickness(DoubleVec_t vec) { fThickness = vec; }
+    Double_t GetPedestal(Int_t id) const { return fPedestal[id]; }
+    void SetPedestal(DoubleVec_t vec) { fPedestal = vec; }
 
     Double_t GetCenterRotPos(Int_t id) const { return fCenterRot[id]; }
     DoubleVec_t GetCenterRotPos() const { return fCenterRot; }
@@ -62,6 +64,7 @@ class art::TDetectorParameter : public TParameterObject {
 
     StringVec_t fMaterial;  //!
     DoubleVec_t fThickness; //!
+    DoubleVec_t fPedestal;  //! if fCharge is below this, treat as 0 MeV
 
     DoubleVec_t fCenterRot; //!
     DoubleVec_t fOffset;    //!

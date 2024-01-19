@@ -19,6 +19,7 @@ conposition:
       distance: 182.0
       angle: -16.0 # deg
       thickness: [0.301, 1.494, 1.486, 1.485]
+      pedestal: [0., 0., 0., 0.] # MeV, below this energy, assume 0 MeV
       material: [Si]
 
     - name: tel2
@@ -28,6 +29,7 @@ conposition:
       distance: 148.0
       angle: 23.0
       thickness: [0.300, 1.494, 1.486, 1.484]
+      pedestal: [0., 0., 0., 0.] # MeV, below this energy, assume 0 MeV
       material: [Si]
 
     - name: tel3
@@ -37,6 +39,7 @@ conposition:
       distance: 147.5
       angle: -39.0
       thickness: [0.075, 1.494, 1.507]
+      pedestal: [0., 0., 0.] # MeV, below this energy, assume 0 MeV
       material: [Si]
 
     - name: tel4
@@ -46,6 +49,7 @@ conposition:
       distance: 163.0
       angle: 49.0
       thickness: [0.073, 1.491]
+      pedestal: [0., 0.] # MeV, below this energy, assume 0 MeV
       material: [Si]
 
     - name: tel5
@@ -54,7 +58,8 @@ conposition:
       offset: [0., 0., 0.]
       distance: 167.0
       angle: -65.0
-      thickness: [0.042, 0.489]
+      thickness: [0.056, 1.465]
+      pedestal: [0., 0.] # MeV, below this energy, assume 0 MeV
       material: [Si]
 
     - name: tel6
@@ -63,8 +68,7 @@ conposition:
       offset: [0., 0., 0.]
       distance: 184.0
       angle: 75.0
-      #thickness: [0.042, 0.485]
-      thickness: [0.042, 1.465]
+      thickness: [0.042, 0.489]
       material: [Si]
 
   target:

@@ -63,6 +63,7 @@ class art::TTelescopeData : public TDataObject {
 
     Double_t GetTheta_L() const { return fTheta_L; }
     void SetTheta_L(Double_t arg) { fTheta_L = arg; }
+    Double_t A() const { return fTheta_L; }
 
     DoubleVec_t GetEnergyArray() const { return fEnergyArray; }
     Double_t GetEnergyArray(Int_t id) const { return fEnergyArray[id]; }
@@ -70,6 +71,17 @@ class art::TTelescopeData : public TDataObject {
     DoubleVec_t GetTimingArray() const { return fTimingArray; }
     Double_t GetTimingArray(Int_t id) const { return fTimingArray[id]; }
     void PushTimingArray(Double_t arg) { fTimingArray.emplace_back(arg); }
+
+    Double_t E(Int_t id = -1) const {
+        if (id < 0)
+            return fEtotal;
+        return fEnergyArray[id];
+    }
+    Double_t T(Int_t id = -1) const {
+        if (id < 0)
+            return fTimingArray[0];
+        return fTimingArray[id];
+    }
 
     virtual void Copy(TObject &dest) const;
     virtual void Clear(Option_t *opt = "");

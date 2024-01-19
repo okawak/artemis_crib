@@ -183,6 +183,13 @@ void TTelescopeProcessor::Process() {
         Double_t energy = Data1->GetCharge();
         Double_t timing = Data1->GetTiming();
 
+        // judge if the event is pedestal or not
+        if (fHasDetPrm) {
+            if (energy < fDetParameter->GetPedestal(0)) {
+                energy = 0.0;
+            }
+        }
+
         outData->SetXID(Data1->GetDetID());
         if (fIsDSSSD) {
             outData->SetdE(energy); // now fdE is used the value of dEX
@@ -219,6 +226,19 @@ void TTelescopeProcessor::Process() {
         const TTimingChargeData *const Data2 = dynamic_cast<const TTimingChargeData *>(inData2);
         Double_t energy = Data2->GetCharge();
         Double_t timing = Data2->GetTiming();
+
+        // judge if this event is pedestal or not
+        if (fHasDetPrm) {
+            if (fIsDSSSD) {
+                if (energy < fDetParameter->GetPedestal(0)) {
+                    energy = 0.0;
+                }
+            } else {
+                if (energy < fDetParameter->GetPedestal(1)) {
+                    energy = 0.0;
+                }
+            }
+        }
 
         outData->SetYID(Data2->GetDetID());
         if (!fIsDSSSD) {
@@ -277,6 +297,7 @@ void TTelescopeProcessor::Process() {
     } else {
         NE = fIsDSSSD ? DEFAULT_SSD_MAX_NUMBER - 1 : DEFAULT_SSD_MAX_NUMBER - 2;
     }
+    Int_t index = fIsDSSSD ? 1 : 2;
 
     if (NE < nData3) {
         Warning("process", "Thick SSD number is wrong between actual data and define in get/expname.yaml");
@@ -302,6 +323,13 @@ void TTelescopeProcessor::Process() {
             const TTimingChargeData *const Data3 = dynamic_cast<const TTimingChargeData *>(inData3);
             Double_t energy = Data3->GetCharge();
             Double_t timing = Data3->GetTiming();
+
+            // judge if the event is pedestal or not
+            if (fHasDetPrm) {
+                if (energy < fDetParameter->GetPedestal(index + iE)) {
+                    energy = 0.0;
+                }
+            }
 
             outData->PushEnergyArray(energy);
             outData->PushTimingArray(timing);
