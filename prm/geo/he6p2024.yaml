@@ -69,6 +69,7 @@ conposition:
       distance: 184.0
       angle: 75.0
       thickness: [0.042, 0.489]
+      pedestal: [0., 0.] # MeV, below this energy, assume 0 MeV
       material: [Si]
 
   target:
