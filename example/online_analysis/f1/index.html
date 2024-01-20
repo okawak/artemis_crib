@@ -12,18 +12,18 @@
     <link href="/artemis_crib/example/online_analysis/f1/index.print.html" rel="alternate" type="text/html" title="F1 :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1705744581" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705744581" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1705744581" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1705744581" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1705744581" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1705744581" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1705744581" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1705744581" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1705744581" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-CRIB-theme.css?1705744581" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/variant.css?1705744581" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1705744581" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/ie.css?1705744581" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1705744581"></script>
-    <script src="/artemis_crib/js/variant.js?1705744581"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1705762586" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705762586" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1705762586" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1705762586" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1705762586" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1705762586" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1705762586" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1705762586" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1705762586" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-CRIB-theme.css?1705762586" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/variant.css?1705762586" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1705762586" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/ie.css?1705762586" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1705762586"></script>
+    <script src="/artemis_crib/js/variant.js?1705762586"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -101,7 +101,7 @@
               </a>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-              <a class="topbar-control" href="/artemis_crib/example/online_analysis/pid/index.html" title="PID (🡒)">
+              <a class="topbar-control" href="/artemis_crib/example/online_analysis/pid/index.html" title="Beam PID (🡒)">
                 <i class="fa-fw fas fa-chevron-right"></i>
               </a>
             </div>
@@ -127,7 +127,53 @@
             </header>
 <h1 id="f1">F1</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-13 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2024-01-20 by Kodai Okawa</span></span>
+<p>From here, we would like to explain in detail how to analyze the actual experiment.
+We assume that you have already prepared your the analysis environment.
+It is okay either your own directory or the default directory (<a href="../../../crib_parts/environment">see CRIB configuration</a>).
+If you are not ready yet, please see <a href="../../preparation/basic">here</a>.</p>
+<p>So let&rsquo;s start to check the data.
+At the F1 focal plane, there is (charge-divition) PPAC.
+The steering file to analyze f1 data is <code>chkf1.yaml</code>.</p>
+<ul>
+<li><a href="https://github.com/okawak/artemis_crib/blob/main/steering/chkf1.yaml" target="_blank">steering/chkf1.yaml</a></li>
+</ul>
+<p>We usually use &ldquo;chk&rdquo; (check) as a prefix of the steering files to analyze from raw binaly data.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ artlogin <span class="o">(</span>username<span class="o">)</span>
+</span></span><span class="line"><span class="cl">$ a
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>0<span class="o">]</span> add steering/chkf1.yaml <span class="nv">NAME</span><span class="o">=</span>hoge <span class="nv">NUM</span><span class="o">=</span><span class="m">0000</span>
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>1<span class="o">]</span> res</span></span></code></pre></div><p>The important data is &ldquo;X position&rdquo; at the F1PPAC.
+The histogram can be check by following step:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">artemis <span class="o">[</span>2<span class="o">]</span> sus
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>3<span class="o">]</span> ls
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> artemis
+</span></span><span class="line"><span class="cl">&gt;   <span class="m">0</span> art::TTreeProjGroup f1check         f1_check
+</span></span><span class="line"><span class="cl">    <span class="m">1</span> art::TAnalysisInfo analysisInfo
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>4<span class="o">]</span> <span class="nb">cd</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>5<span class="o">]</span> ls
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> f1check
+</span></span><span class="line"><span class="cl">&gt;   <span class="m">0</span> art::TH1FTreeProj f1ppac_X        f1ppac X
+</span></span><span class="line"><span class="cl">    <span class="m">1</span> art::TH1FTreeProj f1ppac_Y        f1ppac Y
+</span></span><span class="line"><span class="cl">    <span class="m">2</span> art::TH1FTreeProj f1ppac_X1raw    f1ppac X1raw
+</span></span><span class="line"><span class="cl">    <span class="m">3</span> art::TH1FTreeProj f1ppac_X2raw    f1ppac X2raw
+</span></span><span class="line"><span class="cl">    <span class="m">4</span> art::TH1FTreeProj f1ppac_Y1raw    f1ppac Y1raw
+</span></span><span class="line"><span class="cl">    <span class="m">5</span> art::TH1FTreeProj f1ppac_Y2raw    f1ppac Y2raw
+</span></span><span class="line"><span class="cl">    <span class="m">6</span> art::TH2FTreeProj f1ppac_x_y      f1ppac X vs Y
+</span></span><span class="line"><span class="cl">    <span class="m">7</span> art::TH2FTreeProj f1ppac_x_rf     f1ppac X vs RF
+</span></span><span class="line"><span class="cl">    <span class="m">8</span> art::TH2FTreeProj f1ppac_x1_x2    f1ppac x1 vs x2
+</span></span><span class="line"><span class="cl">    <span class="m">9</span> art::TH2FTreeProj f1ppac_y1_y2    f1ppac y1 vs y2</span></span></code></pre></div><p>Many histograms are defined, but in practice it&rsquo;s enough to check the first X position.
+Sometimes we check other raw data histograms to see if the behavior of F1PPAC is correct or not.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">artemis <span class="o">[</span>6<span class="o">]</span> ht <span class="m">0</span></span></span></code></pre></div><p>Usually a gaussian fit is performed to get center the position.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">artemis <span class="o">[</span>7<span class="o">]</span> xf</span></span></code></pre></div><p>For the commane &ldquo;xf&rdquo; (xfitg), please check <a href="../../../crib_parts/newcommand">here</a>.</p>
+<p>When you think the signals from F1PPAC is okay, but position seems wrong (the X position is different from the setting of F1 slit), pleace modify the parameter files.</p>
+<ul>
+<li><a href="https://github.com/okawak/artemis_crib/blob/main/prm/ppac/ch2q.prm" target="_blank">prm/ppac/ch2q.prm</a></li>
+<li><a href="https://github.com/okawak/artemis_crib/blob/main/prm/ppac/f1ppac.yaml" target="_blank">prm/ppac/f1ppac.yaml</a></li>
+</ul>
+<p>It is actually charge-divition PPAC, but the structure of parameter file is the same with dl-PPAC, so please also check <a href="../../preparation/ppac_calibration">PPAC preparation</a>.</p>
 
             <footer class="footline">
 
@@ -155,12 +201,12 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/artemis_crib/js/auto-complete.js?1705744582" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.min.js?1705744582" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1705744582" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1705744582" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1705744582" defer></script>
-        <script src="/artemis_crib/js/search.js?1705744582" defer></script>
+        <script src="/artemis_crib/js/auto-complete.js?1705762586" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.min.js?1705762586" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1705762586" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1705762586" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1705762586" defer></script>
+        <script src="/artemis_crib/js/search.js?1705762586" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -204,7 +250,7 @@
           <li data-nav-id="/artemis_crib/example/preparation/git/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/git/index.html">Git</a></li></ul></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/index.html" class="parent "><a class="padding" href="/artemis_crib/example/online_analysis/index.html">Online analysis</a><ul id="R-subsections-772ca07ab897727f34ea5e7af1bcd1b0" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/example/online_analysis/f1/index.html" class="active"><a class="padding" href="/artemis_crib/example/online_analysis/f1/index.html">F1</a></li>
-          <li data-nav-id="/artemis_crib/example/online_analysis/pid/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/pid/index.html">PID</a></li>
+          <li data-nav-id="/artemis_crib/example/online_analysis/pid/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/pid/index.html">Beam PID</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/f2/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/f2/index.html">F2</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/ppac/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/ppac/index.html">PPAC</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/mwdc/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/mwdc/index.html">MWDC</a></li>
@@ -293,8 +339,8 @@
         </div>
       </div>
     </aside>
-    <script src="/artemis_crib/js/clipboard.min.js?1705744582" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1705744582" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1705762586" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1705762586" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -324,6 +370,6 @@
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1705744582" defer></script>
+    <script src="/artemis_crib/js/theme.js?1705762586" defer></script>
   </body>
 </html>
