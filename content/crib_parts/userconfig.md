@@ -69,7 +69,7 @@ What we wanted to do most is to register user-defined commands, which can be don
 ```
 The first line `gROOT->ProcessLine(".L macro/UserUtil.C")` load the user definition function.
 You can add any function to the "macro/UserUtil.C" file, and the function to load TCutG object in "/gate/*.root" directory is written defaultly.
-For more detail, please see [tcutg command](../newcommand) and [gate](../../example/online_analysis/gate) pages.
+For more detail, please see [tcutg command](./newcommand) and [gate](../../example/online_analysis/gate) pages.
 
 
 (For some reason, an error occurred when writing in artemislogon.C.)

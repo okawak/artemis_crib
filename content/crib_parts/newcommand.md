@@ -105,7 +105,7 @@ artemis [9]
 ### tcutg
 For `2D` histograms, this command create TCutG object and store in a ROOT file.
 If you select to save the object, the file will place to the `gate/*.root` directory.
-There objects are automatically loaded. (please check [user config](../userconfig) page.) 
+There objects are automatically loaded. (please check [user config](./userconfig) page.) 
 
 This is the example how to use this command.
 
