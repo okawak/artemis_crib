@@ -1,5 +1,5 @@
 ---
-title: "PID"
+title: "Beam PID"
 date: 2023-12-19T16:45:37+09:00
 draft: false
 author: "Kodai Okawa"
@@ -9,6 +9,10 @@ tags: []
 
 {{% badge %}}{{< signature >}}{{% /badge %}}
 
+In the F2 focal plane, we check the secondary beam condition.
+In other words, identify the beam particles we want and adjust the beamline parameters to get the most amount of the beam particle.
+Therefore, we need to identify the beam ion from the data.
+To do so, we perform simulation.
 
 This is almost the same with [this web application](https://www.cns.s.u-tokyo.ac.jp/crib/cgi-bin/pid/CRIB_PID_calc.html).
 This web application uses `enewz` energy loss calculation, but PID using artemis uses `SRIM`.
