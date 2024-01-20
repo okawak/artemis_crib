@@ -5,8 +5,7 @@
     <link>https://okawak.github.io/artemis_crib/example/index.html</link>
     <description>Recent content in Example on CRIB artemis</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <atom:link href="https://okawak.github.io/artemis_crib/example/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://okawak.github.io/artemis_crib/example/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Segment ID</title>
       <link>https://okawak.github.io/artemis_crib/example/segid/index.html</link>

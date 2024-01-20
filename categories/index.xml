@@ -5,7 +5,6 @@
     <link>https://okawak.github.io/artemis_crib/categories/index.html</link>
     <description>Recent content in Categories on CRIB artemis</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <atom:link href="https://okawak.github.io/artemis_crib/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://okawak.github.io/artemis_crib/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

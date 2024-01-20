@@ -4,37 +4,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.121.2">
-    <meta name="generator" content="Relearn 5.23.2">
+    <meta name="generator" content="Relearn 5.22.0">
     <meta name="description" content="Documentation for CRIB artemis">
-    <meta name="author" content="Kodai Okawa">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Geometry :: CRIB artemis">
-    <meta name="twitter:description" content="last modified: 2023-09-29 by Kodai Okawa In this page, I will explain how to determine the detecter geometry configration.">
-    <meta property="og:title" content="Geometry :: CRIB artemis">
-    <meta property="og:description" content="last modified: 2023-09-29 by Kodai Okawa In this page, I will explain how to determine the detecter geometry configration.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://okawak.github.io/artemis_crib/example/simulation/geometry/index.html">
-    <meta property="article:section" content="MC Simulation :: CRIB artemis">
-    <meta property="article:published_time" content="2023-08-25T16:34:00+09:00">
-    <meta property="article:modified_time" content="2023-09-29T13:47:06+09:00">
-    <meta property="og:site_name" content="CRIB artemis">
+    <meta name="author" content="map[name:Kodai Okawa]">
     <title>Geometry :: CRIB artemis</title>
     <link href="/artemis_crib/example/simulation/geometry/index.xml" rel="alternate" type="application/rss+xml" title="Geometry :: CRIB artemis">
     <link href="/artemis_crib/example/simulation/geometry/index.print.html" rel="alternate" type="text/html" title="Geometry :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1705743131" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705743131" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1705743131" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1705743131" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1705743131" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1705743131" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1705743131" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1705743131" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1705743131" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-CRIB-theme.css?1705743131" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/variant.css?1705743131" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1705743131" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/ie.css?1705743131" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1705743131"></script>
-    <script src="/artemis_crib/js/variant.js?1705743131"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1705744581" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705744581" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1705744581" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1705744581" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1705744581" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1705744581" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1705744581" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1705744581" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1705744581" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-CRIB-theme.css?1705744581" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/variant.css?1705744581" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1705744581" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/ie.css?1705744581" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1705744581"></script>
+    <script src="/artemis_crib/js/variant.js?1705744581"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -47,7 +36,6 @@
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
       window.T_Reset_view = 'Reset view';
-      window.T_View_reset = 'View reset!';
       window.T_No_results_found = 'No results found for \u0022{0}\u0022';
       window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
@@ -150,15 +138,18 @@
 <p>Firstly, let&rsquo;s prepare the parameter file like this:</p>
 
   
-<div class="tab-panel" data-tab-group="ba409f4f2a2abb7fa2c5bbd886b2517c">
+<div class="tab-panel" data-tab-group="bf398ee0679c9a05d5270dc242395cf9">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="prmgeoexampleyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('ba409f4f2a2abb7fa2c5bbd886b2517c','prmgeoexampleyaml')"
+      onclick="switchTab('bf398ee0679c9a05d5270dc242395cf9','prmgeoexampleyaml')"
     >
-      <span class="tab-nav-text">prm/geo/example.yaml</span>
+      <span>
+        <span class="tab-nav-hidden">prm/geo/example.yaml</span>
+        <span class="tab-nav-text">prm/geo/example.yaml</span>
+      </span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -266,15 +257,18 @@ Please NOTE that the name should be the same with <code>conposition/detector/nam
 Please prepare the steering file.</p>
 
   
-<div class="tab-panel" data-tab-group="e3442a95a27e5a9ccfe33311c3fa6a1d">
+<div class="tab-panel" data-tab-group="4affc9152a79dbfd4cc55a5892bfebdc">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="steeringgeo_exampleyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('e3442a95a27e5a9ccfe33311c3fa6a1d','steeringgeo_exampleyaml')"
+      onclick="switchTab('4affc9152a79dbfd4cc55a5892bfebdc','steeringgeo_exampleyaml')"
     >
-      <span class="tab-nav-text">steering/geo_example.yaml</span>
+      <span>
+        <span class="tab-nav-hidden">steering/geo_example.yaml</span>
+        <span class="tab-nav-text">steering/geo_example.yaml</span>
+      </span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -323,6 +317,7 @@ If the detector is placed where you expect it to be, the parameters have been su
 I will explain the next session!</p>
 
             <footer class="footline">
+
             </footer>
           </article>
         </div>
@@ -347,12 +342,12 @@ I will explain the next session!</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/artemis_crib/js/auto-complete.js?1705743131" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.min.js?1705743131" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1705743131" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1705743131" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1705743131" defer></script>
-        <script src="/artemis_crib/js/search.js?1705743131" defer></script>
+        <script src="/artemis_crib/js/auto-complete.js?1705744582" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.min.js?1705744582" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1705744582" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1705744582" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1705744582" defer></script>
+        <script src="/artemis_crib/js/search.js?1705744582" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -485,8 +480,8 @@ I will explain the next session!</p>
         </div>
       </div>
     </aside>
-    <script src="/artemis_crib/js/clipboard.min.js?1705743132" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1705744582" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1705744582" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -516,6 +511,6 @@ I will explain the next session!</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/theme.js?1705744582" defer></script>
   </body>
 </html>

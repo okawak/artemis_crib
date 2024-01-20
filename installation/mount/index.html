@@ -4,37 +4,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.121.2">
-    <meta name="generator" content="Relearn 5.23.2">
+    <meta name="generator" content="Relearn 5.22.0">
     <meta name="description" content="Documentation for CRIB artemis">
-    <meta name="author" content="Kodai Okawa">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="mount setting :: CRIB artemis">
-    <meta name="twitter:description" content="last modified: 2023-11-02 by Kodai Okawa For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory.">
-    <meta property="og:title" content="mount setting :: CRIB artemis">
-    <meta property="og:description" content="last modified: 2023-11-02 by Kodai Okawa For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://okawak.github.io/artemis_crib/installation/mount/index.html">
-    <meta property="article:section" content="Installation :: CRIB artemis">
-    <meta property="article:published_time" content="2023-08-14T15:14:29+09:00">
-    <meta property="article:modified_time" content="2023-11-02T14:11:12+09:00">
-    <meta property="og:site_name" content="CRIB artemis">
+    <meta name="author" content="map[name:Kodai Okawa]">
     <title>mount setting :: CRIB artemis</title>
     <link href="/artemis_crib/installation/mount/index.xml" rel="alternate" type="application/rss+xml" title="mount setting :: CRIB artemis">
     <link href="/artemis_crib/installation/mount/index.print.html" rel="alternate" type="text/html" title="mount setting :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1705743131" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705743131" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1705743131" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1705743131" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1705743131" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1705743131" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1705743131" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1705743131" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1705743131" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-CRIB-theme.css?1705743131" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/variant.css?1705743131" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1705743131" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/ie.css?1705743131" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1705743131"></script>
-    <script src="/artemis_crib/js/variant.js?1705743131"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1705744581" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705744581" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1705744581" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1705744581" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1705744581" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1705744581" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1705744581" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1705744581" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1705744581" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-CRIB-theme.css?1705744581" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/variant.css?1705744581" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1705744581" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/ie.css?1705744581" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1705744581"></script>
+    <script src="/artemis_crib/js/variant.js?1705744581"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -47,7 +36,6 @@
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
       window.T_Reset_view = 'Reset view';
-      window.T_View_reset = 'View reset!';
       window.T_No_results_found = 'No results found for \u0022{0}\u0022';
       window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
@@ -145,10 +133,8 @@
         <div class="flex-block-wrapper">
           <article class="default">
             <header class="headline">
-<div class=" taxonomy-tags term-list cstyle  tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
-  <ul>
-    <li><a class="term-link" href="/artemis_crib/tags/crib/index.html">CRIB</a></li>
-  </ul>
+<div class="tags">
+  <a class="tag-link" href="/artemis_crib/tags/crib/index.html">CRIB</a>
 </div>
             </header>
 <h1 id="mount-setting">mount setting</h1>
@@ -185,7 +171,7 @@ One important point is that we have output root file when we start to analysis, 
 <p>For online analysis, the best option is to get the data via a file server, as there is no time to transfer the raw data files each time.</p>
 <p>This is example of CRIB system.</p>
 
-<pre class="mermaid align-center">
+<div class="mermaid align-center">
 ---
 title: Network system of CRIB
 ---
@@ -194,7 +180,7 @@ graph LR;
     B(MPV1 J1) --&gt; D
     C(MPV2 J1) --&gt; D
     D --&gt; E[Analysis PC]
-</pre>
+</div>
 <p>As this figure, we use file server in the DAQ main PC.</p>
 <h5 id="31-server-setting">3.1 server setting</h5>
 <p>The OS of the DAQ PC is CentOS7, but I think it can be applied for current OS. (like <code>yum</code> -&gt; <code>dnf</code>)
@@ -223,15 +209,18 @@ For the other options, please check <a href="https://access.redhat.com/documenta
 <p>To reflect the mount settings when the system is rebooted, add a setting to <code>/etc/fstab</code>.</p>
 
   
-<div class="tab-panel" data-tab-group="26c647e76c0b01460a66c9e2cb83dc56">
+<div class="tab-panel" data-tab-group="67c6434282115d97df33e6031d5993af">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="etcfstab"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('26c647e76c0b01460a66c9e2cb83dc56','etcfstab')"
+      onclick="switchTab('67c6434282115d97df33e6031d5993af','etcfstab')"
     >
-      <span class="tab-nav-text">/etc/fstab</span>
+      <span>
+        <span class="tab-nav-hidden">/etc/fstab</span>
+        <span class="tab-nav-text">/etc/fstab</span>
+      </span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -246,6 +235,7 @@ For the other options, please check <a href="https://access.redhat.com/documenta
   </div>
 </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo mount -a</span></span></code></pre></div>
             <footer class="footline">
+
             </footer>
           </article>
         </div>
@@ -270,12 +260,12 @@ For the other options, please check <a href="https://access.redhat.com/documenta
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/artemis_crib/js/auto-complete.js?1705743132" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.min.js?1705743132" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1705743132" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1705743132" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1705743132" defer></script>
-        <script src="/artemis_crib/js/search.js?1705743132" defer></script>
+        <script src="/artemis_crib/js/auto-complete.js?1705744582" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.min.js?1705744582" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1705744582" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1705744582" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1705744582" defer></script>
+        <script src="/artemis_crib/js/search.js?1705744582" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -408,8 +398,8 @@ For the other options, please check <a href="https://access.redhat.com/documenta
         </div>
       </div>
     </aside>
-    <script src="/artemis_crib/js/clipboard.min.js?1705743132" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1705744582" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1705744582" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -439,20 +429,20 @@ For the other options, please check <a href="https://access.redhat.com/documenta
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/d3/d3-color.min.js?1705743132" defer></script>
-    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1705743132" defer></script>
-    <script src="/artemis_crib/js/d3/d3-drag.min.js?1705743132" defer></script>
-    <script src="/artemis_crib/js/d3/d3-ease.min.js?1705743132" defer></script>
-    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1705743132" defer></script>
-    <script src="/artemis_crib/js/d3/d3-selection.min.js?1705743132" defer></script>
-    <script src="/artemis_crib/js/d3/d3-timer.min.js?1705743132" defer></script>
-    <script src="/artemis_crib/js/d3/d3-transition.min.js?1705743132" defer></script>
-    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1705743132" defer></script>
-    <script src="/artemis_crib/js/js-yaml.min.js?1705743132" defer></script>
-    <script src="/artemis_crib/js/mermaid.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/d3/d3-color.min.js?1705744582" defer></script>
+    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1705744582" defer></script>
+    <script src="/artemis_crib/js/d3/d3-drag.min.js?1705744582" defer></script>
+    <script src="/artemis_crib/js/d3/d3-ease.min.js?1705744582" defer></script>
+    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1705744582" defer></script>
+    <script src="/artemis_crib/js/d3/d3-selection.min.js?1705744582" defer></script>
+    <script src="/artemis_crib/js/d3/d3-timer.min.js?1705744582" defer></script>
+    <script src="/artemis_crib/js/d3/d3-transition.min.js?1705744582" defer></script>
+    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1705744582" defer></script>
+    <script src="/artemis_crib/js/js-yaml.min.js?1705744582" defer></script>
+    <script src="/artemis_crib/js/mermaid.min.js?1705744582" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{}");
     </script>
-    <script src="/artemis_crib/js/theme.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/theme.js?1705744582" defer></script>
   </body>
 </html>

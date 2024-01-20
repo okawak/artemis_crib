@@ -5,8 +5,7 @@
     <link>https://okawak.github.io/artemis_crib/crib_parts/index.html</link>
     <description>Recent content in CRIB Configuration on CRIB artemis</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <atom:link href="https://okawak.github.io/artemis_crib/crib_parts/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://okawak.github.io/artemis_crib/crib_parts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Analysis environment</title>
       <link>https://okawak.github.io/artemis_crib/crib_parts/environment/index.html</link>

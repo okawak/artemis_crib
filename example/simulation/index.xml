@@ -5,8 +5,7 @@
     <link>https://okawak.github.io/artemis_crib/example/simulation/index.html</link>
     <description>Recent content in MC Simulation on CRIB artemis</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <atom:link href="https://okawak.github.io/artemis_crib/example/simulation/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://okawak.github.io/artemis_crib/example/simulation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Beam_generator</title>
       <link>https://okawak.github.io/artemis_crib/example/simulation/beam_generator/index.html</link>

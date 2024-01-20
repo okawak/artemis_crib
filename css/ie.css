@@ -17,9 +17,6 @@
 	/* theme */
 	#R-sidebar {
 		left: 0;
-		min-width: 18.75rem;
-		max-width: 18.75rem;
-		width: 18.75rem;
 	}
 	#R-header {
 		border-right: 1px solid transparent;
@@ -45,24 +42,6 @@
 	}
 	#R-body {
 		margin-left: 18.75rem;
-		min-width: calc( 100% - 18.75rem );
-		max-width: calc( 100% - 18.75rem );
-		width: calc( 100% - 18.75rem );
-	 }
-	#R-body .flex-block-wrapper {
-		max-width: calc( 81.25rem - 18.75rem - 2 * 3.25rem );
-	}
-	body:not(.print) #R-body .narrow .flex-block-wrapper {
-		max-width: calc( 81.25rem - 18.75rem - 2 * 9.75rem );
-	}
-	/* we limit width if we have large screens */
-	@media screen and ( min-width: 81.25rem ){ /* #R-sidebar/width + ./max-width */
-		#R-body .flex-block-wrapper {
-			width: calc( 81.25rem - 18.75rem - 2 * 3.25rem );
-		}
-		body:not(.print) #R-body .narrow .flex-block-wrapper {
-			width: calc( 81.25rem - 18.75rem - 2 * 9.75rem );
-		}
 	}
 	h2, h3, h4, h5, h6 {
 		padding-right: 2rem;
@@ -109,20 +88,12 @@
 	.topbar-content {
 		left: 1rem;
 	}
-	@media screen and (max-width: 59.999rem) {
-		#R-sidebar {
-			min-width: 14.375rem;
-			max-width: 14.375rem;
-			width: 14.375rem;
-		}
- 		#R-body {
+	@media screen and (max-width: 60rem) {
+		#R-body {
 			margin-left: 14.375rem;
-			min-width: calc( 100% - 14.375rem );
-			max-width: calc( 100% - 14.375rem );
-			width: calc( 100% - 14.375rem );
 		}
 	}
-	@media screen and (max-width: 47.999rem) {
+	@media screen and (max-width: 48rem) {
 		.mobile-support #R-sidebar {
 			left: -14.375rem;
 		}
@@ -257,7 +228,7 @@
 	#R-body .topbar-sidebar-divider {
 		border-left-color: rgba( 125, 201, 3, 1 ); /* var(--MENU-TOPBAR-SEPARATOR-color) */
 	}
-	@media screen and (max-width: 47.999rem) {
+	@media screen and (max-width: 48rem) {
 		#R-body .topbar-sidebar-divider {
 			border-left-color: transparent;
 		}
@@ -513,7 +484,7 @@
 
 	code,
 	kbd,
-	pre:not(.mermaid),
+	pre,
 	samp {
 		font-family: "Consolas", menlo, monospace; /* var(--CODE-font) */
 	}
@@ -524,7 +495,7 @@
 		color: rgba( 94, 94, 94, 1 ); /* var(--CODE-INLINE-color) */
 	}
 
-	pre:not(.mermaid) {
+	pre {
 		background-color: rgba( 248, 248, 248, 1 ); /* var(--CODE-BLOCK-BG-color) */
 		border-color: rgba( 216, 216, 216, 1 ); /* var(--CODE-BLOCK-BORDER-color) */
 		color: rgba( 0, 0, 0, 1 ); /* var(--CODE-BLOCK-color) */
@@ -569,15 +540,15 @@
 	}
 
 	div.highlight > div table + .copy-to-clipboard-button,
-	div.highlight pre:not(.mermaid) + .copy-to-clipboard-button,
-	pre:not(.mermaid) .copy-to-clipboard-button {
+	div.highlight pre + .copy-to-clipboard-button,
+	pre .copy-to-clipboard-button {
 		border-color: rgba( 216, 216, 216, 1 ); /* var(--CODE-BLOCK-BORDER-color) */
 		color: rgba( 72, 106, 201, 1 ); /* var(--MAIN-LINK-color) */
 	}
 
 	div.highlight > div table + .copy-to-clipboard-button:hover,
-	div.highlight pre:not(.mermaid) + .copy-to-clipboard-button:hover,
-	pre:not(.mermaid) .copy-to-clipboard-button:hover {
+	div.highlight pre + .copy-to-clipboard-button:hover,
+	pre .copy-to-clipboard-button:hover {
 		background-color: rgba( 72, 106, 201, 1 ); /* var(--MAIN-LINK-color) */
 		border-color: rgba( 72, 106, 201, 1 ); /* var(--MAIN-LINK-color) */
 		color: rgba( 248, 248, 248, 1 ); /* var(--CODE-BLOCK-BG-color) */
@@ -740,17 +711,17 @@
 		color: rgba( 74, 74, 74, 1 ); /* var(--MAIN-TITLES-TEXT-color) */
 	}
 
-	#R-body .tags a.term-link {
+	#R-body .tags a.tag-link {
 		background-color: rgba( 125, 201, 3, 1 ); /* var(--TAG-BG-color) */
 		color: rgba( 255, 255, 255, 1 ); /* var(--MAIN-BG-color) */
 		margin-right: 16px;
 	}
 
-	#R-body .tags a.term-link:before {
+	#R-body .tags a.tag-link:before {
 		border-right-color: rgba( 125, 201, 3, 1 ); /* var(--TAG-BG-color) */
 	}
 
-	#R-body .tags a.term-link:after {
+	#R-body .tags a.tag-link:after {
 		background: rgba( 255, 255, 255, 1 ); /* var(--MAIN-BG-color) */
 	}
 
@@ -839,11 +810,11 @@
 		color: rgba( 16, 16, 16, 1 ); /* var(--VARIABLE-BOX-TEXT-color) */
 	}
 
-	#R-body .tab-nav-button.active > .tab-nav-text{
+	#R-body .tab-nav-button.active > *{
 		background-color: rgba( 255, 255, 255, 1 ); /* var(--VARIABLE-BOX-BG-color) */
 	}
 
-	#R-body .tab-nav-button > .tab-nav-text{
+	#R-body .tab-nav-button > * > *{
 		border-color: rgba( 134, 134, 134, .4 ); /* var(--VARIABLE-BOX-color) */
 	}
 

@@ -4,37 +4,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.121.2">
-    <meta name="generator" content="Relearn 5.23.2">
+    <meta name="generator" content="Relearn 5.22.0">
     <meta name="description" content="Documentation for CRIB artemis">
-    <meta name="author" content="Kodai Okawa">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Histograms :: CRIB artemis">
-    <meta name="twitter:description" content="last modified: 2023-11-14 by Kodai Okawa In the online analysis, it is important to have immediate access to data.">
-    <meta property="og:title" content="Histograms :: CRIB artemis">
-    <meta property="og:description" content="last modified: 2023-11-14 by Kodai Okawa In the online analysis, it is important to have immediate access to data.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://okawak.github.io/artemis_crib/setting/histograms/index.html">
-    <meta property="article:section" content="Setting :: CRIB artemis">
-    <meta property="article:published_time" content="2023-11-02T17:03:45+09:00">
-    <meta property="article:modified_time" content="2023-11-14T19:00:32+09:00">
-    <meta property="og:site_name" content="CRIB artemis">
+    <meta name="author" content="map[name:Kodai Okawa]">
     <title>Histograms :: CRIB artemis</title>
     <link href="/artemis_crib/setting/histograms/index.xml" rel="alternate" type="application/rss+xml" title="Histograms :: CRIB artemis">
     <link href="/artemis_crib/setting/histograms/index.print.html" rel="alternate" type="text/html" title="Histograms :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1705743131" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705743131" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1705743131" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1705743131" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1705743131" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1705743131" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1705743131" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1705743131" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1705743131" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-CRIB-theme.css?1705743131" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/variant.css?1705743131" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1705743131" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/ie.css?1705743131" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1705743131"></script>
-    <script src="/artemis_crib/js/variant.js?1705743131"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1705744581" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705744581" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1705744581" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1705744581" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1705744581" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1705744581" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1705744581" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1705744581" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1705744581" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-CRIB-theme.css?1705744581" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/variant.css?1705744581" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1705744581" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/ie.css?1705744581" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1705744581"></script>
+    <script src="/artemis_crib/js/variant.js?1705744581"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -47,7 +36,6 @@
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
       window.T_Reset_view = 'Reset view';
-      window.T_View_reset = 'View reset!';
       window.T_No_results_found = 'No results found for \u0022{0}\u0022';
       window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
@@ -166,15 +154,18 @@ First, let&rsquo;s prepare the steering file as follows!
 please see previous section for omissions.</p>
 
   
-<div class="tab-panel" data-tab-group="3b7ad83601842a7a1157871d1acb22e8">
+<div class="tab-panel" data-tab-group="87e29e86782ebaa3ac51b1f62fb999d7">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('3b7ad83601842a7a1157871d1acb22e8','chkssdyaml')"
+      onclick="switchTab('87e29e86782ebaa3ac51b1f62fb999d7','chkssdyaml')"
     >
-      <span class="tab-nav-text">chkssd.yaml</span>
+      <span>
+        <span class="tab-nav-hidden">chkssd.yaml</span>
+        <span class="tab-nav-text">chkssd.yaml</span>
+      </span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -218,15 +209,18 @@ so describe the processing of the histogram after the part that represents the d
 <p>First please look at this example.</p>
 
   
-<div class="tab-panel" data-tab-group="4e8ca341c513212b0b0ce4914dd25218">
+<div class="tab-panel" data-tab-group="0d381833faf417fd82b6511caf8217bb">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="histssdssdyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('4e8ca341c513212b0b0ce4914dd25218','histssdssdyaml')"
+      onclick="switchTab('0d381833faf417fd82b6511caf8217bb','histssdssdyaml')"
     >
-      <span class="tab-nav-text">hist/ssd/ssd.yaml</span>
+      <span>
+        <span class="tab-nav-hidden">hist/ssd/ssd.yaml</span>
+        <span class="tab-nav-text">hist/ssd/ssd.yaml</span>
+      </span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -342,15 +336,18 @@ In such cases, it is useful to allow the histogram definition file to have argum
 <p>Please look here first.</p>
 
   
-<div class="tab-panel" data-tab-group="af85f9a10e8db364e45e5cc2b3abbca8">
+<div class="tab-panel" data-tab-group="503ff51e1f4612796beaf3c7f7d62f15">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('af85f9a10e8db364e45e5cc2b3abbca8','chkssdyaml')"
+      onclick="switchTab('503ff51e1f4612796beaf3c7f7d62f15','chkssdyaml')"
     >
-      <span class="tab-nav-text">chkssd.yaml</span>
+      <span>
+        <span class="tab-nav-hidden">chkssd.yaml</span>
+        <span class="tab-nav-text">chkssd.yaml</span>
+      </span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -381,15 +378,18 @@ Then the &ldquo;name&rdquo; can be used at hist file by <code>@name@</code>!
 The &ldquo;name&rdquo; can be freely set.</p>
 
   
-<div class="tab-panel" data-tab-group="1c72e3c7f036c43e32c9ee6a84c587ce">
+<div class="tab-panel" data-tab-group="ff2f82e227c6d055e0e384fa3a2b648e">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="histssdssdyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('1c72e3c7f036c43e32c9ee6a84c587ce','histssdssdyaml')"
+      onclick="switchTab('ff2f82e227c6d055e0e384fa3a2b648e','histssdssdyaml')"
     >
-      <span class="tab-nav-text">hist/ssd/ssd.yaml</span>
+      <span>
+        <span class="tab-nav-hidden">hist/ssd/ssd.yaml</span>
+        <span class="tab-nav-text">hist/ssd/ssd.yaml</span>
+      </span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -425,15 +425,18 @@ The &ldquo;name&rdquo; can be freely set.</p>
 </div><p>This is useful when there are more objects to check!</p>
 
   
-<div class="tab-panel" data-tab-group="d35a74abc10dc231dbb8629258dc43e0">
+<div class="tab-panel" data-tab-group="e3c3b473c3f559983a69bd9f406c4e4f">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('d35a74abc10dc231dbb8629258dc43e0','chkssdyaml')"
+      onclick="switchTab('e3c3b473c3f559983a69bd9f406c4e4f','chkssdyaml')"
     >
-      <span class="tab-nav-text">chkssd.yaml</span>
+      <span>
+        <span class="tab-nav-hidden">chkssd.yaml</span>
+        <span class="tab-nav-text">chkssd.yaml</span>
+      </span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -471,6 +474,7 @@ The &ldquo;name&rdquo; can be freely set.</p>
 </div><p>File splitting using &ldquo;include&rdquo; nodes, as described in the section on steeling, can also be used in the same way.</p>
 
             <footer class="footline">
+
             </footer>
           </article>
         </div>
@@ -495,12 +499,12 @@ The &ldquo;name&rdquo; can be freely set.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/artemis_crib/js/auto-complete.js?1705743132" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.min.js?1705743132" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1705743132" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1705743132" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1705743132" defer></script>
-        <script src="/artemis_crib/js/search.js?1705743132" defer></script>
+        <script src="/artemis_crib/js/auto-complete.js?1705744582" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.min.js?1705744582" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1705744582" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1705744582" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1705744582" defer></script>
+        <script src="/artemis_crib/js/search.js?1705744582" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -633,8 +637,8 @@ The &ldquo;name&rdquo; can be freely set.</p>
         </div>
       </div>
     </aside>
-    <script src="/artemis_crib/js/clipboard.min.js?1705743132" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1705744582" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1705744582" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -664,6 +668,6 @@ The &ldquo;name&rdquo; can be freely set.</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/theme.js?1705744582" defer></script>
   </body>
 </html>
