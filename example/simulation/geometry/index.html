@@ -4,26 +4,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.121.2">
-    <meta name="generator" content="Relearn 5.22.0">
-    <meta name="description" content="">
+    <meta name="generator" content="Relearn 5.23.2">
+    <meta name="description" content="Documentation for CRIB artemis">
     <meta name="author" content="Kodai Okawa">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Geometry :: CRIB artemis">
+    <meta name="twitter:description" content="last modified: 2023-09-29 by Kodai Okawa In this page, I will explain how to determine the detecter geometry configration.">
+    <meta property="og:title" content="Geometry :: CRIB artemis">
+    <meta property="og:description" content="last modified: 2023-09-29 by Kodai Okawa In this page, I will explain how to determine the detecter geometry configration.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://okawak.github.io/artemis_crib/example/simulation/geometry/index.html">
+    <meta property="article:section" content="MC Simulation :: CRIB artemis">
+    <meta property="article:published_time" content="2023-08-25T16:34:00+09:00">
+    <meta property="article:modified_time" content="2023-09-29T13:47:06+09:00">
+    <meta property="og:site_name" content="CRIB artemis">
     <title>Geometry :: CRIB artemis</title>
     <link href="/artemis_crib/example/simulation/geometry/index.xml" rel="alternate" type="application/rss+xml" title="Geometry :: CRIB artemis">
     <link href="/artemis_crib/example/simulation/geometry/index.print.html" rel="alternate" type="text/html" title="Geometry :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1705477121" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705477121" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1705477121" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1705477121" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1705477121" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1705477121" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1705477121" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1705477121" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1705477121" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-artemis_crib.css?1705477121" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/variant.css?1705477121" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1705477121" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/ie.css?1705477121" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1705477121"></script>
-    <script src="/artemis_crib/js/variant.js?1705477121"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1705743131" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705743131" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1705743131" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1705743131" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1705743131" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1705743131" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1705743131" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1705743131" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1705743131" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-CRIB-theme.css?1705743131" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/variant.css?1705743131" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1705743131" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/ie.css?1705743131" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1705743131"></script>
+    <script src="/artemis_crib/js/variant.js?1705743131"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -36,11 +47,12 @@
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
       window.T_Reset_view = 'Reset view';
+      window.T_View_reset = 'View reset!';
       window.T_No_results_found = 'No results found for \u0022{0}\u0022';
       window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/okawak.github.io\/artemis_crib/';
-      window.variants && variants.init( [ 'artemis_crib' ] );
+      window.variants && variants.init( [ 'CRIB-theme', 'relearn-auto', 'relearn-dark', 'zen-dark', 'learn' ] );
     </script>
 
   
@@ -138,18 +150,15 @@
 <p>Firstly, let&rsquo;s prepare the parameter file like this:</p>
 
   
-<div class="tab-panel" data-tab-group="8f8c798ae87be4400011dcfb2d94c967">
+<div class="tab-panel" data-tab-group="ba409f4f2a2abb7fa2c5bbd886b2517c">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="prmgeoexampleyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('8f8c798ae87be4400011dcfb2d94c967','prmgeoexampleyaml')"
+      onclick="switchTab('ba409f4f2a2abb7fa2c5bbd886b2517c','prmgeoexampleyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">prm/geo/example.yaml</span>
-        <span class="tab-nav-text">prm/geo/example.yaml</span>
-      </span>
+      <span class="tab-nav-text">prm/geo/example.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -158,55 +167,55 @@
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">material</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Vaccum</span> <span style="color:#75715e"># id=0</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">atomic_mass</span>: <span style="color:#ae81ff">0.0</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">atomic_num</span>: <span style="color:#ae81ff">0.0</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">density</span>: <span style="color:#ae81ff">0.0</span> <span style="color:#75715e"># g/cm3</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Si</span> <span style="color:#75715e"># id=1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">atomic_mass</span>: <span style="color:#ae81ff">28.084</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">atomic_num</span>: <span style="color:#ae81ff">14.0</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">density</span>: <span style="color:#ae81ff">2.321</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Note: beam axis -&gt; z, upper direction -&gt; y</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">conposition</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">detector</span>:
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">tel1</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">strip</span>: [<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">16</span>]
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">center_rotation</span>: [<span style="color:#ae81ff">0</span><span style="color:#ae81ff">., 0., 322.0]</span> <span style="color:#75715e"># mm</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">offset</span>: [<span style="color:#ae81ff">0</span><span style="color:#ae81ff">., 0., 0.]</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">distance</span>: <span style="color:#ae81ff">244.0</span> 
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">angle</span>: -<span style="color:#ae81ff">4.0</span> <span style="color:#75715e"># deg</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">thickness</span>: [<span style="color:#ae81ff">0.02</span>, <span style="color:#ae81ff">0.301</span>, <span style="color:#ae81ff">1.494</span>, <span style="color:#ae81ff">1.486</span>]
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">material</span>: [<span style="color:#ae81ff">Si]</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">tel2</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">strip</span>: [<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">16</span>]
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">center_rotation</span>: [<span style="color:#ae81ff">0</span><span style="color:#ae81ff">., 0., 322.0]</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">offset</span>: [<span style="color:#ae81ff">0</span><span style="color:#ae81ff">., 0., 0.]</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">distance</span>: <span style="color:#ae81ff">154.5</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">angle</span>: <span style="color:#ae81ff">27.0</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">thickness</span>: [<span style="color:#ae81ff">0.02</span>, <span style="color:#ae81ff">0.300</span>, <span style="color:#ae81ff">1.494</span>, <span style="color:#ae81ff">1.485</span>]
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">material</span>: [<span style="color:#ae81ff">Si]</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">volume</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">top</span>: <span style="color:#75715e"># detector world</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">TOP</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">box</span> <span style="color:#75715e"># now only box is available</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">material</span>: <span style="color:#ae81ff">0</span> 
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">size</span>: [<span style="color:#ae81ff">400.0</span>, <span style="color:#ae81ff">200.0</span>, <span style="color:#ae81ff">1288.0</span>] <span style="color:#75715e"># mm</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">detector</span>:
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">tel1</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">type</span>: <span style="color:#ae81ff">box</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">material</span>: <span style="color:#ae81ff">1</span> 
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">size</span>: [<span style="color:#ae81ff">50.0</span>, <span style="color:#ae81ff">50.0</span>, <span style="color:#ae81ff">1.0</span>] <span style="color:#75715e"># mm</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">tel2</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">type</span>: <span style="color:#ae81ff">box</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">material</span>: <span style="color:#ae81ff">1</span> 
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">size</span>: [<span style="color:#ae81ff">50.0</span>, <span style="color:#ae81ff">50.0</span>, <span style="color:#ae81ff">1.0</span>] <span style="color:#75715e"># mm</span></span></span></code></pre></div></div>
+<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">material</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Vaccum</span><span class="w"> </span><span class="c"># id=0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">atomic_mass</span><span class="p">:</span><span class="w"> </span><span class="m">0.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">atomic_num</span><span class="p">:</span><span class="w"> </span><span class="m">0.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">density</span><span class="p">:</span><span class="w"> </span><span class="m">0.0</span><span class="w"> </span><span class="c"># g/cm3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Si</span><span class="w"> </span><span class="c"># id=1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">atomic_mass</span><span class="p">:</span><span class="w"> </span><span class="m">28.084</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">atomic_num</span><span class="p">:</span><span class="w"> </span><span class="m">14.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">density</span><span class="p">:</span><span class="w"> </span><span class="m">2.321</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Note: beam axis -&gt; z, upper direction -&gt; y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">conposition</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">detector</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">tel1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">strip</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="m">16</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">center_rotation</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">0</span><span class="l">., 0., 322.0]</span><span class="w"> </span><span class="c"># mm</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">offset</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">0</span><span class="l">., 0., 0.]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">distance</span><span class="p">:</span><span class="w"> </span><span class="m">244.0</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">angle</span><span class="p">:</span><span class="w"> </span>-<span class="m">4.0</span><span class="w"> </span><span class="c"># deg</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">thickness</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">0.02</span><span class="p">,</span><span class="w"> </span><span class="m">0.301</span><span class="p">,</span><span class="w"> </span><span class="m">1.494</span><span class="p">,</span><span class="w"> </span><span class="m">1.486</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">material</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">Si]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">tel2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">strip</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="m">16</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">center_rotation</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">0</span><span class="l">., 0., 322.0]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">offset</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">0</span><span class="l">., 0., 0.]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">distance</span><span class="p">:</span><span class="w"> </span><span class="m">154.5</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">angle</span><span class="p">:</span><span class="w"> </span><span class="m">27.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">thickness</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">0.02</span><span class="p">,</span><span class="w"> </span><span class="m">0.300</span><span class="p">,</span><span class="w"> </span><span class="m">1.494</span><span class="p">,</span><span class="w"> </span><span class="m">1.485</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">material</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">Si]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">volume</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">top</span><span class="p">:</span><span class="w"> </span><span class="c"># detector world</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">TOP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">box</span><span class="w"> </span><span class="c"># now only box is available</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">material</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">400.0</span><span class="p">,</span><span class="w"> </span><span class="m">200.0</span><span class="p">,</span><span class="w"> </span><span class="m">1288.0</span><span class="p">]</span><span class="w"> </span><span class="c"># mm</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">detector</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">tel1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">box</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">material</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">50.0</span><span class="p">,</span><span class="w"> </span><span class="m">50.0</span><span class="p">,</span><span class="w"> </span><span class="m">1.0</span><span class="p">]</span><span class="w"> </span><span class="c"># mm</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">tel2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">box</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">material</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">50.0</span><span class="p">,</span><span class="w"> </span><span class="m">50.0</span><span class="p">,</span><span class="w"> </span><span class="m">1.0</span><span class="p">]</span><span class="w"> </span><span class="c"># mm</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div><p>There are many components to explain!
@@ -257,18 +266,15 @@ Please NOTE that the name should be the same with <code>conposition/detector/nam
 Please prepare the steering file.</p>
 
   
-<div class="tab-panel" data-tab-group="2f051fe60221b223f4826b0e70f7e705">
+<div class="tab-panel" data-tab-group="e3442a95a27e5a9ccfe33311c3fa6a1d">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="steeringgeo_exampleyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('2f051fe60221b223f4826b0e70f7e705','steeringgeo_exampleyaml')"
+      onclick="switchTab('e3442a95a27e5a9ccfe33311c3fa6a1d','steeringgeo_exampleyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">steering/geo_example.yaml</span>
-        <span class="tab-nav-text">steering/geo_example.yaml</span>
-      </span>
+      <span class="tab-nav-text">steering/geo_example.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -277,38 +283,38 @@ Please prepare the steering file.</p>
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Anchor</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">Processor</span>:
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">detector_initialize</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TUserGeoInitializer</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Name</span>: <span style="color:#ae81ff">prm_detector</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">FileName</span>: <span style="color:#ae81ff">prm/geo/example.yaml</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">OutputTransparency</span>: <span style="color:#ae81ff">1</span></span></span></code></pre></div></div>
+<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">Anchor</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">Processor</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">detector_initialize</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TUserGeoInitializer</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l">prm_detector</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">FileName</span><span class="p">:</span><span class="w"> </span><span class="l">prm/geo/example.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">OutputTransparency</span><span class="p">:</span><span class="w"> </span><span class="m">1</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div><p>This steering file doesn&rsquo;t use event loop.
 Just we want to check the parameter file works well or not.</p>
 <p>Then let&rsquo;s see in the artemis!</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>acd
-</span></span><span style="display:flex;"><span>a
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>-- snip --
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> add steering/geo_example.yaml
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>-- snip --
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> ls
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span> artemis
-</span></span><span style="display:flex;"><span>&gt;   <span style="color:#ae81ff">0</span> TGeoVolume TOP             Top volume
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>2<span style="color:#f92672">]</span></span></span></code></pre></div><p>The detector geometry object is successfully generated!
+<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acd
+</span></span><span class="line"><span class="cl">a
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-- snip --
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>0<span class="o">]</span> add steering/geo_example.yaml
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-- snip --
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>1<span class="o">]</span> ls
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> artemis
+</span></span><span class="line"><span class="cl">&gt;   <span class="m">0</span> TGeoVolume TOP             Top volume
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>2<span class="o">]</span></span></span></code></pre></div><p>The detector geometry object is successfully generated!
 In order to check the object, please use <a href="https://github.com/okawak/artemis_crib/blob/main/src-crib/commands/TCmdDraw.cc" target="_blank">draw</a> command for example.
 (It is defined only in CRIB artemis, to draw not only histogram object. This is under development.)</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> draw <span style="color:#ae81ff">0</span></span></span></code></pre></div><figure><img src="../geo_canvas.png"/>
+<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">artemis <span class="o">[</span>2<span class="o">]</span> draw <span class="m">0</span></span></span></code></pre></div><figure><img src="../geo_canvas.png"/>
 </figure>
 
 <p>The red box is the TOP, and the black boxes are detectors.
@@ -317,7 +323,6 @@ If the detector is placed where you expect it to be, the parameters have been su
 I will explain the next session!</p>
 
             <footer class="footline">
-
             </footer>
           </article>
         </div>
@@ -342,12 +347,12 @@ I will explain the next session!</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/artemis_crib/js/auto-complete.js?1705477122" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.min.js?1705477122" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1705477122" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1705477122" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1705477122" defer></script>
-        <script src="/artemis_crib/js/search.js?1705477122" defer></script>
+        <script src="/artemis_crib/js/auto-complete.js?1705743131" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.min.js?1705743131" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1705743131" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1705743131" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1705743131" defer></script>
+        <script src="/artemis_crib/js/search.js?1705743131" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -425,10 +430,10 @@ I will explain the next session!</p>
             <li><a class="padding" href="/artemis_crib/tags/index.html"><i class='fas fa-fw fa-tags'></i> Tags</a></li>
           </ul>
         </div>
-        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
         <div id="R-menu-footer">
-          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
-          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
             <ul>
               <li id="R-select-language-container" class="footerLangSwitch">
                 <div class="padding menu-control">
@@ -442,14 +447,18 @@ I will explain the next session!</p>
                   <div class="clear"></div>
                 </div>
               </li>
-              <li id="R-select-variant-container" class="footerVariantSwitch">
+              <li id="R-select-variant-container" class="footerVariantSwitch showVariantSwitch">
                 <div class="padding menu-control">
                   <i class="fas fa-paint-brush fa-fw"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-variant">Theme</label>
                     <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                      <option id="R-artemis_crib" value="artemis_crib" selected>Artemis Crib</option>
+                      <option id="R-CRIB-theme" value="CRIB-theme" selected>CRIB Theme</option>
+                      <option id="R-relearn-auto" value="relearn-auto">Relearn Auto</option>
+                      <option id="R-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                      <option id="R-zen-dark" value="zen-dark">Zen Dark</option>
+                      <option id="R-learn" value="learn">Learn</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -476,8 +485,8 @@ I will explain the next session!</p>
         </div>
       </div>
     </aside>
-    <script src="/artemis_crib/js/clipboard.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1705477122" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1705743132" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -507,6 +516,6 @@ I will explain the next session!</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1705477122" defer></script>
+    <script src="/artemis_crib/js/theme.js?1705743132" defer></script>
   </body>
 </html>

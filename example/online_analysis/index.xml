@@ -5,7 +5,8 @@
     <link>https://okawak.github.io/artemis_crib/example/online_analysis/index.html</link>
     <description>Recent content in Online analysis on CRIB artemis</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://okawak.github.io/artemis_crib/example/online_analysis/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <atom:link href="https://okawak.github.io/artemis_crib/example/online_analysis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>F1</title>
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/f1/index.html</link>

@@ -160,10 +160,10 @@ dd {
     inset-inline-start: 0;
     line-height: 1.574;
     min-height: 100%;
-    min-width: 18.75rem;
-    max-width: 18.75rem;
     position: fixed;
-    width: 18.75rem;
+    min-width: var(--INTERNAL-MENU-WIDTH-L);
+    max-width: var(--INTERNAL-MENU-WIDTH-L);
+    width: var(--INTERNAL-MENU-WIDTH-L);
 }
 
 #R-sidebar a{
@@ -333,13 +333,13 @@ dd {
     flex-grow: 1;
     flex-shrink: 0;
     height: 100%;
-    margin-inline-start: 18.75rem;
+    margin-inline-start: var(--INTERNAL-MENU-WIDTH-L);
     min-height: 100%;
-    min-width: calc( 100% - 18.75rem);
-    max-width: calc( 100% - 18.75rem);
     overflow-wrap: break-word; /* avoid x-scrolling of body if it is to large to fit */
     position: relative; /* PS */
-    width: calc( 100% - 18.75rem);
+    min-width: calc( 100% - var(--INTERNAL-MENU-WIDTH-L) );
+    max-width: calc( 100% - var(--INTERNAL-MENU-WIDTH-L) );
+    width: calc( 100% - var(--INTERNAL-MENU-WIDTH-L) );
     z-index: 70;
 }
 
@@ -384,12 +384,12 @@ dd {
     padding: 0 3.25rem 4rem 3.25rem;
     position: relative; /* PS */
 }
-@media screen and (max-width: 60rem) {
+@media screen and (max-width: 59.999rem) {
     #R-body-inner {
         padding: 0 2rem 1rem 2rem;
     }
 }
-@media screen and (max-width: 48rem) {
+@media screen and (max-width: 47.999rem) {
     #R-body-inner {
         padding: 0 1.25rem .375rem 1.25rem;
     }
@@ -424,32 +424,31 @@ article a:focus {
 #R-body .flex-block-wrapper {
     margin-left: auto;
     margin-right: auto;
-    max-width: calc( 81.25rem - 18.75rem - 2 * 3.25rem );
+    max-width: calc( 81.25rem - var(--INTERNAL-MENU-WIDTH-L) - 2 * 3.25rem );
     width: 100%;
 }
 body:not(.print) #R-body .narrow .flex-block-wrapper {
-    max-width: calc( 81.25rem - 18.75rem - 2 * 9.75rem );
+    max-width: calc( 81.25rem - var(--INTERNAL-MENU-WIDTH-L) - 2 * 9.75rem );
 }
-
 /* we limit width if we have large screens */
 @media screen and ( min-width: 81.25rem ){ /* #R-sidebar/width + ./max-width */
     #R-body .flex-block-wrapper {
-        width: calc( 81.25rem - 18.75rem - 2 * 3.25rem );
+        width: calc( 81.25rem - var(--INTERNAL-MENU-WIDTH-L) - 2 * 3.25rem );
     }
     body:not(.print) #R-body .narrow .flex-block-wrapper {
-        width: calc( 81.25rem - 18.75rem - 2 * 9.75rem );
+        width: calc( 81.25rem - var(--INTERNAL-MENU-WIDTH-L) - 2 * 9.75rem );
     }
 }
 
 body:not(.print) #R-body-inner.narrow {
     padding: 2rem 9.75rem;
 }
-@media screen and (max-width: 60rem) {
+@media screen and (max-width: 59.999rem) {
     body:not(.print) #R-body-inner.narrow {
         padding: 1rem 6.5rem;
     }
 }
-@media screen and (max-width: 48rem) {
+@media screen and (max-width: 47.999rem) {
     body:not(.print) #R-body-inner.narrow {
         padding: .375rem 3.25rem;
     }
@@ -487,12 +486,12 @@ body:not(.print) #R-body-inner.narrow h1 {
     border-bottom: 4px solid rgba( 134, 134, 134, .125 );
     font-size: 3.5rem;
 }
-@media only screen and (min-width: 48rem) and (max-width: 60rem) {
+@media only screen and (min-width: 48rem) and (max-width: 59.999rem) {
     body:not(.print) #R-body-inner.narrow h1 {
         font-size: 2.8rem;
     }
 }
-@media only screen and (max-width: 48rem) {
+@media only screen and (max-width: 47.999rem) {
     body:not(.print) #R-body-inner.narrow h1 {
         font-size: 2.5rem;
     }
@@ -606,19 +605,19 @@ p:empty {
 
 #R-body table th > :nth-last-child(1 of :not(:empty)),
 #R-body table th > :nth-last-child(1 of :not(:empty)) :nth-last-child(1 of :not(:empty)),
-#R-body table th > div.highlight:last-child pre,
+#R-body table th > div.highlight:last-child pre:not(.mermaid),
 #R-body table td > :nth-last-child(1 of :not(:empty)),
 #R-body table td > :nth-last-child(1 of :not(:empty)) :nth-last-child(1 of :not(:empty)),
-#R-body table td > div:last-child pre,
+#R-body table td > div:last-child pre:not(.mermaid),
 #R-body div.box > .box-content > :nth-last-child(1 of :not(:empty)),
 #R-body div.box > .box-content > :nth-last-child(1 of :not(:empty)) :nth-last-child(1 of :not(:empty)),
-#R-body div.box > .box-content > div:last-child pre,
+#R-body div.box > .box-content > div:last-child pre:not(.mermaid),
 #R-body div.expand > .expand-content-text > :nth-last-child(1 of :not(:empty)),
 #R-body div.expand > .expand-content-text > :nth-last-child(1 of :not(:empty)) :nth-last-child(1 of :not(:empty)),
-#R-body div.expand > .expand-content-text > div:last-child pre,
+#R-body div.expand > .expand-content-text > div:last-child pre:not(.mermaid),
 #R-body div.tab-content > .tab-content-text > :nth-last-child(1 of :not(:empty)),
 #R-body div.tab-content > .tab-content-text > :nth-last-child(1 of :not(:empty)) :nth-last-child(1 of :not(:empty)),
-#R-body div.tab-content > .tab-content-text > div:last-child pre {
+#R-body div.tab-content > .tab-content-text > div:last-child pre:not(.mermaid) {
     margin-bottom: 0;
 }
 
@@ -675,7 +674,7 @@ div.attachments .box-content {
 
 code,
 kbd,
-pre,
+pre:not(.mermaid),
 samp {
     font-size: .934375rem;
     vertical-align: baseline;
@@ -703,7 +702,7 @@ code.copy-to-clipboard-code {
     border-inline-end-width: 0;
 }
 
-pre {
+pre:not(.mermaid) {
     border-radius: 2px;
     border-style: solid;
     border-width: 1px;
@@ -714,14 +713,14 @@ pre {
     position: relative;
 }
 
-/* pre:has( code ), */
+/* pre:not(.mermaid):has( code ), */
 /* the :has() operator isn't available in FF yet, so we patch this by JS */
-pre.pre-code {
+pre:not(.mermaid).pre-code {
     direction: ltr;
     text-align: left;
 }
 
-pre code {
+pre:not(.mermaid) code {
     background-color: inherit;
     border: 0;
     color: inherit;
@@ -768,33 +767,33 @@ div.highlight > div table{
     display: block;
     overflow: auto;
 }
-div.highlight:not(.wrap-code) pre{
+div.highlight:not(.wrap-code) pre:not(.mermaid){
     overflow: auto;
 }
-div.highlight:not(.wrap-code) pre code{
+div.highlight:not(.wrap-code) pre:not(.mermaid) code{
     white-space: pre;
 }
-div.highlight.wrap-code pre code{
+div.highlight.wrap-code pre:not(.mermaid) code{
     white-space: pre-wrap;
 }
 /* remove border from row cells if highlight shortcode was used in table lineno mode */
-div.highlight > div td > pre {
+div.highlight > div td > pre:not(.mermaid) {
     border-radius: 0;
     border-width: 0;
 }
 /* in case of table lineno mode we want to move each row closer together - besides the edges
 this usually applies only to wrapfix tables but it doesn't hurt for non-wrapfix tables too */
-div.highlight > div tr:not(:first-child) pre{
+div.highlight > div tr:not(:first-child) pre:not(.mermaid){
     padding-top: 0;
 }
-div.highlight > div tr:not(:last-child) pre{
+div.highlight > div tr:not(:last-child) pre:not(.mermaid){
     padding-bottom: 0;
 }
 /* in case of table lineno mode we want to move each columns closer together on the inside */
-div.highlight > div td:first-child:not(:last-child) pre{
+div.highlight > div td:first-child:not(:last-child) pre:not(.mermaid){
     padding-right: 0;
 }
-div.highlight > div td:not(:first-child):last-child pre{
+div.highlight > div td:not(:first-child):last-child pre:not(.mermaid){
     padding-left: 0;
 }
 
@@ -802,7 +801,7 @@ hr {
     border-bottom: 4px solid rgba( 134, 134, 134, .125 );
 }
 
-#R-body-inner pre {
+#R-body-inner pre:not(.mermaid) {
     white-space: pre-wrap;
 }
 
@@ -1026,11 +1025,7 @@ tbody > tr:nth-child(even) > td {
 .topbar-sidebar-divider::after {
     content: "\00a0";
 }
-@media screen and (max-width: 48rem) {
-    .topbar-sidebar-divider {
-        border-inline-start-color: transparent;
-    }
-}
+
 .topbar-wrapper > .topbar-area-start {
     display: flex;
     flex-direction: row;
@@ -1070,7 +1065,7 @@ html[dir="rtl"] .topbar-button-next i {
     margin: 0;
     padding: 0 1rem;
 }
-@media screen and (max-width: 48rem) {
+@media screen and (max-width: 47.999rem) {
     .topbar-breadcrumbs {
         /* we just hide the breadcrumbs instead of display: none;
         this makes sure that the breadcrumbs are still usable for
@@ -1100,23 +1095,23 @@ html[dir="rtl"] .topbar-button-next i {
     text-decoration: none;
 }
 
-@media screen and (max-width: 60rem) {
+@media screen and (max-width: 59.999rem) {
     #R-sidebar {
-        min-width: 14.375rem;
-        max-width: 14.375rem;
-        width: 14.375rem;
+        min-width: var(--INTERNAL-MENU-WIDTH-M);
+        max-width: var(--INTERNAL-MENU-WIDTH-M);
+        width: var(--INTERNAL-MENU-WIDTH-M);
     }
     #R-body {
-        margin-inline-start: 14.375rem;
-        min-width: calc( 100% - 14.375rem);
-        max-width: calc( 100% - 14.375rem);
-        width: calc( 100% - 14.375rem);
+        margin-inline-start: var(--INTERNAL-MENU-WIDTH-M);
+        min-width: calc( 100% - var(--INTERNAL-MENU-WIDTH-M) );
+        max-width: calc( 100% - var(--INTERNAL-MENU-WIDTH-M) );
+        width: calc( 100% - var(--INTERNAL-MENU-WIDTH-M) );
     }
 }
-@media screen and (max-width: 48rem) {
+@media screen and (max-width: 47.999rem) {
     /* we don't support sidebar flyout in mobile */
     .mobile-support #R-sidebar {
-        inset-inline-start: -14.375rem;
+        inset-inline-start: calc( -1 * var(--INTERNAL-MENU-WIDTH-M) );
     }
     .mobile-support #navshow{
         display: inline;
@@ -1137,7 +1132,7 @@ html[dir="rtl"] .topbar-button-next i {
         z-index: 90;
     }
     .mobile-support.sidebar-flyout #R-body {
-        margin-inline-start: 14.375rem;
+        margin-inline-start: var(--INTERNAL-MENU-WIDTH-M);
         overflow: hidden;
     }
     .mobile-support.sidebar-flyout #R-body-overlay{
@@ -1180,6 +1175,12 @@ span > .copy-to-clipboard-button {
 div.highlight .copy-to-clipboard-button {
     display: none;
 }
+@media (any-hover: none) {
+    /* if there is at least one input device that does not support hover, we want to force the copy button */
+    div.highlight .copy-to-clipboard-button {
+        display: block;
+    }
+}
 div.highlight:hover .copy-to-clipboard-button {
     display: block;
 }
@@ -1188,15 +1189,15 @@ div.highlight:hover .copy-to-clipboard-button {
 }
 
 div.highlight > div table + .copy-to-clipboard-button > i,
-div.highlight pre + .copy-to-clipboard-button > i,
+div.highlight pre:not(.mermaid) + .copy-to-clipboard-button > i,
 .copy-to-clipboard-code + .copy-to-clipboard-button > i {
     padding-left: 5px;
     padding-right: 5px;
 }
 
 div.highlight > div table + .copy-to-clipboard-button,
-div.highlight pre + .copy-to-clipboard-button,
-pre > .copy-to-clipboard-button {
+div.highlight pre:not(.mermaid) + .copy-to-clipboard-button,
+pre:not(.mermaid) > .copy-to-clipboard-button {
     background-color: rgba( 160, 160, 160, .2 );
     border-radius: 2px;
     border-style: solid;
@@ -1319,10 +1320,15 @@ html[dir="rtl"] .expand > .expand-label > i.fa-chevron-right {
 
 .mermaid {
     border: 1px solid transparent;
-    display: inline;
+    /* don't use display: none, as this will cause no renderinge by Mermaid */
+    visibility: hidden;
     padding: .5rem .5rem 0 .5rem;
 }
-.mermaid.zoom {
+.mermaid.mermaid-render {
+    display: inline;
+    visibility: visible;
+}
+.mermaid.mermaid-render.zoom {
     display: inline-block;
     position: relative;
     width: 100%;
@@ -1352,6 +1358,12 @@ html[dir="rtl"] .expand > .expand-label > i.fa-chevron-right {
     position: absolute;
     right: 4px;
     top: 4px;
+}
+@media (any-hover: none) {
+    /* if there is at least one input device that does not support hover, we want to force the reset button */
+    .svg-reset-button.zoom {
+        display: block;
+    }
 }
 .mermaid:hover .svg-reset-button {
     display: block;
@@ -1539,6 +1551,12 @@ html[dir="rtl"] .expand > .expand-label > i.fa-chevron-right {
     position: absolute;
     visibility: hidden;
 }
+@media (any-hover: none) {
+    /* if there is at least one input device that does not support hover, we want to force the copy button */
+    .anchor {
+        visibility: visible;
+    }
+}
 
 h2:hover .anchor,
 h3:hover .anchor,
@@ -1658,6 +1676,15 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration { display: none; }
 
+@supports selector(.math:has(> mjx-container)){
+    .math{
+        visibility: hidden;
+    }
+    .math:has(> mjx-container){
+        visibility: visible;
+    }
+}
+
 .math.align-left > mjx-container{
     text-align: left !important;
 }
@@ -1691,7 +1718,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     width: 1px;
 }
 
-/* filament style for making action visible on focus - not adepted yet
+/* filament style for making action visible on focus - not adapted yet
 .a11y-only:focus {
     position: fixed;
     height: auto;
@@ -2044,6 +2071,14 @@ html[dir="rtl"] #R-sidebar ul.collapsible-menu > li > label > i.fa-chevron-right
     }
 }
 
+.columnize > *{
+    break-inside: avoid-column;
+}
+
+.columnize .breadcrumbs{
+    font-size: .859625rem;
+}
+
 #R-body .tab-panel{
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;
@@ -2079,36 +2114,23 @@ html[dir="rtl"] #R-sidebar ul.collapsible-menu > li > label > i.fa-chevron-right
     cursor: default;
 }
 
-#R-body .tab-nav-button > *{
-    display: block;
-    position: relative;
-}
-
-#R-body .tab-nav-button.active > *{
-    border-radius: 1px 1px 0 0;
-}
-
-#R-body .tab-nav-button > * > *{
+#R-body .tab-nav-button > .tab-nav-text{
     border-bottom-style: solid;
-    border-bottom-width: .2rem;
+    border-bottom-width: .15rem;
+    display: block;
     padding: .2rem .6rem 0 .6rem;
 }
-
-#R-body .tab-nav-button.active > * > *{
+/* https://stackoverflow.com/a/46452396 */
+#R-body .tab-nav-button.active > .tab-nav-text{
     border-bottom-color: transparent;
-    font-weight: 500;
+    border-radius: 1px 1px 0 0;
+    text-shadow: -0.06ex 0 0 currentColor, 0.06ex 0 0 currentColor;
 }
-
-#R-body .tab-nav-button > * > .tab-nav-hidden{
-    display: block;
-    font-weight: 500;
-    visibility: hidden;
-}
-
-#R-body .tab-nav-button > * > .tab-nav-text{
-    display: block;
-    position: absolute;
-    top: 0;
+@supports (-webkit-text-stroke-width: 0.04ex){
+    #R-body .tab-nav-button.active > .tab-nav-text{
+        text-shadow: -0.03ex 0 0 currentColor, 0.03ex 0 0 currentColor;
+        -webkit-text-stroke-width: 0.04ex;
+    }
 }
 
 #R-body .tab-content{
@@ -2139,8 +2161,8 @@ html[dir="rtl"] #R-sidebar ul.collapsible-menu > li > label > i.fa-chevron-right
 
 /* remove border from code block if single in tab */
 #R-body .tab-content-text > div.highlight:only-child > div,
-#R-body .tab-content-text > div.highlight:only-child pre,
-#R-body .tab-content-text > pre.pre-code:only-child{
+#R-body .tab-content-text > div.highlight:only-child pre:not(.mermaid),
+#R-body .tab-content-text > pre:not(.mermaid).pre-code:only-child{
     border-width: 0;
 }
 
@@ -2191,4 +2213,17 @@ html[dir="rtl"] #R-sidebar ul.collapsible-menu > li > label > i.fa-chevron-right
 
 #R-topics {
     padding-top: 1rem;
+}
+
+.term-list ul,
+.term-list li {
+    list-style: none;
+    display: inline;
+    padding: 0;
+}
+.term-list i ~ ul > li:before{
+    content: " "
+}
+.term-list ul > li ~ li:before {
+    content: " | "
 }

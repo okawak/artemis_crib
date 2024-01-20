@@ -4,27 +4,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.121.2">
-    <meta name="generator" content="Relearn 5.22.0">
-    <meta name="description" content="">
+    <meta name="generator" content="Relearn 5.23.2">
+    <meta name="description" content="Documentation for CRIB artemis">
     <meta name="author" content="Kodai Okawa">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Histograms :: CRIB artemis">
+    <meta name="twitter:description" content="last modified: 2023-11-14 by Kodai Okawa In the online analysis, it is important to have immediate access to data.">
+    <meta property="og:title" content="Histograms :: CRIB artemis">
+    <meta property="og:description" content="last modified: 2023-11-14 by Kodai Okawa In the online analysis, it is important to have immediate access to data.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://okawak.github.io/artemis_crib/setting/histograms/index.html">
+    <meta property="article:section" content="Setting :: CRIB artemis">
+    <meta property="article:published_time" content="2023-11-02T17:03:45+09:00">
+    <meta property="article:modified_time" content="2023-11-14T19:00:32+09:00">
+    <meta property="og:site_name" content="CRIB artemis">
     <title>Histograms :: CRIB artemis</title>
     <link href="https://okawak.github.io/artemis_crib/setting/histograms/index.html" rel="canonical" type="text/html" title="Histograms :: CRIB artemis">
     <link href="/artemis_crib/setting/histograms/index.xml" rel="alternate" type="application/rss+xml" title="Histograms :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1705477122" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705477122" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1705477122" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1705477122" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1705477122" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1705477122" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1705477122" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1705477122" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1705477122" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-artemis_crib.css?1705477122" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/variant.css?1705477122" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1705477122" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/format-print.css?1705477122" rel="stylesheet">
-    <link href="/artemis_crib/css/ie.css?1705477122" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1705477122"></script>
-    <script src="/artemis_crib/js/variant.js?1705477122"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1705743132" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705743132" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1705743132" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1705743132" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1705743132" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1705743132" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1705743132" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1705743132" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1705743132" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-CRIB-theme.css?1705743132" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/variant.css?1705743132" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1705743132" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/format-print.css?1705743132" rel="stylesheet">
+    <link href="/artemis_crib/css/ie.css?1705743132" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1705743132"></script>
+    <script src="/artemis_crib/js/variant.js?1705743132"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -37,11 +48,12 @@
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
       window.T_Reset_view = 'Reset view';
+      window.T_View_reset = 'View reset!';
       window.T_No_results_found = 'No results found for \u0022{0}\u0022';
       window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/okawak.github.io\/artemis_crib/';
-      window.variants && variants.init( [ 'artemis_crib' ] );
+      window.variants && variants.init( [ 'CRIB-theme', 'relearn-auto', 'relearn-dark', 'zen-dark', 'learn' ] );
     </script>
 
   
@@ -90,9 +102,9 @@
 <span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-14 by Kodai Okawa</span></span>
 <p>In the online analysis, it is important to have immediate access to data.
 The artemis can produce <strong>TTree</strong> object but long commands are needed to access, for example,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> fcd <span style="color:#ae81ff">0</span>  <span style="color:#75715e"># move to the created rootfile</span>
-</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> zone <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">2</span>  <span style="color:#75715e"># make a &#34;artemis&#34; 2x2 canvas</span>
-</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>3<span style="color:#f92672">]</span> tree-&gt;Draw<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ssd_cal.fCharge:ssd_cal.fTiming&gt;(100,0.,100., 100,0.,100)&#34;</span>,<span style="color:#e6db74">&#34;ssd_cal.fCharge &gt; 1.0&#34;</span>,<span style="color:#e6db74">&#34;colz&#34;</span><span style="color:#f92672">)</span></span></span></code></pre></div><p>This would take time if there are some histograms that you want to display immediately&hellip;</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">artemis <span class="o">[</span>1<span class="o">]</span> fcd <span class="m">0</span>  <span class="c1"># move to the created rootfile</span>
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>2<span class="o">]</span> zone <span class="m">2</span> <span class="m">2</span>  <span class="c1"># make a &#34;artemis&#34; 2x2 canvas</span>
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>3<span class="o">]</span> tree-&gt;Draw<span class="o">(</span><span class="s2">&#34;ssd_cal.fCharge:ssd_cal.fTiming&gt;(100,0.,100., 100,0.,100)&#34;</span>,<span class="s2">&#34;ssd_cal.fCharge &gt; 1.0&#34;</span>,<span class="s2">&#34;colz&#34;</span><span class="o">)</span></span></span></code></pre></div><p>This would take time if there are some histograms that you want to display immediately&hellip;</p>
 <p>Therefore, if you know in advance the diagram you want to see, it is useful to predefine its histogram!
 The processor used is <code>TTreeProjectionProcessor</code>.
 I would like to explain how to use this one.</p>
@@ -102,18 +114,15 @@ First, let&rsquo;s prepare the steering file as follows!
 please see previous section for omissions.</p>
 
   
-<div class="tab-panel" data-tab-group="05e85287886beecabe4edf62feef437d">
+<div class="tab-panel" data-tab-group="3b7ad83601842a7a1157871d1acb22e8">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('05e85287886beecabe4edf62feef437d','chkssdyaml')"
+      onclick="switchTab('3b7ad83601842a7a1157871d1acb22e8','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -122,25 +131,25 @@ please see previous section for omissions.</p>
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># -- snip --</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">include</span>: <span style="color:#ae81ff">ssd/ssd_single.yaml</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Histogram</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">projection_ssd</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TTreeProjectionProcessor</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex; background-color:#3c3d38"><span>      <span style="color:#f92672">FileName</span>: <span style="color:#ae81ff">hist/ssd/ssd.yaml</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Type</span>:     <span style="color:#ae81ff">art::TTreeProjection</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputFilename</span>: <span style="color:#75715e">*histout</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># output root file</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">outputtree</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TOutputTreeProcessor</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">FileName</span>:
-</span></span><span style="display:flex;"><span>        - <span style="color:#75715e">*output</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># -- snip --</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="l">ssd/ssd_single.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Histogram</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">projection_ssd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TTreeProjectionProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">      </span><span class="nt">FileName</span><span class="p">:</span><span class="w"> </span><span class="l">hist/ssd/ssd.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Type</span><span class="p">:</span><span class="w">     </span><span class="l">art::TTreeProjection</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputFilename</span><span class="p">:</span><span class="w"> </span><span class="cp">*histout</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># output root file</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">outputtree</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TOutputTreeProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">FileName</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="cp">*output</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div><p>The histogram is created based on the <strong>TTree</strong> object,
@@ -157,18 +166,15 @@ so describe the processing of the histogram after the part that represents the d
 <p>First please look at this example.</p>
 
   
-<div class="tab-panel" data-tab-group="3afed9cb10da466da55e49cf4d23741a">
+<div class="tab-panel" data-tab-group="4e8ca341c513212b0b0ce4914dd25218">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="histssdssdyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('3afed9cb10da466da55e49cf4d23741a','histssdssdyaml')"
+      onclick="switchTab('4e8ca341c513212b0b0ce4914dd25218','histssdssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">hist/ssd/ssd.yaml</span>
-        <span class="tab-nav-text">hist/ssd/ssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">hist/ssd/ssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -177,28 +183,28 @@ so describe the processing of the histogram after the part that represents the d
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#f92672">anchor</span>: 
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>  - <span style="color:#75715e">&amp;energy</span> [<span style="color:#e6db74">&#34;ssd_cal.fCharge&#34;</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">0</span><span style="color:#ae81ff">.,100.]</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>  - <span style="color:#75715e">&amp;timing</span> [<span style="color:#e6db74">&#34;ssd_cal.fTiming&#34;</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">0</span><span style="color:#ae81ff">.,100.]</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#f92672">alias</span>:
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>  <span style="color:#f92672">energy_cut</span>: <span style="color:#ae81ff">ssd_cal.fCharge&gt;1.0;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#f92672">group</span>:
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ssd_test</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#f92672">title</span>: <span style="color:#ae81ff">ssd_test</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    <span style="color:#f92672">contents</span>:
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ssd_energy</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        <span style="color:#f92672">title</span>: <span style="color:#ae81ff">ssd_energy</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        <span style="color:#f92672">x</span>: <span style="color:#75715e">*energy</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ssd_timing</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        <span style="color:#f92672">title</span>: <span style="color:#ae81ff">ssd_timing</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>        <span style="color:#f92672">x</span>: <span style="color:#75715e">*timing</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ssd_energy and timing</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>        <span style="color:#f92672">title</span>: <span style="color:#ae81ff">ssd_energy and timing</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        <span style="color:#f92672">x</span>: <span style="color:#75715e">*timing</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>        <span style="color:#f92672">y</span>: <span style="color:#75715e">*energy</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>        <span style="color:#f92672">cut</span>: <span style="color:#ae81ff">energy_cut</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nt">anchor</span><span class="p">:</span><span class="w"> 
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w">  </span>- <span class="cp">&amp;energy</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;ssd_cal.fCharge&#34;</span><span class="p">,</span><span class="m">100</span><span class="p">,</span><span class="m">0</span><span class="l">.,100.]</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="w">  </span>- <span class="cp">&amp;timing</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;ssd_cal.fTiming&#34;</span><span class="p">,</span><span class="m">100</span><span class="p">,</span><span class="m">0</span><span class="l">.,100.]</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w"></span><span class="nt">alias</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w">  </span><span class="nt">energy_cut</span><span class="p">:</span><span class="w"> </span><span class="l">ssd_cal.fCharge&gt;1.0;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="w"></span><span class="nt">group</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">ssd_test</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">ssd_test</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w">    </span><span class="nt">contents</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">ssd_energy</span><span class="w">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w">        </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">ssd_energy</span><span class="w">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="w">        </span><span class="nt">x</span><span class="p">:</span><span class="w"> </span><span class="cp">*energy</span><span class="w">
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">ssd_timing</span><span class="w">
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="w">        </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">ssd_timing</span><span class="w">
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="w">        </span><span class="nt">x</span><span class="p">:</span><span class="w"> </span><span class="cp">*timing</span><span class="w">
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">ssd_energy and timing</span><span class="w">
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="w">        </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">ssd_energy and timing</span><span class="w">
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="w">        </span><span class="nt">x</span><span class="p">:</span><span class="w"> </span><span class="cp">*timing</span><span class="w">
+</span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="w">        </span><span class="nt">y</span><span class="p">:</span><span class="w"> </span><span class="cp">*energy</span><span class="w">
+</span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="w">        </span><span class="nt">cut</span><span class="p">:</span><span class="w"> </span><span class="l">energy_cut</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div><p>This definition file consists of three parts.</p>
@@ -232,12 +238,12 @@ please check <a href="https://github.com/artemis-dev/artemis/blob/develop/source
 <p>The histogram is defined here and the object is stored in a directory in artemis (ROOT, TDirectory).
 In the example shown above, the directory structure would look like this:</p>
 <p>(It is not actually displayed in this way).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># in artemis</span>
-</span></span><span style="display:flex;"><span>.
-</span></span><span style="display:flex;"><span>└── ssd_test
-</span></span><span style="display:flex;"><span>    ├── ssd_energy <span style="color:#f92672">(</span>1D hist<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    ├── ssd_timing <span style="color:#f92672">(</span>1D hist<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    └── ssd_energy and timing <span style="color:#f92672">(</span>2D hist<span style="color:#f92672">)</span></span></span></code></pre></div><p>The first &ldquo;name&rdquo; and &ldquo;title&rdquo; nodes are arguments of TDirectory instance.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># in artemis</span>
+</span></span><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">└── ssd_test
+</span></span><span class="line"><span class="cl">    ├── ssd_energy <span class="o">(</span>1D hist<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    ├── ssd_timing <span class="o">(</span>1D hist<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    └── ssd_energy and timing <span class="o">(</span>2D hist<span class="o">)</span></span></span></code></pre></div><p>The first &ldquo;name&rdquo; and &ldquo;title&rdquo; nodes are arguments of TDirectory instance.
 Also the second &ldquo;name&rdquo; and &ldquo;title&rdquo; nodes are arguments of instance of TH1 or TH2 object.
 The other &ldquo;x&rdquo;, &ldquo;y&rdquo; and &ldquo;cut&rdquo; is the important node!</p>
 <ol>
@@ -251,30 +257,30 @@ These are similar to the <a href="https://ribf.riken.go.jp/RIBFDAQ/index.php?Too
 <ol>
 <li>ls : check the artemis directory</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; artlogin <span style="color:#f92672">(</span>username<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>&gt; a
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> add steering/chkssd.yaml NAME<span style="color:#f92672">=</span>hoge NUM<span style="color:#f92672">=</span><span style="color:#ae81ff">0000</span>
-</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> res
-</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> sus
-</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>3<span style="color:#f92672">]</span> ls <span style="color:#75715e"># check the artemis directory</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span> artemis
-</span></span><span style="display:flex;"><span>&gt;   <span style="color:#ae81ff">0</span> art::TTreeProjGroup ssd_test        ssd_test
-</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1</span> art::TAnalysisInfo analysisInfo</span></span></code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">&gt; artlogin <span class="o">(</span>username<span class="o">)</span>
+</span></span><span class="line"><span class="cl">&gt; a
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>0<span class="o">]</span> add steering/chkssd.yaml <span class="nv">NAME</span><span class="o">=</span>hoge <span class="nv">NUM</span><span class="o">=</span><span class="m">0000</span>
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>1<span class="o">]</span> res
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>2<span class="o">]</span> sus
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>3<span class="o">]</span> ls <span class="c1"># check the artemis directory</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> artemis
+</span></span><span class="line"><span class="cl">&gt;   <span class="m">0</span> art::TTreeProjGroup ssd_test        ssd_test
+</span></span><span class="line"><span class="cl">    <span class="m">1</span> art::TAnalysisInfo analysisInfo</span></span></code></pre></div><ol start="2">
 <li>cd [ID] : move to the directory of the ID</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>4<span style="color:#f92672">]</span> cd <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>5<span style="color:#f92672">]</span> ls
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span> ssd_test
-</span></span><span style="display:flex;"><span>&gt;   <span style="color:#ae81ff">0</span> art::TH1FTreeProj ssd_energy      ssd_energy
-</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1</span> art::TH1FTreeProj ssd_timing      ssd_timing
-</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">2</span> art::TH2FTreeProj ssd_energy and timing ssd_energy and timing</span></span></code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">artemis <span class="o">[</span>4<span class="o">]</span> <span class="nb">cd</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>5<span class="o">]</span> ls
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> ssd_test
+</span></span><span class="line"><span class="cl">&gt;   <span class="m">0</span> art::TH1FTreeProj ssd_energy      ssd_energy
+</span></span><span class="line"><span class="cl">    <span class="m">1</span> art::TH1FTreeProj ssd_timing      ssd_timing
+</span></span><span class="line"><span class="cl">    <span class="m">2</span> art::TH2FTreeProj ssd_energy and timing ssd_energy and timing</span></span></code></pre></div><ol start="3">
 <li>ht [ID] [option] : draw the histogram of the ID</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>6<span style="color:#f92672">]</span> ht <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>7<span style="color:#f92672">]</span> ht <span style="color:#ae81ff">2</span> colz</span></span></code></pre></div><ol start="4">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">artemis <span class="o">[</span>6<span class="o">]</span> ht <span class="m">0</span>
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>7<span class="o">]</span> ht <span class="m">2</span> colz</span></span></code></pre></div><ol start="4">
 <li>hn : draw the next ID histogram</li>
 <li>hb : draw the prev ID histogram</li>
 </ol>
@@ -284,18 +290,15 @@ In such cases, it is useful to allow the histogram definition file to have argum
 <p>Please look here first.</p>
 
   
-<div class="tab-panel" data-tab-group="9cb82ddb142bb79d28a931a1349d95b5">
+<div class="tab-panel" data-tab-group="af85f9a10e8db364e45e5cc2b3abbca8">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('9cb82ddb142bb79d28a931a1349d95b5','chkssdyaml')"
+      onclick="switchTab('af85f9a10e8db364e45e5cc2b3abbca8','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -304,21 +307,21 @@ In such cases, it is useful to allow the histogram definition file to have argum
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># -- snip --</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">include</span>: <span style="color:#ae81ff">ssd/ssd_single.yaml</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Histogram</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">projection_ssd</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TTreeProjectionProcessor</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">FileName</span>: <span style="color:#ae81ff">hist/ssd/ssd.yaml</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Type</span>:     <span style="color:#ae81ff">art::TTreeProjection</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputFilename</span>: <span style="color:#75715e">*histout</span>
-</span></span><span style="display:flex; background-color:#3c3d38"><span>      <span style="color:#f92672">Replace</span>: |<span style="color:#e6db74">
-</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#e6db74">        name: ssd_cal</span>        
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># -- snip --</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># -- snip --</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="l">ssd/ssd_single.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Histogram</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">projection_ssd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TTreeProjectionProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">FileName</span><span class="p">:</span><span class="w"> </span><span class="l">hist/ssd/ssd.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Type</span><span class="p">:</span><span class="w">     </span><span class="l">art::TTreeProjection</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputFilename</span><span class="p">:</span><span class="w"> </span><span class="cp">*histout</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">      </span><span class="nt">Replace</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line hl"><span class="cl"><span class="sd">        name: ssd_cal</span><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># -- snip --</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div><p>We add the highlighted lines.
@@ -326,18 +329,15 @@ Then the &ldquo;name&rdquo; can be used at hist file by <code>@name@</code>!
 The &ldquo;name&rdquo; can be freely set.</p>
 
   
-<div class="tab-panel" data-tab-group="11e2aece2c02209fcaab7cdc28bdfb3a">
+<div class="tab-panel" data-tab-group="1c72e3c7f036c43e32c9ee6a84c587ce">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="histssdssdyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('11e2aece2c02209fcaab7cdc28bdfb3a','histssdssdyaml')"
+      onclick="switchTab('1c72e3c7f036c43e32c9ee6a84c587ce','histssdssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">hist/ssd/ssd.yaml</span>
-        <span class="tab-nav-text">hist/ssd/ssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">hist/ssd/ssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -346,45 +346,42 @@ The &ldquo;name&rdquo; can be freely set.</p>
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">anchor</span>: 
-</span></span><span style="display:flex;"><span>  - <span style="color:#75715e">&amp;energy</span> [<span style="color:#e6db74">&#34;@name@.fCharge&#34;</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">0</span><span style="color:#ae81ff">.,100.]</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#75715e">&amp;timing</span> [<span style="color:#e6db74">&#34;@name@.fTiming&#34;</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">0</span><span style="color:#ae81ff">.,100.]</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">alias</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">energy_cut</span>: @<span style="color:#ae81ff">name@.fCharge&gt;1.0;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">group</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ssd_test</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">title</span>: <span style="color:#ae81ff">ssd_test</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">contents</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ssd_energy</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">title</span>: <span style="color:#ae81ff">ssd_energy</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">x</span>: <span style="color:#75715e">*energy</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ssd_timing</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">title</span>: <span style="color:#ae81ff">ssd_timing</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">x</span>: <span style="color:#75715e">*timing</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ssd_energy and timing</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">title</span>: <span style="color:#ae81ff">ssd_energy and timing</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">x</span>: <span style="color:#75715e">*timing</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">y</span>: <span style="color:#75715e">*energy</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">cut</span>: <span style="color:#ae81ff">energy_cut</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">anchor</span><span class="p">:</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="cp">&amp;energy</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;@name@.fCharge&#34;</span><span class="p">,</span><span class="m">100</span><span class="p">,</span><span class="m">0</span><span class="l">.,100.]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="cp">&amp;timing</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;@name@.fTiming&#34;</span><span class="p">,</span><span class="m">100</span><span class="p">,</span><span class="m">0</span><span class="l">.,100.]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">alias</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">energy_cut</span><span class="p">:</span><span class="w"> </span>@<span class="l">name@.fCharge&gt;1.0;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">group</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">ssd_test</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">ssd_test</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">contents</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">ssd_energy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">ssd_energy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">x</span><span class="p">:</span><span class="w"> </span><span class="cp">*energy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">ssd_timing</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">ssd_timing</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">x</span><span class="p">:</span><span class="w"> </span><span class="cp">*timing</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">ssd_energy and timing</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">ssd_energy and timing</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">x</span><span class="p">:</span><span class="w"> </span><span class="cp">*timing</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">y</span><span class="p">:</span><span class="w"> </span><span class="cp">*energy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">cut</span><span class="p">:</span><span class="w"> </span><span class="l">energy_cut</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div><p>This is useful when there are more objects to check!</p>
 
   
-<div class="tab-panel" data-tab-group="bcdd317780ef068e83dc14be0e0e1462">
+<div class="tab-panel" data-tab-group="d35a74abc10dc231dbb8629258dc43e0">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('bcdd317780ef068e83dc14be0e0e1462','chkssdyaml')"
+      onclick="switchTab('d35a74abc10dc231dbb8629258dc43e0','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -393,44 +390,43 @@ The &ldquo;name&rdquo; can be freely set.</p>
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># -- snip --</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">include</span>: <span style="color:#ae81ff">ssd/ssd_single.yaml</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Histogram</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">projection_ssd</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TTreeProjectionProcessor</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">FileName</span>: <span style="color:#ae81ff">hist/ssd/ssd.yaml</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Type</span>:     <span style="color:#ae81ff">art::TTreeProjection</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputFilename</span>: <span style="color:#75715e">*histout</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Replace</span>: |<span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        name: ssd_cal</span>        
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">projection_ssd</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TTreeProjectionProcessor</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">FileName</span>: <span style="color:#ae81ff">hist/ssd/ssd.yaml</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Type</span>:     <span style="color:#ae81ff">art::TTreeProjection</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Replace</span>: |<span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        name: ssd_raw</span>        
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># and so on!</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># -- snip --</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># -- snip --</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="l">ssd/ssd_single.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Histogram</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">projection_ssd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TTreeProjectionProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">FileName</span><span class="p">:</span><span class="w"> </span><span class="l">hist/ssd/ssd.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Type</span><span class="p">:</span><span class="w">     </span><span class="l">art::TTreeProjection</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputFilename</span><span class="p">:</span><span class="w"> </span><span class="cp">*histout</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Replace</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">        name: ssd_cal</span><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">projection_ssd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TTreeProjectionProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">FileName</span><span class="p">:</span><span class="w"> </span><span class="l">hist/ssd/ssd.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Type</span><span class="p">:</span><span class="w">     </span><span class="l">art::TTreeProjection</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Replace</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">        name: ssd_raw</span><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># and so on!</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># -- snip --</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div><p>File splitting using &ldquo;include&rdquo; nodes, as described in the section on steeling, can also be used in the same way.</p>
 
             <footer class="footline">
-
             </footer>
           </article>
 
         </div>
       </main>
     </div>
-    <script src="/artemis_crib/js/clipboard.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1705477122" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1705743132" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -460,6 +456,6 @@ The &ldquo;name&rdquo; can be freely set.</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1705477122" defer></script>
+    <script src="/artemis_crib/js/theme.js?1705743132" defer></script>
   </body>
 </html>

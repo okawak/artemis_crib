@@ -24,7 +24,7 @@ code.copy-to-clipboard-code {
     border-end-end-radius: 2px;
     border-inline-end-width: 1px;
 }
-pre {
+pre:not(.mermaid) {
     border: 1px solid rgba( 204, 204, 204, 1 );
 }
 #R-body #R-topbar{
@@ -39,7 +39,7 @@ pre {
     /* we don't need the buttons while printing */
     display: none;
 }
-@media screen and (max-width: 48rem) {
+@media screen and (max-width: 47.999rem) {
     #R-body .topbar-breadcrumbs {
         visibility: visible;
     }
@@ -67,7 +67,7 @@ pre {
 #R-body .anchor{
     display: none;
 }
-#R-body pre,
+#R-body pre:not(.mermaid),
 #R-body code {
     background-color: rgba( 255, 255, 255, 1 );
     border-color: rgba( 221, 221, 221, 1 );
@@ -138,7 +138,7 @@ h1 + .footline{
 #R-body .topbar-sidebar-divider {
     border-width: 0;
 }
-.tags {
+.term-list {
     display: none;
 }
 mark {
@@ -160,7 +160,7 @@ div.box > .box-content {
     border-bottom-color: rgba( 255, 255, 255, 1 );
     color: rgba( 0, 0, 0, 1 );
 }
-#R-body .tab-nav-button.active > * {
+#R-body .tab-nav-button.active > .tab-nav-text {
     background-color: rgba( 255, 255, 255, 1 );
 }
 #R-body .tab-content-text {

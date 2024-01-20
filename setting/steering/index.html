@@ -4,26 +4,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.121.2">
-    <meta name="generator" content="Relearn 5.22.0">
-    <meta name="description" content="">
+    <meta name="generator" content="Relearn 5.23.2">
+    <meta name="description" content="Documentation for CRIB artemis">
     <meta name="author" content="Kodai Okawa">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Steering :: CRIB artemis">
+    <meta name="twitter:description" content="last modified: 2023-11-14 by Kodai Okawa The steering file (yaml format) is a file that directs the process of how the obtained data is to be processed.">
+    <meta property="og:title" content="Steering :: CRIB artemis">
+    <meta property="og:description" content="last modified: 2023-11-14 by Kodai Okawa The steering file (yaml format) is a file that directs the process of how the obtained data is to be processed.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://okawak.github.io/artemis_crib/setting/steering/index.html">
+    <meta property="article:section" content="Setting :: CRIB artemis">
+    <meta property="article:published_time" content="2023-11-02T17:03:39+09:00">
+    <meta property="article:modified_time" content="2023-11-14T16:15:05+09:00">
+    <meta property="og:site_name" content="CRIB artemis">
     <title>Steering :: CRIB artemis</title>
     <link href="/artemis_crib/setting/steering/index.xml" rel="alternate" type="application/rss+xml" title="Steering :: CRIB artemis">
     <link href="/artemis_crib/setting/steering/index.print.html" rel="alternate" type="text/html" title="Steering :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1705477121" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705477121" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1705477121" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1705477121" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1705477121" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1705477121" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1705477121" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1705477121" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1705477121" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-artemis_crib.css?1705477121" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/variant.css?1705477121" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1705477121" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/ie.css?1705477121" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1705477121"></script>
-    <script src="/artemis_crib/js/variant.js?1705477121"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1705743131" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705743131" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1705743131" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1705743131" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1705743131" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1705743131" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1705743131" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1705743131" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1705743131" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-CRIB-theme.css?1705743131" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/variant.css?1705743131" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1705743131" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/ie.css?1705743131" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1705743131"></script>
+    <script src="/artemis_crib/js/variant.js?1705743131"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -36,11 +47,12 @@
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
       window.T_Reset_view = 'Reset view';
+      window.T_View_reset = 'View reset!';
       window.T_No_results_found = 'No results found for \u0022{0}\u0022';
       window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/okawak.github.io\/artemis_crib/';
-      window.variants && variants.init( [ 'artemis_crib' ] );
+      window.variants && variants.init( [ 'CRIB-theme', 'relearn-auto', 'relearn-dark', 'zen-dark', 'learn' ] );
     </script>
 
   
@@ -146,7 +158,7 @@ This &ldquo;OutputCollection&rdquo; will be stored into the root file as a &ldqu
 Complex processing can be performed by using &ldquo;processor&rdquo; in multiple steps.</p>
 <p>I will explain how to create this &ldquo;steering&rdquo; file using Si detector data as an example.</p>
 
-<div class="mermaid align-center">
+<pre class="mermaid align-center">
 ---
 title: example of the data process structure
 ---
@@ -160,24 +172,21 @@ graph TD;
     subgraph DAQ
     D(Raw binary data)--&gt;A(decode processor&lt;br&gt;&lt;/br&gt;InputCollection: raw data\nOutputCollection: decoded data)
     end
-</div>
+</pre>
 <h2 id="steering-file-silicon-data-case">Steering file: Silicon data case</h2>
 <p>First, I describe what is the <code>Anchor</code> and how to use command line arguments.
 See example here.</p>
 
   
-<div class="tab-panel" data-tab-group="742d240758da0d44589d13e4e71ac7c6">
+<div class="tab-panel" data-tab-group="3c3072f351f78f6b4ce50b9104754328">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('742d240758da0d44589d13e4e71ac7c6','chkssdyaml')"
+      onclick="switchTab('3c3072f351f78f6b4ce50b9104754328','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -186,32 +195,29 @@ See example here.</p>
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Anchor</span>:
-</span></span><span style="display:flex;"><span> - <span style="color:#75715e">&amp;input</span> <span style="color:#ae81ff">ridf/@NAME@@NUM@.ridf</span>
-</span></span><span style="display:flex;"><span> - <span style="color:#75715e">&amp;output</span> <span style="color:#ae81ff">output/@NAME@/@NUM@/chkssd@NAME@@NUM@.root</span>
-</span></span><span style="display:flex;"><span> - <span style="color:#75715e">&amp;histout</span> <span style="color:#ae81ff">output/@NAME@/@NUM@/chkssd@NAME@@NUM@.hist.root</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">Anchor</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span>- <span class="cp">&amp;input</span><span class="w"> </span><span class="l">ridf/@NAME@@NUM@.ridf</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span>- <span class="cp">&amp;output</span><span class="w"> </span><span class="l">output/@NAME@/@NUM@/chkssd@NAME@@NUM@.root</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span>- <span class="cp">&amp;histout</span><span class="w"> </span><span class="l">output/@NAME@/@NUM@/chkssd@NAME@@NUM@.hist.root</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div><p>You can use variables from elsewhere in the steering file by declaring them as such.
 For example if you write:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">something</span>: <span style="color:#75715e">*input</span></span></span></code></pre></div><p>This unfolds as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">something</span>: <span style="color:#ae81ff">ridf/@NAME@@NUM@.ridf</span></span></span></code></pre></div><p>Variables enclosed in <code>@</code> can also be specified by command line arguments.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">something</span><span class="p">:</span><span class="w"> </span><span class="cp">*input</span></span></span></code></pre></div><p>This unfolds as follows:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">something</span><span class="p">:</span><span class="w"> </span><span class="l">ridf/@NAME@@NUM@.ridf</span></span></span></code></pre></div><p>Variables enclosed in <code>@</code> can also be specified by command line arguments.
 For example, If you command like the following in the artemis console,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> add steering/chkssd.yaml NAME<span style="color:#f92672">=</span>run NUM<span style="color:#f92672">=</span><span style="color:#ae81ff">0000</span></span></span></code></pre></div><p>it is considered as</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">artemis <span class="o">[</span>1<span class="o">]</span> add steering/chkssd.yaml <span class="nv">NAME</span><span class="o">=</span>run <span class="nv">NUM</span><span class="o">=</span><span class="m">0000</span></span></span></code></pre></div><p>it is considered as</p>
 
   
-<div class="tab-panel" data-tab-group="36884f29bd06ce937bd5f437a1a04aad">
+<div class="tab-panel" data-tab-group="7a2b4fde166c78ce40be61c504e6cdf9">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('36884f29bd06ce937bd5f437a1a04aad','chkssdyaml')"
+      onclick="switchTab('7a2b4fde166c78ce40be61c504e6cdf9','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -220,10 +226,10 @@ For example, If you command like the following in the artemis console,</p>
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Anchor</span>:
-</span></span><span style="display:flex;"><span> - <span style="color:#75715e">&amp;input</span> <span style="color:#ae81ff">ridf/run0000.ridf</span>
-</span></span><span style="display:flex;"><span> - <span style="color:#75715e">&amp;output</span> <span style="color:#ae81ff">output/run/0000/chkssdrun0000.root</span>
-</span></span><span style="display:flex;"><span> - <span style="color:#75715e">&amp;histout</span> <span style="color:#ae81ff">output/run/0000/chkssdrun0000.hist.root</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">Anchor</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span>- <span class="cp">&amp;input</span><span class="w"> </span><span class="l">ridf/run0000.ridf</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span>- <span class="cp">&amp;output</span><span class="w"> </span><span class="l">output/run/0000/chkssdrun0000.root</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span>- <span class="cp">&amp;histout</span><span class="w"> </span><span class="l">output/run/0000/chkssdrun0000.hist.root</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div><h3 id="1-general-processor">1. General processor</h3>
@@ -231,18 +237,15 @@ For example, If you command like the following in the artemis console,</p>
 In this case, the beginning and end of the steering file is usually as follows.</p>
 
   
-<div class="tab-panel" data-tab-group="7f81945387a7a69bc946544e246ab49c">
+<div class="tab-panel" data-tab-group="41f64b10081ec3b6a4acf3b8bf452ae0">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('7f81945387a7a69bc946544e246ab49c','chkssdyaml')"
+      onclick="switchTab('41f64b10081ec3b6a4acf3b8bf452ae0','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -251,30 +254,30 @@ In this case, the beginning and end of the steering file is usually as follows.<
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Processor</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">timer</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TTimerProcessor</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ridf</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TRIDFEventStore</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputTransparency</span>: <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">InputFiles</span>:
-</span></span><span style="display:flex;"><span>        - <span style="color:#75715e">*input</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">SHMID</span>: <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">mapper</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TMappingProcessor</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputTransparency</span>: <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># -- snip --</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">outputtree</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TOutputTreeProcessor</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">FileName</span>:
-</span></span><span style="display:flex;"><span>        - <span style="color:#75715e">*output</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">Processor</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">timer</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TTimerProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">ridf</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TRIDFEventStore</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputTransparency</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">InputFiles</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="cp">*input</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">SHMID</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">mapper</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TMappingProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputTransparency</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># -- snip --</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">outputtree</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TOutputTreeProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">FileName</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="cp">*output</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div><ul>
@@ -287,28 +290,25 @@ In this case, the beginning and end of the steering file is usually as follows.<
 <h3 id="2-mapping-processor">2. Mapping processor</h3>
 <p>The &ldquo;mapping processor&rdquo; puts the data stored in the &ldquo;EventStore&rdquo; into a certain data class based on &ldquo;mapper.conf&rdquo;.
 Assume the following map file is used.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span># map for SSD
-</span></span><span style="display:flex;"><span># [category] [id] [[device] [focus] [detector] [geo] [ch]] ....
-</span></span><span style="display:flex;"><span>#
-</span></span><span style="display:flex;"><span># Map: energy, timing
-</span></span><span style="display:flex;"><span>#
-</span></span><span style="display:flex;"><span>#--------------------------------------------------------------------
-</span></span><span style="display:flex;"><span>   1,   0,  12,   1,  6,   0,   0,  12,   2,  7,   0,   0</span></span></code></pre></div><p>In this case, since we are assuming data from the Si detector, let&rsquo;s consider putting it in a data class that stores energy and timing data, &ldquo;TTimingChargeData&rdquo;!
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl"># map for SSD
+</span></span><span class="line"><span class="cl"># [category] [id] [[device] [focus] [detector] [geo] [ch]] ....
+</span></span><span class="line"><span class="cl">#
+</span></span><span class="line"><span class="cl"># Map: energy, timing
+</span></span><span class="line"><span class="cl">#
+</span></span><span class="line"><span class="cl">#--------------------------------------------------------------------
+</span></span><span class="line"><span class="cl">   1,   0,  12,   1,  6,   0,   0,  12,   2,  7,   0,   0</span></span></code></pre></div><p>In this case, since we are assuming data from the Si detector, let&rsquo;s consider putting it in a data class that stores energy and timing data, &ldquo;TTimingChargeData&rdquo;!
 The processor mapping to this data class is &ldquo;TTimingChargeMappingProcessor&rdquo;.</p>
 
   
-<div class="tab-panel" data-tab-group="cbd66dbc8dea390e44e453a1cf5de354">
+<div class="tab-panel" data-tab-group="58e5753682b7051406c8062e470b3e2e">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('cbd66dbc8dea390e44e453a1cf5de354','chkssdyaml')"
+      onclick="switchTab('58e5753682b7051406c8062e470b3e2e','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -317,16 +317,16 @@ The processor mapping to this data class is &ldquo;TTimingChargeMappingProcessor
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Processor</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">proc_ssd_raw</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TTimingChargeMappingProcessor</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">CatID</span>:         <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">ChargeType</span>:    <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">ChargeTypeID</span>:  <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">TimingTypeID</span>:  <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Sparse</span>:        <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex; background-color:#3c3d38"><span>      <span style="color:#f92672">OutputCollection</span>: <span style="color:#ae81ff">ssd_raw</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">Processor</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">proc_ssd_raw</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TTimingChargeMappingProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">CatID</span><span class="p">:</span><span class="w">         </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">ChargeType</span><span class="p">:</span><span class="w">    </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">ChargeTypeID</span><span class="p">:</span><span class="w">  </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">TimingTypeID</span><span class="p">:</span><span class="w">  </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Sparse</span><span class="p">:</span><span class="w">        </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">      </span><span class="nt">OutputCollection</span><span class="p">:</span><span class="w"> </span><span class="l">ssd_raw</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div><ol>
@@ -347,18 +347,15 @@ I will explain the details in <a href="">Example: preparation/macro</a>, but her
 <p>Now, let&rsquo;s load these files.</p>
 
   
-<div class="tab-panel" data-tab-group="41c5ff2bbb95c0ad0abc9573569ec952">
+<div class="tab-panel" data-tab-group="0734132c503d9387f7b90bc609afc615">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('41c5ff2bbb95c0ad0abc9573569ec952','chkssdyaml')"
+      onclick="switchTab('0734132c503d9387f7b90bc609afc615','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -367,39 +364,36 @@ I will explain the details in <a href="">Example: preparation/macro</a>, but her
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Processor</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">proc_ssd_ch2MeV</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TParameterArrayLoader</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex; background-color:#3c3d38"><span>      <span style="color:#f92672">Name</span>: <span style="color:#ae81ff">prm_ssd_ch2MeV</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">art::TAffineConverter</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">FileName</span>: <span style="color:#ae81ff">prm/ssd/ch2MeV.dat</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputTransparency</span>: <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">proc_ssd_ch2ns</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TParameterArrayLoader</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex; background-color:#3c3d38"><span>      <span style="color:#f92672">Name</span>: <span style="color:#ae81ff">prm_ssd_ch2ns</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">art::TAffineConverter</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">FileName</span>: <span style="color:#ae81ff">prm/ssd/ch2ns.dat</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputTransparency</span>: <span style="color:#ae81ff">1</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">Processor</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">proc_ssd_ch2MeV</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TParameterArrayLoader</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">      </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l">prm_ssd_ch2MeV</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TAffineConverter</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">FileName</span><span class="p">:</span><span class="w"> </span><span class="l">prm/ssd/ch2MeV.dat</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputTransparency</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">proc_ssd_ch2ns</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TParameterArrayLoader</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">      </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l">prm_ssd_ch2ns</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TAffineConverter</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">FileName</span><span class="p">:</span><span class="w"> </span><span class="l">prm/ssd/ch2ns.dat</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputTransparency</span><span class="p">:</span><span class="w"> </span><span class="m">1</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div><p>To calibrate data contained in a <code>TTimingChargeData</code> class, a <code>TTimingChargeCalibrationProcessor</code> processor is used.</p>
 
   
-<div class="tab-panel" data-tab-group="6370216a267f0b8adc16c125de3739d0">
+<div class="tab-panel" data-tab-group="3c63112d570418eb8383287c38a356c3">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('6370216a267f0b8adc16c125de3739d0','chkssdyaml')"
+      onclick="switchTab('3c63112d570418eb8383287c38a356c3','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -408,14 +402,14 @@ I will explain the details in <a href="">Example: preparation/macro</a>, but her
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Processor</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">proc_ssd</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TTimingChargeCalibrationProcessor</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex; background-color:#3c3d38"><span>      <span style="color:#f92672">InputCollection</span>:      <span style="color:#ae81ff">ssd_raw</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputCollection</span>:     <span style="color:#ae81ff">ssd_cal</span>
-</span></span><span style="display:flex; background-color:#3c3d38"><span>      <span style="color:#f92672">ChargeConverterArray</span>: <span style="color:#ae81ff">prm_ssd_ch2MeV</span>
-</span></span><span style="display:flex; background-color:#3c3d38"><span>      <span style="color:#f92672">TimingConverterArray</span>: <span style="color:#ae81ff">prm_ssd_ch2ns</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">Processor</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">proc_ssd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TTimingChargeCalibrationProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">      </span><span class="nt">InputCollection</span><span class="p">:</span><span class="w">      </span><span class="l">ssd_raw</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputCollection</span><span class="p">:</span><span class="w">     </span><span class="l">ssd_cal</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">      </span><span class="nt">ChargeConverterArray</span><span class="p">:</span><span class="w"> </span><span class="l">prm_ssd_ch2MeV</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">      </span><span class="nt">TimingConverterArray</span><span class="p">:</span><span class="w"> </span><span class="l">prm_ssd_ch2ns</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div><p>Note here that &ldquo;InputCollection&rdquo;, &ldquo;ChargeConverterArray&rdquo;, and &ldquo;TimingConverterArray&rdquo; use the same names as the highlighted lines in the code block above.</p>
@@ -426,20 +420,20 @@ I will explain the details in <a href="">Example: preparation/macro</a>, but her
 
 <p>The arguments to be used will vary depending on the processor used, so please check and write them according to the situation.
 If you want to check from artemis console, you can use &ldquo;processordescription&rdquo; command like this</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; artlogin <span style="color:#f92672">(</span>username<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>&gt; a
-</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> processordescription art::TTimingChargeCalibrationProcessor
-</span></span><span style="display:flex;"><span>Processor:
-</span></span><span style="display:flex;"><span>  - name: MyTTimingChargeCalibrationProcessor
-</span></span><span style="display:flex;"><span>    type: art::TTimingChargeCalibrationProcessor
-</span></span><span style="display:flex;"><span>    parameter:
-</span></span><span style="display:flex;"><span>      ChargeConverterArray: no_conversion  <span style="color:#75715e"># [TString] normally output of TAffineConverterArrayGenerator</span>
-</span></span><span style="display:flex;"><span>      InputCollection: plastic_raw  <span style="color:#75715e"># [TString] array of objects inheriting from art::ITiming and/or art::ICharge</span>
-</span></span><span style="display:flex;"><span>      InputIsDigital: <span style="color:#ae81ff">1</span>  <span style="color:#75715e"># [Bool_t] whether input is digital or not</span>
-</span></span><span style="display:flex;"><span>      OutputCollection: plastic  <span style="color:#75715e"># [TString] output class will be the same as input</span>
-</span></span><span style="display:flex;"><span>      OutputTransparency: <span style="color:#ae81ff">0</span>  <span style="color:#75715e"># [Bool_t] Output is persistent if false (default)</span>
-</span></span><span style="display:flex;"><span>      TimingConverterArray: no_conversion  <span style="color:#75715e"># [TString] normally output of TAffineConverterArrayGenerator</span>
-</span></span><span style="display:flex;"><span>      Verbose: <span style="color:#ae81ff">1</span>  <span style="color:#75715e"># [Int_t] verbose level (default 1 : non quiet)</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">&gt; artlogin <span class="o">(</span>username<span class="o">)</span>
+</span></span><span class="line"><span class="cl">&gt; a
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>0<span class="o">]</span> processordescription art::TTimingChargeCalibrationProcessor
+</span></span><span class="line"><span class="cl">Processor:
+</span></span><span class="line"><span class="cl">  - name: MyTTimingChargeCalibrationProcessor
+</span></span><span class="line"><span class="cl">    type: art::TTimingChargeCalibrationProcessor
+</span></span><span class="line"><span class="cl">    parameter:
+</span></span><span class="line"><span class="cl">      ChargeConverterArray: no_conversion  <span class="c1"># [TString] normally output of TAffineConverterArrayGenerator</span>
+</span></span><span class="line"><span class="cl">      InputCollection: plastic_raw  <span class="c1"># [TString] array of objects inheriting from art::ITiming and/or art::ICharge</span>
+</span></span><span class="line"><span class="cl">      InputIsDigital: <span class="m">1</span>  <span class="c1"># [Bool_t] whether input is digital or not</span>
+</span></span><span class="line"><span class="cl">      OutputCollection: plastic  <span class="c1"># [TString] output class will be the same as input</span>
+</span></span><span class="line"><span class="cl">      OutputTransparency: <span class="m">0</span>  <span class="c1"># [Bool_t] Output is persistent if false (default)</span>
+</span></span><span class="line"><span class="cl">      TimingConverterArray: no_conversion  <span class="c1"># [TString] normally output of TAffineConverterArrayGenerator</span>
+</span></span><span class="line"><span class="cl">      Verbose: <span class="m">1</span>  <span class="c1"># [Int_t] verbose level (default 1 : non quiet)</span></span></span></code></pre></div></div>
 </div>
 <h3 id="4-split-files">4. Split files</h3>
 <p>If you want to analyse a large number of detectors, not just Si detectors,
@@ -448,18 +442,15 @@ writing everything in one steering file will result in a large amount of content
 <p>In the examples we have written so far, let&rsquo;s only use a separate file for the part related to the analysis of the Si detector.</p>
 
   
-<div class="tab-panel" data-tab-group="ab7362fafd066ae8abba5da8422681b2">
+<div class="tab-panel" data-tab-group="748f13c4d376e3556b846bea03dfdffe">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('ab7362fafd066ae8abba5da8422681b2','chkssdyaml')"
+      onclick="switchTab('748f13c4d376e3556b846bea03dfdffe','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -468,31 +459,28 @@ writing everything in one steering file will result in a large amount of content
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># -- snip --</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">Processor</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># -- snip --</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">include</span>: <span style="color:#ae81ff">ssd/ssd_single.yaml</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># -- snip --</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># -- snip --</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">Processor</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># -- snip --</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="l">ssd/ssd_single.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># -- snip --</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div>
   
-<div class="tab-panel" data-tab-group="eca3829e981f843bb6551e36dff5cec0">
+<div class="tab-panel" data-tab-group="fd4bff9f78123a11198e5d024a820838">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="ssdssd_singleyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('eca3829e981f843bb6551e36dff5cec0','ssdssd_singleyaml')"
+      onclick="switchTab('fd4bff9f78123a11198e5d024a820838','ssdssd_singleyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">ssd/ssd_single.yaml</span>
-        <span class="tab-nav-text">ssd/ssd_single.yaml</span>
-      </span>
+      <span class="tab-nav-text">ssd/ssd_single.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -501,42 +489,42 @@ writing everything in one steering file will result in a large amount of content
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Processor</span>:
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># parameter files</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">proc_ssd_ch2MeV</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TParameterArrayLoader</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Name</span>: <span style="color:#ae81ff">prm_ssd_ch2MeV</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">art::TAffineConverter</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">FileName</span>: <span style="color:#ae81ff">prm/ssd/ch2MeV.dat</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputTransparency</span>: <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">proc_ssd_ch2ns</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TParameterArrayLoader</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Name</span>: <span style="color:#ae81ff">prm_ssd_ch2ns</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">art::TAffineConverter</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">FileName</span>: <span style="color:#ae81ff">prm/ssd/ch2ns.dat</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputTransparency</span>: <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># data process</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">proc_ssd_raw</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TTimingChargeMappingProcessor</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">CatID</span>:         <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">ChargeType</span>:    <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">ChargeTypeID</span>:  <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">TimingTypeID</span>:  <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Sparse</span>:        <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputCollection</span>: <span style="color:#ae81ff">ssd_raw</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">proc_ssd</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TTimingChargeCalibrationProcessor</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">InputCollection</span>:      <span style="color:#ae81ff">ssd_raw</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputCollection</span>:     <span style="color:#ae81ff">ssd_cal</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">ChargeConverterArray</span>: <span style="color:#ae81ff">prm_ssd_ch2MeV</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">TimingConverterArray</span>: <span style="color:#ae81ff">prm_ssd_ch2ns</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">Processor</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># parameter files</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">proc_ssd_ch2MeV</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TParameterArrayLoader</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l">prm_ssd_ch2MeV</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TAffineConverter</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">FileName</span><span class="p">:</span><span class="w"> </span><span class="l">prm/ssd/ch2MeV.dat</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputTransparency</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">proc_ssd_ch2ns</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TParameterArrayLoader</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l">prm_ssd_ch2ns</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TAffineConverter</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">FileName</span><span class="p">:</span><span class="w"> </span><span class="l">prm/ssd/ch2ns.dat</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputTransparency</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># data process</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">proc_ssd_raw</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TTimingChargeMappingProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">CatID</span><span class="p">:</span><span class="w">         </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">ChargeType</span><span class="p">:</span><span class="w">    </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">ChargeTypeID</span><span class="p">:</span><span class="w">  </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">TimingTypeID</span><span class="p">:</span><span class="w">  </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Sparse</span><span class="p">:</span><span class="w">        </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputCollection</span><span class="p">:</span><span class="w"> </span><span class="l">ssd_raw</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">proc_ssd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TTimingChargeCalibrationProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">InputCollection</span><span class="p">:</span><span class="w">      </span><span class="l">ssd_raw</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputCollection</span><span class="p">:</span><span class="w">     </span><span class="l">ssd_cal</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">ChargeConverterArray</span><span class="p">:</span><span class="w"> </span><span class="l">prm_ssd_ch2MeV</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">TimingConverterArray</span><span class="p">:</span><span class="w"> </span><span class="l">prm_ssd_ch2ns</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div><p>In this way, the contents of &ldquo;chkssd.yaml&rdquo; can be kept concise, while the same process is carried out.
@@ -545,18 +533,15 @@ Parameter files, for example, are relative paths from the working directory (one
 <p>Utilising file splitting also makes it easier to check the steering files that analyse a large number of detectors like this.</p>
 
   
-<div class="tab-panel" data-tab-group="6903ca5b1083a06abe2b784beb36b12e">
+<div class="tab-panel" data-tab-group="419fc396366d44eb2e371fe8b9d6025e">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkallyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('6903ca5b1083a06abe2b784beb36b12e','chkallyaml')"
+      onclick="switchTab('419fc396366d44eb2e371fe8b9d6025e','chkallyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkall.yaml</span>
-        <span class="tab-nav-text">chkall.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkall.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -565,19 +550,19 @@ Parameter files, for example, are relative paths from the working directory (one
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># -- snip --</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">Processor</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># -- snip --</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">include</span>: <span style="color:#ae81ff">rf/rf.yaml</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">include</span>: <span style="color:#ae81ff">ppac/f1ppac.yaml</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">include</span>: <span style="color:#ae81ff">ppac/dlppac.yaml</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">include</span>: <span style="color:#ae81ff">mwdc/mwdc.yaml</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">include</span>: <span style="color:#ae81ff">ssd/ssd_all.yaml</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># -- snip --</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># -- snip --</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">Processor</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># -- snip --</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="l">rf/rf.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="l">ppac/f1ppac.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="l">ppac/dlppac.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="l">mwdc/mwdc.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="l">ssd/ssd_all.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># -- snip --</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div>
@@ -594,18 +579,15 @@ Details will be introduced in the example section.</p>
 <p>The whole steering file is as follows:</p>
 
   
-<div class="tab-panel" data-tab-group="555c78deb294931a2c70dffb88cb65bc">
+<div class="tab-panel" data-tab-group="39deb3069ef13e2ab9c649bf20fe07b6">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('555c78deb294931a2c70dffb88cb65bc','chkssdyaml')"
+      onclick="switchTab('39deb3069ef13e2ab9c649bf20fe07b6','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -614,52 +596,49 @@ Details will be introduced in the example section.</p>
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Anchor</span>:
-</span></span><span style="display:flex;"><span> - <span style="color:#75715e">&amp;input</span> <span style="color:#ae81ff">ridf/@NAME@@NUM@.ridf</span>
-</span></span><span style="display:flex;"><span> - <span style="color:#75715e">&amp;output</span> <span style="color:#ae81ff">output/@NAME@/@NUM@/chkssd@NAME@@NUM@.root</span>
-</span></span><span style="display:flex;"><span> - <span style="color:#75715e">&amp;histout</span> <span style="color:#ae81ff">output/@NAME@/@NUM@/chkssd@NAME@@NUM@.hist.root</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">Processor</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">timer</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TTimerProcessor</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ridf</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TRIDFEventStore</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputTransparency</span>: <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">InputFiles</span>:
-</span></span><span style="display:flex;"><span>        - <span style="color:#75715e">*input</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">SHMID</span>: <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">mapper</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TMappingProcessor</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputTransparency</span>: <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">include</span>: <span style="color:#ae81ff">ssd/ssd_single.yaml</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># output root file</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">outputtree</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TOutputTreeProcessor</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">FileName</span>:
-</span></span><span style="display:flex;"><span>        - <span style="color:#75715e">*output</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">Anchor</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span>- <span class="cp">&amp;input</span><span class="w"> </span><span class="l">ridf/@NAME@@NUM@.ridf</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span>- <span class="cp">&amp;output</span><span class="w"> </span><span class="l">output/@NAME@/@NUM@/chkssd@NAME@@NUM@.root</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span>- <span class="cp">&amp;histout</span><span class="w"> </span><span class="l">output/@NAME@/@NUM@/chkssd@NAME@@NUM@.hist.root</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">Processor</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">timer</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TTimerProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">ridf</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TRIDFEventStore</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputTransparency</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">InputFiles</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="cp">*input</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">SHMID</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">mapper</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TMappingProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputTransparency</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="l">ssd/ssd_single.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># output root file</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">outputtree</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TOutputTreeProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">FileName</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="cp">*output</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div>
   
-<div class="tab-panel" data-tab-group="4be3f89fb5bbc2c5298b3c98fe433e74">
+<div class="tab-panel" data-tab-group="e28fe7737b09eb15e28b2d75f3bb2d1a">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="ssdssd_singleyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('4be3f89fb5bbc2c5298b3c98fe433e74','ssdssd_singleyaml')"
+      onclick="switchTab('e28fe7737b09eb15e28b2d75f3bb2d1a','ssdssd_singleyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">ssd/ssd_single.yaml</span>
-        <span class="tab-nav-text">ssd/ssd_single.yaml</span>
-      </span>
+      <span class="tab-nav-text">ssd/ssd_single.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -668,49 +647,48 @@ Details will be introduced in the example section.</p>
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Processor</span>:
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># parameter files</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">proc_ssd_ch2MeV</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TParameterArrayLoader</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Name</span>: <span style="color:#ae81ff">prm_ssd_ch2MeV</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">art::TAffineConverter</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">FileName</span>: <span style="color:#ae81ff">prm/ssd/ch2MeV.dat</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputTransparency</span>: <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">proc_ssd_ch2ns</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TParameterArrayLoader</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Name</span>: <span style="color:#ae81ff">prm_ssd_ch2ns</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">art::TAffineConverter</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">FileName</span>: <span style="color:#ae81ff">prm/ssd/ch2ns.dat</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputTransparency</span>: <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># data process</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">proc_ssd_raw</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TTimingChargeMappingProcessor</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">CatID</span>:         <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">ChargeType</span>:    <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">ChargeTypeID</span>:  <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">TimingTypeID</span>:  <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Sparse</span>:        <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputCollection</span>: <span style="color:#ae81ff">ssd_raw</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">proc_ssd</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">art::TTimingChargeCalibrationProcessor</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">parameter</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">InputCollection</span>:      <span style="color:#ae81ff">ssd_raw</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">OutputCollection</span>:     <span style="color:#ae81ff">ssd_cal</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">ChargeConverterArray</span>: <span style="color:#ae81ff">prm_ssd_ch2MeV</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">TimingConverterArray</span>: <span style="color:#ae81ff">prm_ssd_ch2ns</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">Processor</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># parameter files</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">proc_ssd_ch2MeV</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TParameterArrayLoader</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l">prm_ssd_ch2MeV</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TAffineConverter</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">FileName</span><span class="p">:</span><span class="w"> </span><span class="l">prm/ssd/ch2MeV.dat</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputTransparency</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">proc_ssd_ch2ns</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TParameterArrayLoader</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l">prm_ssd_ch2ns</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TAffineConverter</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">FileName</span><span class="p">:</span><span class="w"> </span><span class="l">prm/ssd/ch2ns.dat</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputTransparency</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># data process</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">proc_ssd_raw</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TTimingChargeMappingProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">CatID</span><span class="p">:</span><span class="w">         </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">ChargeType</span><span class="p">:</span><span class="w">    </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">ChargeTypeID</span><span class="p">:</span><span class="w">  </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">TimingTypeID</span><span class="p">:</span><span class="w">  </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Sparse</span><span class="p">:</span><span class="w">        </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputCollection</span><span class="p">:</span><span class="w"> </span><span class="l">ssd_raw</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">proc_ssd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TTimingChargeCalibrationProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">InputCollection</span><span class="p">:</span><span class="w">      </span><span class="l">ssd_raw</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputCollection</span><span class="p">:</span><span class="w">     </span><span class="l">ssd_cal</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">ChargeConverterArray</span><span class="p">:</span><span class="w"> </span><span class="l">prm_ssd_ch2MeV</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">TimingConverterArray</span><span class="p">:</span><span class="w"> </span><span class="l">prm_ssd_ch2ns</span></span></span></code></pre></div></div>
     </div>
   </div>
-</div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; acd
-</span></span><span style="display:flex;"><span>&gt; a
-</span></span><span style="display:flex;"><span>artemis <span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> add steering/chkssd.yaml NAME<span style="color:#f92672">=</span>run NUM<span style="color:#f92672">=</span><span style="color:#ae81ff">0000</span></span></span></code></pre></div>
+</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">&gt; acd
+</span></span><span class="line"><span class="cl">&gt; a
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>0<span class="o">]</span> add steering/chkssd.yaml <span class="nv">NAME</span><span class="o">=</span>run <span class="nv">NUM</span><span class="o">=</span><span class="m">0000</span></span></span></code></pre></div>
             <footer class="footline">
-
             </footer>
           </article>
         </div>
@@ -735,12 +713,12 @@ Details will be introduced in the example section.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/artemis_crib/js/auto-complete.js?1705477122" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.min.js?1705477122" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1705477122" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1705477122" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1705477122" defer></script>
-        <script src="/artemis_crib/js/search.js?1705477122" defer></script>
+        <script src="/artemis_crib/js/auto-complete.js?1705743132" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.min.js?1705743132" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1705743132" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1705743132" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1705743132" defer></script>
+        <script src="/artemis_crib/js/search.js?1705743132" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -818,10 +796,10 @@ Details will be introduced in the example section.</p>
             <li><a class="padding" href="/artemis_crib/tags/index.html"><i class='fas fa-fw fa-tags'></i> Tags</a></li>
           </ul>
         </div>
-        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
         <div id="R-menu-footer">
-          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
-          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
             <ul>
               <li id="R-select-language-container" class="footerLangSwitch">
                 <div class="padding menu-control">
@@ -835,14 +813,18 @@ Details will be introduced in the example section.</p>
                   <div class="clear"></div>
                 </div>
               </li>
-              <li id="R-select-variant-container" class="footerVariantSwitch">
+              <li id="R-select-variant-container" class="footerVariantSwitch showVariantSwitch">
                 <div class="padding menu-control">
                   <i class="fas fa-paint-brush fa-fw"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-variant">Theme</label>
                     <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                      <option id="R-artemis_crib" value="artemis_crib" selected>Artemis Crib</option>
+                      <option id="R-CRIB-theme" value="CRIB-theme" selected>CRIB Theme</option>
+                      <option id="R-relearn-auto" value="relearn-auto">Relearn Auto</option>
+                      <option id="R-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                      <option id="R-zen-dark" value="zen-dark">Zen Dark</option>
+                      <option id="R-learn" value="learn">Learn</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -869,8 +851,8 @@ Details will be introduced in the example section.</p>
         </div>
       </div>
     </aside>
-    <script src="/artemis_crib/js/clipboard.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1705477122" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1705743132" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -900,20 +882,20 @@ Details will be introduced in the example section.</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/d3/d3-color.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/d3/d3-drag.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/d3/d3-ease.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/d3/d3-selection.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/d3/d3-timer.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/d3/d3-transition.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/js-yaml.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/mermaid.min.js?1705477122" defer></script>
+    <script src="/artemis_crib/js/d3/d3-color.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/d3/d3-drag.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/d3/d3-ease.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/d3/d3-selection.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/d3/d3-timer.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/d3/d3-transition.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/js-yaml.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/mermaid.min.js?1705743132" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{}");
     </script>
-    <script src="/artemis_crib/js/theme.js?1705477122" defer></script>
+    <script src="/artemis_crib/js/theme.js?1705743132" defer></script>
   </body>
 </html>

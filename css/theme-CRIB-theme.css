@@ -1,0 +1,27 @@
+@import "theme-relearn-dark.css";
+
+/* main color #4e9f3d */
+:root {
+   --PRIMARY-color: #4e9f3d; /* default: #7dc903 brand primary color */
+   --SECONDARY-color: #6c8ce3; /* brand secondary color */
+   --ACCENT-color: #ff44ff; /* brand accent color, used for search highlights */
+
+   --MAIN-font: "Arial";
+}
+
+/* General */
+body h1 {
+    text-transform: unset;
+}
+
+/* Footer */
+#footer {
+    padding-top: 3rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.65rem;
+    text-align: center;
+}
+
+#footer p {
+    margin: 0;
+}

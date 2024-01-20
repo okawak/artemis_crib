@@ -4,26 +4,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.121.2">
-    <meta name="generator" content="Relearn 5.22.0">
-    <meta name="description" content="">
+    <meta name="generator" content="Relearn 5.23.2">
+    <meta name="description" content="Documentation for CRIB artemis">
     <meta name="author" content="Kodai Okawa">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="VNC server :: CRIB artemis">
+    <meta name="twitter:description" content="last modified: 2023-11-15 by Kodai Okawa When we start the analysis, there are many situations where the analysis server on which artemis is installed is not only operated directly, but also remotely using &ldquo;ssh&rdquo;.">
+    <meta property="og:title" content="VNC server :: CRIB artemis">
+    <meta property="og:description" content="last modified: 2023-11-15 by Kodai Okawa When we start the analysis, there are many situations where the analysis server on which artemis is installed is not only operated directly, but also remotely using &ldquo;ssh&rdquo;.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://okawak.github.io/artemis_crib/setting/vncserver/index.html">
+    <meta property="article:section" content="Setting :: CRIB artemis">
+    <meta property="article:published_time" content="2023-11-02T17:23:05+09:00">
+    <meta property="article:modified_time" content="2023-11-15T17:49:09+09:00">
+    <meta property="og:site_name" content="CRIB artemis">
     <title>VNC server :: CRIB artemis</title>
     <link href="/artemis_crib/setting/vncserver/index.xml" rel="alternate" type="application/rss+xml" title="VNC server :: CRIB artemis">
     <link href="/artemis_crib/setting/vncserver/index.print.html" rel="alternate" type="text/html" title="VNC server :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1705477121" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705477121" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1705477121" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1705477121" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1705477121" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1705477121" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1705477121" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1705477121" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1705477121" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-artemis_crib.css?1705477121" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/variant.css?1705477121" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1705477121" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/ie.css?1705477121" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1705477121"></script>
-    <script src="/artemis_crib/js/variant.js?1705477121"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1705743131" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705743131" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1705743131" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1705743131" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1705743131" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1705743131" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1705743131" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1705743131" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1705743131" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-CRIB-theme.css?1705743131" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/variant.css?1705743131" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1705743131" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/ie.css?1705743131" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1705743131"></script>
+    <script src="/artemis_crib/js/variant.js?1705743131"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -36,11 +47,12 @@
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
       window.T_Reset_view = 'Reset view';
+      window.T_View_reset = 'View reset!';
       window.T_No_results_found = 'No results found for \u0022{0}\u0022';
       window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
       // some further base stuff
       var baseUriFull='https:\/\/okawak.github.io\/artemis_crib/';
-      window.variants && variants.init( [ 'artemis_crib' ] );
+      window.variants && variants.init( [ 'CRIB-theme', 'relearn-auto', 'relearn-dark', 'zen-dark', 'learn' ] );
     </script>
 
   
@@ -149,18 +161,15 @@ We recommended to use <code>VNC server</code> currently, but note that policies 
 Simply transfer the remote X to the local.</p>
 
   
-<div class="tab-panel" data-tab-group="60ee77de3ca17b697c8baf789577084c">
+<div class="tab-panel" data-tab-group="a3f352f83f03f2837d20475d138a6475">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="your-local-pc"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('60ee77de3ca17b697c8baf789577084c','your-local-pc')"
+      onclick="switchTab('a3f352f83f03f2837d20475d138a6475','your-local-pc')"
     >
-      <span>
-        <span class="tab-nav-hidden">your local PC</span>
-        <span class="tab-nav-text">your local PC</span>
-      </span>
+      <span class="tab-nav-text">your local PC</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -169,7 +178,7 @@ Simply transfer the remote X to the local.</p>
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh -X analysisPC</span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ssh -X analysisPC</span></span></code></pre></div></div>
     </div>
   </div>
 </div><p>This &ldquo;X&rdquo; option allow the X11Forwarding.</p>
@@ -190,18 +199,15 @@ Any viewer may work well, but we are using <a href="https://www.realvnc.com/en/c
 <p>First, please check the ID number of the VNC server we are running.</p>
 
   
-<div class="tab-panel" data-tab-group="f20f61a1d6731b97034b0bdbcbb1613b">
+<div class="tab-panel" data-tab-group="aabaeeb092e2f9d75f936203cd821953">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-analysis-pc"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('f20f61a1d6731b97034b0bdbcbb1613b','in-analysis-pc')"
+      onclick="switchTab('aabaeeb092e2f9d75f936203cd821953','in-analysis-pc')"
     >
-      <span>
-        <span class="tab-nav-hidden">in analysis PC</span>
-        <span class="tab-nav-text">in analysis PC</span>
-      </span>
+      <span class="tab-nav-text">in analysis PC</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -210,33 +216,30 @@ Any viewer may work well, but we are using <a href="https://www.realvnc.com/en/c
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; vncserver -list
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>TigerVNC server sessions:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>X DISPLAY <span style="color:#75715e">#	PROCESS ID</span>
-</span></span><span style="display:flex;"><span>:1		  <span style="color:#ae81ff">3146</span>
-</span></span><span style="display:flex;"><span>:5		  <span style="color:#ae81ff">7561</span>
-</span></span><span style="display:flex;"><span>:2022	  <span style="color:#ae81ff">29499</span>
-</span></span><span style="display:flex;"><span>:2		  <span style="color:#ae81ff">23055</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">&gt; vncserver -list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">TigerVNC server sessions:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">X DISPLAY <span class="c1">#	PROCESS ID</span>
+</span></span><span class="line"><span class="cl">:1		  <span class="m">3146</span>
+</span></span><span class="line"><span class="cl">:5		  <span class="m">7561</span>
+</span></span><span class="line"><span class="cl">:2022	  <span class="m">29499</span>
+</span></span><span class="line"><span class="cl">:2		  <span class="m">23055</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div><p>In this example, number 1, 5, 2022 and 2 VNC server is running.
 And select an available number to start the VNC server you want to use.</p>
 
   
-<div class="tab-panel" data-tab-group="0e77c1659c02cffe82911840404066b2">
+<div class="tab-panel" data-tab-group="3d0e3193079aacddeb02b4fd601fa0ad">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-analysis-pc"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('0e77c1659c02cffe82911840404066b2','in-analysis-pc')"
+      onclick="switchTab('3d0e3193079aacddeb02b4fd601fa0ad','in-analysis-pc')"
     >
-      <span>
-        <span class="tab-nav-hidden">in analysis PC</span>
-        <span class="tab-nav-text">in analysis PC</span>
-      </span>
+      <span class="tab-nav-text">in analysis PC</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -245,24 +248,21 @@ And select an available number to start the VNC server you want to use.</p>
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; vncserver :10 <span style="color:#75715e"># start the VNC server!</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">&gt; vncserver :10 <span class="c1"># start the VNC server!</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div><p>If you want to kill the VNC server, the below command will work.</p>
 
   
-<div class="tab-panel" data-tab-group="64249fe8d60edf0b652b1f2a6d9dfe51">
+<div class="tab-panel" data-tab-group="d892a5b82695288133feb970902af716">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-analysis-pc"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('64249fe8d60edf0b652b1f2a6d9dfe51','in-analysis-pc')"
+      onclick="switchTab('d892a5b82695288133feb970902af716','in-analysis-pc')"
     >
-      <span>
-        <span class="tab-nav-hidden">in analysis PC</span>
-        <span class="tab-nav-text">in analysis PC</span>
-      </span>
+      <span class="tab-nav-text">in analysis PC</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -271,25 +271,22 @@ And select an available number to start the VNC server you want to use.</p>
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; vncserver -kill :10 <span style="color:#75715e"># kill the VNC server!</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">&gt; vncserver -kill :10 <span class="c1"># kill the VNC server!</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div><p>Next, configure the canvas created by artemis to be sent to a VNC server.
 The <code>a</code> command can treat this process by using <code>.vncdisplay</code> file!</p>
 
   
-<div class="tab-panel" data-tab-group="3e9c874198a8c43319d24d1c1b29bb70">
+<div class="tab-panel" data-tab-group="069ed7081250841cfd303867b10317b9">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-analysis-pc"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('3e9c874198a8c43319d24d1c1b29bb70','in-analysis-pc')"
+      onclick="switchTab('069ed7081250841cfd303867b10317b9','in-analysis-pc')"
     >
-      <span>
-        <span class="tab-nav-hidden">in analysis PC</span>
-        <span class="tab-nav-text">in analysis PC</span>
-      </span>
+      <span class="tab-nav-text">in analysis PC</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -298,8 +295,8 @@ The <code>a</code> command can treat this process by using <code>.vncdisplay</co
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; artlogin <span style="color:#f92672">(</span>username<span style="color:#f92672">)</span> <span style="color:#75715e"># move to your artemis work directory</span>
-</span></span><span style="display:flex;"><span>&gt; echo <span style="color:#e6db74">&#34;10&#34;</span> &gt; .vncdisplay <span style="color:#75715e"># write the ID of VNC server to the .vncdisplay file</span></span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">&gt; artlogin <span class="o">(</span>username<span class="o">)</span> <span class="c1"># move to your artemis work directory</span>
+</span></span><span class="line"><span class="cl">&gt; <span class="nb">echo</span> <span class="s2">&#34;10&#34;</span> &gt; .vncdisplay <span class="c1"># write the ID of VNC server to the .vncdisplay file</span></span></span></code></pre></div></div>
     </div>
   </div>
 </div><p>Then, the setting in analysis PC is completed!
@@ -319,18 +316,15 @@ If you want to make the login server account, please contact the CRIB member!</p
 <p>To access the analysis PC, use two-stage ssh. Prepare the following configuration file.</p>
 
   
-<div class="tab-panel" data-tab-group="bebd221e3696c36d00859d060c20f0b5">
+<div class="tab-panel" data-tab-group="85a3c52e22b0924d4bb0dad5ed8853c9">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-local-pc-sshconfig"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('bebd221e3696c36d00859d060c20f0b5','in-local-pc-sshconfig')"
+      onclick="switchTab('85a3c52e22b0924d4bb0dad5ed8853c9','in-local-pc-sshconfig')"
     >
-      <span>
-        <span class="tab-nav-hidden">in local PC, .ssh/config</span>
-        <span class="tab-nav-text">in local PC, .ssh/config</span>
-      </span>
+      <span class="tab-nav-text">in local PC, .ssh/config</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -339,47 +333,44 @@ If you want to make the login server account, please contact the CRIB member!</p
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-aconf" data-lang="aconf"><span style="display:flex;"><span>Host login
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># need to change</span>
-</span></span><span style="display:flex;"><span>    HostName CNS_loginserver_hostname
-</span></span><span style="display:flex;"><span>    User username
-</span></span><span style="display:flex;"><span>    IdentityFile ~/.ssh/id_rsa
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># no need to change (if you want)</span>
-</span></span><span style="display:flex;"><span>    ForWardX11Timeout <span style="color:#ae81ff">24</span>h
-</span></span><span style="display:flex;"><span>    ControlPersist <span style="color:#ae81ff">30</span>m
-</span></span><span style="display:flex;"><span>    ForwardAgent yes
-</span></span><span style="display:flex;"><span>    ControlMaster auto
-</span></span><span style="display:flex;"><span>    ControlPath ~/.ssh/mux-%r@%h:%p
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># any name is okay</span>
-</span></span><span style="display:flex;"><span>Host analysis
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># need to change</span>
-</span></span><span style="display:flex;"><span>    HostName analysisPC_hostname
-</span></span><span style="display:flex;"><span>    User username
-</span></span><span style="display:flex;"><span>    IdentityFile ~/.ssh/id_rsa
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># no need to change (if you want)</span>
-</span></span><span style="display:flex;"><span>    ProxyCommand ssh login nc %h %p
-</span></span><span style="display:flex;"><span>    ForwardAgent yes
-</span></span><span style="display:flex;"><span>    ControlMaster auto
-</span></span><span style="display:flex;"><span>    ControlPath ~/.ssh/mux-%r@%h:%p
-</span></span><span style="display:flex;"><span>    ControlPersist <span style="color:#ae81ff">30</span>m</span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-aconf" data-lang="aconf"><span class="line"><span class="cl"><span class="nb">Host</span> login
+</span></span><span class="line"><span class="cl">    <span class="c"># need to change</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">HostName</span> CNS_loginserver_hostname
+</span></span><span class="line"><span class="cl">    <span class="nb">User</span> username
+</span></span><span class="line"><span class="cl">    <span class="nb">IdentityFile</span> ~/.ssh/id_rsa
+</span></span><span class="line"><span class="cl">    <span class="c"># no need to change (if you want)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">ForWardX11Timeout</span> <span class="m">24</span>h
+</span></span><span class="line"><span class="cl">    <span class="nb">ControlPersist</span> <span class="m">30</span>m
+</span></span><span class="line"><span class="cl">    <span class="nb">ForwardAgent</span> yes
+</span></span><span class="line"><span class="cl">    <span class="nb">ControlMaster</span> auto
+</span></span><span class="line"><span class="cl">    <span class="nb">ControlPath</span> ~/.ssh/mux-%r@%h:%p
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># any name is okay</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Host</span> analysis
+</span></span><span class="line"><span class="cl">    <span class="c"># need to change</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">HostName</span> analysisPC_hostname
+</span></span><span class="line"><span class="cl">    <span class="nb">User</span> username
+</span></span><span class="line"><span class="cl">    <span class="nb">IdentityFile</span> ~/.ssh/id_rsa
+</span></span><span class="line"><span class="cl">    <span class="c"># no need to change (if you want)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">ProxyCommand</span> ssh login nc %h %p
+</span></span><span class="line"><span class="cl">    <span class="nb">ForwardAgent</span> yes
+</span></span><span class="line"><span class="cl">    <span class="nb">ControlMaster</span> auto
+</span></span><span class="line"><span class="cl">    <span class="nb">ControlPath</span> ~/.ssh/mux-%r@%h:%p
+</span></span><span class="line"><span class="cl">    <span class="nb">ControlPersist</span> <span class="m">30</span>m</span></span></code></pre></div></div>
     </div>
   </div>
 </div><p>Then you can access to the analysis PC simply by:</p>
 
   
-<div class="tab-panel" data-tab-group="5bf6fede0c291531061b33526c013c75">
+<div class="tab-panel" data-tab-group="18658a1f0de038ba0fc6920bfbb82985">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-local-pc"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('5bf6fede0c291531061b33526c013c75','in-local-pc')"
+      onclick="switchTab('18658a1f0de038ba0fc6920bfbb82985','in-local-pc')"
     >
-      <span>
-        <span class="tab-nav-hidden">in local PC</span>
-        <span class="tab-nav-text">in local PC</span>
-      </span>
+      <span class="tab-nav-text">in local PC</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -388,7 +379,7 @@ If you want to make the login server account, please contact the CRIB member!</p
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; ssh analysis</span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">&gt; ssh analysis</span></span></code></pre></div></div>
     </div>
   </div>
 </div><p>Next, in order to receive from the VNC server, we use port-forwarding!
@@ -396,27 +387,24 @@ VNC servers with ID x use port number 5900+x.
 For example if we use number &ldquo;10&rdquo;, the port will be 5910.</p>
 <p>Forward this to a certain port on localhost. This number can be any number that is not in use.</p>
 
-<div class="mermaid align-center">
+<pre class="mermaid align-center">
 ---
 title: An example of port-forwarding
 ---
 graph LR;
     A(analysis PC&lt;br&gt;&lt;/br&gt;port 5910) --&gt; |send|B(local PC&lt;br&gt;&lt;/br&gt;port 55910)
-</div>
+</pre>
 
   
-<div class="tab-panel" data-tab-group="cb505015213abb1edd282db0915f9515">
+<div class="tab-panel" data-tab-group="e2c77397639be0ed8ea73b1a04f7e33d">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-local-pc-sshconfig"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('cb505015213abb1edd282db0915f9515','in-local-pc-sshconfig')"
+      onclick="switchTab('e2c77397639be0ed8ea73b1a04f7e33d','in-local-pc-sshconfig')"
     >
-      <span>
-        <span class="tab-nav-hidden">in local PC, .ssh/config</span>
-        <span class="tab-nav-text">in local PC, .ssh/config</span>
-      </span>
+      <span class="tab-nav-text">in local PC, .ssh/config</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -425,16 +413,16 @@ graph LR;
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-aconf" data-lang="aconf"><span style="display:flex;"><span>Host analysis
-</span></span><span style="display:flex;"><span>    HostName analysisPC_hostname
-</span></span><span style="display:flex;"><span>    User username
-</span></span><span style="display:flex;"><span>    IdentityFile ~/.ssh/id_rsa
-</span></span><span style="display:flex; background-color:#3c3d38"><span>    LocalForward <span style="color:#ae81ff">55910</span> localhost:5910
-</span></span><span style="display:flex;"><span>    ProxyCommand ssh login nc %h %p
-</span></span><span style="display:flex;"><span>    ForwardAgent yes
-</span></span><span style="display:flex;"><span>    ControlMaster auto
-</span></span><span style="display:flex;"><span>    ControlPath ~/.ssh/mux-%r@%h:%p
-</span></span><span style="display:flex;"><span>    ControlPersist <span style="color:#ae81ff">30</span>m</span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-aconf" data-lang="aconf"><span class="line"><span class="cl"><span class="nb">Host</span> analysis
+</span></span><span class="line"><span class="cl">    <span class="nb">HostName</span> analysisPC_hostname
+</span></span><span class="line"><span class="cl">    <span class="nb">User</span> username
+</span></span><span class="line"><span class="cl">    <span class="nb">IdentityFile</span> ~/.ssh/id_rsa
+</span></span><span class="line hl"><span class="cl">    <span class="nb">LocalForward</span> <span class="m">55910</span> localhost:5910
+</span></span><span class="line"><span class="cl">    <span class="nb">ProxyCommand</span> ssh login nc %h %p
+</span></span><span class="line"><span class="cl">    <span class="nb">ForwardAgent</span> yes
+</span></span><span class="line"><span class="cl">    <span class="nb">ControlMaster</span> auto
+</span></span><span class="line"><span class="cl">    <span class="nb">ControlPath</span> ~/.ssh/mux-%r@%h:%p
+</span></span><span class="line"><span class="cl">    <span class="nb">ControlPersist</span> <span class="m">30</span>m</span></span></code></pre></div></div>
     </div>
   </div>
 </div><p>This allows you to display a VNC display by accessing port 55910 on your own PC (localhost), instead of having to access port 5910 on the analysis PC!</p>
@@ -460,7 +448,6 @@ Please refer to this as one method.</p>
 
 
             <footer class="footline">
-
             </footer>
           </article>
         </div>
@@ -485,12 +472,12 @@ Please refer to this as one method.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/artemis_crib/js/auto-complete.js?1705477122" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.min.js?1705477122" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1705477122" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1705477122" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1705477122" defer></script>
-        <script src="/artemis_crib/js/search.js?1705477122" defer></script>
+        <script src="/artemis_crib/js/auto-complete.js?1705743132" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.min.js?1705743132" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1705743132" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1705743132" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1705743132" defer></script>
+        <script src="/artemis_crib/js/search.js?1705743132" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -568,10 +555,10 @@ Please refer to this as one method.</p>
             <li><a class="padding" href="/artemis_crib/tags/index.html"><i class='fas fa-fw fa-tags'></i> Tags</a></li>
           </ul>
         </div>
-        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
         <div id="R-menu-footer">
-          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
-          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
             <ul>
               <li id="R-select-language-container" class="footerLangSwitch">
                 <div class="padding menu-control">
@@ -585,14 +572,18 @@ Please refer to this as one method.</p>
                   <div class="clear"></div>
                 </div>
               </li>
-              <li id="R-select-variant-container" class="footerVariantSwitch">
+              <li id="R-select-variant-container" class="footerVariantSwitch showVariantSwitch">
                 <div class="padding menu-control">
                   <i class="fas fa-paint-brush fa-fw"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-variant">Theme</label>
                     <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                      <option id="R-artemis_crib" value="artemis_crib" selected>Artemis Crib</option>
+                      <option id="R-CRIB-theme" value="CRIB-theme" selected>CRIB Theme</option>
+                      <option id="R-relearn-auto" value="relearn-auto">Relearn Auto</option>
+                      <option id="R-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                      <option id="R-zen-dark" value="zen-dark">Zen Dark</option>
+                      <option id="R-learn" value="learn">Learn</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -619,8 +610,8 @@ Please refer to this as one method.</p>
         </div>
       </div>
     </aside>
-    <script src="/artemis_crib/js/clipboard.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1705477122" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1705743132" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -650,20 +641,20 @@ Please refer to this as one method.</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/d3/d3-color.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/d3/d3-drag.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/d3/d3-ease.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/d3/d3-selection.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/d3/d3-timer.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/d3/d3-transition.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/js-yaml.min.js?1705477122" defer></script>
-    <script src="/artemis_crib/js/mermaid.min.js?1705477122" defer></script>
+    <script src="/artemis_crib/js/d3/d3-color.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/d3/d3-drag.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/d3/d3-ease.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/d3/d3-selection.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/d3/d3-timer.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/d3/d3-transition.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/js-yaml.min.js?1705743132" defer></script>
+    <script src="/artemis_crib/js/mermaid.min.js?1705743132" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{}");
     </script>
-    <script src="/artemis_crib/js/theme.js?1705477122" defer></script>
+    <script src="/artemis_crib/js/theme.js?1705743132" defer></script>
   </body>
 </html>
