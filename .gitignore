@@ -1,7 +1,6 @@
 *~
 *.so
 *.swp
-*.root
 .vscode/
 test
 artemislogon.C
