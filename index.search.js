@@ -67,9 +67,11 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Online analysis",
-    "content": "last modified: 2024-01-20 by Kodai Okawa In the F2 focal plane, we check the secondary beam condition. In other words, identify the beam particles we want and adjust the beamline parameters to get the most amount of the beam particle. Therefore, we need to identify the beam ion from the data. To do so, we perform simulation.\nThis is almost the same with this web application. This web application uses enewz energy loss calculation, but PID using artemis uses SRIM.\nThese are the source code for the PID calculation.\nTCRIBPIDProcessor.cc TCRIBPIDProcessor.h Principles The simple principle of PID (Particle IDentification) is described.\nFirst, the energies of the various beam ions are determined from the value of the magnetic rigidity ( $B\\rho$) of the dipole magnets. The values are then calculated using relativity.\n$$ m_0\\gamma\\frac{v^2}{\\rho} = qevB $$ $$ B\\rho = \\frac{m_0\\gamma\\beta c}{qe} $$ $$ \\frac{B\\rho qe}{c} = m_0\\frac{\\beta}{\\sqrt{1-\\beta^2}} $$From this equation, solving for $\\beta^2$,\n$$ \\beta^2 = \\frac{1}{1+\\left( \\frac{m_0 c}{B\\rho qe} \\right)^2} $$ $$ \\frac{1}{\\sqrt{1-\\beta^2}} = \\sqrt{1+\\left( \\frac{B\\rho qe}{m_0 c} \\right)^2} $$Relativistic energy $E$ is\n$$ E = \\frac{m_0 c^2}{\\sqrt{1-\\beta^2}} $$ $$ E^2 = \\left(m_0 c^2\\right)^2 + \\left( B\\rho qec \\right)^2 $$Therefore, from this equation, $E$ can be obtained from $B\\rho$ and the kinetic energy can be derived from the following relationship.\n$$ E = E_{kin} + m_0 c^2 $$ $$ E_{kin} = m_0 c^2\\left( \\sqrt{1+\\left( \\frac{B\\rho qec}{m_0 c^2} \\right)^2} -1 \\right) $$The equation for determining velocity from energy using relativity can also be obtained as follows.\n$$ E_{kin} + m_0 c^2 = \\frac{m_0 c^2}{\\sqrt{1-\\left(\\frac{v}{c}\\right)^2}} $$ $$ v = c\\sqrt{1-\\left( \\frac{1}{\\frac{E_{kin}}{m_0 c^2} +1} \\right)^2} $$The energy loss of the detector placed on the beamline is then calculated and the PID diagram is obtained by plotting the possible measured values using these relationships.\nUsage First, please prepare the SRIMlib dataset. You need all input ion for “mylar” and “Si” target energy loss table. For the SRIMlib setting, please refer this page.\nNext, you need input ions and beamline parameter files. The format is like this.\n​ prm/pid/expname.yaml prm/pid/expname.yaml input_ions: - name: 7Li3 charge: 3 mass: 7.01435758 # amu color: 0 # 0 -\u003e red, 1 -\u003e blue, 2 -\u003e black - name: 6He2 charge: 2 mass: 6.01778863 color: 1 - name: 3H1 charge: 1 mass: 3.015500905 color: 2 - name: 2H1 charge: 1 mass: 2.013553496 color: 2 - name: 1H1 charge: 1 mass: 1.007276452 color: 2 - name: 4He2 charge: 2 mass: 4.001506094 color: 2 # BLD parameters f1_parameters: brho: 1.227 # Tm rf_period: 57.0 # ns f2_parameters: PPAC_thickness: 10.0 # um, mylar SSD_thickness: 1500.0 # um f3_parameters: a_thickness: 15.0 # um, mylar, PPACa/MWDCa b_thickness: 15.0 # um, mylar, PPACb/MWDCb distance: 290.5 # mm, between two tracking detectors trigger: 0 # PPACa/MWDCa -\u003e 0, PPACb/MWDCb -\u003e 1 # display parameters f2_display: rf_offset: -6.5 # ns rf_range: [0.0, 120.0] # ns energy_range: [0.0, 100.0] # MeV f3_display: rf_offset: -12.0 # ns tof_offset: -2.7 # ns rf_range: [0.0, 120.0] # ns tof_range: [0.0, 8.0] # ns Info You can add the beam ions freely, but you need to prepare SRIM Output table.\nLastly, let’s prepare the steering file. If you want to do only PID calculation, you can use chkpid.yaml.\n​ steering/chkpid.yaml steering/chkpid.yaml Processor: - name: pid type: art::TCRIBPIDProcessor parameter: FileName: prm/pid/expname.yaml Batch: false OutputTransparency: 1 You can add these sentences for any other steering files. I think it is useful when you want to overlap the data figure and calculation figure. If you set Batch: false, the canvases for F2 PID and F3 PID will appear automatically. Batch: true is quiet mode.\nThis is an example of the automatically generated figure.\nThe process for the calculation is performed in init process (I mean not event loop), so when you add the steering file, the figure will be created.\n\u003e acd \u003e a artemis [0] add steering/chkpid.yaml # process is performed now # if Batch: false, the two PID figure will appear automatically artemis [1] ls artemis \u003e 0 TDirectory pid pid artemis [2] cd 0 artemis [3] ls pid \u003e 0 TMultiGraph F2_PID; F2 RF [ns]; F2 SSD [MeV] 1 TMultiGraph F3_PID; F3 RF [ns]; PPACs/MWDCs TOF [ns] 2 TCanvas F2_canvas F2_canvas 3 TCanvas F3_canvas F3_canvas artemis [4] draw 0 Info There are two kinds of object, TMultiGraph and TCanvas. The ht command cannot draw these object, so I also made draw command to be able to draw “TMultiGraph” objects.\nHOWEVER, even this “draw” command cannot display the “TCanvas” object yet… If you save the object using hstore command or check from THttpServer, you can check the TCanvas objects.\nThis “TMultiGraph” object is useful when you want to overlay th data.\nartemis [*] ht something # this is gaussian example artemis [*] dr 0 p same ",
+    "content": "last modified: 2024-01-22 by Kodai Okawa In the F2 focal plane, we check the secondary beam condition. In other words, identify the beam particles we want and adjust the beamline parameters to get the most amount of the beam particle. Therefore, we need to identify the beam ion from the data. To do so, we perform simulation.\nThis is almost the same with this web application. This web application uses enewz energy loss calculation, but PID using artemis uses SRIM.\nThese are the source code for the PID calculation.\nTCRIBPIDProcessor.cc TCRIBPIDProcessor.h Principles The simple principle of PID (Particle IDentification) is described.\nFirst, the energies of the various beam ions are determined from the value of the magnetic rigidity ( $B\\rho$) of the dipole magnets. The values are then calculated using relativity.\n$$ m_0\\gamma\\frac{v^2}{\\rho} = qevB $$ $$ B\\rho = \\frac{m_0\\gamma\\beta c}{qe} $$ $$ \\frac{B\\rho qe}{c} = m_0\\frac{\\beta}{\\sqrt{1-\\beta^2}} $$From this equation, solving for $\\beta^2$,\n$$ \\beta^2 = \\frac{1}{1+\\left( \\frac{m_0 c}{B\\rho qe} \\right)^2} $$ $$ \\frac{1}{\\sqrt{1-\\beta^2}} = \\sqrt{1+\\left( \\frac{B\\rho qe}{m_0 c} \\right)^2} $$Relativistic energy $E$ is\n$$ E = \\frac{m_0 c^2}{\\sqrt{1-\\beta^2}} $$ $$ E^2 = \\left(m_0 c^2\\right)^2 + \\left( B\\rho qec \\right)^2 $$Therefore, from this equation, $E$ can be obtained from $B\\rho$ and the kinetic energy can be derived from the following relationship.\n$$ E = E_{kin} + m_0 c^2 $$ $$ E_{kin} = m_0 c^2\\left( \\sqrt{1+\\left( \\frac{B\\rho qec}{m_0 c^2} \\right)^2} -1 \\right) $$The equation for determining velocity from energy using relativity can also be obtained as follows.\n$$ E_{kin} + m_0 c^2 = \\frac{m_0 c^2}{\\sqrt{1-\\left(\\frac{v}{c}\\right)^2}} $$ $$ v = c\\sqrt{1-\\left( \\frac{1}{\\frac{E_{kin}}{m_0 c^2} +1} \\right)^2} $$The energy loss of the detector placed on the beamline is then calculated and the PID diagram is obtained by plotting the possible measured values using these relationships.\nUsage First, please prepare the SRIMlib dataset. You need all input ion for “mylar” and “Si” target energy loss table. For the SRIMlib setting, please refer this page.\nNext, you need input ions and beamline parameter files. The format is like this.\n​ prm/pid/expname.yaml prm/pid/expname.yaml input_ions: - name: 7Li3 charge: 3 mass: 7.01435758 # amu color: 0 # 0 -\u003e red, 1 -\u003e blue, 2 -\u003e black - name: 6He2 charge: 2 mass: 6.01778863 color: 1 - name: 3H1 charge: 1 mass: 3.015500905 color: 2 - name: 2H1 charge: 1 mass: 2.013553496 color: 2 - name: 1H1 charge: 1 mass: 1.007276452 color: 2 - name: 4He2 charge: 2 mass: 4.001506094 color: 2 # BLD parameters f1_parameters: brho: 1.227 # Tm rf_period: 57.0 # ns f2_parameters: PPAC_thickness: 10.0 # um, mylar SSD_thickness: 1500.0 # um f3_parameters: a_thickness: 15.0 # um, mylar, PPACa/MWDCa b_thickness: 15.0 # um, mylar, PPACb/MWDCb distance: 290.5 # mm, between two tracking detectors trigger: 0 # PPACa/MWDCa -\u003e 0, PPACb/MWDCb -\u003e 1 # display parameters f2_display: rf_offset: -6.5 # ns rf_range: [0.0, 120.0] # ns energy_range: [0.0, 100.0] # MeV f3_display: rf_offset: -12.0 # ns tof_offset: -2.7 # ns rf_range: [0.0, 120.0] # ns tof_range: [0.0, 8.0] # ns Info You can add the beam ions freely, but you need to prepare SRIM Output table.\nLastly, let’s prepare the steering file. If you want to do only PID calculation, you can use chkpid.yaml.\n​ steering/chkpid.yaml steering/chkpid.yaml Processor: - name: pid type: art::TCRIBPIDProcessor parameter: FileName: prm/pid/expname.yaml Batch: false OutputTransparency: 1 You can add these sentences for any other steering files. I think it is useful when you want to overlap the data figure and calculation figure. If you set Batch: false, the canvases for F2 PID and F3 PID will appear automatically. Batch: true is quiet mode.\nThis is an example of the automatically generated figure.\nThe process for the calculation is performed in init process (I mean not event loop), so when you add the steering file, the figure will be created.\n\u003e acd \u003e a artemis [0] add steering/chkpid.yaml # process is performed now # if Batch: false, the two PID figure will appear automatically artemis [1] ls artemis \u003e 0 TDirectory pid pid artemis [2] cd 0 artemis [3] ls pid \u003e 0 TMultiGraph F2_PID; F2 RF [ns]; F2 SSD [MeV] 1 TMultiGraph F3_PID; F3 RF [ns]; PPACs/MWDCs TOF [ns] 2 TCanvas F2_canvas F2_canvas 3 TCanvas F3_canvas F3_canvas artemis [4] draw 0 Info There are two kinds of object, TMultiGraph and TCanvas. The ht command cannot draw these object, so I also made draw command to be able to draw “TMultiGraph” objects.\nHOWEVER, even this “draw” command cannot display the “TCanvas” object yet… If you save the object using hstore command or check from THttpServer, you can check the TCanvas objects.\nThis “TMultiGraph” object is useful when you want to overlay th data.\nartemis [*] ht something # this is gaussian example artemis [*] dr 0 p same ",
     "description": "",
-    "tags": [],
+    "tags": [
+      "need_update"
+    ],
     "title": "Beam PID",
     "uri": "/artemis_crib/example/online_analysis/pid/index.html"
   },
@@ -171,7 +173,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Online analysis",
-    "content": "last modified: 2023-12-20 by Kodai Okawa ",
+    "content": "last modified: 2024-01-22 by Kodai Okawa updating…\n",
     "description": "",
     "tags": [],
     "title": "PPAC",
@@ -179,7 +181,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Preparation",
-    "content": "last modified: 2023-12-15 by Kodai Okawa ",
+    "content": "last modified: 2024-01-22 by Kodai Okawa updating…\n",
     "description": "",
     "tags": [],
     "title": "MWDC calibration",
@@ -213,7 +215,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "Up to now, we have introduced the installation and concepts of artemis. This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is no problem to start reading from here.\nPreparation Basic Tref for V1190 PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git Online analysis F1 Beam PID F2 PPAC MWDC SSD F3 Gate Shifter task Scaler Timestamp Check raw data Offline analysis New processors Merge files Python environment pyROOT MC Simulation Beam_generator Nbodyreaction Geometry Detect_particle Solidangle ",
+    "content": "Up to now, we have introduced the installation and concepts of artemis. This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is no problem to start reading from here.\nPreparation Basic Tref for V1190 PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git Online analysis F1 Beam PID F2 PPAC MWDC Telescope F3 Gate Shifter task Scaler Timestamp Raw data checker Offline analysis New processors Merge files Python environment pyROOT MC Simulation Beam_generator Nbodyreaction Geometry Detect_particle Solidangle ",
     "description": "",
     "tags": null,
     "title": "Example",
@@ -221,7 +223,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Online analysis",
-    "content": "last modified: 2023-12-20 by Kodai Okawa ",
+    "content": "last modified: 2024-01-22 by Kodai Okawa updating…\n",
     "description": "",
     "tags": [],
     "title": "MWDC",
@@ -257,7 +259,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "Cannot be analysed in online mode… When you start the event loop in online mode and artemis gets stuck, babian may not have been activated. There is a shellscript to run the “babian” in cribana PC.\n~/bin/run_babian ps aux | grep babi # check if the \"babian\" process is working or not “chkridf” command shows “Rev”, “Dev”, “FP”, “Det” and “Mod” ID, but they are different from map file configuration…? chkridf command shows like this:\nchkridf hoge.ridf-- snip -- : Segment Header / blkn=1 hd1 = 0x2100004c ly=2, cid=4, size=76, efn=120 Segment ID = 12600853 (0x00c04615) Rev 0 / Dev 12 / FP 1 / Det 6 / Mod 21 2000 0200 4072 0000 406c 0010 405f 0001 4068 0011 406a 0002 4053 0012 4058 0003 4058 0013 4051 0004 4066 0014 404d 0005 4047 0015 4045 0006 4056 0016 405a 0007 404b 0017 4050 0008 406c 0018 404b 0009 4069 0019 4059 000a 4051 001a 404e 000b 405f 001b 4064 000c 4052 001c 4033 000d 4055 001d 4064 000e 4067 001e 4043 000f 4052 001f 1dd2 0401 1dd2 0601 -- snip -- ",
+    "content": "Cannot be analysed in online mode… When you start the event loop in online mode and artemis gets stuck, babian may not have been activated. There is a shellscript to run the “babian” in cribana PC.\n~/bin/run_babian ps aux | grep babi # check if the \"babian\" process is working or not “chkridf” command shows “Rev”, “Dev”, “FP”, “Det” and “Mod” ID, but they are different from map file configuration…? chkridf command shows like this:\nchkridf hoge.ridf-- snip -- : Segment Header / blkn=1 hd1 = 0x2100004c ly=2, cid=4, size=76, efn=120 Segment ID = 12600853 (0x00c04615) Rev 0 / Dev 12 / FP 1 / Det 6 / Mod 21 2000 0200 4072 0000 406c 0010 405f 0001 4068 0011 406a 0002 4053 0012 4058 0003 4058 0013 4051 0004 4066 0014 404d 0005 4047 0015 4045 0006 4056 0016 405a 0007 404b 0017 4050 0008 406c 0018 404b 0009 4069 0019 4059 000a 4051 001a 404e 000b 405f 001b 4064 000c 4052 001c 4033 000d 4055 001d 4064 000e 4067 001e 4043 000f 4052 001f 1dd2 0401 1dd2 0601 -- snip -- Conflicts occurred with Git operations If you forgot to “git pull” and you have already modified the files, you will get conflicts. If you think it is okay to forget your modified file, please command like\n$ git stashand\n$ git pullAnd you want to recover your modified file,\n$ git stash popThen you encounter the conficts again, and please select the code you want to keep, and git push again. For the detail, please check here.\n",
     "description": "",
     "tags": null,
     "title": "Q\u0026A",
@@ -265,11 +267,11 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Online analysis",
-    "content": "last modified: 2023-12-20 by Kodai Okawa ",
+    "content": "last modified: 2024-01-22 by Kodai Okawa In the CRIB experiment, we often use a “telescope” consisting of DSSSD (Double-Sided SSD) and SSD (Single-Pad SSD). The combination of these multiple Si detectors as a dE-E detector is called a telescope.\nTo analyze the data as telescope data rather than individual detectors, I created a data class called TTelescopeData. This section describes its data structure and usage.\nsrc-crib/telescope/TTelescopeData.h Please assume that one of the name of TTelescopeData object is “tel1”\n# after some process artemis [*] br tel1 art::TTelescopeData Data Members TVector3 fPos detected position (X, Y, Z) int fXID X strip number int fYID Y strip number int fNE number of all SSDs double fdE energy at first layor double fdEX X side energy (=~ fdEY) double fdEY Y side energy (=~ fdEX) double fE added energy at thick SSDs double fEtotal all energy deposit in the telescope double fTiming timing information at the first layor (X side) double fYTiming for case that X side have trouble (Y side) double fTheta_L reaction angle in LAB system vector\u003cdouble\u003e fEnergyArray energy array for each SSD vector\u003cdouble\u003e fTimingArray timing array for each SSD ESortType kID ESortType kTiming ESortOrder kASC ESortOrder kDESC # snip for Method as for nowThese are the all data members of the “TTelescopeData”. The most commonly used variables are “fXID”, “fYID”, “fdE” and “fE”. Other variables are accessed by using methods (explain later). The meaning of these variables are written the upper code block.\nWe use them like,\nartemis [*] tree-\u003eDraw(\"tel1.fYID:tel1.fXID\u003e\u003estrip(16,-0.5,15.5, 16,-0.5,15.5)\",\"\",\"colz\") artemis [*] tree-\u003eDraw(\"tel1.fdE:tel1.fE\",\"\",\"\")or we can use in histogram definition file of course.\nThe following are the methods of the TTelescopeData object:\n# after some process artemis [*] br tel1 # snip for Data Members Methods TTelescopeData\u0026 operator= TVector3 GetPosition Double_t X Double_t Y Double_t Z void SetPosition void SetPosition Int_t GetN void SetN Int_t GetXID void SetXID Int_t GetYID void SetYID Double_t GetdE void SetdE Double_t GetdEX void SetdEX Double_t GetdEY void SetdEY Double_t GetE void SetE Double_t GetEtotal void SetEtotal Double_t GetTelTiming void SetTelTiming Double_t GetTelYTiming void SetTelYTiming Double_t GetTheta_L void SetTheta_L Double_t A DoubleVec_t GetEnergyArray Double_t GetEnergyArray void PushEnergyArray DoubleVec_t GetTimingArray Double_t GetTimingArray void PushTimingArray Double_t E Double_t T void Copy void Clear Bool_t CheckTObjectHashConsistency See also art::TDataObject base class for data objectThe most commonly used methods are “X()”, “Y()”, “Z()”, “E()”, “T()” and “A()”. There are also longer name methods, but it is troublesome to write long methods, so I prepared short name methods. The longer name methods are mainly used in the source processor to make it more readable.\nX(): return fPos.X(), detected X position Y(): return fPos.Y(), detected Y position Z(): return fPos.Z(), detected Z position E(): return fEtotal, total energy deposit in the telescope E(id: int): return fEnergyArray[id], energy deposit of each Si layer, id=0 means dE, id=1 means second layer T(): return fTiming, detected timing at first layer T(id: int): return fTimingArray[id], timing at the “id” th Si detector A(): return fTheta_L, the angle of the event, deg unit We use them like:\nartemis [*] tree-\u003eDraw(\"tel1.Y():tel1.X()\",\"\",\"colz\") artemis [*] tree-\u003eDraw(\"tel1.E(0):tel1.E()\",\"\",\"colz\") artemis [*] tree-\u003eDraw(\"tel1.E():tel1.A()\",\"\",\"colz\")",
     "description": "",
     "tags": [],
-    "title": "SSD",
-    "uri": "/artemis_crib/example/online_analysis/ssd/index.html"
+    "title": "Telescope",
+    "uri": "/artemis_crib/example/online_analysis/telescope/index.html"
   },
   {
     "breadcrumb": "Setting",
@@ -291,7 +293,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Online analysis",
-    "content": "last modified: 2023-12-20 by Kodai Okawa ",
+    "content": "last modified: 2024-01-22 by Kodai Okawa In the physics run (production run or physics measurement), we check all the detector data like tracking detector (PPAC, MWDC), TOF (RF) and Telescope data. In order to analyse them, we prepared steering/chkf3.yaml steering file. This file includes all the information of F3 analysis.\nsteering/chkf3.yaml $ artlogin (username) $ a artemis [0] add steering/chkf3.yaml NAME=hoge NUM=0000 artemis [1] res artemis [2] sus artemis [3] ls artemis \u003e 0 art::TTreeProjGroup f3check f3check 1 art::TAnalysisInfo analysisInfo 2 art::TTreeProjGroup mwdca mwdca 3 art::TTreeProjGroup mwdcb mwdcb 4 art::TTreeProjGroup tel1 tel1 5 art::TTreeProjGroup tel2 tel2 6 art::TTreeProjGroup tel3 tel3 7 art::TTreeProjGroup tel4 tel4 8 art::TTreeProjGroup tel5 tel5 9 art::TTreeProjGroup tel6 tel6 10 art::TTreeProjGroup MUX MUX 11 TDirectory MWDCCalibHists MWDC calibration # this is the situation at 2024/01/22There are many histogram definition, and you can freely update the histogram files.\nBecause this file contains most of the knowledge about the steering file, so you can test your own histogram or something based on this file.\n$ cd steering $ cp chkf3.yaml chkYourOwnName.yaml $ vi (emacs) chkYourOwnName.yaml # change or test something $ acd $ a artemis [0] add steering/chkYourOwnName.yaml NAME=hoge NUM=0000 artemis [1] res artmeis [2] sus # some analysis",
     "description": "",
     "tags": [],
     "title": "F3",
@@ -299,7 +301,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Preparation",
-    "content": "last modified: 2023-12-15 by Kodai Okawa ",
+    "content": "last modified: 2024-01-22 by Kodai Okawa updating…\n",
     "description": "",
     "tags": [],
     "title": "MUX calibration",
@@ -333,7 +335,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Preparation",
-    "content": "last modified: 2023-12-15 by Kodai Okawa ",
+    "content": "last modified: 2024-01-22 by Kodai Okawa updating…\n",
     "description": "",
     "tags": [],
     "title": "Set parameters",
@@ -368,9 +370,11 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Preparation",
-    "content": "last modified: 2023-12-20 by Kodai Okawa Analysis files for each experiment are managed using git. This is so that they can be quickly restored if they are all lost for some reason.\nGit is a bit complicated and you can commit freely if you are knowledgeable, but if you are unfamiliar with it, you don’t have to worry too much. The main use is that if someone creates a useful file, it will be reflected for each user as well.\nHere is a brief description of how to use it.\nDirectory structure In the CRIB analysis PC, we used local repository. The files related the repository is stored here.\n\u003e cd ~ \u003e tree -L 1 repos/exp repos/exp ├── he6p2024.git ├── he6p.git └── o14a.git # 2023/12/18 current status Warning Note that if you delete the files in this directory, you will lose all backups.\nbasic commands I will describe the most commonly used commands and how to resolve conflicts.\n",
+    "content": "last modified: 2024-01-22 by Kodai Okawa Analysis files for each experiment are managed using git. This is so that they can be quickly restored if they are all lost for some reason.\nGit is a bit complicated and you can commit freely if you are knowledgeable, but if you are unfamiliar with it, you don’t have to worry too much. The main use is that if someone creates a useful file, it will be reflected for each user as well.\nHere is a brief description of how to use it.\nDirectory structure In the CRIB analysis PC, we used local repository. The files related the repository is stored here.\n\u003e cd ~ \u003e tree -L 1 repos/exp repos/exp ├── he6p2024.git ├── he6p.git └── o14a.git # 2023/12/18 current status Warning Note that if you delete the files in this directory, you will lose all backups.\nbasic commands I will describe the most commonly used commands and how to resolve conflicts.\n",
     "description": "",
-    "tags": [],
+    "tags": [
+      "need_update"
+    ],
     "title": "Git",
     "uri": "/artemis_crib/example/preparation/git/index.html"
   },
@@ -408,15 +412,15 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e Online analysis",
-    "content": "last modified: 2024-01-11 by Kodai Okawa Artemis produces mainly TArtTree and the branches are TClonesArray(art::hoge). It means that all objects rely on the artemis library, and we cannot open and check the data by using normal ROOT.\nAlso, sometimes it is necessary top check the raw data obtained by ADC and TDC as it is. Of course, the real raw data is binary and therefore difficult to read, so we will check the raw data after the decoders.\nRelated processors;\nTSegmentOutputProcessor.cc TModuleData.cc TSegmentCheckProcessor.cc (in original artemis source) How to check the raw data 1. prepare conf files We already prepared conf/map files, but in this case, we need to prepare conf/seg files. There are two files. This is an example, so please change it according to the experimental conditions.\n​ conf/seg/modulelist.yaml conf/seg/modulelist.yaml #modulename: # id: module id (it is module-specific) # ch: channel number # values: # - name1: [Nbin: int, min: double, max: double] it is for 2D histogram (these values vs. ch) # - name2: [Nbin: int, min: double, max: double] \u003c= somehow two line needed...? MADC32: id: 32 ch: 32 values: - adc: [4000, 0., 4000.] - tdc: [4000, 0., 4000.] # no use, but seems it needed... V1190A: id: 24 ch: 128 values: - tdcL: [300, -5000., 300000.] - tdcT: [300, -5000., 300000.] The module id list is here.\n​ conf/seg/seglist.yaml conf/seg/seglist.yaml #segment_name: # segid: [[dev], [fp], [det]] \u003c= same as a map file # type: V7XX \u003c= defined type in modulelist.yaml # modules: # - id: geo1 # - id: geo2 V1190: segid: [12, 0, 7] type: V1190A modules: - id: 0 - id: 1 MADC: segid: [12, 1, 6] type: MADC32 modules: - id: 0 - id: 1 - id: 2 2. use “steering/chkseg.yaml” Based on these two conf file, the steering/chkseg.yaml file produce rawdata histograms and TTree object. We can use steering/chkseg.yaml without any change I think.\nThis is an example from one CRIB experiment.\n$ a artemis [0] add steering/chkseg.yaml NAME=hoge NUM=0000 artemis [1] res artemis [2] sus artemis [3] ls artemis \u003e 0 TDirectory SegmentHistogram art::TSegmentCheckProcessor artemis [4] cd 0 artemis [5] ls SegmentHistogram \u003e 0 TDirectory E7_V1190 E7_V1190 1 TDirectory J1_V785 J1_V785 2 TDirectory J1_MADC J1_MADC 3 TDirectory J1_V1190 J1_V1190 artemis [6] cd 0 artemis [7] ls E7_V1190 \u003e 0 TH2F E7_V1190_0_tdcL E7_V1190_0_tdcL 1 TH2F E7_V1190_0_tdcT E7_V1190_0_tdcT 2 TH2F E7_V1190_1_tdcL E7_V1190_1_tdcL 3 TH2F E7_V1190_1_tdcT E7_V1190_1_tdcT # we can check these histograms by ht command artemis [8] fcd 0 artemis [9] br E7_V1190_0 vector\u003cvector\u003cint\u003e \u003e E7_V1190_1 vector\u003cvector\u003cint\u003e \u003e J1_V785_0 vector\u003cint\u003e J1_V785_1 vector\u003cint\u003e J1_V785_2 vector\u003cint\u003e J1_MADC_3 vector\u003cint\u003e J1_MADC_4 vector\u003cint\u003e J1_MADC_5 vector\u003cint\u003e J1_V1190_0 vector\u003cvector\u003cint\u003e \u003e Info If the module ID = 24 or 25, it is multihit TDC, so the branch become 2D vector. When you want to use std::vector method, you can use by “@” like\nartemis [*] tree-\u003eDraw(\"J1_V785_0@.size()\") Of course we can open this output ROOT file from normal ROOT.\n",
+    "content": "last modified: 2024-01-22 by Kodai Okawa Artemis produces mainly TArtTree and the branches are TClonesArray(art::hoge). It means that all objects rely on the artemis library, and we cannot open and check the data by using normal ROOT.\nAlso, sometimes it is necessary top check the raw data obtained by ADC and TDC as it is. Of course, the real raw data is binary and therefore difficult to read, so we will check the raw data after the decoders.\nRelated processors;\nTSegmentOutputProcessor.cc TModuleData.cc TSegmentCheckProcessor.cc (in original artemis source) How to check the raw data 1. prepare conf files We already prepared conf/map files, but in this case, we need to prepare conf/seg files. There are two files. This is an example, so please change it according to the experimental conditions.\n​ conf/seg/modulelist.yaml conf/seg/modulelist.yaml #modulename: # id: module id (it is module-specific) # ch: channel number # values: # - name1: [Nbin: int, min: double, max: double] it is for 2D histogram (these values vs. ch) # - name2: [Nbin: int, min: double, max: double] \u003c= somehow two line needed...? MADC32: id: 32 ch: 32 values: - adc: [4000, 0., 4000.] - tdc: [4000, 0., 4000.] # no use, but seems it needed... V1190A: id: 24 ch: 128 values: - tdcL: [300, -5000., 300000.] - tdcT: [300, -5000., 300000.] The module id list is here.\n​ conf/seg/seglist.yaml conf/seg/seglist.yaml #segment_name: # segid: [[dev], [fp], [det]] \u003c= same as a map file # type: V7XX \u003c= defined type in modulelist.yaml # modules: # - id: geo1 # - id: geo2 V1190: segid: [12, 0, 7] type: V1190A modules: - id: 0 - id: 1 MADC: segid: [12, 1, 6] type: MADC32 modules: - id: 0 - id: 1 - id: 2 2. use “steering/chkseg.yaml” Based on these two conf file, the steering/chkseg.yaml file produce rawdata histograms and TTree object. We can use steering/chkseg.yaml without any change I think.\nThis is an example from one CRIB experiment.\n$ a artemis [0] add steering/chkseg.yaml NAME=hoge NUM=0000 artemis [1] res artemis [2] sus artemis [3] ls artemis \u003e 0 TDirectory SegmentHistogram art::TSegmentCheckProcessor artemis [4] cd 0 artemis [5] ls SegmentHistogram \u003e 0 TDirectory E7_V1190 E7_V1190 1 TDirectory J1_V785 J1_V785 2 TDirectory J1_MADC J1_MADC 3 TDirectory J1_V1190 J1_V1190 artemis [6] cd 0 artemis [7] ls E7_V1190 \u003e 0 TH2F E7_V1190_0_tdcL E7_V1190_0_tdcL 1 TH2F E7_V1190_0_tdcT E7_V1190_0_tdcT 2 TH2F E7_V1190_1_tdcL E7_V1190_1_tdcL 3 TH2F E7_V1190_1_tdcT E7_V1190_1_tdcT # we can check these histograms by ht command artemis [8] fcd 0 artemis [9] br E7_V1190_0 vector\u003cvector\u003cint\u003e \u003e E7_V1190_1 vector\u003cvector\u003cint\u003e \u003e J1_V785_0 vector\u003cint\u003e J1_V785_1 vector\u003cint\u003e J1_V785_2 vector\u003cint\u003e J1_MADC_3 vector\u003cint\u003e J1_MADC_4 vector\u003cint\u003e J1_MADC_5 vector\u003cint\u003e J1_V1190_0 vector\u003cvector\u003cint\u003e \u003e Info If the module ID = 24 or 25, it is multihit TDC, so the branch become 2D vector. When you want to use std::vector method, you can use by “@” like\nartemis [*] tree-\u003eDraw(\"J1_V785_0@.size()\") Of course we can open this output ROOT file from normal ROOT.\n",
     "description": "",
     "tags": [],
-    "title": "Check raw data",
+    "title": "Raw data checker",
     "uri": "/artemis_crib/example/online_analysis/check_rawdata/index.html"
   },
   {
     "breadcrumb": "Example",
-    "content": "This section explain the example of the online analysis in the CRIB experiment.\nF1 Beam PID F2 PPAC MWDC SSD F3 Gate Shifter task Scaler Timestamp Check raw data ",
+    "content": "This section explain the example of the online analysis in the CRIB experiment.\nF1 Beam PID F2 PPAC MWDC Telescope F3 Gate Shifter task Scaler Timestamp Raw data checker ",
     "description": "",
     "tags": null,
     "title": "Online analysis",
@@ -509,8 +513,8 @@ var relearn_search_index = [
     "content": "",
     "description": "",
     "tags": null,
-    "title": "Tag :: CRIB",
-    "uri": "/artemis_crib/tags/crib/index.html"
+    "title": "Tag :: need_update",
+    "uri": "/artemis_crib/tags/need_update/index.html"
   },
   {
     "breadcrumb": "",
@@ -519,6 +523,14 @@ var relearn_search_index = [
     "tags": null,
     "title": "Tags",
     "uri": "/artemis_crib/tags/index.html"
+  },
+  {
+    "breadcrumb": "Tags",
+    "content": "",
+    "description": "",
+    "tags": null,
+    "title": "Tag :: CRIB",
+    "uri": "/artemis_crib/tags/crib/index.html"
   },
   {
     "breadcrumb": "Tags",

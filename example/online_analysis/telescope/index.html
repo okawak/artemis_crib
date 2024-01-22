@@ -7,9 +7,9 @@
     <meta name="generator" content="Relearn 5.22.0">
     <meta name="description" content="Documentation for CRIB artemis">
     <meta name="author" content="map[name:Kodai Okawa]">
-    <title>yaml-cpp :: CRIB artemis</title>
-    <link href="/artemis_crib/installation/yaml-cpp/index.xml" rel="alternate" type="application/rss+xml" title="yaml-cpp :: CRIB artemis">
-    <link href="/artemis_crib/installation/yaml-cpp/index.print.html" rel="alternate" type="text/html" title="yaml-cpp :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
+    <title>Telescope :: CRIB artemis</title>
+    <link href="/artemis_crib/example/online_analysis/telescope/index.xml" rel="alternate" type="application/rss+xml" title="Telescope :: CRIB artemis">
+    <link href="/artemis_crib/example/online_analysis/telescope/index.print.html" rel="alternate" type="text/html" title="Telescope :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
     <link href="/artemis_crib/css/fontawesome-all.min.css?1705890278" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705890278" rel="stylesheet"></noscript>
@@ -57,7 +57,7 @@
 
 
   </head>
-  <body class="mobile-support html" data-url="/artemis_crib/installation/yaml-cpp/index.html">
+  <body class="mobile-support html" data-url="/artemis_crib/example/online_analysis/telescope/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -80,27 +80,28 @@
             </div>
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/installation/index.html"><span itemprop="name">Installation</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">yaml-cpp</span><meta itemprop="position" content="2"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/example/index.html"><span itemprop="name">Example</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/example/online_analysis/index.html"><span itemprop="name">Online analysis</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Telescope</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
-              <a class="topbar-control" href="https://github.com/okawak/artemis_crib/tree/pages-build/content/installation/yaml-cpp.md" target="_blank" title="Edit (CTRL&#43;ALT&#43;w)">
+              <a class="topbar-control" href="https://github.com/okawak/artemis_crib/tree/pages-build/content/example/online_analysis/telescope.md" target="_blank" title="Edit (CTRL&#43;ALT&#43;w)">
                 <i class="fa-fw fas fa-pen"></i>
               </a>
             </div>
             <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
-              <a class="topbar-control" href="/artemis_crib/installation/yaml-cpp/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)">
+              <a class="topbar-control" href="/artemis_crib/example/online_analysis/telescope/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)">
                 <i class="fa-fw fas fa-print"></i>
               </a>
             </div>
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-              <a class="topbar-control" href="/artemis_crib/installation/root/index.html" title="ROOT (🡐)">
+              <a class="topbar-control" href="/artemis_crib/example/online_analysis/mwdc/index.html" title="MWDC (🡐)">
                 <i class="fa-fw fas fa-chevron-left"></i>
               </a>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-              <a class="topbar-control" href="/artemis_crib/installation/artemis/index.html" title="artemis (🡒)">
+              <a class="topbar-control" href="/artemis_crib/example/online_analysis/f3/index.html" title="F3 (🡒)">
                 <i class="fa-fw fas fa-chevron-right"></i>
               </a>
             </div>
@@ -124,30 +125,119 @@
           <article class="default">
             <header class="headline">
             </header>
-<h1 id="yaml-cpp">yaml-cpp</h1>
+<h1 id="telescope">Telescope</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-02 by Kodai Okawa</span></span>
-
-<div class="box notices cstyle info">
-  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
-  <div class="box-content">
-
-<p>The yaml-cpp can be installed by some package manager like <code>apt</code> or <code>dnf</code>, but I&rsquo;m not sure it will work or not in the installation of the artemis.</p>
-</div>
-</div>
-<p>Current version of the artemis use yaml-cpp-0.7 or higher.
-In order to use this library, please install from the repository.</p>
-<p>See also <a href="https://github.com/jbeder/yaml-cpp" target="_blank">Github repo</a> and <a href="https://github.com/artemis-dev/artemis/blob/develop/README.md" target="_blank">README of the artemis</a>
-Please install it as a shared object like below commands.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> hoge
-</span></span><span class="line"><span class="cl">git clone https://github.com/jbeder/yaml-cpp.git
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> yaml-cpp
-</span></span><span class="line"><span class="cl">mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
-</span></span><span class="line"><span class="cl">cmake -DYAML_BUILD_SHARED_LIBS<span class="o">=</span>ON -DBUILD_TESTING<span class="o">=</span>OFF ..
-</span></span><span class="line"><span class="cl">make
-</span></span><span class="line"><span class="cl">sudo make install</span></span></code></pre></div><p>Default install path is <code>/usr/local/lib</code> or <code>/usr/local/lib64</code>.
-If you do not want to pollute the general environment, specify <code>CMAKE_INSTALL_PREFIX</code> and set <strong>PATH</strong> environment variable.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cmake -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/foo/bar -DYAML_BUILD_SHARED_LIBS<span class="o">=</span>ON -DBUILD_TESTING<span class="o">=</span>OFF ..</span></span></code></pre></div>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2024-01-22 by Kodai Okawa</span></span>
+<p>In the CRIB experiment, we often use a &ldquo;telescope&rdquo; consisting of DSSSD (Double-Sided SSD) and SSD (Single-Pad SSD).
+The combination of these multiple Si detectors as a dE-E detector is called a <code>telescope</code>.</p>
+<p>To analyze the data as telescope data rather than individual detectors, I created a data class called TTelescopeData.
+This section describes its data structure and usage.</p>
+<ul>
+<li><a href="https://github.com/okawak/artemis_crib/blob/main/src-crib/telescope/TTelescopeData.h" target="_blank">src-crib/telescope/TTelescopeData.h</a></li>
+</ul>
+<p>Please assume that one of the name of TTelescopeData object is &ldquo;tel1&rdquo;</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># after some process</span>
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>*<span class="o">]</span> br tel1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> art::TTelescopeData
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> Data Members
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                 TVector3   fPos                   detected position <span class="o">(</span>X, Y, Z<span class="o">)</span>
+</span></span><span class="line"><span class="cl">                      int   fXID                   X strip number
+</span></span><span class="line"><span class="cl">                      int   fYID                   Y strip number
+</span></span><span class="line"><span class="cl">                      int   fNE                    number of all SSDs
+</span></span><span class="line"><span class="cl">                   double   fdE                    energy at first layor
+</span></span><span class="line"><span class="cl">                   double   fdEX                   X side energy <span class="o">(=</span>~ fdEY<span class="o">)</span>
+</span></span><span class="line"><span class="cl">                   double   fdEY                   Y side energy <span class="o">(=</span>~ fdEX<span class="o">)</span>
+</span></span><span class="line"><span class="cl">                   double   fE                     added energy at thick SSDs
+</span></span><span class="line"><span class="cl">                   double   fEtotal                all energy deposit in the telescope
+</span></span><span class="line"><span class="cl">                   double   fTiming                timing information at the first layor <span class="o">(</span>X side<span class="o">)</span>
+</span></span><span class="line"><span class="cl">                   double   fYTiming               <span class="k">for</span> <span class="k">case</span> that X side have trouble <span class="o">(</span>Y side<span class="o">)</span>
+</span></span><span class="line"><span class="cl">                   double   fTheta_L               reaction angle in LAB system
+</span></span><span class="line"><span class="cl">           vector&lt;double&gt;   fEnergyArray           energy array <span class="k">for</span> each SSD
+</span></span><span class="line"><span class="cl">           vector&lt;double&gt;   fTimingArray           timing array <span class="k">for</span> each SSD
+</span></span><span class="line"><span class="cl">                ESortType   kID
+</span></span><span class="line"><span class="cl">                ESortType   kTiming
+</span></span><span class="line"><span class="cl">               ESortOrder   kASC
+</span></span><span class="line"><span class="cl">               ESortOrder   kDESC
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># snip for Method as for now</span></span></span></code></pre></div><p>These are the all data members of the &ldquo;TTelescopeData&rdquo;.
+The most commonly used variables are &ldquo;fXID&rdquo;, &ldquo;fYID&rdquo;, &ldquo;fdE&rdquo; and &ldquo;fE&rdquo;.
+Other variables are accessed by using methods (explain later).
+The meaning of these variables are written the upper code block.</p>
+<p>We use them like,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">artemis <span class="o">[</span>*<span class="o">]</span> tree-&gt;Draw<span class="o">(</span><span class="s2">&#34;tel1.fYID:tel1.fXID&gt;&gt;strip(16,-0.5,15.5, 16,-0.5,15.5)&#34;</span>,<span class="s2">&#34;&#34;</span>,<span class="s2">&#34;colz&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>*<span class="o">]</span> tree-&gt;Draw<span class="o">(</span><span class="s2">&#34;tel1.fdE:tel1.fE&#34;</span>,<span class="s2">&#34;&#34;</span>,<span class="s2">&#34;&#34;</span><span class="o">)</span></span></span></code></pre></div><p>or we can use in histogram definition file of course.</p>
+<p>The following are the methods of the TTelescopeData object:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># after some process</span>
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>*<span class="o">]</span> br tel1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># snip for Data Members</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> Methods
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">          TTelescopeData<span class="p">&amp;</span>   <span class="nv">operator</span><span class="o">=</span>
+</span></span><span class="line"><span class="cl">                 TVector3   GetPosition
+</span></span><span class="line"><span class="cl">                 Double_t   X
+</span></span><span class="line"><span class="cl">                 Double_t   Y
+</span></span><span class="line"><span class="cl">                 Double_t   Z
+</span></span><span class="line"><span class="cl">                     void   SetPosition
+</span></span><span class="line"><span class="cl">                     void   SetPosition
+</span></span><span class="line"><span class="cl">                    Int_t   GetN
+</span></span><span class="line"><span class="cl">                     void   SetN
+</span></span><span class="line"><span class="cl">                    Int_t   GetXID
+</span></span><span class="line"><span class="cl">                     void   SetXID
+</span></span><span class="line"><span class="cl">                    Int_t   GetYID
+</span></span><span class="line"><span class="cl">                     void   SetYID
+</span></span><span class="line"><span class="cl">                 Double_t   GetdE
+</span></span><span class="line"><span class="cl">                     void   SetdE
+</span></span><span class="line"><span class="cl">                 Double_t   GetdEX
+</span></span><span class="line"><span class="cl">                     void   SetdEX
+</span></span><span class="line"><span class="cl">                 Double_t   GetdEY
+</span></span><span class="line"><span class="cl">                     void   SetdEY
+</span></span><span class="line"><span class="cl">                 Double_t   GetE
+</span></span><span class="line"><span class="cl">                     void   SetE
+</span></span><span class="line"><span class="cl">                 Double_t   GetEtotal
+</span></span><span class="line"><span class="cl">                     void   SetEtotal
+</span></span><span class="line"><span class="cl">                 Double_t   GetTelTiming
+</span></span><span class="line"><span class="cl">                     void   SetTelTiming
+</span></span><span class="line"><span class="cl">                 Double_t   GetTelYTiming
+</span></span><span class="line"><span class="cl">                     void   SetTelYTiming
+</span></span><span class="line"><span class="cl">                 Double_t   GetTheta_L
+</span></span><span class="line"><span class="cl">                     void   SetTheta_L
+</span></span><span class="line"><span class="cl">                 Double_t   A
+</span></span><span class="line"><span class="cl">              DoubleVec_t   GetEnergyArray
+</span></span><span class="line"><span class="cl">                 Double_t   GetEnergyArray
+</span></span><span class="line"><span class="cl">                     void   PushEnergyArray
+</span></span><span class="line"><span class="cl">              DoubleVec_t   GetTimingArray
+</span></span><span class="line"><span class="cl">                 Double_t   GetTimingArray
+</span></span><span class="line"><span class="cl">                     void   PushTimingArray
+</span></span><span class="line"><span class="cl">                 Double_t   E
+</span></span><span class="line"><span class="cl">                 Double_t   T
+</span></span><span class="line"><span class="cl">                     void   Copy
+</span></span><span class="line"><span class="cl">                     void   Clear
+</span></span><span class="line"><span class="cl">                   Bool_t   CheckTObjectHashConsistency
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> See also
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">     art::TDataObject       base class <span class="k">for</span> data object</span></span></code></pre></div><p>The most commonly used methods are &ldquo;X()&rdquo;, &ldquo;Y()&rdquo;, &ldquo;Z()&rdquo;, &ldquo;E()&rdquo;, &ldquo;T()&rdquo; and &ldquo;A()&rdquo;.
+There are also longer name methods, but it is troublesome to write long methods, so I prepared short name methods.
+The longer name methods are mainly used in the source processor to make it more readable.</p>
+<ul>
+<li><code>X()</code>: return fPos.X(), detected X position</li>
+<li><code>Y()</code>: return fPos.Y(), detected Y position</li>
+<li><code>Z()</code>: return fPos.Z(), detected Z position</li>
+<li><code>E()</code>: return fEtotal, total energy deposit in the telescope</li>
+<li><code>E(id: int)</code>: return fEnergyArray[id], energy deposit of each Si layer, id=0 means dE, id=1 means second layer</li>
+<li><code>T()</code>: return fTiming, detected timing at first layer</li>
+<li><code>T(id: int)</code>: return fTimingArray[id], timing at the &ldquo;id&rdquo; th Si detector</li>
+<li><code>A()</code>: return fTheta_L, the angle of the event, deg unit</li>
+</ul>
+<p>We use them like:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">artemis <span class="o">[</span>*<span class="o">]</span> tree-&gt;Draw<span class="o">(</span><span class="s2">&#34;tel1.Y():tel1.X()&#34;</span>,<span class="s2">&#34;&#34;</span>,<span class="s2">&#34;colz&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>*<span class="o">]</span> tree-&gt;Draw<span class="o">(</span><span class="s2">&#34;tel1.E(0):tel1.E()&#34;</span>,<span class="s2">&#34;&#34;</span>,<span class="s2">&#34;colz&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">artemis <span class="o">[</span>*<span class="o">]</span> tree-&gt;Draw<span class="o">(</span><span class="s2">&#34;tel1.E():tel1.A()&#34;</span>,<span class="s2">&#34;&#34;</span>,<span class="s2">&#34;colz&#34;</span><span class="o">)</span></span></span></code></pre></div>
             <footer class="footline">
 
             </footer>
@@ -187,11 +277,11 @@ If you do not want to pollute the general environment, specify <code>CMAKE_INSTA
       <div id="R-content-wrapper" class="highlightable">
         <div id="R-topics">
           <ul class="enlarge morespace collapsible-menu">
-          <li data-nav-id="/artemis_crib/installation/index.html" class="parent "><a class="padding" href="/artemis_crib/installation/index.html">Installation</a><ul id="R-subsections-07cca5796d23f5bae96340e1eaa52bc5" class="morespace collapsible-menu">
+          <li data-nav-id="/artemis_crib/installation/index.html" class=""><a class="padding" href="/artemis_crib/installation/index.html">Installation</a><ul id="R-subsections-07cca5796d23f5bae96340e1eaa52bc5" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/installation/requirements/index.html" class=""><a class="padding" href="/artemis_crib/installation/requirements/index.html">Requirements</a></li>
           <li data-nav-id="/artemis_crib/installation/cmake/index.html" class=""><a class="padding" href="/artemis_crib/installation/cmake/index.html">cmake</a></li>
           <li data-nav-id="/artemis_crib/installation/root/index.html" class=""><a class="padding" href="/artemis_crib/installation/root/index.html">ROOT</a></li>
-          <li data-nav-id="/artemis_crib/installation/yaml-cpp/index.html" class="active"><a class="padding" href="/artemis_crib/installation/yaml-cpp/index.html">yaml-cpp</a></li>
+          <li data-nav-id="/artemis_crib/installation/yaml-cpp/index.html" class=""><a class="padding" href="/artemis_crib/installation/yaml-cpp/index.html">yaml-cpp</a></li>
           <li data-nav-id="/artemis_crib/installation/artemis/index.html" class=""><a class="padding" href="/artemis_crib/installation/artemis/index.html">artemis</a></li>
           <li data-nav-id="/artemis_crib/installation/mount/index.html" class=""><a class="padding" href="/artemis_crib/installation/mount/index.html">mount setting</a></li>
           <li data-nav-id="/artemis_crib/installation/energyloss_calculator/index.html" class=""><a class="padding" href="/artemis_crib/installation/energyloss_calculator/index.html">energyloss calculator</a></li>
@@ -211,7 +301,7 @@ If you do not want to pollute the general environment, specify <code>CMAKE_INSTA
           <li data-nav-id="/artemis_crib/crib_parts/userconfig/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/userconfig/index.html">User config</a></li>
           <li data-nav-id="/artemis_crib/crib_parts/newcommand/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/newcommand/index.html">New commands</a></li>
           <li data-nav-id="/artemis_crib/crib_parts/minor_change/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/minor_change/index.html">Minor changes</a></li></ul></li>
-          <li data-nav-id="/artemis_crib/example/index.html" class=""><a class="padding" href="/artemis_crib/example/index.html">Example</a><ul id="R-subsections-daee4b63470ea20ac3f41145e3651181" class="morespace collapsible-menu">
+          <li data-nav-id="/artemis_crib/example/index.html" class="parent "><a class="padding" href="/artemis_crib/example/index.html">Example</a><ul id="R-subsections-daee4b63470ea20ac3f41145e3651181" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/example/preparation/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/index.html">Preparation</a><ul id="R-subsections-758dfbc2d22339c29b165559a2ff4f50" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/example/preparation/basic/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/basic/index.html">Basic</a></li>
           <li data-nav-id="/artemis_crib/example/preparation/tref/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/tref/index.html">Tref for V1190</a></li>
@@ -221,13 +311,13 @@ If you do not want to pollute the general environment, specify <code>CMAKE_INSTA
           <li data-nav-id="/artemis_crib/example/preparation/mux_calibration/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/mux_calibration/index.html">MUX calibration</a></li>
           <li data-nav-id="/artemis_crib/example/preparation/set_parameter/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/set_parameter/index.html">Set parameters</a></li>
           <li data-nav-id="/artemis_crib/example/preparation/git/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/git/index.html">Git</a></li></ul></li>
-          <li data-nav-id="/artemis_crib/example/online_analysis/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/index.html">Online analysis</a><ul id="R-subsections-772ca07ab897727f34ea5e7af1bcd1b0" class="morespace collapsible-menu">
+          <li data-nav-id="/artemis_crib/example/online_analysis/index.html" class="parent "><a class="padding" href="/artemis_crib/example/online_analysis/index.html">Online analysis</a><ul id="R-subsections-772ca07ab897727f34ea5e7af1bcd1b0" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/example/online_analysis/f1/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/f1/index.html">F1</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/pid/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/pid/index.html">Beam PID</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/f2/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/f2/index.html">F2</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/ppac/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/ppac/index.html">PPAC</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/mwdc/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/mwdc/index.html">MWDC</a></li>
-          <li data-nav-id="/artemis_crib/example/online_analysis/telescope/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/telescope/index.html">Telescope</a></li>
+          <li data-nav-id="/artemis_crib/example/online_analysis/telescope/index.html" class="active"><a class="padding" href="/artemis_crib/example/online_analysis/telescope/index.html">Telescope</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/f3/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/f3/index.html">F3</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/gate/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/gate/index.html">Gate</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/shift/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/shift/index.html">Shifter task</a></li>

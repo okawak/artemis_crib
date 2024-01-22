@@ -7,24 +7,24 @@
     <meta name="generator" content="Relearn 5.22.0">
     <meta name="description" content="Documentation for CRIB artemis">
     <meta name="author" content="map[name:Kodai Okawa]">
-    <title>Check raw data :: CRIB artemis</title>
-    <link href="https://okawak.github.io/artemis_crib/example/online_analysis/check_rawdata/index.html" rel="canonical" type="text/html" title="Check raw data :: CRIB artemis">
-    <link href="/artemis_crib/example/online_analysis/check_rawdata/index.xml" rel="alternate" type="application/rss+xml" title="Check raw data :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
+    <title>Raw data checker :: CRIB artemis</title>
+    <link href="https://okawak.github.io/artemis_crib/example/online_analysis/check_rawdata/index.html" rel="canonical" type="text/html" title="Raw data checker :: CRIB artemis">
+    <link href="/artemis_crib/example/online_analysis/check_rawdata/index.xml" rel="alternate" type="application/rss+xml" title="Raw data checker :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1705762586" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705762586" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1705762586" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1705762586" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1705762586" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1705762586" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1705762586" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1705762586" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1705762586" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-CRIB-theme.css?1705762586" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/variant.css?1705762586" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1705762586" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/format-print.css?1705762586" rel="stylesheet">
-    <link href="/artemis_crib/css/ie.css?1705762586" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1705762586"></script>
-    <script src="/artemis_crib/js/variant.js?1705762586"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1705890278" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1705890278" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1705890278" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1705890278" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1705890278" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1705890278" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1705890278" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1705890278" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1705890278" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-CRIB-theme.css?1705890278" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/variant.css?1705890278" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1705890278" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/format-print.css?1705890278" rel="stylesheet">
+    <link href="/artemis_crib/css/ie.css?1705890278" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1705890278"></script>
+    <script src="/artemis_crib/js/variant.js?1705890278"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -74,7 +74,7 @@
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/example/index.html"><span itemprop="name">Example</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/example/online_analysis/index.html"><span itemprop="name">Online analysis</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Check raw data</span><meta itemprop="position" content="3"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Raw data checker</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
           </div>
@@ -86,9 +86,9 @@
           <article class="default">
             <header class="headline">
             </header>
-<h1 id="check-raw-data">Check raw data</h1>
+<h1 id="raw-data-checker">Raw data checker</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2024-01-11 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2024-01-22 by Kodai Okawa</span></span>
 <p>Artemis produces mainly <code>TArtTree</code> and the branches are <code>TClonesArray(art::hoge)</code>.
 It means that all objects rely on the artemis library, and we cannot open and check the data by using normal ROOT.</p>
 <p>Also, sometimes it is necessary top check the raw data obtained by ADC and TDC as it is.
@@ -106,13 +106,13 @@ There are two files.
 This is an example, so please change it according to the experimental conditions.</p>
 
   
-<div class="tab-panel" data-tab-group="833d243ad71df6aec7687a18d03b721b">
+<div class="tab-panel" data-tab-group="b758efe874022c719caf1bf8e6114341">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="confsegmodulelistyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('833d243ad71df6aec7687a18d03b721b','confsegmodulelistyaml')"
+      onclick="switchTab('b758efe874022c719caf1bf8e6114341','confsegmodulelistyaml')"
     >
       <span>
         <span class="tab-nav-hidden">conf/seg/modulelist.yaml</span>
@@ -151,13 +151,13 @@ This is an example, so please change it according to the experimental conditions
 </div><p>The module id list is <a href="/artemis_crib/example/online_analysis/check_rawdata/../../../example/segid">here</a>.</p>
 
   
-<div class="tab-panel" data-tab-group="dda2a9182edfcc290c1ccf08e35e40d6">
+<div class="tab-panel" data-tab-group="384d5c329dcb5a57a46f4a563a281b76">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="confsegseglistyaml"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('dda2a9182edfcc290c1ccf08e35e40d6','confsegseglistyaml')"
+      onclick="switchTab('384d5c329dcb5a57a46f4a563a281b76','confsegseglistyaml')"
     >
       <span>
         <span class="tab-nav-hidden">conf/seg/seglist.yaml</span>
@@ -257,8 +257,8 @@ When you want to use std::vector<!-- raw HTML omitted --> method, you can use by
         </div>
       </main>
     </div>
-    <script src="/artemis_crib/js/clipboard.min.js?1705762586" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1705762586" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1705890278" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1705890278" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -288,6 +288,6 @@ When you want to use std::vector<!-- raw HTML omitted --> method, you can use by
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1705762586" defer></script>
+    <script src="/artemis_crib/js/theme.js?1705890278" defer></script>
   </body>
 </html>

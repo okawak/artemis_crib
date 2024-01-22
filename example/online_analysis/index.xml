@@ -18,7 +18,7 @@
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/pid/index.html</link>
       <pubDate>Tue, 19 Dec 2023 16:45:37 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/pid/index.html</guid>
-      <description>last modified: 2024-01-20 by Kodai Okawa In the F2 focal plane, we check the secondary beam condition.</description>
+      <description>last modified: 2024-01-22 by Kodai Okawa In the F2 focal plane, we check the secondary beam condition.</description>
     </item>
     <item>
       <title>F2</title>
@@ -32,28 +32,28 @@
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/ppac/index.html</link>
       <pubDate>Wed, 13 Dec 2023 15:07:48 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/ppac/index.html</guid>
-      <description>last modified: 2023-12-20 by Kodai Okawa </description>
+      <description>last modified: 2024-01-22 by Kodai Okawa updating&amp;hellip;</description>
     </item>
     <item>
       <title>MWDC</title>
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/mwdc/index.html</link>
       <pubDate>Wed, 13 Dec 2023 15:07:51 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/mwdc/index.html</guid>
-      <description>last modified: 2023-12-20 by Kodai Okawa </description>
+      <description>last modified: 2024-01-22 by Kodai Okawa updating&amp;hellip;</description>
     </item>
     <item>
-      <title>SSD</title>
-      <link>https://okawak.github.io/artemis_crib/example/online_analysis/ssd/index.html</link>
+      <title>Telescope</title>
+      <link>https://okawak.github.io/artemis_crib/example/online_analysis/telescope/index.html</link>
       <pubDate>Wed, 13 Dec 2023 15:08:02 +0900</pubDate>
-      <guid>https://okawak.github.io/artemis_crib/example/online_analysis/ssd/index.html</guid>
-      <description>last modified: 2023-12-20 by Kodai Okawa </description>
+      <guid>https://okawak.github.io/artemis_crib/example/online_analysis/telescope/index.html</guid>
+      <description>last modified: 2024-01-22 by Kodai Okawa In the CRIB experiment, we often use a &amp;ldquo;telescope&amp;rdquo; consisting of DSSSD (Double-Sided SSD) and SSD (Single-Pad SSD).</description>
     </item>
     <item>
       <title>F3</title>
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/f3/index.html</link>
       <pubDate>Wed, 13 Dec 2023 15:08:05 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/f3/index.html</guid>
-      <description>last modified: 2023-12-20 by Kodai Okawa </description>
+      <description>last modified: 2024-01-22 by Kodai Okawa In the physics run (production run or physics measurement), we check all the detector data like tracking detector (PPAC, MWDC), TOF (RF) and Telescope data.</description>
     </item>
     <item>
       <title>Gate</title>
@@ -84,11 +84,11 @@
       <description>last modified: 2023-12-15 by Kodai Okawa </description>
     </item>
     <item>
-      <title>Check raw data</title>
+      <title>Raw data checker</title>
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/check_rawdata/index.html</link>
       <pubDate>Sun, 05 Nov 2023 14:57:50 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/check_rawdata/index.html</guid>
-      <description>last modified: 2024-01-11 by Kodai Okawa Artemis produces mainly TArtTree and the branches are TClonesArray(art::hoge).</description>
+      <description>last modified: 2024-01-22 by Kodai Okawa Artemis produces mainly TArtTree and the branches are TClonesArray(art::hoge).</description>
     </item>
   </channel>
 </rss>
