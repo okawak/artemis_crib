@@ -46,3 +46,21 @@ Rev 0 / Dev 12 / FP  1 / Det 6 / Mod 21
 
 
 ---
+
+### Conflicts occurred with Git operations
+
+If you forgot to "git pull" and you have already modified the files, you will get conflicts.
+If you think it is okay to forget your modified file, please command like
+```shell { wrap="false" }
+$ git stash
+```
+and
+```shell { wrap="false" }
+$ git pull
+```
+And you want to recover your modified file,
+```shell { wrap="false" }
+$ git stash pop
+```
+Then you encounter the conficts again, and please select the code you want to keep, and git push again.
+For the detail, please check [here](../example/preparation/git).
