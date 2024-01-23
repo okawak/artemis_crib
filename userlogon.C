@@ -2,6 +2,7 @@
     // load user function
     gROOT->ProcessLine(".L macro/load_tcutg.C");
     gROOT->ProcessLine(".L macro/kinematics.C");
+    gROOT->ProcessLine(".L macro/dE_E_plot.C");
     gROOT->ProcessLine(".L macro/scaler.C");
 
     // User commands register
