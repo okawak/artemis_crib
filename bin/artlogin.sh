@@ -24,8 +24,8 @@ if [ -d "${userdir}" ]; then
     alias acd='cd ${ARTEMIS_WORKDIR}'
 
     if [ -z "$1" ]; then
-        printf "[info] default user"
-        printf "[info] command git pull"
+        printf "[info] default user, please don't change anything in this directory\n"
+        printf "[info] command git pull\n"
     fi
 
     if [ -z "$1" ]; then
