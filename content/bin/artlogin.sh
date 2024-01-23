@@ -23,6 +23,15 @@ if [ -d "${userdir}" ]; then
     export ARTEMIS_USER="${username}"
     alias acd='cd ${ARTEMIS_WORKDIR}'
 
+    if [ -z "$1" ]; then
+        printf "[info] default user"
+        printf "[info] command git pull"
+    fi
+
+    if [ -z "$1" ]; then
+        git pull
+    fi
+
     if [ -e "${ARTEMIS_WORKDIR}/thisartemis-crib.sh" ]; then
         source "${ARTEMIS_WORKDIR}/thisartemis-crib.sh"
     fi
