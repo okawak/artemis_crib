@@ -166,13 +166,16 @@ void art::TScalerMonitorProcessor::Process() {
 void art::TScalerMonitorProcessor::ProcessShort(Long_t now) {
     if (now - fCurrentShort > fShortInterval) {
         const TScalerData *const scadata = static_cast<TScalerData *>(*fInData);
-        for (Int_t i = 0; i < SCALER_CH; i++) {
-            if (scadata->GetValue(i) - fShortScatot[i] < 0) {
+        if (scadata->GetValue(fClock[0]) - fShortScatot[fClock[0]] <= 0) {
+            for (Int_t i = 0; i < SCALER_CH; i++) {
                 fShortScatot[i] = scadata->GetValue(i);
                 fShortScadiff[i] = scadata->GetValue(i);
-                fCurrentShort = now;
-                return;
             }
+            fCurrentShort = now;
+            return;
+        }
+
+        for (Int_t i = 0; i < SCALER_CH; i++) {
             fShortScadiff[i] = scadata->GetValue(i) - fShortScatot[i];
             fShortScatot[i] = scadata->GetValue(i);
         }
@@ -218,13 +221,15 @@ void art::TScalerMonitorProcessor::ProcessShort(Long_t now) {
 void art::TScalerMonitorProcessor::ProcessLong(Long_t now) {
     if (now - fCurrentLong > fLongInterval) {
         const TScalerData *const scadata = static_cast<TScalerData *>(*fInData);
-        for (Int_t i = 0; i < SCALER_CH; i++) {
-            if (scadata->GetValue(i) - fLongScatot[i] < 0) {
+        if (scadata->GetValue(fClock[0]) - fLongScatot[fClock[0]] <= 0) {
+            for (Int_t i = 0; i < SCALER_CH; i++) {
                 fLongScatot[i] = scadata->GetValue(i);
                 fLongScadiff[i] = scadata->GetValue(i);
-                fCurrentLong = now;
-                return;
             }
+            fCurrentLong = now;
+            return;
+        }
+        for (Int_t i = 0; i < SCALER_CH; i++) {
             fLongScadiff[i] = scadata->GetValue(i) - fLongScatot[i];
             fLongScatot[i] = scadata->GetValue(i);
         }
