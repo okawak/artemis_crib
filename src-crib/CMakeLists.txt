@@ -10,6 +10,7 @@ set(CRIBSOURCES
     TTreePeriodicEventStore.cc
     TModuleData.cc
     TSegmentOutputProcessor.cc
+    TScalerMonitorProcessor.cc
     # mux
     mux/TMUXCalibrationProcessor.cc
     mux/TMUXData.cc
@@ -62,6 +63,7 @@ set(CRIBHEADERS
     TTreePeriodicEventStore.h
     TModuleData.h
     TSegmentOutputProcessor.h
+    TScalerMonitorProcessor.h
     # mux
     mux/TMUXCalibrationProcessor.h
     mux/TMUXData.h

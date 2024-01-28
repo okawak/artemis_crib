@@ -19,6 +19,7 @@
 #pragma link C++ class art::TTreePeriodicEventStore;
 #pragma link C++ class art::TModuleData + ;
 #pragma link C++ class art::TSegmentOutputProcessor;
+#pragma link C++ class art::TScalerMonitorProcessor;
 // MUX
 #pragma link C++ class art::TMUXData + ;
 #pragma link C++ class art::TMUXDataMappingProcessor;
