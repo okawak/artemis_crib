@@ -184,7 +184,7 @@ void TSegmentOutputProcessor::Process() {
             if (modules.size() > geo && modules[geo] != NULL) {
                 Int_t mod = modules[geo]->GetMod();
                 if (mod == 24 || mod == 25) {
-                    if (modules[geo]->fData2D[ch].size() == 1) {
+                    if (modules[geo]->fData2D[ch][0] == kInvalidI) {
                         modules[geo]->fData2D[ch][0] = data->GetValue(0);
                     } else {
                         modules[geo]->fData2D[ch].emplace_back(data->GetValue(0));
