@@ -9,6 +9,8 @@ c1.png
 .venv
 .clangd
 .clang-format
+.log_mux
+.log_mwdc
 output
 ridf
 rootfile
