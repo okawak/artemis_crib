@@ -8,7 +8,7 @@
 
 void AlphaCalibration(TH2 *h2 = NULL, TString foutpath = "test/test.dat", const Int_t alphaID = 0, const Double_t width = 15.0) {
     TString ARTEMIS_WORKDIR = gSystem->pwd();
-    TString output_prm = ARTEMIS_WORKDIR + "/prm/ssd/" + foutpath;
+    TString output_prm = ARTEMIS_WORKDIR + "/prm/" + foutpath;
     TString output_fig_base = ARTEMIS_WORKDIR + "/figure/calib/" + foutpath(0, foutpath.Last('.'));
     TString output_raw_path = output_fig_base + "/raw";
     TString output_calibration_path = output_fig_base + "/calibration";
@@ -17,7 +17,7 @@ void AlphaCalibration(TH2 *h2 = NULL, TString foutpath = "test/test.dat", const 
         std::cout << "Alpha calibration" << std::endl;
         std::cout << "Usage: AlphaCalibration(TH2* h2, TString foutpath=\"/test/test\", const Int_t alphaID=0, const Double_t width = 15.0\");" << std::endl;
         std::cout << "\th2       : 2D histogram, x: SSD fID, y: raw ADC channel" << std::endl;
-        std::cout << "\tfoutpath : output parameter file path after prm/ssd/." << std::endl;
+        std::cout << "\tfoutpath : output parameter file path after prm/." << std::endl;
         std::cout << "\t         : NOTE: \"telx/ch2MeV_dEX.dat\", \"telx/ch2MeV_dEY.dat\", \"telx/ch2MeV_E.dat\" NEEDED" << std::endl;
         std::cout << "\talphaID  : alpha-2 (4.780, 5.480, 5.795), alpha-3 (3.148, 5.462, 5.771)" << std::endl;
         std::cout << "\twidth    : fitting width" << std::endl;
@@ -64,7 +64,7 @@ void AlphaCalibration(TH2 *h2 = NULL, TString foutpath = "test/test.dat", const 
         return;
     }
     std::cout << "--Info: " << output_prm << " is created" << std::endl;
-    fout << "# prm/ssd/" << foutpath << " is created from AlphaCalibration.C" << endl;
+    fout << "# prm/" << foutpath << " is created from AlphaCalibration.C" << endl;
     fout << "# offset gain" << endl;
 
     // start searching the peaks

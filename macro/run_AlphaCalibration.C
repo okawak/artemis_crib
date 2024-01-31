@@ -1,6 +1,6 @@
 // Arguments of AlphaCalibration
 //    h2         : x: SSD fID, y: raw ADC channel
-//    foutpath   : output parameter file path after prm/ssd/.
+//    foutpath   : output parameter file path after prm/.
 //               : NOTE: "telx/ch2MeV_dEX.dat", "telx/ch2MeV_dEY.dat", "telx/ch2MeV_E.dat" NEEDED
 //    alphaID    : 2: alpha-2(4.780, 5.480, 5.795), 3: alpha-3(3.148, 5.462, 5.771)
 //    width      : fitting width

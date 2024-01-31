@@ -36,7 +36,7 @@ prm_clean() {
 
          for mux_info in "${mux_usage[@]}"; do
             read -ra mux <<<"${mux_info}"
-            mux_prm_dir="$arthome/prm/ssd/${mux[1]}/pos_${mux[2]}"
+            mux_prm_dir="$arthome/prm/${mux[1]}/pos_${mux[2]}"
             link_file=$(readlink -f "$mux_prm_dir/current")
             for file in "$mux_prm_dir"/*; do
                if [ "$file" = "$link_file" ] || [ "$file" = "$mux_prm_dir/current" ]; then
@@ -89,7 +89,7 @@ fi
 for mux_info in "${mux_usage[@]}"; do
    read -ra mux <<<"${mux_info}"
 
-   mux_prm_dir="$arthome/prm/ssd/${mux[1]}/pos_${mux[2]}"
+   mux_prm_dir="$arthome/prm/${mux[1]}/pos_${mux[2]}"
    cd "$mux_prm_dir" || exit 1
    if [ -f "$1.dat" ]; then
       say "${mux[0]} ${mux[1]} ${mux[2]}: $mux_prm_dir/$1.dat is current"

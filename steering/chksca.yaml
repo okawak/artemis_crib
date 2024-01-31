@@ -1,3 +1,8 @@
+# USAGE
+# 1. modify the channel information below
+# 2. artemis [] add steering/chksca.yaml <= online mode
+# 3. artemis [] res => the monitor automatically appear
+
 Anchor:
 
 Processor:
@@ -17,14 +22,13 @@ Processor:
   - include: scaler/scaler.yaml
 
   # need to set the factor so that the rate become 0 -- 1000 cps range
-  # last channel should be 10Hz clock
   - name: proc_scaler_monitor
     type: art::TScalerMonitorProcessor
     parameter:
-      ShortInterval: 1 # : Int_t, seconds
-      ShortDuration: 360 # : Int_t, seconds
-      LongInterval: 2 # : Int_t, seconds
-      LongDuration: 7200 # : Int_t, seconds
+      ShortInterval: 5 # : Int_t, seconds
+      ShortDuration: 500 # : Int_t, seconds
+      LongInterval: 50 # : Int_t, seconds
+      LongDuration: 8000 # : Int_t, seconds
       Clock: [31, 10] # clock [channel, Hz]
       Channels: # monitor channel num, name, factor
         - "0, ungated, 1"

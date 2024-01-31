@@ -5,7 +5,7 @@ Processor:
     parameter:
       Name: prm_@NAME@_dEX_ch2MeV
       Type: art::TAffineConverter
-      FileName: prm/ssd/@NAME@/ch2MeV_dEX.dat
+      FileName: prm/@NAME@/ch2MeV_dEX.dat
       OutputTransparency: 1
 
   - name: proc_@NAME@_dEY_ch2MeV
@@ -13,7 +13,7 @@ Processor:
     parameter:
       Name: prm_@NAME@_dEY_ch2MeV
       Type: art::TAffineConverter
-      FileName: prm/ssd/@NAME@/ch2MeV_dEY.dat
+      FileName: prm/@NAME@/ch2MeV_dEY.dat
       OutputTransparency: 1
 
   - name: proc_@NAME@_E_ch2MeV
@@ -21,7 +21,7 @@ Processor:
     parameter:
       Name: prm_@NAME@_E_ch2MeV
       Type: art::TAffineConverter
-      FileName: prm/ssd/@NAME@/ch2MeV_E.dat
+      FileName: prm/@NAME@/ch2MeV_E.dat
       OutputTransparency: 1
 
 # ch2ns parameters
@@ -30,7 +30,7 @@ Processor:
     parameter:
       Name: prm_@NAME@_dEX_ch2ns
       Type: art::TAffineConverter
-      FileName: prm/ssd/@NAME@/ch2ns_dEX.dat
+      FileName: prm/@NAME@/ch2ns_dEX.dat
       OutputTransparency: 1
 
   - name: proc_@NAME@_dEY_ch2ns
@@ -38,7 +38,7 @@ Processor:
     parameter:
       Name: prm_@NAME@_dEY_ch2ns
       Type: art::TAffineConverter
-      FileName: prm/ssd/@NAME@/ch2ns_dEY.dat
+      FileName: prm/@NAME@/ch2ns_dEY.dat
       OutputTransparency: 1
 
   - name: proc_@NAME@_E_ch2ns
@@ -46,7 +46,7 @@ Processor:
     parameter:
       Name: prm_@NAME@_E_ch2ns
       Type: art::TAffineConverter
-      FileName: prm/ssd/@NAME@/ch2ns_E.dat
+      FileName: prm/@NAME@/ch2ns_E.dat
       OutputTransparency: 1
 
 # data mapping

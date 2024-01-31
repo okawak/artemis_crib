@@ -5,7 +5,7 @@ Processor:
     parameter:
       Name: prm_@NAME@@SIDE@_ch2MeV
       Type: art::TAffineConverter
-      FileName: prm/ssd/@NAME@/ch2MeV_@SIDE@_raw.dat
+      FileName: prm/@NAME@/ch2MeV_@SIDE@_raw.dat
       OutputTransparency: 1
 
   - name: proc_@NAME@@SIDE@_ch2ns
@@ -13,7 +13,7 @@ Processor:
     parameter:
       Name: prm_@NAME@@SIDE@_ch2ns
       Type: art::TAffineConverter
-      FileName: prm/ssd/@NAME@/ch2ns_@SIDE@.dat
+      FileName: prm/@NAME@/ch2ns_@SIDE@.dat
       OutputTransparency: 1
 
   - name: proc_@NAME@@SIDE@_position
@@ -21,7 +21,7 @@ Processor:
     parameter:
       Name: prm_@NAME@@SIDE@_position
       Type: art::TMUXPositionConverter
-      FileName: prm/ssd/@NAME@/pos_@SIDE@/current
+      FileName: prm/@NAME@/pos_@SIDE@/current
       OutputTransparency: 1
 
 
