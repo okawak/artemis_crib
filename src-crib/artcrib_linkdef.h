@@ -15,7 +15,6 @@
 #pragma link C++ class art::TTimingDataMappingProcessor;
 #pragma link C++ class art::TBranchCopyProcessor;
 #pragma link C++ class art::TEvtNumProcessor;
-#pragma link C++ class art::TReadROOTFile;
 #pragma link C++ class art::TTreePeriodicEventStore;
 #pragma link C++ class art::TModuleData + ;
 #pragma link C++ class art::TSegmentOutputProcessor;

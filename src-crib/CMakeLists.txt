@@ -6,7 +6,6 @@ set(CRIBSOURCES
     TTimingDataMappingProcessor.cc
     TBranchCopyProcessor.cc
     TEvtNumProcessor.cc
-    TReadROOTFile.cc
     TTreePeriodicEventStore.cc
     TModuleData.cc
     TSegmentOutputProcessor.cc
@@ -59,7 +58,6 @@ set(CRIBHEADERS
     TTimingDataMappingProcessor.h
     TBranchCopyProcessor.h
     TEvtNumProcessor.h
-    TReadROOTFile.h
     TTreePeriodicEventStore.h
     TModuleData.h
     TSegmentOutputProcessor.h
