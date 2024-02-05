@@ -31,9 +31,6 @@ class art::TTelescopeData : public TDataObject {
     TTelescopeData &operator=(const TTelescopeData &rhs);
 
     TVector3 GetPosition() const { return fPos; }
-    Double_t X() const { return fPos.X(); }
-    Double_t Y() const { return fPos.Y(); }
-    Double_t Z() const { return fPos.Z(); }
     void SetPosition(TVector3 vec) { fPos = vec; }
     void SetPosition(Double_t x, Double_t y, Double_t z) { fPos.SetXYZ(x, y, z); }
 
@@ -56,14 +53,13 @@ class art::TTelescopeData : public TDataObject {
     void SetE(Double_t arg) { fE = arg; }
     Double_t GetEtotal() const { return fEtotal; }
     void SetEtotal(Double_t arg) { fEtotal = arg; }
-    Double_t GetTelTiming() const { return fTiming; }
-    void SetTelTiming(Double_t arg) { fTiming = arg; }
+    Double_t GetTelXTiming() const { return fXTiming; }
+    void SetTelXTiming(Double_t arg) { fXTiming = arg; }
     Double_t GetTelYTiming() const { return fYTiming; }
     void SetTelYTiming(Double_t arg) { fYTiming = arg; }
 
     Double_t GetTheta_L() const { return fTheta_L; }
     void SetTheta_L(Double_t arg) { fTheta_L = arg; }
-    Double_t A() const { return fTheta_L; }
 
     DoubleVec_t GetEnergyArray() const { return fEnergyArray; }
     Double_t GetEnergyArray(Int_t id) const { return fEnergyArray[id]; }
@@ -73,15 +69,21 @@ class art::TTelescopeData : public TDataObject {
     void PushTimingArray(Double_t arg) { fTimingArray.emplace_back(arg); }
 
     Double_t E(Int_t id = -1) const {
-        if (id < 0)
+        if (id < 0 || id >= fNE)
             return fEtotal;
         return fEnergyArray[id];
-    }
+    } // get Energy: E()-> fEtotal, E(1)-> second layer
+
     Double_t T(Int_t id = -1) const {
-        if (id < 0)
+        if (id < 0 || id >= fNE)
             return fTimingArray[0];
         return fTimingArray[id];
-    }
+    } // get Timing: T()-> first layer, T(1)-> second layer
+
+    Double_t A() const { return fTheta_L; } // get angle: A()-> Lab angle (deg)
+    Double_t X() const { return fPos.X(); } // get hit X position (mm)
+    Double_t Y() const { return fPos.Y(); } // get hit Y position (mm)
+    Double_t Z() const { return fPos.Z(); } // get hit Z position (mm)
 
     virtual void Copy(TObject &dest) const;
     virtual void Clear(Option_t *opt = "");
@@ -99,7 +101,7 @@ class art::TTelescopeData : public TDataObject {
     Double_t fdEY;     // Y side energy (=~ fdEX)
     Double_t fE;       // added energy at thick SSDs
     Double_t fEtotal;  // all energy deposit in the telescope
-    Double_t fTiming;  // timing information at the first layor (X side)
+    Double_t fXTiming; // timing information at the first layor (X side)
     Double_t fYTiming; // for case that X side have trouble (Y side)
 
     Double_t fTheta_L; // reaction angle in LAB system

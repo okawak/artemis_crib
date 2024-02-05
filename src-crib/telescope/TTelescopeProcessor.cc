@@ -197,7 +197,7 @@ void TTelescopeProcessor::Process() {
             dE += energy;
         }
         outData->SetdEX(energy);
-        outData->SetTelTiming(timing);
+        outData->SetTelXTiming(timing);
         outData->PushEnergyArray(energy);
         outData->PushTimingArray(timing);
         Etotal += energy;

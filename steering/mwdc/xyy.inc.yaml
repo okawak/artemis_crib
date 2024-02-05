@@ -42,7 +42,6 @@ Processor:
     type: art::TMWDCPlaneProcessor
     parameter:
       InputCollection: @NAME@_dt
-#     InputCollection: @NAME@_cal
       MWDCName:        @NAME@
       ConverterList:
         - prm_@NAME@_dxdt_x1
@@ -52,8 +51,7 @@ Processor:
       OutputTransparency: 0
 
   - name: proc_@NAME@_track
-    #type: art::TMWDCTrackingProcessor
-    type: art::TMWDCTrackingProcessor_crib
+    type: art::TMWDCTrackingProcessor
     parameter:
       InputCollection:
         - @NAME@_x1

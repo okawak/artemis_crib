@@ -79,12 +79,10 @@ Processor:
         CATID: 6
         NAME: mwdca
         TREDET: catha_cal
-     #   TREDET: trig_cal
         TREFID: 0
 
   - include:
-      name:  xyy.inc.yaml
-      #name:  xxyy.inc.yaml
+      name:  xxyy.inc.yaml
       replace:
         NAME: mwdca
 
@@ -94,8 +92,6 @@ Processor:
         NAME: mwdca
         TGATE: [-94.,-10.]
         QGATE: [0.,1000]
-        #TGATE: [-84.,-20.]
-        #QGATE: [0.,1000]
 
 ##### MWDCb
   - include:
@@ -104,23 +100,20 @@ Processor:
         CATID: 7
         NAME: mwdcb
         TREDET: cathb_cal
-    #    TREDET: trig_cal
         TREFID: 0
 
-        #  - include:
-        #      name:  xxyy.inc.yaml
-        #      replace:
-        #        NAME: mwdcb
+  - include:
+      name:  xxyy.inc.yaml
+      replace:
+        NAME: mwdcb
 
-        #  - include:
-        #      name:  xxyy_calib.inc.yaml
-        #      replace:
-        #        NAME: mwdcb
-        #        TGATE: [-90.,-30.]
-        #        QGATE: [0.,1000]
-        #        #TGATE: [-80.,-38.]
-        #        #QGATE: [0.,1000]
+  - include:
+      name:  xxyy_calib.inc.yaml
+      replace:
+        NAME: mwdcb
+        TGATE: [-90.,-30.]
+        QGATE: [0.,1000]
 
 
 #########
-#  - include: mwdctrack.yaml
+  - include: mwdctrack.yaml

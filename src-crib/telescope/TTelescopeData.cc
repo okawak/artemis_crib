@@ -16,7 +16,7 @@ ClassImp(art::TTelescopeData);
 TTelescopeData::TTelescopeData()
     : fXID(kInvalidI), fYID(kInvalidI), fNE(0),
       fdE(0.0), fdEX(0.0), fdEY(0.0), fE(0.0), fEtotal(0.0),
-      fTiming(kInvalidD), fYTiming(kInvalidD), fTheta_L(kInvalidD) {
+      fXTiming(kInvalidD), fYTiming(kInvalidD), fTheta_L(kInvalidD) {
     TDataObject::SetID(kInvalidI);
     fPos.SetXYZ(kInvalidD, kInvalidD, kInvalidD);
     fEnergyArray.clear();
@@ -39,7 +39,7 @@ TTelescopeData::TTelescopeData(const TTelescopeData &rhs)
       fdEY(rhs.fdEY),
       fE(rhs.fE),
       fEtotal(rhs.fEtotal),
-      fTiming(rhs.fTiming),
+      fXTiming(rhs.fXTiming),
       fYTiming(rhs.fYTiming),
       fTheta_L(rhs.fTheta_L),
       fEnergyArray(rhs.fEnergyArray),
@@ -69,7 +69,7 @@ void TTelescopeData::Copy(TObject &dest) const {
 
     cobj.fE = this->GetE();
     cobj.fEtotal = this->GetEtotal();
-    cobj.fTiming = this->GetTelTiming();
+    cobj.fXTiming = this->GetTelXTiming();
     cobj.fYTiming = this->GetTelYTiming();
 
     cobj.fTheta_L = this->GetTheta_L();
@@ -94,7 +94,7 @@ void TTelescopeData::Clear(Option_t *opt) {
 
     fE = 0.0;
     fEtotal = 0.0;
-    fTiming = kInvalidD;
+    fXTiming = kInvalidD;
     fYTiming = kInvalidD;
 
     fTheta_L = kInvalidD;

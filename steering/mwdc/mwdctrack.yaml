@@ -1,11 +1,10 @@
 Processor:
   - name: proc_mwdc_tracking
-    #type: art::TMWDCTrackingProcessor
-    type: art::TMWDCTrackingProcessor_crib
+    type: art::TMWDCTrackingProcessor
     parameter:
       InputCollection:
         - mwdca_x1
-#       - mwdca_x2
+        - mwdca_x2
         - mwdca_y1
         - mwdca_y2
         - mwdcb_x1
