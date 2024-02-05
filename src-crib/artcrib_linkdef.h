@@ -1,6 +1,6 @@
 // K.Okawa created <okawa@cns.s.u-tokyo.ac.jp>
-#ifndef LINKDEF_USER_H
-#define LINKDEF_USER_H
+#ifndef LINKDEF_CRIB_H
+#define LINKDEF_CRIB_H
 
 #ifdef __CINT__
 
@@ -61,4 +61,4 @@
 #pragma link C++ class art::TModuleDecoderTimestamp;
 #endif // __CINT__
 
-#endif // LINKDEF_USER_H
+#endif // LINKDEF_CRIB_H
