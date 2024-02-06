@@ -1,124 +1,130 @@
 anchor:
-  - &ex_raw ["tel1dEX_raw.fCharge",1024,0.,4095.]
-  - &ey_raw ["tel1dEY_raw.fCharge",1024,0.,4095.]
+  - &ex_raw ["tel1dEX_raw.fCharge",1000,100.,4000.]
+  - &ey_raw ["tel1dEY_raw.fCharge",1000,100.,4000.]
+  - &e_raw ["tel1E_raw.fCharge",1000,200.,4000.]
   - &tx_raw ["tel1dEX_raw.fTiming",2000,0.,4000.]
   - &ty_raw ["tel1dEY_raw.fTiming",2000,0.,4000.]
-  - &tel1dEX_ID ["tel1dEX_cal.fID",16,-0.5,15.5]
-  - &tel1dEY_ID ["tel1dEY_cal.fID",16,-0.5,15.5]
-  - &tel1E_ID ["tel1E_cal.fID",3,-0.5,2.5]
-  - &tel_XID ["tel1.fXID",16,-0.5,15.5]
-  - &tel_YID ["tel1.fYID",16,-0.5,15.5]
-  - &tel1dEX_E ["tel1dEX_cal.fCharge",500,0.,30.]
-  - &tel1dEY_E ["tel1dEY_cal.fCharge",500,0.,30.]
-  - &tel1E_E ["tel1E_cal.fCharge",500,0.,40.]
-  - &tel1dEX_T ["tel1dEX_cal.fTiming",500,-1000.,1000.]
-  - &tel1dEY_T ["tel1dEY_cal.fTiming",500,-1000.,1000.]
-  - &tel1E_T ["tel1E_cal.fTiming",1000,-1000.,1000.]
-  - &tel1_dE ["tel1.fdE",500,0.,30.]
-  - &tel1_Eb ["tel1.fEvec[0]",500,0.,40.]
-  - &tel1_Ec ["tel1E_cal.fCharge[1]",500,0.,40.]
-  - &tel1_Ed ["tel1E_cal.fCharge[2]",500,0.,40.]
-  - &tel1_E ["tel1.fE",500,0.,55.]
-  - &tel1_Etotal ["tel1.fEtotal",500,0.,55.]
+  - &t_raw ["tel1E_raw.fTiming",2000,0.,4000.]
+
+  - &ex_cal ["tel1dEX_cal.fCharge",500,0.,30.]
+  - &ey_cal ["tel1dEY_cal.fCharge",500,0.,30.]
+  - &e_cal ["tel1E_cal.fCharge",500,0.,40.]
+  - &tx_cal ["tel1dEX_cal.fTiming",500,-1000.,1000.]
+  - &ty_cal ["tel1dEY_cal.fTiming",500,-1000.,1000.]
+  - &t_cal ["tel1E_cal.fTiming",1000,-1000.,1000.]
+
+  - &ex_id ["tel1dEX_cal.fID",16,-0.5,15.5]
+  - &ey_id ["tel1dEY_cal.fID",16,-0.5,15.5]
+  - &e_id ["tel1E_cal.fID",3,-0.5,2.5]
+  - &tel_xid ["tel1.fXID",16,-0.5,15.5]
+  - &tel_yid ["tel1.fYID",16,-0.5,15.5]
+
+  - &tel_dE ["tel1.E(0)",500,0.,30.]
+  - &tel_Eb ["tel1.E(1)",500,0.,40.]
+  - &tel_Ec ["tel1.E(2)",500,0.,40.]
+  - &tel_Ed ["tel1.E(3)",500,0.,40.]
+  #- &tel_E ["tel1.fE",500,0.,55.]
+  - &tel_Etotal ["tel1.fEtotal",500,0.,55.]
+  - &tel_A ["tel1.A()",50,0.,50.]
+  - &tof ["cathb_cal.fTiming-tel1.T(1)",1000,-3000.,-1500.]
 
 alias:
-  single: single.fID == 0;
-  coin: coin.fID == 0;
-  pileup: pileup.fID == 0;
+  single_cut: single.fID == 0;
+  coin_cut: coin.fID == 0;
+  pileup_cut: pileup.fID == 0;
 
 group:
   - name: tel1
     title: tel1
     contents:
-      - name: dEXraw vs ID
-        title: tel1dEX_raw EX vs ID
-        x: *tel1dEX_ID
+      - name: dE_E(coin)
+        title: tel1 dE-E plot (coin)
+        x: *tel_dE
+        y: *tel_Etotal
+        cut: coin_cut
+      - name: Etotal_angle(coin)
+        title: tel1 Etotal vs Angle(deg) (coin)
+        x: *tel_A
+        y: *tel_Etotal
+        cut: coin_cut
+      - name: Etotal_timing(coin)
+        title: tel1 Etotal vs Timing (coin)
+        x: *tof
+        y: *tel_Etotal
+        cut: coin_cut
+      - name: Eb_dE(coin)
+        title: tel1 Eb vs dE (coin)
+        x: *tel_dE
+        y: *tel_Eb
+        cut: coin_cut
+      - name: Ec_Eb(coin)
+        title: tel1 Ec vs Eb (coin)
+        x: *tel_Eb
+        y: *tel_Ec
+        cut: coin_cut
+      - name: Ed_Ec(coin)
+        title: tel1 Ed vs Ec (coin)
+        x: *tel_Ec
+        y: *tel_Ed
+        cut: coin_cut
+
+      - name: yid_xid(coin)
+        title: tel1 strip YID vs XID (coin)
+        x: *tel_xid
+        y: *tel_yid
+        cut: coin_cut
+
+
+  - name: tel1_raw
+    title: tel1_raw
+    contents:
+      - name: dEXraw_id
+        title: tel1 dEX E_raw vs ID
+        x: *ex_id
         y: *ex_raw
-#        cut: ex_cut
-
-      - name: dEYraw vs ID
-        title: tel1dEY_raw EY vs ID
-        x: *tel1dEY_ID
+      - name: dEYraw_id
+        title: tel1 dEY E_raw vs ID
+        x: *ey_id
         y: *ey_raw
-
-      - name: dEX_Traw vs ID
-        title: tel1dEX_raw T vs ID
-        x: *tel1dEX_ID
+      - name: Eraw_id
+        title: tel1 E E_raw vs ID
+        x: *e_id
+        y: *e_raw
+      - name: dEXTraw_id
+        title: tel1 dEX T_raw vs ID
+        x: *ex_id
         y: *tx_raw
-
-      - name: dEY_Traw vs ID
-        title: tel1dEY_raw T vs ID
-        x: *tel1dEY_ID
+      - name: dEYTraw_id
+        title: tel1 dEY T_raw vs ID
+        x: *ey_id
         y: *ty_raw
+      - name: ETraw_id
+        title: tel1 E T_raw vs ID
+        x: *e_id
+        y: *t_raw
 
-      - name: dEY fID vs dEX fID
-        title: tel1dEY fID vs dEX fID
-        x: *tel_XID
-        y: *tel_YID
+      - name: dEXcal_id
+        title: tel1 dEX E_cal vs ID
+        x: *ex_id
+        y: *ex_cal
+      - name: dEYcal_id
+        title: tel1 dEY E_cal vs ID
+        x: *ey_id
+        y: *ey_cal
+      - name: Ecal_id
+        title: tel1 E E_cal vs ID
+        x: *e_id
+        y: *e_cal
+      - name: dEXTcal_id
+        title: tel1 dEX T_cal vs ID
+        x: *ex_id
+        y: *tx_cal
+      - name: dEYTcal_id
+        title: tel1 dEY T_cal vs ID
+        x: *ey_id
+        y: *ty_cal
+      - name: ETcal_id
+        title: tel1 E T_cal vs ID
+        x: *e_id
+        y: *t_cal
 
-      - name: dEXcal vs ID
-        title: tel1dEX_cal vs ID
-        x: *tel1dEX_ID
-        y: *tel1dEX_E
-
-      - name: dEYcal vs ID
-        title: tel1dEY_cal vs ID
-        x: *tel1dEY_ID
-        y: *tel1dEY_E
-
-      - name: Ecal vs ID
-        title: tel1E_cal vs ID
-        x: *tel1E_ID
-        y: *tel1E_E
-
-      - name: dEX_Tcal vs ID
-        title: tel1dEX_cal T vs ID
-        x: *tel1dEX_ID
-        y: *tel1dEX_T
-
-      - name: dEY_Tcal vs ID
-        title: tel1dEY_cal T vs ID
-        x: *tel1dEY_ID
-        y: *tel1dEY_T
-
-      - name: E_Tcal vs ID
-        title: tel1E_cal T vs ID
-        x: *tel1E_ID
-        y: *tel1E_T
-
-      - name: Etotal vs dEa
-        title: tel1 Etotal vs dEa
-        x: *tel1_dE
-        y: *tel1_Etotal
-
-
-      - name: Etotal vs dEa he6
-        title: tel1 Etotal vs dEa
-        x: *tel1_dE
-        y: *tel1_Etotal
-#	cut: t1_he6
-
-      - name: Eb vs dEa
-        title: Eb vs dEa
-        x: *tel1_dE
-        y: *tel1_Eb
-
-      - name: Ec vs Eb
-        title: Ec vs Eb
-        x: *tel1_Eb
-        y: *tel1_Ec
-
-      - name: Ed vs Ec
-        title: Ed vs Ec
-        x: *tel1_Ec
-        y: *tel1_Ed
-
-      - name: three E vs dEa
-        title: tel1 three E vs dEa
-        x: *tel1_dE
-        y: *tel1_E
-
-      - name: three E vs Eb
-        title: tel1 three E vs Eb
-        x: *tel1_Eb
-        y: *tel1_E

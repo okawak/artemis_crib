@@ -7,20 +7,21 @@ anchor:
   - &qraw_x1 ["@plane@_x1.GetCharge()",1000,0.,4000.]
   - &isprocessed ["@plane@.IsProcessed()",2,-0.5,1.5]
   - &isgood ["@plane@.IsGood()",2,-0.5,1.5]
-  - &entry ["@plane@.GetEntriesFast()",4,-0.5,3.5]
+  - &entry ["@plane@@.GetEntriesFast()",5,-0.5,4.5]
   - &ssr ["@plane@.GetSSR()",100,0,10]
   - &res ["@plane@.GetResidual(0)",200,-2.,2.]
   - &xpos ["@plane@.GetTrack().GetX()",100,-50.,50.]
   - &ypos ["@plane@.GetTrack().GetY()",100,-50.,50.]
 
 alias:
-#  pidgate: "abs(f5pla[0].fTiming-dia3strip[0].fTiming-1242.0)<1.0 && abs(f5pla[0].fCharge-18200.)<900."
+  single_cut: single.fID==0;
+  coin_cut: coin.fID==0;
+  pileup_cut: pileup.fID==0;
 
 group:
   - name: @plane@
     title: @plane@
     contents:
-
       - name: id
         title: @plane@ ID
         x: *idraw
@@ -51,23 +52,35 @@ group:
         title: @plane@ X vs Y
         x: *xpos
         y: *ypos
+      - name: xy_position(single)
+        title: @plane@ X vs Y (single)
+        x: *xpos
+        y: *ypos
+        cut: single_cut
+      - name: x_position(single)
+        title: @plane@ X (single)
+        x: *xpos
+        cut: single_cut
+      - name: y_position(single)
+        title: @plane@ Y (single)
+        x: *ypos
+        cut: single_cut
 
       - name: hit_efficiency
         title: @plane@ hit efficiency IsProcessed
         x: *isprocessed
-#        cut:  "src1_a_raw@.GetEntries() == 1"
       - name: tracking_efficiency
         title: @plane@ tracking efficiency
         x: *isgood
-#        cut:  "src1_a_raw@.GetEntries() == 1"
       - name: ssr
         title: @plane@ sum of squared residue
         x: *ssr
-#        cut:  "src1_a_raw@.GetEntries() == 1"
       - name: x1_residual
         title: @plane@ X1 residual
         x: *res
-#        cut:  "src1_a_raw@.GetEntries() == 1"
+      - name: entries
+        title: @plane@ entries
+        x: *entry
 
 #  - name: @plane@_pidgate
 #    title: @plane@ (g pid)

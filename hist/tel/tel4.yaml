@@ -1,88 +1,125 @@
 anchor:
-  - &tel4dEX_E1_raw ["tel4dEX_raw.fE1",200,0.,7000.]
-  - &tel4dEX_E2_raw ["tel4dEX_raw.fE2",200,0.,7000.]
-  - &tel4dEX_P1_raw ["tel4dEX_raw.fP1",400,3900.,4400.]
-  - &tel4dEX_P2_raw ["tel4dEX_raw.fP2",400,3900.,4400.]
-  - &tel4dEY_E1_raw ["tel4dEY_raw.fE1",200,0.,7000.]
-  - &tel4dEY_E2_raw ["tel4dEY_raw.fE2",200,0.,7000.]
-  - &tel4dEY_P1_raw ["tel4dEY_raw.fP1",400,3500.,4000.]
-  - &tel4dEY_P2_raw ["tel4dEY_raw.fP2",400,3500.,4000.]
-  - &tel4dEX_ID ["tel4dEX_cal.fID",16,-0.5,15.5]
-  - &tel4dEY_ID ["tel4dEY_cal.fID",16,-0.5,15.5]
-  - &tel4dEX_E ["tel4dEX_cal.fCharge",1000,0.,30.]
-  - &tel4dEY_E ["tel4dEY_cal.fCharge",1000,0.,30.]
-  - &tel4E_E ["tel4E_cal.fCharge",1000,0.,40.]
-  - &tel4dEX_T ["tel4dEX_cal.fTiming",1000,-1000.,1000.]
-  - &tel4dEY_T ["tel4dEY_cal.fTiming",1000,-1000.,1000.]
-  - &tel4E_T ["tel4E_cal.fTiming",1000,-1000.,1000.]
-  - &tel4_dE ["tel4.fdE",500,0.,10.]
-  - &tel4_E ["tel4.fE",500,0.,30.]
-  - &tel4_Etotal ["tel4.fEtotal",500,0.,30.]
+  - &xe0_raw ["tel4dEX_raw.fE1",500,100.,7800.]
+  - &xe1_raw ["tel4dEX_raw.fE2",500,100.,7800.]
+  - &xp0_raw ["tel4dEX_raw.fP1",500,100.,7800.]
+  - &xp1_raw ["tel4dEX_raw.fP2",500,100.,7800.]
+  - &ye0_raw ["tel4dEY_raw.fE1",500,100.,7800.]
+  - &ye1_raw ["tel4dEY_raw.fE2",500,100.,7800.]
+  - &yp0_raw ["tel4dEY_raw.fP1",500,100.,7800.]
+  - &yp1_raw ["tel4dEY_raw.fP2",500,100.,7800.]
+  - &e_raw ["tel4E_raw.fCharge",1000,100.,4000.]
+  - &tx_raw ["tel4dEX_raw.fTiming",2000,0.,4000.]
+  - &ty_raw ["tel4dEY_raw.fTiming",2000,0.,4000.]
+  - &t_raw ["tel4E_raw.fTiming",2000,0.,4000.]
+
+  - &ex_cal ["tel4dEX_cal.fCharge",500,0.,20.]
+  - &ey_cal ["tel4dEY_cal.fCharge",500,0.,20.]
+  - &e_cal ["tel4E_cal.fCharge",500,0.,40.]
+  - &tx_cal ["tel4dEX_cal.fTiming",500,-1000.,1000.]
+  - &ty_cal ["tel4dEY_cal.fTiming",500,-1000.,1000.]
+  - &t_cal ["tel4E_cal.fTiming",1000,-1000.,1000.]
+
+  - &ex_id ["tel4dEX_cal.fID",16,-0.5,15.5]
+  - &ey_id ["tel4dEY_cal.fID",16,-0.5,15.5]
+  - &tel_xid ["tel4.fXID",16,-0.5,15.5]
+  - &tel_yid ["tel4.fYID",16,-0.5,15.5]
+
+  - &tel_dE ["tel4.E(0)",300,0.,20.]
+  - &tel_Eb ["tel4.E(1)",500,0.,30.]
+  - &tel_Etotal ["tel4.fEtotal",300,0.,40.]
+  - &tel_A ["tel4.A()",50,30.,80.]
+  - &tof ["cathb_cal.fTiming-tel4.T(0)",1000,-3000.,-1500.]
 
 alias:
-  single: single.fID == 0;
-  coin: coin.fID == 0;
-  pileup: pileup.fID == 0;
+  single_cut: single.fID == 0;
+  coin_cut: coin.fID == 0;
+  pileup_cut: pileup.fID == 0;
 
 group:
   - name: tel4
     title: tel4
     contents:
-      - name: tel4dEX E1 vs pos1
-        title: tel4dEX E1 vs pos1
-        x: *tel4dEX_P1_raw
-        y: *tel4dEX_E1_raw
-#        cut: ex_cut
+      - name: dE_E(coin)
+        title: tel4 dE-E plot (coin)
+        x: *tel_dE
+        y: *tel_Etotal
+        cut: coin_cut
+      - name: Etotal_angle(coin)
+        title: tel4 Etotal vs Angle(deg) (coin)
+        x: *tel_A
+        y: *tel_Etotal
+        cut: coin_cut
+      - name: Etotal_timing(coin)
+        title: tel4 Etotal vs Timing (coin)
+        x: *tof
+        y: *tel_Etotal
+        cut: coin_cut
+      - name: Eb_dE(coin)
+        title: tel4 Eb vs dE (coin)
+        x: *tel_dE
+        y: *tel_Eb
+        cut: coin_cut
 
-      - name: tel4dEX E2 vs pos2
-        title: tel4dEX E2 vs pos2
-        x: *tel4dEX_P2_raw
-        y: *tel4dEX_E2_raw
+      - name: yid_xid(coin)
+        title: tel4 strip YID vs XID (coin)
+        x: *tel_xid
+        y: *tel_yid
+        cut: coin_cut
 
-      - name: tel4dEY E1 vs pos1
-        title: tel4dEY E1 vs pos1
-        x: *tel4dEY_P1_raw
-        y: *tel4dEY_E1_raw
 
-      - name: tel4dEY E2 vs pos2
-        title: tel4dEY E2 vs pos2
-        x: *tel4dEY_P2_raw
-        y: *tel4dEY_E2_raw
+  - name: tel4_raw
+    title: tel4_raw
+    contents:
+      - name: dEX_e1_pos1
+        title: tel4 dEX MUX E1 vs Pos1
+        x: *xp0_raw
+        y: *xe0_raw
+      - name: dEX_e2_pos2
+        title: tel4 dEX MUX E2 vs Pos2
+        x: *xp1_raw
+        y: *xe1_raw
+      - name: dEY_e1_pos1
+        title: tel4 dEY MUX E1 vs Pos1
+        x: *yp0_raw
+        y: *ye0_raw
+      - name: dEY_e2_pos2
+        title: tel4 dEY MUX E2 vs Pos2
+        x: *yp1_raw
+        y: *ye1_raw
+      - name: Eraw_id
+        title: tel4 E E_raw
+        x: *e_raw
 
-      - name: tel4dEY fID vs dEX fID
-        title: tel4dEY fID vs dEX fID
-        x: *tel4dEX_ID
-        y: *tel4dEY_ID
+      - name: dEXTraw
+        title: tel4 dEX T_raw
+        x: *tx_raw
+      - name: dEYTraw
+        title: tel4 dEY T_raw
+        x: *ty_raw
+      - name: ETraw
+        title: tel4 E T_raw
+        x: *t_raw
 
-      - name: tel4dEX energy vs fID
-        title: tel4dEX energy vs fID
-        x: *tel4dEX_ID
-        y: *tel4dEX_E
+      - name: dEXcal_id
+        title: tel4 dEX E_cal vs ID
+        x: *ex_id
+        y: *ex_cal
+      - name: dEYcal_id
+        title: tel4 dEY E_cal vs ID
+        x: *ey_id
+        y: *ey_cal
+      - name: Ecal_id
+        title: tel4 E E_cal
+        x: *e_cal
+      - name: dEXTcal_id
+        title: tel4 dEX T_cal vs ID
+        x: *ex_id
+        y: *tx_cal
+      - name: dEYTcal_id
+        title: tel4 dEY T_cal vs ID
+        x: *ey_id
+        y: *ty_cal
+      - name: ETcal
+        title: tel4 E T_cal
+        x: *t_cal
 
-      - name: tel4dEY energy vs fID
-        title: tel4dEY energy vs fID
-        x: *tel4dEY_ID
-        y: *tel4dEY_E
-
-      - name: tel4E energy
-        title: tel4E energy
-        x: *tel4E_E
-
-      - name: tel4dEX timing vs fID
-        title: tel4dEX timing vs fID
-        x: *tel4dEX_ID
-        y: *tel4dEX_T
-
-      - name: tel4dEY timing vs fID
-        title: tel4dEY timing vs fID
-        x: *tel4dEY_ID
-        y: *tel4dEY_T
-
-      - name: tel4E timing
-        title: tel4E timing
-        x: *tel4E_T
-
-      - name: tel4 Etotal vs dEa
-        title: tel4 Etotal vs dEa
-        x: *tel4_dE
-        y: *tel4_Etotal
