@@ -20,11 +20,16 @@ arthome=$(
 time=$(date)
 
 usage() {
-   echo "before use this shellscript, please check the MUX conf in this file!"
-   echo "USAGE:     $ ./setmuxprm.sh \$1"
-   echo "USAGE: ex) $ ./setmuxprm.sh physics0100"
-   echo "USAGE: if you want to clean the exist files"
-   echo "USAGE:     $ ./setmuxprm.sh -c"
+   echo "Set the symbolic link for MUX position parameter"
+   echo "Before use this shellscript, please check the MUX conf in this file!"
+   echo ""
+   echo "Usage: $ ./setmuxprm.sh [ARGUMENT or OPTION]"
+   echo ""
+   echo "Arguments:"
+   echo "  -h        Print help"
+   echo "  -c        Clean the parameter files (delete old experiment files)"
+   echo "  -l        Print available parameters"
+   echo "  run0000   The name of parameter files. Set this parameter"
 }
 
 prm_clean() {
@@ -56,6 +61,52 @@ prm_clean() {
    done
 }
 
+show_list() {
+   say "avaliable parameter list:"
+   for mux_info in "${mux_usage[@]}"; do
+      read -ra mux <<<"${mux_info}"
+      say "$mux_info:"
+      mux_prm_dir="$arthome/prm/${mux[1]}/pos_${mux[2]}"
+      cd "$mux_prm_dir" || exit 1
+      for file in *; do
+         if [ "$file" = "current" ]; then
+            continue
+         fi
+         say " - $file"
+      done
+      printf "\n"
+   done
+
+   cd "$arthome" || exit 1
+}
+
+main() {
+   if [ "$1"_ = _ ]; then
+      err "need correct argument"
+   fi
+
+   if [ $# -ne 1 ]; then
+      err "need correct argument"
+   fi
+
+   for mux_info in "${mux_usage[@]}"; do
+      read -ra mux <<<"${mux_info}"
+
+      mux_prm_dir="$arthome/prm/${mux[1]}/pos_${mux[2]}"
+      cd "$mux_prm_dir" || exit 1
+      if [ -f "$1.dat" ]; then
+         say "${mux[0]} ${mux[1]} ${mux[2]}: $mux_prm_dir/$1.dat is current"
+         rm -f current
+         ln -sf "$1.dat" current
+      else
+         err "$mux_prm_dir/$1 not found."
+      fi
+   done
+
+   cd "$arthome" || exit 1
+   echo "${time} using $1 prm" >>"$arthome/.log_mux"
+}
+
 say() {
    printf "\33[1msetmuxprm.sh\33[0m: %s\n" "$1"
 }
@@ -66,10 +117,18 @@ err() {
    exit 1
 }
 
-while getopts ":c" OPT; do
+while getopts "hcl" OPT; do
    case $OPT in
+   h)
+      usage
+      exit 0
+      ;;
    c)
       prm_clean
+      exit 0
+      ;;
+   l)
+      show_list
       exit 0
       ;;
    \?)
@@ -78,27 +137,4 @@ while getopts ":c" OPT; do
    esac
 done
 
-if [ "$1"_ = _ ]; then
-   err "need correct argument"
-fi
-
-if [ $# -ne 1 ]; then
-   err "need correct argument"
-fi
-
-for mux_info in "${mux_usage[@]}"; do
-   read -ra mux <<<"${mux_info}"
-
-   mux_prm_dir="$arthome/prm/${mux[1]}/pos_${mux[2]}"
-   cd "$mux_prm_dir" || exit 1
-   if [ -f "$1.dat" ]; then
-      say "${mux[0]} ${mux[1]} ${mux[2]}: $mux_prm_dir/$1.dat is current"
-      rm -f current
-      ln -sf "$1.dat" current
-   else
-      err "$mux_prm_dir/$1 not found."
-   fi
-done
-
-cd "$arthome" || exit 1
-echo "${time} using $1 prm" >>"$arthome/.log_mux"
+main "$@"
