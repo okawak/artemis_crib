@@ -17,4 +17,4 @@ group:
       - name: rf1 rf2
         title: rf2 vs rf1
         x: *rf0
-        x: *rf1
+        y: *rf1
