@@ -57,8 +57,7 @@ if __name__ == "__main__":
     try:
         art_work_dir = os.environ["ARTEMIS_WORKDIR"]
     except:
-        print("command [artlogin user] needed")
-        sys.exit()
+        sys.exit("command [artlogin user] needed")
 
     yaml = get_yaml_setting()
     perser = get_argperser_setting()

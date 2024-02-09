@@ -68,8 +68,7 @@ def get_point_inside(polygon, p1, p2):
     elif polygon.encloses_point(p_minus):
         p = p_minus
     else:
-        print("Cannot find internal point, please try again")
-        sys.exit()
+        sys.exit("Cannot find internal point, please try again")
     return p
 
 
@@ -118,13 +117,11 @@ def get_inequalities(points):
     inequalities = []
     poly = Polygon(*[Point(p) for p in points])
     if not is_valid(poly):
-        print("Invalid TCutG object (it has intersection)")
-        sys.exit()
+        sys.exit("Invalid TCutG object (it has intersection)")
 
     polys = get_convex_array(poly)
     if any(not pol.is_convex for pol in polys):
-        print("failed to make convex object")
-        sys.exit()
+        sys.exit("failed to make convex object")
 
     for pol in polys:
         pref1, pref2 = pol.vertices[0], pol.vertices[1]
@@ -156,8 +153,7 @@ if __name__ == "__main__":
     try:
         art_work_dir = os.environ["ARTEMIS_WORKDIR"]
     except:
-        print("command [artlogin user] needed")
-        sys.exit()
+        sys.exit("command [artlogin user] needed")
 
     perser = get_argperser_setting()
     args = perser.parse_args()
@@ -165,21 +161,21 @@ if __name__ == "__main__":
     outputname = art_work_dir + "/hist/" + args.output_hist_yaml
 
     if not os.path.isfile(inputname):
-        print("Input File " + args.input_tcutg_file + " does not exists")
-        sys.exit()
+        sys.exit("Input File " + args.input_tcutg_file + " does not exists")
 
     if not os.path.isfile(outputname):
-        print("Output File " + args.output_hist_yaml + " does not exists")
-        sys.exit()
+        sys.exit("Output File " + args.output_hist_yaml + " does not exists")
 
     infile = ROOT.TFile(inputname)
     cut = infile.Get(os.path.basename(inputname).split(".", 1)[0])
 
     if not cut:
-        print("TCutG " + cut + "does not exists")
-        print("NOTE: filename and TCutG object name should be same")
         infile.Close()
-        sys.exit()
+        sys.exit(
+            "TCutG "
+            + cut
+            + "does not exists\nNOTE: filename and TCutG object name should be same"
+        )
 
     infile.Close()
 
