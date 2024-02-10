@@ -10,14 +10,15 @@ try:
 except:
     sys.exit("command [artlogin user] needed")
 
+# only suit for CRIB experiment
 CRIBDEV = 12
 
 # key: mod id, value: (name, channel number)
 MODULE_DICT = {
-    6: ("ADC", 32),
-    7: ("TDC", 128),
-    63: ("SCALER", 32),
+    6: ("ADC", 32),  # for V785, MADC
+    7: ("TDC", 128),  # for V1190A
     60: ("TIMESTAMP", 1),
+    63: ("SCALER", 32),
 }
 
 # MPV information
@@ -28,14 +29,15 @@ MPV_DICT = {
     2: "J1TDC",
 }
 
-CHUNIT = 16  # after this number, begin on a new line
+# after this number, begin on a new line (just format)
+UNIT = 16
 
 
 def get_argperser_setting():
     argparser = argparse.ArgumentParser()
     argparser.add_argument(
         "-i",
-        "--input-mapper-conf",
+        "--input-mapper",
         type=str,
         help="if you don't use default mapper.conf, please specify the path (ex test/mapper.conf)",
         default="mapper.conf",
@@ -44,17 +46,17 @@ def get_argperser_setting():
         "-o",
         "--output",
         type=str,
-        help="input the output csv file. (default. pyscripts/out/mapcheck.csv)",
+        help="if you want to specify the outputfile name, input the output csv file. (default. pyscripts/out/mapcheckr.csv)",
         default="pyscripts/out/mapchecker.csv",
     )
     return argparser
 
 
 # read from mapper.conf => infomation for each mapfile
-def get_mapfiles(mapper: str):
+def get_mapfiles(mapper: str) -> list:
     mapfile_list = []
-    if os.path.exists("{}/{}".format(ARTHOME, mapper)):
-        with open("{}/{}".format(ARTHOME, mapper), "r") as file:
+    if os.path.exists(f"{ARTHOME}/{mapper}"):
+        with open(f"{ARTHOME}/{mapper}", "r") as file:
             for line in file:
                 comment_index = line.find("#")
                 if comment_index == -1:
@@ -65,13 +67,13 @@ def get_mapfiles(mapper: str):
                 if processed_line:
                     mapfile_list.append(processed_line)
     else:
-        sys.exit("{}/{} does not found!".format(ARTHOME, mapper))
+        sys.exit(f"{ARTHOME}/{mapper} does not found!")
 
     return mapfile_list
 
 
 # read each map file => information each line (channel)
-def get_mapfile_data(mapfile: str):
+def get_mapfile_data(mapfile: str) -> list:
     mapinfo = mapfile.split()  # [0]: path, [1]: number
     try:
         maplen = int(mapinfo[1])
@@ -79,12 +81,12 @@ def get_mapfile_data(mapfile: str):
         sys.exit("mapper.conf format error: [path] [num] (deliminator is space)")
 
     if len(mapinfo) != 2:
-        print("Error in mapper.conf:\n{}".format(mapfile))
+        print(f"Error in mapper.conf:\n{mapfile}")
         sys.exit("mapper.conf format error: [path] [num] (deliminator is space)")
 
     mapinfo_list = []
-    if os.path.exists("{}/{}".format(ARTHOME, mapinfo[0])):
-        with open("{}/{}".format(ARTHOME, mapinfo[0]), "r") as file:
+    if os.path.exists(f"{ARTHOME}/{mapinfo[0]}"):
+        with open(f"{ARTHOME}/{mapinfo[0]}", "r") as file:
             for line in file:
                 comment_index = line.find("#")
                 if comment_index != -1:
@@ -96,119 +98,91 @@ def get_mapfile_data(mapfile: str):
                         try:
                             parts.append(int(item))
                         except:
-                            sys.exit("mapfile error:\n{}".format(mapinfo[0]))
+                            sys.exit(f"mapfile error:\n{mapinfo[0]}")
 
                 if parts:
                     if len(parts) != 2 + 5 * maplen:
                         sys.exit(
-                            "mapfile parameter number is wrong! {}\n{} but {} in mapper.conf".format(
-                                mapinfo[0], parts, maplen
-                            )
+                            f"mapfile parameter number is wrong! {mapinfo[0]}\n{parts} but {maplen} in mapper.conf"
                         )
                     mapinfo_list.append(parts)
 
     else:
-        sys.exit("{}/{} is not found!".format(ARTHOME, mapinfo[0]))
+        sys.exit(f"{ARTHOME}/{mapinfo[0]} is not found!")
 
     return mapinfo_list
 
 
-def add_map_info(dict: dict, mapinfo: list) -> dict:
+def add_map_info(map_dict: dict, mapinfo: list) -> dict:
     if (len(mapinfo) - 2) % 5 != 0:
-        sys.exit("mapfile parameter number is wrong!\nwrong line: {}".format(mapinfo))
+        sys.exit(f"mapfile parameter number is wrong!\nwrong line: {mapinfo}")
 
     for i in range((len(mapinfo) - 2) // 5):
         if mapinfo[5 * i + 2] != CRIBDEV:
-            sys.exit(
-                "mapfile dev ID is not CRIB ID 12!\nwrong line: {}".format(mapinfo)
-            )
+            sys.exit(f"mapfile dev ID is not CRIB ID 12!\nwrong line: {mapinfo}")
 
         key_tuple = (mapinfo[5 * i + 3], mapinfo[5 * i + 4], mapinfo[5 * i + 5])
         child_key = mapinfo[5 * i + 6]
-        child_value = "{}-{}".format(mapinfo[0], mapinfo[1])
+        child_value = f"{mapinfo[0]}-{mapinfo[1]}[{i}]"
 
-        if key_tuple in dict:
-            if child_key in dict[key_tuple]:
+        if key_tuple in map_dict:
+            if child_key in map_dict[key_tuple]:
                 sys.exit(
-                    "Error: duplicate maps! duplicate the following:\n(fp, det, geo, ch) = {}".format(
-                        key_tuple + tuple([child_key])
-                    )
+                    f"Error: duplicate maps! duplicate the following:\n(fp, det, geo, ch) = {key_tuple + tuple([child_key])}"
                 )
             else:
-                dict[key_tuple][child_key] = child_value
+                map_dict[key_tuple][child_key] = child_value
         else:
-            dict[key_tuple] = {child_key: child_value}
+            map_dict[key_tuple] = {child_key: child_value}
 
-    return dict
+    return map_dict
 
 
-def add_tref_info(dict: dict) -> dict:
-    if os.path.exists("{}/steering/tref.yaml".format(ARTHOME)):
+def add_tref_info(map_dict: dict) -> dict:
+    if os.path.exists(f"{ARTHOME}/steering/tref.yaml"):
         yaml = YAML()
-        with open(
-            "{}/steering/tref.yaml".format(ARTHOME), "r", encoding="utf-8"
-        ) as file:
-            tref_info = yaml.load(file)
+        with open(f"{ARTHOME}/steering/tref.yaml", "r", encoding="utf-8") as file:
+            tref_yaml = yaml.load(file)
     else:
-        sys.exit("{}/steering/tref.yaml does not exist!".format(ARTHOME))
+        sys.exit(f"{ARTHOME}/steering/tref.yaml does not exist!")
 
     tref_list = []
     try:
-        for i in range(len(tref_info["Processor"])):
-            refconfig = tref_info["Processor"][i]["parameter"]["RefConfig"]
+        for i in range(len(tref_yaml["Processor"])):
+            refconfig = tref_yaml["Processor"][i]["parameter"]["RefConfig"]
             tref_list.append(refconfig)
     except:
         sys.exit("steering/tref.yaml format seems wrong!")
 
     for tref_info in tref_list:
         if tref_info[0] != CRIBDEV:
-            sys.exit(
-                "tref.yaml dev ID is not CRIB ID 12!\nwrong line: {}".format(tref_info)
-            )
+            sys.exit(f"tref.yaml dev ID is not CRIB ID 12!\nwrong line: {tref_info}")
         if len(tref_info) != 5:
-            sys.exit(
-                "tref.yaml RefConfig format is wrong!\nwrong line: {}".format(tref_info)
-            )
+            sys.exit(f"tref.yaml RefConfig format is wrong!\nwrong line: {tref_info}")
 
         key_tuple = (tref_info[1], tref_info[2], tref_info[3])
         child_key = tref_info[4]
 
-        if key_tuple in dict:
-            if child_key in dict[key_tuple]:
+        if key_tuple in map_dict:
+            if child_key in map_dict[key_tuple]:
                 print(
-                    "Warning: duplicate maps! duplicate the following:\n(fp, det, geo, ch) = {}".format(
-                        key_tuple + tuple([child_key])
-                    )
+                    f"Warning: duplicate maps! duplicate the following: (fp, det, geo, ch) = {key_tuple + tuple([child_key])}"
                 )
-                print("do you use some signal and tref at the same time???")
+                print("do you use some signals and tref at the same time???")
                 print()
             else:
-                dict[key_tuple][child_key] = "TREF"
+                map_dict[key_tuple][child_key] = "TREF"
         else:
             sys.exit(
-                "could not find the module for this tref!\nwrong line: {}".format(
-                    tref_info
-                )
+                f"could not find the module for this tref!\nwrong line: {tref_info}"
             )
 
-    return dict
+    return map_dict
 
 
-if __name__ == "__main__":
-    perser = get_argperser_setting()
-    args = perser.parse_args()
-
-    map_dict = {}
-
-    mapfile_list = get_mapfiles(args.input_mapper_conf)
-    for mapfile in mapfile_list:
-        mapinfo_list = get_mapfile_data(mapfile)
-        for mapinfo in mapinfo_list:
-            map_dict = add_map_info(map_dict, mapinfo)
-
-    map_dict = add_tref_info(map_dict)
-
-    with open("{}/{}".format(ARTHOME, args.output), mode="w", newline="") as file:
+def show_all_mapinfo(map_dict: dict, filename: str) -> None:
+    print("\033[1m\033[4mOutput format [CatID]-[fID][ch]\033[0m\n")
+    with open(f"{ARTHOME}/{filename}", mode="w", newline="") as file:
         writer = csv.writer(file)
         for key_tuple, mod_dict in sorted(map_dict.items()):
             fp, dev, geo = key_tuple
@@ -217,30 +191,43 @@ if __name__ == "__main__":
                     'please add the MODULE_DICT the new module info in this "map_checker.py"'
                 )
 
-            print(key_tuple, end="")
-            print(" = {}, {}, geo={}".format(MPV_DICT[fp], MODULE_DICT[dev][0], geo))
+            print(f"{key_tuple} = {MPV_DICT[fp]}, {MODULE_DICT[dev][0]}, geo={geo}")
             writer.writerow(
-                [
-                    "{} = {}, {}, geo={}".format(
-                        key_tuple, MPV_DICT[fp], MODULE_DICT[dev][0], geo
-                    )
-                ]
+                [f"{key_tuple} = {MPV_DICT[fp]}, {MODULE_DICT[dev][0]}, geo={geo}"]
             )
 
             writer_list = []
             for i in range(MODULE_DICT[dev][1]):
                 if i in mod_dict:
-                    print(f"{mod_dict[i]:<8}", end="")
+                    print(f"{mod_dict[i]:<11}", end="")
                     writer_list.append(mod_dict[i])
                 else:
-                    print("----    ", end="")
+                    print("----       ", end="")
                     writer_list.append("--")
 
-                if (i + 1) % CHUNIT == 0 or (i + 1) == MODULE_DICT[dev][1]:
+                if (i + 1) % UNIT == 0 or (i + 1) == MODULE_DICT[dev][1]:
                     print()
                     writer.writerow(writer_list)
                     writer_list = []
             print()
             writer.writerow([])
 
-    print("saved for {}".format(args.output))
+    print(f"\033[1m\033[4mInfo:\033[0m\nsaved {filename}")
+
+
+if __name__ == "__main__":
+    perser = get_argperser_setting()
+    args = perser.parse_args()
+
+    # prepare map information as a dictionary
+    map_dict = {}
+    mapfile_list = get_mapfiles(args.input_mapper)
+    for mapfile in mapfile_list:
+        mapinfo_list = get_mapfile_data(mapfile)
+        for mapinfo in mapinfo_list:
+            map_dict = add_map_info(map_dict, mapinfo)
+
+    map_dict = add_tref_info(map_dict)
+
+    # show the result in stdout and save file at arts.output
+    show_all_mapinfo(map_dict, args.output)

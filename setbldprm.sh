@@ -15,16 +15,14 @@ arthome=$(
 time=$(date)
 
 usage() {
-   echo "Set the symbolic link for BLD parameter"
-   echo "Before use this shellscript, please check the MWDC conf in this file!"
-   echo ""
-   echo "Usage: $ ./setbldprm.sh [ARGUMENT or OPTION]"
-   echo ""
-   echo "Arguments:"
-   echo "  -h        Print help"
-   echo "  -c        Clean the parameter files (delete old experiment files)"
-   echo "  -l        Print available parameters"
-   echo "  run0000   The name of parameter files. Set this parameter"
+   printf "Set the symbolic link for BLD parameter\n"
+   printf "Before use this shellscript, please check the MWDC conf in this file!\n\n"
+   printf "\033[1m\033[4mUsage:\033[0m $ ./setbldprm.sh [ARGUMENT or OPTION]\n\n"
+   printf "\033[1m\033[4mArguments:\033[0m\n"
+   printf "  -h        Print help\n"
+   printf "  -c        Clean the parameter files (delete old experiment files)\n"
+   printf "  -l        Print available parameters\n"
+   printf "  run0000   The name of parameter files. Set this parameter\n"
 }
 
 prm_clean() {
