@@ -29,7 +29,7 @@ artlogin() {
 }
 
 artlogin2() {
-    export ART_EXP_NAME=${EXP_NAME_OLD}
+    export ART_EXP_NAME="${EXP_NAME_OLD}"
 
     if [ -e "${HOME}/art_analysis/.conf/${ART_EXP_NAME}.sh" ]; then
         source "${HOME}/art_analysis/.conf/${ART_EXP_NAME}.sh"
