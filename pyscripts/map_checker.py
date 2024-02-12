@@ -205,11 +205,12 @@ def show_all_mapinfo(map_dict: dict, filename: str) -> None:
             print(
                 f"{key_tuple} = {DEV_DICT[dev]}, {MPV_DICT[fp]}, {MODULE_DICT[det][0]}, geo={geo}"
             )
-            writer.writerow(
-                [
-                    f"{key_tuple} = {DEV_DICT[dev]}, {MPV_DICT[fp]}, {MODULE_DICT[det][0]}, geo={geo}"
-                ]
+
+            header_list = [""] * UNIT
+            header_list[0] = (
+                f"{key_tuple} = {DEV_DICT[dev]}, {MPV_DICT[fp]}, {MODULE_DICT[det][0]}, geo={geo}"
             )
+            writer.writerow(header_list)
 
             writer_list = []
             for i in range(MODULE_DICT[det][1]):
@@ -225,7 +226,7 @@ def show_all_mapinfo(map_dict: dict, filename: str) -> None:
                     writer.writerow(writer_list)
                     writer_list = []
             print()
-            writer.writerow([])
+            writer.writerow([""] * 16)
 
     print(f"\033[1m\033[4mInfo:\033[0m\nsaved {filename}")
 
