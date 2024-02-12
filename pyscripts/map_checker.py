@@ -212,21 +212,21 @@ def show_all_mapinfo(map_dict: dict, filename: str) -> None:
             )
             writer.writerow(header_list)
 
-            writer_list = []
+            writer_list = [""] * UNIT
             for i in range(MODULE_DICT[det][1]):
                 if i in mod_dict:
                     print(f"{mod_dict[i]:<11}", end="")
-                    writer_list.append(mod_dict[i])
+                    writer_list[i % UNIT] = mod_dict[i]
                 else:
                     print("----       ", end="")
-                    writer_list.append("--")
+                    writer_list[i % UNIT] = "--"
 
                 if (i + 1) % UNIT == 0 or (i + 1) == MODULE_DICT[det][1]:
                     print()
                     writer.writerow(writer_list)
-                    writer_list = []
+                    writer_list = [""] * UNIT
             print()
-            writer.writerow([""] * 16)
+            writer.writerow([""] * UNIT)
 
     print(f"\033[1m\033[4mInfo:\033[0m\nsaved {filename}")
 
