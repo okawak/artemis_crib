@@ -10,15 +10,17 @@ try:
 except:
     sys.exit("command [artlogin user] needed")
 
-# only suit for CRIB experiment
-CRIBDEV = 12
+# device id and name
+DEV_DICT = {
+    12: "CRIB",  # CRIB use 12
+}
 
 # key: mod id, value: (name, channel number)
 MODULE_DICT = {
     6: ("ADC", 32),  # for V785, MADC
     7: ("TDC", 128),  # for V1190A
-    60: ("TIMESTAMP", 1),
-    63: ("SCALER", 32),
+    60: ("TIMESTAMP", 1),  # for MPV TS
+    63: ("SCALER", 32),  # for SIS3820
 }
 
 # MPV information
@@ -118,17 +120,24 @@ def add_map_info(map_dict: dict, mapinfo: list) -> dict:
         sys.exit(f"mapfile parameter number is wrong!\nwrong line: {mapinfo}")
 
     for i in range((len(mapinfo) - 2) // 5):
-        if mapinfo[5 * i + 2] != CRIBDEV:
-            sys.exit(f"mapfile dev ID is not CRIB ID 12!\nwrong line: {mapinfo}")
+        if not mapinfo[5 * i + 2] in DEV_DICT:
+            sys.exit(
+                f"please add DEV_DICT in this file for new device ID {mapinfo[5 * i + 2]}!\nline: {mapinfo}"
+            )
 
-        key_tuple = (mapinfo[5 * i + 3], mapinfo[5 * i + 4], mapinfo[5 * i + 5])
+        key_tuple = (
+            mapinfo[5 * i + 2],
+            mapinfo[5 * i + 3],
+            mapinfo[5 * i + 4],
+            mapinfo[5 * i + 5],
+        )
         child_key = mapinfo[5 * i + 6]
         child_value = f"{mapinfo[0]}-{mapinfo[1]}[{i}]"
 
         if key_tuple in map_dict:
             if child_key in map_dict[key_tuple]:
                 sys.exit(
-                    f"Error: duplicate maps! duplicate the following:\n(fp, det, geo, ch) = {key_tuple + tuple([child_key])}"
+                    f"Error: duplicate maps! duplicate the following:\n(dev, fp, det, geo, ch) = {key_tuple + tuple([child_key])}"
                 )
             else:
                 map_dict[key_tuple][child_key] = child_value
@@ -155,18 +164,20 @@ def add_tref_info(map_dict: dict) -> dict:
         sys.exit("steering/tref.yaml format seems wrong!")
 
     for tref_info in tref_list:
-        if tref_info[0] != CRIBDEV:
-            sys.exit(f"tref.yaml dev ID is not CRIB ID 12!\nwrong line: {tref_info}")
+        if not tref_info[0] in DEV_DICT:
+            sys.exit(
+                f"please add the DEV_DICT in this file for new device ID {tref_info[0]}\nline in tref.yaml: {tref_info}"
+            )
         if len(tref_info) != 5:
             sys.exit(f"tref.yaml RefConfig format is wrong!\nwrong line: {tref_info}")
 
-        key_tuple = (tref_info[1], tref_info[2], tref_info[3])
+        key_tuple = (tref_info[0], tref_info[1], tref_info[2], tref_info[3])
         child_key = tref_info[4]
 
         if key_tuple in map_dict:
             if child_key in map_dict[key_tuple]:
                 print(
-                    f"Warning: duplicate maps! duplicate the following: (fp, det, geo, ch) = {key_tuple + tuple([child_key])}"
+                    f"Warning: duplicate maps! duplicate the following: (dev, fp, det, geo, ch) = {key_tuple + tuple([child_key])}"
                 )
                 print("do you use some signals and tref at the same time???")
                 print()
@@ -185,19 +196,23 @@ def show_all_mapinfo(map_dict: dict, filename: str) -> None:
     with open(f"{ARTHOME}/{filename}", mode="w", newline="") as file:
         writer = csv.writer(file)
         for key_tuple, mod_dict in sorted(map_dict.items()):
-            fp, dev, geo = key_tuple
-            if not dev in MODULE_DICT:
+            dev, fp, det, geo = key_tuple
+            if not det in MODULE_DICT:
                 sys.exit(
                     'please add the MODULE_DICT the new module info in this "map_checker.py"'
                 )
 
-            print(f"{key_tuple} = {MPV_DICT[fp]}, {MODULE_DICT[dev][0]}, geo={geo}")
+            print(
+                f"{key_tuple} = {DEV_DICT[dev]}, {MPV_DICT[fp]}, {MODULE_DICT[det][0]}, geo={geo}"
+            )
             writer.writerow(
-                [f"{key_tuple} = {MPV_DICT[fp]}, {MODULE_DICT[dev][0]}, geo={geo}"]
+                [
+                    f"{key_tuple} = {DEV_DICT[dev]}, {MPV_DICT[fp]}, {MODULE_DICT[det][0]}, geo={geo}"
+                ]
             )
 
             writer_list = []
-            for i in range(MODULE_DICT[dev][1]):
+            for i in range(MODULE_DICT[det][1]):
                 if i in mod_dict:
                     print(f"{mod_dict[i]:<11}", end="")
                     writer_list.append(mod_dict[i])
@@ -205,7 +220,7 @@ def show_all_mapinfo(map_dict: dict, filename: str) -> None:
                     print("----       ", end="")
                     writer_list.append("--")
 
-                if (i + 1) % UNIT == 0 or (i + 1) == MODULE_DICT[dev][1]:
+                if (i + 1) % UNIT == 0 or (i + 1) == MODULE_DICT[det][1]:
                     print()
                     writer.writerow(writer_list)
                     writer_list = []
