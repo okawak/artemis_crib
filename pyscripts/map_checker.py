@@ -4,31 +4,31 @@ import sys
 from ruamel.yaml import YAML
 import csv
 
-# global variable
+# Global variable
+# [artemis] home directory
 try:
     ARTHOME = os.environ["ARTEMIS_WORKDIR"]
 except:
     sys.exit("command [artlogin user] needed")
 
-# device id and name
+# [map] device id, name
 DEV_DICT = {
     12: "CRIB",  # CRIB use 12
 }
 
-# key: mod id, value: (name, channel number)
+# [map] fp, name
+FP_DICT = {
+    0: "E7MPV",  # CRIB use fp as MPV ID
+    1: "J1ADC",
+    2: "J1TDC",
+}
+
+# [map] mod id, (name, channel number)
 MODULE_DICT = {
     6: ("ADC", 32),  # for V785, MADC
     7: ("TDC", 128),  # for V1190A
     60: ("TIMESTAMP", 1),  # for MPV TS
     63: ("SCALER", 32),  # for SIS3820
-}
-
-# MPV information
-# key: fp (as MPV ID), value: name
-MPV_DICT = {
-    0: "E7MPV",
-    1: "J1ADC",
-    2: "J1TDC",
 }
 
 # after this number, begin on a new line (just format)
@@ -203,12 +203,12 @@ def show_all_mapinfo(map_dict: dict, filename: str) -> None:
                 )
 
             print(
-                f"{key_tuple} = {DEV_DICT[dev]}, {MPV_DICT[fp]}, {MODULE_DICT[det][0]}, geo={geo}"
+                f"{key_tuple} = {DEV_DICT[dev]}, {FP_DICT[fp]}, {MODULE_DICT[det][0]}, geo={geo}"
             )
 
             header_list = [""] * UNIT
             header_list[0] = (
-                f"{key_tuple} = {DEV_DICT[dev]}, {MPV_DICT[fp]}, {MODULE_DICT[det][0]}, geo={geo}"
+                f"{key_tuple} = {DEV_DICT[dev]}, {FP_DICT[fp]}, {MODULE_DICT[det][0]}, geo={geo}"
             )
             writer.writerow(header_list)
 
