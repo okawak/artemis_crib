@@ -513,7 +513,7 @@ var relearn_search_index = [
     "content": "",
     "description": "",
     "tags": null,
-    "title": "Tag :: need_update",
+    "title": "Tag :: Need_update",
     "uri": "/artemis_crib/tags/need_update/index.html"
   },
   {
@@ -537,7 +537,7 @@ var relearn_search_index = [
     "content": "",
     "description": "",
     "tags": null,
-    "title": "Tag :: unsettled",
+    "title": "Tag :: Unsettled",
     "uri": "/artemis_crib/tags/unsettled/index.html"
   },
   {

@@ -23,11 +23,12 @@ if [ -d "${userdir}" ]; then
     export ARTEMIS_USER="${username}"
     alias acd='cd ${ARTEMIS_WORKDIR}'
 
-    if [ -z "$1" ]; then
-        printf "[info] default user, please don't change anything in this directory\n"
-    fi
+    #if [ -z "$1" ]; then
+    #    printf "[info] default user, please don't change anything in this directory\n"
+    #fi
 
     if [ -e "${ARTEMIS_WORKDIR}/thisartemis-crib.sh" ]; then
+        # shellcheck disable=SC1091
         source "${ARTEMIS_WORKDIR}/thisartemis-crib.sh"
     fi
 
