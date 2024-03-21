@@ -30,27 +30,27 @@ main() {
     # default repository setting
     say "If no input is provided, the default value is used."
     readline "Input base repository path or URL (default: ${ART_REPOSITORY}): "
-    _input="$RETVAL"
-    if [ -n "${_input}" ]; then
-        ART_REPOSITORY=${_input}
+    local _art_repo="$RETVAL"
+    if [ -n "${_art_repo}" ]; then
+        ART_REPOSITORY=${_art_repo}
     fi
     printf "Input value: %s\n\n" "$ART_REPOSITORY"
 
     # raw data directory
     rawdata_dir="/data/${default_name}/ridf"
     readline "Input rawdata directory path (default: ${rawdata_dir}): "
-    _input_="$RETVAL"
-    if [ -n "${_input}" ]; then
-        rawdata_dir=${_input}
+    local _data_dir="$RETVAL"
+    if [ -n "${_data_dir}" ]; then
+        rawdata_dir=${_data_dir}
     fi
     printf "Input value: %s\n\n" "$rawdata_dir"
 
     # output rootfile directory
     outdata_dir="/data/${default_name}/user"
     readline "Input output data directory path (default: ${outdata_dir}): "
-    _input="$RETVAL"
-    if [ -n "${_input}" ]; then
-        outdata_dir=${_input}
+    local _root_dir="$RETVAL"
+    if [ -n "${_root_dir}" ]; then
+        outdata_dir=${_root_dir}
     fi
     printf "Input value: %s\n\n" "$outdata_dir"
 
@@ -68,7 +68,7 @@ main() {
 
                     art_local_repos_dir="${HOME}/repos/exp"
                     readline "Input the local repository path (default: \$HOME/repos/exp): "
-                    _retval="$RETVAL"
+                    local _retval="$RETVAL"
                     if [ -n "${_retval}" ]; then
                         art_local_repos_dir=${_retval}
                     fi
