@@ -12,19 +12,19 @@
     <link href="/artemis_crib/installation/index.xml" rel="alternate" type="application/rss+xml" title="Installation :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1710995509" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1710995509" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1710995509" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1710995509" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1710995509" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1710995509" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1710995509" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1710995509" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1710995509" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-CRIB-theme.css?1710995509" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/variant.css?1710995509" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1710995509" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/format-print.css?1710995509" rel="stylesheet">
-    <link href="/artemis_crib/css/ie.css?1710995509" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1710995509"></script>
-    <script src="/artemis_crib/js/variant.js?1710995509"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1711000250" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1711000250" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1711000250" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1711000250" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1711000250" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1711000250" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1711000250" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1711000250" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1711000250" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-CRIB-theme.css?1711000250" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/variant.css?1711000250" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1711000250" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/format-print.css?1711000250" rel="stylesheet">
+    <link href="/artemis_crib/css/ie.css?1711000250" rel="stylesheet">
+    <script src="/artemis_crib/js/url.js?1711000250"></script>
+    <script src="/artemis_crib/js/variant.js?1711000250"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -113,32 +113,22 @@
             </header>
 <h1 id="requirements">Requirements</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-02 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2024-03-21 by Kodai Okawa</span></span>
 <p>The following machines have been tested for operation.</p>
-<h3 id="1-writers-okawas-machine">1. Writer&rsquo;s (Okawa&rsquo;s) machine</h3>
+<h3 id="cribs-analysis-machine">CRIB&rsquo;s analysis machine</h3>
 <ul>
-<li>Almalinux 9.2</li>
-<li>zsh 5.8</li>
-<li>gcc 11.3.1</li>
-<li>cmake 3.20.2</li>
-<li>ROOT 6.28/04</li>
-<li>yaml-cpp 0.7.0</li>
-</ul>
-<h3 id="2-cribs-analysis-machine">2. CRIB&rsquo;s analysis machine</h3>
-<ul>
-<li>CentOS Linux release 7.9.2009 (Core)</li>
-<li>zsh 5.5.1</li>
-<li>gcc 9.3.1 (using devtoolset-9)</li>
-<li>cmake 3.28 (install manually)</li>
-<li>ROOT 6.28/06</li>
-<li>yaml-cpp 0.8.0</li>
+<li>Ubuntu 22.04.4 LTS</li>
+<li>gcc 11.4.0</li>
+<li>cmake 3.22.1</li>
+<li>ROOT 6.30/04</li>
+<li>yaml-cpp 0.7</li>
 </ul>
 <hr>
 <p>NOTE:</p>
 <ul>
 <li>From 2023/10, Ubuntu system is also avaliable. (<a href="https://github.com/artemis-dev/artemis/pull/48" target="_blank">issue48</a>)</li>
-<li>Scripts for some automate operation are written in <code>zsh</code> format.</li>
 <li>Installation seems to be difficult on <code>macOS</code> (because of <code>clang</code> not <code>gcc</code>) in the current version.</li>
+<li>We have confirmed that it works on RedHat-based Linux (Alma linux).</li>
 </ul>
 
             <footer class="footline">
@@ -151,8 +141,8 @@
             </header>
 <h1 id="cmake">cmake</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-02 by Kodai Okawa</span></span>
-<p>Generally, <code>dnf install cmake</code> or <code>brew install cmake</code> support latest version of the cmake, but for some older machine like CentOS7, it is too old to install ROOT.</p>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2024-03-21 by Kodai Okawa</span></span>
+<p>Generally, <code>sudo dnf install cmake</code>, <code>sudo apt install cmake</code> or <code>brew install cmake</code> support latest version of the cmake, but for some older machine like CentOS7, it is too old to install ROOT.</p>
 <p>The latest ROOT require CMake 3.16 or higher, and if your system doesn&rsquo;t support this version, you need to install manually.</p>
 <p>You can get more information from <a href="https://github.com/Kitware/Cmake" target="_blank">here</a>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> hoge
@@ -173,29 +163,24 @@ The default branch is <code>master</code>.</p>
             </header>
 <h1 id="root">ROOT</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-02 by Kodai Okawa</span></span>
-<p>Artemis uses <a href="https://root.cern/" target="_blank">ROOT library</a>.</p>
-<p>We confirmed that version 6.28 of the ROOT will work well, but if the ROOT updates, we are not sure that the ARTEMIS will work well,
-so we recommend to build from the sources.</p>
-<p>For detailded information, please refer <a href="https://root.cern/install/" target="_blank">Installing ROOT</a>
-Recommendations are described below.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># The latest stable branch gets updated automatically on each release.</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># You may update your local copy by issuing a `git pull` command from within `root_src/`.</span>
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> hoge
-</span></span><span class="line"><span class="cl">git clone --branch latest-stable --depth<span class="o">=</span><span class="m">1</span> https://github.com/root-project/root.git root_src
+<span class="badge cstyle default"><span class="badge-content">last modified: 2024-03-21 by Kodai Okawa</span></span>
+<p>Artemis uses <a href="https://root.cern/" target="_blank">ROOT library</a>.
+For detailded information, please refer <a href="https://root.cern/install/" target="_blank">Installing ROOT</a></p>
+<p>This is one example to install the ROOT from the source.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># You may update your local copy by issuing a `git pull` command from within `root_src/`.</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> install_dir
+</span></span><span class="line"><span class="cl">git clone https://github.com/root-project/root.git root_src
+</span></span><span class="line"><span class="cl"><span class="c1"># check out the tag to specify the ROOT version</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> root_src
+</span></span><span class="line"><span class="cl">git checkout -b v6-30-04 refs/tags/v6-30-04
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ..
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">mkdir root_build root_install <span class="o">&amp;&amp;</span> <span class="nb">cd</span> root_build
-</span></span><span class="line"><span class="cl">cmake -DCMAKE_INSTALL_PREFIX<span class="o">=</span>../root_install ../root_src <span class="c1"># &amp;&amp; check cmake configuration output for warnings or errors</span>
-</span></span><span class="line"><span class="cl">cmake --build . -- install -j4 <span class="c1"># if you have 4 cores available for compilation</span>
+</span></span><span class="line"><span class="cl">cmake -DCMAKE_INSTALL_PREFIX<span class="o">=</span>../root_install -Dmathmore<span class="o">=</span>ON ../root_src <span class="c1"># &amp;&amp; check cmake configuration output for warnings or errors</span>
+</span></span><span class="line"><span class="cl">make -j4
+</span></span><span class="line"><span class="cl">make install
 </span></span><span class="line"><span class="cl"><span class="nb">source</span> ../root_install/bin/thisroot.sh <span class="c1"># or thisroot.{fish,csh}</span></span></span></code></pre></div><p>If there are any problems at the compile, additional packages may need to be installed.
 See also <a href="https://root.cern/install/dependencies/" target="_blank">dependencies</a>.</p>
-
-<div class="box notices cstyle info">
-  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
-  <div class="box-content">
-
-<p>If errors related to xrootd, TBB and clad occur, the cmake options <code>-Dxrootd=OFF</code>, <code>-Dimt=OFF</code> and <code>-Dclad=OFF</code> may work respectively.</p>
-</div>
-</div>
 <p>I recommend to write <code>source thisroot.sh</code> part in the .bashrc/.zshrc to load this library.</p>
 
             <footer class="footline">
@@ -208,19 +193,10 @@ See also <a href="https://root.cern/install/dependencies/" target="_blank">depen
             </header>
 <h1 id="yaml-cpp">yaml-cpp</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-02 by Kodai Okawa</span></span>
-
-<div class="box notices cstyle info">
-  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
-  <div class="box-content">
-
-<p>The yaml-cpp can be installed by some package manager like <code>apt</code> or <code>dnf</code>, but I&rsquo;m not sure it will work or not in the installation of the artemis.</p>
-</div>
-</div>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2024-03-21 by Kodai Okawa</span></span>
 <p>Current version of the artemis use yaml-cpp-0.7 or higher.
-In order to use this library, please install from the repository.</p>
-<p>See also <a href="https://github.com/jbeder/yaml-cpp" target="_blank">Github repo</a> and <a href="https://github.com/artemis-dev/artemis/blob/develop/README.md" target="_blank">README of the artemis</a>
-Please install it as a shared object like below commands.</p>
+The <code>sudo dnf install yaml-cpp-devel</code> or <code>sudo apt install libyaml-cpp-dev</code> will work.</p>
+<p>If you want to install from the source, please check <a href="https://github.com/jbeder/yaml-cpp" target="_blank">Github repo</a> and <a href="https://github.com/artemis-dev/artemis/blob/develop/README.md" target="_blank">README of the artemis</a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> hoge
 </span></span><span class="line"><span class="cl">git clone https://github.com/jbeder/yaml-cpp.git
 </span></span><span class="line"><span class="cl"><span class="nb">cd</span> yaml-cpp
@@ -243,7 +219,7 @@ If you do not want to pollute the general environment, specify <code>CMAKE_INSTA
             </header>
 <h1 id="artemis">artemis</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-02 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2024-03-21 by Kodai Okawa</span></span>
 <p>From the current situation, CRIB experiment doesn&rsquo;t use GET system,
 so we describe how to install it without linking it to GET decoder.</p>
 <p>Also, it can link to <code>openMPI</code>, but the below commands assume not using openMPI.
@@ -254,7 +230,7 @@ See <a href="https://github.com/artemis-dev/artemis/blob/develop/README.md" targ
 </span></span><span class="line"><span class="cl">mkdir build
 </span></span><span class="line"><span class="cl"><span class="nb">cd</span> build
 </span></span><span class="line"><span class="cl">cmake -DCMAKE_INSTALL_PREFIX<span class="o">=</span>../install ..
-</span></span><span class="line"><span class="cl">make -j8
+</span></span><span class="line"><span class="cl">make -j4
 </span></span><span class="line"><span class="cl">make install
 </span></span><span class="line"><span class="cl"><span class="nb">source</span> ../install/bin/thisartemis.sh</span></span></code></pre></div><p>Then, <code>&lt;CMAKE_INSTALL_PREFIX&gt;/bin/thisartemis.sh</code> will be created
 and this shell script can configure the environment (ROOT, yaml-cpp, artemis libraries) to use artemis.</p>
@@ -262,25 +238,10 @@ and this shell script can configure the environment (ROOT, yaml-cpp, artemis lib
 <p>Another option is to use <code>module</code> command to manage the environment.
 It is also written in <a href="https://github.com/artemis-dev/artemis/blob/develop/README.md" target="_blank">artemis repo</a>.</p>
 <hr>
+<h3 id="note">Note</h3>
+<p>For the CRIB experiment setting, we modified some parts of artemis source.</p>
+<p>Please check the <a href="/artemis_crib/installation/artemis/../../crib_parts/">CRIB configuration</a>.</p>
 
-<div class="box notices cstyle note">
-  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
-  <div class="box-content">
-
-<p>This is 2023/10/29 current information</p>
-</div>
-</div>
-<p>Okawa think there is a grammatical error in the <strong>sources/main/thisartemis.sh.in</strong>, so I changed like:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-diff" data-lang="diff"><span class="line"><span class="cl"><span class="gd">-if [ &#34;@BUILD_GET@&#34; == &#34;ON&#34; ]; then
-</span></span></span><span class="line"><span class="cl"><span class="gd"></span><span class="gi">+if [[ &#34;@BUILD_GET@&#34; == &#34;ON&#34; ]]; then
-</span></span></span><span class="line"><span class="cl"><span class="gi"></span>     export LD_LIBRARY_PATH=@GET_LIB_DIR@:$LD_LIBRARY_PATH
-</span></span><span class="line"><span class="cl"> fi
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="gd">-if [ &#34;@MPI_CXX_FOUND@&#34; == &#34;TRUE&#34; ]; then
-</span></span></span><span class="line"><span class="cl"><span class="gd"></span><span class="gi">+if [[ &#34;@MPI_CXX_FOUND@&#34; == &#34;TRUE&#34; ]]; then
-</span></span></span><span class="line"><span class="cl"><span class="gi"></span>     dir=@MPI_CXX_LIBRARIES@
-</span></span><span class="line"><span class="cl">     libdir=&#34;$(dirname $dir)&#34;
-</span></span></code></pre></div>
             <footer class="footline">
 
             </footer>
@@ -294,7 +255,7 @@ It is also written in <a href="https://github.com/artemis-dev/artemis/blob/devel
             </header>
 <h1 id="mount-setting">mount setting</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-02 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2024-03-21 by Kodai Okawa</span></span>
 <p>For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory.
 So first, we need to make raw data directory.</p>
 <p>There are three option to do so.</p>
@@ -336,59 +297,8 @@ graph LR;
     C(MPV2 J1) --&gt; D
     D --&gt; E[Analysis PC]
 </div>
-<p>As this figure, we use file server in the DAQ main PC.</p>
-<h5 id="31-server-setting">3.1 server setting</h5>
-<p>The OS of the DAQ PC is CentOS7, but I think it can be applied for current OS. (like <code>yum</code> -&gt; <code>dnf</code>)
-First, please install required package.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo yum install -y rpcbind nfs-utils</span></span></code></pre></div><p>Then prepare the raw data file directory for sharing.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir /data <span class="o">(</span>any location<span class="o">)</span> </span></span></code></pre></div><p>And setting file for nfs is <code>/etc/exports</code>, and here is the example.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">/data 192.168.1.5
-</span></span><span class="line"><span class="cl">/data 192.168.2.0/24(rw)</span></span></code></pre></div><p>The first one means the host of 192.168.1.5 can access the shared directory &ldquo;/data&rdquo;.
-In the default setting, users cannot write to this directory.</p>
-<p>The host of the second line means the range that can access.
-If we add <code>rw</code> option, users can write to this directory.
-For the other options, please check <a href="https://access.redhat.com/documentation/ja-jp/red_hat_enterprise_linux/7/html/storage_administration_guide/nfs-serverconfig" target="_blank">the official site</a>.</p>
-<p>Finally, the following command is used to reflect the settings.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">firewall-cmd --permanent --zone<span class="o">=</span>public --add-service<span class="o">=</span>nfs
-</span></span><span class="line"><span class="cl">firewall-cmd --reload
-</span></span><span class="line"><span class="cl">systemctl start rpcbind
-</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> rpcbind
-</span></span><span class="line"><span class="cl">systemctl start nfs
-</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> nfs</span></span></code></pre></div><p>If you do not have a firewall set up, you do not need the relevant commands.</p>
-<h5 id="32-client-setting">3.2 client setting</h5>
-<p>The package is also needed for client PC.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo yum install -y nfs-utils</span></span></code></pre></div><p>Prepare the mounted directory and mount it.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir /mnt/data
-</span></span><span class="line"><span class="cl">sudo mount -t nfs host_IP_address:/data /mnt/data
-</span></span><span class="line"><span class="cl">df -h</span></span></code></pre></div><p>If you see the mounted configuration, your nfs configuration is complete.</p>
-<p>To reflect the mount settings when the system is rebooted, add a setting to <code>/etc/fstab</code>.</p>
+<p>If you mount some storage, please not the mount point because we need the information of mount point when we configure the <a href="/artemis_crib/installation/mount/../../setting/new_experiment">new experiment environment</a>.</p>
 
-  
-<div class="tab-panel" data-tab-group="cd5569f0a2691dfdf4bd5af6540e814a">
-  <div class="tab-nav">
-    <div class="tab-nav-title">&#8203;</div>
-    <button
-      data-tab-item="etcfstab"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('cd5569f0a2691dfdf4bd5af6540e814a','etcfstab')"
-    >
-      <span>
-        <span class="tab-nav-hidden">/etc/fstab</span>
-        <span class="tab-nav-text">/etc/fstab</span>
-      </span>
-    </button>
-  </div>
-  <div class="tab-content-container">
-    <div
-      data-tab-item="etcfstab"
-      class="tab-content tab-panel-style cstyle initial active">
-      <div class="tab-content-text">
-
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-diff" data-lang="diff"><span class="line"><span class="cl"><span class="gi">+ host_IP_address:/data   /mnt/data   nfs   defaults   0 0
-</span></span></span></code></pre></div></div>
-    </div>
-  </div>
-</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo mount -a</span></span></code></pre></div>
             <footer class="footline">
 
             </footer>
@@ -431,18 +341,18 @@ In particular, a library called <a href="https://github.com/okawak/SRIMlib" targ
             </header>
 <h1 id="art_analysis">art_analysis</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-14 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2024-03-21 by Kodai Okawa</span></span>
 <p>With this command, all initial settings of &ldquo;art_analysis&rdquo; are made.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl --proto <span class="s1">&#39;=https&#39;</span> --tlsv1.2 -sSf https://okawak.github.io/artemis_crib/bin/init.sh <span class="p">|</span> sh</span></span></code></pre></div><p>After that, please add the following lines to the .bashrc/.zshrc.</p>
 
   
-<div class="tab-panel" data-tab-group="02385c5cf0549a174dce80c29798422f">
+<div class="tab-panel" data-tab-group="cf70a4b48df1d13a5db286fce5d51a50">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="bashrczshrc"
       class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('02385c5cf0549a174dce80c29798422f','bashrczshrc')"
+      onclick="switchTab('cf70a4b48df1d13a5db286fce5d51a50','bashrczshrc')"
     >
       <span>
         <span class="tab-nav-hidden">.bashrc/.zshrc</span>
@@ -457,9 +367,9 @@ In particular, a library called <a href="https://github.com/okawak/SRIMlib" targ
       <div class="tab-content-text">
 
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># this is option</span>
-</span></span><span class="line"><span class="cl"><span class="nb">source</span> <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/Cern/root/root_install/bin/thisroot.sh <span class="p">&amp;</span>&gt; /dev/null
-</span></span><span class="line"><span class="cl"><span class="nb">source</span> <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/repos/artemis/install/bin/thisartemis.sh <span class="p">&amp;</span>&gt; /dev/null
-</span></span><span class="line"><span class="cl"><span class="nb">source</span> <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/repos/SRIMlib/thisSRIMlib.sh <span class="p">&amp;</span>&gt; /dev/null
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> /path/to/thisroot.sh <span class="p">&amp;</span>&gt; /dev/null
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> /path/to/thisartemis.sh <span class="p">&amp;</span>&gt; /dev/null
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> /path/to/thisSRIMlib.sh <span class="p">&amp;</span>&gt; /dev/null
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># need from this line!</span>
 </span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">EXP_NAME</span><span class="o">=</span><span class="s2">&#34;expname&#34;</span> <span class="c1"># your experiment</span>
@@ -489,8 +399,8 @@ In particular, a library called <a href="https://github.com/okawak/SRIMlib" targ
         </div>
       </main>
     </div>
-    <script src="/artemis_crib/js/clipboard.min.js?1710995509" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1710995509" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1711000250" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1711000250" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -520,20 +430,20 @@ In particular, a library called <a href="https://github.com/okawak/SRIMlib" targ
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/d3/d3-color.min.js?1710995509" defer></script>
-    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1710995509" defer></script>
-    <script src="/artemis_crib/js/d3/d3-drag.min.js?1710995509" defer></script>
-    <script src="/artemis_crib/js/d3/d3-ease.min.js?1710995509" defer></script>
-    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1710995509" defer></script>
-    <script src="/artemis_crib/js/d3/d3-selection.min.js?1710995509" defer></script>
-    <script src="/artemis_crib/js/d3/d3-timer.min.js?1710995509" defer></script>
-    <script src="/artemis_crib/js/d3/d3-transition.min.js?1710995509" defer></script>
-    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1710995509" defer></script>
-    <script src="/artemis_crib/js/js-yaml.min.js?1710995509" defer></script>
-    <script src="/artemis_crib/js/mermaid.min.js?1710995509" defer></script>
+    <script src="/artemis_crib/js/d3/d3-color.min.js?1711000250" defer></script>
+    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1711000250" defer></script>
+    <script src="/artemis_crib/js/d3/d3-drag.min.js?1711000250" defer></script>
+    <script src="/artemis_crib/js/d3/d3-ease.min.js?1711000250" defer></script>
+    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1711000250" defer></script>
+    <script src="/artemis_crib/js/d3/d3-selection.min.js?1711000250" defer></script>
+    <script src="/artemis_crib/js/d3/d3-timer.min.js?1711000250" defer></script>
+    <script src="/artemis_crib/js/d3/d3-transition.min.js?1711000250" defer></script>
+    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1711000250" defer></script>
+    <script src="/artemis_crib/js/js-yaml.min.js?1711000250" defer></script>
+    <script src="/artemis_crib/js/mermaid.min.js?1711000250" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{}");
     </script>
-    <script src="/artemis_crib/js/theme.js?1710995509" defer></script>
+    <script src="/artemis_crib/js/theme.js?1711000250" defer></script>
   </body>
 </html>

@@ -11,42 +11,42 @@
       <link>https://okawak.github.io/artemis_crib/installation/requirements/index.html</link>
       <pubDate>Mon, 14 Aug 2023 13:36:14 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/requirements/index.html</guid>
-      <description>last modified: 2023-11-02 by Kodai Okawa The following machines have been tested for operation.</description>
+      <description>last modified: 2024-03-21 by Kodai Okawa The following machines have been tested for operation.</description>
     </item>
     <item>
       <title>cmake</title>
       <link>https://okawak.github.io/artemis_crib/installation/cmake/index.html</link>
       <pubDate>Sun, 29 Oct 2023 16:03:04 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/cmake/index.html</guid>
-      <description>last modified: 2023-11-02 by Kodai Okawa Generally, dnf install cmake or brew install cmake support latest version of the cmake, but for some older machine like CentOS7, it is too old to install ROOT.</description>
+      <description>last modified: 2024-03-21 by Kodai Okawa Generally, sudo dnf install cmake, sudo apt install cmake or brew install cmake support latest version of the cmake, but for some older machine like CentOS7, it is too old to install ROOT.</description>
     </item>
     <item>
       <title>ROOT</title>
       <link>https://okawak.github.io/artemis_crib/installation/root/index.html</link>
       <pubDate>Mon, 14 Aug 2023 12:27:52 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/root/index.html</guid>
-      <description>last modified: 2023-11-02 by Kodai Okawa Artemis uses ROOT library.</description>
+      <description>last modified: 2024-03-21 by Kodai Okawa Artemis uses ROOT library. For detailded information, please refer Installing ROOT</description>
     </item>
     <item>
       <title>yaml-cpp</title>
       <link>https://okawak.github.io/artemis_crib/installation/yaml-cpp/index.html</link>
       <pubDate>Mon, 14 Aug 2023 13:57:35 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/yaml-cpp/index.html</guid>
-      <description>last modified: 2023-11-02 by Kodai Okawa Info The yaml-cpp can be installed by some package manager like apt or dnf, but I&amp;rsquo;m not sure it will work or not in the installation of the artemis.</description>
+      <description>last modified: 2024-03-21 by Kodai Okawa Current version of the artemis use yaml-cpp-0.</description>
     </item>
     <item>
       <title>artemis</title>
       <link>https://okawak.github.io/artemis_crib/installation/artemis/index.html</link>
       <pubDate>Mon, 14 Aug 2023 14:28:33 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/artemis/index.html</guid>
-      <description>last modified: 2023-11-02 by Kodai Okawa From the current situation, CRIB experiment doesn&amp;rsquo;t use GET system, so we describe how to install it without linking it to GET decoder.</description>
+      <description>last modified: 2024-03-21 by Kodai Okawa From the current situation, CRIB experiment doesn&amp;rsquo;t use GET system, so we describe how to install it without linking it to GET decoder.</description>
     </item>
     <item>
       <title>mount setting</title>
       <link>https://okawak.github.io/artemis_crib/installation/mount/index.html</link>
       <pubDate>Mon, 14 Aug 2023 15:14:29 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/mount/index.html</guid>
-      <description>last modified: 2023-11-02 by Kodai Okawa For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory.</description>
+      <description>last modified: 2024-03-21 by Kodai Okawa For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory.</description>
     </item>
     <item>
       <title>energyloss calculator</title>
@@ -60,7 +60,7 @@
       <link>https://okawak.github.io/artemis_crib/installation/art_analysis/index.html</link>
       <pubDate>Mon, 14 Aug 2023 15:14:43 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/art_analysis/index.html</guid>
-      <description>last modified: 2023-11-14 by Kodai Okawa With this command, all initial settings of &amp;ldquo;art_analysis&amp;rdquo; are made.</description>
+      <description>last modified: 2024-03-21 by Kodai Okawa With this command, all initial settings of &amp;ldquo;art_analysis&amp;rdquo; are made.</description>
     </item>
   </channel>
 </rss>

@@ -61,14 +61,14 @@
       <link>https://okawak.github.io/artemis_crib/installation/artemis/index.html</link>
       <pubDate>Mon, 14 Aug 2023 14:28:33 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/artemis/index.html</guid>
-      <description>last modified: 2023-11-02 by Kodai Okawa From the current situation, CRIB experiment doesn&amp;rsquo;t use GET system, so we describe how to install it without linking it to GET decoder.</description>
+      <description>last modified: 2024-03-21 by Kodai Okawa From the current situation, CRIB experiment doesn&amp;rsquo;t use GET system, so we describe how to install it without linking it to GET decoder.</description>
     </item>
     <item>
       <title>mount setting</title>
       <link>https://okawak.github.io/artemis_crib/installation/mount/index.html</link>
       <pubDate>Mon, 14 Aug 2023 15:14:29 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/mount/index.html</guid>
-      <description>last modified: 2023-11-02 by Kodai Okawa For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory.</description>
+      <description>last modified: 2024-03-21 by Kodai Okawa For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory.</description>
     </item>
     <item>
       <title>energyloss calculator</title>
@@ -82,7 +82,7 @@
       <link>https://okawak.github.io/artemis_crib/installation/art_analysis/index.html</link>
       <pubDate>Mon, 14 Aug 2023 15:14:43 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/art_analysis/index.html</guid>
-      <description>last modified: 2023-11-14 by Kodai Okawa With this command, all initial settings of &amp;ldquo;art_analysis&amp;rdquo; are made.</description>
+      <description>last modified: 2024-03-21 by Kodai Okawa With this command, all initial settings of &amp;ldquo;art_analysis&amp;rdquo; are made.</description>
     </item>
     <item>
       <title>Minor changes</title>
