@@ -9,7 +9,7 @@ tags: []
 
 {{% badge %}}{{< signature >}}{{% /badge %}}
 
-Generally, `dnf install cmake` or `brew install cmake` support latest version of the cmake, but for some older machine like CentOS7, it is too old to install ROOT.
+Generally, `sudo dnf install cmake`, `sudo apt install cmake` or `brew install cmake` support latest version of the cmake, but for some older machine like CentOS7, it is too old to install ROOT.
 
 The latest ROOT require CMake 3.16 or higher, and if your system doesn't support this version, you need to install manually.
 

@@ -19,9 +19,9 @@ After that, please add the following lines to the .bashrc/.zshrc.
 
 ```shell { title=".bashrc/.zshrc" wrap="false" }
 # this is option
-source ${HOME}/Cern/root/root_install/bin/thisroot.sh &> /dev/null
-source ${HOME}/repos/artemis/install/bin/thisartemis.sh &> /dev/null
-source ${HOME}/repos/SRIMlib/thisSRIMlib.sh &> /dev/null
+source /path/to/thisroot.sh &> /dev/null
+source /path/to/thisartemis.sh &> /dev/null
+source /path/to/thisSRIMlib.sh &> /dev/null
 
 # need from this line!
 export EXP_NAME="expname" # your experiment

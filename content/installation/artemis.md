@@ -22,7 +22,7 @@ cd artemis
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=../install ..
-make -j8
+make -j4
 make install
 source ../install/bin/thisartemis.sh
 ```
@@ -37,21 +37,8 @@ It is also written in [artemis repo](https://github.com/artemis-dev/artemis/blob
 
 ---
 
-{{% notice style="note" %}}
-This is 2023/10/29 current information 
-{{% /notice %}}
+### Note
 
-Okawa think there is a grammatical error in the **sources/main/thisartemis.sh.in**, so I changed like:
+For the CRIB experiment setting, we modified some parts of artemis source.
 
-
-```diff { wrap="false" }
--if [ "@BUILD_GET@" == "ON" ]; then
-+if [[ "@BUILD_GET@" == "ON" ]]; then
-     export LD_LIBRARY_PATH=@GET_LIB_DIR@:$LD_LIBRARY_PATH
- fi
-
--if [ "@MPI_CXX_FOUND@" == "TRUE" ]; then
-+if [[ "@MPI_CXX_FOUND@" == "TRUE" ]]; then
-     dir=@MPI_CXX_LIBRARIES@
-     libdir="$(dirname $dir)"
-```
+Please check the [CRIB configuration](../../crib_parts/).

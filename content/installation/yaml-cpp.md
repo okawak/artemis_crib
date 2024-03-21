@@ -8,15 +8,10 @@ weight: 4
 
 {{% badge %}}{{< signature >}}{{% /badge %}}
 
-{{% notice style="info" %}}
-The yaml-cpp can be installed by some package manager like `apt` or `dnf`, but I'm not sure it will work or not in the installation of the artemis.
-{{% /notice %}}
-
 Current version of the artemis use yaml-cpp-0.7 or higher.
-In order to use this library, please install from the repository.
+The `sudo dnf install yaml-cpp-devel` or `sudo apt install libyaml-cpp-dev` will work.
 
-See also [Github repo](https://github.com/jbeder/yaml-cpp) and [README of the artemis](https://github.com/artemis-dev/artemis/blob/develop/README.md)
-Please install it as a shared object like below commands.
+If you want to install from the source, please check [Github repo](https://github.com/jbeder/yaml-cpp) and [README of the artemis](https://github.com/artemis-dev/artemis/blob/develop/README.md)
 
 ```shell { wrap="false" }
 cd hoge
