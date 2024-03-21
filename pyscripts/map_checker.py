@@ -194,7 +194,7 @@ def add_tref_info(map_dict: dict) -> dict:
 def show_all_mapinfo(map_dict: dict, filename: str) -> None:
     print("\033[1m\033[4mOutput format [CatID]-[fID][ch]\033[0m\n")
     with open(f"{ARTHOME}/{filename}", mode="w", newline="") as file:
-        writer = csv.writer(file)
+        writer = csv.writer(file, lineterminator='\n')
         for key_tuple, mod_dict in sorted(map_dict.items()):
             dev, fp, det, geo = key_tuple
             if not det in MODULE_DICT:
