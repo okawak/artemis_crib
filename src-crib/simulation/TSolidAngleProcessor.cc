@@ -39,11 +39,15 @@ TSolidAngleProcessor::TSolidAngleProcessor() : fInData_cm(NULL), fInData_det(NUL
 }
 
 TSolidAngleProcessor::~TSolidAngleProcessor() {
-    delete h1;
-    delete h1_all;
+    delete h1_e;
+    delete h1_e_all;
+    delete h1_a;
+    delete h1_a_all;
     delete h2;
-    h1 = NULL;
-    h1_all = NULL;
+    h1_e = NULL;
+    h1_e_all = NULL;
+    h1_a = NULL;
+    h1_a_all = NULL;
     h2 = NULL;
 }
 
@@ -77,10 +81,12 @@ void TSolidAngleProcessor::Init(TEventCollection *col) {
         SetStateError("contents of input array must inherit from art::TTelescopeData");
     }
 
-    h1_all = new TH1D("normalize_1D", "normalize_1D", fNbin_energy, fRange_energy[0], fRange_energy[1]);
+    h1_e_all = new TH1D("normalize_1D_energy", "normalize_1D_energy", fNbin_energy, fRange_energy[0], fRange_energy[1]);
+    h1_a_all = new TH1D("normalize_1D_angle", "normalize_1D_angle", fNbin_angle, fRange_angle[0], fRange_angle[1]);
     h2_all = new TH2D("normalize_2D", "normalize_2D", fNbin_energy, fRange_energy[0], fRange_energy[1], fNbin_angle,
                       fRange_angle[0], fRange_angle[1]);
-    h1 = new TH1D("SolidAngle_1D", "SolidAngle_1D", fNbin_energy, fRange_energy[0], fRange_energy[1]);
+    h1_e = new TH1D("SolidAngle_1D_energy", "SolidAngle_1D_energy", fNbin_energy, fRange_energy[0], fRange_energy[1]);
+    h1_a = new TH1D("SolidAngle_1D_angle", "SolidAngle_1D_angle", fNbin_angle, fRange_angle[0], fRange_angle[1]);
     h2 = new TH2D("SolidAngle_2D", "SolidAngle_2D", fNbin_energy, fRange_energy[0], fRange_energy[1], fNbin_angle,
                   fRange_angle[0], fRange_angle[1]);
 }
@@ -93,7 +99,7 @@ void TSolidAngleProcessor::Process() {
 
     const TDataObject *const inData = static_cast<TDataObject *>((*fInData_cm)->At(0));
     const TReactionInfo *const Data = dynamic_cast<const TReactionInfo *>(inData);
-    h1_all->Fill(Data->GetEnergy());
+    h1_e_all->Fill(Data->GetEnergy());
     for (Int_t i = 0; i < fNbin_angle; i++) {
         Double_t angle_center = fRange_angle[0] + (fRange_angle[1] - fRange_angle[0]) / (2.0 * fNbin_angle) +
                                 (Double_t)i * (fRange_angle[1] - fRange_angle[0]) / fNbin_angle;
@@ -106,7 +112,7 @@ void TSolidAngleProcessor::Process() {
             return;
         }
 
-        h1->Fill(Data->GetEnergy());
+        h1_e->Fill(Data->GetEnergy());
         if (fIsIK) {
             h2->Fill(Data->GetEnergy(), 180.0 - Data->GetTheta()); // assume inverse kinematics
         } else {
@@ -123,13 +129,13 @@ void TSolidAngleProcessor::PostLoop() {
         return;
     }
 
-    h1->Divide(h1_all);
+    h1_e->Divide(h1_e_all);
     h2->Divide(h2_all);
 
-    h1->Scale(4.0 * TMath::Pi());
+    h1_e->Scale(4.0 * TMath::Pi());
     h2->Scale(4.0 * TMath::Pi());
 
-    h1->Write("SolidAngle_1D");
+    h1_e->Write("SolidAngle_1D");
     h2->Write("SolidAngle_2D");
 
     file->Close();

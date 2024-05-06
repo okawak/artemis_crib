@@ -39,12 +39,11 @@ Processor:
     type: art::TRandomBeamGenerator
     parameter:
       OutputCollection: beam
-      OutputTrackCollection: tracking
+      OutputTrackCollection: tracking # used for reconstract simulation
       #beam particle information
       MassNum: *A1
       AtomicNum: *Z1
       ChargeNum: *Z1
-      Mass: *M1 # amu
       IniEnergy: 55.5 # MeV (after window)
       #beam tracking information
       Xsigma: 1.0 # mm
