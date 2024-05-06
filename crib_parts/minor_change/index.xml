@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Minor changes on CRIB artemis</title>
+    <title>Minor changes :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/crib_parts/minor_change/index.html</link>
-    <description>Recent content in Minor changes on CRIB artemis</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>last modified: 2024-01-11 by Kodai Okawa thisartemis.sh.in Grammar issue I think.</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Nov 2023 15:05:52 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/crib_parts/minor_change/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://okawak.github.io/artemis_crib/crib_parts/minor_change/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

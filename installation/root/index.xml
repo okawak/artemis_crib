@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ROOT on CRIB artemis</title>
+    <title>ROOT :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/installation/root/index.html</link>
-    <description>Recent content in ROOT on CRIB artemis</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>last modified: 2024-03-21 by Kodai Okawa Artemis uses ROOT library. For detailded information, please refer Installing ROOT</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Aug 2023 12:27:52 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/installation/root/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://okawak.github.io/artemis_crib/installation/root/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

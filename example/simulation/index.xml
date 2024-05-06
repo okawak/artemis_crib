@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MC Simulation on CRIB artemis</title>
+    <title>MC Simulation :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/simulation/index.html</link>
-    <description>Recent content in MC Simulation on CRIB artemis</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://okawak.github.io/artemis_crib/example/simulation/index.xml" rel="self" type="application/rss+xml" />
+    <description>This section explain the example of the Monte Carlo simulation by using artemis.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://okawak.github.io/artemis_crib/example/simulation/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Beam_generator</title>
+      <title>Beam Generator</title>
       <link>https://okawak.github.io/artemis_crib/example/simulation/beam_generator/index.html</link>
       <pubDate>Fri, 25 Aug 2023 18:45:16 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/simulation/beam_generator/index.html</guid>
-      <description>last modified: 2023-09-29 by Kodai Okawa The previous sections have described how to loop events from a ridf file or root file, but now I will describe how to generate events to use as a simulation.</description>
+      <description>last modified: 2024-05-06 by Kodai Okawa Requirements:&#xA;src-crib/simulation/TRandomBeamGenerator src-crib/simulation/TTreeBeamGenerator src-crib/simulation/TParticleInfo As you know, an “event store” must be used to analyse the event loop.</description>
     </item>
     <item>
       <title>Nbodyreaction</title>

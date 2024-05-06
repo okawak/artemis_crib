@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CRIB Configuration on CRIB artemis</title>
+    <title>CRIB Configuration :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/crib_parts/index.html</link>
-    <description>Recent content in CRIB Configuration on CRIB artemis</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://okawak.github.io/artemis_crib/crib_parts/index.xml" rel="self" type="application/rss+xml" />
+    <description>Artemis configuration varies from experiment to experiment. We would like to explain in this chapter how they are configured and used in CRIB experiment.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://okawak.github.io/artemis_crib/crib_parts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Analysis environment</title>
       <link>https://okawak.github.io/artemis_crib/crib_parts/environment/index.html</link>

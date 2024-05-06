@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MUX calibration on CRIB artemis</title>
+    <title>MUX calibration :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/preparation/mux_calibration/index.html</link>
-    <description>Recent content in MUX calibration on CRIB artemis</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>last modified: 2024-01-22 by Kodai Okawa updating…</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Dec 2023 14:58:53 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/example/preparation/mux_calibration/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://okawak.github.io/artemis_crib/example/preparation/mux_calibration/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

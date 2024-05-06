@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Timestamp on CRIB artemis</title>
+    <title>Timestamp :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/online_analysis/timestamp/index.html</link>
-    <description>Recent content in Timestamp on CRIB artemis</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>last modified: 2023-12-15 by Kodai Okawa </description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Dec 2023 17:24:58 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/example/online_analysis/timestamp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://okawak.github.io/artemis_crib/example/online_analysis/timestamp/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -1,47 +1,58 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.124.1">
-    <meta name="generator" content="Relearn 5.22.0">
-    <meta name="description" content="Documentation for CRIB artemis">
-    <meta name="author" content="map[name:Kodai Okawa]">
+    <meta name="generator" content="Hugo 0.125.6">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="This chapter describes how to prepare the configuration file for the experiment.">
+    <meta name="author" content="Kodai Okawa">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Setting :: CRIB artemis">
+    <meta name="twitter:description" content="This chapter describes how to prepare the configuration file for the experiment.">
+    <meta property="og:url" content="https://okawak.github.io/artemis_crib/setting/index.html">
+    <meta property="og:site_name" content="CRIB artemis">
+    <meta property="og:title" content="Setting :: CRIB artemis">
+    <meta property="og:description" content="This chapter describes how to prepare the configuration file for the experiment.">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Setting :: CRIB artemis">
+    <meta itemprop="description" content="This chapter describes how to prepare the configuration file for the experiment.">
+    <meta itemprop="dateModified" content="2023-12-23T23:02:21+09:00">
+    <meta itemprop="wordCount" content="40">
     <title>Setting :: CRIB artemis</title>
     <link href="https://okawak.github.io/artemis_crib/setting/index.html" rel="canonical" type="text/html" title="Setting :: CRIB artemis">
     <link href="/artemis_crib/setting/index.xml" rel="alternate" type="application/rss+xml" title="Setting :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1711000250" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1711000250" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1711000250" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1711000250" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1711000250" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1711000250" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1711000250" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1711000250" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1711000250" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-CRIB-theme.css?1711000250" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/variant.css?1711000250" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1711000250" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/format-print.css?1711000250" rel="stylesheet">
-    <link href="/artemis_crib/css/ie.css?1711000250" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1711000250"></script>
-    <script src="/artemis_crib/js/variant.js?1711000250"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1714988881" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1714988881" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1714988881" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1714988881" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1714988881" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1714988881" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1714988881" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1714988881" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1714988881" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-CRIB-theme.css?1714988881" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/chroma-relearn-dark.css?1714988881" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/artemis_crib/css/variant.css?1714988881" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1714988881" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/format-print.css?1714988881" rel="stylesheet">
+    <script src="/artemis_crib/js/variant.js?1714988881"></script>
     <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/okawak.github.io\/artemis_crib';
       window.index_js_url="/artemis_crib/index.search.js";
-      var root_url="/";
-      var baseUri=root_url.replace(/\/$/, '');
+      // variant stuff
+      window.variants && variants.init( [ 'CRIB-theme', 'zen-dark', 'learn', 'relearn-dark' ] );
       // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_Reset_view = 'Reset view';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/okawak.github.io\/artemis_crib/';
-      window.variants && variants.init( [ 'CRIB-theme', 'relearn-auto', 'relearn-dark', 'zen-dark', 'learn' ] );
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
 
   
@@ -65,16 +76,17 @@
         <div class="topbar-wrapper">
           <div class="topbar-sidebar-divider"></div>
           <div class="topbar-area topbar-area-start" data-area="start">
-            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
-              <button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)">
-                <i class="fa-fw fas fa-bars"></i>
-              </button>
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
             </div>
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Setting</span><meta itemprop="position" content="1"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/artemis_crib/installation/art_analysis/index.html" title="art_analysis (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/artemis_crib/setting/new_experiment/index.html" title="New experiment (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
           </div>
         </div>
       </nav>
@@ -85,6 +97,7 @@
             <header class="headline">
             </header>
 <div class="article-subheading">Chapter 2</div>
+
 <h1 id="setting">Setting</h1>
 
 <p>This chapter describes how to prepare the configuration file for the experiment.
@@ -103,7 +116,8 @@ If you have already some CRIB artemis environment, please see from here for init
 </ul>
 
             <footer class="footline">
-
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
+              <i class='fa-fw fas fa-calendar'></i> Dec 23, 2023
             </footer>
           </article>
 
@@ -111,10 +125,13 @@ If you have already some CRIB artemis environment, please see from here for init
             <h1 class="a11y-only">Subsections of Setting</h1>
           <article class="default">
             <header class="headline">
-<div class="tags">
-  <a class="tag-link" href="/artemis_crib/tags/crib/index.html">CRIB</a>
+<div class=" taxonomy-tags term-list cstyle  tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <ul>
+    <li><a class="term-link" href="/artemis_crib/tags/crib/index.html">CRIB</a></li>
+  </ul>
 </div>
             </header>
+
 <h1 id="new-experiment">New experiment</h1>
 
 <span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-05 by Kodai Okawa</span></span>
@@ -172,16 +189,20 @@ This command will make new experiment directory interactively.</p>
 </span></span><span class="line"><span class="cl">art_analysis setting for test is finished!</span></span></code></pre></div><p>The initial setting is completed!!</p>
 
             <footer class="footline">
-
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
+              <i class='fa-fw fas fa-calendar'></i> Nov 5, 2023
             </footer>
           </article>
 
           <article class="default">
             <header class="headline">
-<div class="tags">
-  <a class="tag-link" href="/artemis_crib/tags/crib/index.html">CRIB</a>
+<div class=" taxonomy-tags term-list cstyle  tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <ul>
+    <li><a class="term-link" href="/artemis_crib/tags/crib/index.html">CRIB</a></li>
+  </ul>
 </div>
             </header>
+
 <h1 id="new-user">New user</h1>
 
 <span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-05 by Kodai Okawa</span></span>
@@ -199,19 +220,15 @@ This command will make new experiment directory interactively.</p>
 </span></span></span></code></pre></div><p>This is experiment name &ldquo;test&rdquo; example.
 In order to load this script <code>test.sh</code>, please modify &ldquo;EXP_NAME&rdquo; environment valiable in .zshrc.</p>
 
-  
-<div class="tab-panel" data-tab-group="65c718d1a2904550a7180f212b97078d">
+<div class="tab-panel" data-tab-group="28cd333175f64400cb07dbd10485ab70">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="bashrczshrc"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('65c718d1a2904550a7180f212b97078d','bashrczshrc')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('28cd333175f64400cb07dbd10485ab70','bashrczshrc')"
     >
-      <span>
-        <span class="tab-nav-hidden">.bashrc/.zshrc</span>
-        <span class="tab-nav-text">.bashrc/.zshrc</span>
-      </span>
+      <span class="tab-nav-text">.bashrc/.zshrc</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -254,16 +271,20 @@ Typical examples are as follows.</p>
 Use the <code>chmod</code> command or similar to set them correctly and try again.</p>
 
             <footer class="footline">
-
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
+              <i class='fa-fw fas fa-calendar'></i> Nov 5, 2023
             </footer>
           </article>
 
           <article class="default">
             <header class="headline">
-<div class="tags">
-  <a class="tag-link" href="/artemis_crib/tags/crib/index.html">CRIB</a>
+<div class=" taxonomy-tags term-list cstyle  tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <ul>
+    <li><a class="term-link" href="/artemis_crib/tags/crib/index.html">CRIB</a></li>
+  </ul>
 </div>
             </header>
+
 <h1 id="build">Build</h1>
 
 <span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-14 by Kodai Okawa</span></span>
@@ -291,13 +312,15 @@ The <code>artlogin</code> command is also used to read this script, so run this 
 </span></span><span class="line"><span class="cl">&gt; a</span></span></code></pre></div><p>Then you can start artemis by using <code>a</code> command!</p>
 
             <footer class="footline">
-
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
+              <i class='fa-fw fas fa-calendar'></i> Nov 14, 2023
             </footer>
           </article>
 
           <article class="default">
             <header class="headline">
             </header>
+
 <h1 id="artemis-commands">artemis commands</h1>
 
 <span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-14 by Kodai Okawa</span></span>
@@ -315,13 +338,13 @@ NUM=0001 is the ID, so any number is okay (related to outputed file name).</p>
 <p>And the command to start the event loop is <code>resume</code>.
 (Often abbreviated as &ldquo;resume&rdquo; or &ldquo;re&rdquo;.
 The abbreviated form will also run without problems if there are no conflicts with other commands.)</p>
-<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">artemis <span class="o">[</span>1<span class="o">]</span> res
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">artemis <span class="o">[</span>1<span class="o">]</span> res
 </span></span><span class="line"><span class="cl">artemis <span class="o">[</span>2<span class="o">]</span> Info in &lt;art::TTimerProcessor::PostLoop&gt;: <span class="nv">real</span> <span class="o">=</span> 0.02, <span class="nv">cpu</span> <span class="o">=</span> 0.02 sec, total <span class="m">10000</span> events, rate 500000.00 evts/sec</span></span></code></pre></div><p>When the time taken for such an analysis is displayed, it means that all event loops have been completed.
 If you are doing a time-consuming analysis and want to suspend the event loop in the middle, <code>suspend</code> command is used. (Often &ldquo;sus&rdquo; or &ldquo;su&rdquo; is used.)</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">artemis <span class="o">[</span>2<span class="o">]</span> sus</span></span></code></pre></div><p>This event loop creates histogram objects (inherit from TH1 or TH2) and a TTree object.
 Let&rsquo;s look at how to access each of these.</p>
 <h2 id="histogram">Histogram</h2>
-<p>Details are given in the <a href="https://okawak.github.io/artemis_crib/setting/histograms/index.html" target="_blank">Histograms section</a>, but histograms are created in an internal directory.
+<p>Details are given in the <a href="https://okawak.github.io/artemis_crib/setting/histograms/index.html" rel="external" target="_blank">Histograms section</a>, but histograms are created in an internal directory.
 To access it, you need to use the same commands as for the linux command, such as &ldquo;ls&rdquo; or &ldquo;cd&rdquo;, to get to that directory.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">artemis <span class="o">[</span>2<span class="o">]</span> ls
 </span></span><span class="line"><span class="cl">
@@ -437,16 +460,20 @@ Therefore, the &ldquo;artemis&rdquo; root file cannot be opened by usual ROOT.</
 </span></span><span class="line"><span class="cl">artemis <span class="o">[</span>*<span class="o">]</span> unzoom
 </span></span><span class="line"><span class="cl">artemis <span class="o">[</span>*<span class="o">]</span> lgy, lgz, lny, lnz <span class="c1"># linear or log scale</span></span></span></code></pre></div>
             <footer class="footline">
-
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
+              <i class='fa-fw fas fa-calendar'></i> Nov 14, 2023
             </footer>
           </article>
 
           <article class="default">
             <header class="headline">
-<div class="tags">
-  <a class="tag-link" href="/artemis_crib/tags/crib/index.html">CRIB</a>
+<div class=" taxonomy-tags term-list cstyle  tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <ul>
+    <li><a class="term-link" href="/artemis_crib/tags/crib/index.html">CRIB</a></li>
+  </ul>
 </div>
             </header>
+
 <h1 id="map-configuration">Map configuration</h1>
 
 <span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-14 by Kodai Okawa</span></span>
@@ -470,40 +497,40 @@ The setting files are followings:</p>
 <p>The data obtained from an ADC/TDC is in the form of, for example,
 &ldquo;The data coming into channel 10 of an ADC with an ID of 1 is 100&rdquo;.</p>
 
-<div class="mermaid align-center">
+<pre class="mermaid align-center ">
 ---
 title: Data flow example
 ---
 graph LR;
     A{detector} --&gt;|signal| B(TDC/ADC&lt;br&gt;&lt;/br&gt;ID=1, ch=10)
     B --&gt;|value=100| C[&lt;strong&gt;Data build&lt;/strong&gt;\nridf file]
-</div>
+</pre>
 <p>The role of the map file is to map this value of &ldquo;100&rdquo; to an ID that is easy to analyse.
 An ID that is easy to analyse means, for example,
 that even if signals from the same detector are acquired with different ADCs/TDCs,
 the same ID is easier to handle in the analysis.</p>
 
-<div class="mermaid align-center">
+<pre class="mermaid align-center ">
 ---
 title: Data flow example
 ---
 graph LR;
     A(TDC/ADC&lt;br&gt;&lt;/br&gt;ID=1, ch=10) --&gt;|value=100| B[&lt;strong&gt;Data build&lt;/strong&gt;\nridf file]
     B --&gt;|value=100 mapping to| C(analysis&lt;br&gt;&lt;/br&gt;ID=2, ch=20)
-</div>
+</pre>
 <p>After mapping, we can check the data of this &ldquo;100&rdquo; from ID=2 and ch=20.
 This ID and channel (2, 20) are provided for convenience, so you can freely set them.</p>
 <p>So, in summary, the map file role is like this:</p>
 
-<div class="mermaid align-center">
+<pre class="mermaid align-center ">
 ---
 title: role of the map file
 ---
 graph LR;
     A(DAQ ID&lt;br&gt;&lt;/br&gt;ID=1, ch=10) &lt;--&gt;|mapping| B(analysis ID&lt;br&gt;&lt;/br&gt;ID=2, ch=20)
-</div>
+</pre>
 <h3 id="2-map-files">2. map files</h3>
-<p>CRIB is using <a href="https://ribf.riken.jp/RIBFDAQ/index.php?FrontPage" target="_blank">Babirl</a> for the DAQ system.
+<p>CRIB is using <a href="https://ribf.riken.jp/RIBFDAQ/index.php?FrontPage" rel="external" target="_blank">Babirl</a> for the DAQ system.
 In this system, the DAQ ID represented in the example is determined by five parameters.</p>
 <ul>
 <li>device ID (dev)</li>
@@ -556,16 +583,18 @@ This is especially useful when separating map files for testing from map files f
 <h3 id="4-option-segment-files">4. (option) segment files</h3>
 <p>This conf files are used when you use &ldquo;chkseg.yaml&rdquo; steering file.
 This steering file create raw data 2D histograms.
-I will describe in the <a href="https://okawak.github.io/artemis_crib/example/online_analysis/check_rawdata/" target="_blank">Example: online_analysis/Check raw data</a> in detail.</p>
+I will describe in the <a href="https://okawak.github.io/artemis_crib/example/online_analysis/check_rawdata/" rel="external" target="_blank">Example: online_analysis/Check raw data</a> in detail.</p>
 
             <footer class="footline">
-
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
+              <i class='fa-fw fas fa-calendar'></i> Nov 14, 2023
             </footer>
           </article>
 
           <article class="default">
             <header class="headline">
             </header>
+
 <h1 id="steering">Steering</h1>
 
 <span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-14 by Kodai Okawa</span></span>
@@ -576,7 +605,7 @@ This &ldquo;OutputCollection&rdquo; will be stored into the root file as a &ldqu
 Complex processing can be performed by using &ldquo;processor&rdquo; in multiple steps.</p>
 <p>I will explain how to create this &ldquo;steering&rdquo; file using Si detector data as an example.</p>
 
-<div class="mermaid align-center">
+<pre class="mermaid align-center ">
 ---
 title: example of the data process structure
 ---
@@ -590,24 +619,20 @@ graph TD;
     subgraph DAQ
     D(Raw binary data)--&gt;A(decode processor&lt;br&gt;&lt;/br&gt;InputCollection: raw data\nOutputCollection: decoded data)
     end
-</div>
+</pre>
 <h2 id="steering-file-silicon-data-case">Steering file: Silicon data case</h2>
 <p>First, I describe what is the <code>Anchor</code> and how to use command line arguments.
 See example here.</p>
 
-  
-<div class="tab-panel" data-tab-group="72c5d6ade44687fc825dcb7f8337e22c">
+<div class="tab-panel" data-tab-group="42dac4b78805ce74393ce97931e9993d">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('72c5d6ade44687fc825dcb7f8337e22c','chkssdyaml')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('42dac4b78805ce74393ce97931e9993d','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -629,19 +654,15 @@ For example if you write:</p>
 For example, If you command like the following in the artemis console,</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">artemis <span class="o">[</span>1<span class="o">]</span> add steering/chkssd.yaml <span class="nv">NAME</span><span class="o">=</span>run <span class="nv">NUM</span><span class="o">=</span><span class="m">0000</span></span></span></code></pre></div><p>it is considered as</p>
 
-  
-<div class="tab-panel" data-tab-group="3e841aab9ccc3dbdf2c59e7f313c4b65">
+<div class="tab-panel" data-tab-group="4d95c414f3599b6904017e78ba02f184">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('3e841aab9ccc3dbdf2c59e7f313c4b65','chkssdyaml')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('4d95c414f3599b6904017e78ba02f184','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -660,19 +681,15 @@ For example, If you command like the following in the artemis console,</p>
 <p>When using the &ldquo;Babirl&rdquo;, the data file will be in the form of &ldquo;ridf&rdquo;.
 In this case, the beginning and end of the steering file is usually as follows.</p>
 
-  
-<div class="tab-panel" data-tab-group="ae9ba3ab34232f3560d4b25c159d26e4">
+<div class="tab-panel" data-tab-group="b0342a3202d5946ca2faab5c2048f002">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('ae9ba3ab34232f3560d4b25c159d26e4','chkssdyaml')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('b0342a3202d5946ca2faab5c2048f002','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -726,19 +743,15 @@ Assume the following map file is used.</p>
 </span></span><span class="line"><span class="cl">   1,   0,  12,   1,  6,   0,   0,  12,   2,  7,   0,   0</span></span></code></pre></div><p>In this case, since we are assuming data from the Si detector, let&rsquo;s consider putting it in a data class that stores energy and timing data, &ldquo;TTimingChargeData&rdquo;!
 The processor mapping to this data class is &ldquo;TTimingChargeMappingProcessor&rdquo;.</p>
 
-  
-<div class="tab-panel" data-tab-group="93e64fb3c5752cdf7f4aa69b41440b56">
+<div class="tab-panel" data-tab-group="8bd9d088c1d5bcd6e4e22ccfbf780e5d">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('93e64fb3c5752cdf7f4aa69b41440b56','chkssdyaml')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('8bd9d088c1d5bcd6e4e22ccfbf780e5d','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -769,26 +782,22 @@ The processor mapping to this data class is &ldquo;TTimingChargeMappingProcessor
 <p>Then, you can access the ssd_raw data by using like <code>tree-&gt;Draw(&quot;ssd_raw.fCharge&quot;)</code></p>
 <h3 id="3-calibration-processor">3. Calibration processor</h3>
 <p>While the data in the &ldquo;ssd_raw&rdquo; are raw channel of the ADC and TDC, it is important to see the data calibrated to energy and time.
-I will explain the details in <a href="">Example: preparation/macro</a>, but here I will discuss the calibration processors assuming that the following appropriate calibration files have been created.</p>
+I will explain the details in <a href="/artemis_crib/setting/steering/index.html">Example: preparation/macro</a>, but here I will discuss the calibration processors assuming that the following appropriate calibration files have been created.</p>
 <ul>
 <li>prm/ssd/ch2MeV.dat</li>
 <li>prm/ssd/ch2ns.dat</li>
 </ul>
 <p>Now, let&rsquo;s load these files.</p>
 
-  
-<div class="tab-panel" data-tab-group="7c97b5c68a9b5a986d4f65d6de7ac052">
+<div class="tab-panel" data-tab-group="d0b8a9eca3d3f893ff649ae3610dea99">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('7c97b5c68a9b5a986d4f65d6de7ac052','chkssdyaml')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('d0b8a9eca3d3f893ff649ae3610dea99','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -817,19 +826,15 @@ I will explain the details in <a href="">Example: preparation/macro</a>, but her
   </div>
 </div><p>To calibrate data contained in a <code>TTimingChargeData</code> class, a <code>TTimingChargeCalibrationProcessor</code> processor is used.</p>
 
-  
-<div class="tab-panel" data-tab-group="e37ec1baef3ee456848f4f5654625278">
+<div class="tab-panel" data-tab-group="8ed1c973acb86585e5b670cb01c84eef">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('e37ec1baef3ee456848f4f5654625278','chkssdyaml')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('8ed1c973acb86585e5b670cb01c84eef','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -877,19 +882,15 @@ writing everything in one steering file will result in a large amount of content
 <p>In that case, we can use &ldquo;include&rdquo; node!</p>
 <p>In the examples we have written so far, let&rsquo;s only use a separate file for the part related to the analysis of the Si detector.</p>
 
-  
-<div class="tab-panel" data-tab-group="66b061612deeff1dbdfadcb34f13c6a4">
+<div class="tab-panel" data-tab-group="16bde18f0d9e27b86a7f47c20d2ed58a">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('66b061612deeff1dbdfadcb34f13c6a4','chkssdyaml')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('16bde18f0d9e27b86a7f47c20d2ed58a','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -910,19 +911,15 @@ writing everything in one steering file will result in a large amount of content
     </div>
   </div>
 </div>
-  
-<div class="tab-panel" data-tab-group="bbb0bb757fbdb770b9976b070719ab60">
+<div class="tab-panel" data-tab-group="357c1580afd22d961479c253c50b56d2">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="ssdssd_singleyaml"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('bbb0bb757fbdb770b9976b070719ab60','ssdssd_singleyaml')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('357c1580afd22d961479c253c50b56d2','ssdssd_singleyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">ssd/ssd_single.yaml</span>
-        <span class="tab-nav-text">ssd/ssd_single.yaml</span>
-      </span>
+      <span class="tab-nav-text">ssd/ssd_single.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -974,19 +971,15 @@ Note that the file paths here are relative to the paths from the steering direct
 Parameter files, for example, are relative paths from the working directory (one level down).</p>
 <p>Utilising file splitting also makes it easier to check the steering files that analyse a large number of detectors like this.</p>
 
-  
-<div class="tab-panel" data-tab-group="c225ea8d5dca9d018433e7f0a8f2b611">
+<div class="tab-panel" data-tab-group="2b5c64100a48094533d02a38c2d7c7e2">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkallyaml"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('c225ea8d5dca9d018433e7f0a8f2b611','chkallyaml')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('2b5c64100a48094533d02a38c2d7c7e2','chkallyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkall.yaml</span>
-        <span class="tab-nav-text">chkall.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkall.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -1023,19 +1016,15 @@ Details will be introduced in the example section.</p>
 <h3 id="summary">Summary</h3>
 <p>The whole steering file is as follows:</p>
 
-  
-<div class="tab-panel" data-tab-group="f30f119719984a78e02bb592b52b7171">
+<div class="tab-panel" data-tab-group="03e3ad4d2cef4c417edee0fbadfdbe74">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('f30f119719984a78e02bb592b52b7171','chkssdyaml')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('03e3ad4d2cef4c417edee0fbadfdbe74','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -1077,19 +1066,15 @@ Details will be introduced in the example section.</p>
     </div>
   </div>
 </div>
-  
-<div class="tab-panel" data-tab-group="dd3be17776dd0f18911f95911afc39f0">
+<div class="tab-panel" data-tab-group="ba4ce924f7982185cddfeef33bdb4531">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="ssdssd_singleyaml"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('dd3be17776dd0f18911f95911afc39f0','ssdssd_singleyaml')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('ba4ce924f7982185cddfeef33bdb4531','ssdssd_singleyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">ssd/ssd_single.yaml</span>
-        <span class="tab-nav-text">ssd/ssd_single.yaml</span>
-      </span>
+      <span class="tab-nav-text">ssd/ssd_single.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -1140,13 +1125,15 @@ Details will be introduced in the example section.</p>
 </span></span><span class="line"><span class="cl">&gt; a
 </span></span><span class="line"><span class="cl">artemis <span class="o">[</span>0<span class="o">]</span> add steering/chkssd.yaml <span class="nv">NAME</span><span class="o">=</span>run <span class="nv">NUM</span><span class="o">=</span><span class="m">0000</span></span></span></code></pre></div>
             <footer class="footline">
-
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
+              <i class='fa-fw fas fa-calendar'></i> Nov 14, 2023
             </footer>
           </article>
 
           <article class="default">
             <header class="headline">
             </header>
+
 <h1 id="histograms">Histograms</h1>
 
 <span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-14 by Kodai Okawa</span></span>
@@ -1163,19 +1150,15 @@ I would like to explain how to use this one.</p>
 First, let&rsquo;s prepare the steering file as follows!
 please see previous section for omissions.</p>
 
-  
-<div class="tab-panel" data-tab-group="1cfe71d1e63c7fc59d1d3c048af87e53">
+<div class="tab-panel" data-tab-group="78ef4fa860fa09b9cddc3b47f992ab59">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('1cfe71d1e63c7fc59d1d3c048af87e53','chkssdyaml')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('78ef4fa860fa09b9cddc3b47f992ab59','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -1218,19 +1201,15 @@ so describe the processing of the histogram after the part that represents the d
 <h2 id="2-histogram-file">2. Histogram file</h2>
 <p>First please look at this example.</p>
 
-  
-<div class="tab-panel" data-tab-group="5583052bcef2cb323fb284a37d0d9819">
+<div class="tab-panel" data-tab-group="eda9293e96a2cfe8f91e4ea87473f8be">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="histssdssdyaml"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('5583052bcef2cb323fb284a37d0d9819','histssdssdyaml')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('eda9293e96a2cfe8f91e4ea87473f8be','histssdssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">hist/ssd/ssd.yaml</span>
-        <span class="tab-nav-text">hist/ssd/ssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">hist/ssd/ssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -1287,7 +1266,7 @@ For example, if you only want to see events with energies above 1.0 MeV, you wou
   <div class="box-content">
 
 <p>A semicolon &ldquo;;&rdquo; at the end of the sentence may be needed&hellip;?
-please check <a href="https://github.com/artemis-dev/artemis/blob/develop/sources/loop/hist/TTreeProjection.cc" target="_blank">the source</a>.</p>
+please check <a href="https://github.com/artemis-dev/artemis/blob/develop/sources/loop/hist/TTreeProjection.cc" rel="external" target="_blank">the source</a>.</p>
 </div>
 </div>
 <h3 id="23-group">2.3 group</h3>
@@ -1309,7 +1288,7 @@ The other &ldquo;x&rdquo;, &ldquo;y&rdquo; and &ldquo;cut&rdquo; is the importan
 </ol>
 <h2 id="3-commands-for-histograms">3. Commands for histograms</h2>
 <p>There are many useful command for checking the histogram objects.
-These are similar to the <a href="https://ribf.riken.go.jp/RIBFDAQ/index.php?Tools/Analysis/ANAPAW" target="_blank">ANAPAW</a> commands.</p>
+These are similar to the <a href="https://ribf.riken.go.jp/RIBFDAQ/index.php?Tools/Analysis/ANAPAW" rel="external" target="_blank">ANAPAW</a> commands.</p>
 <ol>
 <li>ls : check the artemis directory</li>
 </ol>
@@ -1345,19 +1324,15 @@ These are similar to the <a href="https://ribf.riken.go.jp/RIBFDAQ/index.php?Too
 In such cases, it is useful to allow the histogram definition file to have arguments.</p>
 <p>Please look here first.</p>
 
-  
-<div class="tab-panel" data-tab-group="d1ae1e30af6c0357add58d058caedff0">
+<div class="tab-panel" data-tab-group="32cd8c87d2fb9bb8f5eeffb9341ae418">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('d1ae1e30af6c0357add58d058caedff0','chkssdyaml')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('32cd8c87d2fb9bb8f5eeffb9341ae418','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -1387,19 +1362,15 @@ In such cases, it is useful to allow the histogram definition file to have argum
 Then the &ldquo;name&rdquo; can be used at hist file by <code>@name@</code>!
 The &ldquo;name&rdquo; can be freely set.</p>
 
-  
-<div class="tab-panel" data-tab-group="3b9dc790e0052c33df45140fa970150b">
+<div class="tab-panel" data-tab-group="f81374e55a03867d833164626b2973d8">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="histssdssdyaml"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('3b9dc790e0052c33df45140fa970150b','histssdssdyaml')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('f81374e55a03867d833164626b2973d8','histssdssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">hist/ssd/ssd.yaml</span>
-        <span class="tab-nav-text">hist/ssd/ssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">hist/ssd/ssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -1434,19 +1405,15 @@ The &ldquo;name&rdquo; can be freely set.</p>
   </div>
 </div><p>This is useful when there are more objects to check!</p>
 
-  
-<div class="tab-panel" data-tab-group="4ed1ff76e23580c1d5eb96800c3c9203">
+<div class="tab-panel" data-tab-group="0747e60b95a151fa0f87ed57c69249e3">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="chkssdyaml"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('4ed1ff76e23580c1d5eb96800c3c9203','chkssdyaml')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('0747e60b95a151fa0f87ed57c69249e3','chkssdyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">chkssd.yaml</span>
-        <span class="tab-nav-text">chkssd.yaml</span>
-      </span>
+      <span class="tab-nav-text">chkssd.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -1484,13 +1451,15 @@ The &ldquo;name&rdquo; can be freely set.</p>
 </div><p>File splitting using &ldquo;include&rdquo; nodes, as described in the section on steeling, can also be used in the same way.</p>
 
             <footer class="footline">
-
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
+              <i class='fa-fw fas fa-calendar'></i> Nov 14, 2023
             </footer>
           </article>
 
           <article class="default">
             <header class="headline">
             </header>
+
 <h1 id="vnc-server">VNC server</h1>
 
 <span class="badge cstyle default"><span class="badge-content">last modified: 2023-11-15 by Kodai Okawa</span></span>
@@ -1508,19 +1477,15 @@ We recommended to use <code>VNC server</code> currently, but note that policies 
 <p>This is the simplest method.
 Simply transfer the remote X to the local.</p>
 
-  
-<div class="tab-panel" data-tab-group="797fb545c5c560f10f012304d10d1f5f">
+<div class="tab-panel" data-tab-group="802b9f43c79a18fc2b33a948d7f40144">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="your-local-pc"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('797fb545c5c560f10f012304d10d1f5f','your-local-pc')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('802b9f43c79a18fc2b33a948d7f40144','your-local-pc')"
     >
-      <span>
-        <span class="tab-nav-hidden">your local PC</span>
-        <span class="tab-nav-text">your local PC</span>
-      </span>
+      <span class="tab-nav-text">your local PC</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -1546,22 +1511,18 @@ It is also not recommended as the process can become slow if a large number of p
 </div>
 </div>
 <p>First please install VNC viewer to your PC.
-Any viewer may work well, but we are using <a href="https://www.realvnc.com/en/connect/download/viewer/" target="_blank">this software</a>.</p>
+Any viewer may work well, but we are using <a href="https://www.realvnc.com/en/connect/download/viewer/" rel="external" target="_blank">this software</a>.</p>
 <p>First, please check the ID number of the VNC server we are running.</p>
 
-  
-<div class="tab-panel" data-tab-group="bfe8e68c1978149c98f9d5de011059fe">
+<div class="tab-panel" data-tab-group="34da562d46d6b37b82ab5b68635dab50">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-analysis-pc"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('bfe8e68c1978149c98f9d5de011059fe','in-analysis-pc')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('34da562d46d6b37b82ab5b68635dab50','in-analysis-pc')"
     >
-      <span>
-        <span class="tab-nav-hidden">in analysis PC</span>
-        <span class="tab-nav-text">in analysis PC</span>
-      </span>
+      <span class="tab-nav-text">in analysis PC</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -1584,19 +1545,15 @@ Any viewer may work well, but we are using <a href="https://www.realvnc.com/en/c
 </div><p>In this example, number 1, 5, 2022 and 2 VNC server is running.
 And select an available number to start the VNC server you want to use.</p>
 
-  
-<div class="tab-panel" data-tab-group="7a4b030719741e84d96c26b45e7c00dd">
+<div class="tab-panel" data-tab-group="67712e7972715fa9b4e5482cdbe48396">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-analysis-pc"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('7a4b030719741e84d96c26b45e7c00dd','in-analysis-pc')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('67712e7972715fa9b4e5482cdbe48396','in-analysis-pc')"
     >
-      <span>
-        <span class="tab-nav-hidden">in analysis PC</span>
-        <span class="tab-nav-text">in analysis PC</span>
-      </span>
+      <span class="tab-nav-text">in analysis PC</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -1610,19 +1567,15 @@ And select an available number to start the VNC server you want to use.</p>
   </div>
 </div><p>If you want to kill the VNC server, the below command will work.</p>
 
-  
-<div class="tab-panel" data-tab-group="16bd9a9027846172abc726560359dad1">
+<div class="tab-panel" data-tab-group="6a155c29583bdd41ffc5ff32904af20d">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-analysis-pc"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('16bd9a9027846172abc726560359dad1','in-analysis-pc')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('6a155c29583bdd41ffc5ff32904af20d','in-analysis-pc')"
     >
-      <span>
-        <span class="tab-nav-hidden">in analysis PC</span>
-        <span class="tab-nav-text">in analysis PC</span>
-      </span>
+      <span class="tab-nav-text">in analysis PC</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -1637,19 +1590,15 @@ And select an available number to start the VNC server you want to use.</p>
 </div><p>Next, configure the canvas created by artemis to be sent to a VNC server.
 The <code>a</code> command can treat this process by using <code>.vncdisplay</code> file!</p>
 
-  
-<div class="tab-panel" data-tab-group="5ee203ef84a369f591d34372f7a94416">
+<div class="tab-panel" data-tab-group="f3cc28c95a8083eb77f3f8e64090e6f7">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-analysis-pc"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('5ee203ef84a369f591d34372f7a94416','in-analysis-pc')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('f3cc28c95a8083eb77f3f8e64090e6f7','in-analysis-pc')"
     >
-      <span>
-        <span class="tab-nav-hidden">in analysis PC</span>
-        <span class="tab-nav-text">in analysis PC</span>
-      </span>
+      <span class="tab-nav-text">in analysis PC</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -1678,19 +1627,15 @@ If you want to make the login server account, please contact the CRIB member!</p
 <p>In this section, we are assuming that you have a CNS login server account.</p>
 <p>To access the analysis PC, use two-stage ssh. Prepare the following configuration file.</p>
 
-  
-<div class="tab-panel" data-tab-group="e72112ce393f0956b634ef9feba43321">
+<div class="tab-panel" data-tab-group="688af0b296fb7861b5102113b90338a0">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-local-pc-sshconfig"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('e72112ce393f0956b634ef9feba43321','in-local-pc-sshconfig')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('688af0b296fb7861b5102113b90338a0','in-local-pc-sshconfig')"
     >
-      <span>
-        <span class="tab-nav-hidden">in local PC, .ssh/config</span>
-        <span class="tab-nav-text">in local PC, .ssh/config</span>
-      </span>
+      <span class="tab-nav-text">in local PC, .ssh/config</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -1727,19 +1672,15 @@ If you want to make the login server account, please contact the CRIB member!</p
   </div>
 </div><p>Then you can access to the analysis PC simply by:</p>
 
-  
-<div class="tab-panel" data-tab-group="e9d9dafef9a17ad0115cb8256734b746">
+<div class="tab-panel" data-tab-group="1cb7d534e81504d35bd693b2e8f84f1d">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-local-pc"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('e9d9dafef9a17ad0115cb8256734b746','in-local-pc')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('1cb7d534e81504d35bd693b2e8f84f1d','in-local-pc')"
     >
-      <span>
-        <span class="tab-nav-hidden">in local PC</span>
-        <span class="tab-nav-text">in local PC</span>
-      </span>
+      <span class="tab-nav-text">in local PC</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -1756,27 +1697,23 @@ VNC servers with ID x use port number 5900+x.
 For example if we use number &ldquo;10&rdquo;, the port will be 5910.</p>
 <p>Forward this to a certain port on localhost. This number can be any number that is not in use.</p>
 
-<div class="mermaid align-center">
+<pre class="mermaid align-center ">
 ---
 title: An example of port-forwarding
 ---
 graph LR;
     A(analysis PC&lt;br&gt;&lt;/br&gt;port 5910) --&gt; |send|B(local PC&lt;br&gt;&lt;/br&gt;port 55910)
-</div>
+</pre>
 
-  
-<div class="tab-panel" data-tab-group="2c80d5f1ac00c10703de5bfbd777c0c9">
+<div class="tab-panel" data-tab-group="9c0ba6995aaec290c6095d4a82664ed7">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-local-pc-sshconfig"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('2c80d5f1ac00c10703de5bfbd777c0c9','in-local-pc-sshconfig')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('9c0ba6995aaec290c6095d4a82664ed7','in-local-pc-sshconfig')"
     >
-      <span>
-        <span class="tab-nav-hidden">in local PC, .ssh/config</span>
-        <span class="tab-nav-text">in local PC, .ssh/config</span>
-      </span>
+      <span class="tab-nav-text">in local PC, .ssh/config</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -1803,7 +1740,7 @@ graph LR;
 
 <p>If your PC is in the same network, changing &ldquo;localhost&rdquo; to the &ldquo;IP address of analysis PC&rdquo; is okay (ex. 192.168.1.10:5910).</p>
 <h2 id="save-figure-and-check-by-using-vscode">Save figure and check by using VScode</h2>
-<p><a href="https://code.visualstudio.com/" target="_blank">VScode</a> is very exciting editor!
+<p><a href="https://code.visualstudio.com/" rel="external" target="_blank">VScode</a> is very exciting editor!
 The extension supports ssh and allows remote png files to be displayed on the editor.</p>
 <p>However, it is a bit time-consuming as the diagram has to be saved each time to view it.
 Please refer to this as one method.</p>
@@ -1813,14 +1750,15 @@ Please refer to this as one method.</p>
 <h2 id="web-browser-thttpserver">Web browser (THttpServer)</h2>
 <p>This is option&hellip;</p>
 <p>Now the histogram object cannot display by JSROOT, because the object is not actually &ldquo;TH1&rdquo; or &ldquo;TH2&rdquo; object but &ldquo;TH1FTreeProj&rdquo; or &ldquo;TH2FTreeProj&rdquo;.
-(ref: <a href="https://github.com/artemis-dev/artemis/issues/40" target="_blank">issue#40</a>)</p>
+(ref: <a href="https://github.com/artemis-dev/artemis/issues/40" rel="external" target="_blank">issue#40</a>)</p>
 <p>We can only display the &ldquo;TCanvas&rdquo; Object.</p>
 <figure><img src="/artemis_crib/setting/vncserver/httpserver.png" width="600">
 </figure>
 
 
             <footer class="footline">
-
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
+              <i class='fa-fw fas fa-calendar'></i> Nov 15, 2023
             </footer>
           </article>
 
@@ -1828,28 +1766,14 @@ Please refer to this as one method.</p>
         </div>
       </main>
     </div>
-    <script src="/artemis_crib/js/clipboard.min.js?1711000250" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1711000250" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1714988881" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1714988881" defer></script>
     <script>
       function useMathJax( config ){
-        if( !Object.assign ){
-          
-          return;
-        }
         window.MathJax = Object.assign( window.MathJax || {}, {
-          loader: {
-            load: ['[tex]/mhchem']
-          },
-          startup: {
-            elements: [
-              '.math'
-            ]
-          },
           tex: {
-            inlineMath: [
-              ['$', '$'], 
-              ['\\(', '\\)']
-            ]
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
           },
           options: {
             enableMenu: false 
@@ -1859,20 +1783,20 @@ Please refer to this as one method.</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/d3/d3-color.min.js?1711000250" defer></script>
-    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1711000250" defer></script>
-    <script src="/artemis_crib/js/d3/d3-drag.min.js?1711000250" defer></script>
-    <script src="/artemis_crib/js/d3/d3-ease.min.js?1711000250" defer></script>
-    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1711000250" defer></script>
-    <script src="/artemis_crib/js/d3/d3-selection.min.js?1711000250" defer></script>
-    <script src="/artemis_crib/js/d3/d3-timer.min.js?1711000250" defer></script>
-    <script src="/artemis_crib/js/d3/d3-transition.min.js?1711000250" defer></script>
-    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1711000250" defer></script>
-    <script src="/artemis_crib/js/js-yaml.min.js?1711000250" defer></script>
-    <script src="/artemis_crib/js/mermaid.min.js?1711000250" defer></script>
+    <script src="/artemis_crib/js/d3/d3-color.min.js?1714988881" defer></script>
+    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1714988881" defer></script>
+    <script src="/artemis_crib/js/d3/d3-drag.min.js?1714988881" defer></script>
+    <script src="/artemis_crib/js/d3/d3-ease.min.js?1714988881" defer></script>
+    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1714988881" defer></script>
+    <script src="/artemis_crib/js/d3/d3-selection.min.js?1714988881" defer></script>
+    <script src="/artemis_crib/js/d3/d3-timer.min.js?1714988881" defer></script>
+    <script src="/artemis_crib/js/d3/d3-transition.min.js?1714988881" defer></script>
+    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1714988881" defer></script>
+    <script src="/artemis_crib/js/js-yaml.min.js?1714988881" defer></script>
+    <script src="/artemis_crib/js/mermaid.min.js?1714988881" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{}");
     </script>
-    <script src="/artemis_crib/js/theme.js?1711000250" defer></script>
+    <script src="/artemis_crib/js/theme.js?1714988881" defer></script>
   </body>
 </html>

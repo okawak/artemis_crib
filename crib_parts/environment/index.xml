@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Analysis environment on CRIB artemis</title>
+    <title>Analysis environment :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/crib_parts/environment/index.html</link>
-    <description>Recent content in Analysis environment on CRIB artemis</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>last modified: 2023-12-12 by Kodai Okawa CRIB shares the analysis environment of all experiments under one user account (username crib).</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Nov 2023 16:36:56 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/crib_parts/environment/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://okawak.github.io/artemis_crib/crib_parts/environment/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

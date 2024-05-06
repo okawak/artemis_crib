@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Online analysis on CRIB artemis</title>
+    <title>Online analysis :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/online_analysis/index.html</link>
-    <description>Recent content in Online analysis on CRIB artemis</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://okawak.github.io/artemis_crib/example/online_analysis/index.xml" rel="self" type="application/rss+xml" />
+    <description>This section explain the example of the online analysis in the CRIB experiment.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://okawak.github.io/artemis_crib/example/online_analysis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>F1</title>
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/f1/index.html</link>
@@ -32,21 +33,21 @@
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/ppac/index.html</link>
       <pubDate>Wed, 13 Dec 2023 15:07:48 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/ppac/index.html</guid>
-      <description>last modified: 2024-01-22 by Kodai Okawa updating&amp;hellip;</description>
+      <description>last modified: 2024-01-22 by Kodai Okawa updating…</description>
     </item>
     <item>
       <title>MWDC</title>
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/mwdc/index.html</link>
       <pubDate>Wed, 13 Dec 2023 15:07:51 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/mwdc/index.html</guid>
-      <description>last modified: 2024-01-22 by Kodai Okawa updating&amp;hellip;</description>
+      <description>last modified: 2024-01-22 by Kodai Okawa updating…</description>
     </item>
     <item>
       <title>Telescope</title>
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/telescope/index.html</link>
       <pubDate>Wed, 13 Dec 2023 15:08:02 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/telescope/index.html</guid>
-      <description>last modified: 2024-01-22 by Kodai Okawa In the CRIB experiment, we often use a &amp;ldquo;telescope&amp;rdquo; consisting of DSSSD (Double-Sided SSD) and SSD (Single-Pad SSD).</description>
+      <description>last modified: 2024-01-22 by Kodai Okawa In the CRIB experiment, we often use a “telescope” consisting of DSSSD (Double-Sided SSD) and SSD (Single-Pad SSD).</description>
     </item>
     <item>
       <title>F3</title>

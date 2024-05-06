@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>F3 on CRIB artemis</title>
+    <title>F3 :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/online_analysis/f3/index.html</link>
-    <description>Recent content in F3 on CRIB artemis</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>last modified: 2024-01-22 by Kodai Okawa In the physics run (production run or physics measurement), we check all the detector data like tracking detector (PPAC, MWDC), TOF (RF) and Telescope data.</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Dec 2023 15:08:05 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/example/online_analysis/f3/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://okawak.github.io/artemis_crib/example/online_analysis/f3/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

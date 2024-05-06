@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Setting on CRIB artemis</title>
+    <title>Setting :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/setting/index.html</link>
-    <description>Recent content in Setting on CRIB artemis</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://okawak.github.io/artemis_crib/setting/index.xml" rel="self" type="application/rss+xml" />
+    <description>This chapter describes how to prepare the configuration file for the experiment.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://okawak.github.io/artemis_crib/setting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>New experiment</title>
       <link>https://okawak.github.io/artemis_crib/setting/new_experiment/index.html</link>
       <pubDate>Thu, 02 Nov 2023 13:58:35 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/setting/new_experiment/index.html</guid>
-      <description>last modified: 2023-11-05 by Kodai Okawa If you installed with &amp;ldquo;curl&amp;rdquo; command explained previous chapter, you should have artnew command.</description>
+      <description>last modified: 2023-11-05 by Kodai Okawa If you installed with “curl” command explained previous chapter, you should have artnew command.</description>
     </item>
     <item>
       <title>New user</title>
@@ -32,7 +33,7 @@
       <link>https://okawak.github.io/artemis_crib/setting/artemis_commands/index.html</link>
       <pubDate>Tue, 14 Nov 2023 11:23:31 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/setting/artemis_commands/index.html</guid>
-      <description>last modified: 2023-11-14 by Kodai Okawa Before configuring the settings according to your experiment, let&amp;rsquo;s check that artemis is working!</description>
+      <description>last modified: 2023-11-14 by Kodai Okawa Before configuring the settings according to your experiment, let’s check that artemis is working!</description>
     </item>
     <item>
       <title>Map configuration</title>
@@ -60,7 +61,7 @@
       <link>https://okawak.github.io/artemis_crib/setting/vncserver/index.html</link>
       <pubDate>Thu, 02 Nov 2023 17:23:05 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/setting/vncserver/index.html</guid>
-      <description>last modified: 2023-11-15 by Kodai Okawa When we start the analysis, there are many situations where the analysis server on which artemis is installed is not only operated directly, but also remotely using &amp;ldquo;ssh&amp;rdquo;.</description>
+      <description>last modified: 2023-11-15 by Kodai Okawa When we start the analysis, there are many situations where the analysis server on which artemis is installed is not only operated directly, but also remotely using “ssh”.</description>
     </item>
   </channel>
 </rss>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mount setting on CRIB artemis</title>
+    <title>mount setting :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/installation/mount/index.html</link>
-    <description>Recent content in mount setting on CRIB artemis</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>last modified: 2024-03-21 by Kodai Okawa For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory.</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Aug 2023 15:14:29 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/installation/mount/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://okawak.github.io/artemis_crib/installation/mount/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on CRIB artemis</title>
+    <title>Tags :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/tags/index.html</link>
-    <description>Recent content in Tags on CRIB artemis</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description></description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Dec 2023 16:45:37 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Mar 2024 14:50:06 +0900</lastBuildDate>
+    <atom:link href="https://okawak.github.io/artemis_crib/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Need_update</title>
+      <title>Tag :: Need_update</title>
       <link>https://okawak.github.io/artemis_crib/tags/need_update/index.html</link>
-      <pubDate>Tue, 19 Dec 2023 16:45:37 +0900</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://okawak.github.io/artemis_crib/tags/need_update/index.html</guid>
       <description></description>
     </item>
     <item>
-      <title>CRIB</title>
+      <title>Tag :: CRIB</title>
       <link>https://okawak.github.io/artemis_crib/tags/crib/index.html</link>
-      <pubDate>Tue, 12 Dec 2023 13:53:50 +0900</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://okawak.github.io/artemis_crib/tags/crib/index.html</guid>
       <description></description>
     </item>
     <item>
-      <title>Unsettled</title>
+      <title>Tag :: Unsettled</title>
       <link>https://okawak.github.io/artemis_crib/tags/unsettled/index.html</link>
-      <pubDate>Mon, 14 Aug 2023 15:14:43 +0900</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://okawak.github.io/artemis_crib/tags/unsettled/index.html</guid>
       <description></description>
     </item>

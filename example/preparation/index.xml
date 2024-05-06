@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Preparation on CRIB artemis</title>
+    <title>Preparation :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/preparation/index.html</link>
-    <description>Recent content in Preparation on CRIB artemis</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://okawak.github.io/artemis_crib/example/preparation/index.xml" rel="self" type="application/rss+xml" />
+    <description>This section explain the example of preparation by using some useful macro.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://okawak.github.io/artemis_crib/example/preparation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Basic</title>
       <link>https://okawak.github.io/artemis_crib/example/preparation/basic/index.html</link>
@@ -32,7 +33,7 @@
       <link>https://okawak.github.io/artemis_crib/example/preparation/mwdc_calibration/index.html</link>
       <pubDate>Wed, 13 Dec 2023 14:59:33 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/preparation/mwdc_calibration/index.html</guid>
-      <description>last modified: 2024-01-22 by Kodai Okawa updating&amp;hellip;</description>
+      <description>last modified: 2024-01-22 by Kodai Okawa updating…</description>
     </item>
     <item>
       <title>Alpha calibration</title>
@@ -46,14 +47,14 @@
       <link>https://okawak.github.io/artemis_crib/example/preparation/mux_calibration/index.html</link>
       <pubDate>Wed, 13 Dec 2023 14:58:53 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/preparation/mux_calibration/index.html</guid>
-      <description>last modified: 2024-01-22 by Kodai Okawa updating&amp;hellip;</description>
+      <description>last modified: 2024-01-22 by Kodai Okawa updating…</description>
     </item>
     <item>
       <title>Set parameters</title>
       <link>https://okawak.github.io/artemis_crib/example/preparation/set_parameter/index.html</link>
       <pubDate>Wed, 13 Dec 2023 14:59:39 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/preparation/set_parameter/index.html</guid>
-      <description>last modified: 2024-01-22 by Kodai Okawa updating&amp;hellip;</description>
+      <description>last modified: 2024-01-22 by Kodai Okawa updating…</description>
     </item>
     <item>
       <title>Git</title>

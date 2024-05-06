@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Beam_generator on CRIB artemis</title>
+    <title>Beam Generator :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/simulation/beam_generator/index.html</link>
-    <description>Recent content in Beam_generator on CRIB artemis</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>last modified: 2024-05-06 by Kodai Okawa Requirements:&#xA;src-crib/simulation/TRandomBeamGenerator src-crib/simulation/TTreeBeamGenerator src-crib/simulation/TParticleInfo As you know, an “event store” must be used to analyse the event loop.</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Aug 2023 18:45:16 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/example/simulation/beam_generator/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://okawak.github.io/artemis_crib/example/simulation/beam_generator/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

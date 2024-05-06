@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Steering on CRIB artemis</title>
+    <title>Steering :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/setting/steering/index.html</link>
-    <description>Recent content in Steering on CRIB artemis</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>last modified: 2023-11-14 by Kodai Okawa The steering file (yaml format) is a file that directs the process of how the obtained data is to be processed.</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Nov 2023 17:03:39 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/setting/steering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://okawak.github.io/artemis_crib/setting/steering/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

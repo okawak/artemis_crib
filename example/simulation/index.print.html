@@ -1,47 +1,58 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.124.1">
-    <meta name="generator" content="Relearn 5.22.0">
-    <meta name="description" content="Documentation for CRIB artemis">
-    <meta name="author" content="map[name:Kodai Okawa]">
+    <meta name="generator" content="Hugo 0.125.6">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="This section explain the example of the Monte Carlo simulation by using artemis.">
+    <meta name="author" content="Kodai Okawa">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="MC Simulation :: CRIB artemis">
+    <meta name="twitter:description" content="This section explain the example of the Monte Carlo simulation by using artemis.">
+    <meta property="og:url" content="https://okawak.github.io/artemis_crib/example/simulation/index.html">
+    <meta property="og:site_name" content="CRIB artemis">
+    <meta property="og:title" content="MC Simulation :: CRIB artemis">
+    <meta property="og:description" content="This section explain the example of the Monte Carlo simulation by using artemis.">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="MC Simulation :: CRIB artemis">
+    <meta itemprop="description" content="This section explain the example of the Monte Carlo simulation by using artemis.">
+    <meta itemprop="dateModified" content="2023-12-15T18:58:23+09:00">
+    <meta itemprop="wordCount" content="19">
     <title>MC Simulation :: CRIB artemis</title>
     <link href="https://okawak.github.io/artemis_crib/example/simulation/index.html" rel="canonical" type="text/html" title="MC Simulation :: CRIB artemis">
     <link href="/artemis_crib/example/simulation/index.xml" rel="alternate" type="application/rss+xml" title="MC Simulation :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1711000250" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1711000250" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1711000250" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1711000250" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1711000250" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1711000250" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1711000250" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1711000250" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1711000250" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-CRIB-theme.css?1711000250" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/variant.css?1711000250" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1711000250" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/format-print.css?1711000250" rel="stylesheet">
-    <link href="/artemis_crib/css/ie.css?1711000250" rel="stylesheet">
-    <script src="/artemis_crib/js/url.js?1711000250"></script>
-    <script src="/artemis_crib/js/variant.js?1711000250"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1714988881" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1714988881" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1714988881" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1714988881" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1714988881" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1714988881" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1714988881" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1714988881" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1714988881" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-CRIB-theme.css?1714988881" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/chroma-relearn-dark.css?1714988881" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/artemis_crib/css/variant.css?1714988881" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1714988881" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/format-print.css?1714988881" rel="stylesheet">
+    <script src="/artemis_crib/js/variant.js?1714988881"></script>
     <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/okawak.github.io\/artemis_crib';
       window.index_js_url="/artemis_crib/index.search.js";
-      var root_url="/";
-      var baseUri=root_url.replace(/\/$/, '');
+      // variant stuff
+      window.variants && variants.init( [ 'CRIB-theme', 'zen-dark', 'learn', 'relearn-dark' ] );
       // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_Reset_view = 'Reset view';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/okawak.github.io\/artemis_crib/';
-      window.variants && variants.init( [ 'CRIB-theme', 'relearn-auto', 'relearn-dark', 'zen-dark', 'learn' ] );
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
 
   
@@ -65,10 +76,7 @@
         <div class="topbar-wrapper">
           <div class="topbar-sidebar-divider"></div>
           <div class="topbar-area topbar-area-start" data-area="start">
-            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
-              <button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)">
-                <i class="fa-fw fas fa-bars"></i>
-              </button>
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
             </div>
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
@@ -76,6 +84,10 @@
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">MC Simulation</span><meta itemprop="position" content="2"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/artemis_crib/example/offline_analysis/pyroot/index.html" title="pyROOT (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/artemis_crib/example/simulation/beam_generator/index.html" title="Beam Generator (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
           </div>
         </div>
       </nav>
@@ -85,13 +97,14 @@
           <article class="default">
             <header class="headline">
             </header>
+
 <h1 id="mc-simulation">MC Simulation</h1>
 
 <p>This section explain the example of the Monte Carlo simulation by using artemis.</p>
 
 <ul class="children children-li children-sort-weight">
 	
-<li><a href="/artemis_crib/example/simulation/beam_generator/index.html">Beam_generator</a></li>
+<li><a href="/artemis_crib/example/simulation/beam_generator/index.html">Beam Generator</a></li>
 <li><a href="/artemis_crib/example/simulation/nbodyreaction/index.html">Nbodyreaction</a></li>
 <li><a href="/artemis_crib/example/simulation/geometry/index.html">Geometry</a></li>
 <li><a href="/artemis_crib/example/simulation/detect_particle/index.html">Detect_particle</a></li>
@@ -99,7 +112,8 @@
 </ul>
 
             <footer class="footline">
-
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
+              <i class='fa-fw fas fa-calendar'></i> Dec 15, 2023
             </footer>
           </article>
 
@@ -108,10 +122,10 @@
           <article class="default">
             <header class="headline">
             </header>
-<h1 id="beam_generator">Beam_generator</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by Kodai Okawa</span></span>
-<p>The previous sections have described how to loop events from a <code>ridf</code> file or <code>root</code> file, but now I will describe how to generate events to use as a simulation.</p>
+<h1 id="beam-generator">Beam Generator</h1>
+
+<span class="badge cstyle default"><span class="badge-content">last modified: 2024-05-06 by Kodai Okawa</span></span>
 <p>Requirements:</p>
 <ul>
 <li>src-crib/simulation/TRandomBeamGenerator</li>
@@ -120,7 +134,7 @@
 </ul>
 <hr>
 <p>As you know, an &ldquo;event store&rdquo; must be used to analyse the event loop.
-For example, in the online analysis, we used <code>TRIDFEventStore</code>, and in the offline analysis, we used <code>TTreeEventStore</code>.</p>
+For example, in the online analysis, we used <code>TRIDFEventStore</code>, and in the offline analysis, we can use <code>TTreeEventStore</code>.</p>
 <p>But when we want to simulate something, there are no data file.
 In that case, we can use <code>TCounterEventStore</code> or <code>TRandomNumberEventStore</code>.</p>
 <ul>
@@ -133,58 +147,109 @@ In that case, we can use <code>TCounterEventStore</code> or <code>TRandomNumberE
   <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
   <div class="box-content">
 
-<p>As I explained in <code>CRIB_parts</code> before, in the current artemis version, the TCounterEventStore does not seem to be recognised as EventStore.
-So if we use this EventStore, &ldquo;no event store&rdquo; comments will output.
-I don&rsquo;t think it makes problem, so it is okay comment out the part of TLoop.cc that prints &ldquo;no event store&rdquo;.
-(Possibly a problem with your environment).</p>
+<p>When we use the <code>TCounterEventStore</code>, the console will show &ldquo;no event store&rdquo; error message.
+However, the process will be done without any bugs, so currently okawa recommend to comment out the part to output this message.</p>
 </div>
 </div>
+<h2 id="random-beam-generator">Random Beam Generator</h2>
+<p>Here I explain how to use this generator using 26Si14+ beam.
+This is the example of steering file.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">Processor</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">timer</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TTimerProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">count</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TCounterEventStore</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">OutputTransparency</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">MaxLoop</span><span class="p">:</span><span class="w"> </span><span class="m">10000</span><span class="w"> </span><span class="c"># loop number</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">beam_generator</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TRandomBeamGenerator</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">OutputCollection</span><span class="p">:</span><span class="w"> </span><span class="l">beam</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">OutputTrackCollection</span><span class="p">:</span><span class="w"> </span><span class="l">tracking</span><span class="w"> </span><span class="c"># used for reconstract simulation</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c">#beam particle information</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">MassNum</span><span class="p">:</span><span class="w"> </span><span class="m">26</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">AtomicNum</span><span class="p">:</span><span class="w"> </span><span class="m">14</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">ChargeNum</span><span class="p">:</span><span class="w"> </span><span class="m">14</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">IniEnergy</span><span class="p">:</span><span class="w"> </span><span class="m">55.5</span><span class="w"> </span><span class="c"># MeV (after window)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c">#beam tracking information</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">Xsigma</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="w"> </span><span class="c"># mm</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">Ysigma</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="w"> </span><span class="c"># mm</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">Asigma</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="w"> </span><span class="c"># deg</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">Bsigma</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="w"> </span><span class="c"># deg</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">Esigma</span><span class="p">:</span><span class="w"> </span><span class="m">0.0</span><span class="w"> </span><span class="c"># MeV (0 need for solid angle)</span></span></span></code></pre></div><p>This produces two branch, &ldquo;beam&rdquo; and &ldquo;tracking&rdquo;.</p>
+<ul>
+<li>beam: contain all information about beam ion</li>
+<li>tracking: used for reconstract simulation (only use paticular purpose)</li>
+</ul>
+<p>Actually &ldquo;tracking&rdquo; information is contained in &ldquo;beam&rdquo; branch.</p>
+<p>This is the &ldquo;beam&rdquo; branch, TParticleInfo information.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"> <span class="n">art</span><span class="o">::</span><span class="n">TParticleInfo</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> <span class="n">Data</span> <span class="n">Members</span>
+</span></span><span class="line"><span class="cl">                      <span class="kt">int</span>   <span class="n">fMassNumber</span>
+</span></span><span class="line"><span class="cl">                      <span class="kt">int</span>   <span class="n">fAtomicNumber</span>
+</span></span><span class="line"><span class="cl">                      <span class="kt">int</span>   <span class="n">fCharge</span>
+</span></span><span class="line"><span class="cl">                   <span class="kt">double</span>   <span class="n">fCurrentZ</span>              <span class="n">current</span> <span class="n">Z</span> <span class="n">position</span>
+</span></span><span class="line"><span class="cl">                   <span class="kt">double</span>   <span class="n">fEnergy</span>                <span class="n">kinetic</span> <span class="n">energy</span> <span class="n">in</span> <span class="n">LAB</span> <span class="n">system</span>
+</span></span><span class="line"><span class="cl">                   <span class="n">TTrack</span>   <span class="n">fTrack</span>                 <span class="n">tracking</span> <span class="n">information</span> <span class="n">in</span> <span class="n">LAB</span> <span class="n">system</span>
+</span></span><span class="line"><span class="cl">           <span class="n">TLorentzVector</span>   <span class="n">fVec</span>                   <span class="n">lorentz</span> <span class="n">vector</span> <span class="p">(</span><span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">E</span><span class="p">)</span> <span class="n">of</span> <span class="k">this</span> <span class="n">particle</span> <span class="n">in</span> <span class="n">LAB</span> <span class="n">system</span></span></span></code></pre></div><p><code>fCurrentZ</code> is the current Z position and at the beam generation, this value is set as 0.</p>
+<p>For example, the beam angle distribution will be like this.</p>
+<figure><img src="/artemis_crib/example/simulation/beam_generator/angle.png" width="300">
+</figure>
+
+<h2 id="tree-beam-generator">Tree Beam Generator</h2>
+<p>From the ROOT file, we can generate the beam for using simulation.
+For example, from the data, we can know the beam tracking information and it can be used in beam generator.</p>
+<p>&lt;===under development===&gt;</p>
 
             <footer class="footline">
-
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:kodak2022@outlook.jp">okawak</a>
+              <i class='fa-fw fas fa-calendar'></i> May 6, 2024
             </footer>
           </article>
 
           <article class="default">
             <header class="headline">
             </header>
+
 <h1 id="nbodyreaction">Nbodyreaction</h1>
 
 <span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by Kodai Okawa</span></span>
 
             <footer class="footline">
-
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
+              <i class='fa-fw fas fa-calendar'></i> Sep 29, 2023
             </footer>
           </article>
 
           <article class="default">
             <header class="headline">
             </header>
+
 <h1 id="geometry">Geometry</h1>
 
 <span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by Kodai Okawa</span></span>
 <p>In this page, I will explain how to determine the detecter geometry configration.</p>
 <p>Requirement:</p>
 <ul>
-<li><a href="https://github.com/okawak/artemis_crib/blob/main/src-crib/geo/TUserGeoInitializer.h" target="_blank">src-crib/geo/TUserGeoInitializer</a></li>
-<li><a href="https://github.com/okawak/artemis_crib/blob/main/src-crib/geo/TUserGeoInitializer.h" target="_blank">src-crib/geo/TDetectorParameter</a></li>
+<li><a href="https://github.com/okawak/artemis_crib/blob/main/src-crib/geo/TUserGeoInitializer.h" rel="external" target="_blank">src-crib/geo/TUserGeoInitializer</a></li>
+<li><a href="https://github.com/okawak/artemis_crib/blob/main/src-crib/geo/TUserGeoInitializer.h" rel="external" target="_blank">src-crib/geo/TDetectorParameter</a></li>
 </ul>
 <hr>
 <p>Firstly, let&rsquo;s prepare the parameter file like this:</p>
 
-  
-<div class="tab-panel" data-tab-group="41cf65eda0a80b5db858ab2f0cd9a6c5">
+<div class="tab-panel" data-tab-group="1e58bfe8488909fc742754d172e68c84">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="prmgeoexampleyaml"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('41cf65eda0a80b5db858ab2f0cd9a6c5','prmgeoexampleyaml')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('1e58bfe8488909fc742754d172e68c84','prmgeoexampleyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">prm/geo/example.yaml</span>
-        <span class="tab-nav-text">prm/geo/example.yaml</span>
-      </span>
+      <span class="tab-nav-text">prm/geo/example.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -193,7 +258,7 @@ I don&rsquo;t think it makes problem, so it is okay comment out the part of TLoo
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">material</span><span class="p">:</span><span class="w">
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">material</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Vaccum</span><span class="w"> </span><span class="c"># id=0</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">atomic_mass</span><span class="p">:</span><span class="w"> </span><span class="m">0.0</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">atomic_num</span><span class="p">:</span><span class="w"> </span><span class="m">0.0</span><span class="w">
@@ -291,19 +356,15 @@ Please NOTE that the name should be the same with <code>conposition/detector/nam
 <p>Then, let&rsquo;s check if the parameter file can be correctly used!
 Please prepare the steering file.</p>
 
-  
-<div class="tab-panel" data-tab-group="e0ed52d717b939b98f51973ae2d47da9">
+<div class="tab-panel" data-tab-group="4c0dc971cbadc106ee316a2b01c9c128">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="steeringgeo_exampleyaml"
-      class="tab-nav-button tab-panel-style cstyle initial active"
-      onclick="switchTab('e0ed52d717b939b98f51973ae2d47da9','steeringgeo_exampleyaml')"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('4c0dc971cbadc106ee316a2b01c9c128','steeringgeo_exampleyaml')"
     >
-      <span>
-        <span class="tab-nav-hidden">steering/geo_example.yaml</span>
-        <span class="tab-nav-text">steering/geo_example.yaml</span>
-      </span>
+      <span class="tab-nav-text">steering/geo_example.yaml</span>
     </button>
   </div>
   <div class="tab-content-container">
@@ -312,7 +373,7 @@ Please prepare the steering file.</p>
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
 
-<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">Anchor</span><span class="p">:</span><span class="w">
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">Anchor</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">Processor</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">detector_initialize</span><span class="w">
@@ -326,7 +387,7 @@ Please prepare the steering file.</p>
 </div><p>This steering file doesn&rsquo;t use event loop.
 Just we want to check the parameter file works well or not.</p>
 <p>Then let&rsquo;s see in the artemis!</p>
-<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acd
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acd
 </span></span><span class="line"><span class="cl">a
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">-- snip --
@@ -341,9 +402,9 @@ Just we want to check the parameter file works well or not.</p>
 </span></span><span class="line"><span class="cl">&gt;   <span class="m">0</span> TGeoVolume TOP             Top volume
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">artemis <span class="o">[</span>2<span class="o">]</span></span></span></code></pre></div><p>The detector geometry object is successfully generated!
-In order to check the object, please use <a href="https://github.com/okawak/artemis_crib/blob/main/src-crib/commands/TCmdDraw.cc" target="_blank">draw</a> command for example.
+In order to check the object, please use <a href="https://github.com/okawak/artemis_crib/blob/main/src-crib/commands/TCmdDraw.cc" rel="external" target="_blank">draw</a> command for example.
 (It is defined only in CRIB artemis, to draw not only histogram object. This is under development.)</p>
-<div class="wrap-code highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">artemis <span class="o">[</span>2<span class="o">]</span> draw <span class="m">0</span></span></span></code></pre></div><figure><img src="/artemis_crib/example/simulation/geometry/../geo_canvas.png">
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">artemis <span class="o">[</span>2<span class="o">]</span> draw <span class="m">0</span></span></span></code></pre></div><figure><img src="/artemis_crib/example/simulation/geometry/../geo_canvas.png">
 </figure>
 
 <p>The red box is the TOP, and the black boxes are detectors.
@@ -352,25 +413,29 @@ If the detector is placed where you expect it to be, the parameters have been su
 I will explain the next session!</p>
 
             <footer class="footline">
-
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
+              <i class='fa-fw fas fa-calendar'></i> Sep 29, 2023
             </footer>
           </article>
 
           <article class="default">
             <header class="headline">
             </header>
+
 <h1 id="detect_particle">Detect_particle</h1>
 
 <span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by Kodai Okawa</span></span>
 
             <footer class="footline">
-
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
+              <i class='fa-fw fas fa-calendar'></i> Sep 29, 2023
             </footer>
           </article>
 
           <article class="default">
             <header class="headline">
             </header>
+
 <h1 id="solidangle">Solidangle</h1>
 
 <span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by KodaiOkawa</span></span>
@@ -383,7 +448,8 @@ I will explain the next session!</p>
 <p>As an application of the above four sections, I would like to explain how to calculate solid angles using Monte Carlo methods!</p>
 
             <footer class="footline">
-
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
+              <i class='fa-fw fas fa-calendar'></i> Sep 29, 2023
             </footer>
           </article>
 
@@ -391,28 +457,14 @@ I will explain the next session!</p>
         </div>
       </main>
     </div>
-    <script src="/artemis_crib/js/clipboard.min.js?1711000250" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1711000250" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1714988881" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1714988881" defer></script>
     <script>
       function useMathJax( config ){
-        if( !Object.assign ){
-          
-          return;
-        }
         window.MathJax = Object.assign( window.MathJax || {}, {
-          loader: {
-            load: ['[tex]/mhchem']
-          },
-          startup: {
-            elements: [
-              '.math'
-            ]
-          },
           tex: {
-            inlineMath: [
-              ['$', '$'], 
-              ['\\(', '\\)']
-            ]
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
           },
           options: {
             enableMenu: false 
@@ -422,6 +474,6 @@ I will explain the next session!</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1711000250" defer></script>
+    <script src="/artemis_crib/js/theme.js?1714988881" defer></script>
   </body>
 </html>

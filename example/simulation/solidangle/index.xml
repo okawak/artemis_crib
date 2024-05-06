@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Solidangle on CRIB artemis</title>
+    <title>Solidangle :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/simulation/solidangle/index.html</link>
-    <description>Recent content in Solidangle on CRIB artemis</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>last modified: 2023-09-29 by KodaiOkawa Beam_generator Nbodyreaction Geometry Detect_particle As an application of the above four sections, I would like to explain how to calculate solid angles using Monte Carlo methods!</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Aug 2023 18:47:18 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/example/simulation/solidangle/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://okawak.github.io/artemis_crib/example/simulation/solidangle/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

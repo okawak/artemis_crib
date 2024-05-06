@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>VNC server on CRIB artemis</title>
+    <title>VNC server :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/setting/vncserver/index.html</link>
-    <description>Recent content in VNC server on CRIB artemis</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>last modified: 2023-11-15 by Kodai Okawa When we start the analysis, there are many situations where the analysis server on which artemis is installed is not only operated directly, but also remotely using “ssh”.</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Nov 2023 17:23:05 +0900</lastBuildDate><atom:link href="https://okawak.github.io/artemis_crib/setting/vncserver/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://okawak.github.io/artemis_crib/setting/vncserver/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
