@@ -1,6 +1,7 @@
 +++
 archetype = "home"
 title = ""
+description = "Documentation for CRIB artemis"
 +++
 
 # Manual for the CRIB ARTEMIS

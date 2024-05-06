@@ -13,20 +13,17 @@ enableGitInfo = true
   editURL = "https://github.com/okawak/artemis_crib/tree/pages-build/content/"
   alwaysopen = false
   author.name = "Kodai Okawa"
-  description = "Documentation for CRIB artemis"
   disableMathJax = false
   customMathJaxURL = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
   mathJaxInitialize = "{}"
   highlightWrap = true
   disableLandingPageButton = true
 
-  #themeVariant = "artemis_crib"
   themeVariant = [
-    "CRIB-theme",
-    "relearn-auto",
-    "relearn-dark",
-    "zen-dark",
-    "learn"
+    { identifier = "CRIB-theme", name = "CRIB-theme" },
+    { identifier = "zen-dark" },
+    { identifier = "learn" },
+    { identifier = "relearn-dark" },
   ]
 
 
