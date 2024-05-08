@@ -1,10 +1,10 @@
-/*
-   @File name     : TParticleInfo.h
-   @description   : particle information class
-   @Author        : Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
-   @Created date  : 2023-06-09 17:57:25
-   @Last modified : 2024-05-06 18:31:22
-*/
+/**
+ * @file    TParticleInfo.h
+ * @brief   particle information class
+ * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2024-05-08 18:07:32
+ * @note
+ */
 
 #ifndef _TPARTICLEINFO_H_
 #define _TPARTICLEINFO_H_
@@ -40,6 +40,9 @@ class art::TParticleInfo : public TDataObject {
     Double_t GetCurrentZ() const { return fCurrentZ; }
     void SetEnergy(Double_t val) { fEnergy = val; }
     Double_t GetEnergy() const { return fEnergy; }
+    void SetZeroTime() { fTime = 0; }
+    void AddTime(Double_t val) { fTime += val; }
+    Double_t GetDurationTime() const { return fTime; }
 
     void SetLorentzVector(Double_t x, Double_t y, Double_t z, Double_t t) { fVec.SetXYZT(x, y, z, t); }
     void SetLorentzVector(TLorentzVector val) { fVec = val; }
@@ -61,6 +64,7 @@ class art::TParticleInfo : public TDataObject {
 
     Double_t fCurrentZ; // current Z position
     Double_t fEnergy;   // kinetic energy in LAB system
+    Double_t fTime;     // Duration time (ns)
 
     TTrack fTrack;       // tracking information in LAB system
     TLorentzVector fVec; // lorentz vector (px, py, pz, E) of this particle

@@ -90,6 +90,7 @@ void TRandomBeamGenerator::Process() {
     outData->SetLorentzVector(beam);
     outData->SetEnergy(energy);
     outData->SetCurrentZ(0.);
+    outData->SetZeroTime();
     outData->SetTrack(posx, posy, 0., angx, angy);
 
     TTrack *outTrackData = static_cast<TTrack *>(fOutTrackData->ConstructedAt(0));
