@@ -61,7 +61,8 @@ class art::TNBodyReactionProcessor : public TProcessor {
 
     TGenPhaseSpace event;
 
-    Double_t deg2rad = TMath::DegToRad();
+    const Double_t deg2rad = TMath::DegToRad();
+    const Double_t c = 299.792458; // mm/ns
 
   private:
     TLorentzVector GetLossEnergyVector(TLorentzVector vec, Double_t eloss);

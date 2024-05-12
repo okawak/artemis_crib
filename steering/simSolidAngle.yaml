@@ -79,31 +79,31 @@ Processor:
   - name: reaction_sep_proc
     type: art::TSeparateOutputProcessor
     parameter:
-      InputCollection: reaction
+      InputCollection: products
       OutputCollections:
-        - heavy_cm
-        - light_cm
+        - heavy
+        - light
 
-#  - name: detector_initialize
-#    type: art::TUserGeoInitializer
-#    parameter:
-#      DetName: prm_detectors
-#      TargetName: prm_targets
-#      FileName: prm/geo/si26a.yaml
-#      OutputTransparency: 1
-#
-#  - name: detector_proc
-#    type: art::TDetectParticleProcessor
-#    parameter:
-#      ReactionParticleName: [*NAME3, *NAME4]
-#      EnergyResolution: [0.0] # %
-#      TargetisGas: 0 # 1->Gas (when solid angle cal, 0)
-#      TargetName: # gas target case
-#      GetOnlyLightParticle: 1 # 0->false 1->true
-#      DetectorParameter: prm_detectors
-#      InputCollection: products
-#      OutputCollection: telescope
-#
+  - name: detector_initialize
+    type: art::TUserGeoInitializer
+    parameter:
+      DetName: prm_detectors
+      TargetName: prm_targets
+      FileName: prm/geo/si26a.yaml
+      OutputTransparency: 1
+
+  - name: detector_proc
+    type: art::TDetectParticleProcessor
+    parameter:
+      ReactionParticleName: [*NAME3, *NAME4]
+      EnergyResolution: [0.0] # %
+      TargetisGas: 0 # 1->Gas (when solid angle cal, 0)
+      TargetName: *TARGET # gas target case
+      GetOnlyLightParticle: 1 # 0->false 1->true
+      DetectorParameter: prm_detectors
+      InputCollection: products
+      OutputCollection: telescope
+
 #  - name: solidangle_proc
 #    type: art::TSolidAngleProcessor
 #    parameter:

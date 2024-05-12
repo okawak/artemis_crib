@@ -54,6 +54,11 @@ class art::TParticleInfo : public TDataObject {
     }
     TTrack GetTrack() const { return fTrack; }
 
+    void SetThetaCM(Double_t val) { fTheta_cm = val; }
+    Double_t GetThetaCM() const { return fTheta_cm; }
+    void SetPhiCM(Double_t val) { fPhi_cm = val; }
+    Double_t GetPhiCM() const { return fPhi_cm; }
+
     virtual void Copy(TObject &dest) const;
     virtual void Clear(Option_t *opt = "");
 
@@ -68,6 +73,9 @@ class art::TParticleInfo : public TDataObject {
 
     TTrack fTrack;       // tracking information in LAB system
     TLorentzVector fVec; // lorentz vector (px, py, pz, E) of this particle
+
+    Double_t fTheta_cm; // theta angle (deg) in CM system
+    Double_t fPhi_cm;   // phi angle (deg) in CM system
 
     ClassDef(TParticleInfo, 1);
 };

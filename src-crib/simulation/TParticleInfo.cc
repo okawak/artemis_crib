@@ -15,7 +15,8 @@ ClassImp(art::TParticleInfo);
 
 TParticleInfo::TParticleInfo()
     : fMassNumber(kInvalidI), fAtomicNumber(kInvalidI), fCharge(kInvalidI),
-      fEnergy(kInvalidD), fCurrentZ(kInvalidD), fTime(kInvalidD) {
+      fEnergy(kInvalidD), fCurrentZ(kInvalidD), fTime(kInvalidD),
+      fTheta_cm(kInvalidD), fPhi_cm(kInvalidD) {
     TDataObject::SetID(kInvalidI);
     SetTrack(0., 0., 0., 0., 0.);
     fVec.SetXYZT(0., 0., 0., 0.);
@@ -32,7 +33,9 @@ TParticleInfo::TParticleInfo(const TParticleInfo &rhs)
       fCharge(rhs.fCharge),
       fEnergy(rhs.fEnergy),
       fCurrentZ(rhs.fCurrentZ),
-      fTime(rhs.fTime) {
+      fTime(rhs.fTime),
+      fTheta_cm(rhs.fTheta_cm),
+      fPhi_cm(rhs.fPhi_cm) {
 }
 
 TParticleInfo &TParticleInfo::operator=(const TParticleInfo &rhs) {
@@ -54,6 +57,8 @@ void TParticleInfo::Copy(TObject &dest) const {
     cobj.fTime = this->GetDurationTime();
     cobj.fTrack = this->GetTrack();
     cobj.fVec = this->GetLorentzVector();
+    cobj.fTheta_cm = this->GetThetaCM();
+    cobj.fPhi_cm = this->GetPhiCM();
 }
 
 void TParticleInfo::Clear(Option_t *opt) {
@@ -66,6 +71,8 @@ void TParticleInfo::Clear(Option_t *opt) {
     fEnergy = kInvalidD;
     fCurrentZ = kInvalidD;
     fTime = kInvalidD;
+    fTheta_cm = kInvalidD;
+    fPhi_cm = kInvalidD;
 
     SetTrack(0., 0., 0., 0., 0.);
     fVec.SetXYZT(0., 0., 0., 0.);

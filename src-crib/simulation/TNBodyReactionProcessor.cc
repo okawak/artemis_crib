@@ -130,6 +130,7 @@ void TNBodyReactionProcessor::Process() {
     Double_t target_mass = gAtomicMassTable->GetNucleusMass(fTargetAtmNum, fTargetMassNum);
     TLorentzVector target_vec(0., 0., 0., target_mass);
     TLorentzVector beam_vec = Data->GetLorentzVector();
+    Double_t beam_mass = gAtomicMassTable->GetNucleusMass(Data->GetAtomicNumber(), Data->GetMassNumber());
     Double_t beam_energy = Data->GetEnergy();
     Double_t init_posz = Data->GetCurrentZ();
 
@@ -163,8 +164,7 @@ void TNBodyReactionProcessor::Process() {
     // calculate tof (mean value)
     Double_t duration_beam = 0;
     if (fTargetisGas) {
-        // calculate tof
-        // duration_beam += thickness /
+        duration_beam += thickness / (TMath::Sqrt(1.0 - TMath::Power(beam_mass / beam_vec.E(), 2.0)) * c);
     } // if solid target, tof is almost zero
 
     DoubleVec_t reac_masses;
@@ -195,6 +195,7 @@ void TNBodyReactionProcessor::Process() {
     }
     event.Generate();
 
+    Double_t theta_cm;
     for (Int_t iPart = 0; iPart < fDecayNum; ++iPart) {
         TLorentzVector reac_vec = *event.GetDecay(iPart);
         // need to change GeV to MeV
@@ -238,15 +239,20 @@ void TNBodyReactionProcessor::Process() {
             }
         }
 
-        TReactionInfo *outReacData = static_cast<TReactionInfo *>(fOutReacData->ConstructedAt(iPart));
         reac_vec.Boost(-beta_vec);
-        outReacData->SetID(iPart);
-        outReacData->SetExID(excited_level);
-        outReacData->SetEnergy(energy_cm);
-        outReacData->SetTheta(reac_vec.Theta() / deg2rad);
-        outReacData->SetPhi(reac_vec.Phi() / deg2rad);
-        outReacData->SetXYZ(reac_posx, reac_posy, reac_posz);
+        outData->SetThetaCM(reac_vec.Theta() / deg2rad);
+        outData->SetPhiCM(reac_vec.Phi() / deg2rad);
+        if (iPart == 0) {
+            theta_cm = (Data->GetLorentzVector()).Angle(reac_vec.Vect()) / deg2rad;
+        }
     }
+
+    TReactionInfo *outReacData = static_cast<TReactionInfo *>(fOutReacData->ConstructedAt(0));
+    outReacData->SetID(0);
+    outReacData->SetExID(excited_level);
+    outReacData->SetEnergy(energy_cm);
+    outReacData->SetTheta(theta_cm);
+    outReacData->SetXYZ(reac_posx, reac_posy, reac_posz);
 }
 
 TLorentzVector TNBodyReactionProcessor::GetLossEnergyVector(TLorentzVector vec, Double_t eloss) {
@@ -263,3 +269,8 @@ TLorentzVector TNBodyReactionProcessor::GetLossEnergyVector(TLorentzVector vec, 
 // m^2 = (E - Eloss)^2 - (factor*p)^2
 // factor*2 = ( (E - Eloss)^2 - m^2 )/p^2
 // factor = sqrt( ((E - Eloss)^2 - m2)/(E^2 - m^2) )
+//
+// tof
+// beta = v/c
+// E = m/sqrt(1-beta^2)
+// v = sqrt(1-(M/E)^2) c
