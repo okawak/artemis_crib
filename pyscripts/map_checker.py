@@ -14,19 +14,51 @@ except:
 # [map] device id, name
 DEV_DICT = {
     12: "CRIB",  # CRIB use 12
+    0: "BIGRIPS",
+    11: "SHARAQ",
+    20: "20",  # ??
+    31: "31",  # ??
+    63: "63",  # ??
 }
+
 
 # [map] fp, name
 FP_DICT = {
     0: "E7MPV",  # CRIB use fp as MPV ID
     1: "J1ADC",
     2: "J1TDC",
+    3: "F3",
+    4: "F4",
+    5: "F5",
+    6: "F6",
+    7: "F7",
+    8: "F8",
+    9: "F9",
+    10: "F10",
+    11: "F11",
+    12: "F12",
+    20: "S0",
+    21: "S1",
+    22: "S2",
+    34: "34",  # ??
+    62: "SHB3F",
+    63: "B3F",
 }
 
 # [map] mod id, (name, channel number)
 MODULE_DICT = {
     6: ("ADC", 32),  # for V785, MADC
     7: ("TDC", 128),  # for V1190A
+    0: ("PPACQ", 128),  # assume 128ch module
+    1: ("PPACT", 128),  # assume 128ch module
+    2: ("PLAQ", 128),  # assume 128ch module
+    3: ("PLAT", 128),  # assume 128ch module
+    21: ("DALIA", 128),  # assume 128ch module
+    22: ("DALIT", 128),  # assume 128ch module
+    31: ("SHBLD", 128),  # assume 128ch module
+    32: ("SHCRDC", 128),  # assume 128ch module
+    33: ("SHCRDCA", 128),  # assume 128ch module
+    55: ("55", 128),  # ??
     60: ("TIMESTAMP", 1),  # for MPV TS
     63: ("SCALER", 32),  # for SIS3820
 }
@@ -194,7 +226,7 @@ def add_tref_info(map_dict: dict) -> dict:
 def show_all_mapinfo(map_dict: dict, filename: str) -> None:
     print("\033[1m\033[4mOutput format [CatID]-[fID][ch]\033[0m\n")
     with open(f"{ARTHOME}/{filename}", mode="w", newline="") as file:
-        writer = csv.writer(file, lineterminator='\n')
+        writer = csv.writer(file, lineterminator="\n")
         for key_tuple, mod_dict in sorted(map_dict.items()):
             dev, fp, det, geo = key_tuple
             if not det in MODULE_DICT:
