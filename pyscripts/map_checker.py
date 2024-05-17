@@ -17,8 +17,8 @@ DEV_DICT = {
     0: "BIGRIPS",
     11: "SHARAQ",
     20: "20",  # ??
-    31: "31",  # ??
-    63: "63",  # ??
+    31: "SHS1DAQ",  # used in SHARAQ FADC
+    63: "GET",  # GET?
 }
 
 
@@ -40,7 +40,7 @@ FP_DICT = {
     20: "S0",
     21: "S1",
     22: "S2",
-    34: "34",  # ??
+    34: "SHFADC",  # used in FADC
     62: "SHB3F",
     63: "B3F",
 }
@@ -58,7 +58,7 @@ MODULE_DICT = {
     31: ("SHBLD", 128),  # assume 128ch module
     32: ("SHCRDC", 128),  # assume 128ch module
     33: ("SHCRDCA", 128),  # assume 128ch module
-    55: ("55", 128),  # ??
+    55: ("FADC", 32),  # FADC in SHARAQ exp
     60: ("TIMESTAMP", 1),  # for MPV TS
     63: ("SCALER", 32),  # for SIS3820
 }

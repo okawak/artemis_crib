@@ -70,7 +70,7 @@ Long_t TCatCmdTCutG::Cmd(vector<TString>) {
             xname = title(title.First(":") + 1, title.Length());
     }
 
-    Info("Cmd", Form("Xaxis name : %s  Yaxis name : %s", xname.Data(), yname.Data()));
+    Info("Cmd", "Xaxis name : %s  Yaxis name : %s", xname.Data(), yname.Data());
 
     Double_t ix, iy, x, y, bx, by;
     Int_t i = 0;
@@ -84,7 +84,7 @@ Long_t TCatCmdTCutG::Cmd(vector<TString>) {
     fEventtype = 0;
     while (fEventtype != kButton1Double) {
         TCatCmdTCutG::Instance()->Run(&x, &y);
-        Info("Cmd", Form("(x, y) = (%lf, %lf)", x, y));
+        Info("Cmd", "(x, y) = (%lf, %lf)", x, y);
         if (!fisFirst) {
             TLine *line = new TLine(bx, by, x, y);
             lines.push_back(line);
@@ -125,7 +125,7 @@ Long_t TCatCmdTCutG::Cmd(vector<TString>) {
 
     cutg->SetName(input);
     TFile *file = new TFile("gate/" + input + ".root", "recreate");
-    Info("Cmd", Form("Created gate/%s.root", input.Data()));
+    Info("Cmd", "Created gate/%s.root", input.Data());
     cutg->Write();
     file->Close();
 
