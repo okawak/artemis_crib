@@ -1,6 +1,7 @@
 *~
 *.so
 *.swp
+.cache
 .vscode/
 test
 artemislogon.C
@@ -18,3 +19,4 @@ rootfile
 figure/
 ana/
 build/
+compile_commands.json

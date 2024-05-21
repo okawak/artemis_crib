@@ -7,6 +7,6 @@ Processor:
   - name: pid
     type: art::TCRIBPIDProcessor
     parameter:
-      FileName: prm/pid/he6p2024.yaml
+      FileName: prm/pid/c15ms.yaml
       Batch: false
       OutputTransparency: 1

@@ -35,7 +35,7 @@ class art::TCRIBPIDProcessor : public TProcessor {
     const Double_t kJ2MeV = 6.2415064e+12;       // J -> MeV
     const Double_t kUnitCharge = 1.60217663e-19; // C (A s)
     const Double_t kLengthF0F2 = 7.8;            // m
-    const Double_t kLengthF0F3 = 13.0;           // m
+    const Double_t kLengthF0F3 = 12.97;          // m
 
     Double_t E2m_s(Double_t Ekin, Double_t mass) { // Ekin: MeV, mass: MeV/c^2
         return kLightSpeed * TMath::Sqrt(1.0 - TMath::Power(1.0 / (Ekin / mass + 1.0), 2.0));

@@ -116,8 +116,8 @@ void TCRIBPIDProcessor::Init(TEventCollection *col) {
             rf_f2 += rf_period;
         }
         // set TGraph style
-        gr_f2->SetName(Form("%s+", ion_names[i].Data()));
-        gr_f2->SetTitle(Form("%s+", ion_names[i].Data()));
+        gr_f2->SetName(Form("%s_%d+", ion_names[i].Data(), ion_charges[i]));
+        gr_f2->SetTitle(Form("%s_%d+", ion_names[i].Data(), ion_charges[i]));
         gr_f2->SetMarkerStyle(20 + i);
         if (ion_colors[i] == 0) {
             gr_f2->SetMarkerColor(kRed);
@@ -151,8 +151,8 @@ void TCRIBPIDProcessor::Init(TEventCollection *col) {
             rf_f3 += rf_period;
         }
         // set TGraph style
-        gr_f3->SetName(Form("%s+", ion_names[i].Data()));
-        gr_f3->SetTitle(Form("%s+", ion_names[i].Data()));
+        gr_f3->SetName(Form("%s_%d+", ion_names[i].Data(), ion_charges[i]));
+        gr_f3->SetTitle(Form("%s_%d+", ion_names[i].Data(), ion_charges[i]));
         gr_f3->SetMarkerStyle(20 + i);
         if (ion_colors[i] == 0) {
             gr_f3->SetMarkerColor(kRed);
@@ -180,7 +180,7 @@ void TCRIBPIDProcessor::Init(TEventCollection *col) {
         for (Int_t j = 0; j < graphs_f2_pid[i]->GetN(); j++) {
             Double_t x, y;
             graphs_f2_pid[i]->GetPoint(j, x, y);
-            TText *txt = new TText(x + 3.0, y, Form("%s+", ion_names[i].Data()));
+            TText *txt = new TText(x + 3.0, y, Form("%s_%d+", ion_names[i].Data(), ion_charges[i]));
             txt->SetTextAlign(12);
             if (ion_colors[i] == 0) {
                 txt->SetTextColor(kRed);
@@ -214,7 +214,7 @@ void TCRIBPIDProcessor::Init(TEventCollection *col) {
         for (Int_t j = 0; j < graphs_f3_pid[i]->GetN(); j++) {
             Double_t x, y;
             graphs_f3_pid[i]->GetPoint(j, x, y);
-            TText *txt = new TText(x + 3.0, y, Form("%s+", ion_names[i].Data()));
+            TText *txt = new TText(x + 3.0, y, Form("%s_%d+", ion_names[i].Data(), ion_charges[i]));
             txt->SetTextAlign(12);
             if (ion_colors[i] == 0) {
                 txt->SetTextColor(kRed);
