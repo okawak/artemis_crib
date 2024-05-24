@@ -9,8 +9,8 @@ anchor:
   #- &f2ppacy_sum ["f2ppac.fTYsum",200,-50.,50.]
   - &f2ssd_raw ["f2ssd_raw.fCharge",4000,0.5,4000.5]
   - &f2ssd_raw_low ["f2ssd_raw.fCharge",1000,0.5,1000.5]
-  - &f2ssd_cal ["f2ssd_cal.fCharge",400,0.,90.]
-  - &rf0 ["rf_cal_0.fTiming",200,-1560,-1380]
+  - &f2ssd_cal ["f2ssd_cal.fCharge",400,60.,120.]
+  - &rf0 ["rf_cal_0.fTiming",200,-980,-920]
   #- &rf1 ["rf_cal_1.fTiming",200,-1530,-1380]
   - &rf0w ["rf_cal_0.fTiming",200,-10000,10000.]
   #- &rf1w ["rf_cal_1.fTiming",200,-10000,10000.]
@@ -69,7 +69,6 @@ group:
         x: *f2ppacy
         y: *f2ssd_cal
       - name: rf(wide)
-        title: RF(wide to check the range) 
+        title: RF(wide to check the range)
         x: *rf0w
-
 

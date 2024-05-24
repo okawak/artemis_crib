@@ -30,7 +30,6 @@ include(${ROOT_USE_FILE})
 #link_directories(${ARTEMIS_GET_LIB_DIR})
 
 add_subdirectory(src-crib)
-add_subdirectory(src)
 
 configure_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/.thisartemis-crib.sh.in"

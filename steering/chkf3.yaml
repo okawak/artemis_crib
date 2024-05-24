@@ -23,43 +23,46 @@ Processor:
   - name: detector_initialize
     type: art::TUserGeoInitializer
     parameter:
-      FileName: prm/geo/he6p2024.yaml
-      #Visible: false
+      FileName: prm/geo/current
+      Visible: false
       OutputTransparency: 1
 
   - include: tref.yaml
   - include: rf/rf.yaml
   - include: coin/coin.yaml
-  - include: mwdc/mwdc_crib.yaml
+  - include: ppac/dlppac.yaml
+  #- include: mwdc/mwdc_crib.yaml
+
   - include: ssd/f3ssd.yaml
   #- include: scaler/scaler.yaml
-  #- include: trig/trigger.yaml
+  #- include: ts/ts.yaml
 
 
 # F3 beam info hist
-  - name: projection_f3_all_detector
+  - name: projection_f3
     type: art::TTreeProjectionProcessor
     parameter:
-      FileName: hist/f3/f3_mwdc.yaml
+      FileName: hist/f3/f3.yaml
+      #FileName: hist/f3/f3_mwdc.yaml
       Type:     art::TTreeProjection
       OutputFilename: *histout
 
 # MWDC Hist
-  - name: projection_mwdca
-    type: art::TTreeProjectionProcessor
-    parameter:
-      FileName: hist/mwdc/chkmwdc.tmpl.yaml
-      Type:     art::TTreeProjection
-      Replace: |
-        plane: mwdca
-
-  - name: projection_mwdcb
-    type: art::TTreeProjectionProcessor
-    parameter:
-      FileName: hist/mwdc/chkmwdc.tmpl.yaml
-      Type:     art::TTreeProjection
-      Replace: |
-        plane: mwdcb
+#  - name: projection_mwdca
+#    type: art::TTreeProjectionProcessor
+#    parameter:
+#      FileName: hist/mwdc/chkmwdc.tmpl.yaml
+#      Type:     art::TTreeProjection
+#      Replace: |
+#        plane: mwdca
+#
+#  - name: projection_mwdcb
+#    type: art::TTreeProjectionProcessor
+#    parameter:
+#      FileName: hist/mwdc/chkmwdc.tmpl.yaml
+#      Type:     art::TTreeProjection
+#      Replace: |
+#        plane: mwdcb
 
 # telescope Hist
   - name: projection_tel1

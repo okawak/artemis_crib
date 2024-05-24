@@ -1,6 +1,6 @@
 anchor:
-  - &rf0 ["rf_cal_0.fTiming",200,0.,120.]
-  - &rf1 ["rf_cal_1.fTiming",200,0.,120.]
+  - &rf0 ["rf_cal_0.fTiming",200,-1050.,-860.]
+  - &rf1 ["rf_cal_1.fTiming",200,-1050.,-860.]
   - &ppacax ["f3appac.fX",200,-50.,50.]
   - &ppacay ["f3appac.fY",200,-50.,50.]
   - &ppacaxsum ["f3appac.fTXSum",200,0.,200.]
@@ -9,7 +9,7 @@ anchor:
   - &ppacby ["f3bppac.fY",200,-50.,50.]
   - &ppacbxsum ["f3bppac.fTXSum",200,0.,200.]
   - &ppacbysum ["f3bppac.fTXSum",200,0.,200.]
-  - &ppactof ["f3bppac.fTAnode - f3appac.fTAnode",80,31.,40.]
+  - &ppactof ["f3bppac.fTAnode - f3appac.fTAnode",80,5.,40.]
   - &trackx ["f3ppac.GetX()",200,-50.,50.]
   - &tracky ["f3ppac.GetY()",200,-50.,50.]
   - &tracka ["180.0/3.14*f3ppac.GetA()",200,-5.,5.]
@@ -19,12 +19,17 @@ alias:
   single: single.fID == 0;
   coin: coin.fID == 0;
   pileup: pileup.fID == 0;
-  target_window: f3ppac.GetX()*f3ppac.GetX()+f3ppac.GetY()*f3ppac.GetY() < 100;
-  o14_Beam: abs(f3bppac.fTAnode-f3appac.fTAnode-34.5)< 0.5 && abs(f3appac.fX)<30;
 group:
   - name: f3check
     title: f3check
     contents:
+      - name: PPACa X
+        title: PPACa X
+        x: *ppacax
+      - name: PPACa Y
+        title: PPACa Y
+        x: *ppacay
+
       - name: PPACa Y vs X
         title: PPACa Y vs X
         x: *ppacax
@@ -34,6 +39,14 @@ group:
         title: PPACa TYSum vs TXSum
         x: *ppacaxsum
         y: *ppacaysum
+
+      - name: PPACb X
+        title: PPACb X
+        x: *ppacbx
+      - name: PPACb Y
+        title: PPACb Y
+        x: *ppacby
+
       - name: PPACb Y vs X
         title: PPACb Y vs X
         x: *ppacbx
@@ -42,14 +55,10 @@ group:
         title: PPACb TYSum vs TXSum
         x: *ppacbxsum
         y: *ppacbysum
-      - name: rf0 vs PPAC TOF
-        title: rf0 vs PPAC TOF
-        x: *ppactof
-        y: *rf0
-      - name: rf1 vs PPAC TOF
-        title: rf1 vs PPAC TOF
-        x: *ppactof
-        y: *rf1
+      - name: PPAC TOF vs rf0
+        title: PPAC TOF vs rf0
+        x: *rf0
+        y: *ppactof
       - name: rf0 vs PPACa X
         title: rf0 vs PPACa X
         x: *ppacax
@@ -62,17 +71,12 @@ group:
         title: TOF vs PPACa X
         x: *ppacax
         y: *ppactof
-#        cut: o14_Beam
       - name: Target Y vs X
         title: Target Y vs X
         x: *trackx
         y: *tracky
-      - name: Target Y vs X (window size)
-        title: Target Y vs X (window size)
-        x: *trackx
-        y: *tracky
-        cut: target_window
       - name: Beam angle B vs A
         title: Beam angle B vs A
         x: *tracka
         y: *trackb
+

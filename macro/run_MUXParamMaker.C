@@ -1,40 +1,21 @@
-void run_MUXParamMaker(TString RUNNAME="hoge", TString RUNNUM="0000"){
+void run_MUXParamMaker() {
+    const TString ARTEMIS_WORKDIR = gSystem->pwd();
 
-  gROOT->ProcessLine(Form("add steering/calibration.yaml NAME=%s NUM=%s", RUNNAME.Data(), RUNNUM.Data()));
-  art::TLoopManager::Instance()->GetLoop()->Resume();
+    const TString RUNNAME = "run";
+    const TString RUNNUM = "0015";
 
-  gROOT->ProcessLine("fcd 0");
-  gROOT->ProcessLine("zone");
+    gROOT->ProcessLine("fcd 0");
+    gROOT->ProcessLine("zone");
 
-  //tel2_dE1
-  gROOT->ProcessLine("tree->Draw(\"tel2_dE1_raw.fP1>>h1(450,300.,750.)\")");
-  gROOT->ProcessLine(".x /home/okawa/art_analysis/user/okawa/macro/MUXParamMaker.C(h1, \"prm/ssd/tel2/pos/" + RUNNAME + RUNNUM + "_dE1.dat\")");
-  gROOT->ProcessLine("artcanvas->Print(\"figure/calib/tel2/pos/" + RUNNAME + RUNNUM + "_dE1.png\")");
+    // tel1 dEX : RUN0015
+    gROOT->ProcessLine("tree->Draw(\"tel1dEX_raw.fP1>>h1(700,2900.,3600.)\")");
+    gROOT->ProcessLine(".x " + ARTEMIS_WORKDIR + "/macro/MUXParamMaker.C(h1, \"prm/tel1/pos_dEX/" + RUNNAME + RUNNUM + ".dat\")");
+    gROOT->ProcessLine("artcanvas->Print(\"" + ARTEMIS_WORKDIR + "/figure/calib/tel1/pos_dEX/" + RUNNAME + RUNNUM + ".png\")");
 
-  //tel3_dE1
-  gROOT->ProcessLine("tree->Draw(\"tel3_dE1_raw.fP1>>h2(500,600.,1100.)\")");
-  gROOT->ProcessLine(".x /home/okawa/art_analysis/user/okawa/macro/MUXParamMaker.C(h2, \"prm/ssd/tel3/pos/" + RUNNAME + RUNNUM + "_dE1.dat\")");
-  gROOT->ProcessLine("artcanvas->Print(\"figure/calib/tel3/pos/" + RUNNAME + RUNNUM + "_dE1.png\")");
+    // tel1 dEY : RUN0015
+    gROOT->ProcessLine("tree->Draw(\"tel1dEY_raw.fP1>>h2(700,2400.,3100.)\")");
+    gROOT->ProcessLine(".x " + ARTEMIS_WORKDIR + "/macro/MUXParamMaker.C(h2, \"prm/tel1/pos_dEY/" + RUNNAME + RUNNUM + ".dat\")");
+    gROOT->ProcessLine("artcanvas->Print(\"" + ARTEMIS_WORKDIR + "/figure/calib/tel1/pos_dEY/" + RUNNAME + RUNNUM + ".png\")");
 
-  //tel4_dE1
-  gROOT->ProcessLine("tree->Draw(\"tel4_dE1_raw.fP1>>h3(450,800.,1250.)\")");
-  gROOT->ProcessLine(".x /home/okawa/art_analysis/user/okawa/macro/MUXParamMaker.C(h3, \"prm/ssd/tel4/pos/" + RUNNAME + RUNNUM + "_dE1.dat\")");
-  gROOT->ProcessLine("artcanvas->Print(\"figure/calib/tel4/pos/" + RUNNAME + RUNNUM + "_dE1.png\")");
-
-  //tel4_dE2
-  gROOT->ProcessLine("tree->Draw(\"tel4_dE2_raw.fP1>>h4(500,1200.,1700.)\")");
-  gROOT->ProcessLine(".x /home/okawa/art_analysis/user/okawa/macro/MUXParamMaker.C(h4, \"prm/ssd/tel4/pos/" + RUNNAME + RUNNUM + "_dE2.dat\")");
-  gROOT->ProcessLine("artcanvas->Print(\"figure/calib/tel4/pos/" + RUNNAME + RUNNUM + "_dE2.png\")");
-
-  //tel5_dE1
-  gROOT->ProcessLine("tree->Draw(\"tel5_dE1_raw.fP1>>h5(500,1350.,1850.)\")");
-  gROOT->ProcessLine(".x /home/okawa/art_analysis/user/okawa/macro/MUXParamMaker.C(h5, \"prm/ssd/tel5/pos/" + RUNNAME + RUNNUM + "_dE1.dat\")");
-  gROOT->ProcessLine("artcanvas->Print(\"figure/calib/tel5/pos/" + RUNNAME + RUNNUM + "_dE1.png\")");
-
-  //tel5_dE2
-  gROOT->ProcessLine("tree->Draw(\"tel5_dE2_raw.fP1>>h6(500,1550.,2050.)\")");
-  gROOT->ProcessLine(".x /home/okawa/art_analysis/user/okawa/macro/MUXParamMaker_1miss_strip.C(h6, \"prm/ssd/tel5/pos/" + RUNNAME + RUNNUM + "_dE2.dat\")");
-  gROOT->ProcessLine("artcanvas->Print(\"figure/calib/tel5/pos/" + RUNNAME + RUNNUM + "_dE2.png\")");
-
-  gROOT->ProcessLine(".q");
+    // gROOT->ProcessLine(".q");
 }

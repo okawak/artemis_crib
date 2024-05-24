@@ -1,9 +1,5 @@
 input_ions:
   - name: 15N7
-    charge: 7
-    mass: 14.996269 # amu
-    color: 0 # 0 -> red, 1 -> blue, 2 -> black
-  - name: 15N7
     charge: 6
     mass: 14.996269 # amu
     color: 0 # 0 -> red, 1 -> blue, 2 -> black
@@ -15,10 +11,6 @@ input_ions:
     charge: 5
     mass: 15.007308
     color: 1
-  - name: 14N7
-    charge: 7
-    mass: 13.999234
-    color: 2
   - name: 14N7
     charge: 6
     mass: 13.999234

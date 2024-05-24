@@ -5,13 +5,13 @@ anchor:
   - &f1ppacx2 ["f1ppac.fTX2",500,0.,2000.]
   - &f1ppacy1 ["f1ppac.fTY1",500,0.,2000.]
   - &f1ppacy2 ["f1ppac.fTY2",500,0.,2000.]
-  - &rf0 ["rf_cal_0.fTiming",200,0.,120.]
+  - &rf0 ["rf_cal_0.fTiming",200,-1050.,-860.]
   #- &rf1 ["rf_cal_1.fTiming",200,0.,120.]
 alias:
   #ex_cut: example.fval > 0;
 group:
-  - name: f1check
-    title: f1check
+  - name: f1
+    title: f1
     contents:
       - name: f1ppacx
         title: F1PPAC X
