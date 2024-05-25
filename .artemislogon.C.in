@@ -33,7 +33,6 @@
     gSystem->Load("libSpectrum");
     gSystem->Load("libMinuit2");
     //   gSystem->Load("libCAT");
-    gSystem->Load("libuser");
     gSystem->Load("libcrib");
     // gSystem->Load("libenewz");
 

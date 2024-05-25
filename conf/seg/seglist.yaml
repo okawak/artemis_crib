@@ -37,3 +37,10 @@ J1_V1190:
   type: V1190A
   modules:
     - id: 0
+
+Scaler:
+  segid: [12, 2, 63]
+  type: SIS3820
+  modules:
+    - id: 0
+
