@@ -52,11 +52,3 @@ add_custom_command(
     COMMAND xargs rm -vf < install_manifest.txt || echo Nothing in
             install_manifest.txt to be uninstalled!
 )
-
-add_custom_target(copy-compile-commands ALL
-  COMMAND ${CMAKE_COMMAND} -E copy_if_different
-    ${CMAKE_BINARY_DIR}/compile_commands.json
-    ${CMAKE_SOURCE_DIR}/compile_commands.json
-  DEPENDS ${CMAKE_BINARY_DIR}/compile_commands.json
-  COMMENT "Copying compile_commands.json to root directory"
-)
