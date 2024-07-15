@@ -11,7 +11,20 @@ endif()
 
 # path definitions
 find_package(artemis HINTS ${ARTPATH} REQUIRED)
-find_package(SRIMlib HINTS ${SRIMLIB_DIR} REQUIRED)
+# we will not support SRIMlib in the future
+find_package(SRIMlib HINTS ${SRIMLIB_DIR})
+if (SRIMlib_FOUND)
+  message(STATUS "Found SRIMlib library")
+else()
+  message(STATUS "Not Found SRIMlib library")
+endif()
+
+find_package(TSrim)
+if (TSrim_FOUND)
+  message(STATUS "Found TSrim library")
+else()
+  message(STATUS "Not Found TSrim library")
+endif()
 
 #---Locate the ROOT package and defines a number of variables (e.g. ROOT_INCLUDE_DIRS)
 find_package(ROOT REQUIRED COMPONENTS RIO Net Physics Minuit Minuit2 Geom Gui Genetic RHTTP)
@@ -20,14 +33,8 @@ find_package(yaml-cpp REQUIRED HINTS ${ARTEMIS_YAML_CPP_LIB_DIR}/../)
 #-fPIC
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-# generate compile_commands.json
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
-
 #---Define useful ROOT functions and macros (e.g. ROOT_GENERATE_DICTIONARY)
 include(${ROOT_USE_FILE})
-
-#link_directories(${ARTEMIS_GET_LIB_DIR})
 
 add_subdirectory(src-crib)
 

@@ -20,7 +20,7 @@ set(CRIBSOURCES
     telescope/TTelescopeData.cc
     telescope/TTelescopeProcessor.cc
     # reconst
-    reconst/TTGTIKProcessor.cc
+    #reconst/TTGTIKProcessor.cc
     reconst/TReactionInfo.cc
     # commands
     commands/TCatCmdLoopStart.cc
@@ -37,15 +37,15 @@ set(CRIBSOURCES
     geo/TDetectorParameter.cc
     geo/TTargetParameter.cc
     # simulation
-    simulation/TEffectiveThickness.cc
-    simulation/TDetectParticleProcessor.cc
-    simulation/TNBodyReactionProcessor.cc
+    #simulation/TEffectiveThickness.cc
+    #simulation/TDetectParticleProcessor.cc
+    #simulation/TNBodyReactionProcessor.cc
     simulation/TParticleInfo.cc
     simulation/TRandomBeamGenerator.cc
     simulation/TTreeBeamGenerator.cc
     simulation/TSolidAngleProcessor.cc
     #simulation/TTwoBodyScattering.cc
-    simulation/TCRIBPIDProcessor.cc
+    #simulation/TCRIBPIDProcessor.cc
     # timestamp
     timestamp/TTSData.cc
     timestamp/TTSMappingProcessor.cc
@@ -72,7 +72,7 @@ set(CRIBHEADERS
     telescope/TTelescopeData.h
     telescope/TTelescopeProcessor.h
     # reconst
-    reconst/TTGTIKProcessor.h
+    #reconst/TTGTIKProcessor.h
     reconst/TReactionInfo.h
     # commands
     commands/TCatCmdLoopStart.h
@@ -89,20 +89,37 @@ set(CRIBHEADERS
     geo/TDetectorParameter.h
     geo/TTargetParameter.h
     # simulation
-    simulation/TEffectiveThickness.h
-    simulation/TDetectParticleProcessor.h
-    simulation/TNBodyReactionProcessor.h
+    #simulation/TEffectiveThickness.h
+    #simulation/TDetectParticleProcessor.h
+    #simulation/TNBodyReactionProcessor.h
     simulation/TParticleInfo.h
     simulation/TRandomBeamGenerator.h
     simulation/TTreeBeamGenerator.h
     simulation/TSolidAngleProcessor.h
     #simulation/TTwoBodyScattering.h
-    simulation/TCRIBPIDProcessor.h
+    #simulation/TCRIBPIDProcessor.h
     # timestamp
     timestamp/TTSData.h
     timestamp/TTSMappingProcessor.h
     timestamp/TModuleDecoderTimestamp.h
 )
+
+if (SRIMlib_FOUND)
+  list(APPEND CRIBSOURCES
+       reconst/TTGTIKProcessor.cc
+       simulation/TDetectParticleProcessor.cc
+       simulation/TNBodyReactionProcessor.cc
+       simulation/TEffectiveThickness.cc
+       simulation/TCRIBPIDProcessor.cc
+  )
+  list(APPEND CRIBHEADERS
+       reconst/TTGTIKProcessor.h
+       simulation/TDetectParticleProcessor.h
+       simulation/TNBodyReactionProcessor.h
+       simulation/TEffectiveThickness.h
+       simulation/TCRIBPIDProcessor.h
+  )
+endif()
 
 add_library(${CRIBLIB_NAME} SHARED ${CRIBSOURCES})
 
@@ -128,8 +145,15 @@ target_link_libraries(${CRIBLIB_NAME}
         artemis::artparam
         artemis::artshare
         artemis::CAT
-        SRIMlib
 )
+# we will not support SRIMlib in the future
+if (SRIMlib_FOUND)
+  target_link_libraries(${CRIBLIB_NAME} PRIVATE SRIMlib)
+endif()
+
+if (TSrim_FOUND)
+  target_link_libraries(${CRIBLIB_NAME} PRIVATE Srim)
+endif()
 
 ROOT_GENERATE_DICTIONARY(G__${CRIBLIB_NAME}
     ${CRIBHEADERS}
