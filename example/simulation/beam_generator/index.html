@@ -5,44 +5,40 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.128.2">
     <meta name="generator" content="Relearn 6.0.0">
-    <meta name="description" content="last modified: 2024-05-06 by Kodai Okawa Requirements:
-src-crib/simulation/TRandomBeamGenerator src-crib/simulation/TTreeBeamGenerator src-crib/simulation/TParticleInfo As you know, an “event store” must be used to analyse the event loop.">
+    <meta name="description" content="last modified: 2024-07-16 by Kodai Okawa It is very useful to use Monte Carlo (MC) simulation to obtain various calculated values.">
     <meta name="author" content="Kodai Okawa">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Beam Generator :: CRIB artemis">
-    <meta name="twitter:description" content="last modified: 2024-05-06 by Kodai Okawa Requirements:
-src-crib/simulation/TRandomBeamGenerator src-crib/simulation/TTreeBeamGenerator src-crib/simulation/TParticleInfo As you know, an “event store” must be used to analyse the event loop.">
+    <meta name="twitter:description" content="last modified: 2024-07-16 by Kodai Okawa It is very useful to use Monte Carlo (MC) simulation to obtain various calculated values.">
     <meta property="og:url" content="https://okawak.github.io/artemis_crib/example/simulation/beam_generator/index.html">
     <meta property="og:site_name" content="CRIB artemis">
     <meta property="og:title" content="Beam Generator :: CRIB artemis">
-    <meta property="og:description" content="last modified: 2024-05-06 by Kodai Okawa Requirements:
-src-crib/simulation/TRandomBeamGenerator src-crib/simulation/TTreeBeamGenerator src-crib/simulation/TParticleInfo As you know, an “event store” must be used to analyse the event loop.">
+    <meta property="og:description" content="last modified: 2024-07-16 by Kodai Okawa It is very useful to use Monte Carlo (MC) simulation to obtain various calculated values.">
     <meta property="og:locale" content="en-us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Example">
     <meta property="article:published_time" content="2023-08-25T18:45:16+09:00">
-    <meta property="article:modified_time" content="2024-05-06T18:47:13+09:00">
+    <meta property="article:modified_time" content="2024-07-16T17:46:28+09:00">
     <meta itemprop="name" content="Beam Generator :: CRIB artemis">
-    <meta itemprop="description" content="last modified: 2024-05-06 by Kodai Okawa Requirements:
-src-crib/simulation/TRandomBeamGenerator src-crib/simulation/TTreeBeamGenerator src-crib/simulation/TParticleInfo As you know, an “event store” must be used to analyse the event loop.">
+    <meta itemprop="description" content="last modified: 2024-07-16 by Kodai Okawa It is very useful to use Monte Carlo (MC) simulation to obtain various calculated values.">
     <meta itemprop="datePublished" content="2023-08-25T18:45:16+09:00">
-    <meta itemprop="dateModified" content="2024-05-06T18:47:13+09:00">
-    <meta itemprop="wordCount" content="366">
+    <meta itemprop="dateModified" content="2024-07-16T17:46:28+09:00">
+    <meta itemprop="wordCount" content="414">
     <title>Beam Generator :: CRIB artemis</title>
     <link href="/artemis_crib/example/simulation/beam_generator/index.xml" rel="alternate" type="application/rss+xml" title="Beam Generator :: CRIB artemis">
     <link href="/artemis_crib/example/simulation/beam_generator/index.print.html" rel="alternate" type="text/html" title="Beam Generator :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1721114661" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1721114661" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1721114661" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1721114661" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1721114661" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1721114661" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1721114661" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1721114661" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1721114661" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-CRIB-theme.css?1721114661" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/chroma-relearn-dark.css?1721114661" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/artemis_crib/css/variant.css?1721114661" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1721114661" rel="stylesheet" media="print">
-    <script src="/artemis_crib/js/variant.js?1721114661"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1721119639" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1721119639" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1721119639" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1721119639" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1721119639" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1721119639" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1721119639" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1721119639" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1721119639" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-CRIB-theme.css?1721119639" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/chroma-relearn-dark.css?1721119639" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/artemis_crib/css/variant.css?1721119639" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1721119639" rel="stylesheet" media="print">
+    <script src="/artemis_crib/js/variant.js?1721119639"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..\/..';
@@ -132,89 +128,105 @@ src-crib/simulation/TRandomBeamGenerator src-crib/simulation/TTreeBeamGenerator 
 
 <h1 id="beam-generator">Beam Generator</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2024-05-06 by Kodai Okawa</span></span>
-<p>Requirements:</p>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2024-07-16 by Kodai Okawa</span></span>
+<p>It is very useful to use Monte Carlo (MC) simulation to obtain various calculated values.
+From this section, we will show the simple example how to perform MC simulation using artemis.</p>
+<p>First, we will set the generator of the beam that will bombard on the target.
+We have two kinds of generator:</p>
 <ul>
-<li>src-crib/simulation/TRandomBeamGenerator</li>
-<li>src-crib/simulation/TTreeBeamGenerator</li>
-<li>src-crib/simulation/TParticleInfo</li>
+<li>Random parameter beam (using Random number)</li>
+<li>Get beam parameter from ROOT file</li>
 </ul>
-<hr>
-<p>As you know, an &ldquo;event store&rdquo; must be used to analyse the event loop.
-For example, in the online analysis, we used <code>TRIDFEventStore</code>, and in the offline analysis, we can use <code>TTreeEventStore</code>.</p>
-<p>But when we want to simulate something, there are no data file.
-In that case, we can use <code>TCounterEventStore</code> or <code>TRandomNumberEventStore</code>.</p>
-<ul>
-<li>TCounterEventStore: generate numbers in sequence from 0 to N.</li>
-<li>TRandomNumberEventStore: generate number from 0.0 to 1.0 randomly.</li>
-</ul>
-<p>Here I will simply describe a simulation using TCounterEventStore.</p>
-
-<div class="box notices cstyle info">
-  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
-  <div class="box-content">
-
-<p>When we use the <code>TCounterEventStore</code>, the console will show &ldquo;no event store&rdquo; error message.
-However, the process will be done without any bugs, so currently okawa recommend to comment out the part to output this message.</p>
-</div>
-</div>
+<p>After you get beam information from a measurement, second option might be useful.</p>
 <h2 id="random-beam-generator">Random Beam Generator</h2>
-<p>Here I explain how to use this generator using 26Si14+ beam.
-This is the example of steering file.</p>
+<p>This is an example of a steering file.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">Processor</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">timer</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TTimerProcessor</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">count</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TCounterEventStore</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">OutputTransparency</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">MaxLoop</span><span class="p">:</span><span class="w"> </span><span class="m">10000</span><span class="w"> </span><span class="c"># loop number</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">random_eventstore</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TRandomNumberEventStore</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputTransparency</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">MaxLoop</span><span class="p">:</span><span class="w"> </span><span class="cp">*loopnum</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">beam_generator</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TRandomBeamGenerator</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">OutputCollection</span><span class="p">:</span><span class="w"> </span><span class="l">beam</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">OutputTrackCollection</span><span class="p">:</span><span class="w"> </span><span class="l">tracking</span><span class="w"> </span><span class="c"># used for reconstract simulation</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c">#beam particle information</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">MassNum</span><span class="p">:</span><span class="w"> </span><span class="m">26</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">AtomicNum</span><span class="p">:</span><span class="w"> </span><span class="m">14</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">ChargeNum</span><span class="p">:</span><span class="w"> </span><span class="m">14</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">IniEnergy</span><span class="p">:</span><span class="w"> </span><span class="m">55.5</span><span class="w"> </span><span class="c"># MeV (after window)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c">#beam tracking information</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">Xsigma</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="w"> </span><span class="c"># mm</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">Ysigma</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="w"> </span><span class="c"># mm</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">Asigma</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="w"> </span><span class="c"># deg</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">Bsigma</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="w"> </span><span class="c"># deg</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">Esigma</span><span class="p">:</span><span class="w"> </span><span class="m">0.0</span><span class="w"> </span><span class="c"># MeV (0 need for solid angle)</span></span></span></code></pre></div><p>This produces two branch, &ldquo;beam&rdquo; and &ldquo;tracking&rdquo;.</p>
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputCollection</span><span class="p">:</span><span class="w"> </span><span class="cp">*beam_name</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputTrackCollection</span><span class="p">:</span><span class="w"> </span><span class="cp">*track_name</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c">#beam particle information</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">MassNum</span><span class="p">:</span><span class="w"> </span><span class="cp">*beam_A</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">AtomicNum</span><span class="p">:</span><span class="w"> </span><span class="cp">*beam_Z</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">ChargeNum</span><span class="p">:</span><span class="w"> </span><span class="cp">*beam_Z</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">IniEnergy</span><span class="p">:</span><span class="w"> </span><span class="cp">*beam_E</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c">#beam tracking information</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Xsigma</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="w"> </span><span class="c"># mm</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Ysigma</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="w"> </span><span class="c"># mm</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Asigma</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="w"> </span><span class="c"># deg</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Bsigma</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="w"> </span><span class="c"># deg</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Esigma</span><span class="p">:</span><span class="w"> </span><span class="cp">*beam_Esigma</span></span></span></code></pre></div><p>This produces two branch, &ldquo;beam&rdquo; and &ldquo;track&rdquo;.</p>
 <ul>
 <li>beam: contain all information about beam ion</li>
-<li>tracking: used for reconstract simulation (only use paticular purpose)</li>
+<li>track: used for reconstract simulation</li>
 </ul>
-<p>Actually &ldquo;tracking&rdquo; information is contained in &ldquo;beam&rdquo; branch.</p>
-<p>This is the &ldquo;beam&rdquo; branch, TParticleInfo information.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"> <span class="n">art</span><span class="o">::</span><span class="n">TParticleInfo</span>
+<p>Actually &ldquo;track&rdquo; information is contained in &ldquo;beam&rdquo; branch.</p>
+<p>Here is the detail of the type of &ldquo;beam&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">artemis</span> <span class="p">[]</span> <span class="n">classinfo</span> <span class="n">art</span><span class="o">::</span><span class="n">TParticleInfo</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> <span class="n">art</span><span class="o">::</span><span class="n">TParticleInfo</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"> <span class="n">Data</span> <span class="n">Members</span>
-</span></span><span class="line"><span class="cl">                      <span class="kt">int</span>   <span class="n">fMassNumber</span>
-</span></span><span class="line"><span class="cl">                      <span class="kt">int</span>   <span class="n">fAtomicNumber</span>
-</span></span><span class="line"><span class="cl">                      <span class="kt">int</span>   <span class="n">fCharge</span>
-</span></span><span class="line"><span class="cl">                   <span class="kt">double</span>   <span class="n">fCurrentZ</span>              <span class="n">current</span> <span class="n">Z</span> <span class="n">position</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                      <span class="kt">int</span>   <span class="n">fMassNumber</span>                                
+</span></span><span class="line"><span class="cl">                      <span class="kt">int</span>   <span class="n">fAtomicNumber</span>                              
+</span></span><span class="line"><span class="cl">                      <span class="kt">int</span>   <span class="n">fCharge</span>                                    
 </span></span><span class="line"><span class="cl">                   <span class="kt">double</span>   <span class="n">fEnergy</span>                <span class="n">kinetic</span> <span class="n">energy</span> <span class="n">in</span> <span class="n">LAB</span> <span class="n">system</span>
+</span></span><span class="line"><span class="cl">                   <span class="kt">double</span>   <span class="n">fCurrentZ</span>              <span class="n">current</span> <span class="n">Z</span> <span class="n">position</span>  
+</span></span><span class="line"><span class="cl">                   <span class="kt">double</span>   <span class="n">fTime</span>                  <span class="n">Duration</span> <span class="n">time</span> <span class="p">(</span><span class="n">ns</span><span class="p">)</span>  
 </span></span><span class="line"><span class="cl">                   <span class="n">TTrack</span>   <span class="n">fTrack</span>                 <span class="n">tracking</span> <span class="n">information</span> <span class="n">in</span> <span class="n">LAB</span> <span class="n">system</span>
-</span></span><span class="line"><span class="cl">           <span class="n">TLorentzVector</span>   <span class="n">fVec</span>                   <span class="n">lorentz</span> <span class="n">vector</span> <span class="p">(</span><span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">E</span><span class="p">)</span> <span class="n">of</span> <span class="k">this</span> <span class="n">particle</span> <span class="n">in</span> <span class="n">LAB</span> <span class="n">system</span></span></span></code></pre></div><p><code>fCurrentZ</code> is the current Z position and at the beam generation, this value is set as 0.</p>
+</span></span><span class="line"><span class="cl">           <span class="n">TLorentzVector</span>   <span class="n">fVec</span>                   <span class="n">lorentz</span> <span class="n">vector</span> <span class="p">(</span><span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">E</span><span class="p">)</span> <span class="n">of</span> <span class="k">this</span> <span class="n">particle</span>
+</span></span><span class="line"><span class="cl">                   <span class="kt">double</span>   <span class="n">fTheta_cm</span>              <span class="n">theta</span> <span class="n">angle</span> <span class="p">(</span><span class="n">deg</span><span class="p">)</span> <span class="n">in</span> <span class="n">CM</span> <span class="n">system</span>
+</span></span><span class="line"><span class="cl">                   <span class="kt">double</span>   <span class="n">fPhi_cm</span>                <span class="n">phi</span> <span class="n">angle</span> <span class="p">(</span><span class="n">deg</span><span class="p">)</span> <span class="n">in</span> <span class="n">CM</span> <span class="n">system</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">--</span> <span class="n">snip</span> <span class="o">--</span></span></span></code></pre></div><p><code>fCurrentZ</code> is the current Z position and at the beam generation, this value will be set as 0 after this processor.</p>
 <p>For example, the beam angle distribution will be like this.</p>
-<figure><img src="/artemis_crib/example/simulation/beam_generator/angle.png" width="300">
+<figure><img src="/artemis_crib/example/simulation/beam_generator/angle.png" width="400">
 </figure>
 
 <h2 id="tree-beam-generator">Tree Beam Generator</h2>
-<p>From the ROOT file, we can generate the beam for using simulation.
-For example, from the data, we can know the beam tracking information and it can be used in beam generator.</p>
-<p>&lt;===under development===&gt;</p>
+<p>The tracking information obtained from the experiment can also be used to generate the beam.
+In the current version, the position and angle of the beam are read from a ROOT file and the energy is given randomly.</p>
+<p>This is an example of a steering file.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">Processor</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">periodic_tree</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TTreePeriodicEventStore</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputTransparency</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">FileName</span><span class="p">:</span><span class="w"> </span><span class="cp">*input</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">TreeName</span><span class="p">:</span><span class="w"> </span><span class="l">tree</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">MaxEventNum</span><span class="p">:</span><span class="w"> </span><span class="cp">*loopnum</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">proc_copy_processor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TBranchCopyProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">InputCollection</span><span class="p">:</span><span class="w"> </span><span class="l">f3ppac</span><span class="w"> </span><span class="c"># need to inherit from TTrack</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputCollection</span><span class="p">:</span><span class="w"> </span><span class="cp">*track_name</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">beam_generator</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TTreeBeamGenerator</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">InputCollection</span><span class="p">:</span><span class="w"> </span><span class="cp">*track_name</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputCollection</span><span class="p">:</span><span class="w"> </span><span class="cp">*beam_name</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># beam particle information</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">MassNum</span><span class="p">:</span><span class="w"> </span><span class="cp">*beam_A</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">AtomicNum</span><span class="p">:</span><span class="w"> </span><span class="cp">*beam_Z</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">ChargeNum</span><span class="p">:</span><span class="w"> </span><span class="cp">*beam_Z</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">IniEnergy</span><span class="p">:</span><span class="w"> </span><span class="cp">*beam_E</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Esigma</span><span class="p">:</span><span class="w"> </span><span class="cp">*beam_Esigma</span></span></span></code></pre></div><p>It reads an object named &ldquo;f3ppac&rdquo;, which inherits from TTrack, from a TTree named &ldquo;tree&rdquo; in a file named &ldquo;*input&rdquo;,
+and creates an object of the same type as before named <code>TParticleInfo</code>.</p>
 
             <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:kodak2022@outlook.jp">okawak</a>
-              <i class='fa-fw fas fa-calendar'></i> May 6, 2024
+              <i class='fa-fw fas fa-calendar'></i> Jul 16, 2024
             </footer>
           </article>
         </div>
@@ -242,12 +254,12 @@ For example, from the data, we can know the beam tracking information and it can
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/artemis_crib/js/auto-complete.js?1721114661" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.min.js?1721114661" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1721114661" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1721114661" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1721114661" defer></script>
-        <script src="/artemis_crib/js/search.js?1721114661" defer></script>
+        <script src="/artemis_crib/js/auto-complete.js?1721119639" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.min.js?1721119639" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1721119639" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1721119639" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1721119639" defer></script>
+        <script src="/artemis_crib/js/search.js?1721119639" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -380,8 +392,8 @@ For example, from the data, we can know the beam tracking information and it can
         </div>
       </div>
     </aside>
-    <script src="/artemis_crib/js/clipboard.min.js?1721114661" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1721114661" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1721119639" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1721119639" defer></script>
     <script>
       function useMathJax( config ){
         window.MathJax = Object.assign( window.MathJax || {}, {
@@ -397,6 +409,6 @@ For example, from the data, we can know the beam tracking information and it can
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1721114661" defer></script>
+    <script src="/artemis_crib/js/theme.js?1721119639" defer></script>
   </body>
 </html>

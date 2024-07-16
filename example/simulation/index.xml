@@ -12,7 +12,7 @@
       <link>https://okawak.github.io/artemis_crib/example/simulation/beam_generator/index.html</link>
       <pubDate>Fri, 25 Aug 2023 18:45:16 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/simulation/beam_generator/index.html</guid>
-      <description>last modified: 2024-05-06 by Kodai Okawa Requirements:&#xA;src-crib/simulation/TRandomBeamGenerator src-crib/simulation/TTreeBeamGenerator src-crib/simulation/TParticleInfo As you know, an “event store” must be used to analyse the event loop.</description>
+      <description>last modified: 2024-07-16 by Kodai Okawa It is very useful to use Monte Carlo (MC) simulation to obtain various calculated values.</description>
     </item>
     <item>
       <title>Nbodyreaction</title>
