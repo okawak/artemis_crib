@@ -1,36 +1,76 @@
 ---
 Anchor:
 
+ - &input /data/si26a/user/okawa/output/single/si26/high_si26.root
  - &output output/sim/test.root
  - &histout output/sim/test.hist.root
+
+ - &loopnum 1000000
+ - &beam_name beam
+ - &track_name track
+ - &beam_A 26
+ - &beam_Z 14
+ - &beam_E 55.5 # MeV (just before target)
+ - &beam_Esigma 3.3 # MeV
 
 Processor:
   - name: timer
     type: art::TTimerProcessor
 
-  - name: count
-    type: art::TRandomNumberEventStore
+# =====================================
+# using random number
+#  - name: random_eventstore
+#    type: art::TRandomNumberEventStore
+#    parameter:
+#      OutputTransparency: 1
+#      MaxLoop: *loopnum
+#
+#  - name: beam_generator
+#    type: art::TRandomBeamGenerator
+#    parameter:
+#      OutputCollection: *beam_name
+#      OutputTrackCollection: *track_name
+#      #beam particle information
+#      MassNum: *beam_A
+#      AtomicNum: *beam_Z
+#      ChargeNum: *beam_Z
+#      IniEnergy: *beam_E
+#      #beam tracking information
+#      Xsigma: 1.0 # mm
+#      Ysigma: 1.0 # mm
+#      Asigma: 1.0 # deg
+#      Bsigma: 1.0 # deg
+#      Esigma: *beam_Esigma
+
+#=====================================
+# using TTree events
+  - name: periodic_tree
+    type: art::TTreePeriodicEventStore
     parameter:
       OutputTransparency: 1
-      MaxLoop: 1000000
+      FileName: *input
+      TreeName: tree
+      MaxEventNum: *loopnum
+
+  - name: proc_copy_processor
+    type: art::TBranchCopyProcessor
+    parameter:
+      InputCollection: f3ppac # need to inherit from TTrack
+      OutputCollection: *track_name
 
   - name: beam_generator
-    type: art::TRandomBeamGenerator
+    type: art::TTreeBeamGenerator
     parameter:
-      OutputCollection: beam
-      OutputTrackCollection: track
-      #beam particle information
-      MassNum: 26
-      AtomicNum: 14
-      ChargeNum: 14
-      IniEnergy: 55.5 # MeV (after window)
-      #beam tracking information
-      Xsigma: 1.0 # mm
-      Ysigma: 1.0 # mm
-      Asigma: 1.0 # deg
-      Bsigma: 1.0 # deg
-      Esigma: 3.3 # MeV
+      InputCollection: *track_name
+      OutputCollection: *beam_name
+      # beam particle information
+      MassNum: *beam_A
+      AtomicNum: *beam_Z
+      ChargeNum: *beam_Z
+      IniEnergy: *beam_E
+      Esigma: *beam_Esigma
 
+#=====================================
 #  - name: reaction_proc
 #    type: art::TNBodyReactionProcessor
 #    parameter:

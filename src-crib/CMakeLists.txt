@@ -102,7 +102,7 @@ set(CRIBHEADERS
     timestamp/TTSMappingProcessor.h
     timestamp/TModuleDecoderTimestamp.h)
 
-if(SRIMlib_FOUND)
+if(SRIMlib_FOUND AND TSrim_FOUND)
   list(
     APPEND
     CRIBSOURCES

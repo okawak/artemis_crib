@@ -3,13 +3,13 @@
  * @brief   position and angle random beam generator
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-09 15:57:01
- * @note    last modified: 2024-07-16 15:02:12
+ * @note    last modified: 2024-07-16 16:51:02
  * @details
  */
 
 #include "TRandomBeamGenerator.h"
 #include "TParticleInfo.h"
-#include <TArtAtomicMassTable.h>
+// #include <TArtAtomicMassTable.h>
 #include <TClonesArray.h>
 #include <TMath.h>
 #include <TRandom.h>

@@ -3,7 +3,8 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:36:36
- * @note
+ * @note    last modified: 2024-07-16 17:03:32
+ * @details just modify the process() from TTreeEventStore to return 0
  */
 
 #include "TTreePeriodicEventStore.h"
@@ -24,16 +25,16 @@
 ClassImp(art::TTreePeriodicEventStore);
 
 art::TTreePeriodicEventStore::TTreePeriodicEventStore()
-    : fTree(NULL), fEventHeader(NULL), fFile(NULL) {
-    RegisterProcessorParameter("FileName", "The name of output file", fFileName, TString("temp.root"));
-    RegisterProcessorParameter("TreeName", "The name of output tree", fTreeName, TString("tree"));
+    : fFile(nullptr), fTree(nullptr), fEventHeader(nullptr) {
+    RegisterProcessorParameter("FileName", "The name of input file", fFileName, TString("temp.root"));
+    RegisterProcessorParameter("TreeName", "The name of input tree", fTreeName, TString("tree"));
     RegisterProcessorParameter("MaxEventNum", "The maximum event number to be analyzed. Analyze all the data if this is set to be 0", fMaxEventNum, 0L);
     fObjects = new TList;
 }
 art::TTreePeriodicEventStore::~TTreePeriodicEventStore() {
     if (fFile)
         fFile->Close();
-    fTree = NULL;
+    fTree = nullptr;
 }
 
 void art::TTreePeriodicEventStore::Init(TEventCollection *col) {
@@ -80,7 +81,7 @@ void art::TTreePeriodicEventStore::Init(TEventCollection *col) {
     fEventNum = 0;
     fCurrentNum = 0;
     fCondition = (TConditionBit **)(col->Get(TLoop::kConditionName)->GetObjectRef());
-    TDirectory *saved = gDirectory;
+    // TDirectory *saved = gDirectory;
     //   fFile = TFile::Open(fFileNam);
     //   saved->cd();
     //   if (!fFile) {
@@ -97,9 +98,9 @@ void art::TTreePeriodicEventStore::Init(TEventCollection *col) {
         return;
     }
     TIter next(fTree->GetListOfBranches());
-    TBranch *br = NULL;
+    TBranch *br = nullptr;
     while ((br = (TBranch *)next())) {
-        TClass *cls = NULL;
+        TClass *cls = nullptr;
         EDataType type;
         ;
         if (br->GetExpectedType(cls, type)) {
@@ -107,7 +108,7 @@ void art::TTreePeriodicEventStore::Init(TEventCollection *col) {
             continue;
         } else if (!cls) {
             // primitive types
-            void *input = NULL;
+            void *input = nullptr;
             Int_t counter = 0;
             // get dimension
             TLeaf *leaf = br->GetLeaf(br->GetName())->GetLeafCounter(counter);
@@ -134,14 +135,14 @@ void art::TTreePeriodicEventStore::Init(TEventCollection *col) {
                 //            return;
             } else {
                 useBranch.push_back(br);
-                col->Add(new TEventObject(br->GetName(), input, TString(TDataType::GetTypeName(type)), NULL));
+                col->Add(new TEventObject(br->GetName(), input, TString(TDataType::GetTypeName(type)), nullptr));
                 fTree->SetBranchAddress(br->GetName(), *col->Get(br->GetName())->GetObjectRef());
                 printf("branch : %s (%s) %p\n", br->GetName(), TDataType::GetTypeName(type), *col->Get(br->GetName())->GetObjectRef());
             }
         } else {
 #if 1
             if (cls == TClonesArray::Class()) {
-                TClonesArray *arr = NULL;
+                TClonesArray *arr = nullptr;
                 fTree->SetBranchStatus("*", 0);
                 fTree->SetBranchStatus(br->GetName());
                 fTree->SetBranchAddress(br->GetName(), &arr);
@@ -166,8 +167,8 @@ void art::TTreePeriodicEventStore::Init(TEventCollection *col) {
         }
     }
     TIter nextinfo(fTree->GetUserInfo());
-    TObject *obj = NULL;
-    while ((obj = nextinfo()) != NULL) {
+    TObject *obj = nullptr;
+    while ((obj = nextinfo()) != nullptr) {
         col->AddInfo(obj->GetName(), obj, kTRUE);
     }
     fTree->SetBranchStatus("*", 0);
@@ -192,13 +193,13 @@ void art::TTreePeriodicEventStore::Process() {
 }
 
 Int_t art::TTreePeriodicEventStore::GetRunNumber() const {
-    if (NULL == fEventHeader)
+    if (nullptr == fEventHeader)
         return 0;
     return (*fEventHeader)->GetRunNumber();
 }
 
 const char *art::TTreePeriodicEventStore::GetRunName() const {
-    if (NULL == fEventHeader)
+    if (nullptr == fEventHeader)
         return "";
     return (*fEventHeader)->GetRunName();
 }
