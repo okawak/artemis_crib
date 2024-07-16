@@ -3,25 +3,27 @@
  * @brief   position and angle random beam generator
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-09 15:57:01
- * @note
+ * @note    last modified: 2024-07-16 15:02:12
+ * @details
  */
 
 #include "TRandomBeamGenerator.h"
+#include "TParticleInfo.h"
 #include <TArtAtomicMassTable.h>
 #include <TClonesArray.h>
 #include <TMath.h>
 #include <TRandom.h>
 
-#include "TParticleInfo.h"
+#include <Mass.h> // TSrim library
 
 using art::TRandomBeamGenerator;
 
 ClassImp(TRandomBeamGenerator);
 
-TRandomBeamGenerator::TRandomBeamGenerator() : fOutData(NULL) {
-    RegisterOutputCollection("OutputCollection", "simulation result collection", fOutputColName, TString("result"));
-    RegisterOutputCollection("OutputTrackCollection", "simulation tracking information (used for reconstraction simulation)", fOutputTrackColName,
-                             TString("track"));
+TRandomBeamGenerator::TRandomBeamGenerator() : fOutData(nullptr) {
+    RegisterOutputCollection("OutputCollection", "simulation result collection", fOutputColName, TString("beam"));
+    RegisterOutputCollection("OutputTrackCollection", "simulation tracking information (used for reconstraction simulation)",
+                             fOutputTrackColName, TString("track"));
 
     RegisterProcessorParameter("MassNum", "beam mass number", fMassNum, 0);
     RegisterProcessorParameter("AtomicNum", "beam atomic number", fAtmNum, 0);
@@ -37,9 +39,9 @@ TRandomBeamGenerator::TRandomBeamGenerator() : fOutData(NULL) {
 
 TRandomBeamGenerator::~TRandomBeamGenerator() {
     delete fOutData;
-    fOutData = NULL;
+    fOutData = nullptr;
     delete fOutTrackData;
-    fOutTrackData = NULL;
+    fOutTrackData = nullptr;
 }
 
 void TRandomBeamGenerator::Init(TEventCollection *col) {
@@ -49,6 +51,10 @@ void TRandomBeamGenerator::Init(TEventCollection *col) {
     fAsigma *= deg2rad;
     fBsigma *= deg2rad;
 
+    /// using TSrim library
+    fMass = tsrim::Mass(fAtmNum, fMassNum) * tsrim::amu; // MeV
+    Info("Init", "beam: (Z, A, M) = (%d, %d, %.5lf)", fAtmNum, fMassNum, fMass / tsrim::amu);
+
     fOutData = new TClonesArray("art::TParticleInfo");
     fOutData->SetName(fOutputColName);
     col->Add(fOutputColName, fOutData, fOutputIsTransparent);
@@ -57,11 +63,12 @@ void TRandomBeamGenerator::Init(TEventCollection *col) {
     fOutTrackData->SetName(fOutputTrackColName);
     col->Add(fOutputTrackColName, fOutTrackData, fOutputIsTransparent);
 
-    gRandom->SetSeed(time(NULL));
+    gRandom->SetSeed(time(nullptr));
 }
 
 void TRandomBeamGenerator::Process() {
     fOutData->Clear("C");
+    fOutTrackData->Clear("C");
 
     TParticleInfo *outData = static_cast<TParticleInfo *>(fOutData->ConstructedAt(0));
     outData->SetMassNumber(fMassNum);
@@ -74,16 +81,14 @@ void TRandomBeamGenerator::Process() {
     Double_t angy = gRandom->Gaus(0., fBsigma);
     Double_t energy = gRandom->Gaus(fBeamEnergy, fEsigma);
 
-    Double_t mass = gAtomicMassTable->GetNucleusMass(fAtmNum, fMassNum);
-
-    Double_t beta = TMath::Sqrt(1.0 - TMath::Power(mass / (mass + energy), 2)); // kinematics
+    Double_t beta = TMath::Sqrt(1.0 - TMath::Power(fMass / (fMass + energy), 2)); // kinematics
     Double_t norm =
         TMath::Sqrt(TMath::Tan(angx) * TMath::Tan(angx) + TMath::Tan(angy) * TMath::Tan(angy) + 1.0); // kinematics
     Double_t beta_x = beta * TMath::Tan(angx) / norm;
     Double_t beta_y = beta * TMath::Tan(angy) / norm;
     Double_t beta_z = beta * 1.0 / norm;
 
-    TLorentzVector beam(0., 0., 0., mass);
+    TLorentzVector beam(0., 0., 0., fMass);
     beam.Boost(beta_x, beta_y, beta_z);
 
     outData->SetID(0);

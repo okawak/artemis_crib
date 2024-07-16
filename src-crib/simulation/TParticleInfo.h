@@ -3,7 +3,8 @@
  * @brief   particle information class
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-05-08 18:07:32
- * @note
+ * @note    last modified: 2024-07-16 14:48:11
+ * @details
  */
 
 #ifndef _TPARTICLEINFO_H_
@@ -67,8 +68,8 @@ class art::TParticleInfo : public TDataObject {
     Int_t fAtomicNumber;
     Int_t fCharge;
 
-    Double_t fCurrentZ; // current Z position
     Double_t fEnergy;   // kinetic energy in LAB system
+    Double_t fCurrentZ; // current Z position
     Double_t fTime;     // Duration time (ns)
 
     TTrack fTrack;       // tracking information in LAB system

@@ -3,7 +3,8 @@
  * @brief   particle information class
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-05-08 18:07:50
- * @note
+ * @note    last modified: 2024-07-16 14:49:50
+ * @details
  */
 
 #include "TParticleInfo.h"
@@ -26,14 +27,14 @@ TParticleInfo::~TParticleInfo() {}
 
 TParticleInfo::TParticleInfo(const TParticleInfo &rhs)
     : TDataObject(rhs),
-      fTrack(rhs.fTrack),
-      fVec(rhs.fVec),
       fMassNumber(rhs.fMassNumber),
       fAtomicNumber(rhs.fAtomicNumber),
       fCharge(rhs.fCharge),
       fEnergy(rhs.fEnergy),
       fCurrentZ(rhs.fCurrentZ),
       fTime(rhs.fTime),
+      fTrack(rhs.fTrack),
+      fVec(rhs.fVec),
       fTheta_cm(rhs.fTheta_cm),
       fPhi_cm(rhs.fPhi_cm) {
 }
