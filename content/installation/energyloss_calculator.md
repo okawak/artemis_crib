@@ -10,8 +10,18 @@ weight: 7
 {{% badge %}}{{< signature >}}{{% /badge %}}
 
 Some CRIB-specific files use energy loss libraries.
-In particular, a library called [SRIMlib](https://github.com/okawak/SRIMlib) has been developed by Okawa and some processors need to load this library.
 
+{{% notice style="warning" %}}
+Until 2023 we used [SRIMlib](https://github.com/okawak/SRIMlib) library developed by Okawa,
+but we plan to replace new library [TSrim](https://www.cns.s.u-tokyo.ac.jp/gitlab/hayakawa/tsrim)
+because Okawa will not maintain this library in the future.
+
+We are still developping the code, so not stable version yet.
+{{% /notice %}}
+
+---
+
+#### SRIMlib installation
 
 ```shell { wrap="false" }
 git clone https://github.com/okawak/SRIMlib.git
