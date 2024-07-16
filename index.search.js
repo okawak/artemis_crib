@@ -317,8 +317,8 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Installation",
-    "content": "last modified: 2023-11-05 by Kodai Okawa Some CRIB-specific files use energy loss libraries. In particular, a library called SRIMlib has been developed by Okawa and some processors need to load this library.\ngit clone https://github.com/okawak/SRIMlib.git cd SRIMlib mkdir build cd build cmake .. make make installBefore using this library, you need to make database file (just .root file)\ncd .. source thisSRIMlib.sh updateIf you want to make energy loss figures, “f” option will work.\nupdate -fAlso, I recommend to write source thisSRIMlib.sh part in the .bashrc/.zshrc to load this library.",
-    "description": "last modified: 2023-11-05 by Kodai Okawa Some CRIB-specific files use energy loss libraries.",
+    "content": "last modified: 2024-07-16 by Kodai Okawa Some CRIB-specific files use energy loss libraries.\nWarning Until 2023 we used SRIMlib library developed by Okawa, but we plan to replace new library TSrim because Okawa will not maintain this library in the future.\nWe are still developping the code, so not stable version yet.\nSRIMlib installation git clone https://github.com/okawak/SRIMlib.git cd SRIMlib mkdir build cd build cmake .. make make installBefore using this library, you need to make database file (just .root file)\ncd .. source thisSRIMlib.sh updateIf you want to make energy loss figures, “f” option will work.\nupdate -fAlso, I recommend to write source thisSRIMlib.sh part in the .bashrc/.zshrc to load this library.",
+    "description": "last modified: 2024-07-16 by Kodai Okawa Some CRIB-specific files use energy loss libraries.",
     "tags": [
       "CRIB"
     ],
