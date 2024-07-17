@@ -37,6 +37,5 @@ $ artnew
 # artnew is installed in ${HOME}/art_analysis/bin
 ```
 
-For detail, please check the
-<p><a href="https://okawak.github.io/artemis_crib/" target="_blank">manual</a></p>
-.
+For the detail, please check the github pages.
+<p><a href="https://okawak.github.io/artemis_crib/" target="_blank">CRIB artemis manual</a></p>
