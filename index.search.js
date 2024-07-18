@@ -215,7 +215,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "Up to now, we have introduced the installation and concepts of artemis. This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is no problem to start reading from here.\nPreparation Basic Tref for V1190 PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git Online analysis F1 Beam PID F2 PPAC MWDC Telescope F3 Gate Shifter task Scaler Timestamp Raw data checker Offline analysis New processors Merge files Python environment pyROOT MC Simulation Beam Generator Nbodyreaction Geometry Detect_particle Solidangle ",
+    "content": "Up to now, we have introduced the installation and concepts of artemis. This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is no problem to start reading from here.\nPreparation Basic Tref for V1190 PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git Online analysis F1 Beam PID F2 PPAC MWDC Telescope F3 Gate Shifter task Scaler Timestamp Raw data checker Offline analysis New processors Merge files Python environment pyROOT MC Simulation Beam Generator Nbody Reaction Geometry Detect_particle Solidangle ",
     "description": "Up to now, we have introduced the installation and concepts of artemis.",
     "tags": [],
     "title": "Example",
@@ -436,7 +436,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example",
-    "content": "This section explain the example of the Monte Carlo simulation by using artemis.\nBeam Generator Nbodyreaction Geometry Detect_particle Solidangle ",
+    "content": "This section explain the example of the Monte Carlo simulation by using artemis.\nBeam Generator Nbody Reaction Geometry Detect_particle Solidangle ",
     "description": "This section explain the example of the Monte Carlo simulation by using artemis.",
     "tags": [],
     "title": "MC Simulation",
@@ -478,10 +478,10 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e MC Simulation",
-    "content": "last modified: 2023-09-29 by Kodai Okawa ",
-    "description": "last modified: 2023-09-29 by Kodai Okawa ",
+    "content": "last modified: 2024-07-18 by Kodai Okawa make a reaction considering phase space.\nsteering file example - name: reaction_proc type: art::TNBodyReactionProcessor parameter: InputCollection: *beam_name OutputCollection: products # size is DecayParticleNum OutputReactionCollection: reaction # beam information (for initialize TSrim) BeamNucleus: [*beam_Z, *beam_A] # (Z, A) BeamEnergy: *beam_E # target information TargetIsGas: true # false-\u003e solid, true-\u003e gas target TargetName: he # from TSrim energy loss TargetMassNum: 4 # hit ion TargetAtomicNum: 2 # hit ion TargetThickness: 1000 # mm (for gas target, allow up to this value) TargetPressure: 250 # Torr (used for gas target) # reaction particles information DecayParticleNum: 2 ReactionMassNum: [29, 1] # will be [id=0, id=1] ReactionAtomicNum: [15, 1] ExciteLevel: [0.0, 0.0] # MeV # cross section file, if not, it use constant cross section for energy # require: \"energy cross-section\" format, deliminator should be a space ' ' CrossSectionPath: path/to/cs/file CrossSectionType: 0 # 0-\u003e LAB, kinematics is different, 1-\u003e LAB, kinematics is same, 2-\u003e CMNOTE\nusing TSrim library, so need to set TargetName that registered this library if cross section file is not found, it use constant dsigma/dE cross section file format should be # comment # energy cross_section 0.0 0.0 0.1 1.0 # comment # 0.2, 2.0 camma is not allowed... output products is size two array, like products[0] -\u003e id=0 particle output reaction contain reaction information, like Ecm, Thetacm artemis [] classinfo art::TReactionInfo art::TReactionInfo Data Members double fEnergy / Ecm of the reaction double fTheta / Thetacm of the reaction double fX / reaction position at LAB system, x double fY / reaction position at LAB system, y double fZ / reaction position at LAB system, z double fExEnergy / excited energy of residual nucleus ESortType kID ESortType kTiming ESortOrder kASC ESortOrder kDESC ",
+    "description": "last modified: 2024-07-18 by Kodai Okawa make a reaction considering phase space.",
     "tags": [],
-    "title": "Nbodyreaction",
+    "title": "Nbody Reaction",
     "uri": "/artemis_crib/example/simulation/nbodyreaction/index.html"
   },
   {

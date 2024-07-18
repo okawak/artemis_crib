@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.128.2">
+    <meta name="generator" content="Hugo 0.129.0">
     <meta name="generator" content="Relearn 6.0.0">
     <meta name="description" content="Up to now, we have introduced the installation and concepts of artemis.">
     <meta name="author" content="Kodai Okawa">
@@ -19,23 +19,23 @@
     <meta itemprop="name" content="Example :: CRIB artemis">
     <meta itemprop="description" content="Up to now, we have introduced the installation and concepts of artemis.">
     <meta itemprop="dateModified" content="2023-12-23T23:02:21+09:00">
-    <meta itemprop="wordCount" content="94">
+    <meta itemprop="wordCount" content="95">
     <title>Example :: CRIB artemis</title>
     <link href="https://okawak.github.io/artemis_crib/example/index.html" rel="canonical" type="text/html" title="Example :: CRIB artemis">
     <link href="/artemis_crib/example/index.xml" rel="alternate" type="application/rss+xml" title="Example :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1721119639" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1721119639" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1721119639" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1721119639" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1721119639" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1721119639" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1721119639" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1721119639" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1721119639" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-CRIB-theme.css?1721119639" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/chroma-relearn-dark.css?1721119639" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/artemis_crib/css/variant.css?1721119639" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1721119639" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/format-print.css?1721119639" rel="stylesheet">
-    <script src="/artemis_crib/js/variant.js?1721119639"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1721296209" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1721296209" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1721296209" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1721296209" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1721296209" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1721296209" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1721296209" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1721296209" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1721296209" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-CRIB-theme.css?1721296209" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/chroma-relearn-dark.css?1721296209" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/artemis_crib/css/variant.css?1721296209" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1721296209" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/format-print.css?1721296209" rel="stylesheet">
+    <script src="/artemis_crib/js/variant.js?1721296209"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..';
@@ -138,7 +138,7 @@ This chapter will show you how to analyse with artemis through practical example
 <li><a href="/artemis_crib/example/simulation/index.html">MC Simulation</a><ul>
 	
 <li><a href="/artemis_crib/example/simulation/beam_generator/index.html">Beam Generator</a></li>
-<li><a href="/artemis_crib/example/simulation/nbodyreaction/index.html">Nbodyreaction</a></li>
+<li><a href="/artemis_crib/example/simulation/nbodyreaction/index.html">Nbody Reaction</a></li>
 <li><a href="/artemis_crib/example/simulation/geometry/index.html">Geometry</a></li>
 <li><a href="/artemis_crib/example/simulation/detect_particle/index.html">Detect_particle</a></li>
 <li><a href="/artemis_crib/example/simulation/solidangle/index.html">Solidangle</a></li></ul></li>
@@ -219,13 +219,13 @@ As the login server is just a jump server, it is useful to be able to ssh to the
 So create the following config file. The file placed in this directory is automatically read when you ssh.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> ~/.ssh
 </span></span><span class="line"><span class="cl">vi config</span></span></code></pre></div>
-<div class="tab-panel" data-tab-group="203b0cde745c40a3aa1353c11597a680">
+<div class="tab-panel" data-tab-group="1a0ae6a4d446f862ba4a8af146b61f0f">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="sshconfig"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('203b0cde745c40a3aa1353c11597a680','sshconfig')"
+      onclick="switchTab('1a0ae6a4d446f862ba4a8af146b61f0f','sshconfig')"
     >
       <span class="tab-nav-text">~/.ssh/config</span>
     </button>
@@ -370,13 +370,13 @@ Since absolute channel values will vary, but relative channel values for a given
 Since it is essential that all events contain that data, we put the trigger signal in one of the channels and make it a Tref.</p>
 <p>The &ldquo;tref&rdquo; settings are made in the following file:</p>
 
-<div class="tab-panel" data-tab-group="7aac8d8de9eb626ab6f5813e1ea24f71">
+<div class="tab-panel" data-tab-group="e686ce97cd37d4a67ed11d1606ab169c">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="steeringtrefyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('7aac8d8de9eb626ab6f5813e1ea24f71','steeringtrefyaml')"
+      onclick="switchTab('e686ce97cd37d4a67ed11d1606ab169c','steeringtrefyaml')"
     >
       <span class="tab-nav-text">steering/tref.yaml</span>
     </button>
@@ -403,13 +403,13 @@ Therefore, the role of the processor is to subtract the &ldquo;Segconfig&rdquo; 
 <p>To apply this processor, add the following line to the steering file.
 For example,</p>
 
-<div class="tab-panel" data-tab-group="f5fec6d4763c27ff3001341d11b1aaef">
+<div class="tab-panel" data-tab-group="3574deab449cd8211b27386a7afa8f37">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="steeringchkf3yaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('f5fec6d4763c27ff3001341d11b1aaef','steeringchkf3yaml')"
+      onclick="switchTab('3574deab449cd8211b27386a7afa8f37','steeringchkf3yaml')"
     >
       <span class="tab-nav-text">steering/chkf3.yaml</span>
     </button>
@@ -590,13 +590,13 @@ First, define the parameters as follows</p>
 </ul>
 <p>For example, it is like this:</p>
 
-<div class="tab-panel" data-tab-group="4fbf42ed481a8a3645c4d9a669af5066">
+<div class="tab-panel" data-tab-group="9f871243ed3586a06d7b487c810931d0">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="prmppacdlppacyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('4fbf42ed481a8a3645c4d9a669af5066','prmppacdlppacyaml')"
+      onclick="switchTab('9f871243ed3586a06d7b487c810931d0','prmppacdlppacyaml')"
     >
       <span class="tab-nav-text">prm/ppac/dlppac.yaml</span>
     </button>
@@ -725,13 +725,13 @@ I think all PPAC geometries used by CRIB are the same.</p>
 </ul>
 <p>When we set the parameter like this files, the XY figure can be obtained.</p>
 
-<div class="tab-panel" data-tab-group="7539d7a59cd0463d60e41736ab38fb6d">
+<div class="tab-panel" data-tab-group="31841d9da0373264723f2c2b0d3dcb06">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="prmppacdlppacyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('7539d7a59cd0463d60e41736ab38fb6d','prmppacdlppacyaml')"
+      onclick="switchTab('31841d9da0373264723f2c2b0d3dcb06','prmppacdlppacyaml')"
     >
       <span class="tab-nav-text">prm/ppac/dlppac.yaml</span>
     </button>
@@ -791,13 +791,13 @@ I think all PPAC geometries used by CRIB are the same.</p>
 </span></span><span class="line"><span class="cl">move parameters        : <span class="o">(</span>-1.41737, 0.382269<span class="o">)</span>
 </span></span><span class="line"><span class="cl"><span class="o">===================================================</span></span></span></code></pre></div><p>And please input this value to the dlppac.yaml.</p>
 
-<div class="tab-panel" data-tab-group="d64fbbf17150ecf25905cb9d5ea4435d">
+<div class="tab-panel" data-tab-group="b8f3aae4d77feb37cbfc8aeaff487108">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="prmppacdlppacyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('d64fbbf17150ecf25905cb9d5ea4435d','prmppacdlppacyaml')"
+      onclick="switchTab('b8f3aae4d77feb37cbfc8aeaff487108','prmppacdlppacyaml')"
     >
       <span class="tab-nav-text">prm/ppac/dlppac.yaml</span>
     </button>
@@ -961,13 +961,13 @@ The loaded parameter file name is defined SSD steering file, and we don&rsquo;t 
 </div>
 <p>The &ldquo;ch2MeV.dat&rdquo; file format is like this:</p>
 
-<div class="tab-panel" data-tab-group="a7e0bd55a7f5a9707200763aae774f93">
+<div class="tab-panel" data-tab-group="a2e539f620d3c4147788997741990bb9">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="prmssdf2ch2mevdat"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('a7e0bd55a7f5a9707200763aae774f93','prmssdf2ch2mevdat')"
+      onclick="switchTab('a2e539f620d3c4147788997741990bb9','prmssdf2ch2mevdat')"
     >
       <span class="tab-nav-text">prm/ssd/f2ch2MeV.dat</span>
     </button>
@@ -1254,13 +1254,13 @@ For the SRIMlib setting, please refer <a href="https://okawak.github.io/artemis_
 <p>Next, you need input ions and beamline parameter files.
 The format is like this.</p>
 
-<div class="tab-panel" data-tab-group="67a318413065675ac34adc083295d025">
+<div class="tab-panel" data-tab-group="a08c46960a78f872e1420096d98d6153">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="prmpidexpnameyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('67a318413065675ac34adc083295d025','prmpidexpnameyaml')"
+      onclick="switchTab('a08c46960a78f872e1420096d98d6153','prmpidexpnameyaml')"
     >
       <span class="tab-nav-text">prm/pid/expname.yaml</span>
     </button>
@@ -1336,13 +1336,13 @@ The format is like this.</p>
 <p>Lastly, let&rsquo;s prepare the steering file.
 If you want to do only PID calculation, you can use <code>chkpid.yaml</code>.</p>
 
-<div class="tab-panel" data-tab-group="7cb50da9ef049c94f29d59641ba47b61">
+<div class="tab-panel" data-tab-group="cdb1fe5c7b28e03d7bcaad91f5e2b7b7">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="steeringchkpidyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('7cb50da9ef049c94f29d59641ba47b61','steeringchkpidyaml')"
+      onclick="switchTab('cdb1fe5c7b28e03d7bcaad91f5e2b7b7','steeringchkpidyaml')"
     >
       <span class="tab-nav-text">steering/chkpid.yaml</span>
     </button>
@@ -1703,13 +1703,13 @@ If you know other useful way, please let me know.</p>
 <p>We explained in the <a href="/artemis_crib/setting/histograms/index.html">Histograms</a> page, but again we describe about histogram definition focus on the <code>cut</code> part.</p>
 <p>The default figure defined like this:</p>
 
-<div class="tab-panel" data-tab-group="468faabe70a89a2db5a3b04a4ba0ced3">
+<div class="tab-panel" data-tab-group="a7ae9fa728747440a4e724c43966d8e4">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="histf2f2yaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('468faabe70a89a2db5a3b04a4ba0ced3','histf2f2yaml')"
+      onclick="switchTab('a7ae9fa728747440a4e724c43966d8e4','histf2f2yaml')"
     >
       <span class="tab-nav-text">hist/f2/f2.yaml</span>
     </button>
@@ -1737,13 +1737,13 @@ If you know other useful way, please let me know.</p>
 </div><p>For example, let&rsquo;s add the gate to select only &ldquo;-10.0 &lt; X &lt; 10.0&rdquo;.
 We can use alias node to define that.</p>
 
-<div class="tab-panel" data-tab-group="9e1dd1e437d1546628f3324889fe9abe">
+<div class="tab-panel" data-tab-group="410c5b9662f3a99535a3730d4ac38844">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="histf2f2yaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('9e1dd1e437d1546628f3324889fe9abe','histf2f2yaml')"
+      onclick="switchTab('410c5b9662f3a99535a3730d4ac38844','histf2f2yaml')"
     >
       <span class="tab-nav-text">hist/f2/f2.yaml</span>
     </button>
@@ -1776,13 +1776,13 @@ We can use alias node to define that.</p>
 
 <p>Also, multiple conditions can be specified at the same time.</p>
 
-<div class="tab-panel" data-tab-group="8e87157ae48a95de470d5713195aede0">
+<div class="tab-panel" data-tab-group="d5412e72270c17cbc94438f41f035c96">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="histf2f2yaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('8e87157ae48a95de470d5713195aede0','histf2f2yaml')"
+      onclick="switchTab('d5412e72270c17cbc94438f41f035c96','histf2f2yaml')"
     >
       <span class="tab-nav-text">hist/f2/f2.yaml</span>
     </button>
@@ -1822,13 +1822,13 @@ And the ROOT file and TCutG object name is <code>f2star</code>.</p>
 
 <p>If you want to use this object to select event, just add this line is fine, as long as you use <a href="/artemis_crib/crib_parts/userconfig/index.html">userlogon.C</a>.</p>
 
-<div class="tab-panel" data-tab-group="3bc160b66c7ef559dafe4038833b428c">
+<div class="tab-panel" data-tab-group="80cf30b65f9bd8dde2dd1f5992eed0d7">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="histf2f2yaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('3bc160b66c7ef559dafe4038833b428c','histf2f2yaml')"
+      onclick="switchTab('80cf30b65f9bd8dde2dd1f5992eed0d7','histf2f2yaml')"
     >
       <span class="tab-nav-text">hist/f2/f2.yaml</span>
     </button>
@@ -1867,13 +1867,13 @@ If you know which events you don&rsquo;t want, there are processors that allow y
 This may speed up the event loop.</p>
 <p>For example. when we want to analyze only <code>beam single</code> event (it means the events are not coincident with SSD, and let&rsquo;s suppose that condition is given by <code>single.fID==0</code>), let&rsquo;s prepare the steering file.</p>
 
-<div class="tab-panel" data-tab-group="0a7a6fd3d7994933599144d4fb14958f">
+<div class="tab-panel" data-tab-group="c10a75e86b75df40f5d679a812132a78">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="steeringgatecoinyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('0a7a6fd3d7994933599144d4fb14958f','steeringgatecoinyaml')"
+      onclick="switchTab('c10a75e86b75df40f5d679a812132a78','steeringgatecoinyaml')"
     >
       <span class="tab-nav-text">steering/gate/coin.yaml</span>
     </button>
@@ -1914,13 +1914,13 @@ In the case of <code>StopIf: 0</code>, artemis ignore the event that the conditi
 In other words, <code>StopIf: 0</code> means artemis will analyze the event only when the condition is <code>true</code>.</p>
 <p>Then, including this yaml file to the main steering file, you can check only the selected events.</p>
 
-<div class="tab-panel" data-tab-group="8f70e911bfc8031626ac40d248e053f9">
+<div class="tab-panel" data-tab-group="385cf57f3cbab465aab8a7ed31761c2b">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="steeringhogeyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('8f70e911bfc8031626ac40d248e053f9','steeringhogeyaml')"
+      onclick="switchTab('385cf57f3cbab465aab8a7ed31761c2b','steeringhogeyaml')"
     >
       <span class="tab-nav-text">steering/hoge.yaml</span>
     </button>
@@ -2044,13 +2044,13 @@ Of course, the real raw data is binary and therefore difficult to read, so we wi
 There are two files.
 This is an example, so please change it according to the experimental conditions.</p>
 
-<div class="tab-panel" data-tab-group="90bf2cf9f4d9fc1c81c57a0c8d86bfc4">
+<div class="tab-panel" data-tab-group="24bf03aab80674a24cd9cc4b20d3a85b">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="confsegmodulelistyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('90bf2cf9f4d9fc1c81c57a0c8d86bfc4','confsegmodulelistyaml')"
+      onclick="switchTab('24bf03aab80674a24cd9cc4b20d3a85b','confsegmodulelistyaml')"
     >
       <span class="tab-nav-text">conf/seg/modulelist.yaml</span>
     </button>
@@ -2085,13 +2085,13 @@ This is an example, so please change it according to the experimental conditions
   </div>
 </div><p>The module id list is <a href="/artemis_crib/example/segid/index.html">here</a>.</p>
 
-<div class="tab-panel" data-tab-group="01284dee0fb04223c0d47036cc6f0c68">
+<div class="tab-panel" data-tab-group="7abb93498275eb1af58c590928975079">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="confsegseglistyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('01284dee0fb04223c0d47036cc6f0c68','confsegseglistyaml')"
+      onclick="switchTab('7abb93498275eb1af58c590928975079','confsegseglistyaml')"
     >
       <span class="tab-nav-text">conf/seg/seglist.yaml</span>
     </button>
@@ -2279,7 +2279,7 @@ When you want to use std::vector<!-- raw HTML omitted --> method, you can use by
 <ul class="children children-li children-sort-weight">
 	
 <li><a href="/artemis_crib/example/simulation/beam_generator/index.html">Beam Generator</a></li>
-<li><a href="/artemis_crib/example/simulation/nbodyreaction/index.html">Nbodyreaction</a></li>
+<li><a href="/artemis_crib/example/simulation/nbodyreaction/index.html">Nbody Reaction</a></li>
 <li><a href="/artemis_crib/example/simulation/geometry/index.html">Geometry</a></li>
 <li><a href="/artemis_crib/example/simulation/detect_particle/index.html">Detect_particle</a></li>
 <li><a href="/artemis_crib/example/simulation/solidangle/index.html">Solidangle</a></li>
@@ -2405,13 +2405,71 @@ and creates an object of the same type as before named <code>TParticleInfo</code
             <header class="headline">
             </header>
 
-<h1 id="nbodyreaction">Nbodyreaction</h1>
+<h1 id="nbody-reaction">Nbody Reaction</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by Kodai Okawa</span></span>
-
+<span class="badge cstyle default"><span class="badge-content">last modified: 2024-07-18 by Kodai Okawa</span></span>
+<p>make a reaction considering phase space.</p>
+<ul>
+<li>steering file example</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">reaction_proc</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TNBodyReactionProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">InputCollection</span><span class="p">:</span><span class="w"> </span><span class="cp">*beam_name</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputCollection</span><span class="p">:</span><span class="w"> </span><span class="l">products</span><span class="w"> </span><span class="c"># size is DecayParticleNum</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputReactionCollection</span><span class="p">:</span><span class="w"> </span><span class="l">reaction</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># beam information (for initialize TSrim)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">BeamNucleus</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="cp">*beam_Z,</span><span class="w"> </span><span class="cp">*beam_A]</span><span class="w"> </span><span class="c"># (Z, A)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">BeamEnergy</span><span class="p">:</span><span class="w"> </span><span class="cp">*beam_E</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># target information</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">TargetIsGas</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c"># false-&gt; solid, true-&gt; gas target</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">TargetName</span><span class="p">:</span><span class="w"> </span><span class="l">he</span><span class="w"> </span><span class="c"># from TSrim energy loss</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">TargetMassNum</span><span class="p">:</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="c"># hit ion</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">TargetAtomicNum</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="c"># hit ion</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">TargetThickness</span><span class="p">:</span><span class="w"> </span><span class="m">1000</span><span class="w"> </span><span class="c"># mm (for gas target, allow up to this value)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">TargetPressure</span><span class="p">:</span><span class="w"> </span><span class="m">250</span><span class="w"> </span><span class="c"># Torr (used for gas target)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># reaction particles information</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">DecayParticleNum</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">ReactionMassNum</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">29</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="c"># will be [id=0, id=1]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">ReactionAtomicNum</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">15</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">ExciteLevel</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">0.0</span><span class="p">,</span><span class="w"> </span><span class="m">0.0</span><span class="p">]</span><span class="w"> </span><span class="c"># MeV</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># cross section file, if not, it use constant cross section for energy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># require: &#34;energy cross-section&#34; format, deliminator should be a space &#39; &#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">CrossSectionPath</span><span class="p">:</span><span class="w"> </span><span class="l">path/to/cs/file</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">CrossSectionType</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="c"># 0-&gt; LAB, kinematics is different, 1-&gt; LAB, kinematics is same, 2-&gt; CM</span></span></span></code></pre></div><p><strong>NOTE</strong></p>
+<ul>
+<li>using TSrim library, so need to set <code>TargetName</code> that registered this library</li>
+<li>if cross section file is not found, it use constant dsigma/dE</li>
+<li>cross section file format should be</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl"># comment
+</span></span><span class="line"><span class="cl"># energy cross_section
+</span></span><span class="line"><span class="cl">0.0 0.0
+</span></span><span class="line"><span class="cl">0.1 1.0 # comment
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 0.2, 2.0 camma is not allowed...</span></span></code></pre></div><ul>
+<li>output <code>products</code> is size two array, like products[0] -&gt; id=0 particle</li>
+<li>output <code>reaction</code> contain reaction information, like Ecm, Thetacm</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">artemis <span class="o">[]</span> classinfo art::TReactionInfo
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> art::TReactionInfo
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> Data Members
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                   double   fEnergy                / Ecm of the reaction
+</span></span><span class="line"><span class="cl">                   double   fTheta                 / Thetacm of the reaction
+</span></span><span class="line"><span class="cl">                   double   fX                     / reaction position at LAB system, x
+</span></span><span class="line"><span class="cl">                   double   fY                     / reaction position at LAB system, y
+</span></span><span class="line"><span class="cl">                   double   fZ                     / reaction position at LAB system, z
+</span></span><span class="line"><span class="cl">                   double   fExEnergy              / excited energy of residual nucleus
+</span></span><span class="line"><span class="cl">                ESortType   kID                                        
+</span></span><span class="line"><span class="cl">                ESortType   kTiming                                    
+</span></span><span class="line"><span class="cl">               ESortOrder   kASC                                       
+</span></span><span class="line"><span class="cl">               ESortOrder   kDESC   </span></span></code></pre></div>
             <footer class="footline">
-              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
-              <i class='fa-fw fas fa-calendar'></i> Sep 29, 2023
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:kodak2022@outlook.jp">okawak</a>
+              <i class='fa-fw fas fa-calendar'></i> Jul 18, 2024
             </footer>
           </article>
 
@@ -2431,13 +2489,13 @@ and creates an object of the same type as before named <code>TParticleInfo</code
 <hr>
 <p>Firstly, let&rsquo;s prepare the parameter file like this:</p>
 
-<div class="tab-panel" data-tab-group="0fb5320539e3ed5cee837bafe8e56500">
+<div class="tab-panel" data-tab-group="25612fd7b7bd51e1fb5b5cf0e43aa657">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="prmgeoexampleyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('0fb5320539e3ed5cee837bafe8e56500','prmgeoexampleyaml')"
+      onclick="switchTab('25612fd7b7bd51e1fb5b5cf0e43aa657','prmgeoexampleyaml')"
     >
       <span class="tab-nav-text">prm/geo/example.yaml</span>
     </button>
@@ -2546,13 +2604,13 @@ Please NOTE that the name should be the same with <code>conposition/detector/nam
 <p>Then, let&rsquo;s check if the parameter file can be correctly used!
 Please prepare the steering file.</p>
 
-<div class="tab-panel" data-tab-group="e72a8bc620749bf2f2e8ebfdf329d686">
+<div class="tab-panel" data-tab-group="4479821621bdda7671420c1d7c1f378d">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="steeringgeo_exampleyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('e72a8bc620749bf2f2e8ebfdf329d686','steeringgeo_exampleyaml')"
+      onclick="switchTab('4479821621bdda7671420c1d7c1f378d','steeringgeo_exampleyaml')"
     >
       <span class="tab-nav-text">steering/geo_example.yaml</span>
     </button>
@@ -2648,8 +2706,8 @@ I will explain the next session!</p>
         </div>
       </main>
     </div>
-    <script src="/artemis_crib/js/clipboard.min.js?1721119639" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1721119639" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1721296209" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1721296209" defer></script>
     <script>
       function useMathJax( config ){
         window.MathJax = Object.assign( window.MathJax || {}, {
@@ -2665,20 +2723,20 @@ I will explain the next session!</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/d3/d3-color.min.js?1721119639" defer></script>
-    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1721119639" defer></script>
-    <script src="/artemis_crib/js/d3/d3-drag.min.js?1721119639" defer></script>
-    <script src="/artemis_crib/js/d3/d3-ease.min.js?1721119639" defer></script>
-    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1721119639" defer></script>
-    <script src="/artemis_crib/js/d3/d3-selection.min.js?1721119639" defer></script>
-    <script src="/artemis_crib/js/d3/d3-timer.min.js?1721119639" defer></script>
-    <script src="/artemis_crib/js/d3/d3-transition.min.js?1721119639" defer></script>
-    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1721119639" defer></script>
-    <script src="/artemis_crib/js/js-yaml.min.js?1721119639" defer></script>
-    <script src="/artemis_crib/js/mermaid.min.js?1721119639" defer></script>
+    <script src="/artemis_crib/js/d3/d3-color.min.js?1721296209" defer></script>
+    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1721296209" defer></script>
+    <script src="/artemis_crib/js/d3/d3-drag.min.js?1721296209" defer></script>
+    <script src="/artemis_crib/js/d3/d3-ease.min.js?1721296209" defer></script>
+    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1721296209" defer></script>
+    <script src="/artemis_crib/js/d3/d3-selection.min.js?1721296209" defer></script>
+    <script src="/artemis_crib/js/d3/d3-timer.min.js?1721296209" defer></script>
+    <script src="/artemis_crib/js/d3/d3-transition.min.js?1721296209" defer></script>
+    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1721296209" defer></script>
+    <script src="/artemis_crib/js/js-yaml.min.js?1721296209" defer></script>
+    <script src="/artemis_crib/js/mermaid.min.js?1721296209" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{}");
     </script>
-    <script src="/artemis_crib/js/theme.js?1721119639" defer></script>
+    <script src="/artemis_crib/js/theme.js?1721296209" defer></script>
   </body>
 </html>

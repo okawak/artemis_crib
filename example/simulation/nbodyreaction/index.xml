@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nbodyreaction :: CRIB artemis</title>
+    <title>Nbody Reaction :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/simulation/nbodyreaction/index.html</link>
-    <description>last modified: 2023-09-29 by Kodai Okawa </description>
+    <description>last modified: 2024-07-18 by Kodai Okawa make a reaction considering phase space.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

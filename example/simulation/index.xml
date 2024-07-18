@@ -15,11 +15,11 @@
       <description>last modified: 2024-07-16 by Kodai Okawa It is very useful to use Monte Carlo (MC) simulation to obtain various calculated values.</description>
     </item>
     <item>
-      <title>Nbodyreaction</title>
+      <title>Nbody Reaction</title>
       <link>https://okawak.github.io/artemis_crib/example/simulation/nbodyreaction/index.html</link>
       <pubDate>Fri, 25 Aug 2023 18:46:12 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/simulation/nbodyreaction/index.html</guid>
-      <description>last modified: 2023-09-29 by Kodai Okawa </description>
+      <description>last modified: 2024-07-18 by Kodai Okawa make a reaction considering phase space.</description>
     </item>
     <item>
       <title>Geometry</title>
