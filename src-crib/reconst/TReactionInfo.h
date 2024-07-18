@@ -2,8 +2,9 @@
  * @file    TReactionInfo.h
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
- * @date    2024-08-01 22:27:43
- * @note
+ * @date    2023-08-01 22:27:43
+ * @note    last modified: 2024-07-18 17:36:23
+ * @details
  */
 
 #ifndef _TREACTIONINFO_H_
@@ -42,21 +43,21 @@ class art::TReactionInfo : public TDataObject {
         fZ = z;
     }
 
-    Int_t GetExID() const { return fExcitedID; }
-    void SetExID(Int_t arg) { fExcitedID = arg; }
+    Double_t GetExEnergy() const { return fExEnergy; }
+    void SetExEnergy(Double_t arg) { fExEnergy = arg; }
 
     virtual void Copy(TObject &dest) const;
     virtual void Clear(Option_t *opt = "");
 
   protected:
-    Double_t fEnergy;
-    Double_t fTheta;
+    Double_t fEnergy; /// Ecm of the reaction
+    Double_t fTheta;  /// Thetacm of the reaction
 
-    Double_t fX; // reaction position, x
-    Double_t fY; // reaction position, y
-    Double_t fZ; // reaction position, z
+    Double_t fX; /// reaction position at LAB system, x
+    Double_t fY; /// reaction position at LAB system, y
+    Double_t fZ; /// reaction position at LAB system, z
 
-    Int_t fExcitedID;
+    Double_t fExEnergy; /// excited energy of residual nucleus
 
     ClassDef(TReactionInfo, 1)
 };

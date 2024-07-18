@@ -16,6 +16,7 @@ rootfile
 .vncdisplay
 figure
 build
+model
 
 # scripts logs
 .log_mux

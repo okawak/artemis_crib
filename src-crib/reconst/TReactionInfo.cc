@@ -2,8 +2,9 @@
  * @file    TReactionInfo.cc
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
- * @date    2024-08-01 22:28:15
- * @note
+ * @date    2023-08-01 22:28:15
+ * @note    last modified: 2024-07-18 17:34:28
+ * @details
  */
 
 #include "TReactionInfo.h"
@@ -20,7 +21,7 @@ TReactionInfo::TReactionInfo()
       fX(kInvalidD),
       fY(kInvalidD),
       fZ(kInvalidD),
-      fExcitedID(kInvalidI) {
+      fExEnergy(kInvalidD) {
     TDataObject::SetID(kInvalidI);
 }
 
@@ -33,7 +34,7 @@ TReactionInfo::TReactionInfo(const TReactionInfo &rhs)
       fX(rhs.fX),
       fY(rhs.fY),
       fZ(rhs.fZ),
-      fExcitedID(rhs.fExcitedID) {
+      fExEnergy(rhs.fExEnergy) {
 }
 
 TReactionInfo &TReactionInfo::operator=(const TReactionInfo &rhs) {
@@ -51,7 +52,7 @@ void TReactionInfo::Copy(TObject &dest) const {
     cobj.fX = this->GetX();
     cobj.fY = this->GetY();
     cobj.fZ = this->GetZ();
-    cobj.fExcitedID = this->GetExID();
+    cobj.fExEnergy = this->GetExEnergy();
 }
 
 void TReactionInfo::Clear(Option_t *opt) {
@@ -62,5 +63,5 @@ void TReactionInfo::Clear(Option_t *opt) {
     fX = kInvalidD;
     fY = kInvalidD;
     fZ = kInvalidD;
-    fExcitedID = kInvalidI;
+    fExEnergy = kInvalidD;
 }

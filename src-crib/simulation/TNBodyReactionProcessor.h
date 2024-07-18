@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 13:11:23
- * @note    last modified: 2024-07-17 18:07:35
+ * @note    last modified: 2024-07-18 14:57:44
  * @details
  */
 
@@ -39,6 +39,10 @@ class art::TNBodyReactionProcessor : public TProcessor {
     TClonesArray *fOutData;     //!
     TClonesArray *fOutReacData; //!
 
+    /// @brief used only initialization at TSrim object
+    IntVec_t fBeamNucleus;
+    Double_t fBeamEnergy;
+
     Bool_t fTargetIsGas;
     TString fTargetName;
     Int_t fTargetMassNum;
@@ -51,6 +55,7 @@ class art::TNBodyReactionProcessor : public TProcessor {
     IntVec_t fReacAtmNum;
     DoubleVec_t fExciteLevel;
     TString fCSDataPath;
+    Int_t fCSType;
 
     TGenPhaseSpace event;
 

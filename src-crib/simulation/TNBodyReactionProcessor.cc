@@ -3,8 +3,8 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:36:36
- * @note    last modified: 2024-07-17 18:29:52
- * @details for constant cross section
+ * @note    last modified: 2024-07-18 17:57:43
+ * @details for (angle) constant cross section
  */
 
 #include "TNBodyReactionProcessor.h"
@@ -16,8 +16,13 @@
 #include <TDataObject.h>
 #include <TRandom.h>
 #include <constant.h>
+
+#include <cstdio>
 #include <cstdlib>
 #include <fstream>
+#include <regex>
+#include <string>
+#include <vector>
 
 using art::TNBodyReactionProcessor;
 
@@ -31,6 +36,12 @@ TNBodyReactionProcessor::TNBodyReactionProcessor()
     RegisterOutputCollection("OutputReactionCollection", "output branch (collection) name", fOutputReacColName,
                              TString("reaction"));
 
+    // beam information
+    IntVec_t init_i_vec;
+    RegisterProcessorParameter("BeamNucleus", "beam nucleus (Z, A)", fBeamNucleus, init_i_vec);
+    RegisterProcessorParameter("BeamEnergy", "initial beam energy used for initializing TSrim object",
+                               fBeamEnergy, 0.0);
+
     // Target information
     RegisterProcessorParameter("TargetIsGas", "Bool, target is targer or not", fTargetIsGas, false);
     RegisterProcessorParameter("TargetName", "name of target material", fTargetName, TString(""));
@@ -40,13 +51,14 @@ TNBodyReactionProcessor::TNBodyReactionProcessor()
     RegisterProcessorParameter("TargetPressure", "Target presure", fTargetPressure, 0.0);
 
     // reaction particles information
-    IntVec_t init_i_vec;
     DoubleVec_t init_d_vec;
     RegisterProcessorParameter("DecayParticleNum", "reaction particle number", fDecayNum, 1);
     RegisterProcessorParameter("ReactionMassNum", "reaction particles mass number", fReacMassNum, init_i_vec);
     RegisterProcessorParameter("ReactionAtomicNum", "reaction particles atomic number", fReacAtmNum, init_i_vec);
     RegisterProcessorParameter("ExciteLevel", "energy level for id=0 nucleus", fExciteLevel, init_d_vec);
     RegisterProcessorParameter("CrossSectionPath", "path to the cross section data file", fCSDataPath, TString(""));
+    RegisterProcessorParameter("CrossSectionType",
+                               "energy format, 0: LAB energy like TALYS, 1: LAB at inverse kinematics, 2: Ecm", fCSType, 0);
 }
 
 TNBodyReactionProcessor::~TNBodyReactionProcessor() {
@@ -68,6 +80,11 @@ void TNBodyReactionProcessor::Init(TEventCollection *col) {
         fDecayNum != (Int_t)fReacAtmNum.size() ||
         fDecayNum != (Int_t)fExciteLevel.size()) {
         SetStateError("in input yaml, DecayParticleNum and the size of other elements are different");
+        return;
+    }
+
+    if (fBeamNucleus.size() != 2) {
+        SetStateError("fBeamNucleus format need (Z, A): ex (2, 4)");
         return;
     }
 
@@ -126,135 +143,220 @@ void TNBodyReactionProcessor::Process() {
     Double_t target_mass = tsrim::Mass(fTargetAtmNum, fTargetMassNum) * tsrim::amu; // MeV
     TLorentzVector target_vec(0., 0., 0., target_mass);
     TLorentzVector beam_vec = Data->GetLorentzVector();
-    Double_t beam_mass = tsrim::Mass(Data->GetAtomicNumber(), Data->GetMassNumber()) * tsrim::amu; // MeV
+    Double_t beam_mass = tsrim::Mass(fBeamNucleus[0], fBeamNucleus[1]) * tsrim::amu; // MeV
     Double_t beam_energy = Data->GetEnergy();
 
     // calculate reaction position
     // target should be set at z=0 (entrance of gas target)
-    Double_t range = srim->Range(Data->GetAtomicNumber(), Data->GetMassNumber(), beam_energy,
+    Double_t range = srim->Range(fBeamNucleus[0], fBeamNucleus[1], beam_energy,
                                  fTargetName, fTargetPressure, 300.0);
+
+    // determine using random number
     Double_t reac_distance = GetRandomReactionInfo(range);
+    Double_t beam_energy_new = srim->EnergyNew(fBeamNucleus[0], fBeamNucleus[1], beam_energy,
+                                               fTargetName, reac_distance, fTargetPressure, 300.0);
 
-    // Double_t reac_posz = 0.0;
-    // Double_t reac_posx = Data->GetTrack().GetX(reac_posz);
-    // Double_t reac_posy = Data->GetTrack().GetY(reac_posz);
+    Double_t reac_posz = 0.0;
+    if (fTargetIsGas) {
+        reac_posz = reac_distance * TMath::Cos(Data->GetTrack().GetA()) * TMath::Cos(Data->GetTrack().GetB());
+    }
+    Double_t reac_posx = Data->GetTrack().GetX(reac_posz);
+    Double_t reac_posy = Data->GetTrack().GetY(reac_posz);
 
-    // Double_t thickness =
-    //     TVector3(reac_posx - Data->GetTrack().GetX(init_posz), reac_posy - Data->GetTrack().GetY(init_posz), reac_posz).Mag();
-    // if (reac_posz > 0) {
-    //     beam_vec = GetLossEnergyVector(beam_vec, beam_energy - fElossTarget->GetNewE(beam_energy, thickness));
-    // } else {
-    //     beam_vec = GetLossEnergyVector(beam_vec, beam_energy - fElossTarget->GetOldE(beam_energy, thickness));
-    // }
+    beam_vec = GetLossEnergyVector(beam_vec, beam_energy - beam_energy_new);
 
-    // // calculate tof (mean value)
-    // Double_t duration_beam = 0;
-    // if (fTargetisGas) {
-    //     duration_beam += thickness / (TMath::Sqrt(1.0 - TMath::Power(beam_mass / beam_vec.E(), 2.0)) * c);
-    // } // if solid target, tof is almost zero
+    // calculate tof in the target (mean value)
+    Double_t duration_beam = 0;
+    if (fTargetIsGas) {
+        duration_beam += reac_distance / (TMath::Sqrt(1.0 - TMath::Power(beam_mass / beam_vec.E(), 2.0)) * c);
+    } // if solid target, tof is almost zero
 
-    // DoubleVec_t reac_masses;
-    // for (Int_t iPart = 0; iPart < fDecayNum; iPart++) {
-    //     reac_masses.emplace_back(gAtomicMassTable->GetNucleusMass(fReacAtmNum[iPart], fReacMassNum[iPart]));
-    // }
+    DoubleVec_t reac_masses;
+    for (Int_t iPart = 0; iPart < fDecayNum; iPart++) {
+        Double_t mass = tsrim::Mass(fReacAtmNum[iPart], fReacMassNum[iPart]) * tsrim::amu; // MeV
+        mass += fExciteLevel[iPart];
+        reac_masses.emplace_back(mass);
+    }
 
-    // TLorentzVector compound_vec = beam_vec + target_vec;
+    TLorentzVector compound_vec = beam_vec + target_vec;
 
-    // TVector3 beta_vec = compound_vec.BoostVector();
-    // beam_vec.Boost(-beta_vec);
-    // target_vec.Boost(-beta_vec);
-    // Double_t energy_cm = (beam_vec.E() - beam_vec.M()) + (target_vec.E() - target_mass);
+    // to CM system (only beam_vec and target_vec)
+    TVector3 beta_vec = compound_vec.BoostVector();
+    beam_vec.Boost(-beta_vec);
+    target_vec.Boost(-beta_vec);
+    Double_t energy_cm = (beam_vec.E() - beam_vec.M()) + (target_vec.E() - target_mass);
 
-    // // need to change MeV to GeV
-    // compound_vec *= 0.001;
-    // DoubleVec_t GeVMass;
-    // for (Int_t i = 0; i < reac_masses.size(); i++) {
-    //     GeVMass.emplace_back(reac_masses[i] * 0.001);
-    // }
+    // need to change MeV to GeV
+    compound_vec *= 0.001;
+    DoubleVec_t GeVMass;
+    for (decltype(reac_masses.size()) i = 0; i < reac_masses.size(); i++) {
+        GeVMass.emplace_back(reac_masses[i] * 0.001);
+    }
 
-    // UInt_t excited_level = gRandom->Integer(fExciteLevel.size());
-    // GeVMass[0] += fExciteLevel[excited_level] * 0.001; // excited treatment
+    Bool_t isOkay = event.SetDecay(compound_vec, fDecayNum, GeVMass.data());
+    if (!isOkay) {
+        std::cerr << "forbidden kinematics" << std::endl;
+    }
+    event.Generate();
 
-    // Bool_t isOkay = event.SetDecay(compound_vec, fDecayNum, GeVMass.data());
-    // if (!isOkay) {
-    //     std::cerr << "forbidden kinematics" << std::endl;
-    // }
-    // event.Generate();
+    Double_t theta_cm = 0.0;
+    for (Int_t iPart = 0; iPart < fDecayNum; ++iPart) {
+        TLorentzVector reac_vec = *event.GetDecay(iPart);
+        // need to change GeV to MeV
+        reac_vec *= 1000.;
 
-    // Double_t theta_cm;
-    // for (Int_t iPart = 0; iPart < fDecayNum; ++iPart) {
-    //     TLorentzVector reac_vec = *event.GetDecay(iPart);
-    //     // need to change GeV to MeV
-    //     reac_vec *= 1000.;
+        TParticleInfo *outData = static_cast<TParticleInfo *>(fOutData->ConstructedAt(iPart));
+        outData->SetID(iPart);
+        outData->SetMassNumber(fReacMassNum[iPart]);
+        outData->SetAtomicNumber(fReacAtmNum[iPart]);
+        outData->SetCharge(fReacAtmNum[iPart]); // no need?
+        outData->SetTrack(reac_posx, reac_posy, reac_posz, TMath::ATan(reac_vec.Px() / reac_vec.Pz()),
+                          TMath::ATan(reac_vec.Py() / reac_vec.Pz()));
+        if (fTargetIsGas) {
+            outData->SetLorentzVector(reac_vec);
+            outData->SetEnergy(reac_vec.E() - reac_masses[iPart]);
+            outData->SetCurrentZ(reac_posz);
+            outData->SetZeroTime(); // initialize
+            outData->AddTime(duration_beam);
+        } else {
+            // for the solid target, ignore the angle
+            Double_t first_energy = reac_vec.E() - reac_masses[iPart];
+            if (first_energy > 0.01) {
+                Double_t out_thickness = fTargetThickness - reac_distance;
+                if (out_thickness < 0.0) {
+                    out_thickness = 0.0;
+                }
+                TLorentzVector out_vec =
+                    GetLossEnergyVector(reac_vec,
+                                        first_energy - srim->EnergyNew(fReacAtmNum[iPart], fReacMassNum[iPart], first_energy, fTargetName, out_thickness));
 
-    //     TParticleInfo *outData = static_cast<TParticleInfo *>(fOutData->ConstructedAt(iPart));
-    //     outData->SetID(iPart);
-    //     outData->SetMassNumber(fReacMassNum[iPart]);
-    //     outData->SetAtomicNumber(fReacAtmNum[iPart]);
-    //     outData->SetCharge(fReacChargeNum[iPart]);
-    //     outData->SetTrack(reac_posx, reac_posy, reac_posz, TMath::ATan(reac_vec.Px() / reac_vec.Pz()),
-    //                       TMath::ATan(reac_vec.Py() / reac_vec.Pz()));
-    //     if (fTargetisGas) {
-    //         outData->SetLorentzVector(reac_vec);
-    //         outData->SetEnergy(reac_vec.E() - reac_masses[iPart]);
-    //         outData->SetCurrentZ(reac_posz);
-    //         outData->SetZeroTime();
-    //         outData->AddTime(duration_beam);
-    //     } else {
-    //         Double_t first_energy = reac_vec.E() - reac_masses[iPart];
-    //         if (first_energy > 0.01) {
-    //             Double_t posx = outData->GetTrack().GetX(fTargetThickness);
-    //             Double_t posy = outData->GetTrack().GetY(fTargetThickness);
+                outData->SetLorentzVector(out_vec);
+                outData->SetEnergy(out_vec.E() - reac_masses[iPart]);
+                outData->SetCurrentZ(fTargetThickness);
+                outData->SetZeroTime();
+            } else {
+                // outData->SetLorentzVector(reac_vec);
+                outData->SetLorentzVector(0.0, 0.0, 0.0, reac_masses[iPart]);
+                outData->SetEnergy(0.0);
+                outData->SetCurrentZ(reac_posz);
+                outData->SetZeroTime();
+            }
+        }
 
-    //             Double_t outthick = TVector3(posx - outData->GetTrack().GetX(reac_posz),
-    //                                          posy - outData->GetTrack().GetY(reac_posz), fTargetThickness)
-    //                                     .Mag();
-    //             TLorentzVector out_vec =
-    //                 GetLossEnergyVector(reac_vec, first_energy - fElossProducts[iPart]->GetNewE(first_energy, outthick));
+        // compound_vec and reac_vec is LAB system, convert to CM system
+        reac_vec.Boost(-beta_vec);
+        outData->SetThetaCM(reac_vec.Theta() / deg2rad);
+        outData->SetPhiCM(reac_vec.Phi() / deg2rad);
+        if (iPart == 0) {
+            theta_cm = (Data->GetLorentzVector()).Angle(reac_vec.Vect()) / deg2rad;
+        }
+    }
 
-    //             outData->SetLorentzVector(out_vec);
-    //             outData->SetEnergy(out_vec.E() - reac_masses[iPart]);
-    //             outData->SetCurrentZ(fTargetThickness);
-    //             outData->SetZeroTime();
-    //         } else {
-    //             // outData->SetLorentzVector(reac_vec);
-    //             outData->SetLorentzVector(0.0, 0.0, 0.0, reac_masses[iPart]);
-    //             outData->SetEnergy(0.0);
-    //             outData->SetCurrentZ(reac_posz);
-    //             outData->SetZeroTime();
-    //         }
-    //     }
-
-    //     reac_vec.Boost(-beta_vec);
-    //     outData->SetThetaCM(reac_vec.Theta() / deg2rad);
-    //     outData->SetPhiCM(reac_vec.Phi() / deg2rad);
-    //     if (iPart == 0) {
-    //         theta_cm = (Data->GetLorentzVector()).Angle(reac_vec.Vect()) / deg2rad;
-    //     }
-    // }
-
-    // TReactionInfo *outReacData = static_cast<TReactionInfo *>(fOutReacData->ConstructedAt(0));
-    // outReacData->SetID(0);
-    // outReacData->SetExID(excited_level);
-    // outReacData->SetEnergy(energy_cm);
-    // outReacData->SetTheta(theta_cm);
-    // outReacData->SetXYZ(reac_posx, reac_posy, reac_posz);
+    TReactionInfo *outReacData = static_cast<TReactionInfo *>(fOutReacData->ConstructedAt(0));
+    outReacData->SetID(0);
+    outReacData->SetExEnergy(fExciteLevel[0]);
+    outReacData->SetEnergy(energy_cm);
+    outReacData->SetTheta(theta_cm);
+    outReacData->SetXYZ(reac_posx, reac_posy, reac_posz);
 }
 
 void TNBodyReactionProcessor::InitGeneratingFunc() {
     gr_generating_func = new TGraph();
     gr_generating_func_inv = new TGraph();
 
+    // simplize range
+    auto get_range = [&](Double_t e) {
+        return srim->Range(fBeamNucleus[0], fBeamNucleus[1], e, fTargetName, fTargetPressure, 300.0);
+    };
+
+    // get dE/dx (x : range)
+    auto dedx = [&](Double_t e) {
+        const Double_t h = 0.1;
+        Double_t dxde = (get_range(e + h) - get_range(e)) / h;
+        return 1.0 / dxde;
+    };
+
+    auto gr_density_func = new TGraph();
+    Int_t index = 0; // index for TGraph
+    Double_t xmin = 0.0, xmax = 0.0;
     std::ifstream fin(fCSDataPath.Data());
     if (!fin) {
         Info("Init", "no input cross section file, use uniform energy distribution");
-        for (auto i = 0; i < 3; i++) {
-            // this is just a test
-            gr_generating_func->SetPoint(i, 0.5 * i, 0.5 * i);
-            gr_generating_func_inv->SetPoint(i, 0.5 * i, 0.5 * i);
+        for (auto e = 0.0; e < fBeamEnergy * 1.5; e += 0.5) {
+            Double_t range = get_range(e);
+            gr_density_func->SetPoint(index, range, dedx(e));
+            index++;
+            xmax = range;
+            if (index == 1) {
+                xmin = range;
+            }
         }
-        return;
+    } else {
+        Info("Init", "get cross section file: %s", fCSDataPath.Data());
+        Double_t ene_factor = 0.0;
+        if (fCSType == 0) {
+            ene_factor = tsrim::Mass(fBeamNucleus[0], fBeamNucleus[1]) / tsrim::Mass(fTargetAtmNum, fTargetMassNum);
+        } else if (fCSType == 1) {
+            ene_factor = 1.0;
+        } else if (fCSType == 2) {
+            ene_factor = (tsrim::Mass(fBeamNucleus[0], fBeamNucleus[1]) + tsrim::Mass(fTargetAtmNum, fTargetMassNum)) /
+                         tsrim::Mass(fTargetAtmNum, fTargetMassNum);
+        } else {
+            SetStateError("CrossSectionType should be 0, 1 or 2");
+            return;
+        }
+
+        std::string line;
+        std::regex commentRegex("#.*");
+        while (std::getline(fin, line)) {
+            if (line.empty() || line[0] == '#') {
+                continue;
+            }
+            line = std::regex_replace(line, commentRegex, "");
+
+            std::vector<TString> values;
+            TString line_copy = line;
+            while (line_copy.Contains(' ')) {
+                Int_t index = line_copy.First(' ');
+                TString line_val, line_remain;
+                line_val = line_copy(0, index);
+                line_remain = line_copy(index + 1, line_copy.Length());
+                line_copy = line_remain;
+                if (line_val == "") {
+                    continue;
+                }
+                values.emplace_back(line_val);
+            }
+            Double_t e = ene_factor * values[0].Atof();
+            Double_t cs = values[1].Atof() / ene_factor;
+            Double_t range = get_range(e);
+            gr_density_func->SetPoint(index, range, cs * dedx(e));
+            index++;
+            xmax = range;
+            if (index == 1) {
+                xmin = range;
+            }
+        }
     }
+
+    auto f = new TF1("f", [&](double *x, double *p) { return p[0] * gr_density_func->Eval(x[0], nullptr, "S"); }, xmin, xmax, 1);
+    f->SetParameter(0, 1.0);
+
+    Info("Init", "suppressing the error message in this initialization process");
+    Info("Init", "please wait for a moment...");
+
+    // suppress error message when calculating the integral value
+    freopen("/dev/null", "w", stderr);
+    index = 0;
+    for (auto x = xmin; x < xmax; x += 1.0) {
+        gr_generating_func->SetPoint(index, x, f->Integral(xmin, x));
+        gr_generating_func_inv->SetPoint(index, f->Integral(xmin, x), x);
+        index++;
+    }
+    freopen("/dev/tty", "w", stderr);
+
+    Info("Init", "total cross section (arbitrary unit or mb)");
+    Info("Init", "\t%lf", gr_generating_func->Eval(get_range(fBeamEnergy), nullptr, "S"));
 }
 
 Double_t TNBodyReactionProcessor::GetRandomReactionInfo(Double_t range) {
@@ -268,7 +370,7 @@ Double_t TNBodyReactionProcessor::GetRandomReactionInfo(Double_t range) {
     }
     Double_t distance = gr_generating_func_inv->Eval(random_x, nullptr, "S");
 
-    return distance;
+    return range - distance;
 }
 
 TLorentzVector TNBodyReactionProcessor::GetLossEnergyVector(TLorentzVector vec, Double_t eloss) {
