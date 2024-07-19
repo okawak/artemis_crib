@@ -78,3 +78,30 @@ artemis [] classinfo art::TReactionInfo
                ESortOrder   kASC                                       
                ESortOrder   kDESC   
 ```
+
+## Example of the output
+
+We will show an example of a simulation performed for a `gas target case` like the steering file above. (of course we can use it also for solid target case!)
+Details of the reactions that took place are shown in these figures.
+The reaction cross section files are appropriately specified.
+
+This figure is the reaction energy at CM system.
+
+{{< figure src="reac_energy.png" width=400 >}}
+
+This distribution was created from a file of reaction cross section.
+The effect of beam energy spread is included, so the edge of the peak is not sharp.
+
+According to this energy distribution, the distribution of the positions of the reactions is as follows.
+
+{{< figure src="reac_position.png" width=400 >}}
+
+The angular distribution at CM system of reactions is assumed to be uniform.
+This figure shows the direction of one particle that is produced from this reaction.
+
+{{< figure src="reac_angle.png" width=400 >}}
+
+Also the relationship between the kinematics of the reactions will be like this.
+
+{{< figure src="reac_kinematics1.png" width=400 >}}
+{{< figure src="reac_kinematics2.png" width=400 >}}
