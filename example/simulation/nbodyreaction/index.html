@@ -5,40 +5,40 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.129.0">
     <meta name="generator" content="Relearn 6.0.0">
-    <meta name="description" content="last modified: 2024-07-18 by Kodai Okawa make a reaction considering phase space.">
+    <meta name="description" content="last modified: 2024-07-19 by Kodai Okawa make a reaction considering phase space.">
     <meta name="author" content="Kodai Okawa">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Nbody Reaction :: CRIB artemis">
-    <meta name="twitter:description" content="last modified: 2024-07-18 by Kodai Okawa make a reaction considering phase space.">
+    <meta name="twitter:description" content="last modified: 2024-07-19 by Kodai Okawa make a reaction considering phase space.">
     <meta property="og:url" content="https://okawak.github.io/artemis_crib/example/simulation/nbodyreaction/index.html">
     <meta property="og:site_name" content="CRIB artemis">
     <meta property="og:title" content="Nbody Reaction :: CRIB artemis">
-    <meta property="og:description" content="last modified: 2024-07-18 by Kodai Okawa make a reaction considering phase space.">
+    <meta property="og:description" content="last modified: 2024-07-19 by Kodai Okawa make a reaction considering phase space.">
     <meta property="og:locale" content="en-us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Example">
     <meta property="article:published_time" content="2023-08-25T18:46:12+09:00">
-    <meta property="article:modified_time" content="2024-07-18T18:49:18+09:00">
+    <meta property="article:modified_time" content="2024-07-19T16:31:10+09:00">
     <meta itemprop="name" content="Nbody Reaction :: CRIB artemis">
-    <meta itemprop="description" content="last modified: 2024-07-18 by Kodai Okawa make a reaction considering phase space.">
+    <meta itemprop="description" content="last modified: 2024-07-19 by Kodai Okawa make a reaction considering phase space.">
     <meta itemprop="datePublished" content="2023-08-25T18:46:12+09:00">
-    <meta itemprop="dateModified" content="2024-07-18T18:49:18+09:00">
-    <meta itemprop="wordCount" content="287">
+    <meta itemprop="dateModified" content="2024-07-19T16:31:10+09:00">
+    <meta itemprop="wordCount" content="434">
     <title>Nbody Reaction :: CRIB artemis</title>
     <link href="/artemis_crib/example/simulation/nbodyreaction/index.xml" rel="alternate" type="application/rss+xml" title="Nbody Reaction :: CRIB artemis">
     <link href="/artemis_crib/example/simulation/nbodyreaction/index.print.html" rel="alternate" type="text/html" title="Nbody Reaction :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1721296209" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1721296209" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1721296209" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1721296209" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1721296209" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1721296209" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1721296209" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1721296209" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1721296209" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-CRIB-theme.css?1721296209" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/chroma-relearn-dark.css?1721296209" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/artemis_crib/css/variant.css?1721296209" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1721296209" rel="stylesheet" media="print">
-    <script src="/artemis_crib/js/variant.js?1721296209"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1721374323" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1721374323" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1721374323" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1721374323" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1721374323" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1721374323" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1721374323" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1721374323" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1721374323" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-CRIB-theme.css?1721374323" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/chroma-relearn-dark.css?1721374323" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/artemis_crib/css/variant.css?1721374323" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1721374323" rel="stylesheet" media="print">
+    <script src="/artemis_crib/js/variant.js?1721374323"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..\/..';
@@ -83,7 +83,11 @@
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li><a href="#example-of-the-output">Example of the output</a></li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
@@ -123,7 +127,7 @@
 
 <h1 id="nbody-reaction">Nbody Reaction</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2024-07-18 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2024-07-19 by Kodai Okawa</span></span>
 <p>make a reaction considering phase space.</p>
 <ul>
 <li>steering file example</li>
@@ -182,10 +186,36 @@
 </span></span><span class="line"><span class="cl">                ESortType   kID                                        
 </span></span><span class="line"><span class="cl">                ESortType   kTiming                                    
 </span></span><span class="line"><span class="cl">               ESortOrder   kASC                                       
-</span></span><span class="line"><span class="cl">               ESortOrder   kDESC   </span></span></code></pre></div>
+</span></span><span class="line"><span class="cl">               ESortOrder   kDESC   </span></span></code></pre></div><h2 id="example-of-the-output">Example of the output</h2>
+<p>We will show an example of a simulation performed for a <code>gas target case</code> like the steering file above. (of course we can use it also for solid target case!)
+Details of the reactions that took place are shown in these figures.
+The reaction cross section files are appropriately specified.</p>
+<p>This figure is the reaction energy at CM system.</p>
+<figure><img src="/artemis_crib/example/simulation/nbodyreaction/reac_energy.png" width="400">
+</figure>
+
+<p>This distribution was created from a file of reaction cross section.
+The effect of beam energy spread is included, so the edge of the peak is not sharp.</p>
+<p>According to this energy distribution, the distribution of the positions of the reactions is as follows.</p>
+<figure><img src="/artemis_crib/example/simulation/nbodyreaction/reac_position.png" width="400">
+</figure>
+
+<p>The angular distribution at CM system of reactions is assumed to be uniform.
+This figure shows the direction of one particle that is produced from this reaction.</p>
+<figure><img src="/artemis_crib/example/simulation/nbodyreaction/reac_angle.png" width="400">
+</figure>
+
+<p>Also the relationship between the kinematics of the reactions will be like this.</p>
+<p><figure><img src="/artemis_crib/example/simulation/nbodyreaction/reac_kinematics1.png" width="400">
+</figure>
+
+<figure><img src="/artemis_crib/example/simulation/nbodyreaction/reac_kinematics2.png" width="400">
+</figure>
+</p>
+
             <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:kodak2022@outlook.jp">okawak</a>
-              <i class='fa-fw fas fa-calendar'></i> Jul 18, 2024
+              <i class='fa-fw fas fa-calendar'></i> Jul 19, 2024
             </footer>
           </article>
         </div>
@@ -213,12 +243,12 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/artemis_crib/js/auto-complete.js?1721296209" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.min.js?1721296209" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1721296209" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1721296209" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1721296209" defer></script>
-        <script src="/artemis_crib/js/search.js?1721296209" defer></script>
+        <script src="/artemis_crib/js/auto-complete.js?1721374323" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.min.js?1721374323" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1721374323" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1721374323" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1721374323" defer></script>
+        <script src="/artemis_crib/js/search.js?1721374323" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -351,8 +381,8 @@
         </div>
       </div>
     </aside>
-    <script src="/artemis_crib/js/clipboard.min.js?1721296209" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1721296209" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1721374323" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1721374323" defer></script>
     <script>
       function useMathJax( config ){
         window.MathJax = Object.assign( window.MathJax || {}, {
@@ -368,6 +398,6 @@
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1721296209" defer></script>
+    <script src="/artemis_crib/js/theme.js?1721374323" defer></script>
   </body>
 </html>
