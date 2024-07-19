@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:36:36
- * @note    last modified: 2024-07-19 16:08:46
+ * @note    last modified: 2024-07-19 17:52:49
  * @details for (angle) constant cross section
  */
 
@@ -90,7 +90,7 @@ void TNBodyReactionProcessor::Init(TEventCollection *col) {
 
     for (Int_t i = 0; i < fDecayNum; i++) {
         Info("Init", "reaction products: id=%d, %s (A=%d, Z=%d)", i,
-             tsrim::GetEl(fReacAtmNum[i]), fReacMassNum[i], fReacAtmNum[i]);
+             amdc::GetEl(fReacAtmNum[i]), fReacMassNum[i], fReacAtmNum[i]);
     }
 
     fInData = reinterpret_cast<TClonesArray **>(col->GetObjectRef(fInputColName.Data()));
@@ -140,10 +140,10 @@ void TNBodyReactionProcessor::Process() {
     const TDataObject *const inData = static_cast<TDataObject *>((*fInData)->At(0));
     const TParticleInfo *const Data = dynamic_cast<const TParticleInfo *>(inData);
 
-    Double_t target_mass = tsrim::Mass(fTargetAtmNum, fTargetMassNum) * tsrim::amu; // MeV
+    Double_t target_mass = amdc::Mass(fTargetAtmNum, fTargetMassNum) * amdc::amu; // MeV
     TLorentzVector target_vec(0., 0., 0., target_mass);
     TLorentzVector beam_vec = Data->GetLorentzVector();
-    Double_t beam_mass = tsrim::Mass(fBeamNucleus[0], fBeamNucleus[1]) * tsrim::amu; // MeV
+    Double_t beam_mass = amdc::Mass(fBeamNucleus[0], fBeamNucleus[1]) * amdc::amu; // MeV
     Double_t beam_energy = Data->GetEnergy();
 
     // calculate reaction position
@@ -173,7 +173,7 @@ void TNBodyReactionProcessor::Process() {
 
     DoubleVec_t reac_masses;
     for (Int_t iPart = 0; iPart < fDecayNum; iPart++) {
-        Double_t mass = tsrim::Mass(fReacAtmNum[iPart], fReacMassNum[iPart]) * tsrim::amu; // MeV
+        Double_t mass = amdc::Mass(fReacAtmNum[iPart], fReacMassNum[iPart]) * amdc::amu; // MeV
         mass += fExciteLevel[iPart];
         reac_masses.emplace_back(mass);
     }
@@ -295,12 +295,12 @@ void TNBodyReactionProcessor::InitGeneratingFunc() {
         Info("Init", "get cross section file: %s", fCSDataPath.Data());
         Double_t ene_factor = 0.0;
         if (fCSType == 0) {
-            ene_factor = tsrim::Mass(fBeamNucleus[0], fBeamNucleus[1]) / tsrim::Mass(fTargetAtmNum, fTargetMassNum);
+            ene_factor = amdc::Mass(fBeamNucleus[0], fBeamNucleus[1]) / amdc::Mass(fTargetAtmNum, fTargetMassNum);
         } else if (fCSType == 1) {
             ene_factor = 1.0;
         } else if (fCSType == 2) {
-            ene_factor = (tsrim::Mass(fBeamNucleus[0], fBeamNucleus[1]) + tsrim::Mass(fTargetAtmNum, fTargetMassNum)) /
-                         tsrim::Mass(fTargetAtmNum, fTargetMassNum);
+            ene_factor = (amdc::Mass(fBeamNucleus[0], fBeamNucleus[1]) + amdc::Mass(fTargetAtmNum, fTargetMassNum)) /
+                         amdc::Mass(fTargetAtmNum, fTargetMassNum);
         } else {
             SetStateError("CrossSectionType should be 0, 1 or 2");
             return;

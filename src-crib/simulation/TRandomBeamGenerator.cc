@@ -3,13 +3,12 @@
  * @brief   position and angle random beam generator
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-09 15:57:01
- * @note    last modified: 2024-07-16 16:51:02
+ * @note    last modified: 2024-07-19 17:53:46
  * @details
  */
 
 #include "TRandomBeamGenerator.h"
 #include "TParticleInfo.h"
-// #include <TArtAtomicMassTable.h>
 #include <TClonesArray.h>
 #include <TMath.h>
 #include <TRandom.h>
@@ -52,8 +51,8 @@ void TRandomBeamGenerator::Init(TEventCollection *col) {
     fBsigma *= deg2rad;
 
     /// using TSrim library
-    fMass = tsrim::Mass(fAtmNum, fMassNum) * tsrim::amu; // MeV
-    Info("Init", "beam: (Z, A, M) = (%d, %d, %.5lf)", fAtmNum, fMassNum, fMass / tsrim::amu);
+    fMass = amdc::Mass(fAtmNum, fMassNum) * amdc::amu; // MeV
+    Info("Init", "beam: (Z, A, M) = (%d, %d, %.5lf)", fAtmNum, fMassNum, fMass / amdc::amu);
 
     fOutData = new TClonesArray("art::TParticleInfo");
     fOutData->SetName(fOutputColName);

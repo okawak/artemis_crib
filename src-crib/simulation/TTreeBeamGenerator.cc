@@ -3,13 +3,12 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-09 15:57:01
- * @note    last modified: 2024-07-16 17:04:56
+ * @note    last modified: 2024-07-19 17:54:02
  * @details
  */
 
 #include "TTreeBeamGenerator.h"
 #include "TParticleInfo.h"
-// #include <TArtAtomicMassTable.h>
 #include <TClonesArray.h>
 #include <TMath.h>
 #include <TRandom.h>
@@ -42,8 +41,8 @@ void TTreeBeamGenerator::Init(TEventCollection *col) {
     Info("Init", "%s => %s", fInputColName.Data(), fOutputColName.Data());
 
     /// using TSrim library
-    fMass = tsrim::Mass(fAtmNum, fMassNum) * tsrim::amu; // MeV
-    Info("Init", "beam: (Z, A, M) = (%d, %d, %.5lf)", fAtmNum, fMassNum, fMass / tsrim::amu);
+    fMass = amdc::Mass(fAtmNum, fMassNum) * amdc::amu; // MeV
+    Info("Init", "beam: (Z, A, M) = (%d, %d, %.5lf)", fAtmNum, fMassNum, fMass / amdc::amu);
 
     fInData = reinterpret_cast<TClonesArray **>(col->GetObjectRef(fInputColName.Data()));
     if (!fInData) {
