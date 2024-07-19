@@ -9,16 +9,7 @@ tags: []
 
 {{% badge %}}{{< signature >}}{{% /badge %}}
 
-In this page, I will explain how to determine the detecter geometry configration.
-
-Requirement:
-
-- [src-crib/geo/TUserGeoInitializer](https://github.com/okawak/artemis_crib/blob/main/src-crib/geo/TUserGeoInitializer.h)
-- [src-crib/geo/TDetectorParameter](https://github.com/okawak/artemis_crib/blob/main/src-crib/geo/TUserGeoInitializer.h)
-
----
-
-Firstly, let's prepare the parameter file like this:
+Configure detector geometry to judge if the reaction particle hit the detector or not.
 
 ```yaml { title = "prm/geo/example.yaml"}
 material:
@@ -42,6 +33,7 @@ conposition:
       distance: 244.0 
       angle: -4.0 # deg
       thickness: [0.02, 0.301, 1.494, 1.486]
+      pedestal: [0., 0., 0., 0.] # MeV, below this energy, assume 0 MeV
       material: [Si]
 
     - name: tel2
@@ -51,6 +43,7 @@ conposition:
       distance: 154.5
       angle: 27.0
       thickness: [0.02, 0.300, 1.494, 1.485]
+      pedestal: [0., 0., 0., 0.] # MeV, below this energy, assume 0 MeV
       material: [Si]
 
 volume:
@@ -72,13 +65,13 @@ volume:
       size: [50.0, 50.0, 1.0] # mm
 ```
 
-There are many components to explain!
+The geometry information is used only for the judgement, so any material is actually okay.
+
 The `material` node is used to define ``TGeoMaterial`` and ``TGeoMedium`` classes.
-(But they are not directly used.)
 From **name** to **density** node are used to make a instance of this object.
 This values are not used in the current processors.
 
-The next `conposition` node define the detector configuration!
+The next `conposition` node define the detector configuration.
 General telescopes of the CRIB experiment consist of **DSSSD** and **SSD** (single-pad),
 and the node below defines the SSD of the telescope.
 
@@ -87,25 +80,19 @@ and the node below defines the SSD of the telescope.
 - thickness: Thickness of the each layer. If there are two layer, the size of the array become two. You can add to any size. The unit is **mm**.
 - material: material of the each layer. The string is used in `SRIMlib` calculation. This node is defined as a array for each layer, but if it is one, the same material is applied. For example, in example.yaml, [Si] means [Si, Si, Si, Si]. (You need to prepare SRIMlib setting beforehand!)
 
-
-Let's move on to the geometry part!
-The node is `center_rotation`, `offset`, `distance` and `angle`.
-Please look at this figure.
+As for the node is `center_rotation`, `offset`, `distance` and `angle`, please see this figure.
 
 {{< figure src="../geo_example.png" >}}
 
-Please not that the center_rotation and offset are defined in (x, y, z) coordinate (-> [x, y, z]), but distance and angle is scalar value.
+Please note that the center_rotation and offset are defined in (x, y, z) coordinate, and distance and angle are scalar value.
 The unit of length is `mm`, angle is `deg`.
 
-
 {{% notice style="info" %}}
-The sign of the angle is defined as positive at this figure.
+The sign of the angle is defined as positive at this figure (right-hand system).
 And generally, we set z=0 at target position. (For the gas target, we set 0 at window position.)
 {{% /notice %}}
 
-
-The last part is `volume` node!
-In this parts, the shape of the detector will be defined by using ``TGeoVolume`` class.
+The last part `volume` node, the shape of the detector will be defined by using ``TGeoVolume`` class.
 The TGeoVolume needs **name**, **type**, **material** and **size**.
 For the type, I only prepared "box". (It means the code use only vol->MakeBox method.)
 
@@ -117,12 +104,14 @@ And the size is generally set to the size of the scattering chamber, but for the
 Also the unit is `mm` and format is (x, y, z).
 
 Next, at the `volume/detector` node, we can define the detector size.
-Please NOTE that the name should be the same with `conposition/detector/name` node.
+
+{{% notice style="warning" %}}
+NOTE: the `volume/detector/name` should be the same with `conposition/detector/name` node.
+{{% /notice %}}
 
 ---
 
-Then, let's check if the parameter file can be correctly used!
-Please prepare the steering file.
+Then, let's check if the parameter file can be correctly used.
 
 ```yaml { title = "steering/geo_example.yaml"}
 Anchor:
@@ -131,8 +120,8 @@ Processor:
 - name: detector_initialize
   type: art::TUserGeoInitializer
   parameter:
-    Name: prm_detector
     FileName: prm/geo/example.yaml
+    Visible: true
     OutputTransparency: 1
 ```
 
@@ -140,9 +129,10 @@ This steering file doesn't use event loop.
 Just we want to check the parameter file works well or not.
 
 Then let's see in the artemis!
+
 ```shell
-acd
-a
+$ acd
+$ a
 
 -- snip --
 
@@ -162,6 +152,8 @@ The detector geometry object is successfully generated!
 In order to check the object, please use [draw](https://github.com/okawak/artemis_crib/blob/main/src-crib/commands/TCmdDraw.cc) command for example.
 (It is defined only in CRIB artemis, to draw not only histogram object. This is under development.)
 
+Or you can get the object with some methods and `obj->Draw()` will work.
+
 ```shell
 artemis [2] draw 0
 ```
@@ -170,10 +162,3 @@ artemis [2] draw 0
 
 The red box is the TOP, and the black boxes are detectors.
 If the detector is placed where you expect it to be, the parameters have been successfully set!
-
-In the event loop process, if you want to use the detector geometry information, you can use `prm_detector` in the steering files.
-I will explain the next session!
-
-
-
-
