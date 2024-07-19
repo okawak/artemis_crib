@@ -26,7 +26,7 @@
       <link>https://okawak.github.io/artemis_crib/example/simulation/geometry/index.html</link>
       <pubDate>Fri, 25 Aug 2023 16:34:00 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/simulation/geometry/index.html</guid>
-      <description>last modified: 2023-09-29 by Kodai Okawa In this page, I will explain how to determine the detecter geometry configration.</description>
+      <description>last modified: 2024-07-19 by Kodai Okawa Configure detector geometry to judge if the reaction particle hit the detector or not.</description>
     </item>
     <item>
       <title>Detect_particle</title>
