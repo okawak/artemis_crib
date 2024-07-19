@@ -3,7 +3,8 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:34:15
- * @note
+ * @note    last modified: 2024-07-19 16:56:37
+ * @details
  */
 
 #ifndef _TDETECTPARTICLEPROCESSOR_H_

@@ -3,7 +3,8 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-18 11:32:42
- * @note
+ * @note    last modified: 2024-07-19 16:54:16
+ * @details
  */
 
 #ifndef _TDETECTORPARAMETER_H_

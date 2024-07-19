@@ -3,7 +3,8 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 21:30:15
- * @note
+ * @note    last modified: 2024-07-19 16:29:12
+ * @details
  */
 
 #ifndef _TUSERGEOINITIALIZER_H_

@@ -3,7 +3,8 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-18 14:43:02
- * @note
+ * @note    last modified: 2024-07-19 16:54:40
+ * @details
  */
 
 #include "TDetectorParameter.h"

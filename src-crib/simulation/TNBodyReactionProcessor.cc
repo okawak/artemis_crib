@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:36:36
- * @note    last modified: 2024-07-18 17:57:43
+ * @note    last modified: 2024-07-19 16:08:46
  * @details for (angle) constant cross section
  */
 
@@ -152,7 +152,7 @@ void TNBodyReactionProcessor::Process() {
                                  fTargetName, fTargetPressure, 300.0);
 
     // determine using random number
-    Double_t reac_distance = GetRandomReactionInfo(range);
+    Double_t reac_distance = GetRandomReactionDistance(range);
     Double_t beam_energy_new = srim->EnergyNew(fBeamNucleus[0], fBeamNucleus[1], beam_energy,
                                                fTargetName, reac_distance, fTargetPressure, 300.0);
 
@@ -359,13 +359,14 @@ void TNBodyReactionProcessor::InitGeneratingFunc() {
     Info("Init", "\t%lf", gr_generating_func->Eval(get_range(fBeamEnergy), nullptr, "S"));
 }
 
-Double_t TNBodyReactionProcessor::GetRandomReactionInfo(Double_t range) {
+Double_t TNBodyReactionProcessor::GetRandomReactionDistance(Double_t range) {
     Double_t random_x = 0.0;
     Double_t max_x = gr_generating_func->Eval(range, nullptr, "S");
     if (range < fTargetThickness) {
         random_x = max_x * gRandom->Uniform();
     } else {
-        Double_t min_x = gr_generating_func->Eval(fTargetThickness, nullptr, "S");
+        Double_t limit_range = range - fTargetThickness;
+        Double_t min_x = gr_generating_func->Eval(limit_range, nullptr, "S");
         random_x = gRandom->Uniform(min_x, max_x);
     }
     Double_t distance = gr_generating_func_inv->Eval(random_x, nullptr, "S");

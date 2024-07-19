@@ -97,13 +97,21 @@ Processor:
       CrossSectionPath: model/ap.L00
       CrossSectionType: 0 # 0: LAB, kinematics is different, 1: LAB, kinematics is same, 2: CM
 
-#  - name: detector_initialize
-#    type: art::TUserGeoInitializer
-#    parameter:
-#      Name: prm_detectors
-#      FileName: prm/geo/si26a.yaml
-#      OutputTransparency: 1
-#
+  - name: particle_sep_proc
+    type: art::TSeparateOutputProcessor
+    parameter:
+      InputCollection: products
+      OutputCollections:
+        - heavy
+        - light
+
+  - name: detector_initialize
+    type: art::TUserGeoInitializer
+    parameter:
+      FileName: prm/geo/current
+      Visible: false
+      OutputTransparency: 1
+
 #  - name: detector_proc
 #    type: art::TDetectParticleProcessor
 #    parameter:

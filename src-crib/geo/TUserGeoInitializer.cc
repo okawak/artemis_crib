@@ -3,7 +3,8 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 21:27:49
- * @note
+ * @note    last modified: 2024-07-19 16:52:07
+ * @details
  */
 
 #include "TUserGeoInitializer.h"
@@ -50,7 +51,7 @@ const char *kNodeKeyZ = "z_position";
 const char *kNodeKeyPedestal = "pedestal";
 } // namespace
 
-TUserGeoInitializer::TUserGeoInitializer() : fGeom(NULL) {
+TUserGeoInitializer::TUserGeoInitializer() : fGeom(nullptr) {
     RegisterProcessorParameter("DetName", "parameter name of detectors", fDetPrmName, TString("prm_detectors"));
     RegisterProcessorParameter("TargetName", "parameter name of targets", fTargetPrmName, TString("prm_targets"));
     RegisterProcessorParameter("FileName", "parameter file of detector geometry", fFileName, TString(""));
@@ -62,12 +63,16 @@ TUserGeoInitializer::~TUserGeoInitializer() {
     delete fGeom;
     delete fDetParameterArray;
     delete fTargetParameterArray;
+    fGeom = nullptr;
+    fDetParameterArray = nullptr;
+    fTargetParameterArray = nullptr;
 }
 
 void TUserGeoInitializer::Init(TEventCollection *col) {
     Info("Init", "geometry parameter is loaded from %s", fFileName.Data());
-    if (gGeoManager)
+    if (gGeoManager) {
         delete gGeoManager;
+    }
     fGeom = new TGeoManager("geometry", "Detector Geometry");
 
     Info("Init", "detector parameters are produced to %s", fDetPrmName.Data());
@@ -109,7 +114,7 @@ void TUserGeoInitializer::GeometryFromYaml(TString yamlfile) {
     YAML::Node yaml_mat = yaml_all[kNodeKeyMaterial].as<YAML::Node>();
     std::vector<TGeoMaterial *> mat_vec;
     std::vector<TGeoMedium *> med_vec;
-    for (Int_t i = 0; i < yaml_mat.size(); i++) {
+    for (decltype(yaml_mat.size()) i = 0; i < yaml_mat.size(); i++) {
         TString name = yaml_mat[i][kNodeKeyName].as<std::string>();
         Double_t atm_mass = yaml_mat[i][kNodeKeyAMass].as<double>();
         Double_t atm_num = yaml_mat[i][kNodeKeyANum].as<double>();
@@ -140,7 +145,7 @@ void TUserGeoInitializer::GeometryFromYaml(TString yamlfile) {
         return;
     }
 
-    for (Int_t i = 0; i < yaml_det.size(); i++) {
+    for (decltype(yaml_det.size()) i = 0; i < yaml_det.size(); i++) {
         if (yaml_prm[i][kNodeKeyName].as<std::string>() != yaml_det[i][kNodeKeyName].as<std::string>()) {
             SetStateError("in yaml, set same order for composition and detector");
             return;
@@ -150,6 +155,12 @@ void TUserGeoInitializer::GeometryFromYaml(TString yamlfile) {
         DoubleVec_t det_size = yaml_det[i][kNodeKeySize].as<std::vector<double>>();
         if (det_size.size() != 3) {
             SetStateError("input yaml error, detector volume size must be 3D");
+            return;
+        }
+
+        // currently only support box type detector
+        if (yaml_det[i][kNodeKeyType].as<std::string>() != "box") {
+            SetStateError("Currently only support only box type");
             return;
         }
 
@@ -184,7 +195,7 @@ void TUserGeoInitializer::GeometryFromYaml(TString yamlfile) {
         }
         std::vector<std::string> material = yaml_prm[i][kNodeKeyMaterial].as<std::vector<std::string>>();
         StringVec_t material_vec;
-        for (Int_t j = 0; j < thickness.size(); j++) {
+        for (decltype(thickness.size()) j = 0; j < thickness.size(); j++) {
             if (material.size() == 1) {
                 material_vec.emplace_back(material[0]);
             } else if (material.size() == thickness.size()) {
@@ -216,7 +227,7 @@ void TUserGeoInitializer::GeometryFromYaml(TString yamlfile) {
 
     // targets setting
     YAML::Node yaml_target = yaml_all[kNodeKeyConposition][kNodeKeyTarget].as<YAML::Node>();
-    for (Int_t i = 0; i < yaml_target.size(); i++) {
+    for (decltype(yaml_target.size()) i = 0; i < yaml_target.size(); i++) {
         TTargetParameter *prm = static_cast<TTargetParameter *>(fTargetParameterArray->ConstructedAt(i));
         TString name = yaml_target[i][kNodeKeyName].as<std::string>();
         Bool_t is_gas = yaml_target[i][kNodeKeyIsGas].as<bool>();
@@ -233,6 +244,7 @@ void TUserGeoInitializer::GeometryFromYaml(TString yamlfile) {
     fGeom->SetTopVisible();
     top->SetLineColor(kRed);
 
-    if (fIsVisible)
+    if (fIsVisible) {
         gDirectory->Add(top);
+    }
 }

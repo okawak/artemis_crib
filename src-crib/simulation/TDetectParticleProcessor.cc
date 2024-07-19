@@ -3,7 +3,8 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-18 14:36:43
- * @note
+ * @note    last modified: 2024-07-19 17:15:22
+ * @details
  */
 
 #include "TDetectParticleProcessor.h"
@@ -26,7 +27,7 @@ using art::TDetectParticleProcessor;
 
 ClassImp(TDetectParticleProcessor);
 
-TDetectParticleProcessor::TDetectParticleProcessor() : fInData(NULL), fOutData(NULL) {
+TDetectParticleProcessor::TDetectParticleProcessor() : fInData(nullptr), fOutData(nullptr) {
     RegisterInputCollection("InputCollection", "input branch (collection) name", fInputColName, TString("input"));
     RegisterOutputCollection("OutputCollection", "output branch (collection) name", fOutputColName,
                              TString("reaction_particles"));
@@ -45,9 +46,9 @@ TDetectParticleProcessor::TDetectParticleProcessor() : fInData(NULL), fOutData(N
 
 TDetectParticleProcessor::~TDetectParticleProcessor() {
     delete fOutData;
-    fOutData = NULL;
+    fOutData = nullptr;
     delete fElossTable;
-    fElossTable = NULL;
+    fElossTable = nullptr;
 }
 
 void TDetectParticleProcessor::Init(TEventCollection *col) {
@@ -121,7 +122,7 @@ void TDetectParticleProcessor::Init(TEventCollection *col) {
     fOutData->SetName(fOutputColName);
     col->Add(fOutputColName, fOutData, fOutputIsTransparent);
 
-    gRandom->SetSeed(time(NULL));
+    gRandom->SetSeed(time(nullptr));
 }
 
 void TDetectParticleProcessor::Process() {

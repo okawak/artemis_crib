@@ -3,7 +3,8 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 22:14:55
- * @note
+ * @note    last modified: 2024-07-19 16:53:10
+ * @details
  */
 
 #ifndef _TTARGETPARAMETER_H_

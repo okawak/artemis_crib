@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 13:11:23
- * @note    last modified: 2024-07-18 14:57:44
+ * @note    last modified: 2024-07-19 14:53:39
  * @details
  */
 
@@ -82,7 +82,7 @@ class art::TNBodyReactionProcessor : public TProcessor {
      * @param (range) range of the beam
      * @return distance of the beam travel before the reaction
      */
-    Double_t GetRandomReactionInfo(Double_t range);
+    Double_t GetRandomReactionDistance(Double_t range);
 
     TLorentzVector GetLossEnergyVector(TLorentzVector vec, Double_t eloss);
 
