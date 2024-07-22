@@ -29,11 +29,11 @@
       <description>last modified: 2024-07-19 by Kodai Okawa Configure detector geometry to judge if the reaction particle hit the detector or not.</description>
     </item>
     <item>
-      <title>Detect_particle</title>
+      <title>Detect particles</title>
       <link>https://okawak.github.io/artemis_crib/example/simulation/detect_particle/index.html</link>
       <pubDate>Fri, 25 Aug 2023 18:46:55 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/simulation/detect_particle/index.html</guid>
-      <description>last modified: 2023-09-29 by Kodai Okawa </description>
+      <description>last modified: 2024-07-22 by Kodai Okawa Using the defined reactions (TNBodyReactionProcessor) and geometry (TUserGeoInitialiser) so far, it is possible to determine whether the particles enter the detector after the reaction and to simulate the parameters obtained.</description>
     </item>
     <item>
       <title>Solidangle</title>

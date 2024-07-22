@@ -19,23 +19,23 @@
     <meta itemprop="name" content="MC Simulation :: CRIB artemis">
     <meta itemprop="description" content="This section explain the example of the Monte Carlo simulation by using artemis.">
     <meta itemprop="dateModified" content="2023-12-15T18:58:23+09:00">
-    <meta itemprop="wordCount" content="20">
+    <meta itemprop="wordCount" content="21">
     <title>MC Simulation :: CRIB artemis</title>
     <link href="https://okawak.github.io/artemis_crib/example/simulation/index.html" rel="canonical" type="text/html" title="MC Simulation :: CRIB artemis">
     <link href="/artemis_crib/example/simulation/index.xml" rel="alternate" type="application/rss+xml" title="MC Simulation :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1721376820" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1721376820" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1721376820" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1721376820" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1721376820" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1721376820" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1721376820" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1721376820" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1721376820" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-CRIB-theme.css?1721376820" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/chroma-relearn-dark.css?1721376820" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/artemis_crib/css/variant.css?1721376820" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1721376820" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/format-print.css?1721376820" rel="stylesheet">
-    <script src="/artemis_crib/js/variant.js?1721376820"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1721642385" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1721642385" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1721642385" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1721642385" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1721642385" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1721642385" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1721642385" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1721642385" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1721642385" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-CRIB-theme.css?1721642385" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/chroma-relearn-dark.css?1721642385" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/artemis_crib/css/variant.css?1721642385" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1721642385" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/format-print.css?1721642385" rel="stylesheet">
+    <script src="/artemis_crib/js/variant.js?1721642385"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -107,7 +107,7 @@
 <li><a href="/artemis_crib/example/simulation/beam_generator/index.html">Beam Generator</a></li>
 <li><a href="/artemis_crib/example/simulation/nbodyreaction/index.html">Nbody Reaction</a></li>
 <li><a href="/artemis_crib/example/simulation/geometry/index.html">Geometry</a></li>
-<li><a href="/artemis_crib/example/simulation/detect_particle/index.html">Detect_particle</a></li>
+<li><a href="/artemis_crib/example/simulation/detect_particle/index.html">Detect particles</a></li>
 <li><a href="/artemis_crib/example/simulation/solidangle/index.html">Solidangle</a></li>
 </ul>
 
@@ -334,13 +334,13 @@ This figure shows the direction of one particle that is produced from this react
 <span class="badge cstyle default"><span class="badge-content">last modified: 2024-07-19 by Kodai Okawa</span></span>
 <p>Configure detector geometry to judge if the reaction particle hit the detector or not.</p>
 
-<div class="tab-panel" data-tab-group="4b9cfecc15f0b05ee71fd2d33a8e1663">
+<div class="tab-panel" data-tab-group="cafc33a0e1f81263eb2c2c6e49d01f20">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="prmgeoexampleyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('4b9cfecc15f0b05ee71fd2d33a8e1663','prmgeoexampleyaml')"
+      onclick="switchTab('cafc33a0e1f81263eb2c2c6e49d01f20','prmgeoexampleyaml')"
     >
       <span class="tab-nav-text">prm/geo/example.yaml</span>
     </button>
@@ -453,13 +453,13 @@ Also the unit is <code>mm</code> and format is (x, y, z).</p>
 <hr>
 <p>Then, let&rsquo;s check if the parameter file can be correctly used.</p>
 
-<div class="tab-panel" data-tab-group="353b3a5a2113ec357bd260b600348365">
+<div class="tab-panel" data-tab-group="2149c1b005efe4baa8985f3098e62637">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="steeringgeo_exampleyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('353b3a5a2113ec357bd260b600348365','steeringgeo_exampleyaml')"
+      onclick="switchTab('2149c1b005efe4baa8985f3098e62637','steeringgeo_exampleyaml')"
     >
       <span class="tab-nav-text">steering/geo_example.yaml</span>
     </button>
@@ -518,13 +518,69 @@ If the detector is placed where you expect it to be, the parameters have been su
             <header class="headline">
             </header>
 
-<h1 id="detect_particle">Detect_particle</h1>
+<h1 id="detect-particles">Detect particles</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-09-29 by Kodai Okawa</span></span>
+<span class="badge cstyle default"><span class="badge-content">last modified: 2024-07-22 by Kodai Okawa</span></span>
+<p>Using the defined reactions (TNBodyReactionProcessor) and geometry (TUserGeoInitialiser) so far,
+it is possible to determine whether the particles enter the detector after the reaction and to simulate the parameters obtained.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">detector_proc</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">art::TDetectParticleProcessor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">InputCollection</span><span class="p">:</span><span class="w"> </span><span class="l">products</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">InputTrackCollection</span><span class="p">:</span><span class="w"> </span><span class="l">track</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">OutputCollection</span><span class="p">:</span><span class="w"> </span><span class="l">detects</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># target information (use if gas target)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">TargetIsGas</span><span class="p">:</span><span class="w"> </span><span class="cp">*target_is_gas</span><span class="w"> </span><span class="c"># true -&gt; gas target</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">TargetName</span><span class="p">:</span><span class="w"> </span><span class="cp">*target_name</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">TargetPressure</span><span class="p">:</span><span class="w"> </span><span class="cp">*target_pressure</span><span class="w"> </span><span class="c"># Torr (used for gas target)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">EnergyResolution</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">0.0</span><span class="p">]</span><span class="w"> </span><span class="c"># x 100 = %, det id = 0, 1, ..</span></span></span></code></pre></div><ul>
+<li><code>products</code> is an array object of produced ions [id=0 ion, id=1 ion&hellip;]</li>
+<li><code>detects</code> is an array object of detected ions [id=0 ion, id=1 ion&hellip;]</li>
+</ul>
+<h2 id="example-of-the-output">Example of the output</h2>
+<p>We will show an example of a simulation performed for a <strong>gas target case</strong>, and resolution = 0.0.</p>
+<p>First, this is a figure of the detected position of light particle.
+We defined five telescopes in this example, and we can clearly see the position of the detectors.
+If we focus on heavy particle, we cannot see the position distribution because all ions are stopped in the gas target.</p>
+<figure><img src="/artemis_crib/example/simulation/detect_particle/reac_pos.png" width="400">
+</figure>
+
+<p>As an example, we will show you figures of a telescope with the largest angle.
+Here is dE-E plots.</p>
+<figure><img src="/artemis_crib/example/simulation/detect_particle/dee.png" width="400">
+</figure>
+
+<p>The relationship between energy and timing is like this.</p>
+<figure><img src="/artemis_crib/example/simulation/detect_particle/et.png" width="400">
+</figure>
+
+<p>Also, here is the angular distribution of the LAB system.</p>
+<figure><img src="/artemis_crib/example/simulation/detect_particle/angle.png" width="400">
+</figure>
+
+<h2 id="summary">Summary</h2>
+<p>The processor created by <a href="https://github.com/okawak" rel="external" target="_blank">okawak</a> allows simple simulations to be performed without creating new sources,
+if the following conditions are met.</p>
+<ul>
+<li>use latest version of artemis_crib</li>
+<li>properly install and link <a href="https://www.cns.s.u-tokyo.ac.jp/gitlab/hayakawa/tsrim" rel="external" target="_blank">TSrim</a> library</li>
+<li>the target is registered the TSrim library</li>
+<li>relatively low energy (some parts use classical kinematics)</li>
+<li>the shape of the detectors is square (may update?)</li>
+</ul>
+<p>There are only two files that need to be prepared for the simulation.</p>
+<ul>
+<li><code>prm/geo/hoge.yaml</code> -&gt; define detector configuration (example <a href="https://github.com/okawak/artemis_crib/blob/main/prm/geo/si26a.yaml" rel="external" target="_blank">prm/geo/si26a.yaml</a>)
+<ul>
+<li>It is useful to make symbolic link to <code>current</code></li>
+</ul>
+</li>
+<li><code>steering/huga.yaml</code> -&gt; define simulation parameters (example <a href="https://github.com/okawak/artemis_crib/blob/main/steering/simNBodyReaction.yaml" rel="external" target="_blank">steering/simNBodyReaction.yaml</a>)</li>
+</ul>
 
             <footer class="footline">
-              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
-              <i class='fa-fw fas fa-calendar'></i> Sep 29, 2023
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:kodak2022@outlook.jp">okawak</a>
+              <i class='fa-fw fas fa-calendar'></i> Jul 22, 2024
             </footer>
           </article>
 
@@ -553,8 +609,8 @@ If the detector is placed where you expect it to be, the parameters have been su
         </div>
       </main>
     </div>
-    <script src="/artemis_crib/js/clipboard.min.js?1721376820" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1721376820" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1721642385" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1721642385" defer></script>
     <script>
       function useMathJax( config ){
         window.MathJax = Object.assign( window.MathJax || {}, {
@@ -570,6 +626,6 @@ If the detector is placed where you expect it to be, the parameters have been su
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/theme.js?1721376820" defer></script>
+    <script src="/artemis_crib/js/theme.js?1721642385" defer></script>
   </body>
 </html>

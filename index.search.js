@@ -215,7 +215,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "Up to now, we have introduced the installation and concepts of artemis. This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is no problem to start reading from here.\nPreparation Basic Tref for V1190 PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git Online analysis F1 Beam PID F2 PPAC MWDC Telescope F3 Gate Shifter task Scaler Timestamp Raw data checker Offline analysis New processors Merge files Python environment pyROOT MC Simulation Beam Generator Nbody Reaction Geometry Detect_particle Solidangle ",
+    "content": "Up to now, we have introduced the installation and concepts of artemis. This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is no problem to start reading from here.\nPreparation Basic Tref for V1190 PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git Online analysis F1 Beam PID F2 PPAC MWDC Telescope F3 Gate Shifter task Scaler Timestamp Raw data checker Offline analysis New processors Merge files Python environment pyROOT MC Simulation Beam Generator Nbody Reaction Geometry Detect particles Solidangle ",
     "description": "Up to now, we have introduced the installation and concepts of artemis.",
     "tags": [],
     "title": "Example",
@@ -436,7 +436,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example",
-    "content": "This section explain the example of the Monte Carlo simulation by using artemis.\nBeam Generator Nbody Reaction Geometry Detect_particle Solidangle ",
+    "content": "This section explain the example of the Monte Carlo simulation by using artemis.\nBeam Generator Nbody Reaction Geometry Detect particles Solidangle ",
     "description": "This section explain the example of the Monte Carlo simulation by using artemis.",
     "tags": [],
     "title": "MC Simulation",
@@ -494,10 +494,10 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example \u003e MC Simulation",
-    "content": "last modified: 2023-09-29 by Kodai Okawa ",
-    "description": "last modified: 2023-09-29 by Kodai Okawa ",
+    "content": "last modified: 2024-07-22 by Kodai Okawa Using the defined reactions (TNBodyReactionProcessor) and geometry (TUserGeoInitialiser) so far, it is possible to determine whether the particles enter the detector after the reaction and to simulate the parameters obtained.\n- name: detector_proc type: art::TDetectParticleProcessor parameter: InputCollection: products InputTrackCollection: track OutputCollection: detects # target information (use if gas target) TargetIsGas: *target_is_gas # true -\u003e gas target TargetName: *target_name TargetPressure: *target_pressure # Torr (used for gas target) EnergyResolution: [0.0] # x 100 = %, det id = 0, 1, .. products is an array object of produced ions [id=0 ion, id=1 ion…] detects is an array object of detected ions [id=0 ion, id=1 ion…] Example of the output We will show an example of a simulation performed for a gas target case, and resolution = 0.0.\nFirst, this is a figure of the detected position of light particle. We defined five telescopes in this example, and we can clearly see the position of the detectors. If we focus on heavy particle, we cannot see the position distribution because all ions are stopped in the gas target.\nAs an example, we will show you figures of a telescope with the largest angle. Here is dE-E plots.\nThe relationship between energy and timing is like this.\nAlso, here is the angular distribution of the LAB system.\nSummary The processor created by okawak allows simple simulations to be performed without creating new sources, if the following conditions are met.\nuse latest version of artemis_crib properly install and link TSrim library the target is registered the TSrim library relatively low energy (some parts use classical kinematics) the shape of the detectors is square (may update?) There are only two files that need to be prepared for the simulation.\nprm/geo/hoge.yaml -\u003e define detector configuration (example prm/geo/si26a.yaml) It is useful to make symbolic link to current steering/huga.yaml -\u003e define simulation parameters (example steering/simNBodyReaction.yaml) ",
+    "description": "last modified: 2024-07-22 by Kodai Okawa Using the defined reactions (TNBodyReactionProcessor) and geometry (TUserGeoInitialiser) so far, it is possible to determine whether the particles enter the detector after the reaction and to simulate the parameters obtained.",
     "tags": [],
-    "title": "Detect_particle",
+    "title": "Detect particles",
     "uri": "/artemis_crib/example/simulation/detect_particle/index.html"
   },
   {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Detect_particle :: CRIB artemis</title>
+    <title>Detect particles :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/simulation/detect_particle/index.html</link>
-    <description>last modified: 2023-09-29 by Kodai Okawa </description>
+    <description>last modified: 2024-07-22 by Kodai Okawa Using the defined reactions (TNBodyReactionProcessor) and geometry (TUserGeoInitialiser) so far, it is possible to determine whether the particles enter the detector after the reaction and to simulate the parameters obtained.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
