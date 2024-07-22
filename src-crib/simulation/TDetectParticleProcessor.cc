@@ -3,52 +3,59 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-18 14:36:43
- * @note    last modified: 2024-07-19 17:15:22
+ * @note    last modified: 2024-07-22 18:39:06
  * @details
  */
 
 #include "TDetectParticleProcessor.h"
 #include "../geo/TDetectorParameter.h"
+#include "../geo/TTargetParameter.h"
+#include "../telescope/TTelescopeData.h"
 #include "TParticleInfo.h"
 
-#include "../telescope/TTelescopeData.h"
-
-#include <TArtAtomicMassTable.h>
-#include <TDataObject.h>
-#include <constant.h>
-
+#include <Mass.h> // TSrim library
 #include <TClass.h>
 #include <TClonesArray.h>
+#include <TDataObject.h>
 #include <TGeoManager.h>
 #include <TLorentzVector.h>
 #include <TRandom.h>
+#include <constant.h>
+
+#include <string>
+#include <unordered_set>
 
 using art::TDetectParticleProcessor;
 
 ClassImp(TDetectParticleProcessor);
 
-TDetectParticleProcessor::TDetectParticleProcessor() : fInData(nullptr), fOutData(nullptr) {
-    RegisterInputCollection("InputCollection", "input branch (collection) name", fInputColName, TString("input"));
+TDetectParticleProcessor::TDetectParticleProcessor()
+    : fInData(nullptr), fInTrackData(nullptr), fOutData(nullptr), fInGeom(nullptr),
+      fDetectorPrm(nullptr), fTargetPrm(nullptr), srim(nullptr) {
+    RegisterInputCollection("InputCollection", "input branch (collection) name", fInputColName, TString("ions"));
+    RegisterInputCollection("InputTrackCollection", "input track branch (collection) name", fInputTrackColName, TString("track"));
     RegisterOutputCollection("OutputCollection", "output branch (collection) name", fOutputColName,
                              TString("reaction_particles"));
 
-    StringVec_t init_s_vec;
-    DoubleVec_t init_d_vec;
-    RegisterProcessorParameter("ReactionParticleName", "reaction particle names", fReacPartName, init_s_vec);
-    RegisterProcessorParameter("EnergyResolution", "energy resolution \% unit", fResolution, init_d_vec);
-    RegisterProcessorParameter("TargetisGas", "Bool, target is targer or not", fTargetisGas, false);
+    RegisterProcessorParameter("TargetIsGas", "Bool, target is targer or not", fTargetIsGas, false);
     RegisterProcessorParameter("TargetName", "gas target name", fTargetName, TString(""));
-    RegisterProcessorParameter("GetOnlyLightParticle", "detect (treat) only light particle", fDoOnlyLightPart, false);
+    RegisterProcessorParameter("TargetPressure", "Target presure", fTargetPressure, 0.0);
 
-    RegisterOptionalInputInfo("DetectorParameter", "name of telescope parameter", fParameterName,
-                              TString("prm:detector"), &fDetectorPrm, "TClonesArray", "art::TDetectorParameter");
+    DoubleVec_t init_d_vec;
+    RegisterProcessorParameter("EnergyResolution", "energy resolution \% unit", fResolution, init_d_vec);
+
+    RegisterOptionalInputInfo("DetectorParameter", "name of telescope parameter", fDetectorParameterName,
+                              TString("prm_detectors"), &fDetectorPrm, "TClonesArray", "art::TDetectorParameter");
+    /// currently not use this object
+    RegisterOptionalInputInfo("TargetParameter", "name of target parameter", fTargetParameterName,
+                              TString("prm_targets"), &fTargetPrm, "TClonesArray", "art::TTargetParameter");
 }
 
 TDetectParticleProcessor::~TDetectParticleProcessor() {
     delete fOutData;
+    delete srim;
     fOutData = nullptr;
-    delete fElossTable;
-    fElossTable = nullptr;
+    srim = nullptr;
 }
 
 void TDetectParticleProcessor::Init(TEventCollection *col) {
@@ -62,65 +69,81 @@ void TDetectParticleProcessor::Init(TEventCollection *col) {
 
     fInData = reinterpret_cast<TClonesArray **>(col->GetObjectRef(fInputColName.Data()));
     if (!fInData) {
-        SetStateError(TString::Format("input not found: %s", fInputColName.Data()));
+        SetStateError(Form("input not found: %s", fInputColName.Data()));
         return;
     }
-    const TClass *const cl = (*fInData)->GetClass();
-    if (!cl->InheritsFrom(art::TParticleInfo::Class())) {
+    const TClass *const cl1 = (*fInData)->GetClass();
+    if (!cl1->InheritsFrom(art::TParticleInfo::Class())) {
         SetStateError("contents of input array must inherit from art::TParticleInfo");
+        return;
+    }
+    fInTrackData = reinterpret_cast<TClonesArray **>(col->GetObjectRef(fInputTrackColName.Data()));
+    if (!fInTrackData) {
+        SetStateError(Form("input not found: %s", fInputTrackColName.Data()));
+        return;
+    }
+    const TClass *const cl2 = (*fInTrackData)->GetClass();
+    if (!cl2->InheritsFrom(art::TTrack::Class())) {
+        SetStateError("contents of input array must inherit from art::TTrack");
+        return;
     }
 
     if (!fDetectorPrm) {
-        SetStateError("input parameter name is wrong");
+        SetStateError(Form("not found detector parameter object %s", fDetectorParameterName.Data()));
+        return;
     }
+    auto det_num = (*fDetectorPrm)->GetEntriesFast();
+    Info("Init", "set %d number of detectors", det_num);
 
-    if (fResolution.size() == 1) {
-        for (Int_t iDet = 0; iDet < (*fDetectorPrm)->GetEntriesFast() - 1; iDet++) {
+    // currently not used
+    // if (!fTargetPrm) {
+    //     SetStateError(Form("not found target parameter object %s", fTargetParameterName.Data()));
+    // }
+
+    if (fResolution.size() == 1) { /// same energy resolution for all detector
+        for (Int_t iDet = 0; iDet < det_num - 1; iDet++) {
             fResolution.emplace_back(fResolution[0]);
         }
-    } else if (fResolution.size() == 0) {
-        for (Int_t iDet = 0; iDet < (*fDetectorPrm)->GetEntriesFast(); iDet++) {
+    } else if (fResolution.size() == 0) { /// ignore energy resolution
+        for (Int_t iDet = 0; iDet < det_num; iDet++) {
             fResolution.emplace_back(0.0);
         }
-    } else if (fResolution.size() != (*fDetectorPrm)->GetEntriesFast()) {
-        SetStateError("Resolution parameter in yaml file is wrong");
+    } else if ((decltype(det_num))fResolution.size() != det_num) {
+        SetStateError(Form("Resolution parameter size is wrong, should be %d, but %ld",
+                           (*fDetectorPrm)->GetEntriesFast(), fResolution.size()));
         return;
     }
 
-    // setting for SRIMlib
-    fElossTable = new SRIMData();
-    Bool_t isFirst = true;
-    for (Int_t iPart = 0; iPart < fReacPartName.size(); iPart++) {
-        std::vector<std::vector<SRIMtable *>> srim_vv;
-        for (Int_t iDet = 0; iDet < (*fDetectorPrm)->GetEntriesFast(); iDet++) {
-            std::vector<SRIMtable *> srim_v;
-            TParameterObject *inPrm = static_cast<TParameterObject *>((*fDetectorPrm)->At(iDet));
-            TDetectorParameter *Prm = dynamic_cast<TDetectorParameter *>(inPrm);
-            StringVec_t material_vec = Prm->GetMaterial();
-            if (isFirst) {
-                fMaxRadius = Prm->GetMaxRadius();
-                isFirst = false;
-            }
-            for (Int_t iMat = 0; iMat < material_vec.size(); iMat++) {
-                srim_v.emplace_back(fElossTable->GetTable(fReacPartName[iPart], material_vec[iMat]));
-            }
-            srim_vv.emplace_back(srim_v);
-            srim_v.clear();
-        }
-        fEloss_vvvec.emplace_back(srim_vv);
-        srim_vv.clear();
-    }
-
-    if (fTargetisGas) {
-        for (Int_t iPart = 0; iPart < fReacPartName.size(); iPart++) {
-            fTargetEloss_vec.emplace_back(fElossTable->GetTable(fReacPartName[iPart], fTargetName));
-        }
-    }
-
     fOutData = new TClonesArray("art::TTelescopeData");
-    Info("Init", "output branch used art::TTelescopeData");
     fOutData->SetName(fOutputColName);
     col->Add(fOutputColName, fOutData, fOutputIsTransparent);
+
+    /// initialization for TSrim
+    const char *tsrim_path = std::getenv("TSRIM_DATA_HOME");
+    if (!tsrim_path) {
+        SetStateError("TSRIM_DATA_HOME environment variable is not defined");
+        return;
+    }
+    // get All SRIM table for the target
+    Info("Init", "Initializing SRIM table...");
+    srim = new TSrim("srim", 16,
+                     Form("%s/%s/range_fit_pol16_%s.txt", tsrim_path, fTargetName.Data(), fTargetName.Data()));
+    Info("Init", "\t\"%s\" list loaded.", fTargetName.Data());
+
+    StringVec_t material_names;
+    for (auto i = 0; i < det_num; i++) {
+        auto detprm = dynamic_cast<TDetectorParameter *>((*fDetectorPrm)->At(i));
+        for (auto j = 0; j < detprm->GetN(); j++) {
+            material_names.emplace_back(detprm->GetMaterial(j));
+        }
+    }
+    StringVec_t unique_names = GetUniqueElements(material_names);
+    for (const auto &str : unique_names) {
+        TSrim *srim_tmp = new TSrim("srim", 16,
+                                    Form("%s/%s/range_fit_pol16_%s.txt", tsrim_path, str.Data(), str.Data()));
+        Info("Init", "\t\"%s\" list loaded.", str.Data());
+        srim->TSrim::insert(srim->end(), srim_tmp->begin(), srim_tmp->end());
+    }
 
     gRandom->SetSeed(time(nullptr));
 }
@@ -129,17 +152,17 @@ void TDetectParticleProcessor::Process() {
     fOutData->Clear("C");
     TGeoManager *geom = static_cast<TGeoManager *>(*fInGeom);
 
-    Int_t itr = 0;
     for (Int_t iData = 0; iData < (*fInData)->GetEntriesFast(); ++iData) {
-        if (fDoOnlyLightPart && iData == 0)
-            continue;
-
         const TDataObject *const inData = static_cast<TDataObject *>((*fInData)->At(iData));
         const TParticleInfo *const Data = dynamic_cast<const TParticleInfo *>(inData);
 
+        TTelescopeData *outData = static_cast<TTelescopeData *>(fOutData->ConstructedAt(iData));
+        outData->SetID(iData);
+
         Double_t energy = Data->GetEnergy();
-        if (energy < 0.01)
+        if (energy < 0.01) {
             continue; // stop in the target
+        }
 
         Double_t current_z = Data->GetCurrentZ();
         TTrack track = Data->GetTrack();
@@ -154,33 +177,39 @@ void TDetectParticleProcessor::Process() {
         geom->GetCurrentNode();
         geom->FindNode();
 
-        geom->FindNextBoundary(fMaxRadius);
+        // geom->FindNextBoundary(10000.0); // need to set some values??
+        geom->FindNextBoundary();
         Double_t distance = geom->GetStep();
         geom->Step();
         Bool_t isHit = geom->IsStepEntering();
-        if (!isHit)
+        if (!isHit) {
             continue;
-
-        TString hitname = geom->GetPath();
-        TString det_id = hitname[hitname.Sizeof() - 2];
-        if (hitname.Sizeof() < 8 || det_id.Atoi() >= (*fDetectorPrm)->GetEntriesFast())
-            continue; // for safety path=/TOP_1/hoge_0
-
-        if (fTargetisGas) {
-            energy = fTargetEloss_vec[iData]->GetNewE(energy, distance);
-            if (energy < 0.01)
-                continue; // stop in the target
         }
 
-        // prepare output branch
-        TTelescopeData *outData = static_cast<TTelescopeData *>(fOutData->ConstructedAt(itr));
-        outData->SetID(det_id.Atoi() + 1); // 1 start (not 0)
+        TString hitname = geom->GetPath(); // ex. hitname = /TOP_1/tel1_0, /TOP_1/tel4_3
+        auto index_hitpath = hitname.Last('_');
+        TString det_id = hitname(index_hitpath + 1, hitname.Length()); // get last number /TOP_1/tel1_0 -> 0
+        if (hitname.Length() < 8 || det_id.Atoi() >= (*fDetectorPrm)->GetEntriesFast()) {
+            // /TOP_1/ -> length = 7
+            continue;
+        }
+
+        if (fTargetIsGas) {
+            energy = srim->EnergyNew(Data->GetAtomicNumber(), Data->GetMassNumber(), energy,
+                                     fTargetName, distance, fTargetPressure, 300.0);
+            if (energy < 0.01) {
+                continue; // stop in the target
+            }
+        }
+
+        outData->SetTelID(det_id.Atoi() + 1); /// 1 start (not 0)
         TVector3 det_position(distance * velocity.X(), distance * velocity.Y(), distance * velocity.Z());
         det_position += first_position;
         outData->SetPosition(det_position);
 
         TParameterObject *inPrm = static_cast<TParameterObject *>((*fDetectorPrm)->At(det_id.Atoi()));
         TDetectorParameter *Prm = dynamic_cast<TDetectorParameter *>(inPrm);
+        outData->SetN(Prm->GetN());
 
         det_position -= TVector3(Prm->GetCenterRotPos(0), Prm->GetCenterRotPos(1), Prm->GetCenterRotPos(2));
         det_position.RotateY(-Prm->GetAngle());
@@ -188,15 +217,21 @@ void TDetectParticleProcessor::Process() {
         outData->SetXID(GetStripID(det_position.X(), Prm->GetStripNum(0), Prm->GetSize(0)));
         outData->SetYID(GetStripID(det_position.Y(), Prm->GetStripNum(1), Prm->GetSize(1)));
         if (outData->GetXID() == -1 || outData->GetYID() == -1) {
-            fOutData->RemoveAt(itr);
-            continue;
+            continue; /// hit from side, so not caliculate energy
         }
 
-        StringVec_t material_vec = Prm->GetMaterial();
+        // calculate TOF
+        Double_t ion_mass = amdc::Mass(Data->GetAtomicNumber(), Data->GetMassNumber()) * amdc::amu;                // MeV
+        Double_t duration = distance / (TMath::Sqrt(1.0 - TMath::Power(ion_mass / (ion_mass + energy), 2.0)) * c); // ns
+        duration += Data->GetDurationTime();
+        outData->PushTimingArray(duration);
+
+        // caliculate energy
         Double_t energy_total = 0.0;
-        for (Int_t iMat = 0; iMat < material_vec.size(); iMat++) {
+        for (auto iMat = 0; iMat < Prm->GetN(); iMat++) {
             if (energy > 0.01) {
-                Double_t new_energy = fEloss_vvvec[iData][det_id.Atoi()][iMat]->GetNewE(energy, Prm->GetThickness(iMat));
+                Double_t new_energy = srim->EnergyNew(Data->GetAtomicNumber(), Data->GetMassNumber(), energy,
+                                                      Prm->GetMaterial(iMat), Prm->GetThickness(iMat));
                 energy_total += energy - new_energy;
                 outData->PushEnergyArray(energy - new_energy);
                 energy = new_energy;
@@ -206,8 +241,29 @@ void TDetectParticleProcessor::Process() {
         }
         outData->SetEtotal(gRandom->Gaus(energy_total, energy_total * fResolution[det_id.Atoi()]));
 
-        itr++;
+        // caliculate LAB angle
+        const TDataObject *const inTrackData = static_cast<TDataObject *>((*fInTrackData)->At(0));
+        const TTrack *const TrackData = dynamic_cast<const TTrack *>(inTrackData);
+        TVector3 beam(TrackData->GetX(1.0) - TrackData->GetX(0.0), TrackData->GetY(1.0) - TrackData->GetY(0.0), 1.0);
+        TVector3 reac_vec(Data->GetTrack().GetX(1.0) - Data->GetTrack().GetX(0.0),
+                          Data->GetTrack().GetY(1.0) - Data->GetTrack().GetY(0.0), 1.0);
+        Double_t theta = beam.Angle(reac_vec);
+        outData->SetTheta_L(theta * TMath::RadToDeg());
     }
+}
+
+std::vector<TString> TDetectParticleProcessor::GetUniqueElements(const std::vector<TString> &input) {
+    std::unordered_set<std::string> uniqueSet;
+    std::vector<TString> result;
+
+    for (const auto &tstr : input) {
+        std::string str(tstr.Data());
+        if (uniqueSet.find(str) == uniqueSet.end()) {
+            uniqueSet.insert(str);
+            result.emplace_back(tstr);
+        }
+    }
+    return result;
 }
 
 Int_t TDetectParticleProcessor::GetStripID(Double_t pos, Int_t max_strip, Double_t size) {
@@ -221,3 +277,10 @@ Int_t TDetectParticleProcessor::GetStripID(Double_t pos, Int_t max_strip, Double
     // if(result == -1) std::cout << "warning, stripID is incorrect" << std::endl;
     return result;
 }
+
+// ===========================================
+// kinematics
+// tof
+// beta = v/c
+// E = m/sqrt(1-beta^2)
+// v = sqrt(1-(M/E)^2) c

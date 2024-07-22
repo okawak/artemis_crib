@@ -1,9 +1,10 @@
 /**
  * @file    TTelescopeProcessor.h
- * @brief   gather the information to the one object
+ * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 16:53:01
- * @note    if no valid converter given, this processor does nothing.
+ * @note    last modified: 2024-07-22 17:52:48
+ * @details if no valid converter given, this processor does nothing.
  *          it assume we use DSSSD
  */
 

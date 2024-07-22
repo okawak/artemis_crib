@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:36:36
- * @note    last modified: 2024-07-19 17:52:49
+ * @note    last modified: 2024-07-22 16:27:20
  * @details for (angle) constant cross section
  */
 
@@ -29,7 +29,7 @@ using art::TNBodyReactionProcessor;
 ClassImp(TNBodyReactionProcessor);
 
 TNBodyReactionProcessor::TNBodyReactionProcessor()
-    : fInData(nullptr), fOutData(nullptr), fOutReacData(nullptr) {
+    : fInData(nullptr), fOutData(nullptr), fOutReacData(nullptr), srim(nullptr) {
     RegisterInputCollection("InputCollection", "input branch (collection) name", fInputColName, TString("input"));
     RegisterOutputCollection("OutputCollection", "output branch (collection) name", fOutputColName,
                              TString("reaction_particles"));
@@ -121,6 +121,7 @@ void TNBodyReactionProcessor::Init(TEventCollection *col) {
     Info("Init", "Initializing SRIM table...");
     srim = new TSrim("srim", 16,
                      Form("%s/%s/range_fit_pol16_%s.txt", tsrim_path, fTargetName.Data(), fTargetName.Data()));
+    Info("Init", "\t\"%s\" list loaded.", fTargetName.Data());
 
     // cross section input file
     InitGeneratingFunc();
@@ -166,7 +167,7 @@ void TNBodyReactionProcessor::Process() {
     beam_vec = GetLossEnergyVector(beam_vec, beam_energy - beam_energy_new);
 
     // calculate tof in the target (mean value)
-    Double_t duration_beam = 0;
+    Double_t duration_beam = 0.0;
     if (fTargetIsGas) {
         duration_beam += reac_distance / (TMath::Sqrt(1.0 - TMath::Power(beam_mass / beam_vec.E(), 2.0)) * c);
     } // if solid target, tof is almost zero

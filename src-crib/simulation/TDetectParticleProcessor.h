@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:34:15
- * @note    last modified: 2024-07-19 16:56:37
+ * @note    last modified: 2024-07-22 17:16:31
  * @details
  */
 
@@ -13,9 +13,8 @@
 #include "TArtTypes.h"
 #include <TGeoManager.h>
 #include <TLorentzVector.h>
+#include <TSrim.h> // TSrim library
 
-#include <SRIMData.h>
-#include <SRIMtable.h>
 #include <TProcessor.h>
 
 namespace art {
@@ -34,26 +33,30 @@ class art::TDetectParticleProcessor : public TProcessor {
 
   protected:
     TString fInputColName;
+    TString fInputTrackColName;
     TString fOutputColName;
-    TString fParameterName;
-    TGeoManager **fInGeom;  //!
-    TClonesArray **fInData; //!
-    TClonesArray *fOutData; //!
+    TString fDetectorParameterName;
+    TString fTargetParameterName;
+    TClonesArray **fInData;      //!
+    TClonesArray **fInTrackData; //!
+    TClonesArray *fOutData;      //!
+    TGeoManager **fInGeom;       //!
 
     TClonesArray **fDetectorPrm; //!
+    TClonesArray **fTargetPrm;   //!
 
-    StringVec_t fReacPartName; //!
-    DoubleVec_t fResolution;   //!
-    Bool_t fTargetisGas;
-    Bool_t fDoOnlyLightPart;
+    Bool_t fTargetIsGas;
     TString fTargetName;
-    Double_t fMaxRadius;
+    Double_t fTargetPressure;
 
-    SRIMData *fElossTable;                                           //!
-    std::vector<std::vector<std::vector<SRIMtable *>>> fEloss_vvvec; //! [particle_id][telescope_id][layer_id]
-    std::vector<SRIMtable *> fTargetEloss_vec;                       //! [particle_id]
+    DoubleVec_t fResolution; //! x 100 = %, index=telescope id
+
+    TSrim *srim;
+
+    const Double_t c = 299.792458; // mm/ns
 
   private:
+    std::vector<TString> GetUniqueElements(const std::vector<TString> &input);
     Int_t GetStripID(Double_t pos, Int_t max_strip, Double_t size);
 
     TDetectParticleProcessor(const TDetectParticleProcessor &rhs);

@@ -3,7 +3,8 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 17:14:39
- * @note
+ * @note    last modified: 2024-07-22 17:51:57
+ * @details
  */
 
 #include "TTelescopeData.h"
@@ -14,7 +15,7 @@ using art::TTelescopeData;
 ClassImp(art::TTelescopeData);
 
 TTelescopeData::TTelescopeData()
-    : fXID(kInvalidI), fYID(kInvalidI), fNE(0),
+    : fTelID(kInvalidI), fXID(kInvalidI), fYID(kInvalidI), fNE(0),
       fdE(0.0), fdEX(0.0), fdEY(0.0), fE(0.0), fEtotal(0.0),
       fXTiming(kInvalidD), fYTiming(kInvalidD), fTheta_L(kInvalidD) {
     TDataObject::SetID(kInvalidI);
@@ -31,6 +32,7 @@ TTelescopeData::~TTelescopeData() {
 TTelescopeData::TTelescopeData(const TTelescopeData &rhs)
     : TDataObject(rhs),
       fPos(rhs.fPos),
+      fTelID(rhs.fTelID),
       fXID(rhs.fXID),
       fYID(rhs.fYID),
       fNE(rhs.fNE),
@@ -59,6 +61,7 @@ void TTelescopeData::Copy(TObject &dest) const {
 
     cobj.fPos = this->GetPosition();
 
+    cobj.fTelID = this->GetTelID();
     cobj.fXID = this->GetXID();
     cobj.fYID = this->GetYID();
     cobj.fNE = this->GetN();
@@ -84,6 +87,7 @@ void TTelescopeData::Clear(Option_t *opt) {
 
     fPos.SetXYZ(kInvalidD, kInvalidD, kInvalidD);
 
+    fTelID = kInvalidI;
     fXID = kInvalidI;
     fYID = kInvalidI;
     fNE = 0;

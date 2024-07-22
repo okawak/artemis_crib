@@ -1,9 +1,10 @@
 /**
  * @file    TTelescopeProcessor.cc
- * @brief   gather the information to the one object
+ * @brief   gather the telescope information to the one object
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
- * @date    2024-01-17 16:51:53
- * @note    treat the largest value of each layor
+ * @date    2024-07-22 17:52:58
+ * @note    last modified: 2024-07-22 17:55:56
+ * @details treat the largest value of each layor
  *          the data of X side is used for DSSSD
  *          assume beam position (0, 0) and direction (0, 0, 1)
  */
@@ -30,7 +31,7 @@ ClassImp(art::TTelescopeProcessor);
 
 // Default constructor
 TTelescopeProcessor::TTelescopeProcessor()
-    : fInData1(NULL), fInData2(NULL), fInData3(NULL), fOutData(NULL), fTelID(0) {
+    : fInData1(nullptr), fInData2(nullptr), fInData3(nullptr), fOutData(nullptr), fTelID(0) {
     RegisterInputCollection("InputCollection1",
                             "array of objects inheriting from art::TTimingChargeData",
                             fInputColName1, TString("dEX"));
@@ -54,7 +55,7 @@ TTelescopeProcessor::TTelescopeProcessor()
 
 TTelescopeProcessor::~TTelescopeProcessor() {
     delete fOutData;
-    fOutData = NULL;
+    fOutData = nullptr;
 }
 
 void TTelescopeProcessor::Init(TEventCollection *col) {
@@ -135,7 +136,7 @@ void TTelescopeProcessor::Init(TEventCollection *col) {
     fOutData->SetName(fOutputColName);
     col->Add(fOutputColName, fOutData, fOutputIsTransparent);
 
-    gRandom->SetSeed(time(NULL));
+    gRandom->SetSeed(time(nullptr));
 }
 
 void TTelescopeProcessor::Process() {
@@ -152,7 +153,8 @@ void TTelescopeProcessor::Process() {
 
     TTelescopeData *outData = static_cast<TTelescopeData *>(fOutData->ConstructedAt(0));
     outData->Clear();
-    outData->SetID(fTelID);
+    outData->SetID(0);
+    outData->SetTelID(fTelID);
     if (fHasDetPrm && fHasTargetPrm) {
         outData->SetN(fDetParameter->GetN());
     } else {

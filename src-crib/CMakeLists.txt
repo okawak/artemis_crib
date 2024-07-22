@@ -41,8 +41,8 @@ set(CRIBSOURCES
     # simulation/TDetectParticleProcessor.cc
     # simulation/TNBodyReactionProcessor.cc
     simulation/TParticleInfo.cc
-    simulation/TRandomBeamGenerator.cc
-    simulation/TTreeBeamGenerator.cc
+    # simulation/TRandomBeamGenerator.cc
+    # simulation/TTreeBeamGenerator.cc
     simulation/TSolidAngleProcessor.cc
     # simulation/TTwoBodyScattering.cc
     # simulation/TCRIBPIDProcessor.cc
@@ -92,8 +92,8 @@ set(CRIBHEADERS
     # simulation/TDetectParticleProcessor.h
     # simulation/TNBodyReactionProcessor.h
     simulation/TParticleInfo.h
-    simulation/TRandomBeamGenerator.h
-    simulation/TTreeBeamGenerator.h
+    # simulation/TRandomBeamGenerator.h
+    # simulation/TTreeBeamGenerator.h
     simulation/TSolidAngleProcessor.h
     # simulation/TTwoBodyScattering.h
     # simulation/TCRIBPIDProcessor.h
@@ -109,6 +109,8 @@ if(SRIMlib_FOUND AND TSrim_FOUND)
     reconst/TTGTIKProcessor.cc
     simulation/TDetectParticleProcessor.cc
     simulation/TNBodyReactionProcessor.cc
+    simulation/TTreeBeamGenerator.cc
+    simulation/TRandomBeamGenerator.cc
     simulation/TEffectiveThickness.cc
     simulation/TCRIBPIDProcessor.cc)
   list(
@@ -117,6 +119,8 @@ if(SRIMlib_FOUND AND TSrim_FOUND)
     reconst/TTGTIKProcessor.h
     simulation/TDetectParticleProcessor.h
     simulation/TNBodyReactionProcessor.h
+    simulation/TTreeBeamGenerator.h
+    simulation/TRandomBeamGenerator.h
     simulation/TEffectiveThickness.h
     simulation/TCRIBPIDProcessor.h)
 endif()

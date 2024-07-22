@@ -3,7 +3,8 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 17:11:50
- * @note
+ * @note    last modified: 2024-07-22 18:45:14
+ * @details
  */
 
 #ifndef _TTELESCOPEDATA_H_
@@ -37,6 +38,8 @@ class art::TTelescopeData : public TDataObject {
     Int_t GetN() const { return fNE; }
     void SetN(Int_t arg) { fNE = arg; }
 
+    Int_t GetTelID() const { return fTelID; }
+    void SetTelID(Int_t arg) { fTelID = arg; }
     Int_t GetXID() const { return fXID; }
     void SetXID(Int_t arg) { fXID = arg; }
     Int_t GetYID() const { return fYID; }
@@ -68,17 +71,32 @@ class art::TTelescopeData : public TDataObject {
     Double_t GetTimingArray(Int_t id) const { return fTimingArray[id]; }
     void PushTimingArray(Double_t arg) { fTimingArray.emplace_back(arg); }
 
-    Double_t E(Int_t id = -1) const {
-        if (id < 0 || id >= fNE)
-            return fEtotal;
+    Double_t E() const { return fEtotal; } // get total energy
+    Double_t E(Int_t id) const {
+        if (fEnergyArray.size() == 0) {
+            return kInvalidD;
+        }
+        if (id < 0 || id >= fNE) {
+            return kInvalidD;
+        }
         return fEnergyArray[id];
-    } // get Energy: E()-> fEtotal, E(1)-> second layer
+    } // get each layer energy
 
-    Double_t T(Int_t id = -1) const {
-        if (id < 0 || id >= fNE)
-            return fTimingArray[0];
+    Double_t T() const {
+        if (fTimingArray.size() == 0) {
+            return kInvalidD;
+        }
+        return fTimingArray[0];
+    } // get timing
+    Double_t T(Int_t id) const {
+        if (fTimingArray.size() == 0) {
+            return kInvalidD;
+        }
+        if (id < 0 || id >= fNE) {
+            return kInvalidD;
+        }
         return fTimingArray[id];
-    } // get Timing: T()-> first layer, T(1)-> second layer
+    } // get each layer timing
 
     Double_t A() const { return fTheta_L; } // get angle: A()-> Lab angle (deg)
     Double_t X() const { return fPos.X(); } // get hit X position (mm)
@@ -89,12 +107,12 @@ class art::TTelescopeData : public TDataObject {
     virtual void Clear(Option_t *opt = "");
 
   protected:
-    /// Int_t fID is used for telescipe ID
     TVector3 fPos; // detected position (X, Y, Z)
 
-    Int_t fXID; // X strip number
-    Int_t fYID; // Y strip number
-    Int_t fNE;  // number of all SSDs
+    Int_t fTelID; // telescope ID
+    Int_t fXID;   // X strip number
+    Int_t fYID;   // Y strip number
+    Int_t fNE;    // number of all SSDs
 
     Double_t fdE;      // energy at first layor
     Double_t fdEX;     // X side energy (=~ fdEY)
