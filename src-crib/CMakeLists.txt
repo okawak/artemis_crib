@@ -6,7 +6,6 @@ set(CRIBSOURCES
     TTimingDataMappingProcessor.cc
     TBranchCopyProcessor.cc
     TEvtNumProcessor.cc
-    TTreePeriodicEventStore.cc
     TModuleData.cc
     TSegmentOutputProcessor.cc
     TScalerMonitorProcessor.cc
@@ -37,6 +36,7 @@ set(CRIBSOURCES
     geo/TDetectorParameter.cc
     geo/TTargetParameter.cc
     # simulation
+    simulation/TTreePeriodicEventStore.cc
     # simulation/TEffectiveThickness.cc
     # simulation/TDetectParticleProcessor.cc
     # simulation/TNBodyReactionProcessor.cc
@@ -44,7 +44,7 @@ set(CRIBSOURCES
     # simulation/TRandomBeamGenerator.cc
     # simulation/TTreeBeamGenerator.cc
     simulation/TSolidAngleProcessor.cc
-    # simulation/TTwoBodyScattering.cc
+    # simulation/TRutherfordScattering.cc
     # simulation/TCRIBPIDProcessor.cc
     # timestamp
     timestamp/TTSData.cc
@@ -57,7 +57,6 @@ set(CRIBHEADERS
     TTimingDataMappingProcessor.h
     TBranchCopyProcessor.h
     TEvtNumProcessor.h
-    TTreePeriodicEventStore.h
     TModuleData.h
     TSegmentOutputProcessor.h
     TScalerMonitorProcessor.h
@@ -88,6 +87,7 @@ set(CRIBHEADERS
     geo/TDetectorParameter.h
     geo/TTargetParameter.h
     # simulation
+    simulation/TTreePeriodicEventStore.h
     # simulation/TEffectiveThickness.h
     # simulation/TDetectParticleProcessor.h
     # simulation/TNBodyReactionProcessor.h
@@ -95,7 +95,7 @@ set(CRIBHEADERS
     # simulation/TRandomBeamGenerator.h
     # simulation/TTreeBeamGenerator.h
     simulation/TSolidAngleProcessor.h
-    # simulation/TTwoBodyScattering.h
+    # simulation/TRutherfordScattering.h
     # simulation/TCRIBPIDProcessor.h
     # timestamp
     timestamp/TTSData.h
@@ -111,7 +111,6 @@ if(SRIMlib_FOUND AND TSrim_FOUND)
     simulation/TNBodyReactionProcessor.cc
     simulation/TTreeBeamGenerator.cc
     simulation/TRandomBeamGenerator.cc
-    simulation/TEffectiveThickness.cc
     simulation/TCRIBPIDProcessor.cc)
   list(
     APPEND
@@ -121,7 +120,6 @@ if(SRIMlib_FOUND AND TSrim_FOUND)
     simulation/TNBodyReactionProcessor.h
     simulation/TTreeBeamGenerator.h
     simulation/TRandomBeamGenerator.h
-    simulation/TEffectiveThickness.h
     simulation/TCRIBPIDProcessor.h)
 endif()
 

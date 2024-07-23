@@ -1,4 +1,3 @@
-// K.Okawa created <okawa@cns.s.u-tokyo.ac.jp>
 #ifndef LINKDEF_CRIB_H
 #define LINKDEF_CRIB_H
 
@@ -15,7 +14,6 @@
 #pragma link C++ class art::TTimingDataMappingProcessor;
 #pragma link C++ class art::TBranchCopyProcessor;
 #pragma link C++ class art::TEvtNumProcessor;
-#pragma link C++ class art::TTreePeriodicEventStore;
 #pragma link C++ class art::TModuleData + ;
 #pragma link C++ class art::TSegmentOutputProcessor;
 #pragma link C++ class art::TScalerMonitorProcessor;
@@ -46,14 +44,14 @@
 #pragma link C++ class art::TDetectorParameter + ;
 #pragma link C++ class art::TTargetParameter + ;
 // simulation
-#pragma link C++ class art::TEffectiveThickness;
+#pragma link C++ class art::TTreePeriodicEventStore;
 #pragma link C++ class art::TDetectParticleProcessor;
 #pragma link C++ class art::TNBodyReactionProcessor;
 #pragma link C++ class art::TParticleInfo + ;
 #pragma link C++ class art::TRandomBeamGenerator;
 #pragma link C++ class art::TTreeBeamGenerator;
 #pragma link C++ class art::TSolidAngleProcessor;
-// #pragma link C++ class art::TTwoBodyScattering;
+// #pragma link C++ class art::TRutherfordScattering;
 #pragma link C++ class art::TCRIBPIDProcessor;
 // timestamp
 #pragma link C++ class art::TTSData + ;

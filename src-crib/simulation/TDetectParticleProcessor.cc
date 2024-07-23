@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-18 14:36:43
- * @note    last modified: 2024-07-22 18:39:06
+ * @note    last modified: 2024-07-23 13:32:32
  * @details
  */
 
@@ -245,9 +245,7 @@ void TDetectParticleProcessor::Process() {
         const TDataObject *const inTrackData = static_cast<TDataObject *>((*fInTrackData)->At(0));
         const TTrack *const TrackData = dynamic_cast<const TTrack *>(inTrackData);
         TVector3 beam(TrackData->GetX(1.0) - TrackData->GetX(0.0), TrackData->GetY(1.0) - TrackData->GetY(0.0), 1.0);
-        TVector3 reac_vec(Data->GetTrack().GetX(1.0) - Data->GetTrack().GetX(0.0),
-                          Data->GetTrack().GetY(1.0) - Data->GetTrack().GetY(0.0), 1.0);
-        Double_t theta = beam.Angle(reac_vec);
+        Double_t theta = beam.Angle(velocity);
         outData->SetTheta_L(theta * TMath::RadToDeg());
     }
 }

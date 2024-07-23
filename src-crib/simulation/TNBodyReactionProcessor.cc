@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:36:36
- * @note    last modified: 2024-07-22 16:27:20
+ * @note    last modified: 2024-07-23 13:34:20
  * @details for (angle) constant cross section
  */
 
@@ -154,8 +154,14 @@ void TNBodyReactionProcessor::Process() {
 
     // determine using random number
     Double_t reac_distance = GetRandomReactionDistance(range);
-    Double_t beam_energy_new = srim->EnergyNew(fBeamNucleus[0], fBeamNucleus[1], beam_energy,
-                                               fTargetName, reac_distance, fTargetPressure, 300.0);
+    Double_t beam_energy_new = 0.0;
+    if (fTargetIsGas) {
+        beam_energy_new = srim->EnergyNew(fBeamNucleus[0], fBeamNucleus[1], beam_energy,
+                                          fTargetName, reac_distance, fTargetPressure, 300.0);
+    } else {
+        beam_energy_new = srim->EnergyNew(fBeamNucleus[0], fBeamNucleus[1], beam_energy,
+                                          fTargetName, reac_distance);
+    }
 
     Double_t reac_posz = 0.0;
     if (fTargetIsGas) {
