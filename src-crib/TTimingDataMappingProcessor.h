@@ -1,13 +1,10 @@
 /**
- * @file   TTimingDataMappingProcessor.h
- * @brief  simple data mapper
- *
- * @date   Created       : 2014-05-19 00:22:01 JST
- *         Last Modified : Jul 19, 2022 18:36:37 JST (okawa)
- * @author KAWASE Shoichiro <kawase@cns.s.u-tokyo.ac.jp>
- *  edit   OKAWA Kodai <okawa@cns.s.u-tokyo.ac.jp>
- *
- *    (C) 2014 KAWASE Shoichiro
+ * @file    TTimingDataMappingProcessor.h
+ * @brief
+ * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2022-07-19 20:20:07
+ * @note    last modified: 2024-07-29 20:21:49
+ * @details
  */
 
 #ifndef _TTIMINGDATAMAPPINGPROCESSOR_H_
@@ -16,35 +13,34 @@
 #include <TProcessor.h>
 
 namespace art {
-  class TTimingDataMappingProcessor;
-  class TCategorizedData;
-}
+class TTimingDataMappingProcessor;
+class TCategorizedData;
+} // namespace art
 
 class art::TTimingDataMappingProcessor : public TProcessor {
- public:
-  TTimingDataMappingProcessor();
-  virtual ~TTimingDataMappingProcessor();
+  public:
+    TTimingDataMappingProcessor();
+    virtual ~TTimingDataMappingProcessor();
 
-  virtual void Init(TEventCollection *col);
-  virtual void Process();
+    virtual void Init(TEventCollection *col);
+    virtual void Process();
 
- protected:
-  TString            fInputColName;
-  TString            fOutputColName;
-  TCategorizedData **fCategorizedData;
-  TClonesArray      *fOutputArray;
+  protected:
+    TString fInputColName;
+    TString fOutputColName;
+    TCategorizedData **fCategorizedData;
+    TClonesArray *fOutputArray;
 
-  Int_t fCatID;       // category id
-  Int_t fDataTypeID;  // typeid for data
+    Int_t fCatID;      // category id
+    Int_t fDataTypeID; // typeid for data
 
-  Bool_t fIsSparse;
+    Bool_t fIsSparse;
 
- private:
-  TTimingDataMappingProcessor(const TTimingDataMappingProcessor&);
-  TTimingDataMappingProcessor& operator=(const TTimingDataMappingProcessor&);
+  private:
+    TTimingDataMappingProcessor(const TTimingDataMappingProcessor &);
+    TTimingDataMappingProcessor &operator=(const TTimingDataMappingProcessor &);
 
-  ClassDef(TTimingDataMappingProcessor,0) // simple data mapper
+    ClassDef(TTimingDataMappingProcessor, 0) // simple data mapper
 };
 
 #endif // _TTIMINGDATAMAPPINGPROCESSOR_H_
-
