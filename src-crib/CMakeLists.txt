@@ -151,7 +151,7 @@ if(SRIMlib_FOUND)
 endif()
 
 if(TSrim_FOUND)
-  target_link_libraries(${CRIBLIB_NAME} PRIVATE Srim)
+  target_link_libraries(${CRIBLIB_NAME} PRIVATE TSrim::Srim)
 endif()
 
 root_generate_dictionary(G__${CRIBLIB_NAME} ${CRIBHEADERS} LINKDEF

@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:36:36
- * @note    last modified: 2024-07-23 13:34:20
+ * @note    last modified: 2024-07-29 15:08:27
  * @details for (angle) constant cross section
  */
 
@@ -66,10 +66,12 @@ TNBodyReactionProcessor::~TNBodyReactionProcessor() {
     delete fOutReacData;
     delete srim;
     delete gr_generating_func;
+    delete gr_generating_func_inv;
     fOutData = nullptr;
     fOutReacData = nullptr;
     srim = nullptr;
     gr_generating_func = nullptr;
+    gr_generating_func_inv = nullptr;
 }
 
 void TNBodyReactionProcessor::Init(TEventCollection *col) {
@@ -90,7 +92,7 @@ void TNBodyReactionProcessor::Init(TEventCollection *col) {
 
     for (Int_t i = 0; i < fDecayNum; i++) {
         Info("Init", "reaction products: id=%d, %s (A=%d, Z=%d)", i,
-             amdc::GetEl(fReacAtmNum[i]), fReacMassNum[i], fReacAtmNum[i]);
+             amdc::GetEl(fReacAtmNum[i]).c_str(), fReacMassNum[i], fReacAtmNum[i]);
     }
 
     fInData = reinterpret_cast<TClonesArray **>(col->GetObjectRef(fInputColName.Data()));

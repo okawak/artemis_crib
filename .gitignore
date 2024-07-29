@@ -6,6 +6,7 @@
 .vscode/
 
 # artemis configuration
+*.root
 test
 artemislogon.C
 thisartemis-crib.sh
@@ -17,6 +18,7 @@ rootfile
 figure
 build
 model
+ana
 
 # scripts logs
 .log_mux

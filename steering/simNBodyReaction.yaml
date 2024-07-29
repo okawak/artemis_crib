@@ -2,14 +2,14 @@
 Anchor:
 
  - &input /data/si26a/user/okawa/output/single/si26/high_si26.root
- - &output output/sim/test.root
+ - &output output/sim/si26_p10.root
  - &histout output/sim/test.hist.root
 
- - &loopnum 1000000
+ - &loopnum 5000000
  - &beam_A 26
  - &beam_Z 14
- - &beam_E 55.5 # MeV (just before target)
- - &beam_Esigma 0.0 # 3.3 # MeV
+ - &beam_E 55.36 # MeV (just before target)
+ - &beam_Esigma 1.7 # MeV
  - &target_name he
  - &target_A 4
  - &target_Z 2
@@ -20,8 +20,8 @@ Anchor:
  - &decay_num 2
  - &reac_Z [15, 1] # (id=0, id=1) reaction particle Z
  - &reac_A [29, 1] # (id=0, id=1) reaction particle A
- - &excited [0.0, 0.0] # MeV, excited energy
- - &cs_file model/ap.L00
+ - &excited [4.9541, 0.0] # MeV, excited energy
+ - &cs_file model/ap.L10
 
 Processor:
   - name: timer
@@ -29,56 +29,56 @@ Processor:
 
 # =====================================
 # using random number
-  - name: random_eventstore
-    type: art::TRandomNumberEventStore
-    parameter:
-      OutputTransparency: 1
-      MaxLoop: *loopnum
-
-  - name: beam_generator
-    type: art::TRandomBeamGenerator
-    parameter:
-      OutputCollection: beam
-      OutputTrackCollection: track
-      # beam particle information
-      MassNum: *beam_A
-      AtomicNum: *beam_Z
-      ChargeNum: *beam_Z
-      IniEnergy: *beam_E
-      # beam tracking information
-      Xsigma: 0.0 # mm
-      Ysigma: 0.0 # mm
-      Asigma: 0.0 # deg
-      Bsigma: 0.0 # deg
-      Esigma: *beam_Esigma
-
-#=====================================
-# using TTree events
-#  - name: periodic_tree
-#    type: art::TTreePeriodicEventStore
+#  - name: random_eventstore
+#    type: art::TRandomNumberEventStore
 #    parameter:
 #      OutputTransparency: 1
-#      FileName: *input
-#      TreeName: tree
-#      MaxEventNum: *loopnum
-#
-#  - name: proc_copy_processor
-#    type: art::TBranchCopyProcessor
-#    parameter:
-#      InputCollection: f3ppac # need to inherit from TTrack
-#      OutputCollection: track
+#      MaxLoop: *loopnum
 #
 #  - name: beam_generator
-#    type: art::TTreeBeamGenerator
+#    type: art::TRandomBeamGenerator
 #    parameter:
-#      InputCollection: track
 #      OutputCollection: beam
+#      OutputTrackCollection: track
 #      # beam particle information
 #      MassNum: *beam_A
 #      AtomicNum: *beam_Z
 #      ChargeNum: *beam_Z
 #      IniEnergy: *beam_E
+#      # beam tracking information
+#      Xsigma: 0.0 # mm
+#      Ysigma: 0.0 # mm
+#      Asigma: 0.0 # deg
+#      Bsigma: 0.0 # deg
 #      Esigma: *beam_Esigma
+
+#=====================================
+# using TTree events
+  - name: periodic_tree
+    type: art::TTreePeriodicEventStore
+    parameter:
+      OutputTransparency: 1
+      FileName: *input
+      TreeName: tree
+      MaxEventNum: *loopnum
+
+  - name: proc_copy_processor
+    type: art::TBranchCopyProcessor
+    parameter:
+      InputCollection: f3ppac # need to inherit from TTrack
+      OutputCollection: track
+
+  - name: beam_generator
+    type: art::TTreeBeamGenerator
+    parameter:
+      InputCollection: track
+      OutputCollection: beam
+      # beam particle information
+      MassNum: *beam_A
+      AtomicNum: *beam_Z
+      ChargeNum: *beam_Z
+      IniEnergy: *beam_E
+      Esigma: *beam_Esigma
 
 #=====================================
   - name: reaction_proc
