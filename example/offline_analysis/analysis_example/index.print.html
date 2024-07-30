@@ -5,24 +5,28 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.130.0">
     <meta name="generator" content="Relearn 6.0.0">
-    <meta name="description" content="This section explain the example of the offline analysis (some useful processors).">
+    <meta name="description" content="last modified: 2024-07-30 by Kodai Okawa A brief example of an analysis flow using artemis_crib is given below.">
     <meta name="author" content="Kodai Okawa">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Offline analysis :: CRIB artemis">
-    <meta name="twitter:description" content="This section explain the example of the offline analysis (some useful processors).">
-    <meta property="og:url" content="https://okawak.github.io/artemis_crib/example/offline_analysis/index.html">
+    <meta name="twitter:title" content="analysis example :: CRIB artemis">
+    <meta name="twitter:description" content="last modified: 2024-07-30 by Kodai Okawa A brief example of an analysis flow using artemis_crib is given below.">
+    <meta property="og:url" content="https://okawak.github.io/artemis_crib/example/offline_analysis/analysis_example/index.html">
     <meta property="og:site_name" content="CRIB artemis">
-    <meta property="og:title" content="Offline analysis :: CRIB artemis">
-    <meta property="og:description" content="This section explain the example of the offline analysis (some useful processors).">
+    <meta property="og:title" content="analysis example :: CRIB artemis">
+    <meta property="og:description" content="last modified: 2024-07-30 by Kodai Okawa A brief example of an analysis flow using artemis_crib is given below.">
     <meta property="og:locale" content="en-us">
-    <meta property="og:type" content="website">
-    <meta itemprop="name" content="Offline analysis :: CRIB artemis">
-    <meta itemprop="description" content="This section explain the example of the offline analysis (some useful processors).">
-    <meta itemprop="dateModified" content="2023-12-13T15:34:38+09:00">
-    <meta itemprop="wordCount" content="21">
-    <title>Offline analysis :: CRIB artemis</title>
-    <link href="https://okawak.github.io/artemis_crib/example/offline_analysis/index.html" rel="canonical" type="text/html" title="Offline analysis :: CRIB artemis">
-    <link href="/artemis_crib/example/offline_analysis/index.xml" rel="alternate" type="application/rss+xml" title="Offline analysis :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Example">
+    <meta property="article:published_time" content="2024-07-30T17:28:14+09:00">
+    <meta property="article:modified_time" content="2024-07-30T18:33:37+09:00">
+    <meta itemprop="name" content="analysis example :: CRIB artemis">
+    <meta itemprop="description" content="last modified: 2024-07-30 by Kodai Okawa A brief example of an analysis flow using artemis_crib is given below.">
+    <meta itemprop="datePublished" content="2024-07-30T17:28:14+09:00">
+    <meta itemprop="dateModified" content="2024-07-30T18:33:37+09:00">
+    <meta itemprop="wordCount" content="530">
+    <title>analysis example :: CRIB artemis</title>
+    <link href="https://okawak.github.io/artemis_crib/example/offline_analysis/analysis_example/index.html" rel="canonical" type="text/html" title="analysis example :: CRIB artemis">
+    <link href="/artemis_crib/example/offline_analysis/analysis_example/index.xml" rel="alternate" type="application/rss+xml" title="analysis example :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <link href="/artemis_crib/css/fontawesome-all.min.css?1722332067" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1722332067" rel="stylesheet"></noscript>
     <link href="/artemis_crib/css/nucleus.css?1722332067" rel="stylesheet">
@@ -38,8 +42,8 @@
     <script src="/artemis_crib/js/variant.js?1722332067"></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.relBasePath='..\/..';
-      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
       window.relearn.absBaseUri='https:\/\/okawak.github.io\/artemis_crib';
       window.index_js_url="/artemis_crib/index.search.js";
       // variant stuff
@@ -69,7 +73,7 @@
 
 
   </head>
-  <body class="mobile-support print" data-url="/artemis_crib/example/offline_analysis/index.html">
+  <body class="mobile-support print" data-url="/artemis_crib/example/offline_analysis/analysis_example/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -81,12 +85,13 @@
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/example/index.html"><span itemprop="name">Example</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Offline analysis</span><meta itemprop="position" content="2"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/example/offline_analysis/index.html"><span itemprop="name">Offline analysis</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">analysis example</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/artemis_crib/example/online_analysis/check_rawdata/index.html" title="Raw data checker (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/artemis_crib/example/offline_analysis/pyroot/index.html" title="pyROOT (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/artemis_crib/example/offline_analysis/new_processor/index.html" title="New processors (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/artemis_crib/example/simulation/index.html" title="MC Simulation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
           </div>
         </div>
@@ -94,87 +99,6 @@
       <div id="R-main-overlay"></div>
       <main id="R-body-inner" class="highlightable default" tabindex="-1">
         <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-
-<h1 id="offline-analysis">Offline analysis</h1>
-
-<p>This section explain the example of the offline analysis (some useful processors).</p>
-
-<ul class="children children-li children-sort-weight">
-	
-<li><a href="/artemis_crib/example/offline_analysis/new_processor/index.html">New processors</a></li>
-<li><a href="/artemis_crib/example/offline_analysis/merge_files/index.html">Merge files</a></li>
-<li><a href="/artemis_crib/example/offline_analysis/python_environment/index.html">Python environment</a></li>
-<li><a href="/artemis_crib/example/offline_analysis/pyroot/index.html">pyROOT</a></li>
-<li><a href="/artemis_crib/example/offline_analysis/analysis_example/index.html">analysis example</a></li>
-</ul>
-
-            <footer class="footline">
-              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
-              <i class='fa-fw fas fa-calendar'></i> Dec 13, 2023
-            </footer>
-          </article>
-
-          <section>
-            <h1 class="a11y-only">Subsections of Offline analysis</h1>
-          <article class="default">
-            <header class="headline">
-            </header>
-
-<h1 id="new-processors">New processors</h1>
-
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-15 by</span></span>
-
-            <footer class="footline">
-              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
-              <i class='fa-fw fas fa-calendar'></i> Dec 15, 2023
-            </footer>
-          </article>
-
-          <article class="default">
-            <header class="headline">
-            </header>
-
-<h1 id="merge-files">Merge files</h1>
-
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-15 by Kodai Okawa</span></span>
-
-            <footer class="footline">
-              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
-              <i class='fa-fw fas fa-calendar'></i> Dec 15, 2023
-            </footer>
-          </article>
-
-          <article class="default">
-            <header class="headline">
-            </header>
-
-<h1 id="python-environment">Python environment</h1>
-
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-15 by Kodai Okawa</span></span>
-
-            <footer class="footline">
-              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
-              <i class='fa-fw fas fa-calendar'></i> Dec 15, 2023
-            </footer>
-          </article>
-
-          <article class="default">
-            <header class="headline">
-            </header>
-
-<h1 id="pyroot">pyROOT</h1>
-
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-15 by Kodai Okawa</span></span>
-
-            <footer class="footline">
-              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
-              <i class='fa-fw fas fa-calendar'></i> Dec 15, 2023
-            </footer>
-          </article>
-
           <article class="default">
             <header class="headline">
             </header>
@@ -244,7 +168,6 @@ Not defining a histogram also has the advantage that the event loop is faster.</
             </footer>
           </article>
 
-          </section>
         </div>
       </main>
     </div>

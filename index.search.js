@@ -215,7 +215,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "",
-    "content": "Up to now, we have introduced the installation and concepts of artemis. This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is no problem to start reading from here.\nPreparation Basic Tref for V1190 PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git Online analysis F1 Beam PID F2 PPAC MWDC Telescope F3 Gate Shifter task Scaler Timestamp Raw data checker Offline analysis New processors Merge files Python environment pyROOT MC Simulation Beam Generator Nbody Reaction Geometry Detect particles Solidangle ",
+    "content": "Up to now, we have introduced the installation and concepts of artemis. This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is no problem to start reading from here.\nPreparation Basic Tref for V1190 PPAC calibration MWDC calibration Alpha calibration MUX calibration Set parameters Git Online analysis F1 Beam PID F2 PPAC MWDC Telescope F3 Gate Shifter task Scaler Timestamp Raw data checker Offline analysis New processors Merge files Python environment pyROOT analysis example MC Simulation Beam Generator Nbody Reaction Geometry Detect particles Solidangle ",
     "description": "Up to now, we have introduced the installation and concepts of artemis.",
     "tags": [],
     "title": "Example",
@@ -428,7 +428,7 @@ var relearn_search_index = [
   },
   {
     "breadcrumb": "Example",
-    "content": "This section explain the example of the offline analysis (some useful processors).\nNew processors Merge files Python environment pyROOT ",
+    "content": "This section explain the example of the offline analysis (some useful processors).\nNew processors Merge files Python environment pyROOT analysis example ",
     "description": "This section explain the example of the offline analysis (some useful processors).",
     "tags": [],
     "title": "Offline analysis",
@@ -457,6 +457,14 @@ var relearn_search_index = [
     "tags": [],
     "title": "pyROOT",
     "uri": "/artemis_crib/example/offline_analysis/pyroot/index.html"
+  },
+  {
+    "breadcrumb": "Example \u003e Offline analysis",
+    "content": "last modified: 2024-07-30 by Kodai Okawa A brief example of an analysis flow using artemis_crib is given below. This is just the method recommended by okawak, so you can proceed with the analysis as you like.\nI hope this page will give you some ideas.\nGet calibration paramters Concentrate on one RUN (one or two hours data) for analysis. Briefly check other RUNs to see if the trend is the same. Determine the appropriate gate (like remove noise, not precisely). Create ROOT files for all RUNs with appropriate Gate. Merging the ROOT files to one file. Determine further detailed gates (essensial gate like selecting proton). Create a ROOT file with only selected events from the original ROOT file. Repeat steps 6 and 7. Create a histogram that gives the physical quantity you want. If necessary, create a simulation and produce a histogram you want. Manipulate the histograms using macros (.C file) or pyROOT to produce the final result. 1. Concentrate on one RUN (one or two hours data) for analysis The acquired data contains a lot of noise and other data that is not absolutely necessary for analysis, and if you use artemis to do an event loop for all events, it will take a long time. Therefore, a root file should only be created for a specific RUN (data file) to save time. (It is tempting to look at the data using with a lot of statistics, but we believe that this is done by online-analysis and concentrate on reducing useless data.)\n$ artlogin (user) $ a artemis [] a steering/hoge.yaml NAME=run NUM=0000 artemis [] .qAs you want to look at a variety of data I think, it is convenient to create a canvas each time with ‘tree-\u003eDraw()’, instead of defining a histogram. Not defining a histogram also has the advantage that the event loop is faster.\nOnce the root file has been created, it can be read directly from that file, eliminating the waiting time.\n$ a output/created_rootfile_path.root artemis [] tree-\u003eDraw(\"hoge\")Here are some points I think would be good to check:\ncheck multiplicity of the beam tracking detector (PPAC or MWDC) proper timing of PPACa/b or MWDCa/b (because we may be using multihit TDC, V1190) check the beam properties difference between “beam_single” trigger and “SSD_coin” trigger RF timing with “beam_single” and “SSD_coin” trigger should be different, so need to check the offset value. check RF timing and contamination of the beam with “beam_single” trigger If there are problems during the experiment, there may be many other things to check.\n2. Briefly check other RUNs to see if the trend is the same 3. Determine the appropriate gate (like remove noise, not precisely) 4. Create ROOT files for all RUNs with appropriate Gate 5. Merging the ROOT files to one file 6. Determine further detailed gates (essensial gate like selecting proton) 7. Create a ROOT file with only selected events from the original ROOT file 8. Repeat steps 6 and 7 9. Create a histogram that gives the physical quantity you want 10. If necessary, create a simulation and produce a histogram you want 11. Manipulate the histograms using macros (.C file) or pyROOT to produce the final result ",
+    "description": "last modified: 2024-07-30 by Kodai Okawa A brief example of an analysis flow using artemis_crib is given below.",
+    "tags": [],
+    "title": "analysis example",
+    "uri": "/artemis_crib/example/offline_analysis/analysis_example/index.html"
   },
   {
     "breadcrumb": "CRIB Configuration",

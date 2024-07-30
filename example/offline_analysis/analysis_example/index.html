@@ -5,28 +5,28 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.130.0">
     <meta name="generator" content="Relearn 6.0.0">
-    <meta name="description" content="last modified: 2023-12-12 by Kodai Okawa CRIB shares the analysis environment of all experiments under one user account (username crib).">
+    <meta name="description" content="last modified: 2024-07-30 by Kodai Okawa A brief example of an analysis flow using artemis_crib is given below.">
     <meta name="author" content="Kodai Okawa">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Analysis environment :: CRIB artemis">
-    <meta name="twitter:description" content="last modified: 2023-12-12 by Kodai Okawa CRIB shares the analysis environment of all experiments under one user account (username crib).">
-    <meta property="og:url" content="https://okawak.github.io/artemis_crib/crib_parts/environment/index.html">
+    <meta name="twitter:title" content="analysis example :: CRIB artemis">
+    <meta name="twitter:description" content="last modified: 2024-07-30 by Kodai Okawa A brief example of an analysis flow using artemis_crib is given below.">
+    <meta property="og:url" content="https://okawak.github.io/artemis_crib/example/offline_analysis/analysis_example/index.html">
     <meta property="og:site_name" content="CRIB artemis">
-    <meta property="og:title" content="Analysis environment :: CRIB artemis">
-    <meta property="og:description" content="last modified: 2023-12-12 by Kodai Okawa CRIB shares the analysis environment of all experiments under one user account (username crib).">
+    <meta property="og:title" content="analysis example :: CRIB artemis">
+    <meta property="og:description" content="last modified: 2024-07-30 by Kodai Okawa A brief example of an analysis flow using artemis_crib is given below.">
     <meta property="og:locale" content="en-us">
     <meta property="og:type" content="article">
-    <meta property="article:section" content="CRIB Configuration">
-    <meta property="article:published_time" content="2023-11-16T16:36:56+09:00">
-    <meta property="article:modified_time" content="2023-12-12T16:24:41+09:00">
-    <meta itemprop="name" content="Analysis environment :: CRIB artemis">
-    <meta itemprop="description" content="last modified: 2023-12-12 by Kodai Okawa CRIB shares the analysis environment of all experiments under one user account (username crib).">
-    <meta itemprop="datePublished" content="2023-11-16T16:36:56+09:00">
-    <meta itemprop="dateModified" content="2023-12-12T16:24:41+09:00">
-    <meta itemprop="wordCount" content="472">
-    <title>Analysis environment :: CRIB artemis</title>
-    <link href="/artemis_crib/crib_parts/environment/index.xml" rel="alternate" type="application/rss+xml" title="Analysis environment :: CRIB artemis">
-    <link href="/artemis_crib/crib_parts/environment/index.print.html" rel="alternate" type="text/html" title="Analysis environment :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
+    <meta property="article:section" content="Example">
+    <meta property="article:published_time" content="2024-07-30T17:28:14+09:00">
+    <meta property="article:modified_time" content="2024-07-30T18:33:37+09:00">
+    <meta itemprop="name" content="analysis example :: CRIB artemis">
+    <meta itemprop="description" content="last modified: 2024-07-30 by Kodai Okawa A brief example of an analysis flow using artemis_crib is given below.">
+    <meta itemprop="datePublished" content="2024-07-30T17:28:14+09:00">
+    <meta itemprop="dateModified" content="2024-07-30T18:33:37+09:00">
+    <meta itemprop="wordCount" content="530">
+    <title>analysis example :: CRIB artemis</title>
+    <link href="/artemis_crib/example/offline_analysis/analysis_example/index.xml" rel="alternate" type="application/rss+xml" title="analysis example :: CRIB artemis">
+    <link href="/artemis_crib/example/offline_analysis/analysis_example/index.print.html" rel="alternate" type="text/html" title="analysis example :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
     <link href="/artemis_crib/css/fontawesome-all.min.css?1722332066" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1722332066" rel="stylesheet"></noscript>
     <link href="/artemis_crib/css/nucleus.css?1722332066" rel="stylesheet">
@@ -41,8 +41,8 @@
     <script src="/artemis_crib/js/variant.js?1722332066"></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.relBasePath='..\/..';
-      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
       window.relearn.absBaseUri='https:\/\/okawak.github.io\/artemis_crib';
       window.index_js_url="/artemis_crib/index.search.js";
       // variant stuff
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body class="mobile-support html" data-url="/artemis_crib/crib_parts/environment/index.html">
+  <body class="mobile-support html" data-url="/artemis_crib/example/offline_analysis/analysis_example/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -97,18 +97,19 @@
             </div>
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/crib_parts/index.html"><span itemprop="name">CRIB Configuration</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Analysis environment</span><meta itemprop="position" content="2"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/example/index.html"><span itemprop="name">Example</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/artemis_crib/example/offline_analysis/index.html"><span itemprop="name">Offline analysis</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">analysis example</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
 				
-            <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://github.com/okawak/artemis_crib/tree/pages-build/content/crib_parts/environment.md" target="_blank" title="Edit (CTRL&#43;ALT&#43;w)"><i class="fa-fw fas fa-pen"></i></a>
+            <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://github.com/okawak/artemis_crib/tree/pages-build/content/example/offline_analysis/analysis_example.md" target="_blank" title="Edit (CTRL&#43;ALT&#43;w)"><i class="fa-fw fas fa-pen"></i></a>
             </div>
-            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/artemis_crib/crib_parts/environment/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/artemis_crib/example/offline_analysis/analysis_example/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
             </div>
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/artemis_crib/crib_parts/index.html" title="CRIB Configuration (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/artemis_crib/example/offline_analysis/pyroot/index.html" title="pyROOT (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/artemis_crib/crib_parts/onlinemode/index.html" title="Online-mode analysis (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/artemis_crib/example/simulation/index.html" title="MC Simulation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -128,99 +129,68 @@
             <header class="headline">
             </header>
 
-<h1 id="analysis-environment">Analysis environment</h1>
+<h1 id="analysis-example">analysis example</h1>
 
-<span class="badge cstyle default"><span class="badge-content">last modified: 2023-12-12 by Kodai Okawa</span></span>
-<p>CRIB shares the analysis environment of all experiments under one user account (username crib).
-Therefore, when you want to check data from an old experiment or when several people are analysing the data, you need to log in to the same user account.</p>
-<p>Of course, the analysis environment varies according to the experiment (and even different environments for different users within the same experiment!) and these have to be managed well.
-The &ldquo;.bashrc/.zshrc&rdquo; and &ldquo;artlogin (artlogin2)&rdquo; commands set them up.
-Currently we are using &ldquo;zsh (.zshrc)&rdquo;.</p>
-<h4 id="experimental-environment">Experimental environment</h4>
-
-<div class="tab-panel" data-tab-group="2ad2883e6655255f834d217e633beaba">
-  <div class="tab-nav">
-    <div class="tab-nav-title">&#8203;</div>
-    <button
-      data-tab-item="bashrczshrc"
-      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('2ad2883e6655255f834d217e633beaba','bashrczshrc')"
-    >
-      <span class="tab-nav-text">.bashrc/.zshrc</span>
-    </button>
-  </div>
-  <div class="tab-content-container">
-    <div
-      data-tab-item="bashrczshrc"
-      class="tab-content tab-panel-style cstyle initial active">
-      <div class="tab-content-text">
-
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">EXP_NAME</span><span class="o">=</span><span class="s2">&#34;current&#34;</span> <span class="c1"># your experiment</span>
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">EXP_NAME_OLD</span><span class="o">=</span><span class="s2">&#34;previous&#34;</span> <span class="c1"># old experiment</span></span></span></code></pre></div></div>
-    </div>
-  </div>
-</div><p>The <code>EXP_NAME</code> is current experiment and you can enter the environment by using <code>artlogin</code> command.
-At the same time, the <code>EXP_NAME_OLD</code> is the old experiment and you can use <code>artlogin2</code> command.</p>
-<p>In the current version, we support two experimental environment and if you want to check other experimental data, please change <code>EXP_NAME_OLD</code>.</p>
-
-<div class="box notices cstyle warning">
-  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
-  <div class="box-content">
-
-<p>When you modify &ldquo;.bashrc/.zshrc&rdquo;, all people&rsquo;s settings will change.
-Therefore please do not change <code>EXP_NAME</code> as much as possible, because we want to set this environment variable as the active experiment.
-If you change this, please report it so that CRIB members are aware of it.</p>
-</div>
-</div>
-
-<div class="box notices cstyle info">
-  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
-  <div class="box-content">
-
-<p>Commands may be created in the future to enter the environment of all experiments flexibly, not just two. (like artoldlogin {expname} {username}?)</p>
-</div>
-</div>
-<p>Then you can enter the different analysis environment like this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">&gt; artlogin <span class="o">(</span>username<span class="o">)</span>
-</span></span><span class="line"><span class="cl">&gt; artlogin2 <span class="o">(</span>username<span class="o">)</span></span></span></code></pre></div><h4 id="user-environment">User environment</h4>
-<p>CRIB uses a default user as well as individual analysis environments.
-The username of the default user is the same with experiment name.</p>
-<p>If you set the name of the experiment to &ldquo;si26a&rdquo; (<code>EXP_NAME</code>), then the username &ldquo;si26a&rdquo; will be the default user.
-The user&rsquo;s environment can be entered with the &ldquo;artlogin&rdquo; command with no arguments.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">&gt; artlogin
-</span></span><span class="line"><span class="cl">&gt; <span class="nb">pwd</span>
-</span></span><span class="line"><span class="cl">/home/crib/art_analysis/si26a/si26a</span></span></code></pre></div><p>If you want to test something by changing files, or if you want to use your own VNC server, you can enter that environment by specifying its name as an argument.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">&gt; artlogin okawa <span class="c1"># if this is the first time to command, you will see setup comments.</span>
-</span></span><span class="line"><span class="cl">&gt; <span class="nb">pwd</span>
-</span></span><span class="line"><span class="cl">/home/crib/art_analysis/si26a/okawa</span></span></code></pre></div>
-<div class="box notices cstyle warning">
-  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
-  <div class="box-content">
-
-<p>When using the default user, try to avoid using a VNC server (do not create .vncdisplay files).
-The main reason for creating a default user is to analyse locally (for shifters) in the online analysis, and using a VNC server makes it impossible to view the figures locally.</p>
-</div>
-</div>
-<h4 id="directory-structure">Directory structure</h4>
-<p>The directory structure comprising artemis is as follows.
-(The location of artemis itself is omitted).</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">&gt; tree -L <span class="m">2</span> ~/art_analysis
-</span></span><span class="line"><span class="cl">/home/crib/art_analysis
-</span></span><span class="line"><span class="cl">├── current <span class="c1"># accessed by &#34;artlogin&#34;</span>
-</span></span><span class="line"><span class="cl">│   ├── current <span class="c1"># default user</span>
-</span></span><span class="line"><span class="cl">│   └── okawa <span class="c1"># individual user</span>
-</span></span><span class="line"><span class="cl">├── previous <span class="c1"># accessed by &#34;artlogin2&#34;</span>
-</span></span><span class="line"><span class="cl">│   ├── previous
-</span></span><span class="line"><span class="cl">│   └── okawa
-</span></span><span class="line"><span class="cl">├── old1
-</span></span><span class="line"><span class="cl">│   ├── old1
-</span></span><span class="line"><span class="cl">│   └── okawa
-</span></span><span class="line"><span class="cl">└── old2
+<span class="badge cstyle default"><span class="badge-content">last modified: 2024-07-30 by Kodai Okawa</span></span>
+<p>A brief example of an analysis flow using artemis_crib is given below.
+This is just the method recommended by okawak,
+so you can proceed with the analysis as you like.</p>
+<p>I hope this page will give you some ideas.</p>
+<hr>
+<ol start="0">
+<li>Get calibration paramters</li>
+<li>Concentrate on one RUN (one or two hours data) for analysis.</li>
+<li>Briefly check other RUNs to see if the trend is the same.</li>
+<li>Determine the appropriate gate (like remove noise, not precisely).</li>
+<li>Create ROOT files for all RUNs with appropriate Gate.</li>
+<li>Merging the ROOT files to one file.</li>
+<li>Determine further detailed gates (essensial gate like selecting proton).</li>
+<li>Create a ROOT file with only selected events from the original ROOT file.</li>
+<li>Repeat steps 6 and 7.</li>
+<li>Create a histogram that gives the physical quantity you want.</li>
+<li>If necessary, create a simulation and produce a histogram you want.</li>
+<li>Manipulate the histograms using macros (.C file) or pyROOT to produce the final result.</li>
+</ol>
+<hr>
+<h5 id="1-concentrate-on-one-run-one-or-two-hours-data-for-analysis"><strong>1. Concentrate on one RUN (one or two hours data) for analysis</strong></h5>
+<p>The acquired data contains a lot of noise and other data that is not absolutely necessary for analysis,
+and if you use <code>artemis</code> to do an event loop for all events, it will take a long time.
+Therefore, a root file should only be created for a specific RUN (data file) to save time.
+(It is tempting to look at the data using with a lot of statistics,
+but we believe that this is done by online-analysis and concentrate on reducing useless data.)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ artlogin <span class="o">(</span>user<span class="o">)</span>
+</span></span><span class="line"><span class="cl">$ a
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># -- snip --</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="cl">artemis <span class="o">[]</span> a steering/hoge.yaml <span class="nv">NAME</span><span class="o">=</span>run <span class="nv">NUM</span><span class="o">=</span><span class="m">0000</span>
+</span></span><span class="line"><span class="cl">artemis <span class="o">[]</span> .q</span></span></code></pre></div><p>As you want to look at a variety of data I think,
+it is convenient to create a canvas each time with ‘tree-&gt;Draw()’, instead of defining a histogram.
+Not defining a histogram also has the advantage that the event loop is faster.</p>
+<p>Once the root file has been created, it can be read directly from that file, eliminating the waiting time.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ a output/created_rootfile_path.root
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">artemis <span class="o">[]</span> tree-&gt;Draw<span class="o">(</span><span class="s2">&#34;hoge&#34;</span><span class="o">)</span></span></span></code></pre></div><p>Here are some points I think would be good to check:</p>
+<ul>
+<li>check multiplicity of the beam tracking detector (PPAC or MWDC)</li>
+<li>proper timing of PPACa/b or MWDCa/b (because we may be using multihit TDC, V1190)</li>
+<li>check the beam properties difference between &ldquo;beam_single&rdquo; trigger and &ldquo;SSD_coin&rdquo; trigger</li>
+<li>RF timing with &ldquo;beam_single&rdquo; and &ldquo;SSD_coin&rdquo; trigger should be different, so need to check the offset value.</li>
+<li>check RF timing and contamination of the beam with &ldquo;beam_single&rdquo; trigger</li>
+</ul>
+<p>If there are problems during the experiment, there may be many other things to check.</p>
+<h5 id="2-briefly-check-other-runs-to-see-if-the-trend-is-the-same">2. Briefly check other RUNs to see if the trend is the same</h5>
+<h5 id="3-determine-the-appropriate-gate-like-remove-noise-not-precisely">3. Determine the appropriate gate (like remove noise, not precisely)</h5>
+<h5 id="4-create-root-files-for-all-runs-with-appropriate-gate">4. Create ROOT files for all RUNs with appropriate Gate</h5>
+<h5 id="5-merging-the-root-files-to-one-file">5. Merging the ROOT files to one file</h5>
+<h5 id="6-determine-further-detailed-gates-essensial-gate-like-selecting-proton">6. Determine further detailed gates (essensial gate like selecting proton)</h5>
+<h5 id="7-create-a-root-file-with-only-selected-events-from-the-original-root-file">7. Create a ROOT file with only selected events from the original ROOT file</h5>
+<h5 id="8-repeat-steps-6-and-7">8. Repeat steps 6 and 7</h5>
+<h5 id="9-create-a-histogram-that-gives-the-physical-quantity-you-want">9. Create a histogram that gives the physical quantity you want</h5>
+<h5 id="10-if-necessary-create-a-simulation-and-produce-a-histogram-you-want">10. If necessary, create a simulation and produce a histogram you want</h5>
+<h5 id="11-manipulate-the-histograms-using-macros-c-file-or-pyroot-to-produce-the-final-result">11. Manipulate the histograms using macros (.C file) or pyROOT to produce the final result</h5>
+
             <footer class="footline">
-              <i class='fa-fw fas fa-user'></i> <a href="mailto:okawa@cns.s.u-tokyo.ac.jp">KodaiOkawa</a>
-              <i class='fa-fw fas fa-calendar'></i> Dec 12, 2023
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:kodak2022@outlook.jp">okawak</a>
+              <i class='fa-fw fas fa-calendar'></i> Jul 30, 2024
             </footer>
           </article>
         </div>
@@ -279,13 +249,13 @@ The main reason for creating a default user is to analyse locally (for shifters)
           <li data-nav-id="/artemis_crib/setting/steering/index.html" class=""><a class="padding" href="/artemis_crib/setting/steering/index.html">Steering</a></li>
           <li data-nav-id="/artemis_crib/setting/histograms/index.html" class=""><a class="padding" href="/artemis_crib/setting/histograms/index.html">Histograms</a></li>
           <li data-nav-id="/artemis_crib/setting/vncserver/index.html" class=""><a class="padding" href="/artemis_crib/setting/vncserver/index.html">VNC server</a></li></ul></li>
-          <li data-nav-id="/artemis_crib/crib_parts/index.html" class="parent "><a class="padding" href="/artemis_crib/crib_parts/index.html">CRIB Configuration</a><ul id="R-subsections-a60d232d9b6960dc7b017d1604d8afdf" class="morespace collapsible-menu">
-          <li data-nav-id="/artemis_crib/crib_parts/environment/index.html" class="active"><a class="padding" href="/artemis_crib/crib_parts/environment/index.html">Analysis environment</a></li>
+          <li data-nav-id="/artemis_crib/crib_parts/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/index.html">CRIB Configuration</a><ul id="R-subsections-a60d232d9b6960dc7b017d1604d8afdf" class="morespace collapsible-menu">
+          <li data-nav-id="/artemis_crib/crib_parts/environment/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/environment/index.html">Analysis environment</a></li>
           <li data-nav-id="/artemis_crib/crib_parts/onlinemode/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/onlinemode/index.html">Online-mode analysis</a></li>
           <li data-nav-id="/artemis_crib/crib_parts/userconfig/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/userconfig/index.html">User config</a></li>
           <li data-nav-id="/artemis_crib/crib_parts/newcommand/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/newcommand/index.html">New commands</a></li>
           <li data-nav-id="/artemis_crib/crib_parts/minor_change/index.html" class=""><a class="padding" href="/artemis_crib/crib_parts/minor_change/index.html">Minor changes</a></li></ul></li>
-          <li data-nav-id="/artemis_crib/example/index.html" class=""><a class="padding" href="/artemis_crib/example/index.html">Example</a><ul id="R-subsections-71d2f98538faea977f26c44afad0d6a0" class="morespace collapsible-menu">
+          <li data-nav-id="/artemis_crib/example/index.html" class="parent "><a class="padding" href="/artemis_crib/example/index.html">Example</a><ul id="R-subsections-71d2f98538faea977f26c44afad0d6a0" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/example/preparation/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/index.html">Preparation</a><ul id="R-subsections-878aafdc6585570f925af3f8566d96e4" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/example/preparation/basic/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/basic/index.html">Basic</a></li>
           <li data-nav-id="/artemis_crib/example/preparation/tref/index.html" class=""><a class="padding" href="/artemis_crib/example/preparation/tref/index.html">Tref for V1190</a></li>
@@ -308,12 +278,12 @@ The main reason for creating a default user is to analyse locally (for shifters)
           <li data-nav-id="/artemis_crib/example/online_analysis/scaler/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/scaler/index.html">Scaler</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/timestamp/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/timestamp/index.html">Timestamp</a></li>
           <li data-nav-id="/artemis_crib/example/online_analysis/check_rawdata/index.html" class=""><a class="padding" href="/artemis_crib/example/online_analysis/check_rawdata/index.html">Raw data checker</a></li></ul></li>
-          <li data-nav-id="/artemis_crib/example/offline_analysis/index.html" class=""><a class="padding" href="/artemis_crib/example/offline_analysis/index.html">Offline analysis</a><ul id="R-subsections-35fc1da11cfae0b2f04e6a6b03295509" class="morespace collapsible-menu">
+          <li data-nav-id="/artemis_crib/example/offline_analysis/index.html" class="parent "><a class="padding" href="/artemis_crib/example/offline_analysis/index.html">Offline analysis</a><ul id="R-subsections-35fc1da11cfae0b2f04e6a6b03295509" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/example/offline_analysis/new_processor/index.html" class=""><a class="padding" href="/artemis_crib/example/offline_analysis/new_processor/index.html">New processors</a></li>
           <li data-nav-id="/artemis_crib/example/offline_analysis/merge_files/index.html" class=""><a class="padding" href="/artemis_crib/example/offline_analysis/merge_files/index.html">Merge files</a></li>
           <li data-nav-id="/artemis_crib/example/offline_analysis/python_environment/index.html" class=""><a class="padding" href="/artemis_crib/example/offline_analysis/python_environment/index.html">Python environment</a></li>
           <li data-nav-id="/artemis_crib/example/offline_analysis/pyroot/index.html" class=""><a class="padding" href="/artemis_crib/example/offline_analysis/pyroot/index.html">pyROOT</a></li>
-          <li data-nav-id="/artemis_crib/example/offline_analysis/analysis_example/index.html" class=""><a class="padding" href="/artemis_crib/example/offline_analysis/analysis_example/index.html">analysis example</a></li></ul></li>
+          <li data-nav-id="/artemis_crib/example/offline_analysis/analysis_example/index.html" class="active"><a class="padding" href="/artemis_crib/example/offline_analysis/analysis_example/index.html">analysis example</a></li></ul></li>
           <li data-nav-id="/artemis_crib/example/simulation/index.html" class=""><a class="padding" href="/artemis_crib/example/simulation/index.html">MC Simulation</a><ul id="R-subsections-da97c131a02beb5c9ec7fcba2a54ae7a" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/example/simulation/beam_generator/index.html" class=""><a class="padding" href="/artemis_crib/example/simulation/beam_generator/index.html">Beam Generator</a></li>
           <li data-nav-id="/artemis_crib/example/simulation/nbodyreaction/index.html" class=""><a class="padding" href="/artemis_crib/example/simulation/nbodyreaction/index.html">Nbody Reaction</a></li>
@@ -344,7 +314,7 @@ The main reason for creating a default user is to analyse locally (for shifters)
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/artemis_crib/crib_parts/environment/index.html" lang="en-us" selected></option>
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/artemis_crib/example/offline_analysis/analysis_example/index.html" lang="en-us" selected></option>
                     </select>
                   </div>
                   <div class="clear"></div>

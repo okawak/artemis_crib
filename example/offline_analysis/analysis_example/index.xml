@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>analysis example :: CRIB artemis</title>
+    <link>https://okawak.github.io/artemis_crib/example/offline_analysis/analysis_example/index.html</link>
+    <description>last modified: 2024-07-30 by Kodai Okawa A brief example of an analysis flow using artemis_crib is given below.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://okawak.github.io/artemis_crib/example/offline_analysis/analysis_example/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
