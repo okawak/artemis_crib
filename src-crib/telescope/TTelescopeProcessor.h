@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 16:53:01
- * @note    last modified: 2024-07-22 17:52:48
+ * @note    last modified: 2024-07-30 10:45:43
  * @details if no valid converter given, this processor does nothing.
  *          it assume we use DSSSD
  */
@@ -62,9 +62,9 @@ class art::TTelescopeProcessor : public TProcessor {
 
   private:
     // Copy constructor (prohibited)
-    TTelescopeProcessor(const TTelescopeProcessor &rhs);
+    // TTelescopeProcessor(const TTelescopeProcessor &rhs);
     // Assignment operator (prohibited)
-    TTelescopeProcessor &operator=(const TTelescopeProcessor &rhs);
+    // TTelescopeProcessor &operator=(const TTelescopeProcessor &rhs);
 
     ClassDef(TTelescopeProcessor, 2) // processor for calibration of timing and charge data
 };

@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-07-19 18:36:37
- * @note    last modified: 2024-07-29 20:22:12
+ * @note    last modified: 2024-07-30 10:14:10
  * @details
  */
 
@@ -42,7 +42,7 @@ TTimingDataMappingProcessor::~TTimingDataMappingProcessor() {
     fOutputArray = nullptr;
 }
 
-void TTimingDataMappingProcessor::Init(TEventCollection *col) {
+void TTimingDataMappingProcessor::Init() {
     Info("Init", "CatID: %d, DataTypeID: %d => %s",
          fCatID, fDataTypeID, fOutputColName.Data());
     if (!fIsSparse)
@@ -67,14 +67,10 @@ void TTimingDataMappingProcessor::Process() {
         if (!dataArray)
             continue;
 
-        Double_t measure;
-
-        const TRawDataObject *const hit =
-            dynamic_cast<TRawDataObject *>(dataArray->At(0));
+        const TRawDataObject *const hit = dynamic_cast<TRawDataObject *>(dataArray->At(0));
         const Int_t detID = hit->GetDetID();
         const Int_t idx = fIsSparse ? fOutputArray->GetEntriesFast() : detID;
-        TTimingData *const data =
-            static_cast<TTimingData *>(fOutputArray->ConstructedAt(idx));
+        TTimingData *const data = static_cast<TTimingData *>(fOutputArray->ConstructedAt(idx));
         if (IsValid(data->GetID()))
             return; // take only the first hit if not sparse
 

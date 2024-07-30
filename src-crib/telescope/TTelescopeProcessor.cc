@@ -2,11 +2,12 @@
  * @file    TTelescopeProcessor.cc
  * @brief   gather the telescope information to the one object
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
- * @date    2024-07-22 17:52:58
- * @note    last modified: 2024-07-22 17:55:56
+ * @date    2024-01-17 17:52:58
+ * @note    last modified: 2024-07-30 10:54:05
  * @details treat the largest value of each layor
  *          the data of X side is used for DSSSD
  *          assume beam position (0, 0) and direction (0, 0, 1)
+ *          NEED OutputColName == prm/geo detector name
  */
 
 #include "TTelescopeProcessor.h"
@@ -110,6 +111,7 @@ void TTelescopeProcessor::Init(TEventCollection *col) {
             Warning("Init", "cannot find target node. please check TUserGeoInitializer");
             fHasTargetPrm = false;
         } else {
+            // use the first target node
             TParameterObject *inPrm = static_cast<TParameterObject *>((*fTargetParameters)->At(0));
             TTargetParameter *prm = dynamic_cast<TTargetParameter *>(inPrm);
             fTargetParameter = prm;
@@ -153,7 +155,7 @@ void TTelescopeProcessor::Process() {
 
     TTelescopeData *outData = static_cast<TTelescopeData *>(fOutData->ConstructedAt(0));
     outData->Clear();
-    outData->SetID(0);
+    outData->SetID(0); // always 0
     outData->SetTelID(fTelID);
     if (fHasDetPrm && fHasTargetPrm) {
         outData->SetN(fDetParameter->GetN());
@@ -187,7 +189,7 @@ void TTelescopeProcessor::Process() {
 
         // judge if the event is pedestal or not
         if (fHasDetPrm) {
-            if (energy < fDetParameter->GetPedestal(0)) {
+            if (energy < fDetParameter->GetPedestal(0)) { // first layer
                 energy = 0.0;
             }
         }
@@ -232,11 +234,11 @@ void TTelescopeProcessor::Process() {
         // judge if this event is pedestal or not
         if (fHasDetPrm) {
             if (fIsDSSSD) {
-                if (energy < fDetParameter->GetPedestal(0)) {
+                if (energy < fDetParameter->GetPedestal(0)) { // first layer
                     energy = 0.0;
                 }
             } else {
-                if (energy < fDetParameter->GetPedestal(1)) {
+                if (energy < fDetParameter->GetPedestal(1)) { // second layer
                     energy = 0.0;
                 }
             }
@@ -286,7 +288,7 @@ void TTelescopeProcessor::Process() {
         outData->SetPosition(det_pos);
 
         TVector3 target(0., 0., target_z);
-        TVector3 beam(0., 0., 1.);
+        TVector3 beam(0., 0., 1.); // assume beam center!
         Double_t theta = beam.Angle(det_pos - target);
         outData->SetTheta_L(theta * TMath::RadToDeg());
     }
@@ -308,6 +310,7 @@ void TTelescopeProcessor::Process() {
     for (Int_t iE = 0; iE < NE; iE++) {
         Int_t itr = -1;
         // get "iE" index object
+        /// in case single-pad SSD don't have data
         for (Int_t iData3 = 0; iData3 < nData3; ++iData3) {
             const TDataObject *const inData3 = static_cast<TDataObject *>((*fInData3)->At(iData3));
             const TTimingChargeData *const Data3 = dynamic_cast<const TTimingChargeData *>(inData3);

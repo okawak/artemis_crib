@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-07-19 20:20:07
- * @note    last modified: 2024-07-29 20:21:49
+ * @note    last modified: 2024-07-30 10:13:04
  * @details
  */
 
@@ -22,7 +22,7 @@ class art::TTimingDataMappingProcessor : public TProcessor {
     TTimingDataMappingProcessor();
     virtual ~TTimingDataMappingProcessor();
 
-    virtual void Init(TEventCollection *col);
+    virtual void Init();
     virtual void Process();
 
   protected:
@@ -37,8 +37,8 @@ class art::TTimingDataMappingProcessor : public TProcessor {
     Bool_t fIsSparse;
 
   private:
-    TTimingDataMappingProcessor(const TTimingDataMappingProcessor &);
-    TTimingDataMappingProcessor &operator=(const TTimingDataMappingProcessor &);
+    // TTimingDataMappingProcessor(const TTimingDataMappingProcessor &);
+    // TTimingDataMappingProcessor &operator=(const TTimingDataMappingProcessor &);
 
     ClassDef(TTimingDataMappingProcessor, 0) // simple data mapper
 };

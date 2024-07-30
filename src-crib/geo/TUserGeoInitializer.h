@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 21:30:15
- * @note    last modified: 2024-07-19 16:29:12
+ * @note    last modified: 2024-07-30 10:59:03
  * @details
  */
 
@@ -48,9 +48,9 @@ class art::TUserGeoInitializer : public TProcessor {
     void GeometryFromYaml(TString yamlfile);
 
     // Copy constructor (prohibited)
-    TUserGeoInitializer(const TUserGeoInitializer &);
+    // TUserGeoInitializer(const TUserGeoInitializer &);
     // Assignment operator (prohibited)
-    TUserGeoInitializer &operator=(const TUserGeoInitializer &);
+    // TUserGeoInitializer &operator=(const TUserGeoInitializer &);
 
     ClassDef(TUserGeoInitializer, 1)
 };
