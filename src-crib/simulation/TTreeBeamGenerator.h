@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-09 15:57:38
- * @note    last modified: 2024-07-16 16:52:52
+ * @note    last modified: 2024-07-30 15:06:23
  * @details
  */
 
@@ -44,9 +44,9 @@ class art::TTreeBeamGenerator : public TProcessor {
     Double_t fMass;
 
     // Copy constructor (prohibited)
-    TTreeBeamGenerator(const TTreeBeamGenerator &rhs);
+    // TTreeBeamGenerator(const TTreeBeamGenerator &rhs);
     // Assignment operator (prohibited)
-    TTreeBeamGenerator &operator=(const TTreeBeamGenerator &rhs);
+    // TTreeBeamGenerator &operator=(const TTreeBeamGenerator &rhs);
 
     ClassDef(TTreeBeamGenerator, 1);
 };

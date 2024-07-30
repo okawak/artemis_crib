@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 13:11:23
- * @note    last modified: 2024-07-19 14:53:39
+ * @note    last modified: 2024-07-30 15:05:55
  * @details
  */
 
@@ -86,8 +86,8 @@ class art::TNBodyReactionProcessor : public TProcessor {
 
     TLorentzVector GetLossEnergyVector(TLorentzVector vec, Double_t eloss);
 
-    TNBodyReactionProcessor(const TNBodyReactionProcessor &rhs);
-    TNBodyReactionProcessor &operator=(const TNBodyReactionProcessor &rhs);
+    // TNBodyReactionProcessor(const TNBodyReactionProcessor &rhs);
+    // TNBodyReactionProcessor &operator=(const TNBodyReactionProcessor &rhs);
 
     ClassDef(TNBodyReactionProcessor, 1)
 };

@@ -3,7 +3,7 @@
  * @brief   position and angle random beam generator
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-09 17:10:35
- * @note    last modified: 2024-07-16 14:39:38
+ * @note    last modified: 2024-07-30 15:06:08
  * @details
  */
 
@@ -48,9 +48,9 @@ class art::TRandomBeamGenerator : public TProcessor {
     Double_t fMass; /// beam particle mass (MeV)
 
     // Copy constructor (prohibited)
-    TRandomBeamGenerator(const TRandomBeamGenerator &rhs);
+    // TRandomBeamGenerator(const TRandomBeamGenerator &rhs);
     // Assignment operator (prohibited)
-    TRandomBeamGenerator &operator=(const TRandomBeamGenerator &rhs);
+    // TRandomBeamGenerator &operator=(const TRandomBeamGenerator &rhs);
 
     ClassDef(TRandomBeamGenerator, 1);
 };

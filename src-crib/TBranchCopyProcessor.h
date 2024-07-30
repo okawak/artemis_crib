@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-13 16:06:58
- * @note    last modified: 2024-07-16 16:35:25
+ * @note    last modified: 2024-07-30 15:06:38
  * @details
  */
 
@@ -33,8 +33,8 @@ class art::TBranchCopyProcessor : public TProcessor {
     TClonesArray *fOutData; //!
 
   private:
-    TBranchCopyProcessor(const TBranchCopyProcessor &);
-    TBranchCopyProcessor &operator=(const TBranchCopyProcessor &);
+    // TBranchCopyProcessor(const TBranchCopyProcessor &);
+    // TBranchCopyProcessor &operator=(const TBranchCopyProcessor &);
 
     ClassDef(TBranchCopyProcessor, 0); // simple data mapper
 };

@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:34:15
- * @note    last modified: 2024-07-22 17:16:31
+ * @note    last modified: 2024-07-30 15:05:42
  * @details
  */
 
@@ -59,8 +59,8 @@ class art::TDetectParticleProcessor : public TProcessor {
     std::vector<TString> GetUniqueElements(const std::vector<TString> &input);
     Int_t GetStripID(Double_t pos, Int_t max_strip, Double_t size);
 
-    TDetectParticleProcessor(const TDetectParticleProcessor &rhs);
-    TDetectParticleProcessor &operator=(const TDetectParticleProcessor &rhs);
+    // TDetectParticleProcessor(const TDetectParticleProcessor &rhs);
+    // TDetectParticleProcessor &operator=(const TDetectParticleProcessor &rhs);
 
     ClassDef(TDetectParticleProcessor, 1)
 };
