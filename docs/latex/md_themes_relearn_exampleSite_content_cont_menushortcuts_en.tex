@@ -1,0 +1,74 @@
++++ title = \char`\"{}\+Menu extra shortcuts\char`\"{} weight = 6 +++
+
+You can define additional menu entries or shortcuts in the navigation menu without any link to content.\hypertarget{md_themes_relearn_exampleSite_content_cont_menushortcuts_en_autotoc_md949}{}\doxysubsection{Basic configuration}\label{md_themes_relearn_exampleSite_content_cont_menushortcuts_en_autotoc_md949}
+Edit the website configuration {\ttfamily hugo.\+toml} and add a {\ttfamily \mbox{[}\mbox{[}menu.\+shortcuts\mbox{]}\mbox{]}} entry for each link your want to add.
+
+Example from the current website\+:
+
+\{\{$<$ multiconfig file=hugo $>$\}\} \mbox{[}\mbox{[}menu.\+shortcuts\mbox{]}\mbox{]} name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fab fa-\/github\textquotesingle{}$>$$<$/i$>$ Git\+Hub repo\char`\"{} identifier = \char`\"{}ds\char`\"{} url = \char`\"{}https\+://github.\+com/\+Mc\+Shelby/hugo-\/theme-\/relearn\char`\"{} weight = 10
+
+\mbox{[}\mbox{[}menu.\+shortcuts\mbox{]}\mbox{]} name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/camera\textquotesingle{}$>$$<$/i$>$ Showcases\char`\"{} url = \char`\"{}showcase/\char`\"{} weight = 11
+
+\mbox{[}\mbox{[}menu.\+shortcuts\mbox{]}\mbox{]} name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/bookmark\textquotesingle{}$>$$<$/i$>$ Hugo Documentation\char`\"{} identifier = \char`\"{}hugodoc\char`\"{} url = \char`\"{}https\+://gohugo.\+io/\char`\"{} weight = 20
+
+\mbox{[}\mbox{[}menu.\+shortcuts\mbox{]}\mbox{]} name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/bullhorn\textquotesingle{}$>$$<$/i$>$ Credits\char`\"{} url = \char`\"{}more/credits/\char`\"{} weight = 30
+
+\mbox{[}\mbox{[}menu.\+shortcuts\mbox{]}\mbox{]} name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/tags\textquotesingle{}$>$$<$/i$>$ Tags\char`\"{} url = \char`\"{}tags/\char`\"{} weight = 40 \{\{$<$ /multiconfig $>$\}\}
+
+By default, shortcuts are preceded by a title. This title can be disabled by setting {\ttfamily disable\+Shortcuts\+Title=true}. However, if you want to keep the title but change its value, it can be overridden by changing your local i18n translation string configuration.
+
+For example, in your local {\ttfamily i18n/en.\+toml} file, add the following content
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[Shortcuts-\/Title]}
+\DoxyCodeLine{other = "{}<Your value>"{}}
+
+\end{DoxyCode}
+
+
+Read more about \href{https://gohugo.io/extras/menus/}{\texttt{ hugo menu}} and \href{https://gohugo.io/content-management/multilingual/\#translation-of-strings}{\texttt{ hugo i18n translation strings}}\hypertarget{md_themes_relearn_exampleSite_content_cont_menushortcuts_en_i18n}{}\doxysubsection{Configuration for Multilingual mode}\label{md_themes_relearn_exampleSite_content_cont_menushortcuts_en_i18n}
+When using a multilingual website, you can set different menus for each language. In the {\ttfamily hugo.\+toml} file, prefix your menu configuration by {\ttfamily Languages.$<$language-\/id$>$}.
+
+Example from the current website\+:
+
+\{\{$<$ multiconfig file=hugo $>$\}\} \mbox{[}languages\mbox{]} \mbox{[}languages.\+en\mbox{]} title = \char`\"{}\+Hugo Relearn Theme\char`\"{} weight = 1 language\+Name = \char`\"{}\+English\char`\"{} \mbox{[}languages.\+en.\+params\mbox{]} landing\+Page\+Name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/home\textquotesingle{}$>$$<$/i$>$ Home\char`\"{}
+
+\mbox{[}\mbox{[}languages.\+en.\+menu.\+shortcuts\mbox{]}\mbox{]} name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fab fa-\/github\textquotesingle{}$>$$<$/i$>$ Git\+Hub repo\char`\"{} identifier = \char`\"{}ds\char`\"{} url = \char`\"{}https\+://github.\+com/\+Mc\+Shelby/hugo-\/theme-\/relearn\char`\"{} weight = 10
+
+\mbox{[}\mbox{[}languages.\+en.\+menu.\+shortcuts\mbox{]}\mbox{]} name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/camera\textquotesingle{}$>$$<$/i$>$ Showcases\char`\"{} page\+Ref = \char`\"{}showcase/\char`\"{} weight = 11
+
+\mbox{[}\mbox{[}languages.\+en.\+menu.\+shortcuts\mbox{]}\mbox{]} name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/bookmark\textquotesingle{}$>$$<$/i$>$ Hugo Documentation\char`\"{} identifier = \char`\"{}hugodoc\char`\"{} url = \char`\"{}https\+://gohugo.\+io/\char`\"{} weight = 20
+
+\mbox{[}\mbox{[}languages.\+en.\+menu.\+shortcuts\mbox{]}\mbox{]} name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/bullhorn\textquotesingle{}$>$$<$/i$>$ Credits\char`\"{} page\+Ref = \char`\"{}more/credits/\char`\"{} weight = 30
+
+\mbox{[}\mbox{[}languages.\+en.\+menu.\+shortcuts\mbox{]}\mbox{]} name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/tags\textquotesingle{}$>$$<$/i$>$ Tags\char`\"{} page\+Ref = \char`\"{}tags/\char`\"{} weight = 40
+
+\mbox{[}languages.\+pir\mbox{]} title = \char`\"{}\+Cap\textquotesingle{}n Hugo Relearrrn Theme\char`\"{} weight = 1 language\+Name = \char`\"{}\+Arrr! Pirrrates\char`\"{} \mbox{[}languages.\+pir.\+params\mbox{]} landing\+Page\+Name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/home\textquotesingle{}$>$$<$/i$>$ Arrr! Home\char`\"{}
+
+\mbox{[}\mbox{[}languages.\+pir.\+menu.\+shortcuts\mbox{]}\mbox{]} name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fab fa-\/github\textquotesingle{}$>$$<$/i$>$ Git\+Hub repo\char`\"{} identifier = \char`\"{}ds\char`\"{} url = \char`\"{}https\+://github.\+com/\+Mc\+Shelby/hugo-\/theme-\/relearn\char`\"{} weight = 10
+
+\mbox{[}\mbox{[}languages.\+pir.\+menu.\+shortcuts\mbox{]}\mbox{]} name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/camera\textquotesingle{}$>$$<$/i$>$ Showcases\char`\"{} page\+Ref = \char`\"{}showcase/\char`\"{} weight = 11
+
+\mbox{[}\mbox{[}languages.\+pir.\+menu.\+shortcuts\mbox{]}\mbox{]} name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/bookmark\textquotesingle{}$>$$<$/i$>$ Cap\textquotesingle{}n Hugo Documentat\textquotesingle{}n\char`\"{} identifier = \char`\"{}hugodoc\char`\"{} url = \char`\"{}https\+://gohugo.\+io/\char`\"{} weight = 20
+
+\mbox{[}\mbox{[}languages.\+pir.\+menu.\+shortcuts\mbox{]}\mbox{]} name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/bullhorn\textquotesingle{}$>$$<$/i$>$ Crrredits\char`\"{} page\+Ref = \char`\"{}more/credits/\char`\"{} weight = 30
+
+\mbox{[}\mbox{[}languages.\+pir.\+menu.\+shortcuts\mbox{]}\mbox{]} name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/tags\textquotesingle{}$>$$<$/i$>$ Arrr! Tags\char`\"{} page\+Ref = \char`\"{}tags/\char`\"{} weight = 40 \{\{$<$ /multiconfig $>$\}\}
+
+Read more about \href{https://gohugo.io/extras/menus/}{\texttt{ hugo menu}} and \href{https://gohugo.io/content-management/multilingual/\#menus}{\texttt{ hugo multilingual menus}}\hypertarget{md_themes_relearn_exampleSite_content_cont_menushortcuts_en_autotoc_md950}{}\doxysubsection{Shortcuts to pages inside of your project}\label{md_themes_relearn_exampleSite_content_cont_menushortcuts_en_autotoc_md950}
+If you have shortcuts to pages inside of your project and you don\textquotesingle{}t want them to show up in page menu section, you have two choices\+:
+
+
+\begin{DoxyEnumerate}
+\item Make the page file for the shortcut a \href{https://gohugo.io/content-management/page-bundles/\#headless-bundle}{\texttt{ headless branch bundle}} (contained in its own subdirectory and called {\ttfamily \+\_\+index.\+md}) and add the following frontmatter configuration to the file (see example\+Site\textquotesingle{}s {\ttfamily \mbox{\hyperlink{showcase_2__index_8en_8md}{content/showcase/\+\_\+index.\+en.\+md}}}). This causes its content to {\bfseries{not}} be ontained in the sitemap.
+
+\{\{$<$ multiconfig fm=true $>$\}\} title = \char`\"{}\+Showcase\char`\"{} \mbox{[}\+\_\+build\mbox{]} render = \char`\"{}always\char`\"{} list = \char`\"{}never\char`\"{} publish\+Resources = true \{\{$<$ /multiconfig $>$\}\}
+\item Store the page file for the shortcut below a parent headless branch bundle and add the following frontmatter to he {\bfseries{parent}} (see example\+Site\textquotesingle{}s {\ttfamily \mbox{\hyperlink{more_2__index_8en_8md}{content/more/\+\_\+index.\+en.\+md}}}). {\bfseries{Don\textquotesingle{}t give this page a {\ttfamily title}}} as this will cause it to be shown in the breadcrumbs -\/ a thing you most likely don\textquotesingle{}t want.
+
+\{\{$<$ multiconfig fm=true $>$\}\} \mbox{[}\+\_\+build\mbox{]} render = \char`\"{}never\char`\"{} list = \char`\"{}never\char`\"{} publish\+Resources = false \{\{$<$ /multiconfig $>$\}\}
+
+In this case, the file itself can be a branch bundle, leaf bundle or simple page (see example\+Site\textquotesingle{}s {\ttfamily content/more/credits.\+en.\+md}). This causes its content to be contained in the sitemap.
+
+\{\{$<$ multiconfig fm=true $>$\}\} title = \char`\"{}\+Credits\char`\"{} \{\{$<$ /multiconfig $>$\}\} 
+\end{DoxyEnumerate}

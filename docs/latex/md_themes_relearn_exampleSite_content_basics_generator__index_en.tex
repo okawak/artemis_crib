@@ -1,0 +1,27 @@
++++ categories = \char`\"{}theming\char`\"{} disable\+Mermaid = false title = \char`\"{}\+Stylesheet generator\char`\"{} weight = 26 +++
+
+This interactive tool may help you to generate your own color variant stylesheet.
+
+\{\{\% expand \char`\"{}\+Show usage instructions\char`\"{} \%\}\} To get started, first select a color variant from the variant selector in the lower left sidebar that fits you best as a starting point.
+
+The graph is interactive and reflect the current colors. You can click on any of the colored boxes to adjust the respective color. The graph {\bfseries{and the page}} will update accordingly.
+
+The arrowed lines reflect how colors are inherited through different parts of the theme if the descendent isn\textquotesingle{}t overwritten. If you want to delete a color and let it inherit from its parent, just delete the value from the input field.
+
+To better understand this select the {\ttfamily neon} variant and modify the different heading colors. There, colors for the heading {\ttfamily h2}, {\ttfamily h3} and {\ttfamily h4} are explicitly set. {\ttfamily h5} is not set and inherits its value from {\ttfamily h4}. {\ttfamily h6} is also not set and inherits its value from {\ttfamily h5}.
+
+Once you\textquotesingle{}ve changed a color, the variant selector will show a \char`\"{}\+My custom variant\char`\"{} entry and your changes are stored in the browser. You can {\bfseries{browse to other pages}} and even close the browser {\bfseries{without losing your changes}}.
+
+Once you are satisfied, you can download the new variants file and copy it into your site\textquotesingle{}s {\ttfamily assets/css} directory. Afterwards you have to adjust the {\ttfamily theme\+Variant} parameter in your {\ttfamily hugo.\+toml} to your chosen file name.
+
+Eg. if your new variants file is named {\ttfamily theme-\/my-\/custom-\/variant.\+css}, you have to set `theme\+Variant=\textquotesingle{}my-\/custom-\/variant'\`{} to use it.
+
+See the docs for \href{basics/branding}{\texttt{ further configuration options}} \{\{\% /expand \%\}\}
+
+\{\{\% button style=\char`\"{}secondary\char`\"{} icon=\char`\"{}download\char`\"{} href=\char`\"{}javascript\+:window.\+variants\&\&variants.\+get\+Stylesheet();this.\+blur();\char`\"{} \%\}\}Download variant\{\{\% /button \%\}\} \{\{\% button style=\char`\"{}warning\char`\"{} icon=\char`\"{}trash\char`\"{} href=\char`\"{}javascript\+:window.\+variants\&\&variants.\+reset\+Variant();this.\+blur();\char`\"{} \%\}\}Reset variant\{\{\% /button \%\}\}
+
+Graph
+
+\{\{\% button style=\char`\"{}secondary\char`\"{} icon=\char`\"{}download\char`\"{} href=\char`\"{}javascript\+:window.\+variants\&\&variants.\+get\+Stylesheet();this.\+blur();\char`\"{} \%\}\}Download variant\{\{\% /button \%\}\} \{\{\% button style=\char`\"{}warning\char`\"{} icon=\char`\"{}trash\char`\"{} href=\char`\"{}javascript\+:window.\+variants\&\&variants.\+reset\+Variant();this.\+blur();\char`\"{} \%\}\}Reset variant\{\{\% /button \%\}\}
+
+$<$script$>$ window.\+variants \&\& variants.\+generator( \textquotesingle{}\#R-\/vargenerator\textquotesingle{} ); $<$/script$>$ 

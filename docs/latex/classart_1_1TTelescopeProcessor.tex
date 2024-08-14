@@ -1,0 +1,290 @@
+\hypertarget{classart_1_1TTelescopeProcessor}{}\doxysection{art\+::TTelescope\+Processor Class Reference}
+\label{classart_1_1TTelescopeProcessor}\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+
+
+{\ttfamily \#include $<$TTelescope\+Processor.\+h$>$}
+
+Inheritance diagram for art\+::TTelescope\+Processor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classart_1_1TTelescopeProcessor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classart_1_1TTelescopeProcessor_ae3e2b5fb6967a0c0d5fe63a241868af0}{TTelescope\+Processor}} ()
+\item 
+virtual \mbox{\hyperlink{classart_1_1TTelescopeProcessor_ade03180910b21bc170cf81d2c948f68b}{$\sim$\+TTelescope\+Processor}} ()
+\item 
+virtual void \mbox{\hyperlink{classart_1_1TTelescopeProcessor_a37f79294d7edfa28194be99b8e97e190}{Init}} (TEvent\+Collection $\ast$col)
+\item 
+virtual void \mbox{\hyperlink{classart_1_1TTelescopeProcessor_aae4b049465a7662baae887ac8ddfbe35}{Process}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const Int\+\_\+t \mbox{\hyperlink{classart_1_1TTelescopeProcessor_a5a057ff0c4b4c59cce590fa06e7567eb}{DEFAULT\+\_\+\+SSD\+\_\+\+MAX\+\_\+\+NUMBER}} = 4
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TString \mbox{\hyperlink{classart_1_1TTelescopeProcessor_aeb8e6438cea616136bd5ebb7248cf4f0}{f\+Input\+Col\+Name1}}
+\item 
+TString \mbox{\hyperlink{classart_1_1TTelescopeProcessor_af5b005a492ccb0e03841e01a560a638e}{f\+Input\+Col\+Name2}}
+\begin{DoxyCompactList}\small\item\em from X strip SSD \end{DoxyCompactList}\item 
+TString \mbox{\hyperlink{classart_1_1TTelescopeProcessor_a681562e57e85084b97d894ff1f1dd267}{f\+Input\+Col\+Name3}}
+\begin{DoxyCompactList}\small\item\em from Y strip SSD \end{DoxyCompactList}\item 
+TString \mbox{\hyperlink{classart_1_1TTelescopeProcessor_ace08ae3b6562fa1de5da3c7195c16d17}{f\+Output\+Col\+Name}}
+\begin{DoxyCompactList}\small\item\em from thick SSD array \end{DoxyCompactList}\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1TTelescopeProcessor_ad597b80ca7b479481570206f25a659b9}{f\+In\+Data1}}
+\begin{DoxyCompactList}\small\item\em output object \end{DoxyCompactList}\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1TTelescopeProcessor_a828f7d5d732b30392b6b98caecc4785f}{f\+In\+Data2}}
+\begin{DoxyCompactList}\small\item\em TTiming\+Charge\+Data array from X strip SSD. \end{DoxyCompactList}\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1TTelescopeProcessor_a403d9f099479c6a2957a7206529747be}{f\+In\+Data3}}
+\begin{DoxyCompactList}\small\item\em TTiming\+Charge\+Data array from Y strip SSD. \end{DoxyCompactList}\item 
+TClones\+Array $\ast$ \mbox{\hyperlink{classart_1_1TTelescopeProcessor_ac495401786f79c0707ecf07d36a35624}{f\+Out\+Data}}
+\begin{DoxyCompactList}\small\item\em TTiming\+Charge\+Data array from thick SSDs. \end{DoxyCompactList}\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1TTelescopeProcessor_acc25e393ce083bbb4d491904dba1f87d}{f\+Is\+DSSSD}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classart_1_1TTelescopeData}{TTelescope\+Data}} array. \end{DoxyCompactList}\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1TTelescopeProcessor_a9c03da9389ad347271d4005c77a7b852}{f\+Use\+Random}}
+\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1TTelescopeProcessor_a009e90cf09ce7c6778c7ccfdc5449565}{f\+Input\+Has\+Data}}
+\item 
+TString \mbox{\hyperlink{classart_1_1TTelescopeProcessor_ad75517573583f506a30ba4fcfc9f3dbc}{f\+Det\+Prm\+Name}}
+\item 
+TString \mbox{\hyperlink{classart_1_1TTelescopeProcessor_a9d1b3bc7a292ba2c5136ad079e87d357}{f\+Target\+Prm\+Name}}
+\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1TTelescopeProcessor_a95548c8aa615a29460c130eedbacd5db}{f\+Det\+Parameters}}
+\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1TTelescopeProcessor_a05675a01416157da9033cf7e291748f3}{f\+Target\+Parameters}}
+\begin{DoxyCompactList}\small\item\em all parameter info of \mbox{\hyperlink{classart_1_1TDetectorParameter}{TDetector\+Parameter}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classart_1_1TDetectorParameter}{TDetector\+Parameter}} $\ast$ \mbox{\hyperlink{classart_1_1TTelescopeProcessor_ac7b6b7a2a4e4622e73535d3ca847b8b8}{f\+Det\+Parameter}}
+\begin{DoxyCompactList}\small\item\em all parameter info of \mbox{\hyperlink{classart_1_1TTargetParameter}{TTarget\+Parameter}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classart_1_1TTargetParameter}{TTarget\+Parameter}} $\ast$ \mbox{\hyperlink{classart_1_1TTelescopeProcessor_af12ded4bfa765a1978df5f5ccff04375}{f\+Target\+Parameter}}
+\begin{DoxyCompactList}\small\item\em one (this telescope) detector parameter \end{DoxyCompactList}\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1TTelescopeProcessor_a2e10c1b34a65e145a1cbe2c146d8a2b4}{f\+Has\+Det\+Prm}}
+\begin{DoxyCompactList}\small\item\em one (default index 0) target parameter \end{DoxyCompactList}\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1TTelescopeProcessor_a1f4692b45ee5898706a56175b1da8fab}{f\+Has\+Target\+Prm}}
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1TTelescopeProcessor_a49ea894d2a44c4c732d48845facbcfbf}{f\+Tel\+ID}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_ae3e2b5fb6967a0c0d5fe63a241868af0}\label{classart_1_1TTelescopeProcessor_ae3e2b5fb6967a0c0d5fe63a241868af0}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!TTelescopeProcessor@{TTelescopeProcessor}}
+\index{TTelescopeProcessor@{TTelescopeProcessor}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{TTelescopeProcessor()}{TTelescopeProcessor()}}
+{\footnotesize\ttfamily TTelescope\+Processor\+::\+TTelescope\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_ade03180910b21bc170cf81d2c948f68b}\label{classart_1_1TTelescopeProcessor_ade03180910b21bc170cf81d2c948f68b}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!````~TTelescopeProcessor@{$\sim$TTelescopeProcessor}}
+\index{````~TTelescopeProcessor@{$\sim$TTelescopeProcessor}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{$\sim$TTelescopeProcessor()}{~TTelescopeProcessor()}}
+{\footnotesize\ttfamily TTelescope\+Processor\+::$\sim$\+TTelescope\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_a37f79294d7edfa28194be99b8e97e190}\label{classart_1_1TTelescopeProcessor_a37f79294d7edfa28194be99b8e97e190}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!Init@{Init}}
+\index{Init@{Init}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void TTelescope\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_aae4b049465a7662baae887ac8ddfbe35}\label{classart_1_1TTelescopeProcessor_aae4b049465a7662baae887ac8ddfbe35}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!Process@{Process}}
+\index{Process@{Process}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{Process()}{Process()}}
+{\footnotesize\ttfamily void TTelescope\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+need to update\+: care about overflow event more clevar
+
+need to update\+: care about overflow event more clevar
+
+for the definition, please check \href{https://okawak.github.io/artemis_crib/example/simulation/geometry/index.html}{\texttt{ https\+://okawak.\+github.\+io/artemis\+\_\+crib/example/simulation/geometry/index.\+html}}
+
+in case single-\/pad SSD don\textquotesingle{}t have data
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_a5a057ff0c4b4c59cce590fa06e7567eb}\label{classart_1_1TTelescopeProcessor_a5a057ff0c4b4c59cce590fa06e7567eb}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!DEFAULT\_SSD\_MAX\_NUMBER@{DEFAULT\_SSD\_MAX\_NUMBER}}
+\index{DEFAULT\_SSD\_MAX\_NUMBER@{DEFAULT\_SSD\_MAX\_NUMBER}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_SSD\_MAX\_NUMBER}{DEFAULT\_SSD\_MAX\_NUMBER}}
+{\footnotesize\ttfamily const Int\+\_\+t art\+::\+TTelescope\+Processor\+::\+DEFAULT\+\_\+\+SSD\+\_\+\+MAX\+\_\+\+NUMBER = 4\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_ac7b6b7a2a4e4622e73535d3ca847b8b8}\label{classart_1_1TTelescopeProcessor_ac7b6b7a2a4e4622e73535d3ca847b8b8}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!fDetParameter@{fDetParameter}}
+\index{fDetParameter@{fDetParameter}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{fDetParameter}{fDetParameter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classart_1_1TDetectorParameter}{TDetector\+Parameter}}$\ast$ art\+::\+TTelescope\+Processor\+::f\+Det\+Parameter\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+all parameter info of \mbox{\hyperlink{classart_1_1TTargetParameter}{TTarget\+Parameter}} 
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_a95548c8aa615a29460c130eedbacd5db}\label{classart_1_1TTelescopeProcessor_a95548c8aa615a29460c130eedbacd5db}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!fDetParameters@{fDetParameters}}
+\index{fDetParameters@{fDetParameters}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{fDetParameters}{fDetParameters}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::\+TTelescope\+Processor\+::f\+Det\+Parameters\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_ad75517573583f506a30ba4fcfc9f3dbc}\label{classart_1_1TTelescopeProcessor_ad75517573583f506a30ba4fcfc9f3dbc}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!fDetPrmName@{fDetPrmName}}
+\index{fDetPrmName@{fDetPrmName}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{fDetPrmName}{fDetPrmName}}
+{\footnotesize\ttfamily TString art\+::\+TTelescope\+Processor\+::f\+Det\+Prm\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_a2e10c1b34a65e145a1cbe2c146d8a2b4}\label{classart_1_1TTelescopeProcessor_a2e10c1b34a65e145a1cbe2c146d8a2b4}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!fHasDetPrm@{fHasDetPrm}}
+\index{fHasDetPrm@{fHasDetPrm}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{fHasDetPrm}{fHasDetPrm}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::\+TTelescope\+Processor\+::f\+Has\+Det\+Prm\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+one (default index 0) target parameter 
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_a1f4692b45ee5898706a56175b1da8fab}\label{classart_1_1TTelescopeProcessor_a1f4692b45ee5898706a56175b1da8fab}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!fHasTargetPrm@{fHasTargetPrm}}
+\index{fHasTargetPrm@{fHasTargetPrm}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{fHasTargetPrm}{fHasTargetPrm}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::\+TTelescope\+Processor\+::f\+Has\+Target\+Prm\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_ad597b80ca7b479481570206f25a659b9}\label{classart_1_1TTelescopeProcessor_ad597b80ca7b479481570206f25a659b9}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!fInData1@{fInData1}}
+\index{fInData1@{fInData1}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{fInData1}{fInData1}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::\+TTelescope\+Processor\+::f\+In\+Data1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+output object 
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_a828f7d5d732b30392b6b98caecc4785f}\label{classart_1_1TTelescopeProcessor_a828f7d5d732b30392b6b98caecc4785f}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!fInData2@{fInData2}}
+\index{fInData2@{fInData2}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{fInData2}{fInData2}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::\+TTelescope\+Processor\+::f\+In\+Data2\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+TTiming\+Charge\+Data array from X strip SSD. 
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_a403d9f099479c6a2957a7206529747be}\label{classart_1_1TTelescopeProcessor_a403d9f099479c6a2957a7206529747be}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!fInData3@{fInData3}}
+\index{fInData3@{fInData3}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{fInData3}{fInData3}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::\+TTelescope\+Processor\+::f\+In\+Data3\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+TTiming\+Charge\+Data array from Y strip SSD. 
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_aeb8e6438cea616136bd5ebb7248cf4f0}\label{classart_1_1TTelescopeProcessor_aeb8e6438cea616136bd5ebb7248cf4f0}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!fInputColName1@{fInputColName1}}
+\index{fInputColName1@{fInputColName1}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{fInputColName1}{fInputColName1}}
+{\footnotesize\ttfamily TString art\+::\+TTelescope\+Processor\+::f\+Input\+Col\+Name1\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_af5b005a492ccb0e03841e01a560a638e}\label{classart_1_1TTelescopeProcessor_af5b005a492ccb0e03841e01a560a638e}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!fInputColName2@{fInputColName2}}
+\index{fInputColName2@{fInputColName2}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{fInputColName2}{fInputColName2}}
+{\footnotesize\ttfamily TString art\+::\+TTelescope\+Processor\+::f\+Input\+Col\+Name2\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+from X strip SSD 
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_a681562e57e85084b97d894ff1f1dd267}\label{classart_1_1TTelescopeProcessor_a681562e57e85084b97d894ff1f1dd267}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!fInputColName3@{fInputColName3}}
+\index{fInputColName3@{fInputColName3}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{fInputColName3}{fInputColName3}}
+{\footnotesize\ttfamily TString art\+::\+TTelescope\+Processor\+::f\+Input\+Col\+Name3\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+from Y strip SSD 
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_a009e90cf09ce7c6778c7ccfdc5449565}\label{classart_1_1TTelescopeProcessor_a009e90cf09ce7c6778c7ccfdc5449565}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!fInputHasData@{fInputHasData}}
+\index{fInputHasData@{fInputHasData}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{fInputHasData}{fInputHasData}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::\+TTelescope\+Processor\+::f\+Input\+Has\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_acc25e393ce083bbb4d491904dba1f87d}\label{classart_1_1TTelescopeProcessor_acc25e393ce083bbb4d491904dba1f87d}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!fIsDSSSD@{fIsDSSSD}}
+\index{fIsDSSSD@{fIsDSSSD}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{fIsDSSSD}{fIsDSSSD}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::\+TTelescope\+Processor\+::f\+Is\+DSSSD\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{classart_1_1TTelescopeData}{TTelescope\+Data}} array. 
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_ac495401786f79c0707ecf07d36a35624}\label{classart_1_1TTelescopeProcessor_ac495401786f79c0707ecf07d36a35624}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!fOutData@{fOutData}}
+\index{fOutData@{fOutData}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{fOutData}{fOutData}}
+{\footnotesize\ttfamily TClones\+Array$\ast$ art\+::\+TTelescope\+Processor\+::f\+Out\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+TTiming\+Charge\+Data array from thick SSDs. 
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_ace08ae3b6562fa1de5da3c7195c16d17}\label{classart_1_1TTelescopeProcessor_ace08ae3b6562fa1de5da3c7195c16d17}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!fOutputColName@{fOutputColName}}
+\index{fOutputColName@{fOutputColName}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{fOutputColName}{fOutputColName}}
+{\footnotesize\ttfamily TString art\+::\+TTelescope\+Processor\+::f\+Output\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+from thick SSD array 
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_af12ded4bfa765a1978df5f5ccff04375}\label{classart_1_1TTelescopeProcessor_af12ded4bfa765a1978df5f5ccff04375}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!fTargetParameter@{fTargetParameter}}
+\index{fTargetParameter@{fTargetParameter}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetParameter}{fTargetParameter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classart_1_1TTargetParameter}{TTarget\+Parameter}}$\ast$ art\+::\+TTelescope\+Processor\+::f\+Target\+Parameter\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+one (this telescope) detector parameter 
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_a05675a01416157da9033cf7e291748f3}\label{classart_1_1TTelescopeProcessor_a05675a01416157da9033cf7e291748f3}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!fTargetParameters@{fTargetParameters}}
+\index{fTargetParameters@{fTargetParameters}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetParameters}{fTargetParameters}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::\+TTelescope\+Processor\+::f\+Target\+Parameters\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+all parameter info of \mbox{\hyperlink{classart_1_1TDetectorParameter}{TDetector\+Parameter}} 
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_a9d1b3bc7a292ba2c5136ad079e87d357}\label{classart_1_1TTelescopeProcessor_a9d1b3bc7a292ba2c5136ad079e87d357}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!fTargetPrmName@{fTargetPrmName}}
+\index{fTargetPrmName@{fTargetPrmName}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetPrmName}{fTargetPrmName}}
+{\footnotesize\ttfamily TString art\+::\+TTelescope\+Processor\+::f\+Target\+Prm\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_a49ea894d2a44c4c732d48845facbcfbf}\label{classart_1_1TTelescopeProcessor_a49ea894d2a44c4c732d48845facbcfbf}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!fTelID@{fTelID}}
+\index{fTelID@{fTelID}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{fTelID}{fTelID}}
+{\footnotesize\ttfamily Int\+\_\+t art\+::\+TTelescope\+Processor\+::f\+Tel\+ID\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TTelescopeProcessor_a9c03da9389ad347271d4005c77a7b852}\label{classart_1_1TTelescopeProcessor_a9c03da9389ad347271d4005c77a7b852}} 
+\index{art::TTelescopeProcessor@{art::TTelescopeProcessor}!fUseRandom@{fUseRandom}}
+\index{fUseRandom@{fUseRandom}!art::TTelescopeProcessor@{art::TTelescopeProcessor}}
+\doxysubsubsection{\texorpdfstring{fUseRandom}{fUseRandom}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::\+TTelescope\+Processor\+::f\+Use\+Random\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src-\/crib/telescope/\mbox{\hyperlink{TTelescopeProcessor_8h}{TTelescope\+Processor.\+h}}\item 
+src-\/crib/telescope/\mbox{\hyperlink{TTelescopeProcessor_8cc}{TTelescope\+Processor.\+cc}}\end{DoxyCompactItemize}

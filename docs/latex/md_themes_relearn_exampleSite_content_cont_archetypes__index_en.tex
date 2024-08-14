@@ -1,0 +1,140 @@
++++ title = \char`\"{}\+Archetypes\char`\"{} weight = 3 +++
+
+Using the command\+: {\ttfamily hugo new \mbox{[}relative new content path\mbox{]}}, you can start a content file with the date and title automatically set. While this is a welcome feature, active writers need more\+: \href{https://gohugo.io/content/archetypes/}{\texttt{ archetypes}}. These are preconfigured skeleton pages with default frontmatter.
+
+The Relearn theme defines some few archetypes of pages but you are free to define new ones to your liking. All can be used at any level of the documentation, the only difference being the layout of the content.\hypertarget{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md879}{}\doxysubsection{Predefined Archetypes}\label{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md879}
+\hypertarget{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_archetypes-home}{}\doxysubsubsection{Home}\label{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_archetypes-home}
+A {\bfseries{Home}} page is the starting page of your project. It\textquotesingle{}s best to have only one page of this kind in your project.
+
+
+
+To create a home page, run the following command
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{hugo new -\/-\/kind home \_index.md}
+
+\end{DoxyCode}
+
+
+This leads to a file with the following content
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{+++}
+\DoxyCodeLine{archetype = "{}home"{}}
+\DoxyCodeLine{title = "{}\{\{ replace .Name "{}-\/"{} "{} "{} | title \}\}"{}}
+\DoxyCodeLine{+++}
+\DoxyCodeLine{}
+\DoxyCodeLine{Lorem Ipsum.}
+
+\end{DoxyCode}
+\hypertarget{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_archetypes-chapter}{}\doxysubsubsection{Chapter}\label{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_archetypes-chapter}
+A {\bfseries{Chapter}} displays a page meant to be used as introduction for a set of child pages. Commonly, it contains a simple title and a catch line to define content that can be found below it.
+
+
+
+To create a chapter page, run the following command
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{hugo new -\/-\/kind chapter <name>/\_index.md}
+
+\end{DoxyCode}
+
+
+This leads to a file with the following content
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{+++}
+\DoxyCodeLine{archetype = "{}chapter"{}}
+\DoxyCodeLine{title = "{}\{\{ replace .Name "{}-\/"{} "{} "{} | title \}\}"{}}
+\DoxyCodeLine{weight = 1}
+\DoxyCodeLine{+++}
+\DoxyCodeLine{}
+\DoxyCodeLine{Lorem Ipsum.}
+
+\end{DoxyCode}
+
+
+The {\ttfamily weight} number will be used to generate the subtitle of the chapter page, set the number to a consecutive value starting at 1 for each new chapter level.\hypertarget{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_archetypes-default}{}\doxysubsubsection{Default}\label{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_archetypes-default}
+A {\bfseries{Default}} page is any other content page. If you set an unknown archetype in your frontmatter, this archetype will be used to generate the page.
+
+
+
+To create a default page, run either one of the following commands
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{hugo new <chapter>/<name>/\_index.md}
+
+\end{DoxyCode}
+
+
+or
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{hugo new <chapter>/<name>.md}
+
+\end{DoxyCode}
+
+
+This leads to a file with the following content
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{+++}
+\DoxyCodeLine{title = "{}\{\{ replace .Name "{}-\/"{} "{} "{} | title \}\}"{}}
+\DoxyCodeLine{+++}
+\DoxyCodeLine{}
+\DoxyCodeLine{Lorem Ipsum.}
+
+\end{DoxyCode}
+\hypertarget{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md880}{}\doxysubsection{Self defined Archetypes}\label{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md880}
+If you are in need of further archetypes you can define your own or even redefine existing ones.\hypertarget{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md881}{}\doxysubsubsection{Template}\label{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md881}
+Define a template file in your project at {\ttfamily archetypes/$<$kind$>$.md} and make sure it has at least the frontmatter parameter for that archetype like
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{+++}
+\DoxyCodeLine{archetype = "{}<kind>"{}}
+\DoxyCodeLine{+++}
+
+\end{DoxyCode}
+
+
+Afterwards you can generate new content files of that kind with the following command
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{hugo new -\/-\/kind <kind> <name>/\_index.md}
+
+\end{DoxyCode}
+\hypertarget{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md882}{}\doxysubsubsection{Partials}\label{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md882}
+To define how your archetypes are rendered, define corresponding partial files in your projects directory {\ttfamily layouts/partials/archetypes/$<$kind$>$}.
+
+If you use an unknown archetype in your frontmatter, the {\ttfamily default} archetype will be used to generate the page.
+
+Related to each archetype, several {\itshape hook} partial files in the form of {\ttfamily $<$hook$>$.html} can be given inside each archetype directory. If a partial for a specific hook is missing, no output is generated for this hook.
+
+The following hooks are used\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Notes    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Notes    }\\\cline{1-2}
+\endhead
+styleclass   &Defines a set of CSS classes to be added to the HTML\textquotesingle{}s {\ttfamily $<$main$>$} element. You can use these classes to define own CSS rules in your {\ttfamily custom-\/header.\+html}    \\\cline{1-2}
+article   &Defines the HTML how to render your content   \\\cline{1-2}
+\end{longtabu}
+
+
+Take a look at the existing archetypes of this theme to get an idea how to utilize it.\hypertarget{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md883}{}\doxyparagraph{Output formats}\label{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md883}
+Each hook file can be overridden of a specific \href{https://gohugo.io/templates/output-formats/}{\texttt{ output format}}. Eg. if you define a new output format {\ttfamily PLAINTEXT} in your {\ttfamily hugo.\+toml}, you can add a file {\ttfamily layouts/partials/archetypes/default.\+plaintext.\+html} to change the way how normal content is written for that output format. 

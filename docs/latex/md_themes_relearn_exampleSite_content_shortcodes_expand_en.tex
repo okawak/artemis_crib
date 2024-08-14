@@ -1,0 +1,123 @@
++++ description = \char`\"{}\+Expandable/collapsible sections of text\char`\"{} title = \char`\"{}\+Expand\char`\"{} +++
+
+The {\ttfamily expand} shortcode displays an expandable/collapsible section of text.
+
+\{\{\% expand title=\char`\"{}\+Expand me...\char`\"{} \%\}\}Thank you!
+
+That\textquotesingle{}s some text with a footnote\mbox{[}$^\wedge$1\mbox{]}
+
+\mbox{[}$^\wedge$1\mbox{]}\+: And that\textquotesingle{}s the footnote.
+
+That\textquotesingle{}s some more text with a footnote.\mbox{[}$^\wedge$someid\mbox{]}
+
+\mbox{[}$^\wedge$someid\mbox{]}\+: Anything of interest goes here.
+
+Blue light glows blue. \{\{\% /expand \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_shortcodes_expand_en_autotoc_md1041}{}\doxysubsection{Usage}\label{md_themes_relearn_exampleSite_content_shortcodes_expand_en_autotoc_md1041}
+While the examples are using shortcodes with named parameter you are free to use positional as well or also call this shortcode from your own partials.
+
+\{\{$<$ tabs groupid=\char`\"{}shortcode-\/parameter\char`\"{}$>$\}\} \{\{\% tab title=\char`\"{}shortcode\char`\"{} \%\}\}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\{\%/* expand title="{}Expand me..."{} */\%\}\}Thank you!\{\{\%/* /expand */\%\}\}}
+
+\end{DoxyCode}
+
+
+\{\{\% /tab \%\}\} \{\{\% tab title=\char`\"{}shortcode (positional)\char`\"{} \%\}\}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\{\%/* expand "{}Expand me..."{} */\%\}\}Thank you!\{\{\%/* /expand */\%\}\}}
+
+\end{DoxyCode}
+
+
+\{\{\% /tab \%\}\} \{\{\% tab title=\char`\"{}partial\char`\"{} \%\}\}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\{ partial "{}shortcodes/expand.html"{} (dict}
+\DoxyCodeLine{  "{}page"{}  .}
+\DoxyCodeLine{  "{}title"{} "{}Expand me..."{}}
+\DoxyCodeLine{  "{}content"{} "{}Thank you!"{}}
+\DoxyCodeLine{)\}\}}
+
+\end{DoxyCode}
+
+
+\{\{\% /tab \%\}\} \{\{$<$ /tabs $>$\}\}\hypertarget{md_themes_relearn_exampleSite_content_shortcodes_expand_en_autotoc_md1042}{}\doxysubsubsection{Parameter}\label{md_themes_relearn_exampleSite_content_shortcodes_expand_en_autotoc_md1042}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Position   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Default   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Notes    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Position   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Default   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Notes    }\\\cline{1-4}
+\endhead
+{\bfseries{title}}   &1   &{\ttfamily \char`\"{}\+Expand me...\char`\"{}}   &Arbitrary text to appear next to the expand/collapse icon.    \\\cline{1-4}
+{\bfseries{open}}   &2   &{\ttfamily false}   &When {\ttfamily true} the content text will be initially shown as expanded.    \\\cline{1-4}
+{\itshape {\bfseries{$<$content$>$}}}   &&{\itshape $<$empty$>$}   &Arbitrary text to be displayed on expand.   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md_themes_relearn_exampleSite_content_shortcodes_expand_en_autotoc_md1043}{}\doxysubsection{Examples}\label{md_themes_relearn_exampleSite_content_shortcodes_expand_en_autotoc_md1043}
+\hypertarget{md_themes_relearn_exampleSite_content_shortcodes_expand_en_autotoc_md1044}{}\doxysubsubsection{All Defaults}\label{md_themes_relearn_exampleSite_content_shortcodes_expand_en_autotoc_md1044}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\{\%/* expand */\%\}\}Yes, you did it!\{\{\%/* /expand */\%\}\}}
+
+\end{DoxyCode}
+
+
+\{\{\% expand \%\}\}Yes, you did it!\{\{\% /expand \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_shortcodes_expand_en_autotoc_md1045}{}\doxysubsubsection{Initially Expanded}\label{md_themes_relearn_exampleSite_content_shortcodes_expand_en_autotoc_md1045}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\{\%/* expand title="{}Expand me..."{} open="{}true"{} */\%\}\}No need to press you!\{\{\%/* /expand */\%\}\}}
+
+\end{DoxyCode}
+
+
+\{\{\% expand title=\char`\"{}\+Expand me...\char`\"{} open=\char`\"{}true\char`\"{} \%\}\}No need to press you!\{\{\% /expand \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_shortcodes_expand_en_autotoc_md1046}{}\doxysubsubsection{Arbitrary Text}\label{md_themes_relearn_exampleSite_content_shortcodes_expand_en_autotoc_md1046}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\{\%/* expand title="{}Show me almost **endless** possibilities"{} */\%\}\}}
+\DoxyCodeLine{You can add standard markdown syntax:}
+\DoxyCodeLine{}
+\DoxyCodeLine{-\/ multiple paragraphs}
+\DoxyCodeLine{-\/ bullet point lists}
+\DoxyCodeLine{-\/ \_emphasized\_, **bold** and even **\_bold emphasized\_** text}
+\DoxyCodeLine{-\/ [links](https://example.com)}
+\DoxyCodeLine{-\/ etc.}
+\DoxyCodeLine{}
+\DoxyCodeLine{```plaintext}
+\DoxyCodeLine{...and even source code}
+\DoxyCodeLine{```}
+\DoxyCodeLine{}
+\DoxyCodeLine{> the possibilities are endless (almost -\/ including other shortcodes may or may not work)}
+\DoxyCodeLine{\{\{\%/* /expand */\%\}\}}
+
+\end{DoxyCode}
+
+
+\{\{\% expand title=\char`\"{}\+Show me almost $\ast$$\ast$endless$\ast$$\ast$ possibilities\char`\"{} \%\}\} You can add standard markdown syntax\+:
+
+
+\begin{DoxyItemize}
+\item multiple paragraphs
+\item bullet point lists
+\item {\itshape emphasized}, {\bfseries{bold}} and even $\ast$$\ast$\+\_\+bold emphasized\+\_\+$\ast$$\ast$ text
+\item \href{https://example.com}{\texttt{ links}}
+\item etc.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{...and even source code}
+
+\end{DoxyCode}
+
+
+\begin{quote}
+the possibilities are endless (almost -\/ including other shortcodes may or may not work) \end{quote}
+\{\{\% /expand \%\}\} 

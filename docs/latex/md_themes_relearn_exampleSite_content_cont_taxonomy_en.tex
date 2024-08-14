@@ -1,0 +1,55 @@
++++ categories = \mbox{[}\char`\"{}taxonomy\char`\"{}, \char`\"{}content\char`\"{}\mbox{]} tags = \char`\"{}tutorial\char`\"{} title = \char`\"{}\+Taxonomy\char`\"{} weight = 8 +++
+
+The Relearn theme supports Hugo\textquotesingle{}s default taxonomies {\itshape tag} and {\itshape category} out of the box.\hypertarget{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md953}{}\doxysubsection{Configuration}\label{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md953}
+Just add tags and/or categories to any page. They can be given as a single string or an array of strings.
+
+\{\{$<$ multiconfig fm=true $>$\}\} categories = \mbox{[}\char`\"{}taxonomy\char`\"{}, \char`\"{}content\char`\"{}\mbox{]} tags = \char`\"{}tutorial\char`\"{} title = \char`\"{}\+Taxonomy\char`\"{} \{\{$<$ /multiconfig $>$\}\}\hypertarget{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md954}{}\doxysubsection{Behavior}\label{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md954}
+The tags are displayed at the top of the page in alphabetical order.
+
+The categories are displayed at the bottom of the page in alphabetical order in the default implementation of the theme but can be customized by providing your own {\ttfamily content-\/footer.\+html} partial.
+
+Each item is a link to a taxonomy page displaying all the articles with the given term.\hypertarget{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md955}{}\doxysubsection{List all the tags}\label{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md955}
+In the {\ttfamily hugo.\+toml} file you can add a shortcut to display all the tags and categories
+
+\{\{$<$ multiconfig file=hugo $>$\}\} \mbox{[}\mbox{[}menu.\+shortcuts\mbox{]}\mbox{]} name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/tags\textquotesingle{}$>$$<$/i$>$ Tags\char`\"{} url = \char`\"{}/tags\char`\"{}
+
+\mbox{[}\mbox{[}menu.\+shortcuts\mbox{]}\mbox{]} name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/layer-\/group\textquotesingle{}$>$$<$/i$>$ Categories\char`\"{} url = \char`\"{}/categories\char`\"{} \{\{$<$ /multiconfig $>$\}\}\hypertarget{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md956}{}\doxysubsection{Customization}\label{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md956}
+If you define \href{https://gohugo.io/content-management/taxonomies/\#configure-taxonomies}{\texttt{ custom taxonomies}} and want to display a list of them somewhere on your page (often in the {\ttfamily layouts/partials/content-\/footer.\+html}) you can call a partial that does the job for you\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\{ partial "{}term-\/list.html"{} (dict}
+\DoxyCodeLine{  "{}page"{} .}
+\DoxyCodeLine{  "{}taxonomy"{} "{}categories"{}}
+\DoxyCodeLine{  "{}icon"{} "{}layer-\/group"{}}
+\DoxyCodeLine{) \}\}}
+
+\end{DoxyCode}
+\hypertarget{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md957}{}\doxysubsubsection{Parameter}\label{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md957}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Default   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Notes    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Default   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Notes    }\\\cline{1-3}
+\endhead
+{\bfseries{page}}   &{\itshape $<$empty$>$}   &Mandatory reference to the page.    \\\cline{1-3}
+{\bfseries{taxonomy}}   &{\itshape $<$empty$>$}   &The plural name of the taxonomy to display as used in your frontmatter.    \\\cline{1-3}
+{\bfseries{class}}   &{\itshape $<$empty$>$}   &Additional CSS classes set on the outermost generated HTML element.~\newline
+~\newline
+If set to {\ttfamily tags} you will get the visuals for displaying the {\itshape tags} taxonomy, otherwise it will be a simple list of links as for the {\itshape categories} taxonomy.    \\\cline{1-3}
+{\bfseries{style}}   &{\ttfamily primary}   &The style scheme used if {\bfseries{class}} is {\ttfamily tags}.~\newline
+~\newline
+-\/ by severity\+: {\ttfamily info}, {\ttfamily note}, {\ttfamily tip}, {\ttfamily warning}~\newline
+-\/ by brand color\+: {\ttfamily primary}, {\ttfamily secondary}, {\ttfamily accent}~\newline
+-\/ by color\+: {\ttfamily blue}, {\ttfamily green}, {\ttfamily grey}, {\ttfamily orange}, {\ttfamily red}~\newline
+-\/ by special color\+: {\ttfamily default}, {\ttfamily transparent}, {\ttfamily code}    \\\cline{1-3}
+{\bfseries{color}}   &see notes   &The \href{https://developer.mozilla.org/en-US/docs/Web/CSS/color_value}{\texttt{ CSS color value}} to be used if {\bfseries{class}} is {\ttfamily tags}. If not set, the chosen color depends on the {\bfseries{style}}. Any given value will overwrite the default.~\newline
+~\newline
+-\/ for severity styles\+: a nice matching color for the severity~\newline
+-\/ for all other styles\+: the corresponding color    \\\cline{1-3}
+{\bfseries{icon}}   &{\itshape $<$empty$>$}   &An optional \href{shortcodes/icon\#finding-an-icon}{\texttt{ Font Awesome icon name}} set to the left of the list.   \\\cline{1-3}
+\end{longtabu}

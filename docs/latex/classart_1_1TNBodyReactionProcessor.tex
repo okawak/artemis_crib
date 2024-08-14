@@ -1,0 +1,265 @@
+\hypertarget{classart_1_1TNBodyReactionProcessor}{}\doxysection{art\+::TNBody\+Reaction\+Processor Class Reference}
+\label{classart_1_1TNBodyReactionProcessor}\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+
+
+{\ttfamily \#include $<$TNBody\+Reaction\+Processor.\+h$>$}
+
+Inheritance diagram for art\+::TNBody\+Reaction\+Processor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classart_1_1TNBodyReactionProcessor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a6024a9b747e36415cbce33f565af1ad1}{TNBody\+Reaction\+Processor}} ()
+\item 
+virtual \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a0b19895bfb324db400596bd264dbe1eb}{$\sim$\+TNBody\+Reaction\+Processor}} ()
+\item 
+virtual void \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_acf5dac7ff34345c5308b2b8ce102c8c1}{Init}} (TEvent\+Collection $\ast$col)
+\item 
+virtual void \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_aac6642772ef0774114eb1fd8829abea7}{Process}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TString \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_aa6a26ba220cfbf32bd0b3790e654df7d}{f\+Input\+Col\+Name}}
+\item 
+TString \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_aaeeeca118edca4ab9fcecf03b27e8e5e}{f\+Output\+Col\+Name}}
+\item 
+TString \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a9ec8693ff149f01d46a23c2c82da1067}{f\+Output\+Reac\+Col\+Name}}
+\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_ad98f27e5781607d09ea0b26f61882f3a}{f\+In\+Data}}
+\item 
+TClones\+Array $\ast$ \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_ac1ce9bf4e8188bdf01e32341014180f2}{f\+Out\+Data}}
+\item 
+TClones\+Array $\ast$ \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a6d1c892425c37a775160e2e65a03d949}{f\+Out\+Reac\+Data}}
+\item 
+Int\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_ab7bec0767470332090bfa36b98d03692}{f\+Beam\+Nucleus}}
+\begin{DoxyCompactList}\small\item\em used only initialization at TSrim object \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_aa3989ec2a18724faeee0200c67f4f5f3}{f\+Beam\+Energy}}
+\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_afaba0518ddfedbd23939524ef6b78eff}{f\+Target\+Is\+Gas}}
+\item 
+TString \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a7537a1c7b349027fdff30c755c833813}{f\+Target\+Name}}
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a9797d92ce7a97ce448e16daa9cb381a7}{f\+Target\+Mass\+Num}}
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_aba532d17ade306228bd46df072dbbee0}{f\+Target\+Atm\+Num}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a2a8462ce000a7ac448dd1ef99da1067c}{f\+Target\+Thickness}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_ab99525206ce6d91bfcccc0b97b37f010}{f\+Target\+Pressure}}
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a164428104afd398999b46dfe111a2ebc}{f\+Decay\+Num}}
+\item 
+Int\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a277dceec8b6aec375a6f6b17c0035ef4}{f\+Reac\+Mass\+Num}}
+\item 
+Int\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_ace659a12ca4d86df7c6f90298b934b5d}{f\+Reac\+Atm\+Num}}
+\item 
+Double\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a7eb47b6cd2b2568fce89f24487fd33cc}{f\+Excite\+Level}}
+\item 
+TString \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_abe394beb1ecf0ec0df393f699c664909}{f\+CSData\+Path}}
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a596b92a51f71e3c3f5c70cd1bdfb5979}{f\+CSType}}
+\item 
+TGen\+Phase\+Space \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a47a84401141db20fd6214aa19d7d004a}{event}}
+\item 
+TSrim $\ast$ \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a3ce7a04502fab1084fbf83223b656961}{srim}}
+\item 
+const Double\+\_\+t \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a0607b546c63c6cf032adc6e8579c687c}{deg2rad}} = TMath\+::\+Deg\+To\+Rad()
+\begin{DoxyCompactList}\small\item\em SRIM table. \end{DoxyCompactList}\item 
+const Double\+\_\+t \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_af4455b0b470bb43b74c2c3ed4df113d5}{c}} = 299.\+792458
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a6024a9b747e36415cbce33f565af1ad1}\label{classart_1_1TNBodyReactionProcessor_a6024a9b747e36415cbce33f565af1ad1}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!TNBodyReactionProcessor@{TNBodyReactionProcessor}}
+\index{TNBodyReactionProcessor@{TNBodyReactionProcessor}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{TNBodyReactionProcessor()}{TNBodyReactionProcessor()}}
+{\footnotesize\ttfamily TNBody\+Reaction\+Processor\+::\+TNBody\+Reaction\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a0b19895bfb324db400596bd264dbe1eb}\label{classart_1_1TNBodyReactionProcessor_a0b19895bfb324db400596bd264dbe1eb}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!````~TNBodyReactionProcessor@{$\sim$TNBodyReactionProcessor}}
+\index{````~TNBodyReactionProcessor@{$\sim$TNBodyReactionProcessor}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{$\sim$TNBodyReactionProcessor()}{~TNBodyReactionProcessor()}}
+{\footnotesize\ttfamily TNBody\+Reaction\+Processor\+::$\sim$\+TNBody\+Reaction\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_acf5dac7ff34345c5308b2b8ce102c8c1}\label{classart_1_1TNBodyReactionProcessor_acf5dac7ff34345c5308b2b8ce102c8c1}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!Init@{Init}}
+\index{Init@{Init}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void TNBody\+Reaction\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_aac6642772ef0774114eb1fd8829abea7}\label{classart_1_1TNBodyReactionProcessor_aac6642772ef0774114eb1fd8829abea7}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!Process@{Process}}
+\index{Process@{Process}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{Process()}{Process()}}
+{\footnotesize\ttfamily void TNBody\+Reaction\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_af4455b0b470bb43b74c2c3ed4df113d5}\label{classart_1_1TNBodyReactionProcessor_af4455b0b470bb43b74c2c3ed4df113d5}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!c@{c}}
+\index{c@{c}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily const Double\+\_\+t art\+::\+TNBody\+Reaction\+Processor\+::c = 299.\+792458\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a0607b546c63c6cf032adc6e8579c687c}\label{classart_1_1TNBodyReactionProcessor_a0607b546c63c6cf032adc6e8579c687c}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!deg2rad@{deg2rad}}
+\index{deg2rad@{deg2rad}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{deg2rad}{deg2rad}}
+{\footnotesize\ttfamily const Double\+\_\+t art\+::\+TNBody\+Reaction\+Processor\+::deg2rad = TMath\+::\+Deg\+To\+Rad()\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+SRIM table. 
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a47a84401141db20fd6214aa19d7d004a}\label{classart_1_1TNBodyReactionProcessor_a47a84401141db20fd6214aa19d7d004a}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!event@{event}}
+\index{event@{event}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{event}{event}}
+{\footnotesize\ttfamily TGen\+Phase\+Space art\+::\+TNBody\+Reaction\+Processor\+::event\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_aa3989ec2a18724faeee0200c67f4f5f3}\label{classart_1_1TNBodyReactionProcessor_aa3989ec2a18724faeee0200c67f4f5f3}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!fBeamEnergy@{fBeamEnergy}}
+\index{fBeamEnergy@{fBeamEnergy}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fBeamEnergy}{fBeamEnergy}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::\+TNBody\+Reaction\+Processor\+::f\+Beam\+Energy\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_ab7bec0767470332090bfa36b98d03692}\label{classart_1_1TNBodyReactionProcessor_ab7bec0767470332090bfa36b98d03692}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!fBeamNucleus@{fBeamNucleus}}
+\index{fBeamNucleus@{fBeamNucleus}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fBeamNucleus}{fBeamNucleus}}
+{\footnotesize\ttfamily Int\+Vec\+\_\+t art\+::\+TNBody\+Reaction\+Processor\+::f\+Beam\+Nucleus\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+used only initialization at TSrim object 
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_abe394beb1ecf0ec0df393f699c664909}\label{classart_1_1TNBodyReactionProcessor_abe394beb1ecf0ec0df393f699c664909}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!fCSDataPath@{fCSDataPath}}
+\index{fCSDataPath@{fCSDataPath}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fCSDataPath}{fCSDataPath}}
+{\footnotesize\ttfamily TString art\+::\+TNBody\+Reaction\+Processor\+::f\+CSData\+Path\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a596b92a51f71e3c3f5c70cd1bdfb5979}\label{classart_1_1TNBodyReactionProcessor_a596b92a51f71e3c3f5c70cd1bdfb5979}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!fCSType@{fCSType}}
+\index{fCSType@{fCSType}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fCSType}{fCSType}}
+{\footnotesize\ttfamily Int\+\_\+t art\+::\+TNBody\+Reaction\+Processor\+::f\+CSType\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a164428104afd398999b46dfe111a2ebc}\label{classart_1_1TNBodyReactionProcessor_a164428104afd398999b46dfe111a2ebc}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!fDecayNum@{fDecayNum}}
+\index{fDecayNum@{fDecayNum}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fDecayNum}{fDecayNum}}
+{\footnotesize\ttfamily Int\+\_\+t art\+::\+TNBody\+Reaction\+Processor\+::f\+Decay\+Num\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a7eb47b6cd2b2568fce89f24487fd33cc}\label{classart_1_1TNBodyReactionProcessor_a7eb47b6cd2b2568fce89f24487fd33cc}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!fExciteLevel@{fExciteLevel}}
+\index{fExciteLevel@{fExciteLevel}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fExciteLevel}{fExciteLevel}}
+{\footnotesize\ttfamily Double\+Vec\+\_\+t art\+::\+TNBody\+Reaction\+Processor\+::f\+Excite\+Level\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_ad98f27e5781607d09ea0b26f61882f3a}\label{classart_1_1TNBodyReactionProcessor_ad98f27e5781607d09ea0b26f61882f3a}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!fInData@{fInData}}
+\index{fInData@{fInData}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fInData}{fInData}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::\+TNBody\+Reaction\+Processor\+::f\+In\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_aa6a26ba220cfbf32bd0b3790e654df7d}\label{classart_1_1TNBodyReactionProcessor_aa6a26ba220cfbf32bd0b3790e654df7d}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!fInputColName@{fInputColName}}
+\index{fInputColName@{fInputColName}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fInputColName}{fInputColName}}
+{\footnotesize\ttfamily TString art\+::\+TNBody\+Reaction\+Processor\+::f\+Input\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_ac1ce9bf4e8188bdf01e32341014180f2}\label{classart_1_1TNBodyReactionProcessor_ac1ce9bf4e8188bdf01e32341014180f2}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!fOutData@{fOutData}}
+\index{fOutData@{fOutData}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fOutData}{fOutData}}
+{\footnotesize\ttfamily TClones\+Array$\ast$ art\+::\+TNBody\+Reaction\+Processor\+::f\+Out\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_aaeeeca118edca4ab9fcecf03b27e8e5e}\label{classart_1_1TNBodyReactionProcessor_aaeeeca118edca4ab9fcecf03b27e8e5e}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!fOutputColName@{fOutputColName}}
+\index{fOutputColName@{fOutputColName}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fOutputColName}{fOutputColName}}
+{\footnotesize\ttfamily TString art\+::\+TNBody\+Reaction\+Processor\+::f\+Output\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a9ec8693ff149f01d46a23c2c82da1067}\label{classart_1_1TNBodyReactionProcessor_a9ec8693ff149f01d46a23c2c82da1067}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!fOutputReacColName@{fOutputReacColName}}
+\index{fOutputReacColName@{fOutputReacColName}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fOutputReacColName}{fOutputReacColName}}
+{\footnotesize\ttfamily TString art\+::\+TNBody\+Reaction\+Processor\+::f\+Output\+Reac\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a6d1c892425c37a775160e2e65a03d949}\label{classart_1_1TNBodyReactionProcessor_a6d1c892425c37a775160e2e65a03d949}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!fOutReacData@{fOutReacData}}
+\index{fOutReacData@{fOutReacData}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fOutReacData}{fOutReacData}}
+{\footnotesize\ttfamily TClones\+Array$\ast$ art\+::\+TNBody\+Reaction\+Processor\+::f\+Out\+Reac\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_ace659a12ca4d86df7c6f90298b934b5d}\label{classart_1_1TNBodyReactionProcessor_ace659a12ca4d86df7c6f90298b934b5d}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!fReacAtmNum@{fReacAtmNum}}
+\index{fReacAtmNum@{fReacAtmNum}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fReacAtmNum}{fReacAtmNum}}
+{\footnotesize\ttfamily Int\+Vec\+\_\+t art\+::\+TNBody\+Reaction\+Processor\+::f\+Reac\+Atm\+Num\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a277dceec8b6aec375a6f6b17c0035ef4}\label{classart_1_1TNBodyReactionProcessor_a277dceec8b6aec375a6f6b17c0035ef4}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!fReacMassNum@{fReacMassNum}}
+\index{fReacMassNum@{fReacMassNum}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fReacMassNum}{fReacMassNum}}
+{\footnotesize\ttfamily Int\+Vec\+\_\+t art\+::\+TNBody\+Reaction\+Processor\+::f\+Reac\+Mass\+Num\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_aba532d17ade306228bd46df072dbbee0}\label{classart_1_1TNBodyReactionProcessor_aba532d17ade306228bd46df072dbbee0}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!fTargetAtmNum@{fTargetAtmNum}}
+\index{fTargetAtmNum@{fTargetAtmNum}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetAtmNum}{fTargetAtmNum}}
+{\footnotesize\ttfamily Int\+\_\+t art\+::\+TNBody\+Reaction\+Processor\+::f\+Target\+Atm\+Num\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_afaba0518ddfedbd23939524ef6b78eff}\label{classart_1_1TNBodyReactionProcessor_afaba0518ddfedbd23939524ef6b78eff}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!fTargetIsGas@{fTargetIsGas}}
+\index{fTargetIsGas@{fTargetIsGas}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetIsGas}{fTargetIsGas}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::\+TNBody\+Reaction\+Processor\+::f\+Target\+Is\+Gas\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a9797d92ce7a97ce448e16daa9cb381a7}\label{classart_1_1TNBodyReactionProcessor_a9797d92ce7a97ce448e16daa9cb381a7}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!fTargetMassNum@{fTargetMassNum}}
+\index{fTargetMassNum@{fTargetMassNum}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetMassNum}{fTargetMassNum}}
+{\footnotesize\ttfamily Int\+\_\+t art\+::\+TNBody\+Reaction\+Processor\+::f\+Target\+Mass\+Num\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a7537a1c7b349027fdff30c755c833813}\label{classart_1_1TNBodyReactionProcessor_a7537a1c7b349027fdff30c755c833813}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!fTargetName@{fTargetName}}
+\index{fTargetName@{fTargetName}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetName}{fTargetName}}
+{\footnotesize\ttfamily TString art\+::\+TNBody\+Reaction\+Processor\+::f\+Target\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_ab99525206ce6d91bfcccc0b97b37f010}\label{classart_1_1TNBodyReactionProcessor_ab99525206ce6d91bfcccc0b97b37f010}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!fTargetPressure@{fTargetPressure}}
+\index{fTargetPressure@{fTargetPressure}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetPressure}{fTargetPressure}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::\+TNBody\+Reaction\+Processor\+::f\+Target\+Pressure\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a2a8462ce000a7ac448dd1ef99da1067c}\label{classart_1_1TNBodyReactionProcessor_a2a8462ce000a7ac448dd1ef99da1067c}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!fTargetThickness@{fTargetThickness}}
+\index{fTargetThickness@{fTargetThickness}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetThickness}{fTargetThickness}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::\+TNBody\+Reaction\+Processor\+::f\+Target\+Thickness\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a3ce7a04502fab1084fbf83223b656961}\label{classart_1_1TNBodyReactionProcessor_a3ce7a04502fab1084fbf83223b656961}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!srim@{srim}}
+\index{srim@{srim}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{srim}{srim}}
+{\footnotesize\ttfamily TSrim$\ast$ art\+::\+TNBody\+Reaction\+Processor\+::srim\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src-\/crib/simulation/\mbox{\hyperlink{TNBodyReactionProcessor_8h}{TNBody\+Reaction\+Processor.\+h}}\item 
+src-\/crib/simulation/\mbox{\hyperlink{TNBodyReactionProcessor_8cc}{TNBody\+Reaction\+Processor.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,17 @@
+this manual is going to be made by using \href{https://gohugo.io/}{\texttt{ HUGO}} and \href{https://github.com/McShelby/hugo-theme-relearn}{\texttt{ relearn theme}}.\hypertarget{md_README_autotoc_md229}{}\doxysection{How to post new contents}\label{md_README_autotoc_md229}
+{\bfseries{After checking your local environment}}, please push your commits.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone -\/-\/recursive https://github.com/okawak/artemis\_crib.git -\/b pages-\/build}
+\DoxyCodeLine{cd artemis\_crib}
+\DoxyCodeLine{hugo new chapter/hoge.md}
+\DoxyCodeLine{vim content/chapter/hoge.md}
+\DoxyCodeLine{hugo serve}
+\DoxyCodeLine{}
+\DoxyCodeLine{git add content/chapter/hoge.md}
+\DoxyCodeLine{git commit -\/m "{}commit message"{}}
+\DoxyCodeLine{git push}
+
+\end{DoxyCode}
+ 

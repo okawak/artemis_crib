@@ -1,0 +1,47 @@
++++ title = \char`\"{}\+Pages organization\char`\"{} weight = 1 +++
+
+In {\bfseries{Hugo}}, pages are the core of your site. Once it is configured, pages are definitely the added value to your documentation site.\hypertarget{md_themes_relearn_exampleSite_content_cont_pages_index_en_autotoc_md951}{}\doxysubsection{Folders}\label{md_themes_relearn_exampleSite_content_cont_pages_index_en_autotoc_md951}
+Organize your site like \href{https://gohugo.io/content/organization/}{\texttt{ any other Hugo project}}. Typically, you will have a {\itshape content} folder with all your pages.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{content}
+\DoxyCodeLine{├── level-\/one}
+\DoxyCodeLine{│   ├── level-\/two}
+\DoxyCodeLine{│   │   ├── level-\/three}
+\DoxyCodeLine{│   │   │   ├── level-\/four}
+\DoxyCodeLine{│   │   │   │   ├── \_index.md       <-\/-\/ /level-\/one/level-\/two/level-\/three/level-\/four}
+\DoxyCodeLine{│   │   │   │   ├── page-\/4-\/a.md     <-\/-\/ /level-\/one/level-\/two/level-\/three/level-\/four/page-\/4-\/a}
+\DoxyCodeLine{│   │   │   │   ├── page-\/4-\/b.md     <-\/-\/ /level-\/one/level-\/two/level-\/three/level-\/four/page-\/4-\/b}
+\DoxyCodeLine{│   │   │   │   └── page-\/4-\/c.md     <-\/-\/ /level-\/one/level-\/two/level-\/three/level-\/four/page-\/4-\/c}
+\DoxyCodeLine{│   │   │   ├── \_index.md           <-\/-\/ /level-\/one/level-\/two/level-\/three}
+\DoxyCodeLine{│   │   │   ├── page-\/3-\/a.md         <-\/-\/ /level-\/one/level-\/two/level-\/three/page-\/3-\/a}
+\DoxyCodeLine{│   │   │   ├── page-\/3-\/b.md         <-\/-\/ /level-\/one/level-\/two/level-\/three/page-\/3-\/b}
+\DoxyCodeLine{│   │   │   └── page-\/3-\/c.md         <-\/-\/ /level-\/one/level-\/two/level-\/three/page-\/3-\/c}
+\DoxyCodeLine{│   │   ├── \_index.md               <-\/-\/ /level-\/one/level-\/two}
+\DoxyCodeLine{│   │   ├── page-\/2-\/a.md             <-\/-\/ /level-\/one/level-\/two/page-\/2-\/a}
+\DoxyCodeLine{│   │   ├── page-\/2-\/b.md             <-\/-\/ /level-\/one/level-\/two/page-\/2-\/b}
+\DoxyCodeLine{│   │   └── page-\/2-\/c.md             <-\/-\/ /level-\/one/level-\/two/page-\/2-\/c}
+\DoxyCodeLine{│   ├── \_index.md                   <-\/-\/ /level-\/one}
+\DoxyCodeLine{│   ├── page-\/1-\/a.md                 <-\/-\/ /level-\/one/page-\/1-\/a}
+\DoxyCodeLine{│   ├── page-\/1-\/b.md                 <-\/-\/ /level-\/one/page-\/1-\/b}
+\DoxyCodeLine{│   └── page-\/1-\/c.md                 <-\/-\/ /level-\/one/page-\/1-\/c}
+\DoxyCodeLine{├── \_index.md                       <-\/-\/ /}
+\DoxyCodeLine{└── page-\/top.md                     <-\/-\/ /page-\/top}
+
+\end{DoxyCode}
+
+
+\{\{\% notice note \%\}\} {\ttfamily \+\_\+index.\+md} is required in each folder, it’s your “folder home page” \{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_cont_pages_index_en_autotoc_md952}{}\doxysubsection{Create your project}\label{md_themes_relearn_exampleSite_content_cont_pages_index_en_autotoc_md952}
+The following steps are here to help you initialize your new website. If you don\textquotesingle{}t know Hugo at all, we strongly suggest you to train by following \href{https://gohugo.io/overview/quickstart/}{\texttt{ great documentation for beginners}}.
+
+Hugo provides a {\ttfamily new} command to create a new website.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{hugo new site <new\_project>}
+
+\end{DoxyCode}
+
+
+The Relearn theme provides \href{cont/archetypes}{\texttt{ archetypes}} to help you create this kind of pages. 

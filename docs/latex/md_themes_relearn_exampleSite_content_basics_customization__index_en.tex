@@ -1,0 +1,185 @@
++++ title = \char`\"{}\+Customization\char`\"{} weight = 25 +++\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md737}{}\doxysubsection{Usage scenarios}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md737}
+The theme is usable in different scenarios, requiring the following mandatory settings in your {\ttfamily hugo.\+toml}. All settings not mentioned can be set to your liking.\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md738}{}\doxysubsubsection{Public Web Server from Root}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md738}
+\{\{$<$ multiconfig file=hugo $>$\}\} base\+URL = \char`\"{}https\+://example.\+com/\char`\"{} \{\{$<$ /multiconfig $>$\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md739}{}\doxysubsubsection{Public Web Server from Subdirectory}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md739}
+\{\{$<$ multiconfig file=hugo $>$\}\} base\+URL = \char`\"{}https\+://example.\+com/mysite/\char`\"{} relative\+URLs = false \{\{$<$ /multiconfig $>$\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md740}{}\doxysubsubsection{Private Web Server (\+LAN)}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md740}
+The same settings as with any of the public web server usage scenarios or
+
+\{\{$<$ multiconfig file=hugo $>$\}\} base\+URL = \char`\"{}/\char`\"{} relative\+URLs = true \{\{$<$ /multiconfig $>$\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md741}{}\doxysubsubsection{File System}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md741}
+\{\{$<$ multiconfig file=hugo $>$\}\} base\+URL = \char`\"{}/\char`\"{} relative\+URLs = true \{\{$<$ /multiconfig $>$\}\}
+
+\{\{\% notice warning \%\}\} Using a {\ttfamily base\+URL} with a subdirectory and {\ttfamily relative\+URLs=true} are mutually exclusive due to the fact, that \href{https://github.com/gohugoio/hugo/issues/12130}{\texttt{ Hugo does not apply the {\ttfamily base\+URL} correctly}}.
+
+If you need both, you have to generate your site twice but with different settings into separate directories. \{\{\% /notice \%\}\}
+
+\{\{\% notice note \%\}\} Sublemental pages (like {\ttfamily sitemap.\+xml}, {\ttfamily rss.\+xml}) and generated social media links inside of your pages will always be generated with absolute URLs and will not work if you set {\ttfamily relative\+URLs=true}. \{\{\% /notice \%\}\}
+
+\{\{\% notice info \%\}\} If you are using {\ttfamily ugly\+URLs=false} (Hugo\textquotesingle{}s default), the theme will append an additional {\ttfamily index.\+html} to all page links to make your site be servable from the file system. If you don\textquotesingle{}t care about the file system and only serve your page via a web server you can generate the links without this\+:
+
+\{\{$<$ multiconfig file=hugo $>$\}\} \mbox{[}params\mbox{]} disable\+Explicit\+Index\+URLs = true \{\{$<$ /multiconfig $>$\}\} \{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md742}{}\doxysubsection{Activate search}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md742}
+If not already present, add the following lines in your {\ttfamily hugo.\+toml} file.
+
+\{\{$<$ multiconfig file=hugo $>$\}\} \mbox{[}outputs\mbox{]} home = \mbox{[}\char`\"{}html\char`\"{}, \char`\"{}rss\char`\"{}, \char`\"{}search\char`\"{}\mbox{]} \{\{$<$ /multiconfig $>$\}\}
+
+This will generate a search index file at the root of your public folder ready to be consumed by the Lunr search library.\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md743}{}\doxysubsubsection{Activate dedicated search page}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md743}
+You can add a dedicated search page for your page by adding the {\ttfamily searchpage} outputformat to your home page by adding the following lines in your {\ttfamily hugo.\+toml} file. This will cause Hugo to generate a new file {\ttfamily \href{http://example.com/mysite/search.html}{\texttt{ http\+://example.\+com/mysite/search.\+html}}}.
+
+\{\{$<$ multiconfig file=hugo $>$\}\} \mbox{[}outputs\mbox{]} home = \mbox{[}\char`\"{}html\char`\"{}, \char`\"{}rss\char`\"{}, \char`\"{}search\char`\"{}, \char`\"{}searchpage\char`\"{}\mbox{]} \{\{$<$ /multiconfig $>$\}\}
+
+You can access this page by either clicking on the magnifier glass or by typing some search term and pressing {\ttfamily ENTER} inside of the menu\textquotesingle{}s search box .
+
+
+
+\{\{\% notice note \%\}\} To have Hugo create the dedicated search page successfully, you must not generate the URL {\ttfamily \href{http://example.com/mysite/search.html}{\texttt{ http\+://example.\+com/mysite/search.\+html}}} from your own content. This can happen if you set {\ttfamily ugly\+URLs=true} in your {\ttfamily hugo.\+toml} and defining a Markdown file {\ttfamily content/search.\+md}.
+
+To make sure, there is no duplicate content for any given URL of your project, run {\ttfamily hugo -\/-\/print\+Path\+Warnings}. \{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md744}{}\doxysubsection{Activate print support}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md744}
+You can activate print support to add the capability to print whole chapters or even the complete site. Just add the {\ttfamily print} output format to your home, section and page in your {\ttfamily hugo.\+toml} as seen below\+:
+
+\{\{$<$ multiconfig file=hugo $>$\}\} \mbox{[}outputs\mbox{]} home = \mbox{[}\char`\"{}html\char`\"{}, \char`\"{}rss\char`\"{}, \char`\"{}print\char`\"{}, \char`\"{}search\char`\"{}\mbox{]} section = \mbox{[}\char`\"{}html\char`\"{}, \char`\"{}rss\char`\"{}, \char`\"{}print\char`\"{}\mbox{]} page = \mbox{[}\char`\"{}html\char`\"{}, \char`\"{}rss\char`\"{}, \char`\"{}print\char`\"{}\mbox{]} \{\{$<$ /multiconfig $>$\}\}
+
+This will add a little printer icon in the top bar. It will switch the page to print preview when clicked. You can then send this page to the printer by using your browser\textquotesingle{}s usual print functionality.
+
+\{\{\% notice note \%\}\} The resulting URL will not be \href{https://gohugo.io/templates/output-formats/\#configure-output-formats}{\texttt{ configured ugly}} in terms of \href{https://gohugo.io/content-management/urls/\#ugly-urls}{\texttt{ Hugo\textquotesingle{}s URL handling}} even if you\textquotesingle{}ve set {\ttfamily ugly\+URLs=true} in your {\ttfamily hugo.\+toml}. This is due to the fact that for one mime type only one suffix can be configured.
+
+Nevertheless, if you\textquotesingle{}re unhappy with the resulting URLs you can manually redefine {\ttfamily output\+Formats.\+print} in your own {\ttfamily hugo.\+toml} to your liking. \{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md745}{}\doxysubsection{Home Button Configuration}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md745}
+If the {\ttfamily disable\+Landing\+Page\+Button} option is set to {\ttfamily false}, a Home button will appear on the left menu. It is an alternative for clicking on the logo. To edit the appearance, you will have to configure the {\ttfamily landing\+Page\+Name} for the defined languages\+:
+
+\{\{$<$ multiconfig file=hugo $>$\}\} \mbox{[}languages\mbox{]} \mbox{[}languages.\+en\mbox{]} \mbox{[}languages.\+en.\+params\mbox{]} landing\+Page\+Name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/home\textquotesingle{}$>$$<$/i$>$ Home\char`\"{} \mbox{[}languages.\+pir\mbox{]} \mbox{[}languages.\+pir.\+params\mbox{]} landing\+Page\+Name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/home\textquotesingle{}$>$$<$/i$>$ Arrr! Homme\char`\"{} \{\{$<$ /multiconfig $>$\}\}
+
+If this option is not configured for a specific language, they will get their default values\+:
+
+\{\{$<$ multiconfig $>$\}\} landing\+Page\+Name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/home\textquotesingle{}$>$$<$/i$>$ Home\char`\"{} \{\{$<$ /multiconfig $>$\}\}
+
+The home button is going to look like this\+:
+
+\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md746}{}\doxysubsection{Social Media Meta Tags}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md746}
+You can add social media meta tags for the \href{https://gohugo.io/templates/internal/\#open-graph}{\texttt{ Open Graph}} protocol and \href{https://gohugo.io/templates/internal/\#twitter-cards}{\texttt{ Twitter Cards}} to your site. These are configured as mentioned in the Hugo docs.\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md747}{}\doxysubsection{Change the Menu Width}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md747}
+The menu width adjusts automatically for different screen sizes.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Screen Width   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Menu Width    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Screen Width   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Menu Width    }\\\cline{1-3}
+\endhead
+S   &$<$ 48rem   &14.\+375rem    \\\cline{1-3}
+M   &48rem -\/ 60rem   &14.\+375rem    \\\cline{1-3}
+L   &$>$= 60rem   &18.\+75rem   \\\cline{1-3}
+\end{longtabu}
+
+
+The values for the screen width breakpoints aren\textquotesingle{}t configurable.
+
+If you want to adjust the menu width you can define the following CSS variables in your {\ttfamily custom-\/header.\+html}. Note that {\ttfamily -\/-\/MENU-\/\+WIDTH-\/S} applies to the menu flyout width in mobile mode for small screen sizes.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{:root \{}
+\DoxyCodeLine{    -\/-\/MENU-\/WIDTH-\/S: 14.375rem;}
+\DoxyCodeLine{    -\/-\/MENU-\/WIDTH-\/M: 14.375rem;}
+\DoxyCodeLine{    -\/-\/MENU-\/WIDTH-\/L: 18.75rem;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md748}{}\doxysubsection{Change the Main Area\textquotesingle{}s Max Width}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md748}
+By default the main area width will only grow to a certain extent if more vertical screen space is available. This is done for readability purposes as long line are usually harder to read.
+
+If you are unhappy with the default, you can define the following CSS variable in your {\ttfamily custom-\/header.\+html} and set the value to your liking. If you want to use all available space, select a really big value like {\ttfamily 1000rem};
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{:root \{}
+\DoxyCodeLine{    -\/-\/MAIN-\/WIDTH-\/MAX: 80.25rem;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md749}{}\doxysubsection{Own Shortcodes with Java\+Script Dependencies}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md749}
+Certain shortcodes make use of additional dependencies like Java\+Script and CSS files. The theme only loads these dependencies if the shortcode is used. To do so correctly the theme adds management code in various files.
+
+You can you use this mechanism in your own shortcodes. Say you want to add a shortcode {\ttfamily myshortcode} that also requires the {\ttfamily jquery} Java\+Script library.
+
+
+\begin{DoxyEnumerate}
+\item Write the shortcode file {\ttfamily layouts/shortcodes/myshortcode.\+html} and add the following line
+
+\`{}\`{}\`{}\`{}go \{title=\char`\"{}layouts/shortcodes/myshortcode.\+html\char`\"{}\} \{\{-\/ .Page.\+Store.\+Set \char`\"{}has\+My\+Shortcode\char`\"{} true \}\} \`{}\`{}\`{}\`{}
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Add the following snippet to your {\ttfamily hugo.\+toml}
+
+\{\{$<$ multiconfig file=hugo $>$\}\} \mbox{[}params.\+relearn.\+dependencies\mbox{]} \mbox{[}params.\+relearn.\+dependencies.\+myshortcode\mbox{]} name = \char`\"{}\+My\+Shortcode\char`\"{} \{\{$<$ /multiconfig $>$\}\}
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Add the dependency loader file {\ttfamily layouts/partials/dependencies/myshortcode.\+html}. The loader file will be called from multiple locations inside of the theme with the parameter {\ttfamily page} containing the current \href{https://gohugo.io/methods/page/}{\texttt{ page}} variable and {\ttfamily location} with one of the currently defined locations
+\begin{DoxyItemize}
+\item {\ttfamily header}\+: if called at the end of the HTML {\ttfamily head} element
+\item {\ttfamily footer}\+: if called at the end of the HTML {\ttfamily body} element
+\end{DoxyItemize}
+
+\`{}\`{}\`{}\`{}go \{title=\char`\"{}layouts/partials/dependencies/myshortcode.\+html\char`\"{}\} \{\{-\/ if eq .location \char`\"{}footer\char`\"{} \}\} $<$script src=\char`\"{}https\+://www.\+unpkg.\+com/jquery/dist/jquery.\+js\char`\"{}$>$$<$/script$>$ \{\{-\/ end \}\} \`{}\`{}\`{}\`{}
+\end{DoxyEnumerate}
+
+Character casing is relevant!
+
+
+\begin{DoxyItemize}
+\item the {\ttfamily name} setting in your {\ttfamily hugo.\+toml} must match the key (that needs to be prefixed with a {\ttfamily has}) you used for the store in your {\ttfamily layouts/shortcodes/myshortcode.\+html}.
+\item the key on {\ttfamily params.\+relearn.\+dependencies} in your {\ttfamily hugo.\+toml} must match the base file name of your loader file.
+\end{DoxyItemize}
+
+See the {\ttfamily math}, {\ttfamily mermaid} and {\ttfamily openapi} shortcodes for examples.
+
+\{\{\% notice note \%\}\} If you are really into customization of the theme and want to use the dependency loader for your own locations, you can do this by simply calling it from inside of your overriden partials
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\{-\/ partial "{}dependencies.html"{} (dict "{}page"{} . "{}location"{} "{}mylocation"{}) \}\}}
+
+\end{DoxyCode}
+
+
+\{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md750}{}\doxysubsection{Output Formats}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md750}
+Certain parts of the theme can be changed for support of your own \href{https://gohugo.io/templates/output-formats/}{\texttt{ output formats}}. Eg. if you define a new output format {\ttfamily PLAINTEXT} in your {\ttfamily hugo.\+toml}, you can add a file {\ttfamily layouts/partials/header.\+plaintext.\+html} to change the way, the page header should look like for that output format.\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md751}{}\doxysubsection{React to Variant Switches in Java\+Script}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md751}
+Once a color variant is fully loaded, either initially or by switching the color variant manually with the variant selector, the custom event {\ttfamily theme\+Variant\+Loaded} on the {\ttfamily document} will be dispatched. You can add an event listener and react to changes.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{document.addEventListener( 'themeVariantLoaded', function( e )\{}
+\DoxyCodeLine{  console.log( e.detail.variant ); // `relearn-\/light`}
+\DoxyCodeLine{\});}
+
+\end{DoxyCode}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md752}{}\doxysubsection{Partials}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md752}
+The Relearn theme has been built to be as configurable as possible by defining multiple \href{https://gohugo.io/templates/partials/}{\texttt{ partials}}
+
+In {\ttfamily themes/hugo-\/theme-\/relearn/layouts/partials/}, you will find all the partials defined for this theme. If you need to overwrite something, don\textquotesingle{}t change the code directly. Instead \href{https://gohugo.io/themes/customizing/}{\texttt{ follow this page}}. You\textquotesingle{}d create a new partial in the {\ttfamily layouts/partials} folder of your local project. This partial will have the priority.
+
+This theme defines the following partials \+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily header.\+html}\+: the header of the page. See \href{\#output-formats}{\texttt{ output-\/formats}}
+\item {\ttfamily footer.\+html}\+: the footer of the page. See \href{\#output-formats}{\texttt{ output-\/formats}}
+\item {\ttfamily body.\+html}\+: the body of the page. The body may contain of one or many articles. See \href{\#output-formats}{\texttt{ output-\/formats}}
+\item {\ttfamily article.\+html}\+: the output for a single article, can contain elements around your content. See \href{\#output-formats}{\texttt{ output-\/formats}}
+\item {\ttfamily menu.\+html}\+: left menu. {\itshape Not meant to be overwritten}
+\item {\ttfamily search.\+html}\+: search box. {\itshape Not meant to be overwritten}
+\item {\ttfamily custom-\/header.\+html}\+: custom headers in page. Meant to be overwritten when adding CSS imports. Don\textquotesingle{}t forget to include {\ttfamily style} HTML tag directive in your file.
+\item {\ttfamily custom-\/footer.\+html}\+: custom footer in page. Meant to be overwritten when adding Java\+Script. Don\textquotesingle{}t forget to include {\ttfamily javascript} HTML tag directive in your file.
+\item {\ttfamily favicon.\+html}\+: the favicon
+\item {\ttfamily heading.\+html}\+: side-\/wide configuration to change the pages title headings.
+\item {\ttfamily heading-\/pre.\+html}\+: side-\/wide configuration to prepend to pages title headings. If you override this, it is your responsibility to take the page\textquotesingle{}s {\ttfamily heading\+Pre} setting into account.
+\item {\ttfamily heading-\/post.\+html}\+: side-\/wide configuration to append to pages title headings. If you override this, it is your responsibility to take the page\textquotesingle{}s {\ttfamily heading\+Post} setting into account.
+\item {\ttfamily logo.\+html}\+: the logo, on top left hand corner
+\item {\ttfamily meta.\+html}\+: HTML meta tags, if you want to change default behavior
+\item {\ttfamily menu-\/pre.\+html}\+: side-\/wide configuration to prepend to menu items. If you override this, it is your responsibility to take the page\textquotesingle{}s {\ttfamily menu\+Pre} setting into account.
+\item {\ttfamily menu-\/post.\+html}\+: side-\/wide configuration to append to menu items. If you override this, it is your responsibility to take the page\textquotesingle{}s {\ttfamily menu\+Post} setting into account.
+\item {\ttfamily menu-\/footer.\+html}\+: footer of the left menu
+\item {\ttfamily toc.\+html}\+: table of contents
+\item {\ttfamily content.\+html}\+: the content page itself. This can be overridden if you want to display page\textquotesingle{}s meta data above or below the content.
+\item {\ttfamily content-\/header.\+html}\+: header above the title, has a default implementation but you can overwrite it if you don\textquotesingle{}t like it.
+\item {\ttfamily content-\/footer.\+html}\+: footer below the content, has a default implementation but you can overwrite it if you don\textquotesingle{}t like it. 
+\end{DoxyItemize}

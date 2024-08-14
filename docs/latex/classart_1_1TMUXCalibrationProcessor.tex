@@ -1,0 +1,177 @@
+\hypertarget{classart_1_1TMUXCalibrationProcessor}{}\doxysection{art\+::TMUXCalibration\+Processor Class Reference}
+\label{classart_1_1TMUXCalibrationProcessor}\index{art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}}
+
+
+{\ttfamily \#include $<$TMUXCalibration\+Processor.\+h$>$}
+
+Inheritance diagram for art\+::TMUXCalibration\+Processor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classart_1_1TMUXCalibrationProcessor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classart_1_1TMUXCalibrationProcessor_a9dd328521829b8340069cd652aa18c24}{TMUXCalibration\+Processor}} ()
+\item 
+virtual \mbox{\hyperlink{classart_1_1TMUXCalibrationProcessor_a22b8eb434ba225aa281394aad2de0550}{$\sim$\+TMUXCalibration\+Processor}} ()
+\item 
+virtual void \mbox{\hyperlink{classart_1_1TMUXCalibrationProcessor_a666201778c32fd2461c76b8d063d4340}{Init}} (TEvent\+Collection $\ast$col)
+\item 
+virtual void \mbox{\hyperlink{classart_1_1TMUXCalibrationProcessor_af9075cf3faea533b38c445237ad18658}{Process}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TString \mbox{\hyperlink{classart_1_1TMUXCalibrationProcessor_ac4ce7b3863b4ac186049cbfadadbcf5a}{f\+Input\+Col\+Name}}
+\item 
+TString \mbox{\hyperlink{classart_1_1TMUXCalibrationProcessor_affc51f1537a07a7cf0c6c54566dda12a}{f\+Output\+Col\+Name}}
+\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1TMUXCalibrationProcessor_a79fa5263b374a6828b6aecff57a50598}{f\+In\+Data}}
+\item 
+TClones\+Array $\ast$ \mbox{\hyperlink{classart_1_1TMUXCalibrationProcessor_a9e2d0c486b246b7509987b93c6389533}{f\+Out\+Data}}
+\item 
+TString \mbox{\hyperlink{classart_1_1TMUXCalibrationProcessor_a4fb246ec1f4b194c17813ae2ea83225a}{f\+Timing\+Converter\+Array\+Name}}
+\item 
+TString \mbox{\hyperlink{classart_1_1TMUXCalibrationProcessor_a8ec39875032a6586ba746414f61f325b}{f\+Charge\+Converter\+Array\+Name}}
+\item 
+TString \mbox{\hyperlink{classart_1_1TMUXCalibrationProcessor_ae6278d030a14efce963d63fdbd4371ec}{f\+Position\+Converter\+Array\+Name}}
+\item 
+std\+::vector$<$ TConverter\+Base $\ast$ $>$ $\ast$ \mbox{\hyperlink{classart_1_1TMUXCalibrationProcessor_a17da6703d5a731577ad9cdc09dcd7892}{f\+Timing\+Converter\+Array}}
+\item 
+std\+::vector$<$ TConverter\+Base $\ast$ $>$ $\ast$ \mbox{\hyperlink{classart_1_1TMUXCalibrationProcessor_abd5209aaca1a2f54f1b834bb976133f6}{f\+Charge\+Converter\+Array}}
+\item 
+std\+::vector$<$ TConverter\+Base $\ast$ $>$ $\ast$ \mbox{\hyperlink{classart_1_1TMUXCalibrationProcessor_a1450379e720d02da5c27200ee525caab}{f\+Position\+Converter\+Array}}
+\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1TMUXCalibrationProcessor_a08838b10cd7610c5401d7f09c924f2eb}{f\+Input\+Has\+MUXData}}
+\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1TMUXCalibrationProcessor_ab0baa8f8faf81975bde5eecb9f5f3923}{f\+Has\+Reflection}}
+\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1TMUXCalibrationProcessor_ac4d94670ee66b04d1f96a3b2d2c5b60c}{f\+Input\+Is\+Digital}}
+\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1TMUXCalibrationProcessor_abc8e37847d8e865e8b2fea3d47745010}{f\+Is\+Sparse}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classart_1_1TMUXCalibrationProcessor_a9dd328521829b8340069cd652aa18c24}\label{classart_1_1TMUXCalibrationProcessor_a9dd328521829b8340069cd652aa18c24}} 
+\index{art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}!TMUXCalibrationProcessor@{TMUXCalibrationProcessor}}
+\index{TMUXCalibrationProcessor@{TMUXCalibrationProcessor}!art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}}
+\doxysubsubsection{\texorpdfstring{TMUXCalibrationProcessor()}{TMUXCalibrationProcessor()}}
+{\footnotesize\ttfamily TMUXCalibration\+Processor\+::\+TMUXCalibration\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classart_1_1TMUXCalibrationProcessor_a22b8eb434ba225aa281394aad2de0550}\label{classart_1_1TMUXCalibrationProcessor_a22b8eb434ba225aa281394aad2de0550}} 
+\index{art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}!````~TMUXCalibrationProcessor@{$\sim$TMUXCalibrationProcessor}}
+\index{````~TMUXCalibrationProcessor@{$\sim$TMUXCalibrationProcessor}!art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}}
+\doxysubsubsection{\texorpdfstring{$\sim$TMUXCalibrationProcessor()}{~TMUXCalibrationProcessor()}}
+{\footnotesize\ttfamily TMUXCalibration\+Processor\+::$\sim$\+TMUXCalibration\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classart_1_1TMUXCalibrationProcessor_a666201778c32fd2461c76b8d063d4340}\label{classart_1_1TMUXCalibrationProcessor_a666201778c32fd2461c76b8d063d4340}} 
+\index{art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}!Init@{Init}}
+\index{Init@{Init}!art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void TMUXCalibration\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classart_1_1TMUXCalibrationProcessor_af9075cf3faea533b38c445237ad18658}\label{classart_1_1TMUXCalibrationProcessor_af9075cf3faea533b38c445237ad18658}} 
+\index{art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}!Process@{Process}}
+\index{Process@{Process}!art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}}
+\doxysubsubsection{\texorpdfstring{Process()}{Process()}}
+{\footnotesize\ttfamily void TMUXCalibration\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classart_1_1TMUXCalibrationProcessor_abd5209aaca1a2f54f1b834bb976133f6}\label{classart_1_1TMUXCalibrationProcessor_abd5209aaca1a2f54f1b834bb976133f6}} 
+\index{art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}!fChargeConverterArray@{fChargeConverterArray}}
+\index{fChargeConverterArray@{fChargeConverterArray}!art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}}
+\doxysubsubsection{\texorpdfstring{fChargeConverterArray}{fChargeConverterArray}}
+{\footnotesize\ttfamily std\+::vector$<$TConverter\+Base $\ast$$>$$\ast$ art\+::\+TMUXCalibration\+Processor\+::f\+Charge\+Converter\+Array\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TMUXCalibrationProcessor_a8ec39875032a6586ba746414f61f325b}\label{classart_1_1TMUXCalibrationProcessor_a8ec39875032a6586ba746414f61f325b}} 
+\index{art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}!fChargeConverterArrayName@{fChargeConverterArrayName}}
+\index{fChargeConverterArrayName@{fChargeConverterArrayName}!art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}}
+\doxysubsubsection{\texorpdfstring{fChargeConverterArrayName}{fChargeConverterArrayName}}
+{\footnotesize\ttfamily TString art\+::\+TMUXCalibration\+Processor\+::f\+Charge\+Converter\+Array\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TMUXCalibrationProcessor_ab0baa8f8faf81975bde5eecb9f5f3923}\label{classart_1_1TMUXCalibrationProcessor_ab0baa8f8faf81975bde5eecb9f5f3923}} 
+\index{art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}!fHasReflection@{fHasReflection}}
+\index{fHasReflection@{fHasReflection}!art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}}
+\doxysubsubsection{\texorpdfstring{fHasReflection}{fHasReflection}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::\+TMUXCalibration\+Processor\+::f\+Has\+Reflection\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TMUXCalibrationProcessor_a79fa5263b374a6828b6aecff57a50598}\label{classart_1_1TMUXCalibrationProcessor_a79fa5263b374a6828b6aecff57a50598}} 
+\index{art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}!fInData@{fInData}}
+\index{fInData@{fInData}!art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}}
+\doxysubsubsection{\texorpdfstring{fInData}{fInData}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::\+TMUXCalibration\+Processor\+::f\+In\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TMUXCalibrationProcessor_ac4ce7b3863b4ac186049cbfadadbcf5a}\label{classart_1_1TMUXCalibrationProcessor_ac4ce7b3863b4ac186049cbfadadbcf5a}} 
+\index{art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}!fInputColName@{fInputColName}}
+\index{fInputColName@{fInputColName}!art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}}
+\doxysubsubsection{\texorpdfstring{fInputColName}{fInputColName}}
+{\footnotesize\ttfamily TString art\+::\+TMUXCalibration\+Processor\+::f\+Input\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TMUXCalibrationProcessor_a08838b10cd7610c5401d7f09c924f2eb}\label{classart_1_1TMUXCalibrationProcessor_a08838b10cd7610c5401d7f09c924f2eb}} 
+\index{art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}!fInputHasMUXData@{fInputHasMUXData}}
+\index{fInputHasMUXData@{fInputHasMUXData}!art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}}
+\doxysubsubsection{\texorpdfstring{fInputHasMUXData}{fInputHasMUXData}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::\+TMUXCalibration\+Processor\+::f\+Input\+Has\+MUXData\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TMUXCalibrationProcessor_ac4d94670ee66b04d1f96a3b2d2c5b60c}\label{classart_1_1TMUXCalibrationProcessor_ac4d94670ee66b04d1f96a3b2d2c5b60c}} 
+\index{art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}!fInputIsDigital@{fInputIsDigital}}
+\index{fInputIsDigital@{fInputIsDigital}!art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}}
+\doxysubsubsection{\texorpdfstring{fInputIsDigital}{fInputIsDigital}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::\+TMUXCalibration\+Processor\+::f\+Input\+Is\+Digital\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TMUXCalibrationProcessor_abc8e37847d8e865e8b2fea3d47745010}\label{classart_1_1TMUXCalibrationProcessor_abc8e37847d8e865e8b2fea3d47745010}} 
+\index{art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}!fIsSparse@{fIsSparse}}
+\index{fIsSparse@{fIsSparse}!art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}}
+\doxysubsubsection{\texorpdfstring{fIsSparse}{fIsSparse}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::\+TMUXCalibration\+Processor\+::f\+Is\+Sparse\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TMUXCalibrationProcessor_a9e2d0c486b246b7509987b93c6389533}\label{classart_1_1TMUXCalibrationProcessor_a9e2d0c486b246b7509987b93c6389533}} 
+\index{art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}!fOutData@{fOutData}}
+\index{fOutData@{fOutData}!art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}}
+\doxysubsubsection{\texorpdfstring{fOutData}{fOutData}}
+{\footnotesize\ttfamily TClones\+Array$\ast$ art\+::\+TMUXCalibration\+Processor\+::f\+Out\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TMUXCalibrationProcessor_affc51f1537a07a7cf0c6c54566dda12a}\label{classart_1_1TMUXCalibrationProcessor_affc51f1537a07a7cf0c6c54566dda12a}} 
+\index{art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}!fOutputColName@{fOutputColName}}
+\index{fOutputColName@{fOutputColName}!art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}}
+\doxysubsubsection{\texorpdfstring{fOutputColName}{fOutputColName}}
+{\footnotesize\ttfamily TString art\+::\+TMUXCalibration\+Processor\+::f\+Output\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TMUXCalibrationProcessor_a1450379e720d02da5c27200ee525caab}\label{classart_1_1TMUXCalibrationProcessor_a1450379e720d02da5c27200ee525caab}} 
+\index{art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}!fPositionConverterArray@{fPositionConverterArray}}
+\index{fPositionConverterArray@{fPositionConverterArray}!art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}}
+\doxysubsubsection{\texorpdfstring{fPositionConverterArray}{fPositionConverterArray}}
+{\footnotesize\ttfamily std\+::vector$<$TConverter\+Base $\ast$$>$$\ast$ art\+::\+TMUXCalibration\+Processor\+::f\+Position\+Converter\+Array\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TMUXCalibrationProcessor_ae6278d030a14efce963d63fdbd4371ec}\label{classart_1_1TMUXCalibrationProcessor_ae6278d030a14efce963d63fdbd4371ec}} 
+\index{art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}!fPositionConverterArrayName@{fPositionConverterArrayName}}
+\index{fPositionConverterArrayName@{fPositionConverterArrayName}!art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}}
+\doxysubsubsection{\texorpdfstring{fPositionConverterArrayName}{fPositionConverterArrayName}}
+{\footnotesize\ttfamily TString art\+::\+TMUXCalibration\+Processor\+::f\+Position\+Converter\+Array\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TMUXCalibrationProcessor_a17da6703d5a731577ad9cdc09dcd7892}\label{classart_1_1TMUXCalibrationProcessor_a17da6703d5a731577ad9cdc09dcd7892}} 
+\index{art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}!fTimingConverterArray@{fTimingConverterArray}}
+\index{fTimingConverterArray@{fTimingConverterArray}!art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}}
+\doxysubsubsection{\texorpdfstring{fTimingConverterArray}{fTimingConverterArray}}
+{\footnotesize\ttfamily std\+::vector$<$TConverter\+Base $\ast$$>$$\ast$ art\+::\+TMUXCalibration\+Processor\+::f\+Timing\+Converter\+Array\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TMUXCalibrationProcessor_a4fb246ec1f4b194c17813ae2ea83225a}\label{classart_1_1TMUXCalibrationProcessor_a4fb246ec1f4b194c17813ae2ea83225a}} 
+\index{art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}!fTimingConverterArrayName@{fTimingConverterArrayName}}
+\index{fTimingConverterArrayName@{fTimingConverterArrayName}!art::TMUXCalibrationProcessor@{art::TMUXCalibrationProcessor}}
+\doxysubsubsection{\texorpdfstring{fTimingConverterArrayName}{fTimingConverterArrayName}}
+{\footnotesize\ttfamily TString art\+::\+TMUXCalibration\+Processor\+::f\+Timing\+Converter\+Array\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src-\/crib/mux/\mbox{\hyperlink{TMUXCalibrationProcessor_8h}{TMUXCalibration\+Processor.\+h}}\item 
+src-\/crib/mux/\mbox{\hyperlink{TMUXCalibrationProcessor_8cc}{TMUXCalibration\+Processor.\+cc}}\end{DoxyCompactItemize}

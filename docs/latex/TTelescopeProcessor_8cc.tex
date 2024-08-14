@@ -1,0 +1,48 @@
+\hypertarget{TTelescopeProcessor_8cc}{}\doxysection{src-\/crib/telescope/\+TTelescope\+Processor.cc File Reference}
+\label{TTelescopeProcessor_8cc}\index{src-\/crib/telescope/TTelescopeProcessor.cc@{src-\/crib/telescope/TTelescopeProcessor.cc}}
+
+
+gather the telescope information to the one object  
+
+
+{\ttfamily \#include \char`\"{}TTelescope\+Processor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../geo/\+TDetector\+Parameter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../geo/\+TTarget\+Parameter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ICharge.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ITiming.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}TData\+Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}TTelescope\+Data.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}TTiming\+Charge\+Data.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}constant.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$TClass.\+h$>$}\newline
+{\ttfamily \#include $<$TClones\+Array.\+h$>$}\newline
+{\ttfamily \#include $<$TMath.\+h$>$}\newline
+{\ttfamily \#include $<$TRandom.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TTelescopeProcessor_8cc_a72c165c29b0ac43cd648307f46f8d721}{Class\+Imp}} (\mbox{\hyperlink{classart_1_1TTelescopeProcessor}{art\+::\+TTelescope\+Processor}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+gather the telescope information to the one object 
+
+\begin{DoxyAuthor}{Author}
+Kodai Okawa\href{mailto:okawa@cns.s.u-tokyo.ac.jp}{\texttt{ okawa@cns.\+s.\+u-\/tokyo.\+ac.\+jp}} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2024-\/01-\/17 17\+:52\+:58 
+\end{DoxyDate}
+\begin{DoxyNote}{Note}
+last modified\+: 2024-\/07-\/30 10\+:54\+:05
+\end{DoxyNote}
+treat the largest value of each layor the data of X side is used for DSSSD assume beam position (0, 0) and direction (0, 0, 1) NEED Output\+Col\+Name == prm/geo detector name 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TTelescopeProcessor_8cc_a72c165c29b0ac43cd648307f46f8d721}\label{TTelescopeProcessor_8cc_a72c165c29b0ac43cd648307f46f8d721}} 
+\index{TTelescopeProcessor.cc@{TTelescopeProcessor.cc}!ClassImp@{ClassImp}}
+\index{ClassImp@{ClassImp}!TTelescopeProcessor.cc@{TTelescopeProcessor.cc}}
+\doxysubsubsection{\texorpdfstring{ClassImp()}{ClassImp()}}
+{\footnotesize\ttfamily Class\+Imp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classart_1_1TTelescopeProcessor}{art\+::\+TTelescope\+Processor}}}]{ }\end{DoxyParamCaption})}
+

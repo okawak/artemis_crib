@@ -1,0 +1,771 @@
++++ tags = \mbox{[}\char`\"{}\+Content\char`\"{}\mbox{]} title = \char`\"{}\+Markdown Syntax\char`\"{} weight = 4 +++
+
+Let\textquotesingle{}s face it\+: Writing content for the web is tiresome. WYSIWYG editors help alleviate this task, but they generally result in horrible code, or worse yet, ugly web pages.
+
+{\bfseries{Markdown}} is a better way to write {\bfseries{HTML}}, without all the complexities and ugliness that usually accompanies it.
+
+Some of the key benefits are\+:
+
+
+\begin{DoxyEnumerate}
+\item Markdown is simple to learn, with minimal extra characters so it\textquotesingle{}s also quicker to write content.
+\item Less chance of errors when writing in Markdown.
+\item Produces valid HTML output.
+\item Keeps the content and the visual display separate, so you cannot mess up the look of your site.
+\item Write in any text editor or Markdown application you like.
+\item Markdown is a joy to use!
+\end{DoxyEnumerate}
+
+John Gruber, the author of Markdown, puts it like this\+:
+
+\begin{quote}
+The overriding design goal for Markdown’s formatting syntax is to make it as readable as possible. The idea is that a Markdown-\/formatted document should be publishable as-\/is, as plain text, without looking like it’s been marked up with tags or formatting instructions. While Markdown’s syntax has been influenced by several existing text-\/to-\/\+HTML filters, the single biggest source of inspiration for Markdown’s syntax is the format of plain text email. $<$cite$>$John Gruber$<$/cite$>$ \end{quote}
+\{\{\% notice tip \%\}\} \{\{\% icon bookmark \%\}\} Bookmark this page for easy future reference! \{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md898}{}\doxysubsection{Standard and Extensions}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md898}
+If not otherwise noted, the showed examples adhere to the \href{https://commonmark.org/help/}{\texttt{ Commonmark}} standard. In addition the theme supports the following extensions\+:
+
+
+\begin{DoxyItemize}
+\item \{\{\% badge color=\char`\"{}darkgray\char`\"{} icon=\char`\"{}fa-\/fw fab fa-\/github\char`\"{} \%\}\}GFM\{\{\% /badge \%\}\} Extension on top of standard Markdown adhering to \href{https://github.github.com/gfm/}{\texttt{ Git\+Hub Flavored Markdown}}.
+\item \{\{\% badge color=\char`\"{}\#888cc4\char`\"{} icon=\char`\"{}fa-\/fw fab fa-\/markdown\char`\"{} \%\}\}PHP\{\{\% /badge \%\}\} Extension on top of standard Markdown adhering to \href{https://michelf.ca/projects/php-markdown/extra/}{\texttt{ PHP Markdown}}.
+\item \{\{\% badge color=\char`\"{}darkorange\char`\"{} icon=\char`\"{}lightbulb\char`\"{} \%\}\}Pants\{\{\% /badge \%\}\} Extension by John Gruber adhering to \href{https://daringfireball.net/projects/smartypants/}{\texttt{ Smarty\+Pants}}.
+\item \{\{\% badge color=\char`\"{}\#7dc903\char`\"{} icon=\char`\"{}fa-\/fw fas fa-\/puzzle-\/piece\char`\"{} \%\}\}Relearn\{\{\% /badge \%\}\} Extension specific to this theme.
+\item \{\{\% badge color=\char`\"{}orangered\char`\"{} icon=\char`\"{}fa-\/fw fas fa-\/code\char`\"{} \%\}\}HTML\{\{\% /badge \%\}\} If the \href{https://gohugo.io/getting-started/configuration-markup/\#rendererunsafe}{\texttt{ usage of HTML}} is allowed in your {\ttfamily hugo.\+toml} the theme supports styling for further elements not accessible using Markdown alone.
+\end{DoxyItemize}\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md899}{}\doxysubsection{Paragraphs}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md899}
+In Markdown your content usually spans the whole available document width. This is called a block. Blocks are always separated by whitespace to their adjacent blocks in the resulting document.
+
+Any text not starting with a special sign is written as normal, plain text paragraph block and must be separated to its adjacent blocks by empty lines.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus.}
+\DoxyCodeLine{}
+\DoxyCodeLine{Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.}
+
+\end{DoxyCode}
+
+
+\{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus.
+
+Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad. \{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md900}{}\doxysubsection{Headings}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md900}
+A good idea is to structure your content using headings and subheadings. HTML-\/headings from {\ttfamily h1} through {\ttfamily h6} are constructed with a {\ttfamily \#} for each level.
+
+In Hugo you usually don\textquotesingle{}t use {\ttfamily h1} as this is generated by your theme and you should only have one such element in a document.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# h1 Heading}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\# h2 Heading}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\#\# h3 Heading}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\#\#\# h4 Heading}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\#\#\#\# h5 Heading}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\#\#\#\#\# h6 Heading}
+
+\end{DoxyCode}
+
+
+\{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md901}{}\doxysection{h1 Heading}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md901}
+\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md902}{}\doxysubsection{h2 Heading}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md902}
+\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md903}{}\doxysubsubsection{h3 Heading}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md903}
+\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md904}{}\doxyparagraph{h4 Heading}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md904}
+\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md905}%
+\Hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md905}%
+ \doxysubparagraph*{h5 Heading}
+
+\doxysubparagraph*{h6 Heading}
+
+\{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md906}{}\doxysubsection{Horizontal Rules}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md906}
+To further structure your content you can add horizontal rules. They create a \char`\"{}thematic break\char`\"{} between paragraph blocks. In Markdown, you can create it with three consecutive dashes {\ttfamily -\/-\/-\/}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus.}
+\DoxyCodeLine{}
+\DoxyCodeLine{-\/-\/-\/}
+\DoxyCodeLine{}
+\DoxyCodeLine{Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.}
+
+\end{DoxyCode}
+
+
+\{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus.
+
+\DoxyHorRuler{0}
+
+
+Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad. \{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md908}{}\doxysubsection{Text Markers}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md908}
+\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md909}{}\doxysubsubsection{Bold}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md909}
+You can show importance of a snippet of text with a heavier font-\/weight by enclosing it with two asterisks {\ttfamily $\ast$$\ast$}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{I am rendered with **bold text**}
+
+\end{DoxyCode}
+
+
+\{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} I am rendered with {\bfseries{bold text}} \{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md910}{}\doxysubsubsection{Italics}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md910}
+You can emphasize a snippet of text with italics by enclosing it with underscores {\ttfamily \+\_\+}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{I am rendered with \_italicized text\_}
+
+\end{DoxyCode}
+
+
+\{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} I am rendered with {\itshape italicized text} \{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md911}{}\doxysubsubsection{Strikethrough}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md911}
+\{\{\% badge color=\char`\"{}darkgray\char`\"{} icon=\char`\"{}fa-\/fw fab fa-\/github\char`\"{} \%\}\}GFM\{\{\% /badge \%\}\} You can do strikethroughs by enclosing text with two tildes {\ttfamily $\sim$$\sim$}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\string~\string~Strike through this text\string~\string~}
+
+\end{DoxyCode}
+
+
+\{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} \sout{Strike through this text} \{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md912}{}\doxysubsubsection{Marked Text}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md912}
+\{\{\% badge color=\char`\"{}orangered\char`\"{} icon=\char`\"{}fa-\/fw fas fa-\/code\char`\"{} \%\}\}HTML\{\{\% /badge \%\}\} You can mark text in the predefined accent color of your stylesheet.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{<mark>Parts</mark> of this text <mark>are marked!</mark>}
+
+\end{DoxyCode}
+
+
+\{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} $<$mark$>$Parts$<$/mark$>$ of this text $<$mark$>$are marked!$<$/mark$>$ \{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md913}{}\doxysubsection{Special Typesetting}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md913}
+\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md914}{}\doxysubsubsection{Text Substitution}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md914}
+\{\{\% badge color=\char`\"{}darkorange\char`\"{} icon=\char`\"{}lightbulb\char`\"{} \%\}\}Pants\{\{\% /badge \%\}\} You can combine multiple punctuation characters to single typographic entities. This will only be applied to text outside of code blocks or inline code.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Double quotes `"{}` and single quotes `'` of enclosed text are replaced by **"{}double curly quotes"{}** and **'single curly quotes'**.}
+\DoxyCodeLine{}
+\DoxyCodeLine{Double dashes `-\/-\/` and triple dashes `-\/-\/-\/` are replaced by en-\/dash **-\/-\/** and em-\/dash **-\/-\/-\/** entities.}
+\DoxyCodeLine{}
+\DoxyCodeLine{Double arrows pointing left `<<` or right `>>` are replaced by arrow **<<** and **>>** entities.}
+\DoxyCodeLine{}
+\DoxyCodeLine{Three consecutive dots `...` are replaced by an ellipsis **...** entity.}
+
+\end{DoxyCode}
+
+
+\{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} Double quotes {\ttfamily \char`\"{}$<$/tt$>$ and single quotes `'` of enclosed text are replaced by $\ast$$\ast$\char`\"{}double curly quotes"{}$\ast$$\ast$ and $\ast$$\ast$\textquotesingle{}single curly quotes'$\ast$$\ast$.}
+
+{\ttfamily Double dashes {\ttfamily -\/-\/} and triple dashes {\ttfamily -\/-\/-\/} are replaced by en-\/dash {\bfseries{--}} and em-\/dash {\bfseries{---}} entities.}
+
+{\ttfamily Double arrows pointing left {\ttfamily $<$$<$} or right {\ttfamily $>$$>$} are replaced by arrow $\ast$$\ast$$<$$<$$\ast$$\ast$ and $\ast$$\ast$$>$$>$$\ast$$\ast$ entities.}
+
+{\ttfamily Three consecutive dots {\ttfamily ...} are replaced by an ellipsis $\ast$$\ast$...$\ast$$\ast$ entity. \{\{\% /notice \%\}\}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md915}{}\doxysubsubsection{Keyboard Shortcuts}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md915}
+{\ttfamily  \{\{\% badge color=\char`\"{}orangered\char`\"{} icon=\char`\"{}fa-\/fw fas fa-\/code\char`\"{} \%\}\}HTML\{\{\% /badge \%\}\} You can use the {\ttfamily $<$kbd$>$} element to style keyboard shortcuts.}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Press <kbd>STRG</kbd> <kbd>ALT</kbd> <kbd>DEL</kbd> to end your shift early.}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} Press {\ttfamily STRG} {\ttfamily ALT} {\ttfamily DEL} to end your shift early. \{\{\% /notice \%\}\}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md916}{}\doxysubsubsection{Sub and Super Script}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md916}
+{\ttfamily  \{\{\% badge color=\char`\"{}orangered\char`\"{} icon=\char`\"{}fa-\/fw fas fa-\/code\char`\"{} \%\}\}HTML\{\{\% /badge \%\}\} You can also use the {\ttfamily $<$sub$>$} and {\ttfamily $<$sup$>$} elements. For more complex stuff or if your configuration does not allow HTML, you can use the \href{shortcodes/math}{\texttt{ {\ttfamily math} shortcode}}.}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{How many liters H<sub>2</sub>O fit into 1dm<sup>3</sup>?}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} How many liters H\textsubscript{2}O fit into 1dm\textsuperscript{3}? \{\{\% /notice \%\}\}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md917}{}\doxysubsection{Lists}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md917}
+{\ttfamily  }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md918}{}\doxysubsubsection{Unordered}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md918}
+{\ttfamily  You can write a list of items in which the order of the items does not explicitly matter.}
+
+{\ttfamily It is possible to nest lists by indenting an item for the next sublevel.}
+
+{\ttfamily You may use any of {\ttfamily -\/}, {\ttfamily $\ast$} or {\ttfamily +} to denote bullets for each list item but should not switch between those symbols inside one whole list.}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{-\/ Lorem ipsum dolor sit amet}
+\DoxyCodeLine{-\/ Consectetur adipiscing elit}
+\DoxyCodeLine{  -\/ Vestibulum laoreet porttitor sem}
+\DoxyCodeLine{  -\/ Ac tristique libero volutpat at}
+\DoxyCodeLine{-\/ Nulla volutpat aliquam velit}
+\DoxyCodeLine{  -\/ Phasellus iaculis neque}
+\DoxyCodeLine{  -\/ Purus sodales ultricies}
+\DoxyCodeLine{-\/ Faucibus porta lacus fringilla vel}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\}
+\begin{DoxyItemize}
+\item Lorem ipsum dolor sit amet
+\item Consectetur adipiscing elit
+\begin{DoxyItemize}
+\item Vestibulum laoreet porttitor sem
+\item Ac tristique libero volutpat at
+\end{DoxyItemize}
+\item Nulla volutpat aliquam velit
+\begin{DoxyItemize}
+\item Phasellus iaculis neque
+\item Purus sodales ultricies
+\end{DoxyItemize}
+\item Faucibus porta lacus fringilla vel \{\{\% /notice \%\}\}
+\end{DoxyItemize}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md919}{}\doxysubsubsection{Ordered}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md919}
+{\ttfamily  You can create a list of items in which the order of items does explicitly matter.}
+
+{\ttfamily It is possible to nest lists by indenting an item for the next sublevel.}
+
+{\ttfamily Markdown will automatically number each of your items consecutively. This means, the order number you are providing is irrelevant.}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1. Lorem ipsum dolor sit amet}
+\DoxyCodeLine{3. Consectetur adipiscing elit}
+\DoxyCodeLine{    1. Integer molestie lorem at massa}
+\DoxyCodeLine{    7. Facilisis in pretium nisl aliquet}
+\DoxyCodeLine{99. Nulla volutpat aliquam velit}
+\DoxyCodeLine{    1. Faucibus porta lacus fringilla vel}
+\DoxyCodeLine{    1. Aenean sit amet erat nunc}
+\DoxyCodeLine{17. Eget porttitor lorem}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\}
+\begin{DoxyEnumerate}
+\item Lorem ipsum dolor sit amet
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Consectetur adipiscing elit
+\begin{DoxyEnumerate}
+\item Integer molestie lorem at massa
+\item Facilisis in pretium nisl aliquet
+\end{DoxyEnumerate}
+\item Nulla volutpat aliquam velit
+\begin{DoxyEnumerate}
+\item Faucibus porta lacus fringilla vel
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Aenean sit amet erat nunc
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Eget porttitor lorem \{\{\% /notice \%\}\}
+\end{DoxyEnumerate}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md920}{}\doxysubsubsection{Tasks}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md920}
+{\ttfamily  \{\{\% badge color=\char`\"{}darkgray\char`\"{} icon=\char`\"{}fa-\/fw fab fa-\/github\char`\"{} \%\}\}GFM\{\{\% /badge \%\}\} You can add task lists resulting in checked or unchecked non-\/clickable items}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{-\/ [x] Basic Test}
+\DoxyCodeLine{-\/ [ ] More Tests}
+\DoxyCodeLine{  -\/ [x] View}
+\DoxyCodeLine{  -\/ [x] Hear}
+\DoxyCodeLine{  -\/ [ ] Smell}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\}
+\begin{DoxyItemize}
+\item \mbox{[}x\mbox{]} Basic Test
+\item \mbox{[} \mbox{]} More Tests
+\begin{DoxyItemize}
+\item \mbox{[}x\mbox{]} View
+\item \mbox{[}x\mbox{]} Hear
+\item \mbox{[} \mbox{]} Smell \{\{\% /notice \%\}\}
+\end{DoxyItemize}
+\end{DoxyItemize}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md921}{}\doxysubsubsection{Definitions}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md921}
+{\ttfamily  \{\{\% badge color=\char`\"{}\#888cc4\char`\"{} icon=\char`\"{}fa-\/fw fab fa-\/markdown\char`\"{} \%\}\}PHP\{\{\% /badge \%\}\} Definition lists are made of terms and definitions of these terms, much like in a dictionary.}
+
+{\ttfamily A definition list in Markdown Extra is made of a single-\/line term followed by a colon and the definition for that term. You can also associate more than one term to a definition.}
+
+{\ttfamily If you add empty lines around the definition terms, additional vertical space will be generated. Also multiple paragraphs are possible}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Apple}
+\DoxyCodeLine{: Pomaceous fruit of plants of the genus Malus in the family Rosaceae.}
+\DoxyCodeLine{: An American computer company.}
+\DoxyCodeLine{}
+\DoxyCodeLine{Orange}
+\DoxyCodeLine{: The fruit of an evergreen tree of the genus Citrus.}
+\DoxyCodeLine{}
+\DoxyCodeLine{  You can make juice out of it.}
+\DoxyCodeLine{: A telecommunication company.}
+\DoxyCodeLine{}
+\DoxyCodeLine{  You can't make juice out of it.}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} Apple \+: Pomaceous fruit of plants of the genus Malus in the family Rosaceae. \+: An American computer company.}
+
+{\ttfamily Orange \+: The fruit of an evergreen tree of the genus Citrus.}
+
+{\ttfamily  You can make juice out of it. \+: A telecommunication company.}
+
+{\ttfamily  You can\textquotesingle{}t make juice out of it. \{\{\% /notice \%\}\}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md922}{}\doxysubsection{Code}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md922}
+{\ttfamily  }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md923}{}\doxysubsubsection{Inline Code}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md923}
+{\ttfamily  Inline snippets of code can be wrapped with backticks {\ttfamily \`{}}.}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{In this example, `<div></div>` is marked as code.}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} In this example, {\ttfamily $<$div$>$$<$/div$>$} is marked as code. \{\{\% /notice \%\}\}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md924}{}\doxysubsubsection{Indented Code Block}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md924}
+{\ttfamily  A simple code block can be generated by indenting several lines of code by at least two spaces.}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Be impressed by my advanced code:}
+\DoxyCodeLine{}
+\DoxyCodeLine{    // Some comments}
+\DoxyCodeLine{    line 1 of code}
+\DoxyCodeLine{    line 2 of code}
+\DoxyCodeLine{    line 3 of code}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} Be impressed by my advanced code\+: \begin{DoxyVerb}// Some comments
+line 1 of code
+line 2 of code
+line 3 of code
+\end{DoxyVerb}
+ \{\{\% /notice \%\}\}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md925}{}\doxysubsubsection{Fenced Code Block}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md925}
+{\ttfamily  If you want to gain more control of your code block you can enclose your code by at least three backticks {\ttfamily \`{}\`{}\`{}} a so called fence.}
+
+{\ttfamily \{\{\% badge color=\char`\"{}darkgray\char`\"{} icon=\char`\"{}fa-\/fw fab fa-\/github\char`\"{} \%\}\}GFM\{\{\% /badge \%\}\} You can also add a language specifier directly after the opening fence, \`{}{\ttfamily js}, and syntax highlighting will automatically be applied according to the selected language in the rendered HTML.}
+
+{\ttfamily See \href{shortcodes/highlight}{\texttt{ Code Highlighting}} for additional documentation.}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{```js}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    name: "{}Claus"{},}
+\DoxyCodeLine{    surname: "{}Santa"{},}
+\DoxyCodeLine{    profession: "{}courier"{},}
+\DoxyCodeLine{    age: 666,}
+\DoxyCodeLine{    address: \{}
+\DoxyCodeLine{        city: "{}North Pole"{},}
+\DoxyCodeLine{        postalCode: 1,}
+\DoxyCodeLine{        country: "{}Arctic"{}}
+\DoxyCodeLine{    \},}
+\DoxyCodeLine{    friends: [ "{}Dasher"{}, "{}Dancer"{}, "{}Prancer"{}, "{}Vixen"{}, "{}Comet"{}, "{}Cupid"{}, "{}Donder"{}, "{}Blitzen"{}, "{}Rudolph"{} ]}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{```}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    name: "{}Claus"{},}
+\DoxyCodeLine{    surname: "{}Santa"{},}
+\DoxyCodeLine{    profession: "{}courier"{},}
+\DoxyCodeLine{    age: 666,}
+\DoxyCodeLine{    address: \{}
+\DoxyCodeLine{        city: "{}North Pole"{},}
+\DoxyCodeLine{        postalCode: 1,}
+\DoxyCodeLine{        country: "{}Arctic"{}}
+\DoxyCodeLine{    \},}
+\DoxyCodeLine{    friends: [ "{}Dasher"{}, "{}Dancer"{}, "{}Prancer"{}, "{}Vixen"{}, "{}Comet"{}, "{}Cupid"{}, "{}Donder"{}, "{}Blitzen"{}, "{}Rudolph"{} ]}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+ \{\{\% /notice \%\}\}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md926}{}\doxysubsection{Tables}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md926}
+{\ttfamily  \{\{\% badge color=\char`\"{}darkgray\char`\"{} icon=\char`\"{}fa-\/fw fab fa-\/github\char`\"{} \%\}\}GFM\{\{\% /badge \%\}\} You can create tables by adding pipes as dividers between each cell, and by adding a line of dashes (also separated by bars) beneath the header. Note that the pipes do not need to be vertically aligned.}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{| Option | Description |}
+\DoxyCodeLine{|-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|}
+\DoxyCodeLine{| data   | path to data files to supply the data that will be passed into templates. |}
+\DoxyCodeLine{| engine | engine to be used for processing templates. Handlebars is the default. |}
+\DoxyCodeLine{| ext    | extension to be used for dest files. |}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Option   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Option   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endhead
+data   &path to data files to supply the data that will be passed into templates.    \\\cline{1-2}
+engine   &engine to be used for processing templates. Handlebars is the default.    \\\cline{1-2}
+ext   &extension to be used for dest files.   \\\cline{1-2}
+\end{longtabu}
+\{\{\% /notice \%\}\}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md927}{}\doxysubsubsection{Aligned Columns}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md927}
+{\ttfamily  Adding a colon on the left and/or right side of the dashes below any heading will align the text for that column accordingly.}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{| Option | Number | Description |}
+\DoxyCodeLine{|-\/-\/-\/-\/-\/-\/-\/:|:-\/-\/-\/-\/-\/-\/:|:-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|}
+\DoxyCodeLine{| data   | 1      | path to data files to supply the data that will be passed into templates. |}
+\DoxyCodeLine{| engine | 2      | engine to be used for processing templates. Handlebars is the default. |}
+\DoxyCodeLine{| ext    | 3      | extension to be used for dest files. |}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Option   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Number   }&\cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Option   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Number   }&\cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-3}
+\endhead
+\PBS\raggedleft data   &\PBS\centering 1   &path to data files to supply the data that will be passed into templates.    \\\cline{1-3}
+\PBS\raggedleft engine   &\PBS\centering 2   &engine to be used for processing templates. Handlebars is the default.    \\\cline{1-3}
+\PBS\raggedleft ext   &\PBS\centering 3   &extension to be used for dest files.   \\\cline{1-3}
+\end{longtabu}
+\{\{\% /notice \%\}\}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md928}{}\doxysubsection{Blockquotes}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md928}
+{\ttfamily  For quoting blocks of content from another source within your document add {\ttfamily $>$} before any text you want to quote.}
+
+{\ttfamily Blockquotes can also be nested.}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{> Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue. Nunc augue, aliquam non hendrerit ac, commodo vel nisi.}
+\DoxyCodeLine{>}
+\DoxyCodeLine{> > Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.}
+\DoxyCodeLine{>}
+\DoxyCodeLine{> Mauris sit amet ligula egestas, feugiat metus tincidunt, luctus libero. Donec congue finibus tempor. Vestibulum aliquet sollicitudin erat, ut aliquet purus posuere luctus.}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} \begin{quote}
+Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue. Nunc augue, aliquam non hendrerit ac, commodo vel nisi.
+
+\begin{quote}
+Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam. \end{quote}
+Mauris sit amet ligula egestas, feugiat metus tincidunt, luctus libero. Donec congue finibus tempor. Vestibulum aliquet sollicitudin erat, ut aliquet purus posuere luctus. \end{quote}
+\{\{\% /notice \%\}\}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md929}{}\doxysubsection{Links}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md929}
+{\ttfamily  }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md930}{}\doxysubsubsection{Autolink}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md930}
+{\ttfamily  \{\{\% badge color=\char`\"{}darkgray\char`\"{} icon=\char`\"{}fa-\/fw fab fa-\/github\char`\"{} \%\}\}GFM\{\{\% /badge \%\}\} Absolute URLs will automatically be converted into a link.}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{This is a link to https://example.com.}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} This is a link to \href{https://example.com}{\texttt{ https\+://example.\+com}}. \{\{\% /notice \%\}\}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md931}{}\doxysubsubsection{Basic Link}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md931}
+{\ttfamily  You can explicitly define links in case you want to use non-\/absolute URLs or want to give different text.}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[Assemble](http://assemble.io)}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} \href{http://assemble.io}{\texttt{ Assemble}} \{\{\% /notice \%\}\}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md932}{}\doxysubsubsection{Link with Tooltip}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md932}
+{\ttfamily  For even further information, you can add an additional text, displayed in a tooltip on hovering over the link.}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[Upstage](https://github.com/upstage/ "{}Visit Upstage!"{})}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} \href{https://github.com/upstage/}{\texttt{ Upstage}} \{\{\% /notice \%\}\}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md933}{}\doxysubsubsection{Link References}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md933}
+{\ttfamily  Links can be simplyfied for recurring reuse by using a reference ID to later define the URL location. This simplyfies writing if you want to use a link more than once in a document.}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[Example][somelinkID]}
+\DoxyCodeLine{}
+\DoxyCodeLine{[somelinkID]: https://example.com "{}Go to example domain"{}}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} \href{https://example.com}{\texttt{ Example}}}
+
+{\ttfamily \{\{\% /notice \%\}\}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md934}{}\doxysubsubsection{Footnotes}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md934}
+{\ttfamily  \{\{\% badge color=\char`\"{}\#888cc4\char`\"{} icon=\char`\"{}fa-\/fw fab fa-\/markdown\char`\"{} \%\}\}PHP\{\{\% /badge \%\}\} Footnotes work mostly like reference-\/style links. A footnote is made of two things, a marker in the text that will become a superscript number and a footnote definition that will be placed in a list of footnotes.}
+
+{\ttfamily Usually the list of footnotes will be shown at the end of your document. If we use a footnote in a notice box it will instead be listed at the end of its box.}
+
+{\ttfamily Footnotes can contain block elements, which means that you can put multiple paragraphs, lists, blockquotes and so on in a footnote. It works the same as for list items, just indent the following paragraphs by four spaces in the footnote definition.}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{That's some text with a footnote[\string^1]}
+\DoxyCodeLine{}
+\DoxyCodeLine{[\string^1]: And that's the footnote.}
+\DoxyCodeLine{}
+\DoxyCodeLine{That's some more text with a footnote.[\string^someid]}
+\DoxyCodeLine{}
+\DoxyCodeLine{[\string^someid]:}
+\DoxyCodeLine{    Anything of interest goes here.}
+\DoxyCodeLine{}
+\DoxyCodeLine{    Blue light glows blue.}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} That\textquotesingle{}s some text with a footnote\mbox{[}$^\wedge$1\mbox{]}}
+
+{\ttfamily \mbox{[}$^\wedge$1\mbox{]}\+: And that\textquotesingle{}s the footnote.}
+
+{\ttfamily That\textquotesingle{}s some more text with a footnote.\mbox{[}$^\wedge$someid\mbox{]}}
+
+{\ttfamily \mbox{[}$^\wedge$someid\mbox{]}\+: Anything of interest goes here.}
+
+{\ttfamily  Blue light glows blue. \{\{\% /notice \%\}\}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md935}{}\doxysubsection{Images}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md935}
+{\ttfamily  }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md936}{}\doxysubsubsection{Basic Images}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md936}
+{\ttfamily  Images have a similar syntax to links but include a preceding exclamation mark.}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{![Spock](https://octodex.github.com/images/spocktocat.png)}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\}  \{\{\% /notice \%\}\}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md937}{}\doxysubsubsection{Image with Tooltip}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md937}
+{\ttfamily  Like links, images can also be given a tooltip.}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{![Picard](https://octodex.github.com/images/jean-\/luc-\/picat.jpg "{}Jean Luc Picard"{})}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\}  \{\{\% /notice \%\}\}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md938}{}\doxysubsubsection{Image References}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md938}
+{\ttfamily  Images can also be linked by reference ID to later define the URL location. This simplyfies writing if you want to use an image more than once in a document.}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{![La Forge][laforge]}
+\DoxyCodeLine{}
+\DoxyCodeLine{[laforge]: https://octodex.github.com/images/trekkie.jpg "{}Geordi La Forge"{}}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\} }
+
+{\ttfamily \{\{\% /notice \%\}\}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md939}{}\doxysubsubsection{Image Effects}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md939}
+{\ttfamily  \{\{\% badge color=\char`\"{}\#7dc903\char`\"{} icon=\char`\"{}fa-\/fw fas fa-\/puzzle-\/piece\char`\"{} \%\}\}Relearn\{\{\% /badge \%\}\} This theme allows additional non-\/standard formatting by setting query parameter at the end of the image URL. The default \href{cont/imageeffects}{\texttt{ behavior is configurable}} through your {\ttfamily hugo.\+toml} or frontmatter parameter.}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md940}{}\doxyparagraph{Resizing}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md940}
+{\ttfamily  Add query parameter {\ttfamily width} and/or {\ttfamily height} to the link image to resize the image. Values are CSS values (default is {\ttfamily auto}).}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{![Minion](https://octodex.github.com/images/minion.png?width=20vw)}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\}  \{\{\% /notice \%\}\}}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{![Minion](https://octodex.github.com/images/minion.png?height=50px)}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\}  \{\{\% /notice \%\}\}}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{![Minion](https://octodex.github.com/images/minion.png?height=50px\&width=40vw)}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\}  \{\{\% /notice \%\}\}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md941}{}\doxyparagraph{CSS Classes}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md941}
+{\ttfamily  Add a query parameter {\ttfamily classes} to the link image to add CSS classes. Add some of the predefined values or even define your own in your CSS.}
+
+{\ttfamily \label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md942}%
+\Hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md942}%
+ \doxysubparagraph*{Shadow}}
+
+{\ttfamily }
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{![Spidertocat](https://octodex.github.com/images/spidertocat.png?classes=shadow)}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\}  \{\{\% /notice \%\}\}}
+
+{\ttfamily \label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md943}%
+\Hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md943}%
+ \doxysubparagraph*{Border}}
+
+{\ttfamily }
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{![DrOctocat](https://octodex.github.com/images/droctocat.png?classes=border)}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\}  \{\{\% /notice \%\}\}}
+
+{\ttfamily \label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md944}%
+\Hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md944}%
+ \doxysubparagraph*{Left}}
+
+{\ttfamily }
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{![Supertocat](https://octodex.github.com/images/okal-\/eltocat.jpg?classes=left)}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\}  \{\{\% /notice \%\}\}}
+
+{\ttfamily \label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md945}%
+\Hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md945}%
+ \doxysubparagraph*{Right}}
+
+{\ttfamily }
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{![Riddlocat](https://octodex.github.com/images/riddlocat.jpg?classes=right)}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\}  \{\{\% /notice \%\}\}}
+
+{\ttfamily \label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md946}%
+\Hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md946}%
+ \doxysubparagraph*{Inline}}
+
+{\ttfamily }
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{![Spidertocat](https://octodex.github.com/images/spidertocat.png?classes=inline)}
+\DoxyCodeLine{![DrOctocat](https://octodex.github.com/images/droctocat.png?classes=inline)}
+\DoxyCodeLine{![Supertocat](https://octodex.github.com/images/okal-\/eltocat.jpg?classes=inline)}
+\DoxyCodeLine{![Riddlocat](https://octodex.github.com/images/riddlocat.jpg?classes=inline)}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\}     \{\{\% /notice \%\}\}}
+
+{\ttfamily \label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md947}%
+\Hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md947}%
+ \doxysubparagraph*{Combination}}
+
+{\ttfamily }
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{![X-\/tocat](https://octodex.github.com/images/xtocat.jpg?classes=shadow,border,left)}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\}  \{\{\% /notice \%\}\}}
+
+{\ttfamily }\hypertarget{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md948}{}\doxyparagraph{Lightbox}\label{md_themes_relearn_exampleSite_content_cont_markdown_en_autotoc_md948}
+{\ttfamily  Add the query parameter {\ttfamily lightbox=false} to the image link to disable the lightbox.}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{![Homercat](https://octodex.github.com/images/homercat.png?lightbox=false)}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \{\{\% notice style=\char`\"{}secondary\char`\"{} icon=\char`\"{}eye\char`\"{} title=\char`\"{}\+Result\char`\"{} \%\}\}  \{\{\% /notice \%\}\}}
+
+{\ttfamily \{\{\% notice note \%\}\} If you want to wrap an image in a link and {\ttfamily lightbox=true} is your default setting, you have to explicitly disable the lightbox to avoid it to hijacking your link like\+:}
+
+{\ttfamily 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[![Homercat](https://octodex.github.com/images/homercat.png?lightbox=false)](https://octodex.github.com/\#homercat)}
+
+\end{DoxyCode}
+}
+
+{\ttfamily \href{https://octodex.github.com/\#homercat}{\texttt{ }}}
+
+{\ttfamily \{\{\% /notice \%\}\} }

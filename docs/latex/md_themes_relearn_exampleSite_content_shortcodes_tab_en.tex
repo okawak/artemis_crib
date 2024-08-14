@@ -1,0 +1,194 @@
++++ description = \char`\"{}\+Show content in a single tab\char`\"{} title = \char`\"{}\+Tab\char`\"{} +++
+
+You can use a {\ttfamily tab} shortcode to display a single tab.
+
+This is especially useful if you want to flag your code example with an explicit language.
+
+If you want multiple tabs grouped together you can wrap your tabs into the \href{shortcodes/tabs}{\texttt{ {\ttfamily tabs} shortcode}}.
+
+\{\{\% tab title=\char`\"{}c\char`\"{} \%\}\}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{printf("{}Hello World!"{});}
+
+\end{DoxyCode}
+
+
+\{\{\% /tab \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_shortcodes_tab_en_autotoc_md1156}{}\doxysubsection{Usage}\label{md_themes_relearn_exampleSite_content_shortcodes_tab_en_autotoc_md1156}
+While the examples are using shortcodes with named parameter you are free to also call this shortcode from your own partials.
+
+\{\{$<$ tabs groupid=\char`\"{}shortcode-\/parameter\char`\"{}$>$\}\} \{\{\% tab title=\char`\"{}shortcode\char`\"{} \%\}\}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\{\%/* tab title="{}c"{} */\%\}\}}
+\DoxyCodeLine{```c}
+\DoxyCodeLine{printf("{}Hello World!"{});}
+\DoxyCodeLine{```}
+\DoxyCodeLine{\{\{\%/* /tab */\%\}\}}
+
+\end{DoxyCode}
+
+
+\{\{\% /tab \%\}\} \{\{\% tab title=\char`\"{}partial\char`\"{} \%\}\}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\{ partial "{}shortcodes/tab.html"{} (dict}
+\DoxyCodeLine{  "{}page"{}  .}
+\DoxyCodeLine{  "{}title"{} "{}c"{}}
+\DoxyCodeLine{  "{}content"{} ("{}```c\(\backslash\)nprintf(\(\backslash\)"{}Hello World!\(\backslash\)"{})\(\backslash\)n```"{} | .RenderString)}
+\DoxyCodeLine{)\}\}}
+
+\end{DoxyCode}
+
+
+\{\{\% /tab \%\}\} \{\{$<$ /tabs $>$\}\}\hypertarget{md_themes_relearn_exampleSite_content_shortcodes_tab_en_autotoc_md1157}{}\doxysubsubsection{Parameter}\label{md_themes_relearn_exampleSite_content_shortcodes_tab_en_autotoc_md1157}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Default   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Notes    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Default   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Notes    }\\\cline{1-3}
+\endhead
+{\bfseries{style}}   &see notes   &The style scheme used for the tab. If you don\textquotesingle{}t set a style and you display a single code block inside of the tab, its default styling will adapt to that of a {\ttfamily code} block. Otherwise {\ttfamily default} is used.~\newline
+~\newline
+-\/ by severity\+: {\ttfamily info}, {\ttfamily note}, {\ttfamily tip}, {\ttfamily warning}~\newline
+-\/ by brand color\+: {\ttfamily primary}, {\ttfamily secondary}, {\ttfamily accent}~\newline
+-\/ by color\+: {\ttfamily blue}, {\ttfamily green}, {\ttfamily grey}, {\ttfamily orange}, {\ttfamily red}~\newline
+-\/ by special color\+: {\ttfamily default}, {\ttfamily transparent}, {\ttfamily code}    \\\cline{1-3}
+{\bfseries{color}}   &see notes   &The \href{https://developer.mozilla.org/en-US/docs/Web/CSS/color_value}{\texttt{ CSS color value}} to be used. If not set, the chosen color depends on the {\bfseries{style}}. Any given value will overwrite the default.~\newline
+~\newline
+-\/ for severity styles\+: a nice matching color for the severity~\newline
+-\/ for all other styles\+: the corresponding color    \\\cline{1-3}
+{\bfseries{title}}   &see notes   &Arbitrary title for the tab. Depending on the {\bfseries{style}} there may be a default title. Any given value will overwrite the default.~\newline
+~\newline
+-\/ for severity styles\+: the matching title for the severity~\newline
+-\/ for all other styles\+: {\itshape $<$empty$>$}~\newline
+~\newline
+If you want no title for a severity style, you have to set this parameter to {\ttfamily \char`\"{} \char`\"{}} (a non empty string filled with spaces)    \\\cline{1-3}
+{\bfseries{icon}}   &see notes   &\href{shortcodes/icon\#finding-an-icon}{\texttt{ Font Awesome icon name}} set to the left of the title. Depending on the {\bfseries{style}} there may be a default icon. Any given value will overwrite the default.~\newline
+~\newline
+-\/ for severity styles\+: a nice matching icon for the severity~\newline
+-\/ for all other styles\+: {\itshape $<$empty$>$}~\newline
+~\newline
+If you want no icon for a severity style, you have to set this parameter to {\ttfamily \char`\"{} \char`\"{}} (a non empty string filled with spaces)    \\\cline{1-3}
+{\itshape {\bfseries{$<$content$>$}}}   &{\itshape $<$empty$>$}   &Arbitrary text to be displayed in the tab.   \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md_themes_relearn_exampleSite_content_shortcodes_tab_en_autotoc_md1158}{}\doxysubsection{Examples}\label{md_themes_relearn_exampleSite_content_shortcodes_tab_en_autotoc_md1158}
+\hypertarget{md_themes_relearn_exampleSite_content_shortcodes_tab_en_autotoc_md1159}{}\doxysubsubsection{Single Code Block with Collapsed Margins}\label{md_themes_relearn_exampleSite_content_shortcodes_tab_en_autotoc_md1159}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\{\%/* tab title="{}Code"{} */\%\}\}}
+\DoxyCodeLine{```python}
+\DoxyCodeLine{printf("{}Hello World!"{});}
+\DoxyCodeLine{```}
+\DoxyCodeLine{\{\{\%/* /tab */\%\}\}}
+
+\end{DoxyCode}
+
+
+\{\{\% tab title=\char`\"{}\+Code\char`\"{} \%\}\}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{printf("{}Hello World!"{});}
+
+\end{DoxyCode}
+
+
+\{\{\% /tab \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_shortcodes_tab_en_autotoc_md1160}{}\doxysubsubsection{Mixed Markdown Content}\label{md_themes_relearn_exampleSite_content_shortcodes_tab_en_autotoc_md1160}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\{\%/* tab title="{}\_**Mixed**\_"{} */\%\}\}}
+\DoxyCodeLine{A tab can not only contain code but arbitrary text. In this case text **and** code will get a margin.}
+\DoxyCodeLine{```python}
+\DoxyCodeLine{printf("{}Hello World!"{});}
+\DoxyCodeLine{```}
+\DoxyCodeLine{\{\{\%/* /tab */\%\}\}}
+
+\end{DoxyCode}
+
+
+\{\{\% tab title=\char`\"{}\+\_\+$\ast$$\ast$\+Mixed$\ast$$\ast$\+\_\+\char`\"{} \%\}\}
+
+A tab can not only contain code but arbitrary text. In this case text {\bfseries{and}} code will get a margin.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{printf("{}Hello World!"{});}
+
+\end{DoxyCode}
+
+
+\{\{\% /tab \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_shortcodes_tab_en_autotoc_md1161}{}\doxysubsubsection{Understanding $<$tt$>$style$<$/tt$>$ and $<$tt$>$color$<$/tt$>$ Behavior}\label{md_themes_relearn_exampleSite_content_shortcodes_tab_en_autotoc_md1161}
+The {\ttfamily style} parameter affects how the {\ttfamily color} parameter is applied.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\{</* tabs */>\}\}}
+\DoxyCodeLine{\{\{\%/* tab title="{}just colored style"{} style="{}blue"{} */\%\}\}}
+\DoxyCodeLine{The `style` parameter is set to a color style.}
+\DoxyCodeLine{}
+\DoxyCodeLine{This will set the background to a lighter version of the chosen style color as configured in your theme variant.}
+\DoxyCodeLine{\{\{\%/* /tab */\%\}\}}
+\DoxyCodeLine{\{\{\%/* tab title="{}just color"{} color="{}blue"{} */\%\}\}}
+\DoxyCodeLine{Only the `color` parameter is set.}
+\DoxyCodeLine{}
+\DoxyCodeLine{This will set the background to a lighter version of the chosen CSS color value.}
+\DoxyCodeLine{\{\{\%/* /tab */\%\}\}}
+\DoxyCodeLine{\{\{\%/* tab title="{}default style and color"{} style="{}default"{} color="{}blue"{} */\%\}\}}
+\DoxyCodeLine{The `style` parameter affects how the `color` parameter is applied.}
+\DoxyCodeLine{}
+\DoxyCodeLine{The `default` style will set the background to your `-\/-\/MAIN-\/BG-\/color` as configured for your theme variant resembling the default style but with different color.}
+\DoxyCodeLine{\{\{\%/* /tab */\%\}\}}
+\DoxyCodeLine{\{\{\%/* tab title="{}just severity style"{} style="{}info"{} */\%\}\}}
+\DoxyCodeLine{The `style` parameter is set to a severity style.}
+\DoxyCodeLine{}
+\DoxyCodeLine{This will set the background to a lighter version of the chosen style color as configured in your theme variant and also affects the chosen icon.}
+\DoxyCodeLine{\{\{\%/* /tab */\%\}\}}
+\DoxyCodeLine{\{\{\%/* tab title="{}severity style and color"{} style="{}info"{} color="{}blue"{} */\%\}\}}
+\DoxyCodeLine{The `style` parameter affects how the `color` parameter is applied.}
+\DoxyCodeLine{}
+\DoxyCodeLine{This will set the background to a lighter version of the chosen CSS color value and also affects the chosen icon.}
+\DoxyCodeLine{\{\{\%/* /tab */\%\}\}}
+\DoxyCodeLine{\{\{</* /tabs */>\}\}}
+
+\end{DoxyCode}
+
+
+\{\{$<$ tabs $>$\}\} \{\{\% tab title=\char`\"{}just colored style\char`\"{} style=\char`\"{}blue\char`\"{} \%\}\}
+
+The {\ttfamily style} parameter is set to a color style.
+
+This will set the background to a lighter version of the chosen style color as configured in your theme variant.
+
+\{\{\% /tab \%\}\} \{\{\% tab title=\char`\"{}just color\char`\"{} color=\char`\"{}blue\char`\"{} \%\}\}
+
+Only the {\ttfamily color} parameter is set.
+
+This will set the background to a lighter version of the chosen CSS color value.
+
+\{\{\% /tab \%\}\} \{\{\% tab title=\char`\"{}default style and color\char`\"{} style=\char`\"{}default\char`\"{} color=\char`\"{}blue\char`\"{} \%\}\}
+
+The {\ttfamily style} parameter affects how the {\ttfamily color} parameter is applied.
+
+The {\ttfamily default} style will set the background to your {\ttfamily -\/-\/MAIN-\/\+BG-\/color} as configured for your theme variant resembling the default style but with different color.
+
+\{\{\% /tab \%\}\} \{\{\% tab title=\char`\"{}just severity style\char`\"{} style=\char`\"{}info\char`\"{} \%\}\}
+
+The {\ttfamily style} parameter is set to a severity style.
+
+This will set the background to a lighter version of the chosen style color as configured in your theme variant and also affects the chosen icon.
+
+\{\{\% /tab \%\}\} \{\{\% tab title=\char`\"{}severity style and color\char`\"{} style=\char`\"{}info\char`\"{} color=\char`\"{}blue\char`\"{} \%\}\}
+
+The {\ttfamily style} parameter affects how the {\ttfamily color} parameter is applied.
+
+This will set the background to a lighter version of the chosen CSS color value and also affects the chosen icon.
+
+\{\{\% /tab \%\}\} \{\{$<$ /tabs $>$\}\} 

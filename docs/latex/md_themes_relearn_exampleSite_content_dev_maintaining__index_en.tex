@@ -1,0 +1,152 @@
++++ description = \char`\"{}\+What to know as a maintainer\char`\"{} title = \char`\"{}\+Maintaining\char`\"{} +++\hypertarget{md_themes_relearn_exampleSite_content_dev_maintaining__index_en_autotoc_md960}{}\doxysubsection{Semver}\label{md_themes_relearn_exampleSite_content_dev_maintaining__index_en_autotoc_md960}
+This project tries to follow the \href{https://semver.org/}{\texttt{ semver policy}} -\/ although not followed 100\% in the past.
+
+Usually an entry of \{\{\% badge style=\char`\"{}warning\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Breaking\{\{\% /badge \%\}\} on the \href{basics/migration}{\texttt{ What\textquotesingle{}s new}} page causes a new major release number.
+
+All other entries on the \href{basics/migration}{\texttt{ What\textquotesingle{}s new}} page will increase the minor release number.
+
+Releases resulting in a new major or minor number are called main release.
+
+Releases containing bugfixes only, are only increasing the patch release number. Those releases don\textquotesingle{}t result in announcements on the \href{basics/migration}{\texttt{ What\textquotesingle{}s new}} page.
+
+Entries on the \href{basics/migration}{\texttt{ What\textquotesingle{}s new}} page are checked and enforced during the {\ttfamily version-\/release} Git\+Hub Action.\hypertarget{md_themes_relearn_exampleSite_content_dev_maintaining__index_en_autotoc_md961}{}\doxysubsection{Managing Issues}\label{md_themes_relearn_exampleSite_content_dev_maintaining__index_en_autotoc_md961}
+Issues are categorized and managed by assigning \href{\#labels}{\texttt{ labels}} to it.
+
+Once working on an issue, assign it to a fitting maintainer.
+
+When done, close the ticket. Once an issue is closed, it needs to be assigned to next release milestone.
+
+A once released ticket is not allowed to be reopened and rereleased in a different milestone. This would cause the changelog to be changed even for the milestone the issue was previously released in. Instead write a new ticket.\hypertarget{md_themes_relearn_exampleSite_content_dev_maintaining__index_en_autotoc_md962}{}\doxysubsection{Managing Pull Requests}\label{md_themes_relearn_exampleSite_content_dev_maintaining__index_en_autotoc_md962}
+If a PR is merged and closed it needs an accompanied issue assigned to. If there is no issue for a PR, the maintainer needs to create one.
+
+You can assign multiple PRs to one issue as long as they belong together.
+
+Usually set the same labels and milestone for the PR as for the accompanied issue.\hypertarget{md_themes_relearn_exampleSite_content_dev_maintaining__index_en_autotoc_md963}{}\doxysubsection{Labels}\label{md_themes_relearn_exampleSite_content_dev_maintaining__index_en_autotoc_md963}
+\hypertarget{md_themes_relearn_exampleSite_content_dev_maintaining__index_en_autotoc_md964}{}\doxysubsubsection{Kind}\label{md_themes_relearn_exampleSite_content_dev_maintaining__index_en_autotoc_md964}
+An issue that results in changesets must have exactly one of the following labels. This needs to be assigned latest before release.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Label   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Changelog section    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Label   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Changelog section    }\\\cline{1-3}
+\endhead
+\{\{\% badge color=\char`\"{}\#5498d8\char`\"{} \%\}\}documentation\{\{\% /badge \%\}\}   &Improvements or additions to documentation   &-\/    \\\cline{1-3}
+\{\{\% badge color=\char`\"{}\#99d856\char`\"{} \%\}\}discussion\{\{\% /badge \%\}\}   &This issue was converted to a discussion   &-\/    \\\cline{1-3}
+\{\{\% badge color=\char`\"{}\#d8d104\char`\"{} \%\}\}task\{\{\% /badge \%\}\}   &Maintenance work   &Maintenance    \\\cline{1-3}
+\{\{\% badge color=\char`\"{}\#d8ae04\char`\"{} \%\}\}feature\{\{\% /badge \%\}\}   &New feature or request   &Features    \\\cline{1-3}
+\{\{\% badge color=\char`\"{}\#d88704\char`\"{} \%\}\}bug\{\{\% /badge \%\}\}   &Something isn\textquotesingle{}t working   &Fixes   \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md_themes_relearn_exampleSite_content_dev_maintaining__index_en_autotoc_md965}{}\doxysubsubsection{Impact}\label{md_themes_relearn_exampleSite_content_dev_maintaining__index_en_autotoc_md965}
+If the issue would cause a new main release due to \href{\#semver}{\texttt{ semver semantics}} it needs one of the according labels and the matching badge on the \href{basics/migration}{\texttt{ What\textquotesingle{}s new}} page.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Label   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Label   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endhead
+\{\{\% badge color=\char`\"{}\#d73a4a\char`\"{} \%\}\}change\{\{\% /badge \%\}\}   &Introduces changes with existing installations    \\\cline{1-2}
+\{\{\% badge color=\char`\"{}\#d73a4a\char`\"{} \%\}\}breaking\{\{\% /badge \%\}\}   &Introduces breaking changes with existing installations   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_themes_relearn_exampleSite_content_dev_maintaining__index_en_autotoc_md966}{}\doxysubsubsection{Declination}\label{md_themes_relearn_exampleSite_content_dev_maintaining__index_en_autotoc_md966}
+If an issue does not result in changesets but is closed anyways, it must have exactly one of the following labels.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Label   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Label   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endhead
+\{\{\% badge color=\char`\"{}\#9fa2a5\char`\"{} \%\}\}duplicate\{\{\% /badge \%\}\}   &This issue or pull request already exists    \\\cline{1-2}
+\{\{\% badge color=\char`\"{}\#9fa2a5\char`\"{} \%\}\}invalid\{\{\% /badge \%\}\}   &This doesn\textquotesingle{}t seem right    \\\cline{1-2}
+\{\{\% badge color=\char`\"{}\#9fa2a5\char`\"{} \%\}\}support\{\{\% /badge \%\}\}   &Request for achieving a special goal    \\\cline{1-2}
+\{\{\% badge color=\char`\"{}\#9fa2a5\char`\"{} \%\}\}unresolved\{\{\% /badge \%\}\}   &No progress on this issue    \\\cline{1-2}
+\{\{\% badge color=\char`\"{}\#9fa2a5\char`\"{} \%\}\}update\{\{\% /badge \%\}\}   &A change in behavior after updat    \\\cline{1-2}
+\{\{\% badge color=\char`\"{}\#9fa2a5\char`\"{} \%\}\}wontchange\{\{\% /badge \%\}\}   &This will not be worked on   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_themes_relearn_exampleSite_content_dev_maintaining__index_en_autotoc_md967}{}\doxysubsubsection{Halt}\label{md_themes_relearn_exampleSite_content_dev_maintaining__index_en_autotoc_md967}
+You can assign one further label out of the following list to signal readers that development on an open issue is currently halted for different reasons.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Label   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Label   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endhead
+\{\{\% badge color=\char`\"{}\#998f6b\char`\"{} \%\}\}blocked\{\{\% /badge \%\}\}   &Depends on other issue to be fixed first    \\\cline{1-2}
+\{\{\% badge color=\char`\"{}\#998f6b\char`\"{} \%\}\}idea\{\{\% /badge \%\}\}   &A valuable idea that\textquotesingle{}s currently not worked on    \\\cline{1-2}
+\{\{\% badge color=\char`\"{}\#998f6b\char`\"{} \%\}\}undecided\{\{\% /badge \%\}\}   &No decision was made yet    \\\cline{1-2}
+\{\{\% badge color=\char`\"{}\#6426ff\char`\"{} \%\}\}helpwanted\{\{\% /badge \%\}\}   &Great idea, send in a PR    \\\cline{1-2}
+\{\{\% badge color=\char`\"{}\#6426ff\char`\"{} \%\}\}needsfeedback\{\{\% /badge \%\}\}   &Further information is needed   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_themes_relearn_exampleSite_content_dev_maintaining__index_en_autotoc_md968}{}\doxysubsubsection{3rd-\/\+Party}\label{md_themes_relearn_exampleSite_content_dev_maintaining__index_en_autotoc_md968}
+If the issue is not caused by a programming error in the themes own code, you can label the causing program or library.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Label   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Label   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endhead
+\{\{\% badge color=\char`\"{}\#e550a7\char`\"{} \%\}\}asciidoc\{\{\% /badge \%\}\}   &This is a topic related to processing of Ascii\+Doc    \\\cline{1-2}
+\{\{\% badge color=\char`\"{}\#e550a7\char`\"{} \%\}\}browser\{\{\% /badge \%\}\}   &This is a topic related to the browser but not the theme    \\\cline{1-2}
+\{\{\% badge color=\char`\"{}\#e550a7\char`\"{} \%\}\}device\{\{\% /badge \%\}\}   &This is a topic related to a certain device    \\\cline{1-2}
+\{\{\% badge color=\char`\"{}\#e550a7\char`\"{} \%\}\}hugo\{\{\% /badge \%\}\}   &This is a topic related to Hugo itself but not the theme    \\\cline{1-2}
+\{\{\% badge color=\char`\"{}\#e550a7\char`\"{} \%\}\}mermaid\{\{\% /badge \%\}\}   &This is a topic related to Mermaid itself but not the theme   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_themes_relearn_exampleSite_content_dev_maintaining__index_en_autotoc_md969}{}\doxysubsection{Making Releases}\label{md_themes_relearn_exampleSite_content_dev_maintaining__index_en_autotoc_md969}
+A release is based on a milestone named like the release itself -\/ just the version number, eg\+: {\ttfamily 1.\+2.\+3}. It\textquotesingle{}s in the maintainers responsibility to check \href{\#semver}{\texttt{ semver semantics}} of the milestone\textquotesingle{}s name prior to release and change it if necessary.
+
+Making releases is automated by the {\ttfamily version-\/release} Git\+Hub Action. It requires the version number of the milestone that should be released. The release will be created from the {\ttfamily main} branch of the repository.
+
+Treat released milestones as immutable. Don\textquotesingle{}t rerelease an already released milestone. An already released milestone may already been consumed by your users.
+
+During execution of the action a few things are checked. If a check fails the action fails, resulting in no new release. You can correct the errors afterwards and rerun the action.
+
+The following checks will be enforced
+
+
+\begin{DoxyItemize}
+\item the milestone exists
+\item there is at least one closed issue assigned to the milestone
+\item all assigned issues for this milestone are closed
+\item if it\textquotesingle{}s a main release, there must be a new {\ttfamily $<$major$>$.$<$minor$>$} at the beginning of the \href{basics/migration}{\texttt{ What\textquotesingle{}s new}} page
+\item if it\textquotesingle{}s a patch release, there must be the {\ttfamily $<$major$>$.$<$minor$>$} from the previous release at the beginning of the \href{basics/migration}{\texttt{ What\textquotesingle{}s new}} page
+\end{DoxyItemize}
+
+After a successful run of the action
+
+
+\begin{DoxyItemize}
+\item the \href{https://mcshelby.github.io/hugo-theme-relearn/basics/history/index.html}{\texttt{ History}} page is updated, including release version, release date and text
+\item the \href{https://mcshelby.github.io/hugo-theme-relearn/basics/migration/index.html}{\texttt{ What\textquotesingle{}s new}} page is updated, including release version, release date and text
+\item the version number for the {\ttfamily $<$meta generator$>$} is updated
+\item the updated files are committed
+\item the milestone is closed
+\item the repository is tagged with the version number (eg. {\ttfamily 1.\+2.\+3}), the main version number (eg. {\ttfamily 1.\+2.\+x}) and the major version number (eg. {\ttfamily 1.\+x})
+\item a new entry in the \href{https://github.com/McShelby/hugo-theme-relearn/releases}{\texttt{ Git\+Hub release list}} with the according changelog will be created
+\item the \href{https://mcshelby.github.io/hugo-theme-relearn/index.html}{\texttt{ official documentation}} is built and deployed
+\item the version number for the {\ttfamily $<$meta generator$>$} is updated to a temporary and committed (this helps to determine if users are running directly on the main branch or are using releases)
+\item a new milestone for the next patch release is created (this can later be renamed to a main release if necessary) 
+\end{DoxyItemize}
