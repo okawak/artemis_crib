@@ -18,8 +18,7 @@ set(CRIBSOURCES
     # telescope
     telescope/TTelescopeData.cc
     telescope/TTelescopeProcessor.cc
-    # reconst
-    # reconst/TTGTIKProcessor.cc
+    # reconst reconst/TTGTIKProcessor.cc
     reconst/TReactionInfo.cc
     # commands
     commands/TCatCmdLoopStart.cc
@@ -37,15 +36,12 @@ set(CRIBSOURCES
     geo/TTargetParameter.cc
     # simulation
     simulation/TTreePeriodicEventStore.cc
-    # simulation/TEffectiveThickness.cc
-    # simulation/TDetectParticleProcessor.cc
+    # simulation/TEffectiveThickness.cc simulation/TDetectParticleProcessor.cc
     # simulation/TNBodyReactionProcessor.cc
     simulation/TParticleInfo.cc
-    # simulation/TRandomBeamGenerator.cc
-    # simulation/TTreeBeamGenerator.cc
+    # simulation/TRandomBeamGenerator.cc simulation/TTreeBeamGenerator.cc
     simulation/TSolidAngleProcessor.cc
-    # simulation/TRutherfordScattering.cc
-    # simulation/TCRIBPIDProcessor.cc
+    # simulation/TRutherfordScattering.cc simulation/TCRIBPIDProcessor.cc
     # timestamp
     timestamp/TTSData.cc
     timestamp/TTSMappingProcessor.cc
@@ -69,8 +65,7 @@ set(CRIBHEADERS
     # telescope
     telescope/TTelescopeData.h
     telescope/TTelescopeProcessor.h
-    # reconst
-    # reconst/TTGTIKProcessor.h
+    # reconst reconst/TTGTIKProcessor.h
     reconst/TReactionInfo.h
     # commands
     commands/TCatCmdLoopStart.h
@@ -88,15 +83,12 @@ set(CRIBHEADERS
     geo/TTargetParameter.h
     # simulation
     simulation/TTreePeriodicEventStore.h
-    # simulation/TEffectiveThickness.h
-    # simulation/TDetectParticleProcessor.h
+    # simulation/TEffectiveThickness.h simulation/TDetectParticleProcessor.h
     # simulation/TNBodyReactionProcessor.h
     simulation/TParticleInfo.h
-    # simulation/TRandomBeamGenerator.h
-    # simulation/TTreeBeamGenerator.h
+    # simulation/TRandomBeamGenerator.h simulation/TTreeBeamGenerator.h
     simulation/TSolidAngleProcessor.h
-    # simulation/TRutherfordScattering.h
-    # simulation/TCRIBPIDProcessor.h
+    # simulation/TRutherfordScattering.h simulation/TCRIBPIDProcessor.h
     # timestamp
     timestamp/TTSData.h
     timestamp/TTSMappingProcessor.h
@@ -124,6 +116,8 @@ if(SRIMlib_FOUND AND TSrim_FOUND)
 endif()
 
 add_library(${CRIBLIB_NAME} SHARED ${CRIBSOURCES})
+target_compile_features(${CRIBLIB_NAME} PRIVATE cxx_std_17)
+target_compile_options(${CRIBLIB_NAME} PRIVATE -Wall -Wextra -O2)
 
 target_include_directories(
   ${CRIBLIB_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
@@ -157,12 +151,17 @@ endif()
 root_generate_dictionary(G__${CRIBLIB_NAME} ${CRIBHEADERS} LINKDEF
                          "artcrib_linkdef.h" MODULE ${CRIBLIB_NAME})
 
-set_target_properties(${CRIBLIB_NAME} PROPERTIES PUBLIC_HEADER "${CRIBHEADERS}")
+set_target_properties(
+  ${CRIBLIB_NAME}
+  PROPERTIES VERSION ${PROJECT_VERSION}
+             SOVERSION ${PROJECT_VERSION_MAJOR}
+             PUBLIC_HEADER "${CRIBHEADERS}")
 
 install(
   TARGETS ${CRIBLIB_NAME}
   EXPORT cribTargets
-  INCLUDES DESTINATION include
+  INCLUDES
+  DESTINATION include
   ARCHIVE DESTINATION lib
   PUBLIC_HEADER DESTINATION include/src-crib
   LIBRARY DESTINATION lib)

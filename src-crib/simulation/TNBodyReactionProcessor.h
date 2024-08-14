@@ -1,9 +1,9 @@
 /**
  * @file    TNBodyReactionProcessor.h
  * @brief
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 13:11:23
- * @note    last modified: 2024-07-30 15:05:55
+ * @note    last modified: 2024-08-14 14:56:04
  * @details
  */
 

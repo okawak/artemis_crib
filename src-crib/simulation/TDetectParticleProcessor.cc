@@ -1,9 +1,9 @@
 /**
  * @file    TDetectParticleProcessor.cc
  * @brief
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-18 14:36:43
- * @note    last modified: 2024-07-23 13:32:32
+ * @note    last modified: 2024-08-14 14:55:16
  * @details
  */
 
@@ -139,10 +139,7 @@ void TDetectParticleProcessor::Init(TEventCollection *col) {
     }
     StringVec_t unique_names = GetUniqueElements(material_names);
     for (const auto &str : unique_names) {
-        TSrim *srim_tmp = new TSrim("srim", 16,
-                                    Form("%s/%s/range_fit_pol16_%s.txt", tsrim_path, str.Data(), str.Data()));
-        Info("Init", "\t\"%s\" list loaded.", str.Data());
-        srim->TSrim::insert(srim->end(), srim_tmp->begin(), srim_tmp->end());
+        srim->AddElement("srim", 16, Form("%s/%s/range_fit_pol16_%s.txt", tsrim_path, str.Data(), str.Data()));
     }
 
     gRandom->SetSeed(time(nullptr));
@@ -196,7 +193,7 @@ void TDetectParticleProcessor::Process() {
 
         if (fTargetIsGas) {
             energy = srim->EnergyNew(Data->GetAtomicNumber(), Data->GetMassNumber(), energy,
-                                     fTargetName, distance, fTargetPressure, 300.0);
+                                     std::string(fTargetName.Data()), distance, fTargetPressure, 300.0);
             if (energy < 0.01) {
                 continue; // stop in the target
             }
@@ -231,7 +228,7 @@ void TDetectParticleProcessor::Process() {
         for (auto iMat = 0; iMat < Prm->GetN(); iMat++) {
             if (energy > 0.01) {
                 Double_t new_energy = srim->EnergyNew(Data->GetAtomicNumber(), Data->GetMassNumber(), energy,
-                                                      Prm->GetMaterial(iMat), Prm->GetThickness(iMat));
+                                                      std::string((Prm->GetMaterial(iMat)).Data()), Prm->GetThickness(iMat));
                 energy_total += energy - new_energy;
                 outData->PushEnergyArray(energy - new_energy);
                 energy = new_energy;

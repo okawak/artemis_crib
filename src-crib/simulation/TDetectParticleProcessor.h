@@ -1,9 +1,9 @@
 /**
  * @file    TDetectParticleProcessor.h
  * @brief
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:34:15
- * @note    last modified: 2024-07-30 15:05:42
+ * @note    last modified: 2024-08-14 14:51:28
  * @details
  */
 

@@ -1,9 +1,9 @@
 /**
  * @file    TNBodyReactionProcessor.cc
  * @brief
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:36:36
- * @note    last modified: 2024-07-29 15:08:27
+ * @note    last modified: 2024-08-14 14:58:05
  * @details for (angle) constant cross section
  */
 
@@ -152,17 +152,17 @@ void TNBodyReactionProcessor::Process() {
     // calculate reaction position
     // target should be set at z=0 (entrance of gas target)
     Double_t range = srim->Range(fBeamNucleus[0], fBeamNucleus[1], beam_energy,
-                                 fTargetName, fTargetPressure, 300.0);
+                                 std::string(fTargetName.Data()), fTargetPressure, 300.0);
 
     // determine using random number
     Double_t reac_distance = GetRandomReactionDistance(range);
     Double_t beam_energy_new = 0.0;
     if (fTargetIsGas) {
         beam_energy_new = srim->EnergyNew(fBeamNucleus[0], fBeamNucleus[1], beam_energy,
-                                          fTargetName, reac_distance, fTargetPressure, 300.0);
+                                          std::string(fTargetName.Data()), reac_distance, fTargetPressure, 300.0);
     } else {
         beam_energy_new = srim->EnergyNew(fBeamNucleus[0], fBeamNucleus[1], beam_energy,
-                                          fTargetName, reac_distance);
+                                          std::string(fTargetName.Data()), reac_distance);
     }
 
     Double_t reac_posz = 0.0;
@@ -237,7 +237,7 @@ void TNBodyReactionProcessor::Process() {
                 }
                 TLorentzVector out_vec =
                     GetLossEnergyVector(reac_vec,
-                                        first_energy - srim->EnergyNew(fReacAtmNum[iPart], fReacMassNum[iPart], first_energy, fTargetName, out_thickness));
+                                        first_energy - srim->EnergyNew(fReacAtmNum[iPart], fReacMassNum[iPart], first_energy, std::string(fTargetName.Data()), out_thickness));
 
                 outData->SetLorentzVector(out_vec);
                 outData->SetEnergy(out_vec.E() - reac_masses[iPart]);
@@ -275,7 +275,7 @@ void TNBodyReactionProcessor::InitGeneratingFunc() {
 
     // simplize range
     auto get_range = [&](Double_t e) {
-        return srim->Range(fBeamNucleus[0], fBeamNucleus[1], e, fTargetName, fTargetPressure, 300.0);
+        return srim->Range(fBeamNucleus[0], fBeamNucleus[1], e, std::string(fTargetName.Data()), fTargetPressure, 300.0);
     };
 
     // get dE/dx (x : range)

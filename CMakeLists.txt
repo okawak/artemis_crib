@@ -3,8 +3,11 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR})
   message(FATAL_ERROR "DO NOT BUILD in-tree.")
 endif()
 
-cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
-project(artemis-crib)
+cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
+project(
+  artemis-crib
+  VERSION 2024.8.0
+  LANGUAGES CXX)
 
 # Default installation dir
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
@@ -13,16 +16,9 @@ if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
       CACHE PATH "..." FORCE)
 endif()
 
-enable_language(CXX)
-set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-set(CMAKE_CXX_FLAGS "-Wall -Wextra")
-
-# generate compile_commands.json
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
-# -fPIC
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 # path definitions
@@ -44,25 +40,10 @@ else()
   message(STATUS "Not Found TSrim library")
 endif()
 
-# ROOT 6 installation
+# ROOT settings
 list(APPEND CMAKE_PREFIX_PATH $ENV{ROOTSYS})
-
-# Locate the ROOT package and defines a number of variables
-find_package(
-  ROOT REQUIRED
-  COMPONENTS RIO
-             Net
-             Physics
-             Minuit
-             Minuit2
-             Geom
-             Gui
-             Genetic
-             RHTTP)
-
-# Define useful ROOT functions and macros
+find_package(ROOT REQUIRED)
 include(${ROOT_USE_FILE})
-link_directories(${ROOT_SYS}/lib)
 
 add_subdirectory(src-crib)
 

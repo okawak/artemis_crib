@@ -1,7 +1,5 @@
-source @SRIMLIB_DIR@/../thisSRIMlib.sh
-
-if [ -e $ARTEMIS_WORKDIR/.venv/bin/activate ]; then
-  source $ARTEMIS_WORKDIR/.venv/bin/activate
+if [ -e "$ARTEMIS_WORKDIR"/.venv/bin/activate ]; then
+  source "$ARTEMIS_WORKDIR"/.venv/bin/activate
 fi
 
 export PATH=@CMAKE_INSTALL_PREFIX@/bin:$PATH
