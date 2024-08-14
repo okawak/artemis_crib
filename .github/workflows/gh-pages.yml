@@ -18,7 +18,7 @@ jobs:
       - name: get src-crib from Main branch
         run: |
           git fetch origin main
-          git checkout origin/main -- src-crib/
+          git checkout origin/main -- src-crib/ macro/
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
