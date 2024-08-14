@@ -2,7 +2,7 @@
 
 Using the command\+: {\ttfamily hugo new \mbox{[}relative new content path\mbox{]}}, you can start a content file with the date and title automatically set. While this is a welcome feature, active writers need more\+: \href{https://gohugo.io/content/archetypes/}{\texttt{ archetypes}}. These are preconfigured skeleton pages with default frontmatter.
 
-The Relearn theme defines some few archetypes of pages but you are free to define new ones to your liking. All can be used at any level of the documentation, the only difference being the layout of the content.\hypertarget{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md879}{}\doxysubsection{Predefined Archetypes}\label{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md879}
+The Relearn theme defines some few archetypes of pages but you are free to define new ones to your liking. All can be used at any level of the documentation, the only difference being the layout of the content.\hypertarget{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md889}{}\doxysubsection{Predefined Archetypes}\label{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md889}
 \hypertarget{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_archetypes-home}{}\doxysubsubsection{Home}\label{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_archetypes-home}
 A {\bfseries{Home}} page is the starting page of your project. It\textquotesingle{}s best to have only one page of this kind in your project.
 
@@ -92,8 +92,8 @@ This leads to a file with the following content
 \DoxyCodeLine{Lorem Ipsum.}
 
 \end{DoxyCode}
-\hypertarget{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md880}{}\doxysubsection{Self defined Archetypes}\label{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md880}
-If you are in need of further archetypes you can define your own or even redefine existing ones.\hypertarget{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md881}{}\doxysubsubsection{Template}\label{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md881}
+\hypertarget{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md890}{}\doxysubsection{Self defined Archetypes}\label{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md890}
+If you are in need of further archetypes you can define your own or even redefine existing ones.\hypertarget{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md891}{}\doxysubsubsection{Template}\label{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md891}
 Define a template file in your project at {\ttfamily archetypes/$<$kind$>$.md} and make sure it has at least the frontmatter parameter for that archetype like
 
 
@@ -112,7 +112,7 @@ Afterwards you can generate new content files of that kind with the following co
 \DoxyCodeLine{hugo new -\/-\/kind <kind> <name>/\_index.md}
 
 \end{DoxyCode}
-\hypertarget{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md882}{}\doxysubsubsection{Partials}\label{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md882}
+\hypertarget{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md892}{}\doxysubsubsection{Partials}\label{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md892}
 To define how your archetypes are rendered, define corresponding partial files in your projects directory {\ttfamily layouts/partials/archetypes/$<$kind$>$}.
 
 If you use an unknown archetype in your frontmatter, the {\ttfamily default} archetype will be used to generate the page.
@@ -136,5 +136,5 @@ article   &Defines the HTML how to render your content   \\\cline{1-2}
 \end{longtabu}
 
 
-Take a look at the existing archetypes of this theme to get an idea how to utilize it.\hypertarget{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md883}{}\doxyparagraph{Output formats}\label{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md883}
+Take a look at the existing archetypes of this theme to get an idea how to utilize it.\hypertarget{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md893}{}\doxyparagraph{Output formats}\label{md_themes_relearn_exampleSite_content_cont_archetypes__index_en_autotoc_md893}
 Each hook file can be overridden of a specific \href{https://gohugo.io/templates/output-formats/}{\texttt{ output format}}. Eg. if you define a new output format {\ttfamily PLAINTEXT} in your {\ttfamily hugo.\+toml}, you can add a file {\ttfamily layouts/partials/archetypes/default.\+plaintext.\+html} to change the way how normal content is written for that output format. 

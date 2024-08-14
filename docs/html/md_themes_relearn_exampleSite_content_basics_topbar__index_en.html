@@ -70,7 +70,7 @@ $(function() {
 <p><img src="topbar-closed.png" alt="Topbar on mobile devices" class="inline"/></p>
 <p>Nevertheless, your requirements may differ from this configuration. Luckily the theme got you covered as the themebar, its buttons and the functionality behind these buttons is fully configurable by you.</p>
 <p>{{% notice tip %}} All mentioned file names below can be clicked and show you the implementation for a better understanding. {{% /notice %}}</p>
-<h2><a class="anchor" id="autotoc_md862"></a>
+<h2><a class="anchor" id="autotoc_md872"></a>
 Areas</h2>
 <p>The default configuration comes with three predefined areas that may contain an arbitrary set of buttons.</p>
 <p><img src="topbar-areas.png" alt="Topbar with default areas marked" class="inline"/></p>
@@ -80,7 +80,7 @@ Areas</h2>
 <li><a href="https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/area/more.html"><b>more</b></a>: shown when pressing the {{% button style="transparent" icon="ellipsis-v" %}}{{% /button %}} <em>more</em> button in the topbar</li>
 </ul>
 <p>While you can not add additional areas in the topbar, you are free to configure additional buttons that behave like the <em>more</em> button, providing further user defined areas.</p>
-<h2><a class="anchor" id="autotoc_md863"></a>
+<h2><a class="anchor" id="autotoc_md873"></a>
 Buttons</h2>
 <p>The theme ships with the following predefined buttons (from left to right in the screenshot)</p>
 <ul>
@@ -93,7 +93,7 @@ Buttons</h2>
 <li>{{% button style="transparent" icon="ellipsis-v" %}}{{% /button %}} <a href="https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/button/more.html"><b>more</b></a>: opens the overlay for the <em>more</em> area</li>
 </ul>
 <p>Not all buttons are displayed at every given time. This is configurable (see below if interested).</p>
-<h2><a class="anchor" id="autotoc_md864"></a>
+<h2><a class="anchor" id="autotoc_md874"></a>
 Redefining Areas</h2>
 <p>Each predefined area and button comes in their own file. By that it is easy for you to overwrite an area file in your installation reusing only the buttons you like.</p>
 <p>Eg. you can redefine the predefined <em>end</em> area by adding the file <a href="https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/area/end.html"><code>layouts/partials/topbar/area/end.html</code></a> in your installation (not in the theme itself) to remove all but the <em>more</em> button.</p>
@@ -102,18 +102,18 @@ Redefining Areas</h2>
 <div class="line">  &quot;page&quot; .</div>
 <div class="line">  &quot;onempty&quot; &quot;disable&quot;</div>
 <div class="line">)}}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md865"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md875"></a>
 Defining own Buttons</h2>
-<h3><a class="anchor" id="autotoc_md866"></a>
+<h3><a class="anchor" id="autotoc_md876"></a>
 Button Types</h3>
 <p>The theme distinguishes between two types of buttons:</p>
 <ul>
 <li><a href="#button"><b>button</b></a>: a clickable button that either browses to another site, triggers a user defined script or opens an overlay containing user defined content</li>
 <li><a href="#area-button"><b>area-button</b></a>: the template for the {{% button style="transparent" icon="ellipsis-v" %}}{{% /button %}} <em>more</em> button, to define your own area overlay buttons</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md867"></a>
+<h3><a class="anchor" id="autotoc_md877"></a>
 Button Parameter</h3>
-<h4><a class="anchor" id="autotoc_md868"></a>
+<h4><a class="anchor" id="autotoc_md878"></a>
 Screen Widths and Actions</h4>
 <p>Depending on the screen width you can configure how the button should behave. Screen width is divided into three classes:</p>
 <ul>
@@ -127,7 +127,7 @@ Screen Widths and Actions</h4>
 <li><code>hide</code>: the button is removed</li>
 <li><code>area-XXX</code>: the button is moved from its given area into the area <code>XXX</code>; eg. this is used to move buttons to the <em>more</em> area overlay in the mobile layout</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md869"></a>
+<h4><a class="anchor" id="autotoc_md879"></a>
 Hiding and Disabling Stuff</h4>
 <p>While hiding a button depending on the screen size can be configured with the above described <em>hide</em> action, you may want to hide the button on certain other conditions as well.</p>
 <p>For example, the <em>print</em> button in its default configuration should only be displayed if print support was configured. This is done in your button template by checking the conditions first before displaying the button (see <a href="https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/button/print.html"><code>layouts/partials/topbar/button/print.html</code></a>).</p>
@@ -138,14 +138,14 @@ Hiding and Disabling Stuff</h4>
 <li><code>hide</code>: the button is removed if the overlay is empty</li>
 </ul>
 <p>If you want to disable a button containing <em>no overlay</em>, this can be achieved by an empty <code>href</code> parameter. An example can be seen in the <em>prev</em> button (see <code>layouts/partials/topbar/button/prev.html</code>) where the URL for the previous site may be empty.</p>
-<h2><a class="anchor" id="autotoc_md870"></a>
+<h2><a class="anchor" id="autotoc_md880"></a>
 Reference</h2>
-<h3><a class="anchor" id="autotoc_md871"></a>
+<h3><a class="anchor" id="autotoc_md881"></a>
 Button</h3>
 <p>Contains the basic button functionality and is used as a base implementation for all other buttons (<a href="https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/func/button.html"><code>layouts/partials/topbar/func/button.html</code></a>).</p>
 <p>Call this from your own button templates if you want to implement a button without an overlay like the <em>print</em> button (<a href="https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/button/print.html"><code>layouts/partials/topbar/button/print.html</code></a>) or with an overlay containing arbitrary content like the <em>toc</em> button (<a href="https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/button/toc.html"><code>layouts/partials/topbar/button/toc.html</code></a>).</p>
 <p>For displaying an area in the button's overlay, see <a href="#area-button">Area-Button</a>.</p>
-<h4><a class="anchor" id="autotoc_md872"></a>
+<h4><a class="anchor" id="autotoc_md882"></a>
 Parameter</h4>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -184,11 +184,11 @@ Parameter</h4>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><b>content</b>   </td><td class="markdownTableBodyNone"><em>&lt;empty&gt;</em>   </td><td class="markdownTableBodyNone">Arbitrary HTML to put into the content overlay. This parameter may be empty. In this case no overlay will be generated.   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md873"></a>
+<h3><a class="anchor" id="autotoc_md883"></a>
 Area-Button</h3>
 <p>Contains the basic functionality to display area overlay buttons (<a href="https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/func/area-button.html"><code>layouts/partials/topbar/func/area-button.html</code></a>).</p>
 <p>Call this from your own button templates if you want to implement a button with an area overlay like the <em>more</em> button (<a href="https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/button/more.html"><code>layouts/partials/topbar/button/more.html</code></a>).</p>
-<h4><a class="anchor" id="autotoc_md874"></a>
+<h4><a class="anchor" id="autotoc_md884"></a>
 Parameter</h4>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -219,12 +219,12 @@ Parameter</h4>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><b>title</b>   </td><td class="markdownTableBodyNone"><em>&lt;empty&gt;</em>   </td><td class="markdownTableBodyNone">Arbitrary text for the button.   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md875"></a>
+<h3><a class="anchor" id="autotoc_md885"></a>
 Predefined Buttons</h3>
 <p>The predefined buttons by the theme (all other buttons besides the <em>more</em> and <em>toc</em> button in <a href="https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/button"><code>layouts/partials/topbar/button</code></a>).</p>
 <p>Call these from your own redefined area templates if you want to use default button behavior.</p>
 <p>The <code>&lt;varying&gt;</code> parameter values are different for each button and configured for standard behavior as seen on this page.</p>
-<h4><a class="anchor" id="autotoc_md876"></a>
+<h4><a class="anchor" id="autotoc_md886"></a>
 Parameter</h4>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -242,12 +242,12 @@ Parameter</h4>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><b>onwidthl</b>   </td><td class="markdownTableBodyNone"><em>&lt;varying&gt;</em>   </td><td class="markdownTableBodyNone">See above.   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md877"></a>
+<h3><a class="anchor" id="autotoc_md887"></a>
 Predefined Overlay-Buttons</h3>
 <p>The predefined buttons by the theme that open an overlay (the <em>more</em> and <em>toc</em> button in <a href="https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/button"><code>layouts/partials/topbar/button</code></a>).</p>
 <p>Call these from your own redefined area templates if you want to use default button behavior utilizing overlay functionality.</p>
 <p>The <code>&lt;varying&gt;</code> parameter values are different for each button and configured for standard behavior as seen on this page.</p>
-<h4><a class="anchor" id="autotoc_md878"></a>
+<h4><a class="anchor" id="autotoc_md888"></a>
 Parameter</h4>
 <table class="markdownTable">
 <tr class="markdownTableHead">

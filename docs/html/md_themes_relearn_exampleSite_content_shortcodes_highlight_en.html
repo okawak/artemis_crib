@@ -68,7 +68,7 @@ $(function() {
 <div class="textblock"><p>+++ description = "Render code with a syntax highlighter" title = "Highlight" +++</p>
 <p>The <code>highlight</code> shortcode renders your code with a syntax highlighter.</p>
 <p>{{&lt; highlight lineNos="true" type="py" wrap="true" title="python" &gt;}} print("Hello World!") {{&lt; /highlight &gt;}}</p>
-<h2><a class="anchor" id="autotoc_md1047"></a>
+<h2><a class="anchor" id="autotoc_md1058"></a>
 Usage</h2>
 <p>This shortcode is fully compatible with Hugo's <a href="https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode"><code>highlight</code> shortcode</a> but <b>offers some extensions</b>.</p>
 <p>It is called interchangeably in the same way as Hugo's own shortcode providing positional parameter or by simply using codefences.</p>
@@ -103,7 +103,7 @@ Usage</h2>
 <div class="line">  &quot;type&quot;    &quot;py&quot;</div>
 <div class="line">)}}</div>
 </div><!-- fragment --><p>{{% /tab %}} {{&lt; /tabs &gt;}}</p>
-<h3><a class="anchor" id="autotoc_md1048"></a>
+<h3><a class="anchor" id="autotoc_md1059"></a>
 Parameter</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -123,25 +123,25 @@ The default value can be set in your <code>hugo.toml</code> and overwritten via 
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><em><b>&lt;content&gt;</b></em>   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"><em>&lt;empty&gt;</em>   </td><td class="markdownTableBodyNone">Your code to highlight.   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1049"></a>
+<h2><a class="anchor" id="autotoc_md1060"></a>
 Configuration</h2>
 <p>Default values for <a href="https://gohugo.io/functions/highlight/#options">Hugo's supported options</a> can be set via <a href="https://gohugo.io/getting-started/configuration-markup/#highlight">goldmark settings</a> in your <code>hugo.toml</code></p>
 <p>Default values for extension options can be set via params settings in your <code>hugo.toml</code> or be overwritten by frontmatter for each individual page.</p>
-<h3><a class="anchor" id="autotoc_md1050"></a>
+<h3><a class="anchor" id="autotoc_md1061"></a>
 Global Configuration File</h3>
 <p>You can configure the color style used for code blocks in your <a href="basics/branding#syntax-highlighting">color variants stylesheet</a> file.</p>
-<h4><a class="anchor" id="autotoc_md1051"></a>
+<h4><a class="anchor" id="autotoc_md1062"></a>
 Recommended Settings</h4>
 <p>{{&lt; multiconfig file=hugo &gt;}} [markup] [markup.highlight] lineNumbersInTable = false noClasses = false {{&lt; /multiconfig &gt;}}</p>
-<h4><a class="anchor" id="autotoc_md1052"></a>
+<h4><a class="anchor" id="autotoc_md1063"></a>
 Optional Settings</h4>
 <p>{{&lt; multiconfig file=hugo &gt;}} [params] highlightWrap = true {{&lt; /multiconfig &gt;}}</p>
-<h3><a class="anchor" id="autotoc_md1053"></a>
+<h3><a class="anchor" id="autotoc_md1064"></a>
 Page's Frontmatter</h3>
 <p>{{&lt; multiconfig fm=true &gt;}} highlightWrap = true {{&lt; /multiconfig &gt;}}</p>
-<h2><a class="anchor" id="autotoc_md1054"></a>
+<h2><a class="anchor" id="autotoc_md1065"></a>
 Examples</h2>
-<h3><a class="anchor" id="autotoc_md1055"></a>
+<h3><a class="anchor" id="autotoc_md1066"></a>
 Line Numbers with Starting Offset</h3>
 <p>As mentioned above, line numbers in a <code>table</code> layout will shift if code is wrapping, so better use <code>inline</code>. To make things easier for you, set <code>lineNumbersInTable = false</code> in your <code>hugo.toml</code> and add <code>lineNos = true</code> when calling the shortcode instead of the specific values <code>table</code> or <code>inline</code>.</p>
 <div class="fragment"><div class="line">{{&lt;/* highlight lineNos=&quot;true&quot; lineNoStart=&quot;666&quot; type=&quot;py&quot; */&gt;}}</div>
@@ -152,10 +152,10 @@ Line Numbers with Starting Offset</h3>
 <div class="line">print(&quot;!&quot;)</div>
 <div class="line">{{&lt;/* /highlight */&gt;}}</div>
 </div><!-- fragment --><p>{{&lt; highlight lineNos="true" lineNoStart="666" type="py" &gt;}} </p>
-<h1><a class="anchor" id="autotoc_md1056"></a>
+<h1><a class="anchor" id="autotoc_md1067"></a>
 the hardest part is to start writing code; here's a kickstart; just copy and paste this; it's free; the next lines will cost you serious credits</h1>
 <p>print("Hello") print(" ") print("World") print("!") {{&lt; /highlight &gt;}}</p>
-<h3><a class="anchor" id="autotoc_md1057"></a>
+<h3><a class="anchor" id="autotoc_md1068"></a>
 Codefence with Title</h3>
 <div class="fragment"><div class="line">```py { title=&quot;python&quot; }</div>
 <div class="line"># a bit shorter</div>
@@ -163,7 +163,7 @@ Codefence with Title</h3>
 <div class="line">```</div>
 </div><!-- fragment --><div class="fragment"><div class="line"><span class="comment"># a bit shorter</span></div>
 <div class="line">print(<span class="stringliteral">&quot;Hello World!&quot;</span>)</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1058"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1069"></a>
 With Wrap</h3>
 <div class="fragment"><div class="line">{{&lt;/* highlight type=&quot;py&quot; wrap=&quot;true&quot; hl_lines=&quot;2&quot; */&gt;}}</div>
 <div class="line"># Quicksort Python One-liner</div>
@@ -171,13 +171,13 @@ With Wrap</h3>
 <div class="line"># Some more stuff</div>
 <div class="line">{{&lt;/* /highlight */&gt;}}</div>
 </div><!-- fragment --><p>{{&lt; highlight type="py" wrap="true" hl_lines="2" &gt;}} </p>
-<h1><a class="anchor" id="autotoc_md1059"></a>
+<h1><a class="anchor" id="autotoc_md1070"></a>
 Quicksort Python One-liner</h1>
 <p>lambda L: [] if L==[] else qsort([x for x in L[1:] if x&lt; L[0]]) + L[0:1] + qsort([x for x in L[1:] if x&gt;=L[0]]) </p>
-<h1><a class="anchor" id="autotoc_md1060"></a>
+<h1><a class="anchor" id="autotoc_md1071"></a>
 Some more stuff</h1>
 <p>{{&lt; /highlight &gt;}}</p>
-<h3><a class="anchor" id="autotoc_md1061"></a>
+<h3><a class="anchor" id="autotoc_md1072"></a>
 Without Wrap</h3>
 <div class="fragment"><div class="line">{{&lt;/* highlight type=&quot;py&quot; wrap=&quot;false&quot; hl_lines=&quot;2&quot; */&gt;}}</div>
 <div class="line"># Quicksort Python One-liner</div>
@@ -185,10 +185,10 @@ Without Wrap</h3>
 <div class="line"># Some more stuff</div>
 <div class="line">{{&lt;/* /highlight */&gt;}}</div>
 </div><!-- fragment --><p>{{&lt; highlight type="py" wrap="false" hl_lines="2"&gt;}} </p>
-<h1><a class="anchor" id="autotoc_md1062"></a>
+<h1><a class="anchor" id="autotoc_md1073"></a>
 Quicksort Python One-liner</h1>
 <p>lambda L: [] if L==[] else qsort([x for x in L[1:] if x&lt; L[0]]) + L[0:1] + qsort([x for x in L[1:] if x&gt;=L[0]]) </p>
-<h1><a class="anchor" id="autotoc_md1063"></a>
+<h1><a class="anchor" id="autotoc_md1074"></a>
 Some more stuff</h1>
 <p>{{&lt; /highlight &gt;}} </p>
 </div></div><!-- contents -->

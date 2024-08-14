@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.132.1">
-    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="generator" content="Relearn 6.1.1">
     <meta name="description" content="last modified: 2023-11-15 by Kodai Okawa When we start the analysis, there are many situations where the analysis server on which artemis is installed is not only operated directly, but also remotely using “ssh”.">
     <meta name="author" content="Kodai Okawa">
     <meta name="twitter:card" content="summary">
@@ -14,7 +14,7 @@
     <meta property="og:site_name" content="CRIB artemis">
     <meta property="og:title" content="VNC server :: CRIB artemis">
     <meta property="og:description" content="last modified: 2023-11-15 by Kodai Okawa When we start the analysis, there are many situations where the analysis server on which artemis is installed is not only operated directly, but also remotely using “ssh”.">
-    <meta property="og:locale" content="en-us">
+    <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Setting">
     <meta property="article:published_time" content="2023-11-02T17:23:05+09:00">
@@ -28,24 +28,24 @@
     <link href="https://okawak.github.io/artemis_crib/setting/vncserver/index.html" rel="canonical" type="text/html" title="VNC server :: CRIB artemis">
     <link href="/artemis_crib/setting/vncserver/index.xml" rel="alternate" type="application/rss+xml" title="VNC server :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1723614287" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1723614287" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1723614287" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1723614287" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1723614287" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1723614287" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1723614287" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1723614287" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1723614287" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-CRIB-theme.css?1723614287" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/chroma-relearn-dark.css?1723614287" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/artemis_crib/css/variant.css?1723614287" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1723614287" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/format-print.css?1723614287" rel="stylesheet">
-    <script src="/artemis_crib/js/variant.js?1723614287"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1723615371" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1723615371" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1723615371" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1723615371" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1723615371" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1723615371" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1723615371" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1723615371" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1723615371" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-CRIB-theme.css?1723615371" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/chroma-relearn-dark.css?1723615371" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/artemis_crib/css/variant.css?1723615371" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1723615371" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/format-print.css?1723615371" rel="stylesheet">
+    <script src="/artemis_crib/js/variant.js?1723615371"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='https:\/\/okawak.github.io\/artemis_crib';
-      window.index_js_url="/artemis_crib/index.search.js";
+      window.index_js_url="/artemis_crib/index.search.js?1723615371";
       // variant stuff
       window.variants && variants.init( [ 'CRIB-theme', 'zen-dark', 'learn', 'relearn-dark' ] );
       // translations
@@ -122,13 +122,13 @@ We recommended to use <code>VNC server</code> currently, but note that policies 
 <p>This is the simplest method.
 Simply transfer the remote X to the local.</p>
 
-<div class="tab-panel" data-tab-group="d4220912d522823f727bf5af5d8af2f0">
+<div class="tab-panel" data-tab-group="382c5b8f5b04c2e1444b19ad556acb61">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="your-local-pc"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('d4220912d522823f727bf5af5d8af2f0','your-local-pc')"
+      onclick="switchTab('382c5b8f5b04c2e1444b19ad556acb61','your-local-pc')"
     >
       <span class="tab-nav-text">your local PC</span>
     </button>
@@ -159,13 +159,13 @@ It is also not recommended as the process can become slow if a large number of p
 Any viewer may work well, but we are using <a href="https://www.realvnc.com/en/connect/download/viewer/" rel="external" target="_blank">this software</a>.</p>
 <p>First, please check the ID number of the VNC server we are running.</p>
 
-<div class="tab-panel" data-tab-group="e1936b459220c83fd2d1765d1fb14104">
+<div class="tab-panel" data-tab-group="cc20867bef9dee62f59395177bb863f6">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-analysis-pc"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('e1936b459220c83fd2d1765d1fb14104','in-analysis-pc')"
+      onclick="switchTab('cc20867bef9dee62f59395177bb863f6','in-analysis-pc')"
     >
       <span class="tab-nav-text">in analysis PC</span>
     </button>
@@ -190,13 +190,13 @@ Any viewer may work well, but we are using <a href="https://www.realvnc.com/en/c
 </div><p>In this example, number 1, 5, 2022 and 2 VNC server is running.
 And select an available number to start the VNC server you want to use.</p>
 
-<div class="tab-panel" data-tab-group="8175a9b35bdd77f016bba9147d2db2bd">
+<div class="tab-panel" data-tab-group="1dbeb6b35d40f4709a92df6bea0c4743">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-analysis-pc"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('8175a9b35bdd77f016bba9147d2db2bd','in-analysis-pc')"
+      onclick="switchTab('1dbeb6b35d40f4709a92df6bea0c4743','in-analysis-pc')"
     >
       <span class="tab-nav-text">in analysis PC</span>
     </button>
@@ -212,13 +212,13 @@ And select an available number to start the VNC server you want to use.</p>
   </div>
 </div><p>If you want to kill the VNC server, the below command will work.</p>
 
-<div class="tab-panel" data-tab-group="c5e0856f075390eb5144950b61abd0ec">
+<div class="tab-panel" data-tab-group="09be7767aaa79c964e001b710c7c8367">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-analysis-pc"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('c5e0856f075390eb5144950b61abd0ec','in-analysis-pc')"
+      onclick="switchTab('09be7767aaa79c964e001b710c7c8367','in-analysis-pc')"
     >
       <span class="tab-nav-text">in analysis PC</span>
     </button>
@@ -235,13 +235,13 @@ And select an available number to start the VNC server you want to use.</p>
 </div><p>Next, configure the canvas created by artemis to be sent to a VNC server.
 The <code>a</code> command can treat this process by using <code>.vncdisplay</code> file!</p>
 
-<div class="tab-panel" data-tab-group="59f9572831d8ffd71fb0b1f9eb66db36">
+<div class="tab-panel" data-tab-group="a828e6026d73ceda0f3efd5b19146fc6">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-analysis-pc"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('59f9572831d8ffd71fb0b1f9eb66db36','in-analysis-pc')"
+      onclick="switchTab('a828e6026d73ceda0f3efd5b19146fc6','in-analysis-pc')"
     >
       <span class="tab-nav-text">in analysis PC</span>
     </button>
@@ -272,13 +272,13 @@ If you want to make the login server account, please contact the CRIB member!</p
 <p>In this section, we are assuming that you have a CNS login server account.</p>
 <p>To access the analysis PC, use two-stage ssh. Prepare the following configuration file.</p>
 
-<div class="tab-panel" data-tab-group="1037bb26dc2ff420e9e1c7987a444fd9">
+<div class="tab-panel" data-tab-group="b9e487ee18326a8aece3bedb5c16222e">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-local-pc-sshconfig"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('1037bb26dc2ff420e9e1c7987a444fd9','in-local-pc-sshconfig')"
+      onclick="switchTab('b9e487ee18326a8aece3bedb5c16222e','in-local-pc-sshconfig')"
     >
       <span class="tab-nav-text">in local PC, .ssh/config</span>
     </button>
@@ -317,13 +317,13 @@ If you want to make the login server account, please contact the CRIB member!</p
   </div>
 </div><p>Then you can access to the analysis PC simply by:</p>
 
-<div class="tab-panel" data-tab-group="f38187621ba230cdccdeeb9f12c7e7c3">
+<div class="tab-panel" data-tab-group="f912fc3ffd28b53803f41803adc8389f">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-local-pc"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('f38187621ba230cdccdeeb9f12c7e7c3','in-local-pc')"
+      onclick="switchTab('f912fc3ffd28b53803f41803adc8389f','in-local-pc')"
     >
       <span class="tab-nav-text">in local PC</span>
     </button>
@@ -350,13 +350,13 @@ graph LR;
     A(analysis PC&lt;br&gt;&lt;/br&gt;port 5910) --&gt; |send|B(local PC&lt;br&gt;&lt;/br&gt;port 55910)
 </pre>
 
-<div class="tab-panel" data-tab-group="555bb9b0bc2bc694cc8c8e5f3ff6ff6d">
+<div class="tab-panel" data-tab-group="0ae63f5b81c672b7d7a5492daa834e3a">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="in-local-pc-sshconfig"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('555bb9b0bc2bc694cc8c8e5f3ff6ff6d','in-local-pc-sshconfig')"
+      onclick="switchTab('0ae63f5b81c672b7d7a5492daa834e3a','in-local-pc-sshconfig')"
     >
       <span class="tab-nav-text">in local PC, .ssh/config</span>
     </button>
@@ -410,8 +410,8 @@ Please refer to this as one method.</p>
         </div>
       </main>
     </div>
-    <script src="/artemis_crib/js/clipboard.min.js?1723614287" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1723614287" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1723615371" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1723615371" defer></script>
     <script>
       function useMathJax( config ){
         window.MathJax = Object.assign( window.MathJax || {}, {
@@ -427,20 +427,20 @@ Please refer to this as one method.</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/d3/d3-color.min.js?1723614287" defer></script>
-    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1723614287" defer></script>
-    <script src="/artemis_crib/js/d3/d3-drag.min.js?1723614287" defer></script>
-    <script src="/artemis_crib/js/d3/d3-ease.min.js?1723614287" defer></script>
-    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1723614287" defer></script>
-    <script src="/artemis_crib/js/d3/d3-selection.min.js?1723614287" defer></script>
-    <script src="/artemis_crib/js/d3/d3-timer.min.js?1723614287" defer></script>
-    <script src="/artemis_crib/js/d3/d3-transition.min.js?1723614287" defer></script>
-    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1723614287" defer></script>
-    <script src="/artemis_crib/js/js-yaml.min.js?1723614287" defer></script>
-    <script src="/artemis_crib/js/mermaid.min.js?1723614287" defer></script>
+    <script src="/artemis_crib/js/d3/d3-color.min.js?1723615371" defer></script>
+    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1723615371" defer></script>
+    <script src="/artemis_crib/js/d3/d3-drag.min.js?1723615371" defer></script>
+    <script src="/artemis_crib/js/d3/d3-ease.min.js?1723615371" defer></script>
+    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1723615371" defer></script>
+    <script src="/artemis_crib/js/d3/d3-selection.min.js?1723615371" defer></script>
+    <script src="/artemis_crib/js/d3/d3-timer.min.js?1723615371" defer></script>
+    <script src="/artemis_crib/js/d3/d3-transition.min.js?1723615371" defer></script>
+    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1723615371" defer></script>
+    <script src="/artemis_crib/js/js-yaml.min.js?1723615371" defer></script>
+    <script src="/artemis_crib/js/mermaid.min.js?1723615371" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{}");
     </script>
-    <script src="/artemis_crib/js/theme.js?1723614287" defer></script>
+    <script src="/artemis_crib/js/theme.js?1723615371" defer></script>
   </body>
 </html>

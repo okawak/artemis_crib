@@ -67,21 +67,21 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p>+++ categories = ["taxonomy", "content"] tags = "tutorial" title = "Taxonomy" weight = 8 +++</p>
 <p>The Relearn theme supports Hugo's default taxonomies <em>tag</em> and <em>category</em> out of the box.</p>
-<h2><a class="anchor" id="autotoc_md953"></a>
+<h2><a class="anchor" id="autotoc_md964"></a>
 Configuration</h2>
 <p>Just add tags and/or categories to any page. They can be given as a single string or an array of strings.</p>
 <p>{{&lt; multiconfig fm=true &gt;}} categories = ["taxonomy", "content"] tags = "tutorial" title = "Taxonomy" {{&lt; /multiconfig &gt;}}</p>
-<h2><a class="anchor" id="autotoc_md954"></a>
+<h2><a class="anchor" id="autotoc_md965"></a>
 Behavior</h2>
 <p>The tags are displayed at the top of the page in alphabetical order.</p>
 <p>The categories are displayed at the bottom of the page in alphabetical order in the default implementation of the theme but can be customized by providing your own <code>content-footer.html</code> partial.</p>
 <p>Each item is a link to a taxonomy page displaying all the articles with the given term.</p>
-<h2><a class="anchor" id="autotoc_md955"></a>
+<h2><a class="anchor" id="autotoc_md966"></a>
 List all the tags</h2>
 <p>In the <code>hugo.toml</code> file you can add a shortcut to display all the tags and categories</p>
 <p>{{&lt; multiconfig file=hugo &gt;}} [[menu.shortcuts]] name = "&lt;i class='fa-fw fas fa-tags'&gt;&lt;/i&gt; Tags" url = "/tags"</p>
 <p>[[menu.shortcuts]] name = "&lt;i class='fa-fw fas fa-layer-group'&gt;&lt;/i&gt; Categories" url = "/categories" {{&lt; /multiconfig &gt;}}</p>
-<h2><a class="anchor" id="autotoc_md956"></a>
+<h2><a class="anchor" id="autotoc_md967"></a>
 Customization</h2>
 <p>If you define <a href="https://gohugo.io/content-management/taxonomies/#configure-taxonomies">custom taxonomies</a> and want to display a list of them somewhere on your page (often in the <code>layouts/partials/content-footer.html</code>) you can call a partial that does the job for you:</p>
 <div class="fragment"><div class="line">{{ partial &quot;term-list.html&quot; (dict</div>
@@ -89,7 +89,7 @@ Customization</h2>
 <div class="line">  &quot;taxonomy&quot; &quot;categories&quot;</div>
 <div class="line">  &quot;icon&quot; &quot;layer-group&quot;</div>
 <div class="line">) }}</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md957"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md968"></a>
 Parameter</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">

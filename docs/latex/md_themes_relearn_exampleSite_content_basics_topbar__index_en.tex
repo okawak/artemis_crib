@@ -6,7 +6,7 @@ The theme comes with a reasonably configured topbar.
 
 Nevertheless, your requirements may differ from this configuration. Luckily the theme got you covered as the themebar, its buttons and the functionality behind these buttons is fully configurable by you.
 
-\{\{\% notice tip \%\}\} All mentioned file names below can be clicked and show you the implementation for a better understanding. \{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md862}{}\doxysubsection{Areas}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md862}
+\{\{\% notice tip \%\}\} All mentioned file names below can be clicked and show you the implementation for a better understanding. \{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md872}{}\doxysubsection{Areas}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md872}
 The default configuration comes with three predefined areas that may contain an arbitrary set of buttons.
 
 
@@ -18,7 +18,7 @@ The default configuration comes with three predefined areas that may contain an 
 \item \href{https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/area/more.html}{\texttt{ {\bfseries{more}}}}\+: shown when pressing the \{\{\% button style=\char`\"{}transparent\char`\"{} icon=\char`\"{}ellipsis-\/v\char`\"{} \%\}\}\{\{\% /button \%\}\} {\itshape more} button in the topbar
 \end{DoxyItemize}
 
-While you can not add additional areas in the topbar, you are free to configure additional buttons that behave like the {\itshape more} button, providing further user defined areas.\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md863}{}\doxysubsection{Buttons}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md863}
+While you can not add additional areas in the topbar, you are free to configure additional buttons that behave like the {\itshape more} button, providing further user defined areas.\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md873}{}\doxysubsection{Buttons}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md873}
 The theme ships with the following predefined buttons (from left to right in the screenshot)
 
 
@@ -32,7 +32,7 @@ The theme ships with the following predefined buttons (from left to right in the
 \item \{\{\% button style=\char`\"{}transparent\char`\"{} icon=\char`\"{}ellipsis-\/v\char`\"{} \%\}\}\{\{\% /button \%\}\} \href{https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/button/more.html}{\texttt{ {\bfseries{more}}}}\+: opens the overlay for the {\itshape more} area
 \end{DoxyItemize}
 
-Not all buttons are displayed at every given time. This is configurable (see below if interested).\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md864}{}\doxysubsection{Redefining Areas}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md864}
+Not all buttons are displayed at every given time. This is configurable (see below if interested).\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md874}{}\doxysubsection{Redefining Areas}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md874}
 Each predefined area and button comes in their own file. By that it is easy for you to overwrite an area file in your installation reusing only the buttons you like.
 
 Eg. you can redefine the predefined {\itshape end} area by adding the file \href{https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/area/end.html}{\texttt{ {\ttfamily layouts/partials/topbar/area/end.\+html}}} in your installation (not in the theme itself) to remove all but the {\itshape more} button.
@@ -47,16 +47,16 @@ The below example sets an explicit value for the {\ttfamily onempty} parameter, 
 \DoxyCodeLine{)\}\}}
 
 \end{DoxyCode}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md865}{}\doxysubsection{Defining own Buttons}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md865}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md866}{}\doxysubsubsection{Button Types}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md866}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md875}{}\doxysubsection{Defining own Buttons}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md875}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md876}{}\doxysubsubsection{Button Types}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md876}
 The theme distinguishes between two types of buttons\+:
 
 
 \begin{DoxyItemize}
 \item \href{\#button}{\texttt{ {\bfseries{button}}}}\+: a clickable button that either browses to another site, triggers a user defined script or opens an overlay containing user defined content
 \item \href{\#area-button}{\texttt{ {\bfseries{area-\/button}}}}\+: the template for the \{\{\% button style=\char`\"{}transparent\char`\"{} icon=\char`\"{}ellipsis-\/v\char`\"{} \%\}\}\{\{\% /button \%\}\} {\itshape more} button, to define your own area overlay buttons
-\end{DoxyItemize}\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md867}{}\doxysubsubsection{Button Parameter}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md867}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md868}{}\doxyparagraph{Screen Widths and Actions}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md868}
+\end{DoxyItemize}\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md877}{}\doxysubsubsection{Button Parameter}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md877}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md878}{}\doxyparagraph{Screen Widths and Actions}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md878}
 Depending on the screen width you can configure how the button should behave. Screen width is divided into three classes\+:
 
 
@@ -73,7 +73,7 @@ For each width class, you can configure one of the following actions\+:
 \item {\ttfamily show}\+: the button is displayed in its given area
 \item {\ttfamily hide}\+: the button is removed
 \item {\ttfamily area-\/\+XXX}\+: the button is moved from its given area into the area {\ttfamily XXX}; eg. this is used to move buttons to the {\itshape more} area overlay in the mobile layout
-\end{DoxyItemize}\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md869}{}\doxyparagraph{Hiding and Disabling Stuff}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md869}
+\end{DoxyItemize}\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md879}{}\doxyparagraph{Hiding and Disabling Stuff}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md879}
 While hiding a button depending on the screen size can be configured with the above described {\itshape hide} action, you may want to hide the button on certain other conditions as well.
 
 For example, the {\itshape print} button in its default configuration should only be displayed if print support was configured. This is done in your button template by checking the conditions first before displaying the button (see \href{https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/button/print.html}{\texttt{ {\ttfamily layouts/partials/topbar/button/print.\+html}}}).
@@ -88,13 +88,13 @@ This parameter can have one of the following values\+:
 \item {\ttfamily hide}\+: the button is removed if the overlay is empty
 \end{DoxyItemize}
 
-If you want to disable a button containing {\itshape no overlay}, this can be achieved by an empty {\ttfamily href} parameter. An example can be seen in the {\itshape prev} button (see {\ttfamily layouts/partials/topbar/button/prev.\+html}) where the URL for the previous site may be empty.\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md870}{}\doxysubsection{Reference}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md870}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md871}{}\doxysubsubsection{Button}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md871}
+If you want to disable a button containing {\itshape no overlay}, this can be achieved by an empty {\ttfamily href} parameter. An example can be seen in the {\itshape prev} button (see {\ttfamily layouts/partials/topbar/button/prev.\+html}) where the URL for the previous site may be empty.\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md880}{}\doxysubsection{Reference}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md880}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md881}{}\doxysubsubsection{Button}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md881}
 Contains the basic button functionality and is used as a base implementation for all other buttons (\href{https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/func/button.html}{\texttt{ {\ttfamily layouts/partials/topbar/func/button.\+html}}}).
 
 Call this from your own button templates if you want to implement a button without an overlay like the {\itshape print} button (\href{https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/button/print.html}{\texttt{ {\ttfamily layouts/partials/topbar/button/print.\+html}}}) or with an overlay containing arbitrary content like the {\itshape toc} button (\href{https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/button/toc.html}{\texttt{ {\ttfamily layouts/partials/topbar/button/toc.\+html}}}).
 
-For displaying an area in the button\textquotesingle{}s overlay, see \href{\#area-button}{\texttt{ Area-\/\+Button}}.\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md872}{}\doxyparagraph{Parameter}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md872}
+For displaying an area in the button\textquotesingle{}s overlay, see \href{\#area-button}{\texttt{ Area-\/\+Button}}.\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md882}{}\doxyparagraph{Parameter}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md882}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
 \hline
@@ -128,10 +128,10 @@ For displaying an area in the button\textquotesingle{}s overlay, see \href{\#are
 {\bfseries{title}}   &{\itshape $<$empty$>$}   &Arbitrary text for the button.    \\\cline{1-3}
 {\bfseries{content}}   &{\itshape $<$empty$>$}   &Arbitrary HTML to put into the content overlay. This parameter may be empty. In this case no overlay will be generated.   \\\cline{1-3}
 \end{longtabu}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md873}{}\doxysubsubsection{Area-\/\+Button}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md873}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md883}{}\doxysubsubsection{Area-\/\+Button}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md883}
 Contains the basic functionality to display area overlay buttons (\href{https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/func/area-button.html}{\texttt{ {\ttfamily layouts/partials/topbar/func/area-\/button.\+html}}}).
 
-Call this from your own button templates if you want to implement a button with an area overlay like the {\itshape more} button (\href{https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/button/more.html}{\texttt{ {\ttfamily layouts/partials/topbar/button/more.\+html}}}).\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md874}{}\doxyparagraph{Parameter}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md874}
+Call this from your own button templates if you want to implement a button with an area overlay like the {\itshape more} button (\href{https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/button/more.html}{\texttt{ {\ttfamily layouts/partials/topbar/button/more.\+html}}}).\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md884}{}\doxyparagraph{Parameter}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md884}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
 \hline
@@ -159,12 +159,12 @@ Call this from your own button templates if you want to implement a button with 
 {\bfseries{hint}}   &{\itshape $<$empty$>$}   &Arbitrary text displayed in the tooltip.    \\\cline{1-3}
 {\bfseries{title}}   &{\itshape $<$empty$>$}   &Arbitrary text for the button.   \\\cline{1-3}
 \end{longtabu}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md875}{}\doxysubsubsection{Predefined Buttons}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md875}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md885}{}\doxysubsubsection{Predefined Buttons}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md885}
 The predefined buttons by the theme (all other buttons besides the {\itshape more} and {\itshape toc} button in \href{https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/button}{\texttt{ {\ttfamily layouts/partials/topbar/button}}}).
 
 Call these from your own redefined area templates if you want to use default button behavior.
 
-The {\ttfamily $<$varying$>$} parameter values are different for each button and configured for standard behavior as seen on this page.\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md876}{}\doxyparagraph{Parameter}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md876}
+The {\ttfamily $<$varying$>$} parameter values are different for each button and configured for standard behavior as seen on this page.\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md886}{}\doxyparagraph{Parameter}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md886}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
 \hline
@@ -184,12 +184,12 @@ The {\ttfamily $<$varying$>$} parameter values are different for each button and
 {\bfseries{onwidthm}}   &{\itshape $<$varying$>$}   &See above.    \\\cline{1-3}
 {\bfseries{onwidthl}}   &{\itshape $<$varying$>$}   &See above.   \\\cline{1-3}
 \end{longtabu}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md877}{}\doxysubsubsection{Predefined Overlay-\/\+Buttons}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md877}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md887}{}\doxysubsubsection{Predefined Overlay-\/\+Buttons}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md887}
 The predefined buttons by the theme that open an overlay (the {\itshape more} and {\itshape toc} button in \href{https://github.com/McShelby/hugo-theme-relearn/blob/main/layouts/partials/topbar/button}{\texttt{ {\ttfamily layouts/partials/topbar/button}}}).
 
 Call these from your own redefined area templates if you want to use default button behavior utilizing overlay functionality.
 
-The {\ttfamily $<$varying$>$} parameter values are different for each button and configured for standard behavior as seen on this page.\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md878}{}\doxyparagraph{Parameter}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md878}
+The {\ttfamily $<$varying$>$} parameter values are different for each button and configured for standard behavior as seen on this page.\hypertarget{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md888}{}\doxyparagraph{Parameter}\label{md_themes_relearn_exampleSite_content_basics_topbar__index_en_autotoc_md888}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
 \hline

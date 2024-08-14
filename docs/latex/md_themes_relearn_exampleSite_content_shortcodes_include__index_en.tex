@@ -1,6 +1,6 @@
 +++ description = \char`\"{}\+Displays content from other files\char`\"{} title = \char`\"{}\+Include\char`\"{} +++
 
-The {\ttfamily include} shortcode includes other files from your project inside of the current page.\hypertarget{md_themes_relearn_exampleSite_content_shortcodes_include__index_en_autotoc_md1071}{}\doxysubsection{Usage}\label{md_themes_relearn_exampleSite_content_shortcodes_include__index_en_autotoc_md1071}
+The {\ttfamily include} shortcode includes other pages, resources or files from your project.\hypertarget{md_themes_relearn_exampleSite_content_shortcodes_include__index_en_autotoc_md1082}{}\doxysubsection{Usage}\label{md_themes_relearn_exampleSite_content_shortcodes_include__index_en_autotoc_md1082}
 While the examples are using shortcodes with named parameter you are free to use positional as well or also call this shortcode from your own partials.
 
 \{\{$<$ tabs groupid=\char`\"{}shortcode-\/parameter\char`\"{}$>$\}\} \{\{\% tab title=\char`\"{}shortcode\char`\"{} \%\}\}
@@ -35,7 +35,7 @@ While the examples are using shortcodes with named parameter you are free to use
 
 \{\{\% /tab \%\}\} \{\{$<$ /tabs $>$\}\}
 
-The included files can even contain Markdown and will be taken into account when generating the table of contents.\hypertarget{md_themes_relearn_exampleSite_content_shortcodes_include__index_en_autotoc_md1072}{}\doxysubsubsection{Parameter}\label{md_themes_relearn_exampleSite_content_shortcodes_include__index_en_autotoc_md1072}
+The included files can even contain Markdown and will be taken into account when generating the table of contents.\hypertarget{md_themes_relearn_exampleSite_content_shortcodes_include__index_en_autotoc_md1083}{}\doxysubsubsection{Parameter}\label{md_themes_relearn_exampleSite_content_shortcodes_include__index_en_autotoc_md1083}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
 \hline
@@ -46,11 +46,11 @@ The included files can even contain Markdown and will be taken into account when
 \hline
 \PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Position   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Default   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Notes    }\\\cline{1-4}
 \endhead
-{\bfseries{file}}   &1   &{\itshape $<$empty$>$}   &The path to the file to be included. Path resolution adheres to \href{https://gohugo.io/functions/readfile/}{\texttt{ Hugo\textquotesingle{}s build-\/in {\ttfamily read\+File} function}}    \\\cline{1-4}
+{\bfseries{file}}   &1   &{\itshape $<$empty$>$}   &The path to the page, resource or file to be included. Page and resource paths adhere to \href{https://gohugo.io/methods/page/path/}{\texttt{ Hugo\textquotesingle{}s logical path}}. If not found by logical path it falls back to \href{https://gohugo.io/functions/readfile/}{\texttt{ Hugo\textquotesingle{}s build-\/in {\ttfamily read\+File} function}}    \\\cline{1-4}
 {\bfseries{hidefirstheading}}   &2   &{\ttfamily false}   &When {\ttfamily true} and the included file contains headings, the first heading will be hidden. This comes in handy, eg. if you include otherwise standalone Markdown files.   \\\cline{1-4}
 \end{longtabu}
-\hypertarget{md_themes_relearn_exampleSite_content_shortcodes_include__index_en_autotoc_md1073}{}\doxysubsection{Examples}\label{md_themes_relearn_exampleSite_content_shortcodes_include__index_en_autotoc_md1073}
-\hypertarget{md_themes_relearn_exampleSite_content_shortcodes_include__index_en_autotoc_md1074}{}\doxysubsubsection{Arbitrary Content}\label{md_themes_relearn_exampleSite_content_shortcodes_include__index_en_autotoc_md1074}
+\hypertarget{md_themes_relearn_exampleSite_content_shortcodes_include__index_en_autotoc_md1084}{}\doxysubsection{Examples}\label{md_themes_relearn_exampleSite_content_shortcodes_include__index_en_autotoc_md1084}
+\hypertarget{md_themes_relearn_exampleSite_content_shortcodes_include__index_en_autotoc_md1085}{}\doxysubsubsection{Arbitrary Content}\label{md_themes_relearn_exampleSite_content_shortcodes_include__index_en_autotoc_md1085}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\{\{\%/* include "{}shortcodes/include/INCLUDE\_ME.md"{} */\%\}\}}

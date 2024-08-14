@@ -1,19 +1,19 @@
 +++ categories = \mbox{[}\char`\"{}taxonomy\char`\"{}, \char`\"{}content\char`\"{}\mbox{]} tags = \char`\"{}tutorial\char`\"{} title = \char`\"{}\+Taxonomy\char`\"{} weight = 8 +++
 
-The Relearn theme supports Hugo\textquotesingle{}s default taxonomies {\itshape tag} and {\itshape category} out of the box.\hypertarget{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md953}{}\doxysubsection{Configuration}\label{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md953}
+The Relearn theme supports Hugo\textquotesingle{}s default taxonomies {\itshape tag} and {\itshape category} out of the box.\hypertarget{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md964}{}\doxysubsection{Configuration}\label{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md964}
 Just add tags and/or categories to any page. They can be given as a single string or an array of strings.
 
-\{\{$<$ multiconfig fm=true $>$\}\} categories = \mbox{[}\char`\"{}taxonomy\char`\"{}, \char`\"{}content\char`\"{}\mbox{]} tags = \char`\"{}tutorial\char`\"{} title = \char`\"{}\+Taxonomy\char`\"{} \{\{$<$ /multiconfig $>$\}\}\hypertarget{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md954}{}\doxysubsection{Behavior}\label{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md954}
+\{\{$<$ multiconfig fm=true $>$\}\} categories = \mbox{[}\char`\"{}taxonomy\char`\"{}, \char`\"{}content\char`\"{}\mbox{]} tags = \char`\"{}tutorial\char`\"{} title = \char`\"{}\+Taxonomy\char`\"{} \{\{$<$ /multiconfig $>$\}\}\hypertarget{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md965}{}\doxysubsection{Behavior}\label{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md965}
 The tags are displayed at the top of the page in alphabetical order.
 
 The categories are displayed at the bottom of the page in alphabetical order in the default implementation of the theme but can be customized by providing your own {\ttfamily content-\/footer.\+html} partial.
 
-Each item is a link to a taxonomy page displaying all the articles with the given term.\hypertarget{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md955}{}\doxysubsection{List all the tags}\label{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md955}
+Each item is a link to a taxonomy page displaying all the articles with the given term.\hypertarget{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md966}{}\doxysubsection{List all the tags}\label{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md966}
 In the {\ttfamily hugo.\+toml} file you can add a shortcut to display all the tags and categories
 
 \{\{$<$ multiconfig file=hugo $>$\}\} \mbox{[}\mbox{[}menu.\+shortcuts\mbox{]}\mbox{]} name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/tags\textquotesingle{}$>$$<$/i$>$ Tags\char`\"{} url = \char`\"{}/tags\char`\"{}
 
-\mbox{[}\mbox{[}menu.\+shortcuts\mbox{]}\mbox{]} name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/layer-\/group\textquotesingle{}$>$$<$/i$>$ Categories\char`\"{} url = \char`\"{}/categories\char`\"{} \{\{$<$ /multiconfig $>$\}\}\hypertarget{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md956}{}\doxysubsection{Customization}\label{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md956}
+\mbox{[}\mbox{[}menu.\+shortcuts\mbox{]}\mbox{]} name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/layer-\/group\textquotesingle{}$>$$<$/i$>$ Categories\char`\"{} url = \char`\"{}/categories\char`\"{} \{\{$<$ /multiconfig $>$\}\}\hypertarget{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md967}{}\doxysubsection{Customization}\label{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md967}
 If you define \href{https://gohugo.io/content-management/taxonomies/\#configure-taxonomies}{\texttt{ custom taxonomies}} and want to display a list of them somewhere on your page (often in the {\ttfamily layouts/partials/content-\/footer.\+html}) you can call a partial that does the job for you\+:
 
 
@@ -25,7 +25,7 @@ If you define \href{https://gohugo.io/content-management/taxonomies/\#configure-
 \DoxyCodeLine{) \}\}}
 
 \end{DoxyCode}
-\hypertarget{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md957}{}\doxysubsubsection{Parameter}\label{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md957}
+\hypertarget{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md968}{}\doxysubsubsection{Parameter}\label{md_themes_relearn_exampleSite_content_cont_taxonomy_en_autotoc_md968}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
 \hline

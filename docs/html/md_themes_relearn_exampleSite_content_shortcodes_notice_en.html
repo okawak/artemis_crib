@@ -68,7 +68,7 @@ $(function() {
 <div class="textblock"><p>+++ description = "Disclaimers to help you structure your page" title = "Notice" +++</p>
 <p>The <code>notice</code> shortcode shows various types of disclaimers with adjustable color, title and icon to help you structure your page.</p>
 <p>{{% notice style="primary" title="There may be pirates" icon="skull-crossbones" %}} It is all about the boxes. {{% /notice %}}</p>
-<h2><a class="anchor" id="autotoc_md1112"></a>
+<h2><a class="anchor" id="autotoc_md1123"></a>
 Usage</h2>
 <p>While the examples are using shortcodes with named parameter you are free to use positional as well or also call this shortcode from your own partials.</p>
 <p>{{&lt; tabs groupid="shortcode-parameter"&gt;}} {{% tab title="shortcode" %}}</p>
@@ -88,7 +88,7 @@ Usage</h2>
 <div class="line">  &quot;content&quot; &quot;It is all about the boxes.&quot;</div>
 <div class="line">)}}</div>
 </div><!-- fragment --><p>{{% /tab %}} {{&lt; /tabs &gt;}}</p>
-<h3><a class="anchor" id="autotoc_md1113"></a>
+<h3><a class="anchor" id="autotoc_md1124"></a>
 Parameter</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -122,11 +122,11 @@ If you want no icon for a severity style, you have to set this parameter to <cod
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><em><b>&lt;content&gt;</b></em>   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"><em>&lt;empty&gt;</em>   </td><td class="markdownTableBodyNone">Arbitrary text to be displayed in box.   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1114"></a>
+<h2><a class="anchor" id="autotoc_md1125"></a>
 Examples</h2>
-<h3><a class="anchor" id="autotoc_md1115"></a>
+<h3><a class="anchor" id="autotoc_md1126"></a>
 By Severity</h3>
-<h4><a class="anchor" id="autotoc_md1116"></a>
+<h4><a class="anchor" id="autotoc_md1127"></a>
 Info with markup</h4>
 <div class="fragment"><div class="line">{{%/* notice style=&quot;info&quot; */%}}</div>
 <div class="line">An **information** disclaimer</div>
@@ -159,103 +159,103 @@ Info with markup</h4>
 <p>the possibilities are endless (almost - including other shortcodes may or may not work) </p>
 </blockquote>
 <p>{{% /notice %}}</p>
-<h4><a class="anchor" id="autotoc_md1117"></a>
+<h4><a class="anchor" id="autotoc_md1128"></a>
 Note</h4>
 <div class="fragment"><div class="line">{{%/* notice style=&quot;note&quot; */%}}</div>
 <div class="line">A **notice** disclaimer</div>
 <div class="line">{{%/* /notice */%}}</div>
 </div><!-- fragment --><p>{{% notice style="note" %}} A <b>notice</b> disclaimer {{% /notice %}}</p>
-<h4><a class="anchor" id="autotoc_md1118"></a>
+<h4><a class="anchor" id="autotoc_md1129"></a>
 Tip</h4>
 <div class="fragment"><div class="line">{{%/* notice style=&quot;tip&quot; */%}}</div>
 <div class="line">A **tip** disclaimer</div>
 <div class="line">{{%/* /notice */%}}</div>
 </div><!-- fragment --><p>{{% notice style="tip" %}} A <b>tip</b> disclaimer {{% /notice %}}</p>
-<h4><a class="anchor" id="autotoc_md1119"></a>
+<h4><a class="anchor" id="autotoc_md1130"></a>
 Warning</h4>
 <div class="fragment"><div class="line">{{%/* notice style=&quot;warning&quot; */%}}</div>
 <div class="line">A **warning** disclaimer</div>
 <div class="line">{{%/* /notice */%}}</div>
 </div><!-- fragment --><p>{{% notice style="warning" %}} A <b>warning</b> disclaimer {{% /notice %}}</p>
-<h4><a class="anchor" id="autotoc_md1120"></a>
+<h4><a class="anchor" id="autotoc_md1131"></a>
 Warning with Non-Default Title and Icon</h4>
 <div class="fragment"><div class="line">{{%/* notice style=&quot;warning&quot; title=&quot;Here are dragons&quot; icon=&quot;dragon&quot; */%}}</div>
 <div class="line">A **warning** disclaimer</div>
 <div class="line">{{%/* /notice */%}}</div>
 </div><!-- fragment --><p>{{% notice style="warning" title="Here are dragons" icon="dragon" %}} A <b>warning</b> disclaimer {{% /notice %}}</p>
-<h4><a class="anchor" id="autotoc_md1121"></a>
+<h4><a class="anchor" id="autotoc_md1132"></a>
 Warning without a Title and Icon</h4>
 <div class="fragment"><div class="line">{{%/* notice style=&quot;warning&quot; title=&quot; &quot; icon=&quot; &quot; */%}}</div>
 <div class="line">A **warning** disclaimer</div>
 <div class="line">{{%/* /notice */%}}</div>
 </div><!-- fragment --><p>{{% notice style="warning" title=" " icon=" " %}} A <b>warning</b> disclaimer {{% /notice %}}</p>
-<h3><a class="anchor" id="autotoc_md1122"></a>
+<h3><a class="anchor" id="autotoc_md1133"></a>
 By Brand Colors</h3>
-<h4><a class="anchor" id="autotoc_md1123"></a>
+<h4><a class="anchor" id="autotoc_md1134"></a>
 Primary with Title only</h4>
 <div class="fragment"><div class="line">{{%/* notice style=&quot;primary&quot; title=&quot;Primary&quot; */%}}</div>
 <div class="line">A **primary** disclaimer</div>
 <div class="line">{{%/* /notice */%}}</div>
 </div><!-- fragment --><p>{{% notice style="primary" title="Primary" %}} A <b>primary</b> disclaimer {{% /notice %}}</p>
-<h4><a class="anchor" id="autotoc_md1124"></a>
+<h4><a class="anchor" id="autotoc_md1135"></a>
 Secondary with Icon only</h4>
 <div class="fragment"><div class="line">{{%/* notice style=&quot;secondary&quot; icon=&quot;stopwatch&quot; */%}}</div>
 <div class="line">A **secondary** disclaimer</div>
 <div class="line">{{%/* /notice */%}}</div>
 </div><!-- fragment --><p>{{% notice style="secondary" icon="stopwatch" %}} A <b>secondary</b> disclaimer {{% /notice %}}</p>
-<h4><a class="anchor" id="autotoc_md1125"></a>
+<h4><a class="anchor" id="autotoc_md1136"></a>
 Accent</h4>
 <div class="fragment"><div class="line">{{%/* notice style=&quot;accent&quot; */%}}</div>
 <div class="line">An **accent** disclaimer</div>
 <div class="line">{{%/* /notice */%}}</div>
 </div><!-- fragment --><p>{{% notice style="accent" %}} An <b>accent</b> disclaimer {{% /notice %}}</p>
-<h3><a class="anchor" id="autotoc_md1126"></a>
+<h3><a class="anchor" id="autotoc_md1137"></a>
 By Color</h3>
-<h4><a class="anchor" id="autotoc_md1127"></a>
+<h4><a class="anchor" id="autotoc_md1138"></a>
 Blue without a Title and Icon</h4>
 <div class="fragment"><div class="line">{{%/* notice style=&quot;blue&quot; */%}}</div>
 <div class="line">A **blue** disclaimer</div>
 <div class="line">{{%/* /notice */%}}</div>
 </div><!-- fragment --><p>{{% notice style="blue" %}} A <b>blue</b> disclaimer {{% /notice %}}</p>
-<h4><a class="anchor" id="autotoc_md1128"></a>
+<h4><a class="anchor" id="autotoc_md1139"></a>
 Green with Title only</h4>
 <div class="fragment"><div class="line">{{%/* notice style=&quot;green&quot; title=&quot;Green&quot; */%}}</div>
 <div class="line">A **green** disclaimer</div>
 <div class="line">{{%/* /notice */%}}</div>
 </div><!-- fragment --><p>{{% notice style="green" title="Green" %}} A <b>green</b> disclaimer {{% /notice %}}</p>
-<h4><a class="anchor" id="autotoc_md1129"></a>
+<h4><a class="anchor" id="autotoc_md1140"></a>
 Grey with Icon only</h4>
 <div class="fragment"><div class="line">{{%/* notice style=&quot;grey&quot; icon=&quot;bug&quot; */%}}</div>
 <div class="line">A **grey** disclaimer</div>
 <div class="line">{{%/* /notice */%}}</div>
 </div><!-- fragment --><p>{{% notice style="grey" icon="bug" %}} A <b>grey</b> disclaimer {{% /notice %}}</p>
-<h4><a class="anchor" id="autotoc_md1130"></a>
+<h4><a class="anchor" id="autotoc_md1141"></a>
 Orange with Title and Icon</h4>
 <div class="fragment"><div class="line">{{%/* notice style=&quot;orange&quot; title=&quot;Orange&quot; icon=&quot;bug&quot; */%}}</div>
 <div class="line">A **orange** disclaimer</div>
 <div class="line">{{%/* /notice */%}}</div>
 </div><!-- fragment --><p>{{% notice style="orange" title="Orange" icon="bug" %}} A <b>orange</b> disclaimer {{% /notice %}}</p>
-<h4><a class="anchor" id="autotoc_md1131"></a>
+<h4><a class="anchor" id="autotoc_md1142"></a>
 Red without a Title and Icon</h4>
 <div class="fragment"><div class="line">{{%/* notice style=&quot;red&quot; */%}}</div>
 <div class="line">A **red** disclaimer</div>
 <div class="line">{{%/* /notice */%}}</div>
 </div><!-- fragment --><p>{{% notice style="red" %}} A <b>red</b> disclaimer {{% /notice %}}</p>
-<h3><a class="anchor" id="autotoc_md1132"></a>
+<h3><a class="anchor" id="autotoc_md1143"></a>
 By Special Color</h3>
-<h4><a class="anchor" id="autotoc_md1133"></a>
+<h4><a class="anchor" id="autotoc_md1144"></a>
 Default with Positional Parameter</h4>
 <div class="fragment"><div class="line">{{%/* notice default &quot;Pay Attention to this Note!&quot; &quot;skull-crossbones&quot; */%}}</div>
 <div class="line">Some serious information.</div>
 <div class="line">{{%/* /notice */%}}</div>
 </div><!-- fragment --><p>{{% notice default "Pay Attention to this Note!" "skull-crossbones" %}} Some serious information. {{% /notice %}}</p>
-<h4><a class="anchor" id="autotoc_md1134"></a>
+<h4><a class="anchor" id="autotoc_md1145"></a>
 Transparent with Title and Icon</h4>
 <div class="fragment"><div class="line">{{%/* notice style=&quot;transparent&quot; title=&quot;Pay Attention to this Note!&quot; icon=&quot;skull-crossbones&quot; */%}}</div>
 <div class="line">Some serious information.</div>
 <div class="line">{{%/* /notice */%}}</div>
 </div><!-- fragment --><p>{{% notice style="transparent" title="Pay Attention to this Note!" icon="skull-crossbones" %}} Some serious information. {{% /notice %}}</p>
-<h3><a class="anchor" id="autotoc_md1135"></a>
+<h3><a class="anchor" id="autotoc_md1146"></a>
 With User-Defined Color, Font Awesome Brand Icon and Markdown Title</h3>
 <div class="fragment"><div class="line">{{%/* notice color=&quot;fuchsia&quot; title=&quot;**Hugo**&quot; icon=&quot;fa-fw fab fa-hackerrank&quot; */%}}</div>
 <div class="line">Victor? Is it you?</div>

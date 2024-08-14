@@ -69,7 +69,7 @@ $(function() {
 <p>{{% notice warning %}} This shortcode is deprecated in favor of the new <a href="shortcodes/resources"><code>resources</code> shortcode</a>. See <a href="#migration">migration instructions</a> below.</p>
 <p>The examples on this page were removed. {{% /notice %}}</p>
 <p>The <code>attachments</code> shortcode displays a list of files attached to a page with adjustable color, title and icon.</p>
-<h2><a class="anchor" id="autotoc_md977"></a>
+<h2><a class="anchor" id="autotoc_md988"></a>
 Migration</h2>
 <p>While this shortcode will still be available for some time, it does not receive support anymore. Start to migrate early, as it will be removed with the next major update of the theme.</p>
 <p>The <a href="shortcodes/resources"><code>resources</code> shortcode</a> leverages Hugo's resource feature for page bundles. It has all the same parameter as the <code>attachments</code> shortcode but applies the <code>pattern</code> directly on a resources <code>Name</code> attribute.</p>
@@ -80,7 +80,7 @@ Migration</h2>
 <li>Change the calls from the <code>attachments</code> shortcode to the <a href="shortcodes/resources"><code>resources</code> shortcode</a> and adjust the <code>pattern</code> parameter to the new directory layout and the resources <a href="https://gohugo.io/methods/resource/name/"><code>Name</code> attribute</a>.</li>
 </ol>
 <p>Multilanguage features are not supported directly by the shortcode anymore but rely on Hugo's handling for resource translations.</p>
-<h2><a class="anchor" id="autotoc_md978"></a>
+<h2><a class="anchor" id="autotoc_md989"></a>
 Usage</h2>
 <p>While the examples are using shortcodes with named parameter you are free to also call this shortcode from your own partials.</p>
 <p>{{&lt; tabs groupid="shortcode-parameter"&gt;}} {{% tab title="shortcode" %}}</p>
@@ -91,7 +91,7 @@ Usage</h2>
 <div class="line">  &quot;sort&quot; &quot;asc&quot;</div>
 <div class="line">)}}</div>
 </div><!-- fragment --><p>{{% /tab %}} {{&lt; /tabs &gt;}}</p>
-<h3><a class="anchor" id="autotoc_md979"></a>
+<h3><a class="anchor" id="autotoc_md990"></a>
 Parameter</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -130,9 +130,9 @@ If you want no icon, you have to set this parameter to <code>" "</code> (a non e
 - to match a file suffix of 'jpg', use <code>.*\.jpg</code> (not <code>*.\.jpg</code>)<br  />
 - to match file names ending in <code>jpg</code> or <code>png</code>, use <code>.*\.(jpg\|png)</code>   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md980"></a>
+<h2><a class="anchor" id="autotoc_md991"></a>
 Setup</h2>
-<h3><a class="anchor" id="autotoc_md981"></a>
+<h3><a class="anchor" id="autotoc_md992"></a>
 Single language</h3>
 <p>The shortcode lists files found in a specific folder. The name of the folder depends on your page type (either branch bundle, leaf bundle or page).</p>
 <ol type="1">
@@ -148,7 +148,7 @@ Single language</h3>
 <p class="startli">&gt; * content &gt; * _index.md &gt; * <b>page.files</b> &gt; * attachment.pdf &gt; * page.md</p>
 </li>
 </ol>
-<h3><a class="anchor" id="autotoc_md982"></a>
+<h3><a class="anchor" id="autotoc_md993"></a>
 Multilingual</h3>
 <p>Be aware that if you use a multilingual website, you will need to have as many folders as languages and the language code must be part of the folder name.</p>
 <p>Eg. for a site in English and Piratish:</p>

@@ -68,7 +68,7 @@ $(function() {
 <div class="textblock"><p>+++ title = "Archetypes" weight = 3 +++</p>
 <p>Using the command: <code>hugo new [relative new content path]</code>, you can start a content file with the date and title automatically set. While this is a welcome feature, active writers need more: <a href="https://gohugo.io/content/archetypes/">archetypes</a>. These are preconfigured skeleton pages with default frontmatter.</p>
 <p>The Relearn theme defines some few archetypes of pages but you are free to define new ones to your liking. All can be used at any level of the documentation, the only difference being the layout of the content.</p>
-<h2><a class="anchor" id="autotoc_md879"></a>
+<h2><a class="anchor" id="autotoc_md889"></a>
 Predefined Archetypes</h2>
 <h3><a class="anchor" id="archetypes-home"></a>
 Home</h3>
@@ -112,10 +112,10 @@ Default</h3>
 <div class="line">+++</div>
 <div class="line"> </div>
 <div class="line">Lorem Ipsum.</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md880"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md890"></a>
 Self defined Archetypes</h2>
 <p>If you are in need of further archetypes you can define your own or even redefine existing ones.</p>
-<h3><a class="anchor" id="autotoc_md881"></a>
+<h3><a class="anchor" id="autotoc_md891"></a>
 Template</h3>
 <p>Define a template file in your project at <code>archetypes/&lt;kind&gt;.md</code> and make sure it has at least the frontmatter parameter for that archetype like</p>
 <div class="fragment"><div class="line">+++</div>
@@ -123,7 +123,7 @@ Template</h3>
 <div class="line">+++</div>
 </div><!-- fragment --><p>Afterwards you can generate new content files of that kind with the following command</p>
 <div class="fragment"><div class="line">hugo new --kind &lt;kind&gt; &lt;name&gt;/_index.md</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md882"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md892"></a>
 Partials</h3>
 <p>To define how your archetypes are rendered, define corresponding partial files in your projects directory <code>layouts/partials/archetypes/&lt;kind&gt;</code>.</p>
 <p>If you use an unknown archetype in your frontmatter, the <code>default</code> archetype will be used to generate the page.</p>
@@ -138,7 +138,7 @@ Partials</h3>
 <td class="markdownTableBodyNone">article   </td><td class="markdownTableBodyNone">Defines the HTML how to render your content   </td></tr>
 </table>
 <p>Take a look at the existing archetypes of this theme to get an idea how to utilize it.</p>
-<h4><a class="anchor" id="autotoc_md883"></a>
+<h4><a class="anchor" id="autotoc_md893"></a>
 Output formats</h4>
 <p>Each hook file can be overridden of a specific <a href="https://gohugo.io/templates/output-formats/">output format</a>. Eg. if you define a new output format <code>PLAINTEXT</code> in your <code>hugo.toml</code>, you can add a file <code>layouts/partials/archetypes/default.plaintext.html</code> to change the way how normal content is written for that output format. </p>
 </div></div><!-- contents -->

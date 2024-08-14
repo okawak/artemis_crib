@@ -1,10 +1,10 @@
-+++ title = \char`\"{}\+Customization\char`\"{} weight = 25 +++\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md737}{}\doxysubsection{Usage scenarios}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md737}
-The theme is usable in different scenarios, requiring the following mandatory settings in your {\ttfamily hugo.\+toml}. All settings not mentioned can be set to your liking.\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md738}{}\doxysubsubsection{Public Web Server from Root}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md738}
-\{\{$<$ multiconfig file=hugo $>$\}\} base\+URL = \char`\"{}https\+://example.\+com/\char`\"{} \{\{$<$ /multiconfig $>$\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md739}{}\doxysubsubsection{Public Web Server from Subdirectory}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md739}
-\{\{$<$ multiconfig file=hugo $>$\}\} base\+URL = \char`\"{}https\+://example.\+com/mysite/\char`\"{} relative\+URLs = false \{\{$<$ /multiconfig $>$\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md740}{}\doxysubsubsection{Private Web Server (\+LAN)}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md740}
++++ title = \char`\"{}\+Customization\char`\"{} weight = 25 +++\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md745}{}\doxysubsection{Usage scenarios}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md745}
+The theme is usable in different scenarios, requiring the following mandatory settings in your {\ttfamily hugo.\+toml}. All settings not mentioned can be set to your liking.\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md746}{}\doxysubsubsection{Public Web Server from Root}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md746}
+\{\{$<$ multiconfig file=hugo $>$\}\} base\+URL = \char`\"{}https\+://example.\+com/\char`\"{} \{\{$<$ /multiconfig $>$\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md747}{}\doxysubsubsection{Public Web Server from Subdirectory}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md747}
+\{\{$<$ multiconfig file=hugo $>$\}\} base\+URL = \char`\"{}https\+://example.\+com/mysite/\char`\"{} relative\+URLs = false \{\{$<$ /multiconfig $>$\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md748}{}\doxysubsubsection{Private Web Server (\+LAN)}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md748}
 The same settings as with any of the public web server usage scenarios or
 
-\{\{$<$ multiconfig file=hugo $>$\}\} base\+URL = \char`\"{}/\char`\"{} relative\+URLs = true \{\{$<$ /multiconfig $>$\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md741}{}\doxysubsubsection{File System}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md741}
+\{\{$<$ multiconfig file=hugo $>$\}\} base\+URL = \char`\"{}/\char`\"{} relative\+URLs = true \{\{$<$ /multiconfig $>$\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md749}{}\doxysubsubsection{File System}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md749}
 \{\{$<$ multiconfig file=hugo $>$\}\} base\+URL = \char`\"{}/\char`\"{} relative\+URLs = true \{\{$<$ /multiconfig $>$\}\}
 
 \{\{\% notice warning \%\}\} Using a {\ttfamily base\+URL} with a subdirectory and {\ttfamily relative\+URLs=true} are mutually exclusive due to the fact, that \href{https://github.com/gohugoio/hugo/issues/12130}{\texttt{ Hugo does not apply the {\ttfamily base\+URL} correctly}}.
@@ -15,12 +15,12 @@ If you need both, you have to generate your site twice but with different settin
 
 \{\{\% notice info \%\}\} If you are using {\ttfamily ugly\+URLs=false} (Hugo\textquotesingle{}s default), the theme will append an additional {\ttfamily index.\+html} to all page links to make your site be servable from the file system. If you don\textquotesingle{}t care about the file system and only serve your page via a web server you can generate the links without this\+:
 
-\{\{$<$ multiconfig file=hugo $>$\}\} \mbox{[}params\mbox{]} disable\+Explicit\+Index\+URLs = true \{\{$<$ /multiconfig $>$\}\} \{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md742}{}\doxysubsection{Activate search}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md742}
+\{\{$<$ multiconfig file=hugo $>$\}\} \mbox{[}params\mbox{]} disable\+Explicit\+Index\+URLs = true \{\{$<$ /multiconfig $>$\}\} \{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md750}{}\doxysubsection{Activate search}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md750}
 If not already present, add the following lines in your {\ttfamily hugo.\+toml} file.
 
 \{\{$<$ multiconfig file=hugo $>$\}\} \mbox{[}outputs\mbox{]} home = \mbox{[}\char`\"{}html\char`\"{}, \char`\"{}rss\char`\"{}, \char`\"{}search\char`\"{}\mbox{]} \{\{$<$ /multiconfig $>$\}\}
 
-This will generate a search index file at the root of your public folder ready to be consumed by the Lunr search library.\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md743}{}\doxysubsubsection{Activate dedicated search page}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md743}
+This will generate a search index file at the root of your public folder ready to be consumed by the Lunr search library.\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md751}{}\doxysubsubsection{Activate dedicated search page}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md751}
 You can add a dedicated search page for your page by adding the {\ttfamily searchpage} outputformat to your home page by adding the following lines in your {\ttfamily hugo.\+toml} file. This will cause Hugo to generate a new file {\ttfamily \href{http://example.com/mysite/search.html}{\texttt{ http\+://example.\+com/mysite/search.\+html}}}.
 
 \{\{$<$ multiconfig file=hugo $>$\}\} \mbox{[}outputs\mbox{]} home = \mbox{[}\char`\"{}html\char`\"{}, \char`\"{}rss\char`\"{}, \char`\"{}search\char`\"{}, \char`\"{}searchpage\char`\"{}\mbox{]} \{\{$<$ /multiconfig $>$\}\}
@@ -31,7 +31,7 @@ You can access this page by either clicking on the magnifier glass or by typing 
 
 \{\{\% notice note \%\}\} To have Hugo create the dedicated search page successfully, you must not generate the URL {\ttfamily \href{http://example.com/mysite/search.html}{\texttt{ http\+://example.\+com/mysite/search.\+html}}} from your own content. This can happen if you set {\ttfamily ugly\+URLs=true} in your {\ttfamily hugo.\+toml} and defining a Markdown file {\ttfamily content/search.\+md}.
 
-To make sure, there is no duplicate content for any given URL of your project, run {\ttfamily hugo -\/-\/print\+Path\+Warnings}. \{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md744}{}\doxysubsection{Activate print support}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md744}
+To make sure, there is no duplicate content for any given URL of your project, run {\ttfamily hugo -\/-\/print\+Path\+Warnings}. \{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md752}{}\doxysubsection{Activate print support}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md752}
 You can activate print support to add the capability to print whole chapters or even the complete site. Just add the {\ttfamily print} output format to your home, section and page in your {\ttfamily hugo.\+toml} as seen below\+:
 
 \{\{$<$ multiconfig file=hugo $>$\}\} \mbox{[}outputs\mbox{]} home = \mbox{[}\char`\"{}html\char`\"{}, \char`\"{}rss\char`\"{}, \char`\"{}print\char`\"{}, \char`\"{}search\char`\"{}\mbox{]} section = \mbox{[}\char`\"{}html\char`\"{}, \char`\"{}rss\char`\"{}, \char`\"{}print\char`\"{}\mbox{]} page = \mbox{[}\char`\"{}html\char`\"{}, \char`\"{}rss\char`\"{}, \char`\"{}print\char`\"{}\mbox{]} \{\{$<$ /multiconfig $>$\}\}
@@ -40,7 +40,7 @@ This will add a little printer icon in the top bar. It will switch the page to p
 
 \{\{\% notice note \%\}\} The resulting URL will not be \href{https://gohugo.io/templates/output-formats/\#configure-output-formats}{\texttt{ configured ugly}} in terms of \href{https://gohugo.io/content-management/urls/\#ugly-urls}{\texttt{ Hugo\textquotesingle{}s URL handling}} even if you\textquotesingle{}ve set {\ttfamily ugly\+URLs=true} in your {\ttfamily hugo.\+toml}. This is due to the fact that for one mime type only one suffix can be configured.
 
-Nevertheless, if you\textquotesingle{}re unhappy with the resulting URLs you can manually redefine {\ttfamily output\+Formats.\+print} in your own {\ttfamily hugo.\+toml} to your liking. \{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md745}{}\doxysubsection{Home Button Configuration}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md745}
+Nevertheless, if you\textquotesingle{}re unhappy with the resulting URLs you can manually redefine {\ttfamily output\+Formats.\+print} in your own {\ttfamily hugo.\+toml} to your liking. \{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md753}{}\doxysubsection{Home Button Configuration}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md753}
 If the {\ttfamily disable\+Landing\+Page\+Button} option is set to {\ttfamily false}, a Home button will appear on the left menu. It is an alternative for clicking on the logo. To edit the appearance, you will have to configure the {\ttfamily landing\+Page\+Name} for the defined languages\+:
 
 \{\{$<$ multiconfig file=hugo $>$\}\} \mbox{[}languages\mbox{]} \mbox{[}languages.\+en\mbox{]} \mbox{[}languages.\+en.\+params\mbox{]} landing\+Page\+Name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/home\textquotesingle{}$>$$<$/i$>$ Home\char`\"{} \mbox{[}languages.\+pir\mbox{]} \mbox{[}languages.\+pir.\+params\mbox{]} landing\+Page\+Name = \char`\"{}$<$i class=\textquotesingle{}fa-\/fw fas fa-\/home\textquotesingle{}$>$$<$/i$>$ Arrr! Homme\char`\"{} \{\{$<$ /multiconfig $>$\}\}
@@ -51,8 +51,8 @@ If this option is not configured for a specific language, they will get their de
 
 The home button is going to look like this\+:
 
-\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md746}{}\doxysubsection{Social Media Meta Tags}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md746}
-You can add social media meta tags for the \href{https://gohugo.io/templates/internal/\#open-graph}{\texttt{ Open Graph}} protocol and \href{https://gohugo.io/templates/internal/\#twitter-cards}{\texttt{ Twitter Cards}} to your site. These are configured as mentioned in the Hugo docs.\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md747}{}\doxysubsection{Change the Menu Width}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md747}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md754}{}\doxysubsection{Social Media Meta Tags}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md754}
+You can add social media meta tags for the \href{https://gohugo.io/templates/internal/\#open-graph}{\texttt{ Open Graph}} protocol and \href{https://gohugo.io/templates/internal/\#twitter-cards}{\texttt{ Twitter Cards}} to your site. These are configured as mentioned in the Hugo docs.\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md755}{}\doxysubsection{Change the Menu Width}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md755}
 The menu width adjusts automatically for different screen sizes.
 
 \tabulinesep=1mm
@@ -84,7 +84,7 @@ If you want to adjust the menu width you can define the following CSS variables 
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md748}{}\doxysubsection{Change the Main Area\textquotesingle{}s Max Width}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md748}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md756}{}\doxysubsection{Change the Main Area\textquotesingle{}s Max Width}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md756}
 By default the main area width will only grow to a certain extent if more vertical screen space is available. This is done for readability purposes as long line are usually harder to read.
 
 If you are unhappy with the default, you can define the following CSS variable in your {\ttfamily custom-\/header.\+html} and set the value to your liking. If you want to use all available space, select a really big value like {\ttfamily 1000rem};
@@ -96,7 +96,7 @@ If you are unhappy with the default, you can define the following CSS variable i
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md749}{}\doxysubsection{Own Shortcodes with Java\+Script Dependencies}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md749}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md757}{}\doxysubsection{Own Shortcodes with Java\+Script Dependencies}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md757}
 Certain shortcodes make use of additional dependencies like Java\+Script and CSS files. The theme only loads these dependencies if the shortcode is used. To do so correctly the theme adds management code in various files.
 
 You can you use this mechanism in your own shortcodes. Say you want to add a shortcode {\ttfamily myshortcode} that also requires the {\ttfamily jquery} Java\+Script library.
@@ -141,8 +141,8 @@ See the {\ttfamily math}, {\ttfamily mermaid} and {\ttfamily openapi} shortcodes
 \end{DoxyCode}
 
 
-\{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md750}{}\doxysubsection{Output Formats}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md750}
-Certain parts of the theme can be changed for support of your own \href{https://gohugo.io/templates/output-formats/}{\texttt{ output formats}}. Eg. if you define a new output format {\ttfamily PLAINTEXT} in your {\ttfamily hugo.\+toml}, you can add a file {\ttfamily layouts/partials/header.\+plaintext.\+html} to change the way, the page header should look like for that output format.\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md751}{}\doxysubsection{React to Variant Switches in Java\+Script}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md751}
+\{\{\% /notice \%\}\}\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md758}{}\doxysubsection{Output Formats}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md758}
+Certain parts of the theme can be changed for support of your own \href{https://gohugo.io/templates/output-formats/}{\texttt{ output formats}}. Eg. if you define a new output format {\ttfamily PLAINTEXT} in your {\ttfamily hugo.\+toml}, you can add a file {\ttfamily layouts/partials/header.\+plaintext.\+html} to change the way, the page header should look like for that output format.\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md759}{}\doxysubsection{React to Variant Switches in Java\+Script}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md759}
 Once a color variant is fully loaded, either initially or by switching the color variant manually with the variant selector, the custom event {\ttfamily theme\+Variant\+Loaded} on the {\ttfamily document} will be dispatched. You can add an event listener and react to changes.
 
 
@@ -152,7 +152,7 @@ Once a color variant is fully loaded, either initially or by switching the color
 \DoxyCodeLine{\});}
 
 \end{DoxyCode}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md752}{}\doxysubsection{Partials}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md752}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md760}{}\doxysubsection{Partials}\label{md_themes_relearn_exampleSite_content_basics_customization__index_en_autotoc_md760}
 The Relearn theme has been built to be as configurable as possible by defining multiple \href{https://gohugo.io/templates/partials/}{\texttt{ partials}}
 
 In {\ttfamily themes/hugo-\/theme-\/relearn/layouts/partials/}, you will find all the partials defined for this theme. If you need to overwrite something, don\textquotesingle{}t change the code directly. Instead \href{https://gohugo.io/themes/customizing/}{\texttt{ follow this page}}. You\textquotesingle{}d create a new partial in the {\ttfamily layouts/partials} folder of your local project. This partial will have the priority.

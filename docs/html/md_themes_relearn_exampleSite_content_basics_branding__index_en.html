@@ -72,19 +72,19 @@ $(function() {
 <p>Once configured in your <code>hugo.toml</code>, you can select them with the variant selector at the bottom of the menu.</p>
 <h2><a class="anchor" id="theme-variant"></a>
 Change the Variant (Simple)</h2>
-<h3><a class="anchor" id="autotoc_md726"></a>
+<h3><a class="anchor" id="autotoc_md734"></a>
 Single Variant</h3>
 <p>Set the <code>themeVariant</code> value to the name of your theme file. That's it! Your site will be displayed in this variant only.</p>
 <p>{{&lt; multiconfig file=hugo &gt;}} [params] themeVariant = "relearn-light" {{&lt; /multiconfig &gt;}}</p>
 <p>{{% notice note %}} Your theme variant file must reside in your site's <code>assets/css</code> directory and the file name must start with <code>theme-</code> and end in <code>.css</code>. In the above example, the path of your theme file must be <code>assets/css/theme-relearn-light.css</code>.</p>
 <p>If you want to make changes to a shipped color variant, create a copy in your site's <code>assets/css</code> directory. Don't edit the file in the theme's directory! {{% /notice %}}</p>
-<h3><a class="anchor" id="autotoc_md727"></a>
+<h3><a class="anchor" id="autotoc_md735"></a>
 Multiple Variants</h3>
 <p>You can also set multiple variants. In this case, the first variant is the default chosen on first view and a variant selector will be shown in the menu footer if the array contains more than one entry.</p>
 <p>{{&lt; multiconfig file=hugo &gt;}} [params] themeVariant = [ "relearn-light", "relearn-dark" ] {{&lt; /multiconfig &gt;}}</p>
 <p>{{% notice tip %}} The theme provides an advanced configuration mode, combining the functionality for multiple variants with the below possibilities of adjusting to your OS settings and syntax highlighting and even more!</p>
 <p>Although all options documented here are still working, the advanced configuration options are the recommended way to configure your color variants. <a href="#theme-variant-advanced">See below</a>. {{% /notice %}}</p>
-<h2><a class="anchor" id="autotoc_md728"></a>
+<h2><a class="anchor" id="autotoc_md736"></a>
 Adjust to OS Settings</h2>
 <p>You can also cause the site to adjust to your OS settings for light/dark mode. Just set the <code>themeVariant</code> to <code>auto</code> to become an auto mode variant. That's it.</p>
 <p>You can use the <code>auto</code> value with the single or multiple variants option. If you are using multiple variants, you can drop <code>auto</code> at any position in the option's array, but usually it makes sense to set it in the first position and make it the default.</p>
@@ -93,18 +93,18 @@ Adjust to OS Settings</h2>
 <p>In the above example, you would end with <code>red</code> for light mode and the default of <code>relearn-dark</code> for dark mode.</p>
 <p>If you don't like that behavior, you can explicitly set <code>themeVariantAuto</code>. The first entry in the array is the color variant for light mode, the second for dark mode.</p>
 <p>{{&lt; multiconfig file=hugo &gt;}} [params] themeVariantAuto = [ "learn", "neon" ] {{&lt; /multiconfig &gt;}}</p>
-<h2><a class="anchor" id="autotoc_md729"></a>
+<h2><a class="anchor" id="autotoc_md737"></a>
 Change the Favicon</h2>
 <p>If your favicon is a SVG, PNG or ICO, just drop your image in your site's <code>static/images/</code> directory and name it <code>favicon.svg</code>, <code>favicon.png</code> or <code>favicon.ico</code> respectively.</p>
 <p>If you want to adjust your favicon according to your OS settings for light/dark mode, add the image files <code>static/images/favicon-light.svg</code> and <code>static/images/favicon-dark.svg</code> to your site's directory, respectively, corresponding to your file format. In case some of the files are missing, the theme falls back to <code>favicon.svg</code> for each missing file. All supplied favicons must be of the same file format.</p>
 <p>If no favicon file is found, the theme will lookup the alternative filename <code>logo</code> in the same location and will repeat the search for the list of supported file types.</p>
 <p>If you need to change this default behavior, create a new file <code>layouts/partials/favicon.html</code> in your site's directory and write something like this:</p>
 <div class="fragment"><div class="line">&lt;link rel=&quot;icon&quot; href=&quot;/images/favicon.bmp&quot; type=&quot;image/bmp&quot;&gt;</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md730"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md738"></a>
 Change the Logo</h2>
 <p>Create a new file in <code>layouts/partials/logo.html</code> of your site. Then write any HTML you want. You could use an <code>img</code> HTML tag and reference an image created under the <em>static</em> folder, or you could paste a SVG definition!</p>
 <p>{{% notice note %}} The size of the logo will adapt automatically. {{% /notice %}}</p>
-<h2><a class="anchor" id="autotoc_md731"></a>
+<h2><a class="anchor" id="autotoc_md739"></a>
 Syntax Highlighting</h2>
 <p>If you want to switch the syntax highlighting theme together with your color variant, you need to configure your installation <a href="https://gohugo.io/content-management/syntax-highlighting/">according to Hugo's documentation</a> and provide a syntax highlighting stylesheet file.</p>
 <p>You can use a one of the shipped stylesheet files or use Hugo to generate a file for you. The file must be written to <code>assets/css/chroma-&lt;NAME&gt;.css</code>. To use it with your color variant you have to define <code>--CODE-theme: &lt;NAME&gt;</code> in the color variant stylesheet file.</p>
@@ -118,7 +118,7 @@ Change the Variant (Advanced)</h2>
 <p>you now write it that way:</p>
 <p>{{&lt; multiconfig file=hugo &gt;}} [params] [[params.themeVariant]] identifier = "relearn-light" [[params.themeVariant]] identifier = "relearn-dark" {{&lt; /multiconfig &gt;}}</p>
 <p>The <code>identifier</code> option is mandatory and equivalent to the string in the first example. Further options can be configured, see the table below.</p>
-<h3><a class="anchor" id="autotoc_md732"></a>
+<h3><a class="anchor" id="autotoc_md740"></a>
 Parameter</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -130,10 +130,10 @@ Parameter</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">auto   </td><td class="markdownTableBodyNone"><em>&lt;empty&gt;</em>   </td><td class="markdownTableBodyNone">If set, the variant is treated as an <a href="#adjust-to-os-settings">auto mode variant</a>. It has the same behavior as the <code>themeVariantAuto</code> option. The first entry in the array is the color variant for light mode, the second for dark mode. Defining auto mode variants with the advanced options has the benefit that you can now have multiple auto mode variants instead of just one with the simple options.   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md733"></a>
+<h3><a class="anchor" id="autotoc_md741"></a>
 Example Configuration of This Site</h3>
 <p>{{&lt; multiconfig file=hugo &gt;}} [params] [[params.themeVariant]] identifier = "relearn-auto" name = "Relearn Light/Dark" auto = [] [[params.themeVariant]] identifier = "relearn-light" [[params.themeVariant]] identifier = "relearn-dark" [[params.themeVariant]] identifier = "zen-auto" name = "Zen Light/Dark" auto = [ "zen-light", "zen-dark" ] [[params.themeVariant]] identifier = "zen-light" [[params.themeVariant]] identifier = "zen-dark" [[params.themeVariant]] identifier = "neon" {{&lt; /multiconfig &gt;}}</p>
-<h2><a class="anchor" id="autotoc_md734"></a>
+<h2><a class="anchor" id="autotoc_md742"></a>
 Modify Shipped Variants</h2>
 <p>In case you like a shipped variant but only want to tweak some aspects, you have two choices:</p>
 <ol type="1">

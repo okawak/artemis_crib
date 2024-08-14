@@ -92,7 +92,7 @@ $(function() {
 <p>{{&lt; multiconfig &gt;}} border = true lazy = true lightbox = false shadow = false bg-white = true {{&lt; /multiconfig &gt;}}</p>
 <p>This ends up in the following HTML where the parameter are converted to CSS classes.</p>
 <div class="fragment"><div class="line">&lt;img src=&quot;https://octodex.github.com/images/minion.png?lightbox=false&amp;bg-white=true&quot; loading=&quot;lazy&quot; alt=&quot;Minion&quot; class=&quot;bg-white border lazy nolightbox noshadow&quot;&gt;</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md897"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md907"></a>
 Extending</h2>
 <p>As you can see in the above example, the <code>bg-white</code> parameter is not initially supported in the themes default settings. Nevertheless you are free to define arbitrary parameter by just adding them to the URL query parameter or set them in your <code>hugo.toml</code> or pages frontmatter.</p>
 <p>{{% notice note %}} If no extended parameter like <code>bg-white</code> in the example is set on the URL, a <code>class="nobg-white"</code> in the HTML will only be generated if a default value was set in the <code>hugo.toml</code> or pages frontmatter. {{% /notice %}} </p>

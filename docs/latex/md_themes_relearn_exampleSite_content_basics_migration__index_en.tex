@@ -11,7 +11,26 @@ This document shows you what\textquotesingle{}s new in the latest release and fl
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md764}{}\doxysubsection{6.\+0.\+0 (2024-\/04-\/27) \{\#600\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md764}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md772}{}\doxysubsection{6.\+1.\+0 (2024-\/08-\/02) \{\#610\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md772}
+
+\begin{DoxyItemize}
+\item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} The \href{shortcodes/include}{\texttt{ {\ttfamily include} shortcode}} is now able to resolve links to pages as well as resources or files in the file system (the old behavior).
+\item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} To make the asset buster mechanism more robust, some internally used stylesheets where restructured. This generally should not affect your page in any negative way.
+\item \{\{\% badge style=\char`\"{}info\char`\"{} icon=\char`\"{}plus-\/circle\char`\"{} title=\char`\"{} \char`\"{} \%\}\}New\{\{\% /badge \%\}\} The \href{shortcodes/openapi}{\texttt{ {\ttfamily openapi} shortcode}} is now able to resolve links to resources as well as to files in the file system (the old behavior). You can configure to generate warnings or errors during build by setting {\ttfamily openapi.\+errorlevel} to either {\ttfamily warning} or {\ttfamily error} in your {\ttfamily hugo.\+toml} if a path can not be resolved.
+\item \{\{\% badge style=\char`\"{}info\char`\"{} icon=\char`\"{}plus-\/circle\char`\"{} title=\char`\"{} \char`\"{} \%\}\}New\{\{\% /badge \%\}\} Shortcodes supporting an {\ttfamily errorlevel} configuration can now have overridden values in the \href{cont/frontmatter/}{\texttt{ frontmatter}} section of each individual page.
+\item \{\{\% badge style=\char`\"{}info\char`\"{} icon=\char`\"{}plus-\/circle\char`\"{} title=\char`\"{} \char`\"{} \%\}\}New\{\{\% /badge \%\}\} The theme now comes with its own overridden version of the {\ttfamily relref} shortcode.
+
+While the usage of {\ttfamily relref} is obsolete and discouraged by Hugo for a while, existing installations may use it. In configurations using a {\ttfamily base\+URL} with a subdirectory, and having {\ttfamily relative\+URLs=false} (the default) Hugo\textquotesingle{}s standard {\ttfamily relref} implementation was failing.
+
+The shortcode is deactivated by default and can be activated by setting
+
+\{\{$<$ multiconfig file=hugo $>$\}\} \mbox{[}params\mbox{]} disable\+Default\+Relref = true \{\{$<$ /multiconfig $>$\}\}
+
+in your {\ttfamily hugo.\+toml}. Only do this if your site fulfills {\bfseries{all of the above assumptions}}.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md774}{}\doxysubsection{6.\+0.\+0 (2024-\/04-\/27) \{\#600\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md774}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}warning\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Breaking\{\{\% /badge \%\}\} This release requires you to move your self-\/defined variant ({\ttfamily theme-\/$\ast$.css}) and chroma stylesheets ({\ttfamily chroma-\/$\ast$.css}) from {\ttfamily static/css} to {\ttfamily assets/css}.
@@ -48,7 +67,7 @@ Previously, the summary erroneously was ignored which now can lead to different 
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md766}{}\doxysubsection{5.\+27.\+0 (2024-\/04-\/07) \{\#5270\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md766}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md776}{}\doxysubsection{5.\+27.\+0 (2024-\/04-\/07) \{\#5270\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md776}
 
 \begin{DoxyItemize}
 \item \{\{\% badge color=\char`\"{}fuchsia\char`\"{} icon=\char`\"{}fa-\/fw fab fa-\/hackerrank\char`\"{} title=\char`\"{} \char`\"{} \%\}\}0.\+121.\+0\{\{\% /badge \%\}\} This release requires a newer Hugo version.
@@ -66,7 +85,7 @@ By that you can now call the dependency mechanism in your own overriden partials
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md768}{}\doxysubsection{5.\+26.\+0 (2024-\/03-\/18) \{\#5260\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md768}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md778}{}\doxysubsection{5.\+26.\+0 (2024-\/03-\/18) \{\#5260\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md778}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}info\char`\"{} icon=\char`\"{}plus-\/circle\char`\"{} title=\char`\"{} \char`\"{} \%\}\}New\{\{\% /badge \%\}\} The lazy loading of images is now configurable by using the new {\ttfamily lazy} \href{cont/imageeffects}{\texttt{ image effect}}. The default value hasn\textquotesingle{}t changed in comparison to older versions, you don\textquotesingle{}t need to change anything.
@@ -77,7 +96,7 @@ By that you can now call the dependency mechanism in your own overriden partials
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md770}{}\doxysubsection{5.\+25.\+0 (2024-\/02-\/29) \{\#5250\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md770}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md780}{}\doxysubsection{5.\+25.\+0 (2024-\/02-\/29) \{\#5250\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md780}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} This release deprecates the \href{shortcodes/attachments}{\texttt{ {\ttfamily attachments} shortcode}} in favor of the new the \href{shortcodes/resources}{\texttt{ {\ttfamily resources} shortcode}}.
@@ -86,7 +105,7 @@ If you are using Hugo below \{\{\% badge color=\char`\"{}fuchsia\char`\"{} icon=
 
 Anyways, users are strongly advised to migrate as the {\ttfamily attachments} shortcode will not receive support anymore. Migration instructions are listed on the \href{shortcodes/attachments\#migration}{\texttt{ {\ttfamily attachments} shortcode page}}.
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} If you run Hugo with \href{https://gohugo.io/methods/page/gitinfo/}{\texttt{ Git\+Info}} configured, the default page footer now prints out name, email address and date of the last commit. If you want to turn this off you either have to run Hugo without Git\+Info (which is the default) or overwrite the {\ttfamily content-\/footer.\+html} partial.
-\end{DoxyItemize}\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md771}{}\doxysubsection{5.\+24.\+0 (2024-\/02-\/28) \{\#5240\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md771}
+\end{DoxyItemize}\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md781}{}\doxysubsection{5.\+24.\+0 (2024-\/02-\/28) \{\#5240\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md781}
 
 \begin{DoxyItemize}
 \item \{\{\% badge color=\char`\"{}fuchsia\char`\"{} icon=\char`\"{}fa-\/fw fab fa-\/hackerrank\char`\"{} title=\char`\"{} \char`\"{} \%\}\}0.\+112.\+4\{\{\% /badge \%\}\} This release requires a newer Hugo version.
@@ -113,7 +132,7 @@ The advanced functionality allows you to set an explicit name for a theme varian
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md773}{}\doxysubsection{5.\+23.\+0 (2023-\/11-\/03) \{\#5230\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md773}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md783}{}\doxysubsection{5.\+23.\+0 (2023-\/11-\/03) \{\#5230\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md783}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} With \{\{\% badge color=\char`\"{}fuchsia\char`\"{} icon=\char`\"{}fa-\/fw fab fa-\/hackerrank\char`\"{} title=\char`\"{} \char`\"{} \%\}\}0.\+120.\+0\{\{\% /badge \%\}\} the author settings move into the {\ttfamily \mbox{[}params\mbox{]}} array in your {\ttfamily hugo.\+toml}. Because this collides with the previous way, the theme expected author information, it now adheres to Hugo standards and prints out a warning during built if something is wrong.
@@ -164,7 +183,7 @@ The following types of linking are supported\+:
 
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md775}{}\doxysubsection{5.\+22.\+0 (2023-\/10-\/02) \{\#5220\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md775}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md785}{}\doxysubsection{5.\+22.\+0 (2023-\/10-\/02) \{\#5220\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md785}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} This release fixes an issue where in unfortunate conditions DOM ids generated by Hugo may collide with DOM ids set by the theme. To avoid this, all theme DOM ids are now prefixed with {\ttfamily R-\/}.
@@ -186,7 +205,7 @@ In this case it is advised to remove the {\ttfamily title} from the headless bra
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md777}{}\doxysubsection{5.\+21.\+0 (2023-\/09-\/18) \{\#5210\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md777}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md787}{}\doxysubsection{5.\+21.\+0 (2023-\/09-\/18) \{\#5210\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md787}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} We made changes to the menu footer to improve alignment with the menu items in most cases. Care was taken not to break your existing overwritten footer. Anyways, if you have your {\ttfamily menu-\/footer.\+html} \href{basics/customization\#partials}{\texttt{ partial overridden}}, you may want to review the styling (eg. margins/paddings) of your partial.
@@ -195,7 +214,7 @@ In this case it is advised to remove the {\ttfamily title} from the headless bra
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md779}{}\doxysubsection{5.\+20.\+0 (2023-\/08-\/26) \{\#5200\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md779}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md789}{}\doxysubsection{5.\+20.\+0 (2023-\/08-\/26) \{\#5200\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md789}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} The theme has updated its Swagger dependency to 5.\+4.\+1 for the \href{shortcodes/openapi}{\texttt{ {\ttfamily openapi} shortcode}}.
@@ -219,7 +238,7 @@ For existing variants nothing has changed visually.
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md781}{}\doxysubsection{5.\+19.\+0 (2023-\/08-\/12) \{\#5190\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md781}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md791}{}\doxysubsection{5.\+19.\+0 (2023-\/08-\/12) \{\#5190\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md791}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}info\char`\"{} icon=\char`\"{}plus-\/circle\char`\"{} title=\char`\"{} \char`\"{} \%\}\}New\{\{\% /badge \%\}\} The \href{shortcodes/highlight}{\texttt{ {\ttfamily highlight} shortcode}} now accepts the new parameter {\ttfamily title}. This displays the code like a \href{shortcodes/tab}{\texttt{ single tab}}. This is also available using codefences and makes it much easier to write nicer code samples.
@@ -230,7 +249,7 @@ For existing variants nothing has changed visually.
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md783}{}\doxysubsection{5.\+18.\+0 (2023-\/07-\/27) \{\#5180\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md783}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md793}{}\doxysubsection{5.\+18.\+0 (2023-\/07-\/27) \{\#5180\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md793}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} The theme adds additional warnings for deprecated or now unsupported features.
@@ -240,7 +259,7 @@ For existing variants nothing has changed visually.
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md785}{}\doxysubsection{5.\+17.\+0 (2023-\/06-\/22) \{\#5170\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md785}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md795}{}\doxysubsection{5.\+17.\+0 (2023-\/06-\/22) \{\#5170\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md795}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} The default behavior for the copy-\/to-\/clipboard feature for code blocks has changed.
@@ -255,7 +274,7 @@ In addition it offers some extensions. Currently only the {\ttfamily wrap} exten
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md787}{}\doxysubsection{5.\+16.\+0 (2023-\/06-\/10) \{\#5160\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md787}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md797}{}\doxysubsection{5.\+16.\+0 (2023-\/06-\/10) \{\#5160\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md797}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} The theme now provides warnings for deprecated or now unsupported features. The warnings include hints how to fix them and an additional link to the documentation.
@@ -273,7 +292,7 @@ Additionally the {\ttfamily name} parameter was renamed to {\ttfamily title} but
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md789}{}\doxysubsection{5.\+15.\+0 (2023-\/05-\/29) \{\#5150\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md789}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md799}{}\doxysubsection{5.\+15.\+0 (2023-\/05-\/29) \{\#5150\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md799}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} Restored compatibility with Hugo \{\{\% badge color=\char`\"{}fuchsia\char`\"{} icon=\char`\"{}fa-\/fw fab fa-\/hackerrank\char`\"{} title=\char`\"{} \char`\"{} \%\}\}0.\+112.\+0\{\{\% /badge \%\}\} or higher. This does not change the minimum required Hugo version.
@@ -291,7 +310,7 @@ Additionally for such a use case, the whitespace between a tab outline and the c
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md791}{}\doxysubsection{5.\+14.\+0 (2023-\/05-\/20) \{\#5140\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md791}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md801}{}\doxysubsection{5.\+14.\+0 (2023-\/05-\/20) \{\#5140\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md801}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}info\char`\"{} icon=\char`\"{}plus-\/circle\char`\"{} title=\char`\"{} \char`\"{} \%\}\}New\{\{\% /badge \%\}\} The taxonomy pages received some love in this release, making them better leverage available screen space and adding translation support for the taxonomy names.
@@ -311,7 +330,7 @@ So how to adjust the position of tags starting from the theme\textquotesingle{}s
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md793}{}\doxysubsection{5.\+13.\+0 (2023-\/05-\/17) \{\#5130\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md793}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md803}{}\doxysubsection{5.\+13.\+0 (2023-\/05-\/17) \{\#5130\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md803}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} The {\ttfamily swagger} shortcode was deprecated in favor for the \href{shortcodes/openapi}{\texttt{ {\ttfamily openapi} shortcode}}. You don\textquotesingle{}t need to change anything yet as the old name will be used as a fallback. It is planned to remove the {\ttfamily swagger} shortcode in the next major release.
@@ -320,7 +339,7 @@ Additionally, the implemantion of this shortcode was switched from Rapi\+Doc to 
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md795}{}\doxysubsection{5.\+12.\+0 (2023-\/05-\/04) \{\#5120\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md795}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md805}{}\doxysubsection{5.\+12.\+0 (2023-\/05-\/04) \{\#5120\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md805}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} In the effort to comply with WCAG standards, the implementation of the collapsible menu was changed (again). While Internet Explorer 11 has issues in displaying it, the functionality still works.
@@ -349,7 +368,7 @@ The theme provides Front Matter snippets for its shortcodes. Currently only Engl
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md797}{}\doxysubsection{5.\+11.\+0 (2023-\/02-\/07) \{\#5110\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md797}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md807}{}\doxysubsection{5.\+11.\+0 (2023-\/02-\/07) \{\#5110\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md807}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} The theme removed the popular \href{https://jquery.com}{\texttt{ j\+Query}} library from its distribution.
@@ -385,7 +404,7 @@ This also changed the \href{cont/markdown\#lightbox}{\texttt{ lightbox effects}}
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md799}{}\doxysubsection{5.\+10.\+0 (2023-\/01-\/25) \{\#5100\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md799}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md809}{}\doxysubsection{5.\+10.\+0 (2023-\/01-\/25) \{\#5100\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md809}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}info\char`\"{} icon=\char`\"{}plus-\/circle\char`\"{} title=\char`\"{} \char`\"{} \%\}\}New\{\{\% /badge \%\}\} The \href{shortcodes/attachments}{\texttt{ {\ttfamily attachments}}}, \href{shortcodes/badge}{\texttt{ {\ttfamily badge}}}, \href{shortcodes/button}{\texttt{ {\ttfamily button}}} and \href{shortcodes/notice}{\texttt{ {\ttfamily notice}}} shortcodes have a new parameter {\ttfamily color} to set arbitrary CSS color values.
@@ -394,7 +413,7 @@ Additionally the {\ttfamily -\/-\/ACCENT-\/color} brand color introduced in vers
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md801}{}\doxysubsection{5.\+9.\+0 (2022-\/12-\/23) \{\#590\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md801}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md811}{}\doxysubsection{5.\+9.\+0 (2022-\/12-\/23) \{\#590\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md811}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}warning\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Breaking\{\{\% /badge \%\}\} With this version it is now possible to not only have sections on the first menu level but also pages.
@@ -426,7 +445,7 @@ You can revert back to the old behavior by defining {\ttfamily external\+Link\+T
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md803}{}\doxysubsection{5.\+8.\+0 (2022-\/12-\/08) \{\#580\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md803}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md813}{}\doxysubsection{5.\+8.\+0 (2022-\/12-\/08) \{\#580\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md813}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}info\char`\"{} icon=\char`\"{}plus-\/circle\char`\"{} title=\char`\"{} \char`\"{} \%\}\}New\{\{\% /badge \%\}\} The new \href{shortcodes/badge}{\texttt{ {\ttfamily badge} shortcode}} is now available to add highly configurable markers to your content as you can see it on this page.
@@ -436,7 +455,7 @@ You can revert back to the old behavior by defining {\ttfamily external\+Link\+T
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md805}{}\doxysubsection{5.\+7.\+0 (2022-\/11-\/29) \{\#570\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md805}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md815}{}\doxysubsection{5.\+7.\+0 (2022-\/11-\/29) \{\#570\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md815}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} The Korean language translation for this theme is now available with the language code {\ttfamily ko}. Formerly the country code {\ttfamily kr} was used instead.
@@ -445,7 +464,7 @@ You can revert back to the old behavior by defining {\ttfamily external\+Link\+T
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md807}{}\doxysubsection{5.\+6.\+0 (2022-\/11-\/18) \{\#560\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md807}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md817}{}\doxysubsection{5.\+6.\+0 (2022-\/11-\/18) \{\#560\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md817}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}info\char`\"{} icon=\char`\"{}plus-\/circle\char`\"{} title=\char`\"{} \char`\"{} \%\}\}New\{\{\% /badge \%\}\} This release introduces an additional dedicated search page. On this page, displayed search results have more space making it easier scanning through large number of results.
@@ -467,7 +486,7 @@ This addresses increased build time with the 5.\+x releases. The theme now heavi
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md809}{}\doxysubsection{5.\+5.\+0 (2022-\/11-\/06) \{\#550\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md809}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md819}{}\doxysubsection{5.\+5.\+0 (2022-\/11-\/06) \{\#550\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md819}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} The way images are processed has changed. Now images are lazy loaded by default which speeds up page load on slow networks and/or big pages and also the print preview.
@@ -492,7 +511,7 @@ If you have used HTML directly in your Markdown files, this now has the downside
 
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md811}{}\doxysubsection{5.\+4.\+0 (2022-\/11-\/01) \{\#540\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md811}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md821}{}\doxysubsection{5.\+4.\+0 (2022-\/11-\/01) \{\#540\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md821}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} \href{basics/customization\#file-system}{\texttt{ With the proper settings}} in your {\ttfamily hugo.\+toml} your page is now servable from the local file system using {\ttfamily \href{file://}{\texttt{ file\+://}}} URLs.
@@ -505,7 +524,7 @@ Please note that the searchbox will only work for this if you reconfigure your o
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md813}{}\doxysubsection{5.\+3.\+0 (2022-\/10-\/07) \{\#530\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md813}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md823}{}\doxysubsection{5.\+3.\+0 (2022-\/10-\/07) \{\#530\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md823}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} In the effort to comply with WCAG standards, the implementation of the collapsible menu was changed. The functionality of the new implementation does not work with old browsers (Internet Explorer 11).
@@ -514,14 +533,14 @@ Please note that the searchbox will only work for this if you reconfigure your o
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md815}{}\doxysubsection{5.\+2.\+0 (2022-\/08-\/03) \{\#520\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md815}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md825}{}\doxysubsection{5.\+2.\+0 (2022-\/08-\/03) \{\#520\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md825}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} If you\textquotesingle{}ve set {\ttfamily collapsible\+Menu = true} in your {\ttfamily hugo.\+toml}, the menu will be expanded if a search term is found in a collapsed submenu. The menu will return to its initial collapse state once the search term does not match any submenus.
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md817}{}\doxysubsection{5.\+1.\+0 (2022-\/07-\/15) \{\#510\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md817}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md827}{}\doxysubsection{5.\+1.\+0 (2022-\/07-\/15) \{\#510\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md827}
 
 \begin{DoxyItemize}
 \item \{\{\% badge color=\char`\"{}fuchsia\char`\"{} icon=\char`\"{}fa-\/fw fab fa-\/hackerrank\char`\"{} title=\char`\"{} \char`\"{} \%\}\}0.\+95.\+0\{\{\% /badge \%\}\} This release requires a newer Hugo version.
@@ -533,7 +552,7 @@ You can revert this behavior by overwriting the {\ttfamily print} output format 
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md819}{}\doxysubsection{5.\+0.\+0 (2022-\/07-\/05) \{\#500\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md819}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md829}{}\doxysubsection{5.\+0.\+0 (2022-\/07-\/05) \{\#500\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md829}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}warning\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Breaking\{\{\% /badge \%\}\} The theme changed how Java\+Script and CSS dependencies are loaded to provide a better performance. In case you\textquotesingle{}ve added own Java\+Script code that depends on the themes j\+Query implementation, you have to put it into a separate {\ttfamily $\ast$.js} file (if not already) and add the {\ttfamily defer} keyword to the {\ttfamily script} element. Eg.
@@ -561,7 +580,7 @@ Your existing markdown files will still work like before and therefore you don\t
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md821}{}\doxysubsection{4.\+2.\+0 (2022-\/06-\/23) \{\#420\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md821}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md831}{}\doxysubsection{4.\+2.\+0 (2022-\/06-\/23) \{\#420\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md831}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}warning\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Breaking\{\{\% /badge \%\}\} The second parameter for the \href{shortcodes/include}{\texttt{ {\ttfamily include} shortcode}} was switched in meaning and was renamed from {\ttfamily showfirstheading} to {\ttfamily hidefirstheading}. If you haven\textquotesingle{}t used this parameter in your shortcode, the default behavior hasn\textquotesingle{}t changed and you don\textquotesingle{}t need to change anything.
@@ -573,14 +592,14 @@ If you\textquotesingle{}ve used the second boolean parameter, you have to rename
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md823}{}\doxysubsection{4.\+1.\+0 (2022-\/06-\/12) \{\#410\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md823}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md833}{}\doxysubsection{4.\+1.\+0 (2022-\/06-\/12) \{\#410\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md833}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}info\char`\"{} icon=\char`\"{}plus-\/circle\char`\"{} title=\char`\"{} \char`\"{} \%\}\}New\{\{\% /badge \%\}\} While fixing issues with the search functionality for non Latin languages, you can now \href{cont/i18n\#search-with-mixed-language-support}{\texttt{ configure to have multiple languages on a single page}}.
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md825}{}\doxysubsection{4.\+0.\+0 (2022-\/06-\/05) \{\#400\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md825}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md835}{}\doxysubsection{4.\+0.\+0 (2022-\/06-\/05) \{\#400\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md835}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}warning\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Breaking\{\{\% /badge \%\}\} The {\ttfamily custom\+\_\+css} config parameter was removed from the configuration. If used in an existing installation, it can be achieved by overriding the {\ttfamily custom-\/header.\+html} template in a much more generic manner.
@@ -597,7 +616,7 @@ These two colors are the default for other, more specific color variables. You d
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md827}{}\doxysubsection{3.\+4.\+0 (2022-\/04-\/03) \{\#340\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md827}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md837}{}\doxysubsection{3.\+4.\+0 (2022-\/04-\/03) \{\#340\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md837}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}warning\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Breaking\{\{\% /badge \%\}\} If you had previously overwritten the {\ttfamily custom-\/footer.\+html} partial to add visual elements below the content of your page, you have to move this content to the new partial {\ttfamily content-\/footer.\+html}. {\ttfamily custom-\/footer.\+html} was never meant to contain HTML other than additional styles and Java\+Script.
@@ -607,7 +626,7 @@ These two colors are the default for other, more specific color variables. You d
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md829}{}\doxysubsection{3.\+3.\+0 (2022-\/03-\/28) \{\#330\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md829}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md839}{}\doxysubsection{3.\+3.\+0 (2022-\/03-\/28) \{\#330\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md839}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}info\char`\"{} icon=\char`\"{}plus-\/circle\char`\"{} title=\char`\"{} \char`\"{} \%\}\}New\{\{\% /badge \%\}\} Introduction of new CSS variables to set the font. The theme distinguishes between {\ttfamily -\/-\/MAIN-\/font} for all content text and {\ttfamily -\/-\/CODE-\/font} for inline or block code. There are additional overrides for all headings. See the \href{basics/generator}{\texttt{ theme variant generator}} of the example\+Site for all available variables.
@@ -615,7 +634,7 @@ These two colors are the default for other, more specific color variables. You d
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md831}{}\doxysubsection{3.\+2.\+0 (2022-\/03-\/19) \{\#320\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md831}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md841}{}\doxysubsection{3.\+2.\+0 (2022-\/03-\/19) \{\#320\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md841}
 
 \begin{DoxyItemize}
 \item \{\{\% badge color=\char`\"{}fuchsia\char`\"{} icon=\char`\"{}fa-\/fw fab fa-\/hackerrank\char`\"{} title=\char`\"{} \char`\"{} \%\}\}0.\+93.\+0\{\{\% /badge \%\}\} This release requires a newer Hugo version.
@@ -626,14 +645,14 @@ The option is still useful in case you are using scripting to set up your graph.
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md833}{}\doxysubsection{3.\+1.\+0 (2022-\/03-\/15) \{\#310\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md833}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md843}{}\doxysubsection{3.\+1.\+0 (2022-\/03-\/15) \{\#310\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md843}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}info\char`\"{} icon=\char`\"{}plus-\/circle\char`\"{} title=\char`\"{} \char`\"{} \%\}\}New\{\{\% /badge \%\}\} \href{shortcodes/attachments}{\texttt{ {\ttfamily attachment}}} and \href{shortcodes/notice}{\texttt{ {\ttfamily notice}}} shortcodes have a new parameter to override the default icon. Allowed values are all \href{https://fontawesome.com/v5/search?m=free}{\texttt{ Font Awesome 5 Free}} icons.
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md835}{}\doxysubsection{3.\+0.\+0 (2022-\/02-\/22) \{\#300\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md835}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md845}{}\doxysubsection{3.\+0.\+0 (2022-\/02-\/22) \{\#300\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md845}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}warning\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Breaking\{\{\% /badge \%\}\} We made changes to the menu footer. If you have your {\ttfamily menu-\/footer.\+html} \href{basics/customization\#partials}{\texttt{ partial overridden}}, you may have to review the styling (eg. margins/paddings) in your partial. For a reference take a look into the {\ttfamily menu-\/footer.\+html} partial that is coming with the example\+Site.
@@ -658,7 +677,7 @@ Note, that the new variant selector will not work with Internet Explorer 11 as i
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md837}{}\doxysubsection{2.\+9.\+0 (2021-\/11-\/19) \{\#290\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md837}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md847}{}\doxysubsection{2.\+9.\+0 (2021-\/11-\/19) \{\#290\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md847}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}warning\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Breaking\{\{\% /badge \%\}\} This release removes the themes implementation of {\ttfamily ref}/{\ttfamily relref} in favor for Hugo\textquotesingle{}s standard implementation. This is because of inconsistencies with the themes implementation. In advantage, your project becomes standard compliant and exchanging this theme in your project to some other theme will be effortless.
@@ -706,7 +725,7 @@ In this case, you must apply one of two options\+:
 \end{DoxyEnumerate}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md839}{}\doxysubsection{2.\+8.\+0 (2021-\/11-\/03) \{\#280\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md839}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md849}{}\doxysubsection{2.\+8.\+0 (2021-\/11-\/03) \{\#280\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md849}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} Although never officially documented, this release removes the font {\ttfamily Novacento}/{\ttfamily Novecento}. If you use it in an overwritten CSS please replace it with {\ttfamily Work Sans}. This change was necessary as Novacento did not provide all Latin special characters and lead to mixed styled character text eg. for Czech.
@@ -715,28 +734,28 @@ In this case, you must apply one of two options\+:
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md841}{}\doxysubsection{2.\+7.\+0 (2021-\/10-\/24) \{\#270\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md841}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md851}{}\doxysubsection{2.\+7.\+0 (2021-\/10-\/24) \{\#270\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md851}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}info\char`\"{} icon=\char`\"{}plus-\/circle\char`\"{} title=\char`\"{} \char`\"{} \%\}\}New\{\{\% /badge \%\}\} Optional second parameter for \href{shortcodes/notice}{\texttt{ {\ttfamily notice}}} shortcode to set title in box header.
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md843}{}\doxysubsection{2.\+6.\+0 (2021-\/10-\/21) \{\#260\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md843}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md853}{}\doxysubsection{2.\+6.\+0 (2021-\/10-\/21) \{\#260\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md853}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}info\char`\"{} icon=\char`\"{}plus-\/circle\char`\"{} title=\char`\"{} \char`\"{} \%\}\}New\{\{\% /badge \%\}\} Your site can now be served from a subfolder if you set {\ttfamily base\+URL} in your {\ttfamily hugo.\+toml}. See the \href{basics/customization\#public-web-server-from-subdirectory}{\texttt{ documentation}} for a detailed example.
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md845}{}\doxysubsection{2.\+5.\+0 (2021-\/10-\/08) \{\#250\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md845}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md855}{}\doxysubsection{2.\+5.\+0 (2021-\/10-\/08) \{\#250\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md855}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} New colors {\ttfamily -\/-\/CODE-\/\+BLOCK-\/color} and {\ttfamily -\/-\/CODE-\/\+BLOCK-\/\+BG-\/color} were added to provide a fallback for Hugo\textquotesingle{}s syntax highlighting in case no language was given or the language is unsupported. Ideally the colors are set to the same values as the ones from your chosen chroma style.
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md847}{}\doxysubsection{2.\+4.\+0 (2021-\/10-\/07) \{\#240\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md847}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md857}{}\doxysubsection{2.\+4.\+0 (2021-\/10-\/07) \{\#240\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md857}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} Creation of customized stylesheets was simplified down to only contain the CSS variables. Everything else can and should be deleted from your custom stylesheet to assure everything works fine. For the predefined stylesheet variants, this change is already included.
@@ -747,7 +766,7 @@ In this case, you must apply one of two options\+:
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md849}{}\doxysubsection{2.\+3.\+0 (2021-\/09-\/13) \{\#230\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md849}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md859}{}\doxysubsection{2.\+3.\+0 (2021-\/09-\/13) \{\#230\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md859}
 
 \begin{DoxyItemize}
 \item \{\{\% badge color=\char`\"{}fuchsia\char`\"{} icon=\char`\"{}fa-\/fw fab fa-\/hackerrank\char`\"{} title=\char`\"{} \char`\"{} \%\}\}0.\+81.\+0\{\{\% /badge \%\}\} This release requires a newer Hugo version.
@@ -755,14 +774,14 @@ In this case, you must apply one of two options\+:
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md851}{}\doxysubsection{2.\+2.\+0 (2021-\/09-\/09) \{\#220\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md851}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md861}{}\doxysubsection{2.\+2.\+0 (2021-\/09-\/09) \{\#220\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md861}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}info\char`\"{} icon=\char`\"{}plus-\/circle\char`\"{} title=\char`\"{} \char`\"{} \%\}\}New\{\{\% /badge \%\}\} Hidden pages are displayed by default in the sitemap generated by Hugo and are therefore visible for search engine indexing. You can now turn off this behavior by setting {\ttfamily disable\+Seo\+Hidden\+Pages=true} in your {\ttfamily hugo.\+toml}.
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md853}{}\doxysubsection{2.\+1.\+0 (2021-\/09-\/07) \{\#210\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md853}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md863}{}\doxysubsection{2.\+1.\+0 (2021-\/09-\/07) \{\#210\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md863}
 
 \begin{DoxyItemize}
 \item \{\{\% badge color=\char`\"{}fuchsia\char`\"{} icon=\char`\"{}fa-\/fw fab fa-\/hackerrank\char`\"{} title=\char`\"{} \char`\"{} \%\}\}0.\+69.\+0\{\{\% /badge \%\}\} This release requires a newer Hugo version.
@@ -773,7 +792,7 @@ In this case, you must apply one of two options\+:
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md855}{}\doxysubsection{2.\+0.\+0 (2021-\/08-\/28) \{\#200\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md855}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md865}{}\doxysubsection{2.\+0.\+0 (2021-\/08-\/28) \{\#200\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md865}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}note\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Change\{\{\% /badge \%\}\} Syntax highlighting was switched to the \href{https://gohugo.io/content-management/syntax-highlighting/}{\texttt{ built in Hugo mechanism}}. You may need to configure a new stylesheet or decide to roll you own as described on in the Hugo documentation
@@ -789,14 +808,14 @@ In this case, you must apply one of two options\+:
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md857}{}\doxysubsection{1.\+2.\+0 (2021-\/07-\/26) \{\#120\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md857}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md867}{}\doxysubsection{1.\+2.\+0 (2021-\/07-\/26) \{\#120\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md867}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}info\char`\"{} icon=\char`\"{}plus-\/circle\char`\"{} title=\char`\"{} \char`\"{} \%\}\}New\{\{\% /badge \%\}\} Shortcode \href{shortcodes/expand}{\texttt{ {\ttfamily expand}}} with new parameter to open on page load.
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md859}{}\doxysubsection{1.\+1.\+0 (2021-\/07-\/02) \{\#110\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md859}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md869}{}\doxysubsection{1.\+1.\+0 (2021-\/07-\/02) \{\#110\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md869}
 
 \begin{DoxyItemize}
 \item \{\{\% badge style=\char`\"{}warning\char`\"{} title=\char`\"{} \char`\"{} \%\}\}Breaking\{\{\% /badge \%\}\} \href{shortcodes/mermaid}{\texttt{ Mermaid}} diagrams can now be panned and zoomed. This isn\textquotesingle{}t configurable yet.
@@ -804,7 +823,7 @@ In this case, you must apply one of two options\+:
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md861}{}\doxysubsection{1.\+0.\+0 (2021-\/07-\/01) \{\#100\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md861}
+\hypertarget{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md871}{}\doxysubsection{1.\+0.\+0 (2021-\/07-\/01) \{\#100\}}\label{md_themes_relearn_exampleSite_content_basics_migration__index_en_autotoc_md871}
 
 \begin{DoxyItemize}
 \item \{\{\% badge color=\char`\"{}fuchsia\char`\"{} icon=\char`\"{}fa-\/fw fab fa-\/hackerrank\char`\"{} title=\char`\"{} \char`\"{} \%\}\}0.\+65.\+0\{\{\% /badge \%\}\} The requirement for the Hugo version of this theme is the same as for the Learn theme version 2.\+5.\+0 on 2021-\/07-\/01.

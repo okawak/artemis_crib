@@ -68,7 +68,7 @@ $(function() {
 <div class="textblock"><p>+++ description = "List resources contained in a page bundle" title = "Resources" [[resources]] name = 'MaybeTreasure.txt' src = 'MaybeTreasure.en.txt' +++</p>
 <p>The <code>resources</code> shortcode displays the <a href="https://gohugo.io/methods/resource/title/">titles</a> of resources contained in a <a href="https://gohugo.io/content-management/page-bundles/">page bundle</a>.</p>
 <p>{{% resources sort="asc" /%}}</p>
-<h2><a class="anchor" id="autotoc_md1144"></a>
+<h2><a class="anchor" id="autotoc_md1155"></a>
 Usage</h2>
 <p>While the examples are using shortcodes with named parameter you are free to also call this shortcode from your own partials.</p>
 <p>{{&lt; tabs groupid="shortcode-parameter"&gt;}} {{% tab title="shortcode" %}}</p>
@@ -80,7 +80,7 @@ Usage</h2>
 <div class="line">)}}</div>
 </div><!-- fragment --><p>{{% /tab %}} {{&lt; /tabs &gt;}}</p>
 <p>Multilanguage features are not supported directly by the shortcode but rely on Hugo's handling for resource translations applied when the theme iterates over all available resources.</p>
-<h3><a class="anchor" id="autotoc_md1145"></a>
+<h3><a class="anchor" id="autotoc_md1156"></a>
 Parameter</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -119,21 +119,21 @@ If you want no icon, you have to set this parameter to <code>" "</code> (a non e
 - to match a file suffix of 'jpg', use <code>.*\.jpg</code> (not <code>*.\.jpg</code>)<br  />
 - to match file names ending in <code>jpg</code> or <code>png</code>, use <code>.*\.(jpg\|png)</code>   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1146"></a>
+<h2><a class="anchor" id="autotoc_md1157"></a>
 Examples</h2>
-<h3><a class="anchor" id="autotoc_md1147"></a>
+<h3><a class="anchor" id="autotoc_md1158"></a>
 Custom Title, List of Resources Ending in png, jpg or gif</h3>
 <div class="fragment"><div class="line">{{%/* resources title=&quot;Related **files**&quot; pattern=&quot;.*\.(png|jpg|gif)&quot; /*/%}}</div>
 </div><!-- fragment --><p>{{% resources title="Related **files**" pattern=".*\.(png|jpg|gif)" /%}}</p>
-<h3><a class="anchor" id="autotoc_md1148"></a>
+<h3><a class="anchor" id="autotoc_md1159"></a>
 Info Styled Box, Descending Sort Order</h3>
 <div class="fragment"><div class="line">{{%/* resources style=&quot;info&quot; sort=&quot;desc&quot; /*/%}}</div>
 </div><!-- fragment --><p>{{% resources style="info" sort="desc" /%}}</p>
-<h3><a class="anchor" id="autotoc_md1149"></a>
+<h3><a class="anchor" id="autotoc_md1160"></a>
 With User-Defined Color and Font Awesome Brand Icon</h3>
 <div class="fragment"><div class="line">{{%/* resources color=&quot;fuchsia&quot; icon=&quot;fa-fw fab fa-hackerrank&quot; /*/%}}</div>
 </div><!-- fragment --><p>{{% resources color="fuchsia" icon="fa-fw fab fa-hackerrank" /%}}</p>
-<h3><a class="anchor" id="autotoc_md1150"></a>
+<h3><a class="anchor" id="autotoc_md1161"></a>
 Style, Color, Title and Icons</h3>
 <p>For further examples for <b>style</b>, <b>color</b>, <b>title</b> and <b>icon</b>, see the <a href="shortcodes/notice"><code>notice</code> shortcode</a> documentation. The parameter are working the same way for both shortcodes, besides having different defaults. </p>
 </div></div><!-- contents -->

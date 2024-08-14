@@ -66,8 +66,8 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>+++ description = "Displays content from other files" title = "Include" +++</p>
-<p>The <code>include</code> shortcode includes other files from your project inside of the current page.</p>
-<h2><a class="anchor" id="autotoc_md1071"></a>
+<p>The <code>include</code> shortcode includes other pages, resources or files from your project.</p>
+<h2><a class="anchor" id="autotoc_md1082"></a>
 Usage</h2>
 <p>While the examples are using shortcodes with named parameter you are free to use positional as well or also call this shortcode from your own partials.</p>
 <p>{{&lt; tabs groupid="shortcode-parameter"&gt;}} {{% tab title="shortcode" %}}</p>
@@ -81,19 +81,19 @@ Usage</h2>
 <div class="line">)}}</div>
 </div><!-- fragment --><p>{{% /tab %}} {{&lt; /tabs &gt;}}</p>
 <p>The included files can even contain Markdown and will be taken into account when generating the table of contents.</p>
-<h3><a class="anchor" id="autotoc_md1072"></a>
+<h3><a class="anchor" id="autotoc_md1083"></a>
 Parameter</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Position   </th><th class="markdownTableHeadNone">Default   </th><th class="markdownTableHeadNone">Notes    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>file</b>   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone"><em>&lt;empty&gt;</em>   </td><td class="markdownTableBodyNone">The path to the file to be included. Path resolution adheres to <a href="https://gohugo.io/functions/readfile/">Hugo's build-in <code>readFile</code> function</a>    </td></tr>
+<td class="markdownTableBodyNone"><b>file</b>   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone"><em>&lt;empty&gt;</em>   </td><td class="markdownTableBodyNone">The path to the page, resource or file to be included. Page and resource paths adhere to <a href="https://gohugo.io/methods/page/path/">Hugo's logical path</a>. If not found by logical path it falls back to <a href="https://gohugo.io/functions/readfile/">Hugo's build-in <code>readFile</code> function</a>    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><b>hidefirstheading</b>   </td><td class="markdownTableBodyNone">2   </td><td class="markdownTableBodyNone"><code>false</code>   </td><td class="markdownTableBodyNone">When <code>true</code> and the included file contains headings, the first heading will be hidden. This comes in handy, eg. if you include otherwise standalone Markdown files.   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1073"></a>
+<h2><a class="anchor" id="autotoc_md1084"></a>
 Examples</h2>
-<h3><a class="anchor" id="autotoc_md1074"></a>
+<h3><a class="anchor" id="autotoc_md1085"></a>
 Arbitrary Content</h3>
 <div class="fragment"><div class="line">{{%/* include &quot;shortcodes/include/INCLUDE_ME.md&quot; */%}}</div>
 </div><!-- fragment --><p>{{% include "shortcodes/include/INCLUDE_ME.md" %}} </p>

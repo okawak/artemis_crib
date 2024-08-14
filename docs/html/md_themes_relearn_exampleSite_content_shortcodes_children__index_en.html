@@ -68,7 +68,7 @@ $(function() {
 <div class="textblock"><p>+++ alwaysopen = false description = "List the child pages of a page" title = "Children" +++</p>
 <p>The <code>children</code> shortcode lists the child pages of the current page and its descendants.</p>
 <p>{{% children sort="weight" %}}</p>
-<h2><a class="anchor" id="autotoc_md1022"></a>
+<h2><a class="anchor" id="autotoc_md1033"></a>
 Usage</h2>
 <p>While the examples are using shortcodes with named parameter you are free to also call this shortcode from your own partials.</p>
 <p>{{&lt; tabs groupid="shortcode-parameter"&gt;}} {{% tab title="shortcode" %}}</p>
@@ -79,7 +79,7 @@ Usage</h2>
 <div class="line">  &quot;sort&quot; &quot;weight&quot;</div>
 <div class="line">)}}</div>
 </div><!-- fragment --><p>{{% /tab %}} {{&lt; /tabs &gt;}}</p>
-<h3><a class="anchor" id="autotoc_md1023"></a>
+<h3><a class="anchor" id="autotoc_md1034"></a>
 Parameter</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -110,25 +110,25 @@ Parameter</h3>
 - <code>length</code><br  />
 - <code>default</code> adhering to Hugo's default sort criteria   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1024"></a>
+<h2><a class="anchor" id="autotoc_md1035"></a>
 Examples</h2>
-<h3><a class="anchor" id="autotoc_md1025"></a>
+<h3><a class="anchor" id="autotoc_md1036"></a>
 All Default</h3>
 <div class="fragment"><div class="line">{{%/* children  */%}}</div>
 </div><!-- fragment --><p>{{% children %}}</p>
-<h3><a class="anchor" id="autotoc_md1026"></a>
+<h3><a class="anchor" id="autotoc_md1037"></a>
 With Description</h3>
 <div class="fragment"><div class="line">{{%/* children description=&quot;true&quot; */%}}</div>
 </div><!-- fragment --><p>{{children description="true" %}}</p>
-<h3><a class="anchor" id="autotoc_md1027"></a>
+<h3><a class="anchor" id="autotoc_md1038"></a>
 Infinite Depth and Hidden Pages</h3>
 <div class="fragment"><div class="line">{{%/* children depth=&quot;999&quot; showhidden=&quot;true&quot; */%}}</div>
 </div><!-- fragment --><p>{{% children depth="999" showhidden="true" %}}</p>
-<h3><a class="anchor" id="autotoc_md1028"></a>
+<h3><a class="anchor" id="autotoc_md1039"></a>
 Heading Styles for Container and Elements</h3>
 <div class="fragment"><div class="line">{{%/* children containerstyle=&quot;div&quot; style=&quot;h2&quot; depth=&quot;3&quot; description=&quot;true&quot; */%}}</div>
 </div><!-- fragment --><p>{{% children containerstyle="div" style="h2" depth="3" description="true" %}}</p>
-<h3><a class="anchor" id="autotoc_md1029"></a>
+<h3><a class="anchor" id="autotoc_md1040"></a>
 Divs for Group and Element Styles</h3>
 <div class="fragment"><div class="line">{{%/* children containerstyle=&quot;div&quot; style=&quot;div&quot; depth=&quot;3&quot; */%}}</div>
 </div><!-- fragment --><p>{{% children containerstyle="div" style="div" depth="3" %}} </p>
