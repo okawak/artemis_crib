@@ -943,7 +943,7 @@ FILE_PATTERNS = *.c \
 # be searched for input files as well.
 # The default value is: NO.
 
-RECURSIVE = NO
+RECURSIVE = YES
 
 # The EXCLUDE tag can be used to specify files and/or directories that should be
 # excluded from the INPUT source files. This way you can easily exclude a
@@ -1245,7 +1245,8 @@ HTML_STYLESHEET =
 # list). For an example see the documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_STYLESHEET =
+HTML_EXTRA_STYLESHEET = doxygen-awesome-css/doxygen-awesome.css \
+  doxygen-awesome-css/doxygen-awesome-sidebar-only.css
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the HTML output directory. Note
@@ -1527,7 +1528,7 @@ ECLIPSE_DOC_ID = org.doxygen.Project
 # The default value is: NO.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-DISABLE_INDEX = YES
+DISABLE_INDEX = NO
 
 # The GENERATE_TREEVIEW tag is used to specify whether a tree-like index
 # structure should be generated to display hierarchical information. If the tag
