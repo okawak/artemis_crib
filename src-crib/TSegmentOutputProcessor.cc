@@ -30,8 +30,8 @@ using art::TSegmentOutputProcessor;
 ClassImp(TSegmentOutputProcessor);
 
 TSegmentOutputProcessor::TSegmentOutputProcessor()
-    : fFile(NULL), fTree(NULL), fSegmentList(NULL), fModuleList(NULL),
-      fSegmentedData(NULL) {
+    : fFile(nullptr), fTree(nullptr), fSegmentList(nullptr), fModuleList(nullptr),
+      fSegmentedData(nullptr) {
     RegisterProcessorParameter("FileName", "The name of output file", fFileName, TString("tmp.root"));
     RegisterProcessorParameter("TreeName", "The name of output tree", fTreeName, TString("tree"));
 
@@ -56,12 +56,12 @@ TSegmentOutputProcessor::~TSegmentOutputProcessor() {
     }
 
     // input processors are deleted elsewhere
-    fSegmentedData = NULL;
-    fSegmentList = NULL;
-    fModuleList = NULL;
+    fSegmentedData = nullptr;
+    fSegmentList = nullptr;
+    fModuleList = nullptr;
 }
 
-TSegmentOutputProcessor::TSegmentOutputProcessor(const TSegmentOutputProcessor &rhs) {}
+TSegmentOutputProcessor::TSegmentOutputProcessor(const TSegmentOutputProcessor &) {}
 
 TSegmentOutputProcessor &TSegmentOutputProcessor::operator=(const TSegmentOutputProcessor &rhs) {
     if (this != &rhs) {
@@ -69,7 +69,7 @@ TSegmentOutputProcessor &TSegmentOutputProcessor::operator=(const TSegmentOutput
     return *this;
 }
 
-void TSegmentOutputProcessor::Init(TEventCollection *col) {
+void TSegmentOutputProcessor::Init(TEventCollection *) {
     Util::PrepareDirectoryFor(fFileName);
     fFile = TFile::Open(fFileName, "RECREATE");
     if (!fFile) {
@@ -132,7 +132,7 @@ void TSegmentOutputProcessor::Process() {
 
     for (it = fSegments.begin(); it != fSegments.end(); it++) {
         std::vector<TModuleData *> &modules = it->second;
-        for (Int_t i = 0; i < modules.size(); i++) {
+        for (Size_t i = 0; i < modules.size(); i++) {
             Int_t mod = modules[i]->GetMod();
             if (mod < 0) {
                 continue;
@@ -167,7 +167,7 @@ void TSegmentOutputProcessor::Process() {
             Int_t nVal = data->GetNumValues();
             Int_t tmp = -100;
             for (Int_t iVal = 0; iVal < nVal; iVal++) {
-                if (modules.size() > geo && modules[geo] != NULL) {
+                if (modules.size() > geo && modules[geo] != nullptr) {
                     if (iVal == 0) {
                         tmp = data->GetValue(iVal);
                     } else {
@@ -181,7 +181,7 @@ void TSegmentOutputProcessor::Process() {
             }
 #endif
 
-            if (modules.size() > geo && modules[geo] != NULL) {
+            if ((Int_t)modules.size() > geo && modules[geo] != nullptr) {
                 Int_t mod = modules[geo]->GetMod();
                 if (mod == 24 || mod == 25) {
                     if (modules[geo]->fData2D[ch][0] == kInvalidI) {

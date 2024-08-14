@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-07-19 20:20:07
- * @note    last modified: 2024-07-30 10:13:04
+ * @note    last modified: 2024-08-14 22:00:48
  * @details
  */
 
@@ -20,10 +20,10 @@ class TCategorizedData;
 class art::TTimingDataMappingProcessor : public TProcessor {
   public:
     TTimingDataMappingProcessor();
-    virtual ~TTimingDataMappingProcessor();
+    ~TTimingDataMappingProcessor();
 
-    virtual void Init();
-    virtual void Process();
+    void Init(TEventCollection *) override;
+    void Process() override;
 
   protected:
     TString fInputColName;
@@ -37,10 +37,10 @@ class art::TTimingDataMappingProcessor : public TProcessor {
     Bool_t fIsSparse;
 
   private:
-    // TTimingDataMappingProcessor(const TTimingDataMappingProcessor &);
-    // TTimingDataMappingProcessor &operator=(const TTimingDataMappingProcessor &);
+    TTimingDataMappingProcessor(const TTimingDataMappingProcessor &) = delete;
+    TTimingDataMappingProcessor &operator=(const TTimingDataMappingProcessor &) = delete;
 
-    ClassDef(TTimingDataMappingProcessor, 0) // simple data mapper
+    ClassDefOverride(TTimingDataMappingProcessor, 0) // simple data mapper
 };
 
 #endif // _TTIMINGDATAMAPPINGPROCESSOR_H_

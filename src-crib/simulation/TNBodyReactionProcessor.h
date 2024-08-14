@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 13:11:23
- * @note    last modified: 2024-08-14 14:56:04
+ * @note    last modified: 2024-08-14 18:47:17
  * @details
  */
 
@@ -26,10 +26,10 @@ class TClonesArray;
 class art::TNBodyReactionProcessor : public TProcessor {
   public:
     TNBodyReactionProcessor();
-    virtual ~TNBodyReactionProcessor();
+    ~TNBodyReactionProcessor();
 
-    virtual void Init(TEventCollection *col);
-    virtual void Process();
+    void Init(TEventCollection *col) override;
+    void Process() override;
 
   protected:
     TString fInputColName;
@@ -86,10 +86,10 @@ class art::TNBodyReactionProcessor : public TProcessor {
 
     TLorentzVector GetLossEnergyVector(TLorentzVector vec, Double_t eloss);
 
-    // TNBodyReactionProcessor(const TNBodyReactionProcessor &rhs);
-    // TNBodyReactionProcessor &operator=(const TNBodyReactionProcessor &rhs);
+    TNBodyReactionProcessor(const TNBodyReactionProcessor &rhs) = delete;
+    TNBodyReactionProcessor &operator=(const TNBodyReactionProcessor &rhs) = delete;
 
-    ClassDef(TNBodyReactionProcessor, 1)
+    ClassDefOverride(TNBodyReactionProcessor, 1)
 };
 
 #endif // end of #ifndef _TNBODYREACTIONPROCESSOR_H_

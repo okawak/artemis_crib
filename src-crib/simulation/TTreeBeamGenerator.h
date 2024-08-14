@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-09 15:57:38
- * @note    last modified: 2024-07-30 15:06:23
+ * @note    last modified: 2024-08-14 18:46:03
  * @details
  */
 
@@ -21,10 +21,10 @@ class TClonesArray;
 class art::TTreeBeamGenerator : public TProcessor {
   public:
     TTreeBeamGenerator();
-    virtual ~TTreeBeamGenerator();
+    ~TTreeBeamGenerator();
 
-    void Init(TEventCollection *);
-    void Process();
+    void Init(TEventCollection *) override;
+    void Process() override;
 
   protected:
     TString fInputColName;
@@ -44,11 +44,11 @@ class art::TTreeBeamGenerator : public TProcessor {
     Double_t fMass;
 
     // Copy constructor (prohibited)
-    // TTreeBeamGenerator(const TTreeBeamGenerator &rhs);
+    TTreeBeamGenerator(const TTreeBeamGenerator &rhs) = delete;
     // Assignment operator (prohibited)
-    // TTreeBeamGenerator &operator=(const TTreeBeamGenerator &rhs);
+    TTreeBeamGenerator &operator=(const TTreeBeamGenerator &rhs) = delete;
 
-    ClassDef(TTreeBeamGenerator, 1);
+    ClassDefOverride(TTreeBeamGenerator, 1);
 };
 
 #endif // end of #ifndef _TTREEBEAMGENERATOR_H_

@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-07-16 15:16:56
- * @note    last modified: 2024-07-16 15:17:00
+ * @note    last modified: 2024-08-14 18:40:53
  * @details
  */
 
@@ -38,11 +38,20 @@ class art::TTreePeriodicEventStore : public TProcessor, public IEventStore {
     TTreePeriodicEventStore();
     ~TTreePeriodicEventStore();
 
-    virtual void Init(TEventCollection *col);
-    virtual void Process();
+    void Init(TEventCollection *col) override;
+    void Process() override;
 
-    Int_t GetRunNumber() const;
-    const char *GetRunName() const;
+    /// @brief override from IEventStore
+    /// @return Run number
+    Int_t GetRunNumber() const override;
+
+    /// @brief override from IEventStore but it is UNSAFE
+    /// @return not return anything
+    const char *GetRunName() const override;
+
+    /// @brief safe function to get run name
+    /// @return std::string runname
+    std::string GetStrRunName() const;
 
   private:
     TString fFileName;
@@ -62,6 +71,6 @@ class art::TTreePeriodicEventStore : public TProcessor, public IEventStore {
     Int_t fNPE;    //! number of pe
 #endif
 
-    ClassDef(TTreePeriodicEventStore, 1);
+    ClassDefOverride(TTreePeriodicEventStore, 1);
 };
 #endif // end of #ifdef _TTREEPERIODICEVENTSTORE_H_

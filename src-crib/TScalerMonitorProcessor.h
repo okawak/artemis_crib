@@ -28,8 +28,8 @@ class art::TScalerMonitorProcessor : public TProcessor {
     TScalerMonitorProcessor();
     ~TScalerMonitorProcessor();
 
-    virtual void Init(TEventCollection *col);
-    virtual void Process();
+    void Init(TEventCollection *col) override;
+    void Process() override;
 
     void ProcessShort(Long_t now);
     void ProcessLong(Long_t now);
@@ -109,6 +109,6 @@ class art::TScalerMonitorProcessor : public TProcessor {
         49};
 
   protected:
-    ClassDef(TScalerMonitorProcessor, 1);
+    ClassDefOverride(TScalerMonitorProcessor, 1);
 };
 #endif // end of #ifdef _TSCALERMONITORPROCESSOR_H_

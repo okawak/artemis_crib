@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-30 10:02:46
- * @note    last modified: 2024-07-30 10:11:53
+ * @note    last modified: 2024-08-14 19:04:05
  * @details
  */
 
@@ -32,14 +32,14 @@ TMUXPositionValidator::~TMUXPositionValidator() {
     fOutput = nullptr;
 }
 
-// TMUXPositionValidator::TMUXPositionValidator(const TMUXPositionValidator &rhs) {
-// }
-//
-// TMUXPositionValidator &TMUXPositionValidator::operator=(const TMUXPositionValidator &rhs) {
-//     if (this != &rhs) {
-//     }
-//     return *this;
-// }
+TMUXPositionValidator::TMUXPositionValidator(const TMUXPositionValidator &) {
+}
+
+TMUXPositionValidator &TMUXPositionValidator::operator=(const TMUXPositionValidator &rhs) {
+    if (this != &rhs) {
+    }
+    return *this;
+}
 
 void TMUXPositionValidator::Init(TEventCollection *col) {
     fInput = reinterpret_cast<TClonesArray **>(col->GetObjectRef(fInputName.Data()));

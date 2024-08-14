@@ -1,9 +1,10 @@
 /**
  * @file    TCatCmdTCutG.cc
  * @brief
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-13 18:34:21
- * @note
+ * @note    last modified: 2024-08-14 22:16:55
+ * @details
  */
 
 #include "TCatCmdTCutG.h"
@@ -39,7 +40,7 @@ TCatCmdTCutG *TCatCmdTCutG::Instance() {
 }
 
 Long_t TCatCmdTCutG::Cmd(vector<TString>) {
-    if (gPad == NULL) {
+    if (gPad == nullptr) {
         Info("Cmd", "warning: no pad");
         return 1;
     }
@@ -72,7 +73,7 @@ Long_t TCatCmdTCutG::Cmd(vector<TString>) {
 
     Info("Cmd", "Xaxis name : %s  Yaxis name : %s", xname.Data(), yname.Data());
 
-    Double_t ix, iy, x, y, bx, by;
+    Double_t ix = 0.0, iy = 0.0, x = 0.0, y = 0.0, bx = 0.0, by = 0.0;
     Int_t i = 0;
     std::vector<TLine *> lines;
     TCutG *cutg = new TCutG();
@@ -106,7 +107,7 @@ Long_t TCatCmdTCutG::Cmd(vector<TString>) {
     cutg->RemovePoint(i - 1);
     cutg->SetPoint(i - 1, ix, iy);
 
-    for (Int_t l = 0; l < lines.size(); l++) {
+    for (Size_t l = 0; l < lines.size(); l++) {
         delete lines[l];
     }
     cutg->SetLineColor(kRed);
@@ -147,7 +148,7 @@ Long_t TCatCmdTCutG::Run(TPad *pad, Double_t *x, Double_t *y) {
     }
 
     if (!x && !y) {
-        // display coordinates when both of x and y are NULL.
+        // display coordinates when both of x and y are nullptr.
         printf("[xval] X: %f, Y: %f\n", fX, fY);
     } else {
         if (x)

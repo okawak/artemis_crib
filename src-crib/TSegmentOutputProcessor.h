@@ -26,15 +26,15 @@ class TClonesArray;
 class art::TSegmentOutputProcessor : public TProcessor {
   public:
     TSegmentOutputProcessor();
-    virtual ~TSegmentOutputProcessor();
+    ~TSegmentOutputProcessor();
 
-    TSegmentOutputProcessor(const TSegmentOutputProcessor &rhs);
+    TSegmentOutputProcessor(const TSegmentOutputProcessor &);
     TSegmentOutputProcessor &operator=(const TSegmentOutputProcessor &rhs);
 
-    virtual void Init(TEventCollection *col);
-    virtual void Process();
-    virtual void PreLoop();
-    virtual void PostLoop();
+    void Init(TEventCollection *) override;
+    void Process() override;
+    void PreLoop() override;
+    void PostLoop() override;
 
   protected:
     TString fFileName;
@@ -52,7 +52,7 @@ class art::TSegmentOutputProcessor : public TProcessor {
     std::map<Int_t, std::vector<TModuleData *>> fSegments; //!
 
   private:
-    ClassDef(TSegmentOutputProcessor, 1) // segment checking processor
+    ClassDefOverride(TSegmentOutputProcessor, 1) // segment checking processor
 };
 
 #endif // end of #ifndef _TSEGMENTOUTPUTPROCESSOR_H_

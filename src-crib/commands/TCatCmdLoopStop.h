@@ -1,10 +1,11 @@
-/*
-   @File name     : TCatCmdLoopStop.h
-   @description   :
-   @Author        : Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
-   @Created date  : 2023-06-13 17:28:09
-   @Last modified : 2023-06-13 17:28:09
-*/
+/**
+ * @file    TCatCmdLoopStop.h
+ * @brief
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2023-06-13 17:28:09
+ * @note    last modified: 2024-08-14 22:10:26
+ * @details
+ */
 
 #ifndef _TCATCMDLOOPSTOP_H_
 #define _TCATCMDLOOPSTOP_H_
@@ -12,19 +13,19 @@
 #include <TCatCmd.h>
 
 class TCatCmdLoopStop : public TCatCmd {
-protected:
-   TCatCmdLoopStop();
+  protected:
+    TCatCmdLoopStop();
 
-public:
-   ~TCatCmdLoopStop();
+  public:
+    ~TCatCmdLoopStop();
 
-   static TCatCmdLoopStop *Instance();
+    static TCatCmdLoopStop *Instance();
 
-   virtual Long_t Cmd(vector<TString> args);
+    Long_t Cmd(vector<TString> args) override;
 
-   virtual void Help();
+    void Help() override;
 
-   ClassDef(TCatCmdLoopStop, 1);
+    ClassDefOverride(TCatCmdLoopStop, 1);
 };
 
 #endif // end of #ifndef _TCATCMDLOOPSTOP_H_

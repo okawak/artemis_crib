@@ -2,7 +2,7 @@
 Anchor:
 
  - &input /data/si26a/user/okawa/output/single/si26/high_si26.root
- - &output output/sim/si26_p10.root
+ - &output output/sim/test.root
  - &histout output/sim/test.hist.root
 
  - &loopnum 5000000

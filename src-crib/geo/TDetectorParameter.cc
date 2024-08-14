@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-18 14:43:02
- * @note    last modified: 2024-07-19 16:54:40
+ * @note    last modified: 2024-08-14 18:53:03
  * @details
  */
 
@@ -17,7 +17,7 @@ TDetectorParameter::TDetectorParameter() {}
 
 TDetectorParameter::~TDetectorParameter() {}
 
-TDetectorParameter::TDetectorParameter(const TDetectorParameter &rhs) {}
+TDetectorParameter::TDetectorParameter(const TDetectorParameter &) {}
 
 TDetectorParameter &TDetectorParameter::operator=(const TDetectorParameter &rhs) {
     if (this != &rhs) {

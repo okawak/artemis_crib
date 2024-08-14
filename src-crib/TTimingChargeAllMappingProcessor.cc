@@ -23,7 +23,7 @@ ClassImp(art::TTimingChargeAllMappingProcessor)
 
     // Default constructor
     TTimingChargeAllMappingProcessor::TTimingChargeAllMappingProcessor()
-    : fPlastic(NULL) {
+    : fPlastic(nullptr) {
     RegisterInputCollection("InputCollection", "rawdata object returned by TRIDFEventStore",
                             fInputColName, TString("catdata"),
                             &fCategorizedData, "art::TCategorizedData");
@@ -101,7 +101,7 @@ void TTimingChargeAllMappingProcessor::MapEdgedTime(const TObjArray *tArray) {
     if (!tArray || tArray->IsEmpty())
         return;
 
-    TTimingChargeData *data = NULL;
+    TTimingChargeData *data = nullptr;
     for (Int_t iHit = 0, nHit = tArray->GetEntriesFast(); iHit != nHit; ++iHit) {
         const TRawTimingWithEdge *const hit = static_cast<TRawTimingWithEdge *>(tArray->At(iHit));
         //      if (!hit) continue;
@@ -124,7 +124,7 @@ void TTimingChargeAllMappingProcessor::MapEdgedTime(const TObjArray *tArray) {
             const Double_t charge = tTrailing - tLeading;
 
             data->SetCharge(charge);
-            data = NULL;
+            data = nullptr;
         } else {
             // consecutive "Trailing" edge
             // thought to be abnormal
@@ -178,7 +178,7 @@ void TTimingChargeAllMappingProcessor::MapPairedTimeCharge(const TObjArray *tArr
     if (!tArray || tArray->IsEmpty())
         return;
 
-    TTimingChargeData *data = NULL;
+    TTimingChargeData *data = nullptr;
     for (Int_t iHit = 0, nHit = tArray->GetEntriesFast(); iHit != nHit; ++iHit) {
         const TRawDataTimingCharge *const hit = static_cast<TRawDataTimingCharge *>(tArray->At(iHit));
 

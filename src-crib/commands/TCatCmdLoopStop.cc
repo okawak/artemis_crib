@@ -1,37 +1,38 @@
-/*
-   @File name     : TCatCmdLoopStop.cc
-   @description   :
-   @Author        : Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
-   @Created date  : 2023-06-13 17:29:21
-   @Last modified : 2023-06-13 17:29:21
-*/
+/**
+ * @file    TCatCmdLoopStop.cc
+ * @brief
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2023-06-13 17:29:21
+ * @note    last modified: 2024-08-14 22:09:17
+ * @details
+ */
 
 #include "TCatCmdLoopStop.h"
 #include <TLoopManager.h>
 
 ClassImp(TCatCmdLoopStop);
 
-TCatCmdLoopStop::TCatCmdLoopStop()
-{
-   SetName("stop");
-   SetTitle("stop loop (same with suspend)");
+TCatCmdLoopStop::TCatCmdLoopStop() {
+    SetName("stop");
+    SetTitle("stop loop (same with suspend)");
 }
 TCatCmdLoopStop::~TCatCmdLoopStop() {}
 
-TCatCmdLoopStop *TCatCmdLoopStop::Instance()
-{
-   static TCatCmdLoopStop instance;
-   return &instance;
+TCatCmdLoopStop *TCatCmdLoopStop::Instance() {
+    static TCatCmdLoopStop instance;
+    return &instance;
 }
 
-Long_t TCatCmdLoopStop::Cmd(vector<TString> args)
-{
-   art::TLoopManager *lm = art::TLoopManager::Instance();
-   switch (args.size()) {
-   case 1: lm->Suspend(0); break;
-   default: break;
-   }
-   return 1;
+Long_t TCatCmdLoopStop::Cmd(vector<TString> args) {
+    art::TLoopManager *lm = art::TLoopManager::Instance();
+    switch (args.size()) {
+    case 1:
+        lm->Suspend(0);
+        break;
+    default:
+        break;
+    }
+    return 1;
 }
 
 void TCatCmdLoopStop::Help() {}

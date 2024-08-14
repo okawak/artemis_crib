@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-01-30 11:50:01
- * @note    last modified: 2024-07-30 11:50:07
+ * @note    last modified: 2024-08-14 19:06:02
  * @details
  */
 
@@ -25,7 +25,7 @@ class art::TMUXPositionConverter : public TFixedNumberParameter {
     TMUXPositionConverter(Double_t a0, Double_t a1)
         : TFixedNumberParameter(2) { Set(a0, a1); }
 
-    virtual ~TMUXPositionConverter();
+    ~TMUXPositionConverter();
 
     virtual void Set(Double_t a0, Double_t a1) {
         fParam[0] = a0;

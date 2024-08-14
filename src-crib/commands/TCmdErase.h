@@ -1,10 +1,11 @@
-/*
-   @File name     : TCmdErase.h
-   @description   :
-   @Author        :
-   @Created date  : 2023-06-13 17:34:58
-   @Last modified : 2023-06-13 17:34:58
-*/
+/**
+ * @file    TCmdErase.h
+ * @brief
+ * @author
+ * @date    2023-06-13 17:34:58
+ * @note    last modified: 2024-08-14 22:22:20
+ * @details
+ */
 
 #ifndef _TCMDERASE_H_
 #define _TCMDERASE_H_
@@ -20,21 +21,21 @@ class TList;
 
 class art::TCmdErase : public TCatCmd {
 
-public:
-   TCmdErase();
-   ~TCmdErase();
+  public:
+    TCmdErase();
+    ~TCmdErase();
 
-   // static TCmdErase* Instance();
-   virtual Long_t Cmd(vector<TString> args);
-   virtual Long_t Run();
+    // static TCmdErase* Instance();
+    Long_t Cmd(vector<TString>) override;
+    Long_t Run();
 
-protected:
-   virtual void EraseRecursive(TList *list);
+  protected:
+    void EraseRecursive(TList *list);
 
-private:
-   TCmdErase(const TCmdErase &);            // undefined
-   TCmdErase &operator=(const TCmdErase &); // undefined
+  private:
+    TCmdErase(const TCmdErase &) = delete;            // undefined
+    TCmdErase &operator=(const TCmdErase &) = delete; // undefined
 
-   ClassDef(TCmdErase, 1);
+    ClassDefOverride(TCmdErase, 1);
 };
 #endif // end of #ifndef _TCMDERASE_H_

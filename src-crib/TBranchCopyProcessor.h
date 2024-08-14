@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-13 16:06:58
- * @note    last modified: 2024-07-30 15:06:38
+ * @note    last modified: 2024-08-14 18:44:32
  * @details
  */
 
@@ -21,10 +21,10 @@ class TClonesArray;
 class art::TBranchCopyProcessor : public TProcessor {
   public:
     TBranchCopyProcessor();
-    virtual ~TBranchCopyProcessor();
+    ~TBranchCopyProcessor();
 
-    virtual void Init(TEventCollection *col);
-    virtual void Process();
+    void Init(TEventCollection *col) override;
+    void Process() override;
 
   protected:
     TString fInputColName;
@@ -33,10 +33,10 @@ class art::TBranchCopyProcessor : public TProcessor {
     TClonesArray *fOutData; //!
 
   private:
-    // TBranchCopyProcessor(const TBranchCopyProcessor &);
-    // TBranchCopyProcessor &operator=(const TBranchCopyProcessor &);
+    TBranchCopyProcessor(const TBranchCopyProcessor &) = delete;
+    TBranchCopyProcessor &operator=(const TBranchCopyProcessor &) = delete;
 
-    ClassDef(TBranchCopyProcessor, 0); // simple data mapper
+    ClassDefOverride(TBranchCopyProcessor, 0); // simple data mapper
 };
 
 #endif // end of #ifndef _TBRANCHCOPYPROCESSOR_H_

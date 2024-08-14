@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-07-19 18:36:37
- * @note    last modified: 2024-07-30 10:14:10
+ * @note    last modified: 2024-08-14 22:00:44
  * @details
  */
 
@@ -42,7 +42,7 @@ TTimingDataMappingProcessor::~TTimingDataMappingProcessor() {
     fOutputArray = nullptr;
 }
 
-void TTimingDataMappingProcessor::Init() {
+void TTimingDataMappingProcessor::Init(TEventCollection *) {
     Info("Init", "CatID: %d, DataTypeID: %d => %s",
          fCatID, fDataTypeID, fOutputColName.Data());
     if (!fIsSparse)

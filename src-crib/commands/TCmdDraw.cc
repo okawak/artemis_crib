@@ -1,9 +1,10 @@
 /**
  * @file    TCmdDraw.cc
  * @brief
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
- * @date    2024-06-13 18:57:52
- * @note
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2023-06-13 18:57:52
+ * @note    last modified: 2024-08-14 22:18:09
+ * @details under development
  */
 
 #include "TCmdDraw.h"

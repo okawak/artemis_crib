@@ -3,7 +3,7 @@
  * @brief   particle information class
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-05-08 18:07:32
- * @note    last modified: 2024-07-16 14:48:11
+ * @note    last modified: 2024-08-14 19:03:15
  * @details
  */
 
@@ -26,7 +26,8 @@ class art::TParticleInfo : public TDataObject {
                    kDESC } ESortOrder;
 
     TParticleInfo();
-    virtual ~TParticleInfo();
+    ~TParticleInfo();
+
     TParticleInfo(const TParticleInfo &rhs);
     TParticleInfo &operator=(const TParticleInfo &rhs);
 

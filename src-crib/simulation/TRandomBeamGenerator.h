@@ -3,7 +3,7 @@
  * @brief   position and angle random beam generator
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-09 17:10:35
- * @note    last modified: 2024-07-30 15:06:08
+ * @note    last modified: 2024-08-14 19:02:23
  * @details
  */
 
@@ -21,10 +21,10 @@ class TClonesArray;
 class art::TRandomBeamGenerator : public TProcessor {
   public:
     TRandomBeamGenerator();
-    virtual ~TRandomBeamGenerator();
+    ~TRandomBeamGenerator();
 
-    void Init(TEventCollection *);
-    void Process();
+    void Init(TEventCollection *) override;
+    void Process() override;
 
   protected:
     TString fOutputColName;
@@ -48,11 +48,11 @@ class art::TRandomBeamGenerator : public TProcessor {
     Double_t fMass; /// beam particle mass (MeV)
 
     // Copy constructor (prohibited)
-    // TRandomBeamGenerator(const TRandomBeamGenerator &rhs);
+    TRandomBeamGenerator(const TRandomBeamGenerator &rhs) = delete;
     // Assignment operator (prohibited)
-    // TRandomBeamGenerator &operator=(const TRandomBeamGenerator &rhs);
+    TRandomBeamGenerator &operator=(const TRandomBeamGenerator &rhs) = delete;
 
-    ClassDef(TRandomBeamGenerator, 1);
+    ClassDefOverride(TRandomBeamGenerator, 1);
 };
 
 #endif // end of #ifndef _TRANDOMBEAMGENERATOR_H_

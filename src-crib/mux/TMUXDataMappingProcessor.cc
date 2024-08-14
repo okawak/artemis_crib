@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-01-30 09:47:17
- * @note    last modified: 2024-07-30 09:56:00
+ * @note    last modified: 2024-08-14 19:09:49
  * @details
  */
 
@@ -37,7 +37,7 @@ TMUXDataMappingProcessor::~TMUXDataMappingProcessor() {
     fOutputArray = nullptr;
 }
 
-void TMUXDataMappingProcessor::Init() {
+void TMUXDataMappingProcessor::Init(TEventCollection *) {
     Info("Init", "CatID: %d => %s", fCatID, fOutputColName.Data());
 }
 

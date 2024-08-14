@@ -6,32 +6,32 @@
 #include <TProcessor.h>
 
 namespace art {
-  class TTSMappingProcessor;
-  class TCategorizedData;
-}
+class TTSMappingProcessor;
+class TCategorizedData;
+} // namespace art
 
 class art::TTSMappingProcessor : public TProcessor {
- public:
-  TTSMappingProcessor();
-  virtual ~TTSMappingProcessor();
+  public:
+    TTSMappingProcessor();
+    ~TTSMappingProcessor();
 
-  virtual void Init(TEventCollection *col);
-  virtual void Process();
+    void Init(TEventCollection *) override;
+    void Process() override;
 
- protected:
-  TString            fInputColName;
-  TString            fOutputColName;
-  TCategorizedData **fCategorizedData;
-  TClonesArray      *fOutputArray;
+  protected:
+    TString fInputColName;
+    TString fOutputColName;
+    TCategorizedData **fCategorizedData;
+    TClonesArray *fOutputArray;
 
-  Int_t fCatID;       // category id
-  Int_t fDataTypeID;  // typeid for data
+    Int_t fCatID;      // category id
+    Int_t fDataTypeID; // typeid for data
 
- private:
-  TTSMappingProcessor(const TTSMappingProcessor&);
-  TTSMappingProcessor& operator=(const TTSMappingProcessor&);
+  private:
+    TTSMappingProcessor(const TTSMappingProcessor &) = delete;
+    TTSMappingProcessor &operator=(const TTSMappingProcessor &) = delete;
 
-  ClassDef(TTSMappingProcessor,0) // simple data mapper
+    ClassDefOverride(TTSMappingProcessor, 0) // simple data mapper
 };
 
 #endif // _TTSMAPPINGPROCESSOR_H_

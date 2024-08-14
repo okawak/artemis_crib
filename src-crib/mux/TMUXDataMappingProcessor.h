@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-01-30 09:46:45
- * @note    last modified: 2024-07-30 10:12:45
+ * @note    last modified: 2024-08-14 19:09:16
  * @details
  */
 
@@ -20,10 +20,10 @@ class TCategorizedData;
 class art::TMUXDataMappingProcessor : public TProcessor {
   public:
     TMUXDataMappingProcessor();
-    virtual ~TMUXDataMappingProcessor();
+    ~TMUXDataMappingProcessor();
 
-    virtual void Init();
-    virtual void Process();
+    void Init(TEventCollection *) override;
+    void Process() override;
 
   protected:
     TString fInputColName;
@@ -34,10 +34,10 @@ class art::TMUXDataMappingProcessor : public TProcessor {
     Int_t fCatID; // category id
 
   private:
-    // TMUXDataMappingProcessor(const TMUXDataMappingProcessor &);
-    // TMUXDataMappingProcessor &operator=(const TMUXDataMappingProcessor &);
+    TMUXDataMappingProcessor(const TMUXDataMappingProcessor &) = delete;
+    TMUXDataMappingProcessor &operator=(const TMUXDataMappingProcessor &) = delete;
 
-    ClassDef(TMUXDataMappingProcessor, 0) // simple data mapper
+    ClassDefOverride(TMUXDataMappingProcessor, 0) // simple data mapper
 };
 
 #endif // _TMUXDATAMAPPINGPROCESSOR_H_

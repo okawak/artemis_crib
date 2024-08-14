@@ -18,7 +18,7 @@ class TModuleData;
 class art::TModuleData : public art::TModuleInfo {
   public:
     TModuleData(const TModuleInfo &info);
-    virtual ~TModuleData();
+    ~TModuleData();
 
     TModuleData(const TModuleData &rhs);
     TModuleData &operator=(const TModuleData &rhs);

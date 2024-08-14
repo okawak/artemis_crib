@@ -13,7 +13,7 @@ using art::TTSMappingProcessor;
 ClassImp(TTSMappingProcessor);
 
 TTSMappingProcessor::TTSMappingProcessor()
-    : fOutputArray(NULL) {
+    : fOutputArray(nullptr) {
     RegisterInputCollection("InputCollection", "rawdata object returned by TRIDFEventStore",
                             fInputColName, TString("catdata"),
                             reinterpret_cast<void ***>(&fCategorizedData),
@@ -29,10 +29,10 @@ TTSMappingProcessor::TTSMappingProcessor()
 
 TTSMappingProcessor::~TTSMappingProcessor() {
     delete fOutputArray;
-    fOutputArray = NULL;
+    fOutputArray = nullptr;
 }
 
-void TTSMappingProcessor::Init(TEventCollection *col) {
+void TTSMappingProcessor::Init(TEventCollection *) {
     Info("Init", "CatID: %d, DataTypeID: %d => %s",
          fCatID, fDataTypeID, fOutputColName.Data());
 }

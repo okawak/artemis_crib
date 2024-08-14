@@ -20,7 +20,8 @@ TModuleData::TModuleData(const TModuleInfo &info)
 TModuleData::~TModuleData() {
 }
 
-TModuleData::TModuleData(const TModuleData &rhs) {
+TModuleData::TModuleData(const TModuleData &rhs)
+    : art::TModuleInfo(rhs) {
 }
 
 TModuleData &TModuleData::operator=(const TModuleData &rhs) {

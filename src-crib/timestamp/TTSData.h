@@ -7,32 +7,35 @@
 #include "constant.h"
 
 namespace art {
-   class TTSData;
+class TTSData;
 }
 
 class art::TTSData : public TDataObject {
-public:
-   typedef enum {kID, kTiming} ESortType;
-   typedef enum {kASC, kDESC} ESortOrder;
+  public:
+    typedef enum { kID,
+                   kTiming } ESortType;
+    typedef enum { kASC,
+                   kDESC } ESortOrder;
 
-   TTSData();
-   virtual ~TTSData();
-   TTSData(const TTSData& rhs);
-   TTSData& operator=(const TTSData& rhs);
+    TTSData();
+    ~TTSData();
 
-   ULong64_t GetTS() const {return fTS;}
-   void SetTS(ULong64_t arg){ fTS = arg; }
-   Double_t GetTScal() const {return fTScal;}
-   void SetTScal(Double_t arg){ fTScal = arg; }
+    TTSData(const TTSData &rhs);
+    TTSData &operator=(const TTSData &rhs);
 
-   virtual void Copy(TObject& dest) const;
-   virtual void Clear(Option_t *opt="");
+    ULong64_t GetTS() const { return fTS; }
+    void SetTS(ULong64_t arg) { fTS = arg; }
+    Double_t GetTScal() const { return fTScal; }
+    void SetTScal(Double_t arg) { fTScal = arg; }
 
-protected:
-   ULong64_t fTS;
-   Double_t fTScal;
+    virtual void Copy(TObject &dest) const;
+    virtual void Clear(Option_t *opt = "");
 
-   ClassDef(TTSData,1)
+  protected:
+    ULong64_t fTS;
+    Double_t fTScal;
+
+    ClassDef(TTSData, 1)
 };
 
 #endif // _TTSDATA_H_

@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-01-30 11:08:53
- * @note    last modified: 2024-07-30 11:19:30
+ * @note    last modified: 2024-08-14 19:08:18
  * @details if no valid converter given, this processor does nothing.
  */
 
@@ -25,10 +25,10 @@ class art::TMUXCalibrationProcessor : public TProcessor {
   public:
     // Default constructor
     TMUXCalibrationProcessor();
-    virtual ~TMUXCalibrationProcessor();
+    ~TMUXCalibrationProcessor();
 
-    virtual void Init(TEventCollection *col);
-    virtual void Process();
+    void Init(TEventCollection *col) override;
+    void Process() override;
 
   protected:
     TString fInputColName;
@@ -50,11 +50,11 @@ class art::TMUXCalibrationProcessor : public TProcessor {
 
   private:
     // Copy constructor (prohibited)
-    // TMUXCalibrationProcessor(const TMUXCalibrationProcessor &rhs);
+    TMUXCalibrationProcessor(const TMUXCalibrationProcessor &rhs) = delete;
     // Assignment operator (prohibited)
-    // TMUXCalibrationProcessor &operator=(const TMUXCalibrationProcessor &rhs);
+    TMUXCalibrationProcessor &operator=(const TMUXCalibrationProcessor &rhs) = delete;
 
-    ClassDef(TMUXCalibrationProcessor, 1) // processor for calibration of timing and charge data
+    ClassDefOverride(TMUXCalibrationProcessor, 1) // processor for calibration of timing and charge data
 };
 
 #endif // _TMUXCALIBRATIONPROCESSOR_H

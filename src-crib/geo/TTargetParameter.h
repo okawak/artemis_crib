@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 22:14:55
- * @note    last modified: 2024-07-19 16:53:10
+ * @note    last modified: 2024-08-14 18:52:39
  * @details
  */
 
@@ -19,9 +19,9 @@ class TTargetParameter;
 class art::TTargetParameter : public TParameterObject {
   public:
     TTargetParameter();
-    virtual ~TTargetParameter();
+    ~TTargetParameter();
 
-    TTargetParameter(const TTargetParameter &rhs);
+    TTargetParameter(const TTargetParameter &);
     TTargetParameter &operator=(const TTargetParameter &rhs);
 
     TString GetTargetName() const { return fName; }

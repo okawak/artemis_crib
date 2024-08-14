@@ -1,9 +1,10 @@
 /**
  * @file    TTGTIKProcessor.cc
  * @brief
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
- * @date    2024-08-01 22:35:07
- * @note    bisection method (not Newton method)
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2023-08-01 22:35:07
+ * @note    last modified: 2024-08-14 18:26:04
+ * @details bisection method (not Newton method)
  */
 
 #include "TTGTIKProcessor.h"
@@ -26,7 +27,7 @@ using art::TTGTIKProcessor;
 
 ClassImp(art::TTGTIKProcessor);
 
-TTGTIKProcessor::TTGTIKProcessor() : fInData(NULL), fInTrackData(NULL), fOutData(NULL) {
+TTGTIKProcessor::TTGTIKProcessor() : fInData(nullptr), fInTrackData(nullptr), fOutData(nullptr) {
     RegisterInputCollection("InputCollection", "telescope data inherit from TTelescopeData", fInputColName,
                             TString("tel"));
     RegisterInputCollection("InputTrackCollection", "tracking data inherit from TTrack", fInputTrackColName,
@@ -51,9 +52,9 @@ TTGTIKProcessor::TTGTIKProcessor() : fInData(NULL), fInTrackData(NULL), fOutData
 
 TTGTIKProcessor::~TTGTIKProcessor() {
     delete fOutData;
-    fOutData = NULL;
+    fOutData = nullptr;
     delete fElossTable;
-    fElossTable = NULL;
+    fElossTable = nullptr;
 }
 
 void TTGTIKProcessor::Init(TEventCollection *col) {
@@ -117,7 +118,7 @@ void TTGTIKProcessor::Init(TEventCollection *col) {
     fOutData->SetName(fOutputColName);
     col->Add(fOutputColName, fOutData, fOutputIsTransparent);
 
-    gRandom->SetSeed(time(NULL));
+    gRandom->SetSeed(time(nullptr));
 }
 
 void TTGTIKProcessor::Process() {
@@ -312,9 +313,9 @@ Double_t TTGTIKProcessor::GetEcmFromDetectParticle(Double_t z, const TTrack *tra
     Double_t energy = fElossDetectParticle->GetOldE(data->GetEtotal(), (detect_position - reaction_position).Mag());
 
 #if 0
-  std::cout << "x_det: " << detect_position.X() << ", x_real: " << data->GetPosition().X() << std::endl;  
-  std::cout << "y_det: " << detect_position.Y() << ", y_real: " << data->GetPosition().Y() << std::endl;  
-  std::cout << "z_det: " << detect_position.Z() << ", z_real: " << data->GetPosition().Z() << std::endl;  
+  std::cout << "x_det: " << detect_position.X() << ", x_real: " << data->GetPosition().X() << std::endl;
+  std::cout << "y_det: " << detect_position.Y() << ", y_real: " << data->GetPosition().Y() << std::endl;
+  std::cout << "z_det: " << detect_position.Z() << ", z_real: " << data->GetPosition().Z() << std::endl;
   std::cout << "--" << std::endl;
 
   for(Double_t ecm=0.01; ecm<1.0e+4; ecm *= 1.1){
@@ -322,7 +323,7 @@ Double_t TTGTIKProcessor::GetEcmFromDetectParticle(Double_t z, const TTrack *tra
     Double_t energy_cm_all = ecm + fParticleMass[0] + fParticleMass[1];
     Double_t energy_4cm = (energy_cm_all - (fParticleMass[2]*fParticleMass[2] - fParticleMass[3]*fParticleMass[3])
                           /energy_cm_all)/2.0;
-    Double_t energy1 = (ecm * ecm + 2.0*ecm*(fParticleMass[0]+fParticleMass[1]) 
+    Double_t energy1 = (ecm * ecm + 2.0*ecm*(fParticleMass[0]+fParticleMass[1])
                         + 2.0*fParticleMass[0]*fParticleMass[1])/(2.0 * fParticleMass[1]);
     Double_t beta = TMath::Sqrt(energy1 * energy1 - fParticleMass[0]*fParticleMass[0])
                     /(energy1 + fParticleMass[1]);

@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:36:36
- * @note    last modified: 2024-07-16 17:03:32
+ * @note    last modified: 2024-08-14 18:40:27
  * @details just modify the process() from TTreeEventStore to return 0
  */
 
@@ -199,7 +199,11 @@ Int_t art::TTreePeriodicEventStore::GetRunNumber() const {
 }
 
 const char *art::TTreePeriodicEventStore::GetRunName() const {
+    return "";
+}
+
+std::string art::TTreePeriodicEventStore::GetStrRunName() const {
     if (nullptr == fEventHeader)
         return "";
-    return (*fEventHeader)->GetRunName();
+    return std::string((*fEventHeader)->GetRunName());
 }

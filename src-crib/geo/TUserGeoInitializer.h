@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 21:30:15
- * @note    last modified: 2024-07-30 10:59:03
+ * @note    last modified: 2024-08-14 18:48:33
  * @details
  */
 
@@ -25,10 +25,10 @@ class art::TUserGeoInitializer : public TProcessor {
   public:
     // Default constructor
     TUserGeoInitializer();
-    virtual ~TUserGeoInitializer();
+    ~TUserGeoInitializer();
 
-    virtual void Init(TEventCollection *col);
-    virtual void Process();
+    void Init(TEventCollection *col) override;
+    void Process() override;
 
   protected:
     TGeoManager *fGeom; //! it is used for TGeoManager process (like simulation)
@@ -48,11 +48,11 @@ class art::TUserGeoInitializer : public TProcessor {
     void GeometryFromYaml(TString yamlfile);
 
     // Copy constructor (prohibited)
-    // TUserGeoInitializer(const TUserGeoInitializer &);
+    TUserGeoInitializer(const TUserGeoInitializer &) = delete;
     // Assignment operator (prohibited)
-    // TUserGeoInitializer &operator=(const TUserGeoInitializer &);
+    TUserGeoInitializer &operator=(const TUserGeoInitializer &) = delete;
 
-    ClassDef(TUserGeoInitializer, 1)
+    ClassDefOverride(TUserGeoInitializer, 1)
 };
 
 #endif // end of #ifndef _TUSERGEOINITIALIZER_H_

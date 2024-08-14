@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-30 10:02:32
- * @note    last modified: 2024-07-30 10:11:47
+ * @note    last modified: 2024-08-14 19:04:39
  * @details
  */
 
@@ -20,14 +20,14 @@ class TClonesArray;
 class art::TMUXPositionValidator : public TProcessor {
   public:
     TMUXPositionValidator();
-    virtual ~TMUXPositionValidator();
+    ~TMUXPositionValidator();
 
-    // TMUXPositionValidator(const TMUXPositionValidator &rhs);
-    // TMUXPositionValidator &operator=(const TMUXPositionValidator &rhs);
+    TMUXPositionValidator(const TMUXPositionValidator &rhs);
+    TMUXPositionValidator &operator=(const TMUXPositionValidator &rhs);
 
   protected:
-    virtual void Init(TEventCollection *col);
-    virtual void Process();
+    virtual void Init(TEventCollection *col) override;
+    virtual void Process() override;
 
   private:
     TString fInputName;    // name of input collection
@@ -40,7 +40,7 @@ class art::TMUXPositionValidator : public TProcessor {
     Double_t fValidPositionMin;
     Double_t fValidPositionMax;
 
-    ClassDef(TMUXPositionValidator, 1) // validate time in certain window
+    ClassDefOverride(TMUXPositionValidator, 1) // validate time in certain window
 };
 
 #endif // _TMUXPOSITIONVALIDATOR_H_

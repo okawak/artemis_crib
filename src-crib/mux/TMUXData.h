@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-07-30 09:48:52
- * @note    last modified: 2024-07-30 09:48:59
+ * @note    last modified: 2024-08-14 19:07:37
  * @details
  */
 
@@ -25,7 +25,7 @@ class art::TMUXData : public TDataObject {
                    kDESC } ESortOrder;
 
     TMUXData();
-    virtual ~TMUXData();
+    ~TMUXData();
     TMUXData(const TMUXData &rhs);
     TMUXData &operator=(const TMUXData &rhs);
 

@@ -1,10 +1,11 @@
-/*
-   @File name     : TCmdXfitg.h
-   @description   :
-   @Author        : Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
-   @Created date  : 2023-06-13 17:52:08
-   @Last modified : 2023-06-13 17:52:42
-*/
+/**
+ * @file    TCmdXfitg.h
+ * @brief
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2023-06-13 17:52:08
+ * @note    last modified: 2024-08-14 22:29:00
+ * @details
+ */
 
 #ifndef _TCMDXFITG_H_
 #define _TCMDXFITG_H_
@@ -18,20 +19,20 @@ class TCmdXfitg;
 class TF1;
 
 class art::TCmdXfitg : public TCatCmd {
-public:
-   TCmdXfitg();
-   ~TCmdXfitg();
+  public:
+    TCmdXfitg();
+    ~TCmdXfitg();
 
-   static const char *kFuncNameBase;
-   static const char *kLabelNameBase;
-   Long_t Cmd(vector<TString>);
-   void Help();
+    static const char *kFuncNameBase;
+    static const char *kLabelNameBase;
+    Long_t Cmd(vector<TString>) override;
+    void Help() override;
 
-private:
-   TCmdXfitg(const TCmdXfitg &);            // undefined
-   TCmdXfitg &operator=(const TCmdXfitg &); // undefined
+  private:
+    TCmdXfitg(const TCmdXfitg &) = delete;            // undefined
+    TCmdXfitg &operator=(const TCmdXfitg &) = delete; // undefined
 
-   ClassDef(TCmdXfitg, 1);                  // Obtain slope graphically
+    ClassDefOverride(TCmdXfitg, 1); // Obtain slope graphically
 };
 
 #endif // end of #ifndef _TCMDXFITG_H_

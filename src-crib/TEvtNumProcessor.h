@@ -1,11 +1,10 @@
 /**
- * @file   TEvtNumProcessor.h
- * @date   Created : Jun 22, 2012 21:22:45 JST
- *   Last Modified : Feb 04, 2014 16:33:20 JST
- * @author Shinsuke OTA <ota@cns.s.u-tokyo.ac.jp>
- *
- *
- *    Copyright (C)2012
+ * @file    TEvtNumProcessor.h
+ * @brief
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2022?
+ * @note    last modified: 2024-08-14 18:58:54
+ * @details originally made by J. W. Hwang
  */
 
 #ifndef _TEVTNUMPROCESSOR_H_
@@ -15,28 +14,26 @@
 #include <TStopwatch.h>
 
 namespace art {
-   class TEvtNumProcessor;
+class TEvtNumProcessor;
 }
 
+class art::TEvtNumProcessor : public TProcessor {
 
+  public:
+    TEvtNumProcessor();
+    ~TEvtNumProcessor();
 
-class art::TEvtNumProcessor  : public TProcessor {
+    void Init(TEventCollection *col) override;
+    void EndOfRun() override;
+    void Process() override;
 
- public:
-  TEvtNumProcessor();
-  ~TEvtNumProcessor();
+  private:
+    Int_t fCurNum;
+    Int_t fLimEvNum;
+    Bool_t fPriEv;
+    Int_t fPriEvNum;
 
-  virtual void Init(TEventCollection*col);
-  virtual void EndOfRun();
-  virtual void Process();
-
- private:
-  Int_t fCurNum;
-  Int_t fLimEvNum;
-  Bool_t fPriEv;
-  Int_t fPriEvNum;
-
- protected:
-  ClassDef(TEvtNumProcessor,1);
+  protected:
+    ClassDefOverride(TEvtNumProcessor, 1);
 };
 #endif // end of #ifdef _TEVTNUMPROCESSOR_H_

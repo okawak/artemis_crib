@@ -12,18 +12,18 @@
 #include <TCatCmd.h>
 
 class TCatCmdLoopStart : public TCatCmd {
-protected:
-   TCatCmdLoopStart();
+  protected:
+    TCatCmdLoopStart();
 
-public:
-   ~TCatCmdLoopStart();
+  public:
+    ~TCatCmdLoopStart();
 
-   static TCatCmdLoopStart *Instance();
+    static TCatCmdLoopStart *Instance();
 
-   virtual Long_t Cmd(vector<TString> args);
+    Long_t Cmd(vector<TString> args) override;
 
-   virtual void Help();
+    void Help() override;
 
-   ClassDef(TCatCmdLoopStart, 1);
+    ClassDefOverride(TCatCmdLoopStart, 1);
 };
 #endif // end of #ifdef _TCATCMDLOOPSTART_H_

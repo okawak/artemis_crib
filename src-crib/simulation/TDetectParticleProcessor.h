@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:34:15
- * @note    last modified: 2024-08-14 14:51:28
+ * @note    last modified: 2024-08-14 18:49:32
  * @details
  */
 
@@ -26,10 +26,10 @@ class TClonesArray;
 class art::TDetectParticleProcessor : public TProcessor {
   public:
     TDetectParticleProcessor();
-    virtual ~TDetectParticleProcessor();
+    ~TDetectParticleProcessor();
 
-    virtual void Init(TEventCollection *col);
-    virtual void Process();
+    void Init(TEventCollection *col) override;
+    void Process() override;
 
   protected:
     TString fInputColName;
@@ -59,10 +59,10 @@ class art::TDetectParticleProcessor : public TProcessor {
     std::vector<TString> GetUniqueElements(const std::vector<TString> &input);
     Int_t GetStripID(Double_t pos, Int_t max_strip, Double_t size);
 
-    // TDetectParticleProcessor(const TDetectParticleProcessor &rhs);
-    // TDetectParticleProcessor &operator=(const TDetectParticleProcessor &rhs);
+    TDetectParticleProcessor(const TDetectParticleProcessor &rhs) = delete;
+    TDetectParticleProcessor &operator=(const TDetectParticleProcessor &rhs) = delete;
 
-    ClassDef(TDetectParticleProcessor, 1)
+    ClassDefOverride(TDetectParticleProcessor, 1)
 };
 
 #endif // end of #ifndef _TDETECTPARTICLEPROCESSOR_H_

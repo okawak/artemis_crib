@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-18 11:32:42
- * @note    last modified: 2024-07-19 16:54:16
+ * @note    last modified: 2024-08-14 18:52:57
  * @details
  */
 
@@ -19,9 +19,9 @@ class TDetectorParameter;
 class art::TDetectorParameter : public TParameterObject {
   public:
     TDetectorParameter();
-    virtual ~TDetectorParameter();
+    ~TDetectorParameter();
 
-    TDetectorParameter(const TDetectorParameter &rhs);
+    TDetectorParameter(const TDetectorParameter &);
     TDetectorParameter &operator=(const TDetectorParameter &rhs);
 
     TString GetDetName() const { return fDetName; }
