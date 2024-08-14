@@ -9,16 +9,28 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
+          ref: ${{ github.event.ref }}
           submodules: true # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
+      - name: get src-crib from Main branch
+        run: |
+          git fetch origin main
+          git checkout origin/main -- src-crib/
+
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: "latest"
           # extended: true
+
+      - name: install doxygen
+        run: sudo apt-get install doxygen graphviz
+
+      - name: generate doxygen files
+        run: doxygen Doxyfile
 
       - name: Build
         run: hugo

@@ -1,5 +1,5 @@
 ---
-title: "analysis example"
+title: "Analysis example"
 date: 2024-07-30T17:28:14+09:00
 draft: false
 author: "Kodai Okawa"
@@ -60,8 +60,12 @@ $ a output/created_rootfile_path.root
 artemis [] tree->Draw("hoge")
 ```
 
+<u>It is good idea to make a ".C" macro file to record and reproduce the analysis process.</u>
+
 Here are some points I think would be good to check:
 
+- reproduce the online-analysis
+- check if the calibration parameter is correct
 - check multiplicity of the beam tracking detector (PPAC or MWDC)
 - proper timing of PPACa/b or MWDCa/b (because we may be using multihit TDC, V1190)
 - check the beam properties difference between "beam_single" trigger and "SSD_coin" trigger
@@ -70,7 +74,23 @@ Here are some points I think would be good to check:
 
 If there are problems during the experiment, there may be many other things to check.
 
-##### 2. Briefly check other RUNs to see if the trend is the same
+##### **2. Briefly check other RUNs to see if the trend is the same**
+
+It is possible that some parameter is different for each RUN.
+There are many possibilities, for example, a trouble may have occurred and the conditions of the detector have changed.
+In such cases, it is necessary to take action, for example, to prepare several calibration parameters.
+
+While some of these changes in parameters can be predicted in advance, unforeseen changes can also occur.
+
+- RF timing sometime change (relatie value)
+  - -> need to modify the PID parameters
+- MUX position parameter sometimes shift
+  - -> need to modify position calibration parameter
+
+These are the problems I have encountered, but others with different tendencies may exist.
+
+If you can anticipate it, it is good to have a plan for dealing with it at this point and move on to the next step.
+However, there is no need to waste time here as it can be noticed after merging the overall measurements in the following step.
 
 ##### 3. Determine the appropriate gate (like remove noise, not precisely)
 
