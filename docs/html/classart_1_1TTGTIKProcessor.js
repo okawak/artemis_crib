@@ -1,0 +1,28 @@
+var classart_1_1TTGTIKProcessor =
+[
+    [ "TTGTIKProcessor", "classart_1_1TTGTIKProcessor.html#a05e324a3d8c50020472d61c10d539b58", null ],
+    [ "~TTGTIKProcessor", "classart_1_1TTGTIKProcessor.html#a2c2c8a28f4efef0edbd1406a07528d3e", null ],
+    [ "Init", "classart_1_1TTGTIKProcessor.html#aff91afddcded9258afb1a81a62461d9e", null ],
+    [ "Process", "classart_1_1TTGTIKProcessor.html#a6b025fca7795d38472cd5e9a26237bd3", null ],
+    [ "fDetectorPrm", "classart_1_1TTGTIKProcessor.html#ac7be3a4fd23a537a4de629d8dc39b6c9", null ],
+    [ "fElossBeam", "classart_1_1TTGTIKProcessor.html#a7d408c699c1280f7ee8c3d6d655eee50", null ],
+    [ "fElossDetectParticle", "classart_1_1TTGTIKProcessor.html#a71ded9eca03d51709b6a9bdb2779dd08", null ],
+    [ "fElossTable", "classart_1_1TTGTIKProcessor.html#a0b5d73d56e42363741c11dfbcdc35b1e", null ],
+    [ "fEnergyThreshold", "classart_1_1TTGTIKProcessor.html#a0dd2c4cd42167893544abda38e317a2d", null ],
+    [ "fInData", "classart_1_1TTGTIKProcessor.html#a9ac1648cacee98912ad39fcb6ca58f83", null ],
+    [ "fInitialBeamEnergy", "classart_1_1TTGTIKProcessor.html#a931096dbbacf1732cc7bf1dfc4257e93", null ],
+    [ "fInputColName", "classart_1_1TTGTIKProcessor.html#a59d682c3fc51757e1441de5474add20a", null ],
+    [ "fInputTrackColName", "classart_1_1TTGTIKProcessor.html#adde93e8901acacfe0366eb6db6272ab5", null ],
+    [ "fInTrackData", "classart_1_1TTGTIKProcessor.html#a2bbd33cfc164922f5f801745552f1cff", null ],
+    [ "fMaxLength", "classart_1_1TTGTIKProcessor.html#aba73f89c77e572e5bdc83c11f3136f5c", null ],
+    [ "fOutData", "classart_1_1TTGTIKProcessor.html#ad523c0b9f30354fee148ca1fd715a1c4", null ],
+    [ "fOutputColName", "classart_1_1TTGTIKProcessor.html#ad39916e65440d8e3681cc73065c031ec", null ],
+    [ "fParameterName", "classart_1_1TTGTIKProcessor.html#a775a7c69427def45c6a2d1f01811315a", null ],
+    [ "fParticleAtomicNum", "classart_1_1TTGTIKProcessor.html#a8ea594a958e8821eeb0bf9e7ff013c9a", null ],
+    [ "fParticleMass", "classart_1_1TTGTIKProcessor.html#a6f568cd510b86f2b7b727fe8e59922fb", null ],
+    [ "fParticleName", "classart_1_1TTGTIKProcessor.html#a91ba3a5388c742f745517f2e1a09d57e", null ],
+    [ "fTargetName", "classart_1_1TTGTIKProcessor.html#a3075023f2ad2fd6c72a4a5e6adec38cf", null ],
+    [ "kEpsilon", "classart_1_1TTGTIKProcessor.html#abb30c8c58d5a41be9c98ea31d44e5977", null ],
+    [ "kMaxIteration", "classart_1_1TTGTIKProcessor.html#ac92319eddc20e647b44b93cc40193581", null ],
+    [ "kWindowUncertainty", "classart_1_1TTGTIKProcessor.html#a49e7356b4239488ceda10524c81e2b71", null ]
+];

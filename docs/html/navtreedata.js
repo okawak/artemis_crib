@@ -33,16 +33,19 @@ var NAVTREE =
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", "functions_func" ],
+        [ "Variables", "functions_vars.html", "functions_vars" ],
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Enumerator", "functions_eval.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ]
+        [ "Functions", "globals_func.html", null ],
+        [ "Typedefs", "globals_type.html", null ]
       ] ]
     ] ]
   ] ]
@@ -50,7 +53,10 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"TBranchCopyProcessor_8cc.html"
+"TBranchCopyProcessor_8cc.html",
+"classart_1_1TCmdXstatus.html#a2213e3af2fbb4a7a00d179d3cabb3895",
+"classart_1_1TParticleInfo.html#a3b7860bee06bf211f978470a1f0af102",
+"classart_1_1TTelescopeData.html#ab29ee00cc8c2cc770612695d32811555"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
