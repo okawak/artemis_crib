@@ -47,11 +47,11 @@ style = "monokai"
 
 # For menu extra shortcuts
 [[menu.shortcuts]]
-name = "<i class='fas fa-fw fa-file-code-o'></i> Source Code"
+name = "<i class='fas fa-fw fa-file'></i> Source Code"
 url = "docs/html"
-weight = 30
+weight = 1
 [[menu.shortcuts]]
-name = "<i class='fas  fa-home'></i> CRIB homepage"
+name = "<i class='fas fa-fw fa-home'></i> CRIB homepage"
 url = "https://www.cns.s.u-tokyo.ac.jp/crib/crib-new/"
 weight = 5
 [[menu.shortcuts]]
