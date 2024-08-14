@@ -2,8 +2,8 @@ var classart_1_1TMUXCalibrationProcessor =
 [
     [ "TMUXCalibrationProcessor", "classart_1_1TMUXCalibrationProcessor.html#a9dd328521829b8340069cd652aa18c24", null ],
     [ "~TMUXCalibrationProcessor", "classart_1_1TMUXCalibrationProcessor.html#a22b8eb434ba225aa281394aad2de0550", null ],
-    [ "Init", "classart_1_1TMUXCalibrationProcessor.html#a666201778c32fd2461c76b8d063d4340", null ],
-    [ "Process", "classart_1_1TMUXCalibrationProcessor.html#af9075cf3faea533b38c445237ad18658", null ],
+    [ "Init", "classart_1_1TMUXCalibrationProcessor.html#af974729ed3ea25986d51c03dc4d1880c", null ],
+    [ "Process", "classart_1_1TMUXCalibrationProcessor.html#ad069e4bdef8b92239a8f61f26e6309c6", null ],
     [ "fChargeConverterArray", "classart_1_1TMUXCalibrationProcessor.html#abd5209aaca1a2f54f1b834bb976133f6", null ],
     [ "fChargeConverterArrayName", "classart_1_1TMUXCalibrationProcessor.html#a8ec39875032a6586ba746414f61f325b", null ],
     [ "fHasReflection", "classart_1_1TMUXCalibrationProcessor.html#ab0baa8f8faf81975bde5eecb9f5f3923", null ],

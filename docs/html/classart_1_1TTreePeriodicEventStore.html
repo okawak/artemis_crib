@@ -105,16 +105,24 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae9caf0e83cad625694bf0e9f06b32a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15a637a5e90825c814bff9bed94b59e5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTreePeriodicEventStore.html#a15a637a5e90825c814bff9bed94b59e5">~TTreePeriodicEventStore</a> ()</td></tr>
 <tr class="separator:a15a637a5e90825c814bff9bed94b59e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab66a41a42832e389ec10dc1c740f001"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTreePeriodicEventStore.html#aab66a41a42832e389ec10dc1c740f001">Init</a> (TEventCollection *col)</td></tr>
-<tr class="separator:aab66a41a42832e389ec10dc1c740f001"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef405fda0cf7e369dd86578731f27994"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTreePeriodicEventStore.html#aef405fda0cf7e369dd86578731f27994">Process</a> ()</td></tr>
-<tr class="separator:aef405fda0cf7e369dd86578731f27994"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64524652a8e4972bb5d91b9b14898633"><td class="memItemLeft" align="right" valign="top">Int_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTreePeriodicEventStore.html#a64524652a8e4972bb5d91b9b14898633">GetRunNumber</a> () const</td></tr>
-<tr class="separator:a64524652a8e4972bb5d91b9b14898633"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1da3cf10f5cd9e22a840628a5facb0d1"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTreePeriodicEventStore.html#a1da3cf10f5cd9e22a840628a5facb0d1">GetRunName</a> () const</td></tr>
-<tr class="separator:a1da3cf10f5cd9e22a840628a5facb0d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7709b15cb716c11183f7366be85b8d42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTreePeriodicEventStore.html#a7709b15cb716c11183f7366be85b8d42">Init</a> (TEventCollection *col) override</td></tr>
+<tr class="separator:a7709b15cb716c11183f7366be85b8d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a939577bca747ff7643e7d3eb19e58a8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTreePeriodicEventStore.html#a939577bca747ff7643e7d3eb19e58a8f">Process</a> () override</td></tr>
+<tr class="separator:a939577bca747ff7643e7d3eb19e58a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cec9d592b958c7e455822f39290f823"><td class="memItemLeft" align="right" valign="top">Int_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTreePeriodicEventStore.html#a9cec9d592b958c7e455822f39290f823">GetRunNumber</a> () const override</td></tr>
+<tr class="memdesc:a9cec9d592b958c7e455822f39290f823"><td class="mdescLeft">&#160;</td><td class="mdescRight">override from IEventStore  <a href="classart_1_1TTreePeriodicEventStore.html#a9cec9d592b958c7e455822f39290f823">More...</a><br /></td></tr>
+<tr class="separator:a9cec9d592b958c7e455822f39290f823"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7343c036afddf40cea58f0fdb68f3b28"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTreePeriodicEventStore.html#a7343c036afddf40cea58f0fdb68f3b28">GetRunName</a> () const override</td></tr>
+<tr class="memdesc:a7343c036afddf40cea58f0fdb68f3b28"><td class="mdescLeft">&#160;</td><td class="mdescRight">override from IEventStore but it is UNSAFE  <a href="classart_1_1TTreePeriodicEventStore.html#a7343c036afddf40cea58f0fdb68f3b28">More...</a><br /></td></tr>
+<tr class="separator:a7343c036afddf40cea58f0fdb68f3b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75ef02283b244a7ceaa36e5bbbae860d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTreePeriodicEventStore.html#a75ef02283b244a7ceaa36e5bbbae860d">GetStrRunName</a> () const</td></tr>
+<tr class="memdesc:a75ef02283b244a7ceaa36e5bbbae860d"><td class="mdescLeft">&#160;</td><td class="mdescRight">safe function to get run name  <a href="classart_1_1TTreePeriodicEventStore.html#a75ef02283b244a7ceaa36e5bbbae860d">More...</a><br /></td></tr>
+<tr class="separator:a75ef02283b244a7ceaa36e5bbbae860d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="TTreePeriodicEventStore_8h_source.html#l00035">35</a> of file <a class="el" href="TTreePeriodicEventStore_8h_source.html">TTreePeriodicEventStore.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae9caf0e83cad625694bf0e9f06b32a0f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae9caf0e83cad625694bf0e9f06b32a0f">&#9670;&nbsp;</a></span>TTreePeriodicEventStore()</h2>
 
@@ -129,6 +137,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TTreePeriodicEventStore_8cc_source.html#l00027">27</a> of file <a class="el" href="TTreePeriodicEventStore_8cc_source.html">TTreePeriodicEventStore.cc</a>.</p>
 
 </div>
 </div>
@@ -147,14 +157,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TTreePeriodicEventStore_8cc_source.html#l00034">34</a> of file <a class="el" href="TTreePeriodicEventStore_8cc_source.html">TTreePeriodicEventStore.cc</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1da3cf10f5cd9e22a840628a5facb0d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1da3cf10f5cd9e22a840628a5facb0d1">&#9670;&nbsp;</a></span>GetRunName()</h2>
+<a id="a7343c036afddf40cea58f0fdb68f3b28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7343c036afddf40cea58f0fdb68f3b28">&#9670;&nbsp;</a></span>GetRunName()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const char * art::TTreePeriodicEventStore::GetRunName </td>
@@ -163,15 +178,28 @@ Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>override from IEventStore but it is UNSAFE </p>
+<dl class="section return"><dt>Returns</dt><dd>not return anything </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="TTreePeriodicEventStore_8cc_source.html#l00201">201</a> of file <a class="el" href="TTreePeriodicEventStore_8cc_source.html">TTreePeriodicEventStore.cc</a>.</p>
 
 </div>
 </div>
-<a id="a64524652a8e4972bb5d91b9b14898633"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64524652a8e4972bb5d91b9b14898633">&#9670;&nbsp;</a></span>GetRunNumber()</h2>
+<a id="a9cec9d592b958c7e455822f39290f823"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cec9d592b958c7e455822f39290f823">&#9670;&nbsp;</a></span>GetRunNumber()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Int_t art::TTreePeriodicEventStore::GetRunNumber </td>
@@ -180,12 +208,44 @@ Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>override from IEventStore </p>
+<dl class="section return"><dt>Returns</dt><dd>Run number </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="TTreePeriodicEventStore_8cc_source.html#l00195">195</a> of file <a class="el" href="TTreePeriodicEventStore_8cc_source.html">TTreePeriodicEventStore.cc</a>.</p>
 
 </div>
 </div>
-<a id="aab66a41a42832e389ec10dc1c740f001"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab66a41a42832e389ec10dc1c740f001">&#9670;&nbsp;</a></span>Init()</h2>
+<a id="a75ef02283b244a7ceaa36e5bbbae860d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75ef02283b244a7ceaa36e5bbbae860d">&#9670;&nbsp;</a></span>GetStrRunName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string art::TTreePeriodicEventStore::GetStrRunName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>safe function to get run name </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string runname </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="TTreePeriodicEventStore_8cc_source.html#l00205">205</a> of file <a class="el" href="TTreePeriodicEventStore_8cc_source.html">TTreePeriodicEventStore.cc</a>.</p>
+
+</div>
+</div>
+<a id="a7709b15cb716c11183f7366be85b8d42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7709b15cb716c11183f7366be85b8d42">&#9670;&nbsp;</a></span>Init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -203,15 +263,17 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TTreePeriodicEventStore_8cc_source.html#l00040">40</a> of file <a class="el" href="TTreePeriodicEventStore_8cc_source.html">TTreePeriodicEventStore.cc</a>.</p>
+
 </div>
 </div>
-<a id="aef405fda0cf7e369dd86578731f27994"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef405fda0cf7e369dd86578731f27994">&#9670;&nbsp;</a></span>Process()</h2>
+<a id="a939577bca747ff7643e7d3eb19e58a8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a939577bca747ff7643e7d3eb19e58a8f">&#9670;&nbsp;</a></span>Process()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -228,16 +290,18 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TTreePeriodicEventStore_8cc_source.html#l00182">182</a> of file <a class="el" href="TTreePeriodicEventStore_8cc_source.html">TTreePeriodicEventStore.cc</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src-crib/simulation/<a class="el" href="TTreePeriodicEventStore_8h_source.html">TTreePeriodicEventStore.h</a></li>
-<li>src-crib/simulation/<a class="el" href="TTreePeriodicEventStore_8cc.html">TTreePeriodicEventStore.cc</a></li>
+<li>src-crib/simulation/<a class="el" href="TTreePeriodicEventStore_8cc_source.html">TTreePeriodicEventStore.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

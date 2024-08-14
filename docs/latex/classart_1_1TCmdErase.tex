@@ -17,15 +17,22 @@ Inheritance diagram for art\+::TCmd\+Erase\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classart_1_1TCmdErase_afc9caee1014a23a6ff7c1af0dadd9f80}{$\sim$\+TCmd\+Erase}} ()
 \item 
-virtual Long\+\_\+t \mbox{\hyperlink{classart_1_1TCmdErase_a7483d9a9267c447f63a66881741bc8ae}{Cmd}} (vector$<$ TString $>$ args)
+Long\+\_\+t \mbox{\hyperlink{classart_1_1TCmdErase_a4b7ff2f4e491de9c08248c8eccf18c95}{Cmd}} (vector$<$ TString $>$) override
 \item 
-virtual Long\+\_\+t \mbox{\hyperlink{classart_1_1TCmdErase_afe26a3c7a4ed9d5ec0d71051cc0dc14c}{Run}} ()
+Long\+\_\+t \mbox{\hyperlink{classart_1_1TCmdErase_afe26a3c7a4ed9d5ec0d71051cc0dc14c}{Run}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{classart_1_1TCmdErase_a51bb507122ab6f0efedadc28254d5ce3}{Erase\+Recursive}} (TList $\ast$list)
+void \mbox{\hyperlink{classart_1_1TCmdErase_a51bb507122ab6f0efedadc28254d5ce3}{Erase\+Recursive}} (TList $\ast$list)
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 22 of file TCmd\+Erase.\+h.
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -35,6 +42,10 @@ virtual void \mbox{\hyperlink{classart_1_1TCmdErase_a51bb507122ab6f0efedadc28254
 \doxysubsubsection{\texorpdfstring{TCmdErase()}{TCmdErase()}}
 {\footnotesize\ttfamily TCmd\+Erase\+::\+TCmd\+Erase (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 22 of file TCmd\+Erase.\+cc.
+
 \mbox{\Hypertarget{classart_1_1TCmdErase_afc9caee1014a23a6ff7c1af0dadd9f80}\label{classart_1_1TCmdErase_afc9caee1014a23a6ff7c1af0dadd9f80}} 
 \index{art::TCmdErase@{art::TCmdErase}!````~TCmdErase@{$\sim$TCmdErase}}
 \index{````~TCmdErase@{$\sim$TCmdErase}!art::TCmdErase@{art::TCmdErase}}
@@ -43,24 +54,40 @@ virtual void \mbox{\hyperlink{classart_1_1TCmdErase_a51bb507122ab6f0efedadc28254
 
 
 
+Definition at line 27 of file TCmd\+Erase.\+cc.
+
+
+
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classart_1_1TCmdErase_a7483d9a9267c447f63a66881741bc8ae}\label{classart_1_1TCmdErase_a7483d9a9267c447f63a66881741bc8ae}} 
+\mbox{\Hypertarget{classart_1_1TCmdErase_a4b7ff2f4e491de9c08248c8eccf18c95}\label{classart_1_1TCmdErase_a4b7ff2f4e491de9c08248c8eccf18c95}} 
 \index{art::TCmdErase@{art::TCmdErase}!Cmd@{Cmd}}
 \index{Cmd@{Cmd}!art::TCmdErase@{art::TCmdErase}}
 \doxysubsubsection{\texorpdfstring{Cmd()}{Cmd()}}
-{\footnotesize\ttfamily Long\+\_\+t TCmd\+Erase\+::\+Cmd (\begin{DoxyParamCaption}\item[{vector$<$ TString $>$}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily Long\+\_\+t TCmd\+Erase\+::\+Cmd (\begin{DoxyParamCaption}\item[{vector$<$ TString $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 35 of file TCmd\+Erase.\+cc.
 
 \mbox{\Hypertarget{classart_1_1TCmdErase_a51bb507122ab6f0efedadc28254d5ce3}\label{classart_1_1TCmdErase_a51bb507122ab6f0efedadc28254d5ce3}} 
 \index{art::TCmdErase@{art::TCmdErase}!EraseRecursive@{EraseRecursive}}
 \index{EraseRecursive@{EraseRecursive}!art::TCmdErase@{art::TCmdErase}}
 \doxysubsubsection{\texorpdfstring{EraseRecursive()}{EraseRecursive()}}
-{\footnotesize\ttfamily void TCmd\+Erase\+::\+Erase\+Recursive (\begin{DoxyParamCaption}\item[{TList $\ast$}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void TCmd\+Erase\+::\+Erase\+Recursive (\begin{DoxyParamCaption}\item[{TList $\ast$}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 57 of file TCmd\+Erase.\+cc.
 
 \mbox{\Hypertarget{classart_1_1TCmdErase_afe26a3c7a4ed9d5ec0d71051cc0dc14c}\label{classart_1_1TCmdErase_afe26a3c7a4ed9d5ec0d71051cc0dc14c}} 
 \index{art::TCmdErase@{art::TCmdErase}!Run@{Run}}
 \index{Run@{Run}!art::TCmdErase@{art::TCmdErase}}
 \doxysubsubsection{\texorpdfstring{Run()}{Run()}}
-{\footnotesize\ttfamily Long\+\_\+t TCmd\+Erase\+::\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily Long\+\_\+t TCmd\+Erase\+::\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 46 of file TCmd\+Erase.\+cc.
 
 
 

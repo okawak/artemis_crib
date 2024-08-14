@@ -53,10 +53,11 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"TBranchCopyProcessor_8cc.html",
-"classart_1_1TCmdXstatus.html#a2213e3af2fbb4a7a00d179d3cabb3895",
-"classart_1_1TParticleInfo.html#a3b7860bee06bf211f978470a1f0af102",
-"classart_1_1TTelescopeData.html#ab29ee00cc8c2cc770612695d32811555"
+"AlphaCalibration_8C.html",
+"classTCatCmdTCutG.html#ad0d68c07c74cee6a7f0950b65076b45d",
+"classart_1_1TMUXPositionValidator.html#acbcd0e1b2cdda93198547b733eb5a810",
+"classart_1_1TTargetParameter.html#a05a540f6dc1e70abed18d2124693f301",
+"run__AlphaCalibration_8C.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

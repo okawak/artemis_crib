@@ -17,17 +17,24 @@ Inheritance diagram for art\+::TEvt\+Num\+Processor\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classart_1_1TEvtNumProcessor_ae215d121e50122925d657c1f547d1236}{$\sim$\+TEvt\+Num\+Processor}} ()
 \item 
-virtual void \mbox{\hyperlink{classart_1_1TEvtNumProcessor_a1e72f229bd2e636784abd4e1c013c387}{Init}} (TEvent\+Collection $\ast$col)
+void \mbox{\hyperlink{classart_1_1TEvtNumProcessor_a4d8357f2e8c90a304f1aeeb9f955b355}{Init}} (TEvent\+Collection $\ast$col) override
 \item 
-virtual void \mbox{\hyperlink{classart_1_1TEvtNumProcessor_a701fbf4ff38f7c0507d821cd79aa5d16}{End\+Of\+Run}} ()
+void \mbox{\hyperlink{classart_1_1TEvtNumProcessor_a803fcb01d1cbd1a174bf298a6e83109f}{End\+Of\+Run}} () override
 \item 
-virtual void \mbox{\hyperlink{classart_1_1TEvtNumProcessor_ae7c4e9c58e5a75e804637426356a72bb}{Process}} ()
+void \mbox{\hyperlink{classart_1_1TEvtNumProcessor_aed6bca425775239b878012b103559686}{Process}} () override
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classart_1_1TEvtNumProcessor_a2d28f614a489a96bb10c2566c2f7c2b9}{Class\+Def}} (\mbox{\hyperlink{classart_1_1TEvtNumProcessor}{TEvt\+Num\+Processor}}, 1)
+\mbox{\hyperlink{classart_1_1TEvtNumProcessor_aec9b22fbb174f683343303472e788611}{Class\+Def\+Override}} (\mbox{\hyperlink{classart_1_1TEvtNumProcessor}{TEvt\+Num\+Processor}}, 1)
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 20 of file TEvt\+Num\+Processor.\+h.
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -37,6 +44,10 @@ virtual void \mbox{\hyperlink{classart_1_1TEvtNumProcessor_ae7c4e9c58e5a75e80463
 \doxysubsubsection{\texorpdfstring{TEvtNumProcessor()}{TEvtNumProcessor()}}
 {\footnotesize\ttfamily art\+::\+TEvt\+Num\+Processor\+::\+TEvt\+Num\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 19 of file TEvt\+Num\+Processor.\+cc.
+
 \mbox{\Hypertarget{classart_1_1TEvtNumProcessor_ae215d121e50122925d657c1f547d1236}\label{classart_1_1TEvtNumProcessor_ae215d121e50122925d657c1f547d1236}} 
 \index{art::TEvtNumProcessor@{art::TEvtNumProcessor}!````~TEvtNumProcessor@{$\sim$TEvtNumProcessor}}
 \index{````~TEvtNumProcessor@{$\sim$TEvtNumProcessor}!art::TEvtNumProcessor@{art::TEvtNumProcessor}}
@@ -45,30 +56,46 @@ virtual void \mbox{\hyperlink{classart_1_1TEvtNumProcessor_ae7c4e9c58e5a75e80463
 
 
 
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classart_1_1TEvtNumProcessor_a2d28f614a489a96bb10c2566c2f7c2b9}\label{classart_1_1TEvtNumProcessor_a2d28f614a489a96bb10c2566c2f7c2b9}} 
-\index{art::TEvtNumProcessor@{art::TEvtNumProcessor}!ClassDef@{ClassDef}}
-\index{ClassDef@{ClassDef}!art::TEvtNumProcessor@{art::TEvtNumProcessor}}
-\doxysubsubsection{\texorpdfstring{ClassDef()}{ClassDef()}}
-{\footnotesize\ttfamily art\+::\+TEvt\+Num\+Processor\+::\+Class\+Def (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classart_1_1TEvtNumProcessor}{TEvt\+Num\+Processor}}}]{,  }\item[{1}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+Definition at line 28 of file TEvt\+Num\+Processor.\+cc.
 
-\mbox{\Hypertarget{classart_1_1TEvtNumProcessor_a701fbf4ff38f7c0507d821cd79aa5d16}\label{classart_1_1TEvtNumProcessor_a701fbf4ff38f7c0507d821cd79aa5d16}} 
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classart_1_1TEvtNumProcessor_aec9b22fbb174f683343303472e788611}\label{classart_1_1TEvtNumProcessor_aec9b22fbb174f683343303472e788611}} 
+\index{art::TEvtNumProcessor@{art::TEvtNumProcessor}!ClassDefOverride@{ClassDefOverride}}
+\index{ClassDefOverride@{ClassDefOverride}!art::TEvtNumProcessor@{art::TEvtNumProcessor}}
+\doxysubsubsection{\texorpdfstring{ClassDefOverride()}{ClassDefOverride()}}
+{\footnotesize\ttfamily art\+::\+TEvt\+Num\+Processor\+::\+Class\+Def\+Override (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classart_1_1TEvtNumProcessor}{TEvt\+Num\+Processor}}}]{,  }\item[{1}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TEvtNumProcessor_a803fcb01d1cbd1a174bf298a6e83109f}\label{classart_1_1TEvtNumProcessor_a803fcb01d1cbd1a174bf298a6e83109f}} 
 \index{art::TEvtNumProcessor@{art::TEvtNumProcessor}!EndOfRun@{EndOfRun}}
 \index{EndOfRun@{EndOfRun}!art::TEvtNumProcessor@{art::TEvtNumProcessor}}
 \doxysubsubsection{\texorpdfstring{EndOfRun()}{EndOfRun()}}
-{\footnotesize\ttfamily void art\+::\+TEvt\+Num\+Processor\+::\+End\+Of\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void art\+::\+TEvt\+Num\+Processor\+::\+End\+Of\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
-\mbox{\Hypertarget{classart_1_1TEvtNumProcessor_a1e72f229bd2e636784abd4e1c013c387}\label{classart_1_1TEvtNumProcessor_a1e72f229bd2e636784abd4e1c013c387}} 
+
+
+Definition at line 32 of file TEvt\+Num\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TEvtNumProcessor_a4d8357f2e8c90a304f1aeeb9f955b355}\label{classart_1_1TEvtNumProcessor_a4d8357f2e8c90a304f1aeeb9f955b355}} 
 \index{art::TEvtNumProcessor@{art::TEvtNumProcessor}!Init@{Init}}
 \index{Init@{Init}!art::TEvtNumProcessor@{art::TEvtNumProcessor}}
 \doxysubsubsection{\texorpdfstring{Init()}{Init()}}
-{\footnotesize\ttfamily void art\+::\+TEvt\+Num\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void art\+::\+TEvt\+Num\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
-\mbox{\Hypertarget{classart_1_1TEvtNumProcessor_ae7c4e9c58e5a75e804637426356a72bb}\label{classart_1_1TEvtNumProcessor_ae7c4e9c58e5a75e804637426356a72bb}} 
+
+
+Definition at line 30 of file TEvt\+Num\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TEvtNumProcessor_aed6bca425775239b878012b103559686}\label{classart_1_1TEvtNumProcessor_aed6bca425775239b878012b103559686}} 
 \index{art::TEvtNumProcessor@{art::TEvtNumProcessor}!Process@{Process}}
 \index{Process@{Process}!art::TEvtNumProcessor@{art::TEvtNumProcessor}}
 \doxysubsubsection{\texorpdfstring{Process()}{Process()}}
-{\footnotesize\ttfamily void art\+::\+TEvt\+Num\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void art\+::\+TEvt\+Num\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 36 of file TEvt\+Num\+Processor.\+cc.
 
 
 

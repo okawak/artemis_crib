@@ -15,11 +15,11 @@ Inheritance diagram for art\+::TTSMapping\+Processor\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classart_1_1TTSMappingProcessor_acbc64f0fa59825c16d30d5b5abc80f9c}{TTSMapping\+Processor}} ()
 \item 
-virtual \mbox{\hyperlink{classart_1_1TTSMappingProcessor_a2cef85c0cad48cc2b3ab0621b08420f7}{$\sim$\+TTSMapping\+Processor}} ()
+\mbox{\hyperlink{classart_1_1TTSMappingProcessor_a2cef85c0cad48cc2b3ab0621b08420f7}{$\sim$\+TTSMapping\+Processor}} ()
 \item 
-virtual void \mbox{\hyperlink{classart_1_1TTSMappingProcessor_a8a613bbda05e1fa3750e1c5fb61dd297}{Init}} (TEvent\+Collection $\ast$col)
+void \mbox{\hyperlink{classart_1_1TTSMappingProcessor_a93eac67b50c89c3ef439836d2fb3f0de}{Init}} (TEvent\+Collection $\ast$) override
 \item 
-virtual void \mbox{\hyperlink{classart_1_1TTSMappingProcessor_a17f8ad4f1d23875dcf5c325f4e4ef0d6}{Process}} ()
+void \mbox{\hyperlink{classart_1_1TTSMappingProcessor_a46b3e89318e1cdc314ec654dc7dd99e2}{Process}} () override
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -38,6 +38,13 @@ Int\+\_\+t \mbox{\hyperlink{classart_1_1TTSMappingProcessor_a8997b1eab613b8460fe
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 13 of file TTSMapping\+Processor.\+h.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classart_1_1TTSMappingProcessor_acbc64f0fa59825c16d30d5b5abc80f9c}\label{classart_1_1TTSMappingProcessor_acbc64f0fa59825c16d30d5b5abc80f9c}} 
 \index{art::TTSMappingProcessor@{art::TTSMappingProcessor}!TTSMappingProcessor@{TTSMappingProcessor}}
@@ -45,26 +52,42 @@ Int\+\_\+t \mbox{\hyperlink{classart_1_1TTSMappingProcessor_a8997b1eab613b8460fe
 \doxysubsubsection{\texorpdfstring{TTSMappingProcessor()}{TTSMappingProcessor()}}
 {\footnotesize\ttfamily TTSMapping\+Processor\+::\+TTSMapping\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 15 of file TTSMapping\+Processor.\+cc.
+
 \mbox{\Hypertarget{classart_1_1TTSMappingProcessor_a2cef85c0cad48cc2b3ab0621b08420f7}\label{classart_1_1TTSMappingProcessor_a2cef85c0cad48cc2b3ab0621b08420f7}} 
 \index{art::TTSMappingProcessor@{art::TTSMappingProcessor}!````~TTSMappingProcessor@{$\sim$TTSMappingProcessor}}
 \index{````~TTSMappingProcessor@{$\sim$TTSMappingProcessor}!art::TTSMappingProcessor@{art::TTSMappingProcessor}}
 \doxysubsubsection{\texorpdfstring{$\sim$TTSMappingProcessor()}{~TTSMappingProcessor()}}
-{\footnotesize\ttfamily TTSMapping\+Processor\+::$\sim$\+TTSMapping\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily TTSMapping\+Processor\+::$\sim$\+TTSMapping\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 30 of file TTSMapping\+Processor.\+cc.
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classart_1_1TTSMappingProcessor_a8a613bbda05e1fa3750e1c5fb61dd297}\label{classart_1_1TTSMappingProcessor_a8a613bbda05e1fa3750e1c5fb61dd297}} 
+\mbox{\Hypertarget{classart_1_1TTSMappingProcessor_a93eac67b50c89c3ef439836d2fb3f0de}\label{classart_1_1TTSMappingProcessor_a93eac67b50c89c3ef439836d2fb3f0de}} 
 \index{art::TTSMappingProcessor@{art::TTSMappingProcessor}!Init@{Init}}
 \index{Init@{Init}!art::TTSMappingProcessor@{art::TTSMappingProcessor}}
 \doxysubsubsection{\texorpdfstring{Init()}{Init()}}
-{\footnotesize\ttfamily void TTSMapping\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void TTSMapping\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
-\mbox{\Hypertarget{classart_1_1TTSMappingProcessor_a17f8ad4f1d23875dcf5c325f4e4ef0d6}\label{classart_1_1TTSMappingProcessor_a17f8ad4f1d23875dcf5c325f4e4ef0d6}} 
+
+
+Definition at line 35 of file TTSMapping\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TTSMappingProcessor_a46b3e89318e1cdc314ec654dc7dd99e2}\label{classart_1_1TTSMappingProcessor_a46b3e89318e1cdc314ec654dc7dd99e2}} 
 \index{art::TTSMappingProcessor@{art::TTSMappingProcessor}!Process@{Process}}
 \index{Process@{Process}!art::TTSMappingProcessor@{art::TTSMappingProcessor}}
 \doxysubsubsection{\texorpdfstring{Process()}{Process()}}
-{\footnotesize\ttfamily void TTSMapping\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void TTSMapping\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 40 of file TTSMapping\+Processor.\+cc.
 
 
 
@@ -75,11 +98,19 @@ Int\+\_\+t \mbox{\hyperlink{classart_1_1TTSMappingProcessor_a8997b1eab613b8460fe
 \doxysubsubsection{\texorpdfstring{fCategorizedData}{fCategorizedData}}
 {\footnotesize\ttfamily TCategorized\+Data$\ast$$\ast$ art\+::\+TTSMapping\+Processor\+::f\+Categorized\+Data\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 24 of file TTSMapping\+Processor.\+h.
+
 \mbox{\Hypertarget{classart_1_1TTSMappingProcessor_aeb84e95722df15cf16c302e34f0f6e6b}\label{classart_1_1TTSMappingProcessor_aeb84e95722df15cf16c302e34f0f6e6b}} 
 \index{art::TTSMappingProcessor@{art::TTSMappingProcessor}!fCatID@{fCatID}}
 \index{fCatID@{fCatID}!art::TTSMappingProcessor@{art::TTSMappingProcessor}}
 \doxysubsubsection{\texorpdfstring{fCatID}{fCatID}}
 {\footnotesize\ttfamily Int\+\_\+t art\+::\+TTSMapping\+Processor\+::f\+Cat\+ID\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 27 of file TTSMapping\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTSMappingProcessor_a8997b1eab613b8460fe1687a67a625ff}\label{classart_1_1TTSMappingProcessor_a8997b1eab613b8460fe1687a67a625ff}} 
 \index{art::TTSMappingProcessor@{art::TTSMappingProcessor}!fDataTypeID@{fDataTypeID}}
@@ -87,11 +118,19 @@ Int\+\_\+t \mbox{\hyperlink{classart_1_1TTSMappingProcessor_a8997b1eab613b8460fe
 \doxysubsubsection{\texorpdfstring{fDataTypeID}{fDataTypeID}}
 {\footnotesize\ttfamily Int\+\_\+t art\+::\+TTSMapping\+Processor\+::f\+Data\+Type\+ID\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 28 of file TTSMapping\+Processor.\+h.
+
 \mbox{\Hypertarget{classart_1_1TTSMappingProcessor_ac0b010a6a0bf1bb4adebd56731a31bbb}\label{classart_1_1TTSMappingProcessor_ac0b010a6a0bf1bb4adebd56731a31bbb}} 
 \index{art::TTSMappingProcessor@{art::TTSMappingProcessor}!fInputColName@{fInputColName}}
 \index{fInputColName@{fInputColName}!art::TTSMappingProcessor@{art::TTSMappingProcessor}}
 \doxysubsubsection{\texorpdfstring{fInputColName}{fInputColName}}
 {\footnotesize\ttfamily TString art\+::\+TTSMapping\+Processor\+::f\+Input\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 22 of file TTSMapping\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTSMappingProcessor_ad0b17f74cb8db1df4944f62b76a37104}\label{classart_1_1TTSMappingProcessor_ad0b17f74cb8db1df4944f62b76a37104}} 
 \index{art::TTSMappingProcessor@{art::TTSMappingProcessor}!fOutputArray@{fOutputArray}}
@@ -99,11 +138,19 @@ Int\+\_\+t \mbox{\hyperlink{classart_1_1TTSMappingProcessor_a8997b1eab613b8460fe
 \doxysubsubsection{\texorpdfstring{fOutputArray}{fOutputArray}}
 {\footnotesize\ttfamily TClones\+Array$\ast$ art\+::\+TTSMapping\+Processor\+::f\+Output\+Array\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 25 of file TTSMapping\+Processor.\+h.
+
 \mbox{\Hypertarget{classart_1_1TTSMappingProcessor_ad260948a34755cec45beb39e12cb225e}\label{classart_1_1TTSMappingProcessor_ad260948a34755cec45beb39e12cb225e}} 
 \index{art::TTSMappingProcessor@{art::TTSMappingProcessor}!fOutputColName@{fOutputColName}}
 \index{fOutputColName@{fOutputColName}!art::TTSMappingProcessor@{art::TTSMappingProcessor}}
 \doxysubsubsection{\texorpdfstring{fOutputColName}{fOutputColName}}
 {\footnotesize\ttfamily TString art\+::\+TTSMapping\+Processor\+::f\+Output\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 23 of file TTSMapping\+Processor.\+h.
 
 
 

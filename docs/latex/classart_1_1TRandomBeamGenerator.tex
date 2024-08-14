@@ -15,11 +15,11 @@ Inheritance diagram for art\+::TRandom\+Beam\+Generator\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classart_1_1TRandomBeamGenerator_a2fa5f39aa7bb40bc30f037e51eeda222}{TRandom\+Beam\+Generator}} ()
 \item 
-virtual \mbox{\hyperlink{classart_1_1TRandomBeamGenerator_aeb8809ad6011473f1e321a1e7afd982b}{$\sim$\+TRandom\+Beam\+Generator}} ()
+\mbox{\hyperlink{classart_1_1TRandomBeamGenerator_aeb8809ad6011473f1e321a1e7afd982b}{$\sim$\+TRandom\+Beam\+Generator}} ()
 \item 
-void \mbox{\hyperlink{classart_1_1TRandomBeamGenerator_afbebd88786dc63f0fb256976d125242b}{Init}} (TEvent\+Collection $\ast$)
+void \mbox{\hyperlink{classart_1_1TRandomBeamGenerator_a0bdac5080b46caf24550c4ebd310f8ba}{Init}} (TEvent\+Collection $\ast$) override
 \item 
-void \mbox{\hyperlink{classart_1_1TRandomBeamGenerator_a5051ec33f164c84bb2fc6fa0a487359b}{Process}} ()
+void \mbox{\hyperlink{classart_1_1TRandomBeamGenerator_a5ea4e5da67bc71fd807985166b85b1b1}{Process}} () override
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -52,6 +52,13 @@ Double\+\_\+t \mbox{\hyperlink{classart_1_1TRandomBeamGenerator_aa4e4938a17ecc0e
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 21 of file TRandom\+Beam\+Generator.\+h.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_a2fa5f39aa7bb40bc30f037e51eeda222}\label{classart_1_1TRandomBeamGenerator_a2fa5f39aa7bb40bc30f037e51eeda222}} 
 \index{art::TRandomBeamGenerator@{art::TRandomBeamGenerator}!TRandomBeamGenerator@{TRandomBeamGenerator}}
@@ -59,26 +66,42 @@ Double\+\_\+t \mbox{\hyperlink{classart_1_1TRandomBeamGenerator_aa4e4938a17ecc0e
 \doxysubsubsection{\texorpdfstring{TRandomBeamGenerator()}{TRandomBeamGenerator()}}
 {\footnotesize\ttfamily TRandom\+Beam\+Generator\+::\+TRandom\+Beam\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 22 of file TRandom\+Beam\+Generator.\+cc.
+
 \mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_aeb8809ad6011473f1e321a1e7afd982b}\label{classart_1_1TRandomBeamGenerator_aeb8809ad6011473f1e321a1e7afd982b}} 
 \index{art::TRandomBeamGenerator@{art::TRandomBeamGenerator}!````~TRandomBeamGenerator@{$\sim$TRandomBeamGenerator}}
 \index{````~TRandomBeamGenerator@{$\sim$TRandomBeamGenerator}!art::TRandomBeamGenerator@{art::TRandomBeamGenerator}}
 \doxysubsubsection{\texorpdfstring{$\sim$TRandomBeamGenerator()}{~TRandomBeamGenerator()}}
-{\footnotesize\ttfamily TRandom\+Beam\+Generator\+::$\sim$\+TRandom\+Beam\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily TRandom\+Beam\+Generator\+::$\sim$\+TRandom\+Beam\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 39 of file TRandom\+Beam\+Generator.\+cc.
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_afbebd88786dc63f0fb256976d125242b}\label{classart_1_1TRandomBeamGenerator_afbebd88786dc63f0fb256976d125242b}} 
+\mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_a0bdac5080b46caf24550c4ebd310f8ba}\label{classart_1_1TRandomBeamGenerator_a0bdac5080b46caf24550c4ebd310f8ba}} 
 \index{art::TRandomBeamGenerator@{art::TRandomBeamGenerator}!Init@{Init}}
 \index{Init@{Init}!art::TRandomBeamGenerator@{art::TRandomBeamGenerator}}
 \doxysubsubsection{\texorpdfstring{Init()}{Init()}}
-{\footnotesize\ttfamily void TRandom\+Beam\+Generator\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void TRandom\+Beam\+Generator\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
-using TSrim library\mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_a5051ec33f164c84bb2fc6fa0a487359b}\label{classart_1_1TRandomBeamGenerator_a5051ec33f164c84bb2fc6fa0a487359b}} 
+using TSrim library
+
+Definition at line 46 of file TRandom\+Beam\+Generator.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_a5ea4e5da67bc71fd807985166b85b1b1}\label{classart_1_1TRandomBeamGenerator_a5ea4e5da67bc71fd807985166b85b1b1}} 
 \index{art::TRandomBeamGenerator@{art::TRandomBeamGenerator}!Process@{Process}}
 \index{Process@{Process}!art::TRandomBeamGenerator@{art::TRandomBeamGenerator}}
 \doxysubsubsection{\texorpdfstring{Process()}{Process()}}
-{\footnotesize\ttfamily void TRandom\+Beam\+Generator\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void TRandom\+Beam\+Generator\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 68 of file TRandom\+Beam\+Generator.\+cc.
 
 
 
@@ -89,11 +112,19 @@ using TSrim library\mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_a5051ec33
 \doxysubsubsection{\texorpdfstring{fAsigma}{fAsigma}}
 {\footnotesize\ttfamily Double\+\_\+t art\+::\+TRandom\+Beam\+Generator\+::f\+Asigma\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 43 of file TRandom\+Beam\+Generator.\+h.
+
 \mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_ac147fc883f034e85772408276b318c50}\label{classart_1_1TRandomBeamGenerator_ac147fc883f034e85772408276b318c50}} 
 \index{art::TRandomBeamGenerator@{art::TRandomBeamGenerator}!fAtmNum@{fAtmNum}}
 \index{fAtmNum@{fAtmNum}!art::TRandomBeamGenerator@{art::TRandomBeamGenerator}}
 \doxysubsubsection{\texorpdfstring{fAtmNum}{fAtmNum}}
 {\footnotesize\ttfamily Int\+\_\+t art\+::\+TRandom\+Beam\+Generator\+::f\+Atm\+Num\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 37 of file TRandom\+Beam\+Generator.\+h.
 
 \mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_a501d6436488b5e96463433e6f130b3bf}\label{classart_1_1TRandomBeamGenerator_a501d6436488b5e96463433e6f130b3bf}} 
 \index{art::TRandomBeamGenerator@{art::TRandomBeamGenerator}!fBeamEnergy@{fBeamEnergy}}
@@ -101,11 +132,19 @@ using TSrim library\mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_a5051ec33
 \doxysubsubsection{\texorpdfstring{fBeamEnergy}{fBeamEnergy}}
 {\footnotesize\ttfamily Double\+\_\+t art\+::\+TRandom\+Beam\+Generator\+::f\+Beam\+Energy\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 39 of file TRandom\+Beam\+Generator.\+h.
+
 \mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_a4323c691dde7b7570bc233228460bc48}\label{classart_1_1TRandomBeamGenerator_a4323c691dde7b7570bc233228460bc48}} 
 \index{art::TRandomBeamGenerator@{art::TRandomBeamGenerator}!fBsigma@{fBsigma}}
 \index{fBsigma@{fBsigma}!art::TRandomBeamGenerator@{art::TRandomBeamGenerator}}
 \doxysubsubsection{\texorpdfstring{fBsigma}{fBsigma}}
 {\footnotesize\ttfamily Double\+\_\+t art\+::\+TRandom\+Beam\+Generator\+::f\+Bsigma\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 44 of file TRandom\+Beam\+Generator.\+h.
 
 \mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_a46563acdcd6c9899272a88dfda506a38}\label{classart_1_1TRandomBeamGenerator_a46563acdcd6c9899272a88dfda506a38}} 
 \index{art::TRandomBeamGenerator@{art::TRandomBeamGenerator}!fChargeNum@{fChargeNum}}
@@ -113,11 +152,19 @@ using TSrim library\mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_a5051ec33
 \doxysubsubsection{\texorpdfstring{fChargeNum}{fChargeNum}}
 {\footnotesize\ttfamily Int\+\_\+t art\+::\+TRandom\+Beam\+Generator\+::f\+Charge\+Num\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 38 of file TRandom\+Beam\+Generator.\+h.
+
 \mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_aa4e4938a17ecc0ea0019bcd8c8a41f41}\label{classart_1_1TRandomBeamGenerator_aa4e4938a17ecc0ea0019bcd8c8a41f41}} 
 \index{art::TRandomBeamGenerator@{art::TRandomBeamGenerator}!fEsigma@{fEsigma}}
 \index{fEsigma@{fEsigma}!art::TRandomBeamGenerator@{art::TRandomBeamGenerator}}
 \doxysubsubsection{\texorpdfstring{fEsigma}{fEsigma}}
 {\footnotesize\ttfamily Double\+\_\+t art\+::\+TRandom\+Beam\+Generator\+::f\+Esigma\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 45 of file TRandom\+Beam\+Generator.\+h.
 
 \mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_a492abcee33f973b1f4fe3558c338aad5}\label{classart_1_1TRandomBeamGenerator_a492abcee33f973b1f4fe3558c338aad5}} 
 \index{art::TRandomBeamGenerator@{art::TRandomBeamGenerator}!fMassNum@{fMassNum}}
@@ -125,11 +172,19 @@ using TSrim library\mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_a5051ec33
 \doxysubsubsection{\texorpdfstring{fMassNum}{fMassNum}}
 {\footnotesize\ttfamily Int\+\_\+t art\+::\+TRandom\+Beam\+Generator\+::f\+Mass\+Num\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 36 of file TRandom\+Beam\+Generator.\+h.
+
 \mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_aa3780d9d7c63db3d6bd12a8eb3367496}\label{classart_1_1TRandomBeamGenerator_aa3780d9d7c63db3d6bd12a8eb3367496}} 
 \index{art::TRandomBeamGenerator@{art::TRandomBeamGenerator}!fOutData@{fOutData}}
 \index{fOutData@{fOutData}!art::TRandomBeamGenerator@{art::TRandomBeamGenerator}}
 \doxysubsubsection{\texorpdfstring{fOutData}{fOutData}}
 {\footnotesize\ttfamily TClones\+Array$\ast$ art\+::\+TRandom\+Beam\+Generator\+::f\+Out\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 33 of file TRandom\+Beam\+Generator.\+h.
 
 \mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_ac11052ad8b3c78eab561726e185852ed}\label{classart_1_1TRandomBeamGenerator_ac11052ad8b3c78eab561726e185852ed}} 
 \index{art::TRandomBeamGenerator@{art::TRandomBeamGenerator}!fOutputColName@{fOutputColName}}
@@ -137,11 +192,19 @@ using TSrim library\mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_a5051ec33
 \doxysubsubsection{\texorpdfstring{fOutputColName}{fOutputColName}}
 {\footnotesize\ttfamily TString art\+::\+TRandom\+Beam\+Generator\+::f\+Output\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 30 of file TRandom\+Beam\+Generator.\+h.
+
 \mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_a9acf83f4c03bfa879fde650e40433814}\label{classart_1_1TRandomBeamGenerator_a9acf83f4c03bfa879fde650e40433814}} 
 \index{art::TRandomBeamGenerator@{art::TRandomBeamGenerator}!fOutputTrackColName@{fOutputTrackColName}}
 \index{fOutputTrackColName@{fOutputTrackColName}!art::TRandomBeamGenerator@{art::TRandomBeamGenerator}}
 \doxysubsubsection{\texorpdfstring{fOutputTrackColName}{fOutputTrackColName}}
 {\footnotesize\ttfamily TString art\+::\+TRandom\+Beam\+Generator\+::f\+Output\+Track\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 31 of file TRandom\+Beam\+Generator.\+h.
 
 \mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_a8e7fcf67a855342bfe10cbcf742bef3b}\label{classart_1_1TRandomBeamGenerator_a8e7fcf67a855342bfe10cbcf742bef3b}} 
 \index{art::TRandomBeamGenerator@{art::TRandomBeamGenerator}!fOutTrackData@{fOutTrackData}}
@@ -149,17 +212,29 @@ using TSrim library\mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_a5051ec33
 \doxysubsubsection{\texorpdfstring{fOutTrackData}{fOutTrackData}}
 {\footnotesize\ttfamily TClones\+Array$\ast$ art\+::\+TRandom\+Beam\+Generator\+::f\+Out\+Track\+Data\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 34 of file TRandom\+Beam\+Generator.\+h.
+
 \mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_a952145e4a483544c1c5d3ecb3b2fb845}\label{classart_1_1TRandomBeamGenerator_a952145e4a483544c1c5d3ecb3b2fb845}} 
 \index{art::TRandomBeamGenerator@{art::TRandomBeamGenerator}!fXsigma@{fXsigma}}
 \index{fXsigma@{fXsigma}!art::TRandomBeamGenerator@{art::TRandomBeamGenerator}}
 \doxysubsubsection{\texorpdfstring{fXsigma}{fXsigma}}
 {\footnotesize\ttfamily Double\+\_\+t art\+::\+TRandom\+Beam\+Generator\+::f\+Xsigma\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 41 of file TRandom\+Beam\+Generator.\+h.
+
 \mbox{\Hypertarget{classart_1_1TRandomBeamGenerator_ab4fd0a85bab662f73fbf7141547c90c3}\label{classart_1_1TRandomBeamGenerator_ab4fd0a85bab662f73fbf7141547c90c3}} 
 \index{art::TRandomBeamGenerator@{art::TRandomBeamGenerator}!fYsigma@{fYsigma}}
 \index{fYsigma@{fYsigma}!art::TRandomBeamGenerator@{art::TRandomBeamGenerator}}
 \doxysubsubsection{\texorpdfstring{fYsigma}{fYsigma}}
 {\footnotesize\ttfamily Double\+\_\+t art\+::\+TRandom\+Beam\+Generator\+::f\+Ysigma\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 42 of file TRandom\+Beam\+Generator.\+h.
 
 
 

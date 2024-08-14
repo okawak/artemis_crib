@@ -2,8 +2,8 @@ var classart_1_1TDetectParticleProcessor =
 [
     [ "TDetectParticleProcessor", "classart_1_1TDetectParticleProcessor.html#a9f93eab9536b37bbe426fff8a79c8a50", null ],
     [ "~TDetectParticleProcessor", "classart_1_1TDetectParticleProcessor.html#ae3415eb6ab912dab9b3e123703996c7d", null ],
-    [ "Init", "classart_1_1TDetectParticleProcessor.html#abe2ae614ebfbe4d204c28d451118a3e3", null ],
-    [ "Process", "classart_1_1TDetectParticleProcessor.html#a461c897e5213bc3405b19302ab9820f5", null ],
+    [ "Init", "classart_1_1TDetectParticleProcessor.html#aaca8d2a0cbfb72f340acebfed2d2c6aa", null ],
+    [ "Process", "classart_1_1TDetectParticleProcessor.html#aefe8c61538dafd19a58f71b1af2d0b74", null ],
     [ "c", "classart_1_1TDetectParticleProcessor.html#a5a8f4af827791145ba68feea6ab07eb0", null ],
     [ "fDetectorParameterName", "classart_1_1TDetectParticleProcessor.html#a66d231386879c09ea3bfc47f8d66ed85", null ],
     [ "fDetectorPrm", "classart_1_1TDetectParticleProcessor.html#a476ad9e60dd6c84ee932ee7b7fde9b9f", null ],

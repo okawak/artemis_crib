@@ -104,12 +104,12 @@ Inheritance diagram for art::TNBodyReactionProcessor:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6024a9b747e36415cbce33f565af1ad1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TNBodyReactionProcessor.html#a6024a9b747e36415cbce33f565af1ad1">TNBodyReactionProcessor</a> ()</td></tr>
 <tr class="separator:a6024a9b747e36415cbce33f565af1ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b19895bfb324db400596bd264dbe1eb"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TNBodyReactionProcessor.html#a0b19895bfb324db400596bd264dbe1eb">~TNBodyReactionProcessor</a> ()</td></tr>
+<tr class="memitem:a0b19895bfb324db400596bd264dbe1eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TNBodyReactionProcessor.html#a0b19895bfb324db400596bd264dbe1eb">~TNBodyReactionProcessor</a> ()</td></tr>
 <tr class="separator:a0b19895bfb324db400596bd264dbe1eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf5dac7ff34345c5308b2b8ce102c8c1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TNBodyReactionProcessor.html#acf5dac7ff34345c5308b2b8ce102c8c1">Init</a> (TEventCollection *col)</td></tr>
-<tr class="separator:acf5dac7ff34345c5308b2b8ce102c8c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac6642772ef0774114eb1fd8829abea7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TNBodyReactionProcessor.html#aac6642772ef0774114eb1fd8829abea7">Process</a> ()</td></tr>
-<tr class="separator:aac6642772ef0774114eb1fd8829abea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaddc093559a73a2e06c00b351a9e67ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TNBodyReactionProcessor.html#aaddc093559a73a2e06c00b351a9e67ee">Init</a> (TEventCollection *col) override</td></tr>
+<tr class="separator:aaddc093559a73a2e06c00b351a9e67ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c5270eb2f61ec0dd249a3acfe3cfb29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TNBodyReactionProcessor.html#a0c5270eb2f61ec0dd249a3acfe3cfb29">Process</a> () override</td></tr>
+<tr class="separator:a0c5270eb2f61ec0dd249a3acfe3cfb29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -164,7 +164,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:af4455b0b470bb43b74c2c3ed4df113d5"><td class="memItemLeft" align="right" valign="top">const Double_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TNBodyReactionProcessor.html#af4455b0b470bb43b74c2c3ed4df113d5">c</a> = 299.792458</td></tr>
 <tr class="separator:af4455b0b470bb43b74c2c3ed4df113d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00026">26</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6024a9b747e36415cbce33f565af1ad1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6024a9b747e36415cbce33f565af1ad1">&#9670;&nbsp;</a></span>TNBodyReactionProcessor()</h2>
 
@@ -180,6 +183,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8cc_source.html#l00031">31</a> of file <a class="el" href="TNBodyReactionProcessor_8cc_source.html">TNBodyReactionProcessor.cc</a>.</p>
+
 </div>
 </div>
 <a id="a0b19895bfb324db400596bd264dbe1eb"></a>
@@ -187,9 +192,6 @@ Protected Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">TNBodyReactionProcessor::~TNBodyReactionProcessor </td>
@@ -198,18 +200,15 @@ Protected Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8cc_source.html#l00064">64</a> of file <a class="el" href="TNBodyReactionProcessor_8cc_source.html">TNBodyReactionProcessor.cc</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="acf5dac7ff34345c5308b2b8ce102c8c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf5dac7ff34345c5308b2b8ce102c8c1">&#9670;&nbsp;</a></span>Init()</h2>
+<a id="aaddc093559a73a2e06c00b351a9e67ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaddc093559a73a2e06c00b351a9e67ee">&#9670;&nbsp;</a></span>Init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -227,15 +226,17 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8cc_source.html#l00077">77</a> of file <a class="el" href="TNBodyReactionProcessor_8cc_source.html">TNBodyReactionProcessor.cc</a>.</p>
+
 </div>
 </div>
-<a id="aac6642772ef0774114eb1fd8829abea7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac6642772ef0774114eb1fd8829abea7">&#9670;&nbsp;</a></span>Process()</h2>
+<a id="a0c5270eb2f61ec0dd249a3acfe3cfb29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c5270eb2f61ec0dd249a3acfe3cfb29">&#9670;&nbsp;</a></span>Process()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -252,10 +253,12 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8cc_source.html#l00134">134</a> of file <a class="el" href="TNBodyReactionProcessor_8cc_source.html">TNBodyReactionProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -279,6 +282,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00065">65</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -304,6 +309,8 @@ Protected Attributes</h2></td></tr>
 
 <p>SRIM table. </p>
 
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00064">64</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="a47a84401141db20fd6214aa19d7d004a"></a>
@@ -326,6 +333,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00060">60</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="aa3989ec2a18724faeee0200c67f4f5f3"></a>
@@ -347,6 +356,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00044">44</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -372,6 +383,8 @@ Protected Attributes</h2></td></tr>
 
 <p>used only initialization at TSrim object </p>
 
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00043">43</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="abe394beb1ecf0ec0df393f699c664909"></a>
@@ -393,6 +406,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00057">57</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -416,6 +431,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00058">58</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="a164428104afd398999b46dfe111a2ebc"></a>
@@ -437,6 +454,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00053">53</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -460,6 +479,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00056">56</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="ad98f27e5781607d09ea0b26f61882f3a"></a>
@@ -481,6 +502,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00038">38</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -504,6 +527,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00035">35</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="ac1ce9bf4e8188bdf01e32341014180f2"></a>
@@ -525,6 +550,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00039">39</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -548,6 +575,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00036">36</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="a9ec8693ff149f01d46a23c2c82da1067"></a>
@@ -569,6 +598,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00037">37</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -592,6 +623,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00040">40</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="ace659a12ca4d86df7c6f90298b934b5d"></a>
@@ -613,6 +646,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00055">55</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -636,6 +671,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00054">54</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="aba532d17ade306228bd46df072dbbee0"></a>
@@ -657,6 +694,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00049">49</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -680,6 +719,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00046">46</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="a9797d92ce7a97ce448e16daa9cb381a7"></a>
@@ -701,6 +742,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00048">48</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -724,6 +767,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00047">47</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="ab99525206ce6d91bfcccc0b97b37f010"></a>
@@ -745,6 +790,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00051">51</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -768,6 +815,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00050">50</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="a3ce7a04502fab1084fbf83223b656961"></a>
@@ -790,11 +839,13 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00062">62</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src-crib/simulation/<a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a></li>
-<li>src-crib/simulation/<a class="el" href="TNBodyReactionProcessor_8cc.html">TNBodyReactionProcessor.cc</a></li>
+<li>src-crib/simulation/<a class="el" href="TNBodyReactionProcessor_8cc_source.html">TNBodyReactionProcessor.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

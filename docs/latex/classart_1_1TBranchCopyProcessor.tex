@@ -15,11 +15,11 @@ Inheritance diagram for art\+::TBranch\+Copy\+Processor\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classart_1_1TBranchCopyProcessor_a0db4331ff9f4c8749f253a18309d99ba}{TBranch\+Copy\+Processor}} ()
 \item 
-virtual \mbox{\hyperlink{classart_1_1TBranchCopyProcessor_a5f433ba83d2b7a6abc6107ea2cd9947f}{$\sim$\+TBranch\+Copy\+Processor}} ()
+\mbox{\hyperlink{classart_1_1TBranchCopyProcessor_a5f433ba83d2b7a6abc6107ea2cd9947f}{$\sim$\+TBranch\+Copy\+Processor}} ()
 \item 
-virtual void \mbox{\hyperlink{classart_1_1TBranchCopyProcessor_a8509ba4c41ceb256cadadf27b3af3e12}{Init}} (TEvent\+Collection $\ast$col)
+void \mbox{\hyperlink{classart_1_1TBranchCopyProcessor_a296585d151c2f1f9a38bc53a2d626a5c}{Init}} (TEvent\+Collection $\ast$col) override
 \item 
-virtual void \mbox{\hyperlink{classart_1_1TBranchCopyProcessor_af34bbb9786c60244fe03269ea0193f71}{Process}} ()
+void \mbox{\hyperlink{classart_1_1TBranchCopyProcessor_ae28e2db0a7723d2897bc94ad11a7a2d2}{Process}} () override
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -34,6 +34,13 @@ TClones\+Array $\ast$ \mbox{\hyperlink{classart_1_1TBranchCopyProcessor_a1fd2a53
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 21 of file TBranch\+Copy\+Processor.\+h.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classart_1_1TBranchCopyProcessor_a0db4331ff9f4c8749f253a18309d99ba}\label{classart_1_1TBranchCopyProcessor_a0db4331ff9f4c8749f253a18309d99ba}} 
 \index{art::TBranchCopyProcessor@{art::TBranchCopyProcessor}!TBranchCopyProcessor@{TBranchCopyProcessor}}
@@ -41,26 +48,42 @@ TClones\+Array $\ast$ \mbox{\hyperlink{classart_1_1TBranchCopyProcessor_a1fd2a53
 \doxysubsubsection{\texorpdfstring{TBranchCopyProcessor()}{TBranchCopyProcessor()}}
 {\footnotesize\ttfamily TBranch\+Copy\+Processor\+::\+TBranch\+Copy\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 22 of file TBranch\+Copy\+Processor.\+cc.
+
 \mbox{\Hypertarget{classart_1_1TBranchCopyProcessor_a5f433ba83d2b7a6abc6107ea2cd9947f}\label{classart_1_1TBranchCopyProcessor_a5f433ba83d2b7a6abc6107ea2cd9947f}} 
 \index{art::TBranchCopyProcessor@{art::TBranchCopyProcessor}!````~TBranchCopyProcessor@{$\sim$TBranchCopyProcessor}}
 \index{````~TBranchCopyProcessor@{$\sim$TBranchCopyProcessor}!art::TBranchCopyProcessor@{art::TBranchCopyProcessor}}
 \doxysubsubsection{\texorpdfstring{$\sim$TBranchCopyProcessor()}{~TBranchCopyProcessor()}}
-{\footnotesize\ttfamily TBranch\+Copy\+Processor\+::$\sim$\+TBranch\+Copy\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily TBranch\+Copy\+Processor\+::$\sim$\+TBranch\+Copy\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 27 of file TBranch\+Copy\+Processor.\+cc.
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classart_1_1TBranchCopyProcessor_a8509ba4c41ceb256cadadf27b3af3e12}\label{classart_1_1TBranchCopyProcessor_a8509ba4c41ceb256cadadf27b3af3e12}} 
+\mbox{\Hypertarget{classart_1_1TBranchCopyProcessor_a296585d151c2f1f9a38bc53a2d626a5c}\label{classart_1_1TBranchCopyProcessor_a296585d151c2f1f9a38bc53a2d626a5c}} 
 \index{art::TBranchCopyProcessor@{art::TBranchCopyProcessor}!Init@{Init}}
 \index{Init@{Init}!art::TBranchCopyProcessor@{art::TBranchCopyProcessor}}
 \doxysubsubsection{\texorpdfstring{Init()}{Init()}}
-{\footnotesize\ttfamily void TBranch\+Copy\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void TBranch\+Copy\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
-\mbox{\Hypertarget{classart_1_1TBranchCopyProcessor_af34bbb9786c60244fe03269ea0193f71}\label{classart_1_1TBranchCopyProcessor_af34bbb9786c60244fe03269ea0193f71}} 
+
+
+Definition at line 32 of file TBranch\+Copy\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TBranchCopyProcessor_ae28e2db0a7723d2897bc94ad11a7a2d2}\label{classart_1_1TBranchCopyProcessor_ae28e2db0a7723d2897bc94ad11a7a2d2}} 
 \index{art::TBranchCopyProcessor@{art::TBranchCopyProcessor}!Process@{Process}}
 \index{Process@{Process}!art::TBranchCopyProcessor@{art::TBranchCopyProcessor}}
 \doxysubsubsection{\texorpdfstring{Process()}{Process()}}
-{\footnotesize\ttfamily void TBranch\+Copy\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void TBranch\+Copy\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 47 of file TBranch\+Copy\+Processor.\+cc.
 
 
 
@@ -71,11 +94,19 @@ TClones\+Array $\ast$ \mbox{\hyperlink{classart_1_1TBranchCopyProcessor_a1fd2a53
 \doxysubsubsection{\texorpdfstring{fInData}{fInData}}
 {\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::\+TBranch\+Copy\+Processor\+::f\+In\+Data\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 32 of file TBranch\+Copy\+Processor.\+h.
+
 \mbox{\Hypertarget{classart_1_1TBranchCopyProcessor_aa5ff2edac752e7e14df9d562a5fa07a7}\label{classart_1_1TBranchCopyProcessor_aa5ff2edac752e7e14df9d562a5fa07a7}} 
 \index{art::TBranchCopyProcessor@{art::TBranchCopyProcessor}!fInputColName@{fInputColName}}
 \index{fInputColName@{fInputColName}!art::TBranchCopyProcessor@{art::TBranchCopyProcessor}}
 \doxysubsubsection{\texorpdfstring{fInputColName}{fInputColName}}
 {\footnotesize\ttfamily TString art\+::\+TBranch\+Copy\+Processor\+::f\+Input\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 30 of file TBranch\+Copy\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TBranchCopyProcessor_a1fd2a53d236e99b9751ad22c36fa7fcf}\label{classart_1_1TBranchCopyProcessor_a1fd2a53d236e99b9751ad22c36fa7fcf}} 
 \index{art::TBranchCopyProcessor@{art::TBranchCopyProcessor}!fOutData@{fOutData}}
@@ -83,11 +114,19 @@ TClones\+Array $\ast$ \mbox{\hyperlink{classart_1_1TBranchCopyProcessor_a1fd2a53
 \doxysubsubsection{\texorpdfstring{fOutData}{fOutData}}
 {\footnotesize\ttfamily TClones\+Array$\ast$ art\+::\+TBranch\+Copy\+Processor\+::f\+Out\+Data\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 33 of file TBranch\+Copy\+Processor.\+h.
+
 \mbox{\Hypertarget{classart_1_1TBranchCopyProcessor_af4d7ed47ce9767cb3101636ce8f2945e}\label{classart_1_1TBranchCopyProcessor_af4d7ed47ce9767cb3101636ce8f2945e}} 
 \index{art::TBranchCopyProcessor@{art::TBranchCopyProcessor}!fOutputColName@{fOutputColName}}
 \index{fOutputColName@{fOutputColName}!art::TBranchCopyProcessor@{art::TBranchCopyProcessor}}
 \doxysubsubsection{\texorpdfstring{fOutputColName}{fOutputColName}}
 {\footnotesize\ttfamily TString art\+::\+TBranch\+Copy\+Processor\+::f\+Output\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 31 of file TBranch\+Copy\+Processor.\+h.
 
 
 

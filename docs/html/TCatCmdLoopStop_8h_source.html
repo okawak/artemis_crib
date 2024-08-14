@@ -87,43 +87,36 @@ $(document).ready(function(){initNavTree('TCatCmdLoopStop_8h_source.html',''); i
 <div class="title">TCatCmdLoopStop.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="TCatCmdLoopStop_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   @File name     : TCatCmdLoopStop.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   @description   :</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">   @Author        : Kodai Okawa&lt;okawa@cns.s.u-tokyo.ac.jp&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   @Created date  : 2023-06-13 17:28:09</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">   @Last modified : 2023-06-13 17:28:09</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef _TCATCMDLOOPSTOP_H_</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define _TCATCMDLOOPSTOP_H_</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;TCatCmd.h&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classTCatCmdLoopStop.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTCatCmdLoopStop.html">TCatCmdLoopStop</a> : <span class="keyword">public</span> TCatCmd {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;   <a class="code" href="classTCatCmdLoopStop.html#a3807a9f1562d09a10c7e7a45733a9235">TCatCmdLoopStop</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;   <a class="code" href="classTCatCmdLoopStop.html#acd0b8da4d01e6cd8b0e6438e90f78313">~TCatCmdLoopStop</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;   <span class="keyword">static</span> <a class="code" href="classTCatCmdLoopStop.html">TCatCmdLoopStop</a> *<a class="code" href="classTCatCmdLoopStop.html#a740675969731e45f4dab709a44717b98">Instance</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;   <span class="keyword">virtual</span> Long_t <a class="code" href="classTCatCmdLoopStop.html#ab484ac835947903054cfb2ee795cead0">Cmd</a>(vector&lt;TString&gt; args);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classTCatCmdLoopStop.html#ad2b4a31f5158e3596b4e131a78c33af2">Help</a>();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classTCatCmdLoopStop.html#ac8c262a266af30e1e7cf0e7915c5fd1e">   27</a></span>&#160;   <a class="code" href="classTCatCmdLoopStop.html#ac8c262a266af30e1e7cf0e7915c5fd1e">ClassDef</a>(<a class="code" href="classTCatCmdLoopStop.html">TCatCmdLoopStop</a>, 1);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// end of #ifndef _TCATCMDLOOPSTOP_H_</span></div>
-<div class="ttc" id="aclassTCatCmdLoopStop_html"><div class="ttname"><a href="classTCatCmdLoopStop.html">TCatCmdLoopStop</a></div><div class="ttdef"><b>Definition:</b> TCatCmdLoopStop.h:14</div></div>
-<div class="ttc" id="aclassTCatCmdLoopStop_html_a3807a9f1562d09a10c7e7a45733a9235"><div class="ttname"><a href="classTCatCmdLoopStop.html#a3807a9f1562d09a10c7e7a45733a9235">TCatCmdLoopStop::TCatCmdLoopStop</a></div><div class="ttdeci">TCatCmdLoopStop()</div><div class="ttdef"><b>Definition:</b> TCatCmdLoopStop.cc:14</div></div>
-<div class="ttc" id="aclassTCatCmdLoopStop_html_a740675969731e45f4dab709a44717b98"><div class="ttname"><a href="classTCatCmdLoopStop.html#a740675969731e45f4dab709a44717b98">TCatCmdLoopStop::Instance</a></div><div class="ttdeci">static TCatCmdLoopStop * Instance()</div><div class="ttdef"><b>Definition:</b> TCatCmdLoopStop.cc:21</div></div>
-<div class="ttc" id="aclassTCatCmdLoopStop_html_ab484ac835947903054cfb2ee795cead0"><div class="ttname"><a href="classTCatCmdLoopStop.html#ab484ac835947903054cfb2ee795cead0">TCatCmdLoopStop::Cmd</a></div><div class="ttdeci">virtual Long_t Cmd(vector&lt; TString &gt; args)</div><div class="ttdef"><b>Definition:</b> TCatCmdLoopStop.cc:27</div></div>
-<div class="ttc" id="aclassTCatCmdLoopStop_html_ac8c262a266af30e1e7cf0e7915c5fd1e"><div class="ttname"><a href="classTCatCmdLoopStop.html#ac8c262a266af30e1e7cf0e7915c5fd1e">TCatCmdLoopStop::ClassDef</a></div><div class="ttdeci">ClassDef(TCatCmdLoopStop, 1)</div></div>
-<div class="ttc" id="aclassTCatCmdLoopStop_html_acd0b8da4d01e6cd8b0e6438e90f78313"><div class="ttname"><a href="classTCatCmdLoopStop.html#acd0b8da4d01e6cd8b0e6438e90f78313">TCatCmdLoopStop::~TCatCmdLoopStop</a></div><div class="ttdeci">~TCatCmdLoopStop()</div><div class="ttdef"><b>Definition:</b> TCatCmdLoopStop.cc:19</div></div>
-<div class="ttc" id="aclassTCatCmdLoopStop_html_ad2b4a31f5158e3596b4e131a78c33af2"><div class="ttname"><a href="classTCatCmdLoopStop.html#ad2b4a31f5158e3596b4e131a78c33af2">TCatCmdLoopStop::Help</a></div><div class="ttdeci">virtual void Help()</div><div class="ttdef"><b>Definition:</b> TCatCmdLoopStop.cc:37</div></div>
+<a href="TCatCmdLoopStop_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef _TCATCMDLOOPSTOP_H_</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define _TCATCMDLOOPSTOP_H_</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;TCatCmd.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classTCatCmdLoopStop.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTCatCmdLoopStop.html">TCatCmdLoopStop</a> : <span class="keyword">public</span> TCatCmd {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classTCatCmdLoopStop.html#a3807a9f1562d09a10c7e7a45733a9235">TCatCmdLoopStop</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classTCatCmdLoopStop.html#acd0b8da4d01e6cd8b0e6438e90f78313">~TCatCmdLoopStop</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">static</span> <a class="code" href="classTCatCmdLoopStop.html">TCatCmdLoopStop</a> *<a class="code" href="classTCatCmdLoopStop.html#a740675969731e45f4dab709a44717b98">Instance</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    Long_t <a class="code" href="classTCatCmdLoopStop.html#af7095a8dcb72719c6169cc1dc5873b57">Cmd</a>(vector&lt;TString&gt; args) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTCatCmdLoopStop.html#a182c44617e02ee5f36bdd63449a03059">Help</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classTCatCmdLoopStop.html#ad116eb75ed92ebed5634f49e6f049e95">   28</a></span>&#160;    <a class="code" href="classTCatCmdLoopStop.html#ad116eb75ed92ebed5634f49e6f049e95">ClassDefOverride</a>(<a class="code" href="classTCatCmdLoopStop.html">TCatCmdLoopStop</a>, 1);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// end of #ifndef _TCATCMDLOOPSTOP_H_</span></div>
+<div class="ttc" id="aclassTCatCmdLoopStop_html"><div class="ttname"><a href="classTCatCmdLoopStop.html">TCatCmdLoopStop</a></div><div class="ttdef"><b>Definition:</b> <a href="TCatCmdLoopStop_8h_source.html#l00015">TCatCmdLoopStop.h:15</a></div></div>
+<div class="ttc" id="aclassTCatCmdLoopStop_html_a182c44617e02ee5f36bdd63449a03059"><div class="ttname"><a href="classTCatCmdLoopStop.html#a182c44617e02ee5f36bdd63449a03059">TCatCmdLoopStop::Help</a></div><div class="ttdeci">void Help() override</div><div class="ttdef"><b>Definition:</b> <a href="TCatCmdLoopStop_8cc_source.html#l00038">TCatCmdLoopStop.cc:38</a></div></div>
+<div class="ttc" id="aclassTCatCmdLoopStop_html_a3807a9f1562d09a10c7e7a45733a9235"><div class="ttname"><a href="classTCatCmdLoopStop.html#a3807a9f1562d09a10c7e7a45733a9235">TCatCmdLoopStop::TCatCmdLoopStop</a></div><div class="ttdeci">TCatCmdLoopStop()</div><div class="ttdef"><b>Definition:</b> <a href="TCatCmdLoopStop_8cc_source.html#l00015">TCatCmdLoopStop.cc:15</a></div></div>
+<div class="ttc" id="aclassTCatCmdLoopStop_html_a740675969731e45f4dab709a44717b98"><div class="ttname"><a href="classTCatCmdLoopStop.html#a740675969731e45f4dab709a44717b98">TCatCmdLoopStop::Instance</a></div><div class="ttdeci">static TCatCmdLoopStop * Instance()</div><div class="ttdef"><b>Definition:</b> <a href="TCatCmdLoopStop_8cc_source.html#l00021">TCatCmdLoopStop.cc:21</a></div></div>
+<div class="ttc" id="aclassTCatCmdLoopStop_html_acd0b8da4d01e6cd8b0e6438e90f78313"><div class="ttname"><a href="classTCatCmdLoopStop.html#acd0b8da4d01e6cd8b0e6438e90f78313">TCatCmdLoopStop::~TCatCmdLoopStop</a></div><div class="ttdeci">~TCatCmdLoopStop()</div><div class="ttdef"><b>Definition:</b> <a href="TCatCmdLoopStop_8cc_source.html#l00019">TCatCmdLoopStop.cc:19</a></div></div>
+<div class="ttc" id="aclassTCatCmdLoopStop_html_ad116eb75ed92ebed5634f49e6f049e95"><div class="ttname"><a href="classTCatCmdLoopStop.html#ad116eb75ed92ebed5634f49e6f049e95">TCatCmdLoopStop::ClassDefOverride</a></div><div class="ttdeci">ClassDefOverride(TCatCmdLoopStop, 1)</div></div>
+<div class="ttc" id="aclassTCatCmdLoopStop_html_af7095a8dcb72719c6169cc1dc5873b57"><div class="ttname"><a href="classTCatCmdLoopStop.html#af7095a8dcb72719c6169cc1dc5873b57">TCatCmdLoopStop::Cmd</a></div><div class="ttdeci">Long_t Cmd(vector&lt; TString &gt; args) override</div><div class="ttdef"><b>Definition:</b> <a href="TCatCmdLoopStop_8cc_source.html#l00026">TCatCmdLoopStop.cc:26</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -2,8 +2,8 @@ var classart_1_1TTreeBeamGenerator =
 [
     [ "TTreeBeamGenerator", "classart_1_1TTreeBeamGenerator.html#ac986c3f086ed4a23804b34f9e84f4eca", null ],
     [ "~TTreeBeamGenerator", "classart_1_1TTreeBeamGenerator.html#a4417f828fdf854ab7ac15d822519b845", null ],
-    [ "Init", "classart_1_1TTreeBeamGenerator.html#a61a4e3b5ca7148b994c07c396183bedc", null ],
-    [ "Process", "classart_1_1TTreeBeamGenerator.html#a6db27241fe40b48c8a094b8e547d8e23", null ],
+    [ "Init", "classart_1_1TTreeBeamGenerator.html#a5302cb6f5a9ef33f65746cde054502db", null ],
+    [ "Process", "classart_1_1TTreeBeamGenerator.html#a7b3bce48993085956d542883223115d0", null ],
     [ "fAtmNum", "classart_1_1TTreeBeamGenerator.html#af0b9dc490f2b58fce18049a09684de59", null ],
     [ "fBeamEnergy", "classart_1_1TTreeBeamGenerator.html#a20a7cc0f302e0c6a8ab15a7e672cd05f", null ],
     [ "fChargeNum", "classart_1_1TTreeBeamGenerator.html#aed1a635247a0d9301978dec3f80396a2", null ],

@@ -87,51 +87,44 @@ $(document).ready(function(){initNavTree('TCmdXfitg_8h_source.html',''); initRes
 <div class="title">TCmdXfitg.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="TCmdXfitg_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   @File name     : TCmdXfitg.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   @description   :</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">   @Author        : Kodai Okawa&lt;okawa@cns.s.u-tokyo.ac.jp&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   @Created date  : 2023-06-13 17:52:08</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">   @Last modified : 2023-06-13 17:52:42</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef _TCMDXFITG_H_</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define _TCMDXFITG_H_</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;TCatCmd.h&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceart.html">art</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span>TCmdXfitg;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class </span>TF1;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classart_1_1TCmdXfitg.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classart_1_1TCmdXfitg.html">art::TCmdXfitg</a> : <span class="keyword">public</span> TCatCmd {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;   <a class="code" href="classart_1_1TCmdXfitg.html#a34c7f013589080d6be6074a4bc0136a0">TCmdXfitg</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;   <a class="code" href="classart_1_1TCmdXfitg.html#a96519286717e60193a51485d322681ad">~TCmdXfitg</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classart_1_1TCmdXfitg.html#a13d82811f96ac3d39f9a9b727ae56eb9">   25</a></span>&#160;   <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="classart_1_1TCmdXfitg.html#a13d82811f96ac3d39f9a9b727ae56eb9">kFuncNameBase</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classart_1_1TCmdXfitg.html#a472f662a3fea623369c9473eabd552c9">   26</a></span>&#160;   <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="classart_1_1TCmdXfitg.html#a472f662a3fea623369c9473eabd552c9">kLabelNameBase</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;   Long_t <a class="code" href="classart_1_1TCmdXfitg.html#a9f08c8deea01f6cf4916eb9896204d69">Cmd</a>(vector&lt;TString&gt;);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classart_1_1TCmdXfitg.html#a1a58e07039f798a8a15d5b88663db114">Help</a>();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;   <a class="code" href="classart_1_1TCmdXfitg.html#a34c7f013589080d6be6074a4bc0136a0">TCmdXfitg</a>(<span class="keyword">const</span> <a class="code" href="classart_1_1TCmdXfitg.html">TCmdXfitg</a> &amp;);            <span class="comment">// undefined</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;   <a class="code" href="classart_1_1TCmdXfitg.html">TCmdXfitg</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classart_1_1TCmdXfitg.html">TCmdXfitg</a> &amp;); <span class="comment">// undefined</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;   ClassDef(<a class="code" href="classart_1_1TCmdXfitg.html">TCmdXfitg</a>, 1);                  <span class="comment">// Obtain slope graphically</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// end of #ifndef _TCMDXFITG_H_</span></div>
-<div class="ttc" id="aclassart_1_1TCmdXfitg_html"><div class="ttname"><a href="classart_1_1TCmdXfitg.html">art::TCmdXfitg</a></div><div class="ttdef"><b>Definition:</b> TCmdXfitg.h:20</div></div>
-<div class="ttc" id="aclassart_1_1TCmdXfitg_html_a13d82811f96ac3d39f9a9b727ae56eb9"><div class="ttname"><a href="classart_1_1TCmdXfitg.html#a13d82811f96ac3d39f9a9b727ae56eb9">art::TCmdXfitg::kFuncNameBase</a></div><div class="ttdeci">static const char * kFuncNameBase</div><div class="ttdef"><b>Definition:</b> TCmdXfitg.h:25</div></div>
-<div class="ttc" id="aclassart_1_1TCmdXfitg_html_a1a58e07039f798a8a15d5b88663db114"><div class="ttname"><a href="classart_1_1TCmdXfitg.html#a1a58e07039f798a8a15d5b88663db114">art::TCmdXfitg::Help</a></div><div class="ttdeci">void Help()</div><div class="ttdef"><b>Definition:</b> TCmdXfitg.cc:102</div></div>
-<div class="ttc" id="aclassart_1_1TCmdXfitg_html_a34c7f013589080d6be6074a4bc0136a0"><div class="ttname"><a href="classart_1_1TCmdXfitg.html#a34c7f013589080d6be6074a4bc0136a0">art::TCmdXfitg::TCmdXfitg</a></div><div class="ttdeci">TCmdXfitg()</div><div class="ttdef"><b>Definition:</b> TCmdXfitg.cc:33</div></div>
-<div class="ttc" id="aclassart_1_1TCmdXfitg_html_a472f662a3fea623369c9473eabd552c9"><div class="ttname"><a href="classart_1_1TCmdXfitg.html#a472f662a3fea623369c9473eabd552c9">art::TCmdXfitg::kLabelNameBase</a></div><div class="ttdeci">static const char * kLabelNameBase</div><div class="ttdef"><b>Definition:</b> TCmdXfitg.h:26</div></div>
-<div class="ttc" id="aclassart_1_1TCmdXfitg_html_a96519286717e60193a51485d322681ad"><div class="ttname"><a href="classart_1_1TCmdXfitg.html#a96519286717e60193a51485d322681ad">art::TCmdXfitg::~TCmdXfitg</a></div><div class="ttdeci">~TCmdXfitg()</div><div class="ttdef"><b>Definition:</b> TCmdXfitg.cc:39</div></div>
-<div class="ttc" id="aclassart_1_1TCmdXfitg_html_a9f08c8deea01f6cf4916eb9896204d69"><div class="ttname"><a href="classart_1_1TCmdXfitg.html#a9f08c8deea01f6cf4916eb9896204d69">art::TCmdXfitg::Cmd</a></div><div class="ttdeci">Long_t Cmd(vector&lt; TString &gt;)</div><div class="ttdef"><b>Definition:</b> TCmdXfitg.cc:41</div></div>
-<div class="ttc" id="anamespaceart_html"><div class="ttname"><a href="namespaceart.html">art</a></div><div class="ttdef"><b>Definition:</b> TCmdDraw.h:14</div></div>
+<a href="TCmdXfitg_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef _TCMDXFITG_H_</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define _TCMDXFITG_H_</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;TCatCmd.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceart.html">art</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">class </span>TCmdXfitg;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">class </span>TF1;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classart_1_1TCmdXfitg.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="classart_1_1TCmdXfitg.html">art::TCmdXfitg</a> : <span class="keyword">public</span> TCatCmd {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classart_1_1TCmdXfitg.html#a34c7f013589080d6be6074a4bc0136a0">TCmdXfitg</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classart_1_1TCmdXfitg.html#a96519286717e60193a51485d322681ad">~TCmdXfitg</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classart_1_1TCmdXfitg.html#a13d82811f96ac3d39f9a9b727ae56eb9">   26</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="classart_1_1TCmdXfitg.html#a13d82811f96ac3d39f9a9b727ae56eb9">kFuncNameBase</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classart_1_1TCmdXfitg.html#a472f662a3fea623369c9473eabd552c9">   27</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="classart_1_1TCmdXfitg.html#a472f662a3fea623369c9473eabd552c9">kLabelNameBase</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    Long_t <a class="code" href="classart_1_1TCmdXfitg.html#a46fdbf0fac1d6170ddd50f51c5897e47">Cmd</a>(vector&lt;TString&gt;) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classart_1_1TCmdXfitg.html#ab5ad3467b8f348ab816eedb82ef5557f">Help</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classart_1_1TCmdXfitg.html#a34c7f013589080d6be6074a4bc0136a0">TCmdXfitg</a>(<span class="keyword">const</span> <a class="code" href="classart_1_1TCmdXfitg.html">TCmdXfitg</a> &amp;) = <span class="keyword">delete</span>;            <span class="comment">// undefined</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classart_1_1TCmdXfitg.html">TCmdXfitg</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classart_1_1TCmdXfitg.html">TCmdXfitg</a> &amp;) = <span class="keyword">delete</span>; <span class="comment">// undefined</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    ClassDefOverride(<a class="code" href="classart_1_1TCmdXfitg.html">TCmdXfitg</a>, 1); <span class="comment">// Obtain slope graphically</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// end of #ifndef _TCMDXFITG_H_</span></div>
+<div class="ttc" id="aclassart_1_1TCmdXfitg_html"><div class="ttname"><a href="classart_1_1TCmdXfitg.html">art::TCmdXfitg</a></div><div class="ttdef"><b>Definition:</b> <a href="TCmdXfitg_8h_source.html#l00021">TCmdXfitg.h:21</a></div></div>
+<div class="ttc" id="aclassart_1_1TCmdXfitg_html_a13d82811f96ac3d39f9a9b727ae56eb9"><div class="ttname"><a href="classart_1_1TCmdXfitg.html#a13d82811f96ac3d39f9a9b727ae56eb9">art::TCmdXfitg::kFuncNameBase</a></div><div class="ttdeci">static const char * kFuncNameBase</div><div class="ttdef"><b>Definition:</b> <a href="TCmdXfitg_8h_source.html#l00026">TCmdXfitg.h:26</a></div></div>
+<div class="ttc" id="aclassart_1_1TCmdXfitg_html_a34c7f013589080d6be6074a4bc0136a0"><div class="ttname"><a href="classart_1_1TCmdXfitg.html#a34c7f013589080d6be6074a4bc0136a0">art::TCmdXfitg::TCmdXfitg</a></div><div class="ttdeci">TCmdXfitg()</div><div class="ttdef"><b>Definition:</b> <a href="TCmdXfitg_8cc_source.html#l00034">TCmdXfitg.cc:34</a></div></div>
+<div class="ttc" id="aclassart_1_1TCmdXfitg_html_a46fdbf0fac1d6170ddd50f51c5897e47"><div class="ttname"><a href="classart_1_1TCmdXfitg.html#a46fdbf0fac1d6170ddd50f51c5897e47">art::TCmdXfitg::Cmd</a></div><div class="ttdeci">Long_t Cmd(vector&lt; TString &gt;) override</div><div class="ttdef"><b>Definition:</b> <a href="TCmdXfitg_8cc_source.html#l00041">TCmdXfitg.cc:41</a></div></div>
+<div class="ttc" id="aclassart_1_1TCmdXfitg_html_a472f662a3fea623369c9473eabd552c9"><div class="ttname"><a href="classart_1_1TCmdXfitg.html#a472f662a3fea623369c9473eabd552c9">art::TCmdXfitg::kLabelNameBase</a></div><div class="ttdeci">static const char * kLabelNameBase</div><div class="ttdef"><b>Definition:</b> <a href="TCmdXfitg_8h_source.html#l00027">TCmdXfitg.h:27</a></div></div>
+<div class="ttc" id="aclassart_1_1TCmdXfitg_html_a96519286717e60193a51485d322681ad"><div class="ttname"><a href="classart_1_1TCmdXfitg.html#a96519286717e60193a51485d322681ad">art::TCmdXfitg::~TCmdXfitg</a></div><div class="ttdeci">~TCmdXfitg()</div><div class="ttdef"><b>Definition:</b> <a href="TCmdXfitg_8cc_source.html#l00039">TCmdXfitg.cc:39</a></div></div>
+<div class="ttc" id="aclassart_1_1TCmdXfitg_html_ab5ad3467b8f348ab816eedb82ef5557f"><div class="ttname"><a href="classart_1_1TCmdXfitg.html#ab5ad3467b8f348ab816eedb82ef5557f">art::TCmdXfitg::Help</a></div><div class="ttdeci">void Help() override</div><div class="ttdef"><b>Definition:</b> <a href="TCmdXfitg_8cc_source.html#l00100">TCmdXfitg.cc:100</a></div></div>
+<div class="ttc" id="anamespaceart_html"><div class="ttname"><a href="namespaceart.html">art</a></div><div class="ttdef"><b>Definition:</b> <a href="TCmdDraw_8h_source.html#l00015">TCmdDraw.h:15</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

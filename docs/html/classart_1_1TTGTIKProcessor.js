@@ -2,8 +2,8 @@ var classart_1_1TTGTIKProcessor =
 [
     [ "TTGTIKProcessor", "classart_1_1TTGTIKProcessor.html#a05e324a3d8c50020472d61c10d539b58", null ],
     [ "~TTGTIKProcessor", "classart_1_1TTGTIKProcessor.html#a2c2c8a28f4efef0edbd1406a07528d3e", null ],
-    [ "Init", "classart_1_1TTGTIKProcessor.html#aff91afddcded9258afb1a81a62461d9e", null ],
-    [ "Process", "classart_1_1TTGTIKProcessor.html#a6b025fca7795d38472cd5e9a26237bd3", null ],
+    [ "Init", "classart_1_1TTGTIKProcessor.html#a8982871c667e9b844534cdb0d3f2c17e", null ],
+    [ "Process", "classart_1_1TTGTIKProcessor.html#a2a6bd0af727a35af8de6167bd7c6195f", null ],
     [ "fDetectorPrm", "classart_1_1TTGTIKProcessor.html#ac7be3a4fd23a537a4de629d8dc39b6c9", null ],
     [ "fElossBeam", "classart_1_1TTGTIKProcessor.html#a7d408c699c1280f7ee8c3d6d655eee50", null ],
     [ "fElossDetectParticle", "classart_1_1TTGTIKProcessor.html#a71ded9eca03d51709b6a9bdb2779dd08", null ],

@@ -15,11 +15,11 @@ Inheritance diagram for art\+::TUser\+Geo\+Initializer\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classart_1_1TUserGeoInitializer_aa6ab5bfa10d39a7d9706349da5a65d51}{TUser\+Geo\+Initializer}} ()
 \item 
-virtual \mbox{\hyperlink{classart_1_1TUserGeoInitializer_a1f3732b5f7fbd95ce38a4b8ceab60dbf}{$\sim$\+TUser\+Geo\+Initializer}} ()
+\mbox{\hyperlink{classart_1_1TUserGeoInitializer_a1f3732b5f7fbd95ce38a4b8ceab60dbf}{$\sim$\+TUser\+Geo\+Initializer}} ()
 \item 
-virtual void \mbox{\hyperlink{classart_1_1TUserGeoInitializer_ae96b77dd875a0ab932c1025c5de8d263}{Init}} (TEvent\+Collection $\ast$col)
+void \mbox{\hyperlink{classart_1_1TUserGeoInitializer_ac34d1a603509d31dbf7c4ed3061462db}{Init}} (TEvent\+Collection $\ast$col) override
 \item 
-virtual void \mbox{\hyperlink{classart_1_1TUserGeoInitializer_ad2a858ec15b7fd3c42afaa15befb83cd}{Process}} ()
+void \mbox{\hyperlink{classart_1_1TUserGeoInitializer_a537af5b1d56eb9b66397face9fe1a027}{Process}} () override
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -42,6 +42,13 @@ Double\+\_\+t \mbox{\hyperlink{classart_1_1TUserGeoInitializer_a2e0a4e956702e81b
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classart_1_1TTargetParameter}{art\+::\+TTarget\+Parameter}} array \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 24 of file TUser\+Geo\+Initializer.\+h.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_aa6ab5bfa10d39a7d9706349da5a65d51}\label{classart_1_1TUserGeoInitializer_aa6ab5bfa10d39a7d9706349da5a65d51}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!TUserGeoInitializer@{TUserGeoInitializer}}
@@ -49,26 +56,42 @@ Double\+\_\+t \mbox{\hyperlink{classart_1_1TUserGeoInitializer_a2e0a4e956702e81b
 \doxysubsubsection{\texorpdfstring{TUserGeoInitializer()}{TUserGeoInitializer()}}
 {\footnotesize\ttfamily TUser\+Geo\+Initializer\+::\+TUser\+Geo\+Initializer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 54 of file TUser\+Geo\+Initializer.\+cc.
+
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_a1f3732b5f7fbd95ce38a4b8ceab60dbf}\label{classart_1_1TUserGeoInitializer_a1f3732b5f7fbd95ce38a4b8ceab60dbf}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!````~TUserGeoInitializer@{$\sim$TUserGeoInitializer}}
 \index{````~TUserGeoInitializer@{$\sim$TUserGeoInitializer}!art::TUserGeoInitializer@{art::TUserGeoInitializer}}
 \doxysubsubsection{\texorpdfstring{$\sim$TUserGeoInitializer()}{~TUserGeoInitializer()}}
-{\footnotesize\ttfamily TUser\+Geo\+Initializer\+::$\sim$\+TUser\+Geo\+Initializer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily TUser\+Geo\+Initializer\+::$\sim$\+TUser\+Geo\+Initializer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 62 of file TUser\+Geo\+Initializer.\+cc.
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classart_1_1TUserGeoInitializer_ae96b77dd875a0ab932c1025c5de8d263}\label{classart_1_1TUserGeoInitializer_ae96b77dd875a0ab932c1025c5de8d263}} 
+\mbox{\Hypertarget{classart_1_1TUserGeoInitializer_ac34d1a603509d31dbf7c4ed3061462db}\label{classart_1_1TUserGeoInitializer_ac34d1a603509d31dbf7c4ed3061462db}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!Init@{Init}}
 \index{Init@{Init}!art::TUserGeoInitializer@{art::TUserGeoInitializer}}
 \doxysubsubsection{\texorpdfstring{Init()}{Init()}}
-{\footnotesize\ttfamily void TUser\+Geo\+Initializer\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void TUser\+Geo\+Initializer\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
-\mbox{\Hypertarget{classart_1_1TUserGeoInitializer_ad2a858ec15b7fd3c42afaa15befb83cd}\label{classart_1_1TUserGeoInitializer_ad2a858ec15b7fd3c42afaa15befb83cd}} 
+
+
+Definition at line 71 of file TUser\+Geo\+Initializer.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TUserGeoInitializer_a537af5b1d56eb9b66397face9fe1a027}\label{classart_1_1TUserGeoInitializer_a537af5b1d56eb9b66397face9fe1a027}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!Process@{Process}}
 \index{Process@{Process}!art::TUserGeoInitializer@{art::TUserGeoInitializer}}
 \doxysubsubsection{\texorpdfstring{Process()}{Process()}}
-{\footnotesize\ttfamily void TUser\+Geo\+Initializer\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void TUser\+Geo\+Initializer\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 95 of file TUser\+Geo\+Initializer.\+cc.
 
 
 
@@ -83,17 +106,29 @@ Double\+\_\+t \mbox{\hyperlink{classart_1_1TUserGeoInitializer_a2e0a4e956702e81b
 
 \mbox{\hyperlink{classart_1_1TTargetParameter}{art\+::\+TTarget\+Parameter}} array 
 
+
+
+Definition at line 45 of file TUser\+Geo\+Initializer.\+h.
+
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_aa58e58adff799b98dca7cf94a987643c}\label{classart_1_1TUserGeoInitializer_aa58e58adff799b98dca7cf94a987643c}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fDetParameterArray@{fDetParameterArray}}
 \index{fDetParameterArray@{fDetParameterArray}!art::TUserGeoInitializer@{art::TUserGeoInitializer}}
 \doxysubsubsection{\texorpdfstring{fDetParameterArray}{fDetParameterArray}}
 {\footnotesize\ttfamily TClones\+Array$\ast$ art\+::\+TUser\+Geo\+Initializer\+::f\+Det\+Parameter\+Array\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 42 of file TUser\+Geo\+Initializer.\+h.
+
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_abc20ff3b73b8abbfc653660678bf4f36}\label{classart_1_1TUserGeoInitializer_abc20ff3b73b8abbfc653660678bf4f36}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fDetPrmName@{fDetPrmName}}
 \index{fDetPrmName@{fDetPrmName}!art::TUserGeoInitializer@{art::TUserGeoInitializer}}
 \doxysubsubsection{\texorpdfstring{fDetPrmName}{fDetPrmName}}
 {\footnotesize\ttfamily TString art\+::\+TUser\+Geo\+Initializer\+::f\+Det\+Prm\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 37 of file TUser\+Geo\+Initializer.\+h.
 
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_a5446ae323a565ed7ca8aa79d33c4a95e}\label{classart_1_1TUserGeoInitializer_a5446ae323a565ed7ca8aa79d33c4a95e}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fFileName@{fFileName}}
@@ -105,17 +140,29 @@ Double\+\_\+t \mbox{\hyperlink{classart_1_1TUserGeoInitializer_a2e0a4e956702e81b
 
 it is used for TGeo\+Manager process (like simulation) 
 
+
+
+Definition at line 36 of file TUser\+Geo\+Initializer.\+h.
+
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_abdcc7af864d474cbe8d9d77875cfa97b}\label{classart_1_1TUserGeoInitializer_abdcc7af864d474cbe8d9d77875cfa97b}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fGeom@{fGeom}}
 \index{fGeom@{fGeom}!art::TUserGeoInitializer@{art::TUserGeoInitializer}}
 \doxysubsubsection{\texorpdfstring{fGeom}{fGeom}}
 {\footnotesize\ttfamily TGeo\+Manager$\ast$ art\+::\+TUser\+Geo\+Initializer\+::f\+Geom\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 34 of file TUser\+Geo\+Initializer.\+h.
+
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_ad6ede7e11f59ab7a8cf4805e20d0805f}\label{classart_1_1TUserGeoInitializer_ad6ede7e11f59ab7a8cf4805e20d0805f}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fIsVisible@{fIsVisible}}
 \index{fIsVisible@{fIsVisible}!art::TUserGeoInitializer@{art::TUserGeoInitializer}}
 \doxysubsubsection{\texorpdfstring{fIsVisible}{fIsVisible}}
 {\footnotesize\ttfamily Bool\+\_\+t art\+::\+TUser\+Geo\+Initializer\+::f\+Is\+Visible\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 40 of file TUser\+Geo\+Initializer.\+h.
 
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_a72eae9e755ddde2a962cbf953a5a973e}\label{classart_1_1TUserGeoInitializer_a72eae9e755ddde2a962cbf953a5a973e}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fTargetParameterArray@{fTargetParameterArray}}
@@ -127,11 +174,19 @@ it is used for TGeo\+Manager process (like simulation)
 
 \mbox{\hyperlink{classart_1_1TDetectorParameter}{art\+::\+TDetector\+Parameter}} array 
 
+
+
+Definition at line 43 of file TUser\+Geo\+Initializer.\+h.
+
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_a6d69b9edc18088113ad9c43ff3005597}\label{classart_1_1TUserGeoInitializer_a6d69b9edc18088113ad9c43ff3005597}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fTargetPrmName@{fTargetPrmName}}
 \index{fTargetPrmName@{fTargetPrmName}!art::TUserGeoInitializer@{art::TUserGeoInitializer}}
 \doxysubsubsection{\texorpdfstring{fTargetPrmName}{fTargetPrmName}}
 {\footnotesize\ttfamily TString art\+::\+TUser\+Geo\+Initializer\+::f\+Target\+Prm\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 38 of file TUser\+Geo\+Initializer.\+h.
 
 
 

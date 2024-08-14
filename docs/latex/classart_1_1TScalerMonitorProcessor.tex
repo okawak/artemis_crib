@@ -17,9 +17,9 @@ Inheritance diagram for art\+::TScaler\+Monitor\+Processor\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classart_1_1TScalerMonitorProcessor_a02d798824563047fdb44d4b66432fd66}{$\sim$\+TScaler\+Monitor\+Processor}} ()
 \item 
-virtual void \mbox{\hyperlink{classart_1_1TScalerMonitorProcessor_a219fec0b84a9b41170d641d198e37b7b}{Init}} (TEvent\+Collection $\ast$col)
+void \mbox{\hyperlink{classart_1_1TScalerMonitorProcessor_ae8a181859aac6af56fddad674315385c}{Init}} (TEvent\+Collection $\ast$col) override
 \item 
-virtual void \mbox{\hyperlink{classart_1_1TScalerMonitorProcessor_ad76f9d50516f345cb89354285e83611c}{Process}} ()
+void \mbox{\hyperlink{classart_1_1TScalerMonitorProcessor_abe36c4918752225fc46f998710ef1d11}{Process}} () override
 \item 
 void \mbox{\hyperlink{classart_1_1TScalerMonitorProcessor_adc7b42fd704539379ce37dda7e71022f}{Process\+Short}} (Long\+\_\+t now)
 \item 
@@ -33,8 +33,15 @@ static const Int\+\_\+t \mbox{\hyperlink{classart_1_1TScalerMonitorProcessor_a7e
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classart_1_1TScalerMonitorProcessor_adeb2b10f1826b23995a637b7a87e00d8}{Class\+Def}} (\mbox{\hyperlink{classart_1_1TScalerMonitorProcessor}{TScaler\+Monitor\+Processor}}, 1)
+\mbox{\hyperlink{classart_1_1TScalerMonitorProcessor_a02ea1dc4b36abe9e6497dcb27275312f}{Class\+Def\+Override}} (\mbox{\hyperlink{classart_1_1TScalerMonitorProcessor}{TScaler\+Monitor\+Processor}}, 1)
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 25 of file TScaler\+Monitor\+Processor.\+h.
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -44,6 +51,10 @@ static const Int\+\_\+t \mbox{\hyperlink{classart_1_1TScalerMonitorProcessor_a7e
 \doxysubsubsection{\texorpdfstring{TScalerMonitorProcessor()}{TScalerMonitorProcessor()}}
 {\footnotesize\ttfamily art\+::\+TScaler\+Monitor\+Processor\+::\+TScaler\+Monitor\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 19 of file TScaler\+Monitor\+Processor.\+cc.
+
 \mbox{\Hypertarget{classart_1_1TScalerMonitorProcessor_a02d798824563047fdb44d4b66432fd66}\label{classart_1_1TScalerMonitorProcessor_a02d798824563047fdb44d4b66432fd66}} 
 \index{art::TScalerMonitorProcessor@{art::TScalerMonitorProcessor}!````~TScalerMonitorProcessor@{$\sim$TScalerMonitorProcessor}}
 \index{````~TScalerMonitorProcessor@{$\sim$TScalerMonitorProcessor}!art::TScalerMonitorProcessor@{art::TScalerMonitorProcessor}}
@@ -52,30 +63,46 @@ static const Int\+\_\+t \mbox{\hyperlink{classart_1_1TScalerMonitorProcessor_a7e
 
 
 
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classart_1_1TScalerMonitorProcessor_adeb2b10f1826b23995a637b7a87e00d8}\label{classart_1_1TScalerMonitorProcessor_adeb2b10f1826b23995a637b7a87e00d8}} 
-\index{art::TScalerMonitorProcessor@{art::TScalerMonitorProcessor}!ClassDef@{ClassDef}}
-\index{ClassDef@{ClassDef}!art::TScalerMonitorProcessor@{art::TScalerMonitorProcessor}}
-\doxysubsubsection{\texorpdfstring{ClassDef()}{ClassDef()}}
-{\footnotesize\ttfamily art\+::\+TScaler\+Monitor\+Processor\+::\+Class\+Def (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classart_1_1TScalerMonitorProcessor}{TScaler\+Monitor\+Processor}}}]{,  }\item[{1}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+Definition at line 48 of file TScaler\+Monitor\+Processor.\+cc.
 
-\mbox{\Hypertarget{classart_1_1TScalerMonitorProcessor_a219fec0b84a9b41170d641d198e37b7b}\label{classart_1_1TScalerMonitorProcessor_a219fec0b84a9b41170d641d198e37b7b}} 
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classart_1_1TScalerMonitorProcessor_a02ea1dc4b36abe9e6497dcb27275312f}\label{classart_1_1TScalerMonitorProcessor_a02ea1dc4b36abe9e6497dcb27275312f}} 
+\index{art::TScalerMonitorProcessor@{art::TScalerMonitorProcessor}!ClassDefOverride@{ClassDefOverride}}
+\index{ClassDefOverride@{ClassDefOverride}!art::TScalerMonitorProcessor@{art::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{ClassDefOverride()}{ClassDefOverride()}}
+{\footnotesize\ttfamily art\+::\+TScaler\+Monitor\+Processor\+::\+Class\+Def\+Override (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classart_1_1TScalerMonitorProcessor}{TScaler\+Monitor\+Processor}}}]{,  }\item[{1}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1TScalerMonitorProcessor_ae8a181859aac6af56fddad674315385c}\label{classart_1_1TScalerMonitorProcessor_ae8a181859aac6af56fddad674315385c}} 
 \index{art::TScalerMonitorProcessor@{art::TScalerMonitorProcessor}!Init@{Init}}
 \index{Init@{Init}!art::TScalerMonitorProcessor@{art::TScalerMonitorProcessor}}
 \doxysubsubsection{\texorpdfstring{Init()}{Init()}}
-{\footnotesize\ttfamily void art\+::\+TScaler\+Monitor\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void art\+::\+TScaler\+Monitor\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
-\mbox{\Hypertarget{classart_1_1TScalerMonitorProcessor_ad76f9d50516f345cb89354285e83611c}\label{classart_1_1TScalerMonitorProcessor_ad76f9d50516f345cb89354285e83611c}} 
+
+
+Definition at line 59 of file TScaler\+Monitor\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TScalerMonitorProcessor_abe36c4918752225fc46f998710ef1d11}\label{classart_1_1TScalerMonitorProcessor_abe36c4918752225fc46f998710ef1d11}} 
 \index{art::TScalerMonitorProcessor@{art::TScalerMonitorProcessor}!Process@{Process}}
 \index{Process@{Process}!art::TScalerMonitorProcessor@{art::TScalerMonitorProcessor}}
 \doxysubsubsection{\texorpdfstring{Process()}{Process()}}
-{\footnotesize\ttfamily void art\+::\+TScaler\+Monitor\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void art\+::\+TScaler\+Monitor\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 142 of file TScaler\+Monitor\+Processor.\+cc.
 
 \mbox{\Hypertarget{classart_1_1TScalerMonitorProcessor_ae294c66b1fe7c82d4095a7a4acb20291}\label{classart_1_1TScalerMonitorProcessor_ae294c66b1fe7c82d4095a7a4acb20291}} 
 \index{art::TScalerMonitorProcessor@{art::TScalerMonitorProcessor}!ProcessLong@{ProcessLong}}
 \index{ProcessLong@{ProcessLong}!art::TScalerMonitorProcessor@{art::TScalerMonitorProcessor}}
 \doxysubsubsection{\texorpdfstring{ProcessLong()}{ProcessLong()}}
 {\footnotesize\ttfamily void art\+::\+TScaler\+Monitor\+Processor\+::\+Process\+Long (\begin{DoxyParamCaption}\item[{Long\+\_\+t}]{now }\end{DoxyParamCaption})}
+
+
+
+Definition at line 221 of file TScaler\+Monitor\+Processor.\+cc.
 
 \mbox{\Hypertarget{classart_1_1TScalerMonitorProcessor_adc7b42fd704539379ce37dda7e71022f}\label{classart_1_1TScalerMonitorProcessor_adc7b42fd704539379ce37dda7e71022f}} 
 \index{art::TScalerMonitorProcessor@{art::TScalerMonitorProcessor}!ProcessShort@{ProcessShort}}
@@ -85,12 +112,20 @@ static const Int\+\_\+t \mbox{\hyperlink{classart_1_1TScalerMonitorProcessor_a7e
 
 
 
+Definition at line 166 of file TScaler\+Monitor\+Processor.\+cc.
+
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classart_1_1TScalerMonitorProcessor_a7e74a60c468006be0f1d7f3922e769a6}\label{classart_1_1TScalerMonitorProcessor_a7e74a60c468006be0f1d7f3922e769a6}} 
 \index{art::TScalerMonitorProcessor@{art::TScalerMonitorProcessor}!SCALER\_CH@{SCALER\_CH}}
 \index{SCALER\_CH@{SCALER\_CH}!art::TScalerMonitorProcessor@{art::TScalerMonitorProcessor}}
 \doxysubsubsection{\texorpdfstring{SCALER\_CH}{SCALER\_CH}}
 {\footnotesize\ttfamily const Int\+\_\+t art\+::\+TScaler\+Monitor\+Processor\+::\+SCALER\+\_\+\+CH = 32\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 37 of file TScaler\+Monitor\+Processor.\+h.
 
 
 

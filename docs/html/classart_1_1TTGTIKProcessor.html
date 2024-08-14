@@ -107,10 +107,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a05e324a3d8c50020472d61c10d539b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c2c8a28f4efef0edbd1406a07528d3e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTGTIKProcessor.html#a2c2c8a28f4efef0edbd1406a07528d3e">~TTGTIKProcessor</a> ()</td></tr>
 <tr class="separator:a2c2c8a28f4efef0edbd1406a07528d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff91afddcded9258afb1a81a62461d9e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTGTIKProcessor.html#aff91afddcded9258afb1a81a62461d9e">Init</a> (TEventCollection *col)</td></tr>
-<tr class="separator:aff91afddcded9258afb1a81a62461d9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b025fca7795d38472cd5e9a26237bd3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTGTIKProcessor.html#a6b025fca7795d38472cd5e9a26237bd3">Process</a> ()</td></tr>
-<tr class="separator:a6b025fca7795d38472cd5e9a26237bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8982871c667e9b844534cdb0d3f2c17e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTGTIKProcessor.html#a8982871c667e9b844534cdb0d3f2c17e">Init</a> (TEventCollection *col) override</td></tr>
+<tr class="separator:a8982871c667e9b844534cdb0d3f2c17e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a6bd0af727a35af8de6167bd7c6195f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTGTIKProcessor.html#a2a6bd0af727a35af8de6167bd7c6195f">Process</a> () override</td></tr>
+<tr class="separator:a2a6bd0af727a35af8de6167bd7c6195f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -160,7 +160,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a71ded9eca03d51709b6a9bdb2779dd08"><td class="memItemLeft" align="right" valign="top">SRIMtable *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTGTIKProcessor.html#a71ded9eca03d51709b6a9bdb2779dd08">fElossDetectParticle</a></td></tr>
 <tr class="separator:a71ded9eca03d51709b6a9bdb2779dd08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00027">27</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a05e324a3d8c50020472d61c10d539b58"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a05e324a3d8c50020472d61c10d539b58">&#9670;&nbsp;</a></span>TTGTIKProcessor()</h2>
 
@@ -175,6 +178,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00030">30</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -201,11 +206,13 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00053">53</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aff91afddcded9258afb1a81a62461d9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff91afddcded9258afb1a81a62461d9e">&#9670;&nbsp;</a></span>Init()</h2>
+<a id="a8982871c667e9b844534cdb0d3f2c17e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8982871c667e9b844534cdb0d3f2c17e">&#9670;&nbsp;</a></span>Init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -223,15 +230,17 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00060">60</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+
 </div>
 </div>
-<a id="a6b025fca7795d38472cd5e9a26237bd3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b025fca7795d38472cd5e9a26237bd3">&#9670;&nbsp;</a></span>Process()</h2>
+<a id="a2a6bd0af727a35af8de6167bd7c6195f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a6bd0af727a35af8de6167bd7c6195f">&#9670;&nbsp;</a></span>Process()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -248,10 +257,12 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00124">124</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -276,6 +287,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00049">49</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="a7d408c699c1280f7ee8c3d6d655eee50"></a>
@@ -297,6 +310,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00061">61</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -320,6 +335,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00062">62</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="a0b5d73d56e42363741c11dfbcdc35b1e"></a>
@@ -341,6 +358,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00060">60</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -364,6 +383,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00052">52</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="a9ac1648cacee98912ad39fcb6ca58f83"></a>
@@ -385,6 +406,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00046">46</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -408,6 +431,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00051">51</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="a59d682c3fc51757e1441de5474add20a"></a>
@@ -429,6 +454,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00041">41</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -452,6 +479,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00042">42</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="a2bbd33cfc164922f5f801745552f1cff"></a>
@@ -473,6 +502,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00047">47</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -496,6 +527,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00058">58</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="ad523c0b9f30354fee148ca1fd715a1c4"></a>
@@ -517,6 +550,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00048">48</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -540,6 +575,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00043">43</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="a775a7c69427def45c6a2d1f01811315a"></a>
@@ -561,6 +598,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00044">44</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -584,6 +623,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00056">56</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="a6f568cd510b86f2b7b727fe8e59922fb"></a>
@@ -605,6 +646,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00055">55</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -628,6 +671,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00054">54</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="a3075023f2ad2fd6c72a4a5e6adec38cf"></a>
@@ -650,6 +695,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00053">53</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="abb30c8c58d5a41be9c98ea31d44e5977"></a>
@@ -663,6 +710,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00036">36</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -678,6 +727,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00037">37</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+
 </div>
 </div>
 <a id="a49e7356b4239488ceda10524c81e2b71"></a>
@@ -692,11 +743,13 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00038">38</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src-crib/reconst/<a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a></li>
-<li>src-crib/reconst/<a class="el" href="TTGTIKProcessor_8cc.html">TTGTIKProcessor.cc</a></li>
+<li>src-crib/reconst/<a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

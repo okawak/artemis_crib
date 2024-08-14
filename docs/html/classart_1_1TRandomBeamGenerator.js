@@ -2,8 +2,8 @@ var classart_1_1TRandomBeamGenerator =
 [
     [ "TRandomBeamGenerator", "classart_1_1TRandomBeamGenerator.html#a2fa5f39aa7bb40bc30f037e51eeda222", null ],
     [ "~TRandomBeamGenerator", "classart_1_1TRandomBeamGenerator.html#aeb8809ad6011473f1e321a1e7afd982b", null ],
-    [ "Init", "classart_1_1TRandomBeamGenerator.html#afbebd88786dc63f0fb256976d125242b", null ],
-    [ "Process", "classart_1_1TRandomBeamGenerator.html#a5051ec33f164c84bb2fc6fa0a487359b", null ],
+    [ "Init", "classart_1_1TRandomBeamGenerator.html#a0bdac5080b46caf24550c4ebd310f8ba", null ],
+    [ "Process", "classart_1_1TRandomBeamGenerator.html#a5ea4e5da67bc71fd807985166b85b1b1", null ],
     [ "fAsigma", "classart_1_1TRandomBeamGenerator.html#a825d01ff53b1ba8541b832cfcdacacf1", null ],
     [ "fAtmNum", "classart_1_1TRandomBeamGenerator.html#ac147fc883f034e85772408276b318c50", null ],
     [ "fBeamEnergy", "classart_1_1TRandomBeamGenerator.html#a501d6436488b5e96463433e6f130b3bf", null ],

@@ -2,8 +2,8 @@ var classart_1_1TNBodyReactionProcessor =
 [
     [ "TNBodyReactionProcessor", "classart_1_1TNBodyReactionProcessor.html#a6024a9b747e36415cbce33f565af1ad1", null ],
     [ "~TNBodyReactionProcessor", "classart_1_1TNBodyReactionProcessor.html#a0b19895bfb324db400596bd264dbe1eb", null ],
-    [ "Init", "classart_1_1TNBodyReactionProcessor.html#acf5dac7ff34345c5308b2b8ce102c8c1", null ],
-    [ "Process", "classart_1_1TNBodyReactionProcessor.html#aac6642772ef0774114eb1fd8829abea7", null ],
+    [ "Init", "classart_1_1TNBodyReactionProcessor.html#aaddc093559a73a2e06c00b351a9e67ee", null ],
+    [ "Process", "classart_1_1TNBodyReactionProcessor.html#a0c5270eb2f61ec0dd249a3acfe3cfb29", null ],
     [ "c", "classart_1_1TNBodyReactionProcessor.html#af4455b0b470bb43b74c2c3ed4df113d5", null ],
     [ "deg2rad", "classart_1_1TNBodyReactionProcessor.html#a0607b546c63c6cf032adc6e8579c687c", null ],
     [ "event", "classart_1_1TNBodyReactionProcessor.html#a47a84401141db20fd6214aa19d7d004a", null ],

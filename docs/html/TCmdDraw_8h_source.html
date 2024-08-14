@@ -87,51 +87,44 @@ $(document).ready(function(){initNavTree('TCmdDraw_8h_source.html',''); initResi
 <div class="title">TCmdDraw.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="TCmdDraw_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   @File name     : TCmdDraw.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   @description   :</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">   @Author        : Kodai Okawa&lt;okawa@cns.s.u-tokyo.ac.jp&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   @Created date  : 2023-06-13 17:52:08</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">   @Last modified : 2023-06-13 17:52:42</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef _TCMDDRAW_H_</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define _TCMDDRAW_H_</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;TCatCmd.h&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespaceart.html">   14</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceart.html">art</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span><a class="code" href="classart_1_1TCmdDraw.html">TCmdDraw</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class </span>TF1;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classart_1_1TCmdDraw.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classart_1_1TCmdDraw.html">art::TCmdDraw</a> : <span class="keyword">public</span> TCatCmd {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;   <a class="code" href="classart_1_1TCmdDraw.html#a6094dfa24a6fbc5dc19c2e3e27644b39">TCmdDraw</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;   <a class="code" href="classart_1_1TCmdDraw.html#a726ddec29952d2cdf30f8a90eacdcda8">~TCmdDraw</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classart_1_1TCmdDraw.html#aec7c7394ee7d9266ad04003c5964178e">   25</a></span>&#160;   <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="classart_1_1TCmdDraw.html#aec7c7394ee7d9266ad04003c5964178e">kFuncNameBase</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classart_1_1TCmdDraw.html#a698b2ff2022050e7a06e5eb408d4d6bb">   26</a></span>&#160;   <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="classart_1_1TCmdDraw.html#a698b2ff2022050e7a06e5eb408d4d6bb">kLabelNameBase</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;   Long_t <a class="code" href="classart_1_1TCmdDraw.html#a33098fed5c1df947f836b3dd3ff2a6be">Cmd</a>(vector&lt;TString&gt;);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classart_1_1TCmdDraw.html#ab28e92f4480b74b300089c4f56aeba84">Help</a>();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;   <a class="code" href="classart_1_1TCmdDraw.html#a6094dfa24a6fbc5dc19c2e3e27644b39">TCmdDraw</a>(<span class="keyword">const</span> <a class="code" href="classart_1_1TCmdDraw.html">TCmdDraw</a> &amp;);            <span class="comment">// undefined</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;   <a class="code" href="classart_1_1TCmdDraw.html">TCmdDraw</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classart_1_1TCmdDraw.html">TCmdDraw</a> &amp;); <span class="comment">// undefined</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;   ClassDef(<a class="code" href="classart_1_1TCmdDraw.html">TCmdDraw</a>, 1);                  <span class="comment">// Obtain slope graphically</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// end of #ifndef _TCMDDRAW_H_</span></div>
-<div class="ttc" id="aclassart_1_1TCmdDraw_html"><div class="ttname"><a href="classart_1_1TCmdDraw.html">art::TCmdDraw</a></div><div class="ttdef"><b>Definition:</b> TCmdDraw.h:20</div></div>
-<div class="ttc" id="aclassart_1_1TCmdDraw_html_a33098fed5c1df947f836b3dd3ff2a6be"><div class="ttname"><a href="classart_1_1TCmdDraw.html#a33098fed5c1df947f836b3dd3ff2a6be">art::TCmdDraw::Cmd</a></div><div class="ttdeci">Long_t Cmd(vector&lt; TString &gt;)</div><div class="ttdef"><b>Definition:</b> TCmdDraw.cc:37</div></div>
-<div class="ttc" id="aclassart_1_1TCmdDraw_html_a6094dfa24a6fbc5dc19c2e3e27644b39"><div class="ttname"><a href="classart_1_1TCmdDraw.html#a6094dfa24a6fbc5dc19c2e3e27644b39">art::TCmdDraw::TCmdDraw</a></div><div class="ttdeci">TCmdDraw()</div><div class="ttdef"><b>Definition:</b> TCmdDraw.cc:30</div></div>
-<div class="ttc" id="aclassart_1_1TCmdDraw_html_a698b2ff2022050e7a06e5eb408d4d6bb"><div class="ttname"><a href="classart_1_1TCmdDraw.html#a698b2ff2022050e7a06e5eb408d4d6bb">art::TCmdDraw::kLabelNameBase</a></div><div class="ttdeci">static const char * kLabelNameBase</div><div class="ttdef"><b>Definition:</b> TCmdDraw.h:26</div></div>
-<div class="ttc" id="aclassart_1_1TCmdDraw_html_a726ddec29952d2cdf30f8a90eacdcda8"><div class="ttname"><a href="classart_1_1TCmdDraw.html#a726ddec29952d2cdf30f8a90eacdcda8">art::TCmdDraw::~TCmdDraw</a></div><div class="ttdeci">~TCmdDraw()</div><div class="ttdef"><b>Definition:</b> TCmdDraw.cc:35</div></div>
-<div class="ttc" id="aclassart_1_1TCmdDraw_html_ab28e92f4480b74b300089c4f56aeba84"><div class="ttname"><a href="classart_1_1TCmdDraw.html#ab28e92f4480b74b300089c4f56aeba84">art::TCmdDraw::Help</a></div><div class="ttdeci">void Help()</div><div class="ttdef"><b>Definition:</b> TCmdDraw.cc:80</div></div>
-<div class="ttc" id="aclassart_1_1TCmdDraw_html_aec7c7394ee7d9266ad04003c5964178e"><div class="ttname"><a href="classart_1_1TCmdDraw.html#aec7c7394ee7d9266ad04003c5964178e">art::TCmdDraw::kFuncNameBase</a></div><div class="ttdeci">static const char * kFuncNameBase</div><div class="ttdef"><b>Definition:</b> TCmdDraw.h:25</div></div>
-<div class="ttc" id="anamespaceart_html"><div class="ttname"><a href="namespaceart.html">art</a></div><div class="ttdef"><b>Definition:</b> TCmdDraw.h:14</div></div>
+<a href="TCmdDraw_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef _TCMDDRAW_H_</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define _TCMDDRAW_H_</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;TCatCmd.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespaceart.html">   15</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceart.html">art</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">class </span><a class="code" href="classart_1_1TCmdDraw.html">TCmdDraw</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">class </span>TF1;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classart_1_1TCmdDraw.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="classart_1_1TCmdDraw.html">art::TCmdDraw</a> : <span class="keyword">public</span> TCatCmd {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classart_1_1TCmdDraw.html#a6094dfa24a6fbc5dc19c2e3e27644b39">TCmdDraw</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classart_1_1TCmdDraw.html#a726ddec29952d2cdf30f8a90eacdcda8">~TCmdDraw</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classart_1_1TCmdDraw.html#aec7c7394ee7d9266ad04003c5964178e">   26</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="classart_1_1TCmdDraw.html#aec7c7394ee7d9266ad04003c5964178e">kFuncNameBase</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classart_1_1TCmdDraw.html#a698b2ff2022050e7a06e5eb408d4d6bb">   27</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="classart_1_1TCmdDraw.html#a698b2ff2022050e7a06e5eb408d4d6bb">kLabelNameBase</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    Long_t <a class="code" href="classart_1_1TCmdDraw.html#a1de125d295a52a16a0458d462ad36284">Cmd</a>(vector&lt;TString&gt;) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classart_1_1TCmdDraw.html#af4bd8026510aa500927bffe1935cac01">Help</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classart_1_1TCmdDraw.html#a6094dfa24a6fbc5dc19c2e3e27644b39">TCmdDraw</a>(<span class="keyword">const</span> <a class="code" href="classart_1_1TCmdDraw.html">TCmdDraw</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classart_1_1TCmdDraw.html">TCmdDraw</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classart_1_1TCmdDraw.html">TCmdDraw</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    ClassDefOverride(<a class="code" href="classart_1_1TCmdDraw.html">TCmdDraw</a>, 1); <span class="comment">// Obtain slope graphically</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// end of #ifndef _TCMDDRAW_H_</span></div>
+<div class="ttc" id="aclassart_1_1TCmdDraw_html"><div class="ttname"><a href="classart_1_1TCmdDraw.html">art::TCmdDraw</a></div><div class="ttdef"><b>Definition:</b> <a href="TCmdDraw_8h_source.html#l00021">TCmdDraw.h:21</a></div></div>
+<div class="ttc" id="aclassart_1_1TCmdDraw_html_a1de125d295a52a16a0458d462ad36284"><div class="ttname"><a href="classart_1_1TCmdDraw.html#a1de125d295a52a16a0458d462ad36284">art::TCmdDraw::Cmd</a></div><div class="ttdeci">Long_t Cmd(vector&lt; TString &gt;) override</div><div class="ttdef"><b>Definition:</b> <a href="TCmdDraw_8cc_source.html#l00038">TCmdDraw.cc:38</a></div></div>
+<div class="ttc" id="aclassart_1_1TCmdDraw_html_a6094dfa24a6fbc5dc19c2e3e27644b39"><div class="ttname"><a href="classart_1_1TCmdDraw.html#a6094dfa24a6fbc5dc19c2e3e27644b39">art::TCmdDraw::TCmdDraw</a></div><div class="ttdeci">TCmdDraw()</div><div class="ttdef"><b>Definition:</b> <a href="TCmdDraw_8cc_source.html#l00031">TCmdDraw.cc:31</a></div></div>
+<div class="ttc" id="aclassart_1_1TCmdDraw_html_a698b2ff2022050e7a06e5eb408d4d6bb"><div class="ttname"><a href="classart_1_1TCmdDraw.html#a698b2ff2022050e7a06e5eb408d4d6bb">art::TCmdDraw::kLabelNameBase</a></div><div class="ttdeci">static const char * kLabelNameBase</div><div class="ttdef"><b>Definition:</b> <a href="TCmdDraw_8h_source.html#l00027">TCmdDraw.h:27</a></div></div>
+<div class="ttc" id="aclassart_1_1TCmdDraw_html_a726ddec29952d2cdf30f8a90eacdcda8"><div class="ttname"><a href="classart_1_1TCmdDraw.html#a726ddec29952d2cdf30f8a90eacdcda8">art::TCmdDraw::~TCmdDraw</a></div><div class="ttdeci">~TCmdDraw()</div><div class="ttdef"><b>Definition:</b> <a href="TCmdDraw_8cc_source.html#l00036">TCmdDraw.cc:36</a></div></div>
+<div class="ttc" id="aclassart_1_1TCmdDraw_html_aec7c7394ee7d9266ad04003c5964178e"><div class="ttname"><a href="classart_1_1TCmdDraw.html#aec7c7394ee7d9266ad04003c5964178e">art::TCmdDraw::kFuncNameBase</a></div><div class="ttdeci">static const char * kFuncNameBase</div><div class="ttdef"><b>Definition:</b> <a href="TCmdDraw_8h_source.html#l00026">TCmdDraw.h:26</a></div></div>
+<div class="ttc" id="aclassart_1_1TCmdDraw_html_af4bd8026510aa500927bffe1935cac01"><div class="ttname"><a href="classart_1_1TCmdDraw.html#af4bd8026510aa500927bffe1935cac01">art::TCmdDraw::Help</a></div><div class="ttdeci">void Help() override</div><div class="ttdef"><b>Definition:</b> <a href="TCmdDraw_8cc_source.html#l00081">TCmdDraw.cc:81</a></div></div>
+<div class="ttc" id="anamespaceart_html"><div class="ttname"><a href="namespaceart.html">art</a></div><div class="ttdef"><b>Definition:</b> <a href="TCmdDraw_8h_source.html#l00015">TCmdDraw.h:15</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

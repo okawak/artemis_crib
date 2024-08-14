@@ -2,7 +2,7 @@ var classart_1_1TDetectorParameter =
 [
     [ "TDetectorParameter", "classart_1_1TDetectorParameter.html#aa7e4484b58c6bb4e479da7413ceec252", null ],
     [ "~TDetectorParameter", "classart_1_1TDetectorParameter.html#a595d852bc5c0f5df61f54b7f5ebd0fdd", null ],
-    [ "TDetectorParameter", "classart_1_1TDetectorParameter.html#afb4a3971eb0f667ca2c066a15e37955c", null ],
+    [ "TDetectorParameter", "classart_1_1TDetectorParameter.html#a820765e270852bc2ca3ad2136bf67850", null ],
     [ "GetAngle", "classart_1_1TDetectorParameter.html#a5b6dbc0a9a883eee203c3b35d46b191f", null ],
     [ "GetCenterRotPos", "classart_1_1TDetectorParameter.html#ac5d43159d28b2794579ad8f201eeeeb5", null ],
     [ "GetCenterRotPos", "classart_1_1TDetectorParameter.html#a7e159b151a2d06641fc89bf1a0171614", null ],

@@ -2,7 +2,7 @@ var classart_1_1TTargetParameter =
 [
     [ "TTargetParameter", "classart_1_1TTargetParameter.html#a59d6a195f899ddaeaf25c059874ebe3b", null ],
     [ "~TTargetParameter", "classart_1_1TTargetParameter.html#ae4c2dfb10fa386a902c11f100f6ca705", null ],
-    [ "TTargetParameter", "classart_1_1TTargetParameter.html#acb41ab318310c44df7d8caae34afb3a5", null ],
+    [ "TTargetParameter", "classart_1_1TTargetParameter.html#a31724ce3d3b32ebaf26b34eef241b2fd", null ],
     [ "GetTargetName", "classart_1_1TTargetParameter.html#a513687f5f8054c7f5a5cc5899669a92b", null ],
     [ "GetThickness", "classart_1_1TTargetParameter.html#a6cb44dcb6293a3203fd7c387c3f8d018", null ],
     [ "GetZ", "classart_1_1TTargetParameter.html#a3fbcd8b52d49f77aefd97396c5a6224d", null ],

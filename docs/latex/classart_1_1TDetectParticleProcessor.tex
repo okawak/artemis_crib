@@ -15,11 +15,11 @@ Inheritance diagram for art\+::TDetect\+Particle\+Processor\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classart_1_1TDetectParticleProcessor_a9f93eab9536b37bbe426fff8a79c8a50}{TDetect\+Particle\+Processor}} ()
 \item 
-virtual \mbox{\hyperlink{classart_1_1TDetectParticleProcessor_ae3415eb6ab912dab9b3e123703996c7d}{$\sim$\+TDetect\+Particle\+Processor}} ()
+\mbox{\hyperlink{classart_1_1TDetectParticleProcessor_ae3415eb6ab912dab9b3e123703996c7d}{$\sim$\+TDetect\+Particle\+Processor}} ()
 \item 
-virtual void \mbox{\hyperlink{classart_1_1TDetectParticleProcessor_abe2ae614ebfbe4d204c28d451118a3e3}{Init}} (TEvent\+Collection $\ast$col)
+void \mbox{\hyperlink{classart_1_1TDetectParticleProcessor_aaca8d2a0cbfb72f340acebfed2d2c6aa}{Init}} (TEvent\+Collection $\ast$col) override
 \item 
-virtual void \mbox{\hyperlink{classart_1_1TDetectParticleProcessor_a461c897e5213bc3405b19302ab9820f5}{Process}} ()
+void \mbox{\hyperlink{classart_1_1TDetectParticleProcessor_aefe8c61538dafd19a58f71b1af2d0b74}{Process}} () override
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -60,6 +60,13 @@ const Double\+\_\+t \mbox{\hyperlink{classart_1_1TDetectParticleProcessor_a5a8f4
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 26 of file TDetect\+Particle\+Processor.\+h.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_a9f93eab9536b37bbe426fff8a79c8a50}\label{classart_1_1TDetectParticleProcessor_a9f93eab9536b37bbe426fff8a79c8a50}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!TDetectParticleProcessor@{TDetectParticleProcessor}}
@@ -67,34 +74,50 @@ const Double\+\_\+t \mbox{\hyperlink{classart_1_1TDetectParticleProcessor_a5a8f4
 \doxysubsubsection{\texorpdfstring{TDetectParticleProcessor()}{TDetectParticleProcessor()}}
 {\footnotesize\ttfamily TDetect\+Particle\+Processor\+::\+TDetect\+Particle\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-currently not use this object\mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_ae3415eb6ab912dab9b3e123703996c7d}\label{classart_1_1TDetectParticleProcessor_ae3415eb6ab912dab9b3e123703996c7d}} 
+currently not use this object
+
+Definition at line 32 of file TDetect\+Particle\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_ae3415eb6ab912dab9b3e123703996c7d}\label{classart_1_1TDetectParticleProcessor_ae3415eb6ab912dab9b3e123703996c7d}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!````~TDetectParticleProcessor@{$\sim$TDetectParticleProcessor}}
 \index{````~TDetectParticleProcessor@{$\sim$TDetectParticleProcessor}!art::TDetectParticleProcessor@{art::TDetectParticleProcessor}}
 \doxysubsubsection{\texorpdfstring{$\sim$TDetectParticleProcessor()}{~TDetectParticleProcessor()}}
-{\footnotesize\ttfamily TDetect\+Particle\+Processor\+::$\sim$\+TDetect\+Particle\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily TDetect\+Particle\+Processor\+::$\sim$\+TDetect\+Particle\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 54 of file TDetect\+Particle\+Processor.\+cc.
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_abe2ae614ebfbe4d204c28d451118a3e3}\label{classart_1_1TDetectParticleProcessor_abe2ae614ebfbe4d204c28d451118a3e3}} 
+\mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_aaca8d2a0cbfb72f340acebfed2d2c6aa}\label{classart_1_1TDetectParticleProcessor_aaca8d2a0cbfb72f340acebfed2d2c6aa}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!Init@{Init}}
 \index{Init@{Init}!art::TDetectParticleProcessor@{art::TDetectParticleProcessor}}
 \doxysubsubsection{\texorpdfstring{Init()}{Init()}}
-{\footnotesize\ttfamily void TDetect\+Particle\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void TDetect\+Particle\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
 same energy resolution for all detector
 
 ignore energy resolution
 
-initialization for TSrim\mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_a461c897e5213bc3405b19302ab9820f5}\label{classart_1_1TDetectParticleProcessor_a461c897e5213bc3405b19302ab9820f5}} 
+initialization for TSrim
+
+Definition at line 61 of file TDetect\+Particle\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_aefe8c61538dafd19a58f71b1af2d0b74}\label{classart_1_1TDetectParticleProcessor_aefe8c61538dafd19a58f71b1af2d0b74}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!Process@{Process}}
 \index{Process@{Process}!art::TDetectParticleProcessor@{art::TDetectParticleProcessor}}
 \doxysubsubsection{\texorpdfstring{Process()}{Process()}}
-{\footnotesize\ttfamily void TDetect\+Particle\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void TDetect\+Particle\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
 1 start (not 0)
 
 hit from side, so not caliculate energy
+
+Definition at line 148 of file TDetect\+Particle\+Processor.\+cc.
+
+
 
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_a5a8f4af827791145ba68feea6ab07eb0}\label{classart_1_1TDetectParticleProcessor_a5a8f4af827791145ba68feea6ab07eb0}} 
@@ -103,11 +126,19 @@ hit from side, so not caliculate energy
 \doxysubsubsection{\texorpdfstring{c}{c}}
 {\footnotesize\ttfamily const Double\+\_\+t art\+::\+TDetect\+Particle\+Processor\+::c = 299.\+792458\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 56 of file TDetect\+Particle\+Processor.\+h.
+
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_a66d231386879c09ea3bfc47f8d66ed85}\label{classart_1_1TDetectParticleProcessor_a66d231386879c09ea3bfc47f8d66ed85}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!fDetectorParameterName@{fDetectorParameterName}}
 \index{fDetectorParameterName@{fDetectorParameterName}!art::TDetectParticleProcessor@{art::TDetectParticleProcessor}}
 \doxysubsubsection{\texorpdfstring{fDetectorParameterName}{fDetectorParameterName}}
 {\footnotesize\ttfamily TString art\+::\+TDetect\+Particle\+Processor\+::f\+Detector\+Parameter\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 38 of file TDetect\+Particle\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_a476ad9e60dd6c84ee932ee7b7fde9b9f}\label{classart_1_1TDetectParticleProcessor_a476ad9e60dd6c84ee932ee7b7fde9b9f}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!fDetectorPrm@{fDetectorPrm}}
@@ -115,11 +146,19 @@ hit from side, so not caliculate energy
 \doxysubsubsection{\texorpdfstring{fDetectorPrm}{fDetectorPrm}}
 {\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::\+TDetect\+Particle\+Processor\+::f\+Detector\+Prm\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 45 of file TDetect\+Particle\+Processor.\+h.
+
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_a35a9ef0aebd1eddc407e0d8d3bd30008}\label{classart_1_1TDetectParticleProcessor_a35a9ef0aebd1eddc407e0d8d3bd30008}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!fInData@{fInData}}
 \index{fInData@{fInData}!art::TDetectParticleProcessor@{art::TDetectParticleProcessor}}
 \doxysubsubsection{\texorpdfstring{fInData}{fInData}}
 {\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::\+TDetect\+Particle\+Processor\+::f\+In\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 40 of file TDetect\+Particle\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_a33a196de00f1abf2c47a1390ae3f01b5}\label{classart_1_1TDetectParticleProcessor_a33a196de00f1abf2c47a1390ae3f01b5}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!fInGeom@{fInGeom}}
@@ -127,11 +166,19 @@ hit from side, so not caliculate energy
 \doxysubsubsection{\texorpdfstring{fInGeom}{fInGeom}}
 {\footnotesize\ttfamily TGeo\+Manager$\ast$$\ast$ art\+::\+TDetect\+Particle\+Processor\+::f\+In\+Geom\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 43 of file TDetect\+Particle\+Processor.\+h.
+
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_acd6df835e563533d9f286b3deaa9dfd3}\label{classart_1_1TDetectParticleProcessor_acd6df835e563533d9f286b3deaa9dfd3}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!fInputColName@{fInputColName}}
 \index{fInputColName@{fInputColName}!art::TDetectParticleProcessor@{art::TDetectParticleProcessor}}
 \doxysubsubsection{\texorpdfstring{fInputColName}{fInputColName}}
 {\footnotesize\ttfamily TString art\+::\+TDetect\+Particle\+Processor\+::f\+Input\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 35 of file TDetect\+Particle\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_a943d2b556b928baaae579e1db1c9f82b}\label{classart_1_1TDetectParticleProcessor_a943d2b556b928baaae579e1db1c9f82b}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!fInputTrackColName@{fInputTrackColName}}
@@ -139,11 +186,19 @@ hit from side, so not caliculate energy
 \doxysubsubsection{\texorpdfstring{fInputTrackColName}{fInputTrackColName}}
 {\footnotesize\ttfamily TString art\+::\+TDetect\+Particle\+Processor\+::f\+Input\+Track\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 36 of file TDetect\+Particle\+Processor.\+h.
+
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_a2cc709be0e946dee91e0e8ef1d8ba095}\label{classart_1_1TDetectParticleProcessor_a2cc709be0e946dee91e0e8ef1d8ba095}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!fInTrackData@{fInTrackData}}
 \index{fInTrackData@{fInTrackData}!art::TDetectParticleProcessor@{art::TDetectParticleProcessor}}
 \doxysubsubsection{\texorpdfstring{fInTrackData}{fInTrackData}}
 {\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::\+TDetect\+Particle\+Processor\+::f\+In\+Track\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 41 of file TDetect\+Particle\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_a756bc2518fecbd268dd2cbe7aad7ee1a}\label{classart_1_1TDetectParticleProcessor_a756bc2518fecbd268dd2cbe7aad7ee1a}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!fOutData@{fOutData}}
@@ -151,11 +206,19 @@ hit from side, so not caliculate energy
 \doxysubsubsection{\texorpdfstring{fOutData}{fOutData}}
 {\footnotesize\ttfamily TClones\+Array$\ast$ art\+::\+TDetect\+Particle\+Processor\+::f\+Out\+Data\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 42 of file TDetect\+Particle\+Processor.\+h.
+
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_ac438055d10b9affa2f0ce216347d50be}\label{classart_1_1TDetectParticleProcessor_ac438055d10b9affa2f0ce216347d50be}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!fOutputColName@{fOutputColName}}
 \index{fOutputColName@{fOutputColName}!art::TDetectParticleProcessor@{art::TDetectParticleProcessor}}
 \doxysubsubsection{\texorpdfstring{fOutputColName}{fOutputColName}}
 {\footnotesize\ttfamily TString art\+::\+TDetect\+Particle\+Processor\+::f\+Output\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 37 of file TDetect\+Particle\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_a7a54ad29e6b24534c9f7be689ee8659e}\label{classart_1_1TDetectParticleProcessor_a7a54ad29e6b24534c9f7be689ee8659e}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!fResolution@{fResolution}}
@@ -163,11 +226,19 @@ hit from side, so not caliculate energy
 \doxysubsubsection{\texorpdfstring{fResolution}{fResolution}}
 {\footnotesize\ttfamily Double\+Vec\+\_\+t art\+::\+TDetect\+Particle\+Processor\+::f\+Resolution\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 52 of file TDetect\+Particle\+Processor.\+h.
+
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_a29493e7dc943ba74eaa38a0f0433422d}\label{classart_1_1TDetectParticleProcessor_a29493e7dc943ba74eaa38a0f0433422d}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!fTargetIsGas@{fTargetIsGas}}
 \index{fTargetIsGas@{fTargetIsGas}!art::TDetectParticleProcessor@{art::TDetectParticleProcessor}}
 \doxysubsubsection{\texorpdfstring{fTargetIsGas}{fTargetIsGas}}
 {\footnotesize\ttfamily Bool\+\_\+t art\+::\+TDetect\+Particle\+Processor\+::f\+Target\+Is\+Gas\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 48 of file TDetect\+Particle\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_a658881ea0802f26fc19dd504d5363e8c}\label{classart_1_1TDetectParticleProcessor_a658881ea0802f26fc19dd504d5363e8c}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!fTargetName@{fTargetName}}
@@ -175,11 +246,19 @@ hit from side, so not caliculate energy
 \doxysubsubsection{\texorpdfstring{fTargetName}{fTargetName}}
 {\footnotesize\ttfamily TString art\+::\+TDetect\+Particle\+Processor\+::f\+Target\+Name\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 49 of file TDetect\+Particle\+Processor.\+h.
+
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_a617c18c6a0cc952f0cd98883a8c4a93c}\label{classart_1_1TDetectParticleProcessor_a617c18c6a0cc952f0cd98883a8c4a93c}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!fTargetParameterName@{fTargetParameterName}}
 \index{fTargetParameterName@{fTargetParameterName}!art::TDetectParticleProcessor@{art::TDetectParticleProcessor}}
 \doxysubsubsection{\texorpdfstring{fTargetParameterName}{fTargetParameterName}}
 {\footnotesize\ttfamily TString art\+::\+TDetect\+Particle\+Processor\+::f\+Target\+Parameter\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 39 of file TDetect\+Particle\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_a22b4133c3269b079da9d320b6ddbed11}\label{classart_1_1TDetectParticleProcessor_a22b4133c3269b079da9d320b6ddbed11}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!fTargetPressure@{fTargetPressure}}
@@ -187,11 +266,19 @@ hit from side, so not caliculate energy
 \doxysubsubsection{\texorpdfstring{fTargetPressure}{fTargetPressure}}
 {\footnotesize\ttfamily Double\+\_\+t art\+::\+TDetect\+Particle\+Processor\+::f\+Target\+Pressure\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 50 of file TDetect\+Particle\+Processor.\+h.
+
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_a887730c72be65f5dbea3905ca758ed0f}\label{classart_1_1TDetectParticleProcessor_a887730c72be65f5dbea3905ca758ed0f}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!fTargetPrm@{fTargetPrm}}
 \index{fTargetPrm@{fTargetPrm}!art::TDetectParticleProcessor@{art::TDetectParticleProcessor}}
 \doxysubsubsection{\texorpdfstring{fTargetPrm}{fTargetPrm}}
 {\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::\+TDetect\+Particle\+Processor\+::f\+Target\+Prm\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 46 of file TDetect\+Particle\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_a3ddcf4781d0c971f88689f3665b7f5a9}\label{classart_1_1TDetectParticleProcessor_a3ddcf4781d0c971f88689f3665b7f5a9}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!srim@{srim}}
@@ -202,6 +289,10 @@ hit from side, so not caliculate energy
 
 
 x 100 = \%, index=telescope id 
+
+
+
+Definition at line 54 of file TDetect\+Particle\+Processor.\+h.
 
 
 

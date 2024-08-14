@@ -15,19 +15,19 @@ Inheritance diagram for art\+::TSegment\+Output\+Processor\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classart_1_1TSegmentOutputProcessor_a667618ef2087f412fa97dc0ffaa5d7d3}{TSegment\+Output\+Processor}} ()
 \item 
-virtual \mbox{\hyperlink{classart_1_1TSegmentOutputProcessor_a9f8b465f43e2afae65aac2a47c40b71b}{$\sim$\+TSegment\+Output\+Processor}} ()
+\mbox{\hyperlink{classart_1_1TSegmentOutputProcessor_a9f8b465f43e2afae65aac2a47c40b71b}{$\sim$\+TSegment\+Output\+Processor}} ()
 \item 
-\mbox{\hyperlink{classart_1_1TSegmentOutputProcessor_adef15be18180ec3db7c4470910c0dc82}{TSegment\+Output\+Processor}} (const \mbox{\hyperlink{classart_1_1TSegmentOutputProcessor}{TSegment\+Output\+Processor}} \&rhs)
+\mbox{\hyperlink{classart_1_1TSegmentOutputProcessor_a619b9b768022556e7f6ba4051d253bca}{TSegment\+Output\+Processor}} (const \mbox{\hyperlink{classart_1_1TSegmentOutputProcessor}{TSegment\+Output\+Processor}} \&)
 \item 
 \mbox{\hyperlink{classart_1_1TSegmentOutputProcessor}{TSegment\+Output\+Processor}} \& \mbox{\hyperlink{classart_1_1TSegmentOutputProcessor_a42e8bdfa13cf83bc2110456437e4646d}{operator=}} (const \mbox{\hyperlink{classart_1_1TSegmentOutputProcessor}{TSegment\+Output\+Processor}} \&rhs)
 \item 
-virtual void \mbox{\hyperlink{classart_1_1TSegmentOutputProcessor_aa61b95521d5babbe1fb5a04ac1a50b52}{Init}} (TEvent\+Collection $\ast$col)
+void \mbox{\hyperlink{classart_1_1TSegmentOutputProcessor_ac071bca284c03bed8d9d29b6abe02e03}{Init}} (TEvent\+Collection $\ast$) override
 \item 
-virtual void \mbox{\hyperlink{classart_1_1TSegmentOutputProcessor_a5fbc634144d4b6a8ee1d05f621780032}{Process}} ()
+void \mbox{\hyperlink{classart_1_1TSegmentOutputProcessor_a5b52cfe57dece74ee7f47bc96de5c127}{Process}} () override
 \item 
-virtual void \mbox{\hyperlink{classart_1_1TSegmentOutputProcessor_ac57d315e16711d9ef297479393d64d8c}{Pre\+Loop}} ()
+void \mbox{\hyperlink{classart_1_1TSegmentOutputProcessor_a3ec61db1dc9848d607d9f02361a724f1}{Pre\+Loop}} () override
 \item 
-virtual void \mbox{\hyperlink{classart_1_1TSegmentOutputProcessor_ab5844576a8e79da132df98ee39909420}{Post\+Loop}} ()
+void \mbox{\hyperlink{classart_1_1TSegmentOutputProcessor_adc86db50018097d7d989b2df2f7efb8b}{Post\+Loop}} () override
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -58,6 +58,13 @@ std\+::map$<$ Int\+\_\+t, std\+::vector$<$ \mbox{\hyperlink{classart_1_1TModuleD
 \begin{DoxyCompactList}\small\item\em list of ignored segment \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 26 of file TSegment\+Output\+Processor.\+h.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_a667618ef2087f412fa97dc0ffaa5d7d3}\label{classart_1_1TSegmentOutputProcessor_a667618ef2087f412fa97dc0ffaa5d7d3}} 
 \index{art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}!TSegmentOutputProcessor@{TSegmentOutputProcessor}}
@@ -65,26 +72,42 @@ std\+::map$<$ Int\+\_\+t, std\+::vector$<$ \mbox{\hyperlink{classart_1_1TModuleD
 \doxysubsubsection{\texorpdfstring{TSegmentOutputProcessor()}{TSegmentOutputProcessor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily TSegment\+Output\+Processor\+::\+TSegment\+Output\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 32 of file TSegment\+Output\+Processor.\+cc.
+
 \mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_a9f8b465f43e2afae65aac2a47c40b71b}\label{classart_1_1TSegmentOutputProcessor_a9f8b465f43e2afae65aac2a47c40b71b}} 
 \index{art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}!````~TSegmentOutputProcessor@{$\sim$TSegmentOutputProcessor}}
 \index{````~TSegmentOutputProcessor@{$\sim$TSegmentOutputProcessor}!art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}}
 \doxysubsubsection{\texorpdfstring{$\sim$TSegmentOutputProcessor()}{~TSegmentOutputProcessor()}}
-{\footnotesize\ttfamily TSegment\+Output\+Processor\+::$\sim$\+TSegment\+Output\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily TSegment\+Output\+Processor\+::$\sim$\+TSegment\+Output\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_adef15be18180ec3db7c4470910c0dc82}\label{classart_1_1TSegmentOutputProcessor_adef15be18180ec3db7c4470910c0dc82}} 
+
+
+Definition at line 51 of file TSegment\+Output\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_a619b9b768022556e7f6ba4051d253bca}\label{classart_1_1TSegmentOutputProcessor_a619b9b768022556e7f6ba4051d253bca}} 
 \index{art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}!TSegmentOutputProcessor@{TSegmentOutputProcessor}}
 \index{TSegmentOutputProcessor@{TSegmentOutputProcessor}!art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}}
 \doxysubsubsection{\texorpdfstring{TSegmentOutputProcessor()}{TSegmentOutputProcessor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily TSegment\+Output\+Processor\+::\+TSegment\+Output\+Processor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1TSegmentOutputProcessor}{TSegment\+Output\+Processor}} \&}]{rhs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily TSegment\+Output\+Processor\+::\+TSegment\+Output\+Processor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1TSegmentOutputProcessor}{TSegment\+Output\+Processor}} \&}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 64 of file TSegment\+Output\+Processor.\+cc.
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_aa61b95521d5babbe1fb5a04ac1a50b52}\label{classart_1_1TSegmentOutputProcessor_aa61b95521d5babbe1fb5a04ac1a50b52}} 
+\mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_ac071bca284c03bed8d9d29b6abe02e03}\label{classart_1_1TSegmentOutputProcessor_ac071bca284c03bed8d9d29b6abe02e03}} 
 \index{art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}!Init@{Init}}
 \index{Init@{Init}!art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}}
 \doxysubsubsection{\texorpdfstring{Init()}{Init()}}
-{\footnotesize\ttfamily void TSegment\+Output\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void TSegment\+Output\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 72 of file TSegment\+Output\+Processor.\+cc.
 
 \mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_a42e8bdfa13cf83bc2110456437e4646d}\label{classart_1_1TSegmentOutputProcessor_a42e8bdfa13cf83bc2110456437e4646d}} 
 \index{art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}!operator=@{operator=}}
@@ -92,23 +115,39 @@ std\+::map$<$ Int\+\_\+t, std\+::vector$<$ \mbox{\hyperlink{classart_1_1TModuleD
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classart_1_1TSegmentOutputProcessor}{TSegment\+Output\+Processor}} \& TSegment\+Output\+Processor\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1TSegmentOutputProcessor}{TSegment\+Output\+Processor}} \&}]{rhs }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_ab5844576a8e79da132df98ee39909420}\label{classart_1_1TSegmentOutputProcessor_ab5844576a8e79da132df98ee39909420}} 
+
+
+Definition at line 66 of file TSegment\+Output\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_adc86db50018097d7d989b2df2f7efb8b}\label{classart_1_1TSegmentOutputProcessor_adc86db50018097d7d989b2df2f7efb8b}} 
 \index{art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}!PostLoop@{PostLoop}}
 \index{PostLoop@{PostLoop}!art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}}
 \doxysubsubsection{\texorpdfstring{PostLoop()}{PostLoop()}}
-{\footnotesize\ttfamily void TSegment\+Output\+Processor\+::\+Post\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void TSegment\+Output\+Processor\+::\+Post\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
-\mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_ac57d315e16711d9ef297479393d64d8c}\label{classart_1_1TSegmentOutputProcessor_ac57d315e16711d9ef297479393d64d8c}} 
+
+
+Definition at line 204 of file TSegment\+Output\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_a3ec61db1dc9848d607d9f02361a724f1}\label{classart_1_1TSegmentOutputProcessor_a3ec61db1dc9848d607d9f02361a724f1}} 
 \index{art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}!PreLoop@{PreLoop}}
 \index{PreLoop@{PreLoop}!art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}}
 \doxysubsubsection{\texorpdfstring{PreLoop()}{PreLoop()}}
-{\footnotesize\ttfamily void TSegment\+Output\+Processor\+::\+Pre\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void TSegment\+Output\+Processor\+::\+Pre\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
-\mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_a5fbc634144d4b6a8ee1d05f621780032}\label{classart_1_1TSegmentOutputProcessor_a5fbc634144d4b6a8ee1d05f621780032}} 
+
+
+Definition at line 201 of file TSegment\+Output\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_a5b52cfe57dece74ee7f47bc96de5c127}\label{classart_1_1TSegmentOutputProcessor_a5b52cfe57dece74ee7f47bc96de5c127}} 
 \index{art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}!Process@{Process}}
 \index{Process@{Process}!art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}}
 \doxysubsubsection{\texorpdfstring{Process()}{Process()}}
-{\footnotesize\ttfamily void TSegment\+Output\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void TSegment\+Output\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 130 of file TSegment\+Output\+Processor.\+cc.
 
 
 
@@ -119,11 +158,19 @@ std\+::map$<$ Int\+\_\+t, std\+::vector$<$ \mbox{\hyperlink{classart_1_1TModuleD
 \doxysubsubsection{\texorpdfstring{fFile}{fFile}}
 {\footnotesize\ttfamily TFile$\ast$ art\+::\+TSegment\+Output\+Processor\+::f\+File\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 42 of file TSegment\+Output\+Processor.\+h.
+
 \mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_a2a393bebee4925c2946906b20673ae7f}\label{classart_1_1TSegmentOutputProcessor_a2a393bebee4925c2946906b20673ae7f}} 
 \index{art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}!fFileName@{fFileName}}
 \index{fFileName@{fFileName}!art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}}
 \doxysubsubsection{\texorpdfstring{fFileName}{fFileName}}
 {\footnotesize\ttfamily TString art\+::\+TSegment\+Output\+Processor\+::f\+File\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 40 of file TSegment\+Output\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_abe8f63d89d0a9a2a8762d494091f85b2}\label{classart_1_1TSegmentOutputProcessor_abe8f63d89d0a9a2a8762d494091f85b2}} 
 \index{art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}!fIgnore@{fIgnore}}
@@ -131,11 +178,19 @@ std\+::map$<$ Int\+\_\+t, std\+::vector$<$ \mbox{\hyperlink{classart_1_1TModuleD
 \doxysubsubsection{\texorpdfstring{fIgnore}{fIgnore}}
 {\footnotesize\ttfamily String\+Vec\+\_\+t art\+::\+TSegment\+Output\+Processor\+::f\+Ignore\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 51 of file TSegment\+Output\+Processor.\+h.
+
 \mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_ab3941708aaea67c24c29cf0ee4d75481}\label{classart_1_1TSegmentOutputProcessor_ab3941708aaea67c24c29cf0ee4d75481}} 
 \index{art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}!fModuleList@{fModuleList}}
 \index{fModuleList@{fModuleList}!art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}}
 \doxysubsubsection{\texorpdfstring{fModuleList}{fModuleList}}
 {\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::\+TSegment\+Output\+Processor\+::f\+Module\+List\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 47 of file TSegment\+Output\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_a933715e1b4e1d645813b6d29c2726e6d}\label{classart_1_1TSegmentOutputProcessor_a933715e1b4e1d645813b6d29c2726e6d}} 
 \index{art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}!fModuleListName@{fModuleListName}}
@@ -143,11 +198,19 @@ std\+::map$<$ Int\+\_\+t, std\+::vector$<$ \mbox{\hyperlink{classart_1_1TModuleD
 \doxysubsubsection{\texorpdfstring{fModuleListName}{fModuleListName}}
 {\footnotesize\ttfamily TString art\+::\+TSegment\+Output\+Processor\+::f\+Module\+List\+Name\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 45 of file TSegment\+Output\+Processor.\+h.
+
 \mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_a77ea1ab7f0b9225ad42b9797bbbcb725}\label{classart_1_1TSegmentOutputProcessor_a77ea1ab7f0b9225ad42b9797bbbcb725}} 
 \index{art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}!fSegmentedData@{fSegmentedData}}
 \index{fSegmentedData@{fSegmentedData}!art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}}
 \doxysubsubsection{\texorpdfstring{fSegmentedData}{fSegmentedData}}
 {\footnotesize\ttfamily TSegmented\+Data$\ast$$\ast$ art\+::\+TSegment\+Output\+Processor\+::f\+Segmented\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 49 of file TSegment\+Output\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_a562fe001b75b240390aba7366e0312e0}\label{classart_1_1TSegmentOutputProcessor_a562fe001b75b240390aba7366e0312e0}} 
 \index{art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}!fSegmentedDataName@{fSegmentedDataName}}
@@ -155,11 +218,19 @@ std\+::map$<$ Int\+\_\+t, std\+::vector$<$ \mbox{\hyperlink{classart_1_1TModuleD
 \doxysubsubsection{\texorpdfstring{fSegmentedDataName}{fSegmentedDataName}}
 {\footnotesize\ttfamily TString art\+::\+TSegment\+Output\+Processor\+::f\+Segmented\+Data\+Name\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 50 of file TSegment\+Output\+Processor.\+h.
+
 \mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_ab28dd9a564d30c6ac8ae35cf9379763e}\label{classart_1_1TSegmentOutputProcessor_ab28dd9a564d30c6ac8ae35cf9379763e}} 
 \index{art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}!fSegmentList@{fSegmentList}}
 \index{fSegmentList@{fSegmentList}!art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}}
 \doxysubsubsection{\texorpdfstring{fSegmentList}{fSegmentList}}
 {\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::\+TSegment\+Output\+Processor\+::f\+Segment\+List\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 46 of file TSegment\+Output\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_acb999991b8377e7c5d078ec53d7fcf42}\label{classart_1_1TSegmentOutputProcessor_acb999991b8377e7c5d078ec53d7fcf42}} 
 \index{art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}!fSegmentListName@{fSegmentListName}}
@@ -171,6 +242,10 @@ std\+::map$<$ Int\+\_\+t, std\+::vector$<$ \mbox{\hyperlink{classart_1_1TModuleD
 
 pure TTree object (not TArt\+Tree) 
 
+
+
+Definition at line 44 of file TSegment\+Output\+Processor.\+h.
+
 \mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_a21cbe8b47b33c7ce00382b8625e433bf}\label{classart_1_1TSegmentOutputProcessor_a21cbe8b47b33c7ce00382b8625e433bf}} 
 \index{art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}!fSegments@{fSegments}}
 \index{fSegments@{fSegments}!art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}}
@@ -180,6 +255,10 @@ pure TTree object (not TArt\+Tree)
 
 
 list of ignored segment 
+
+
+
+Definition at line 52 of file TSegment\+Output\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_a29b0f7924fc6eb17d9ae55fabdebe3a0}\label{classart_1_1TSegmentOutputProcessor_a29b0f7924fc6eb17d9ae55fabdebe3a0}} 
 \index{art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}!fTree@{fTree}}
@@ -191,11 +270,19 @@ list of ignored segment
 
 outputed file 
 
+
+
+Definition at line 43 of file TSegment\+Output\+Processor.\+h.
+
 \mbox{\Hypertarget{classart_1_1TSegmentOutputProcessor_a9e9b752fb19a0fa6ffb71b50d1e32fb3}\label{classart_1_1TSegmentOutputProcessor_a9e9b752fb19a0fa6ffb71b50d1e32fb3}} 
 \index{art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}!fTreeName@{fTreeName}}
 \index{fTreeName@{fTreeName}!art::TSegmentOutputProcessor@{art::TSegmentOutputProcessor}}
 \doxysubsubsection{\texorpdfstring{fTreeName}{fTreeName}}
 {\footnotesize\ttfamily TString art\+::\+TSegment\+Output\+Processor\+::f\+Tree\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 41 of file TSegment\+Output\+Processor.\+h.
 
 
 

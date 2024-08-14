@@ -2,8 +2,8 @@ var classart_1_1TTelescopeProcessor =
 [
     [ "TTelescopeProcessor", "classart_1_1TTelescopeProcessor.html#ae3e2b5fb6967a0c0d5fe63a241868af0", null ],
     [ "~TTelescopeProcessor", "classart_1_1TTelescopeProcessor.html#ade03180910b21bc170cf81d2c948f68b", null ],
-    [ "Init", "classart_1_1TTelescopeProcessor.html#a37f79294d7edfa28194be99b8e97e190", null ],
-    [ "Process", "classart_1_1TTelescopeProcessor.html#aae4b049465a7662baae887ac8ddfbe35", null ],
+    [ "Init", "classart_1_1TTelescopeProcessor.html#a2b7b26c642e808de574fdc8957b01427", null ],
+    [ "Process", "classart_1_1TTelescopeProcessor.html#a289d2ef92977059f9491aeeca9ee2dd9", null ],
     [ "fDetParameter", "classart_1_1TTelescopeProcessor.html#ac7b6b7a2a4e4622e73535d3ca847b8b8", null ],
     [ "fDetParameters", "classart_1_1TTelescopeProcessor.html#a95548c8aa615a29460c130eedbacd5db", null ],
     [ "fDetPrmName", "classart_1_1TTelescopeProcessor.html#ad75517573583f506a30ba4fcfc9f3dbc", null ],

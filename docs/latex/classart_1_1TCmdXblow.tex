@@ -17,11 +17,11 @@ Inheritance diagram for art\+::TCmd\+Xblow\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classart_1_1TCmdXblow_ab8c7dbbc34b23bfcfe8c9dc85df18cd1}{$\sim$\+TCmd\+Xblow}} ()
 \item 
-Long\+\_\+t \mbox{\hyperlink{classart_1_1TCmdXblow_a112c7deae3267f796d3d74b5256cb6c9}{Cmd}} (vector$<$ TString $>$)
+Long\+\_\+t \mbox{\hyperlink{classart_1_1TCmdXblow_aa92d20bf7043ce3244b1da4ea58388d7}{Cmd}} (vector$<$ TString $>$) override
 \item 
-TH1 $\ast$ \mbox{\hyperlink{classart_1_1TCmdXblow_a673618d4886fe371ffafdd46a8495d49}{Run}} (TH1 $\ast$h1, Option\+\_\+t $\ast$opt=\char`\"{}\char`\"{})
+TH1 $\ast$ \mbox{\hyperlink{classart_1_1TCmdXblow_ae738cf9c1da140536547217f113aece6}{Run}} (TH1 $\ast$h1)
 \item 
-void \mbox{\hyperlink{classart_1_1TCmdXblow_a7f865f65591a6c01ce5f2ac3f756b0d8}{Help}} ()
+void \mbox{\hyperlink{classart_1_1TCmdXblow_a068cb7acf3cda1eee522205eed0af46a}{Help}} () override
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -32,12 +32,23 @@ static const char $\ast$ \mbox{\hyperlink{classart_1_1TCmdXblow_acf3d804d6f373d9
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 21 of file TCmd\+Xblow.\+h.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classart_1_1TCmdXblow_aa2fa86c97cf5afda5437359433fbe01e}\label{classart_1_1TCmdXblow_aa2fa86c97cf5afda5437359433fbe01e}} 
 \index{art::TCmdXblow@{art::TCmdXblow}!TCmdXblow@{TCmdXblow}}
 \index{TCmdXblow@{TCmdXblow}!art::TCmdXblow@{art::TCmdXblow}}
 \doxysubsubsection{\texorpdfstring{TCmdXblow()}{TCmdXblow()}}
 {\footnotesize\ttfamily TCmd\+Xblow\+::\+TCmd\+Xblow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 35 of file TCmd\+Xblow.\+cc.
 
 \mbox{\Hypertarget{classart_1_1TCmdXblow_ab8c7dbbc34b23bfcfe8c9dc85df18cd1}\label{classart_1_1TCmdXblow_ab8c7dbbc34b23bfcfe8c9dc85df18cd1}} 
 \index{art::TCmdXblow@{art::TCmdXblow}!````~TCmdXblow@{$\sim$TCmdXblow}}
@@ -47,24 +58,40 @@ static const char $\ast$ \mbox{\hyperlink{classart_1_1TCmdXblow_acf3d804d6f373d9
 
 
 
+Definition at line 40 of file TCmd\+Xblow.\+cc.
+
+
+
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classart_1_1TCmdXblow_a112c7deae3267f796d3d74b5256cb6c9}\label{classart_1_1TCmdXblow_a112c7deae3267f796d3d74b5256cb6c9}} 
+\mbox{\Hypertarget{classart_1_1TCmdXblow_aa92d20bf7043ce3244b1da4ea58388d7}\label{classart_1_1TCmdXblow_aa92d20bf7043ce3244b1da4ea58388d7}} 
 \index{art::TCmdXblow@{art::TCmdXblow}!Cmd@{Cmd}}
 \index{Cmd@{Cmd}!art::TCmdXblow@{art::TCmdXblow}}
 \doxysubsubsection{\texorpdfstring{Cmd()}{Cmd()}}
-{\footnotesize\ttfamily Long\+\_\+t TCmd\+Xblow\+::\+Cmd (\begin{DoxyParamCaption}\item[{vector$<$ TString $>$}]{args }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Long\+\_\+t TCmd\+Xblow\+::\+Cmd (\begin{DoxyParamCaption}\item[{vector$<$ TString $>$}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
-\mbox{\Hypertarget{classart_1_1TCmdXblow_a7f865f65591a6c01ce5f2ac3f756b0d8}\label{classart_1_1TCmdXblow_a7f865f65591a6c01ce5f2ac3f756b0d8}} 
+
+
+Definition at line 42 of file TCmd\+Xblow.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TCmdXblow_a068cb7acf3cda1eee522205eed0af46a}\label{classart_1_1TCmdXblow_a068cb7acf3cda1eee522205eed0af46a}} 
 \index{art::TCmdXblow@{art::TCmdXblow}!Help@{Help}}
 \index{Help@{Help}!art::TCmdXblow@{art::TCmdXblow}}
 \doxysubsubsection{\texorpdfstring{Help()}{Help()}}
-{\footnotesize\ttfamily void TCmd\+Xblow\+::\+Help (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void TCmd\+Xblow\+::\+Help (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
-\mbox{\Hypertarget{classart_1_1TCmdXblow_a673618d4886fe371ffafdd46a8495d49}\label{classart_1_1TCmdXblow_a673618d4886fe371ffafdd46a8495d49}} 
+
+
+Definition at line 115 of file TCmd\+Xblow.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TCmdXblow_ae738cf9c1da140536547217f113aece6}\label{classart_1_1TCmdXblow_ae738cf9c1da140536547217f113aece6}} 
 \index{art::TCmdXblow@{art::TCmdXblow}!Run@{Run}}
 \index{Run@{Run}!art::TCmdXblow@{art::TCmdXblow}}
 \doxysubsubsection{\texorpdfstring{Run()}{Run()}}
-{\footnotesize\ttfamily TH1 $\ast$ TCmd\+Xblow\+::\+Run (\begin{DoxyParamCaption}\item[{TH1 $\ast$}]{h1,  }\item[{Option\+\_\+t $\ast$}]{opt = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily TH1 $\ast$ TCmd\+Xblow\+::\+Run (\begin{DoxyParamCaption}\item[{TH1 $\ast$}]{h1 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 72 of file TCmd\+Xblow.\+cc.
 
 
 
@@ -75,11 +102,19 @@ static const char $\ast$ \mbox{\hyperlink{classart_1_1TCmdXblow_acf3d804d6f373d9
 \doxysubsubsection{\texorpdfstring{kFuncNameBase}{kFuncNameBase}}
 {\footnotesize\ttfamily const char $\ast$ TCmd\+Xblow\+::k\+Func\+Name\+Base = \char`\"{}f\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Definition at line 26 of file TCmd\+Xblow.\+h.
+
 \mbox{\Hypertarget{classart_1_1TCmdXblow_acf3d804d6f373d914cb84e8bf43e715d}\label{classart_1_1TCmdXblow_acf3d804d6f373d914cb84e8bf43e715d}} 
 \index{art::TCmdXblow@{art::TCmdXblow}!kLabelNameBase@{kLabelNameBase}}
 \index{kLabelNameBase@{kLabelNameBase}!art::TCmdXblow@{art::TCmdXblow}}
 \doxysubsubsection{\texorpdfstring{kLabelNameBase}{kLabelNameBase}}
 {\footnotesize\ttfamily const char $\ast$ TCmd\+Xblow\+::k\+Label\+Name\+Base = \char`\"{}l\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 27 of file TCmd\+Xblow.\+h.
 
 
 

@@ -2,8 +2,8 @@ var classart_1_1TTimingChargeAllMappingProcessor =
 [
     [ "TTimingChargeAllMappingProcessor", "classart_1_1TTimingChargeAllMappingProcessor.html#a8590291d1e1d20feacb815a8dd7ca393", null ],
     [ "~TTimingChargeAllMappingProcessor", "classart_1_1TTimingChargeAllMappingProcessor.html#ad5cf58cb66b1cf52b941515eb27fa66d", null ],
-    [ "Init", "classart_1_1TTimingChargeAllMappingProcessor.html#a4b19c93baabdd1d0f25a2efb0fd41b99", null ],
-    [ "Process", "classart_1_1TTimingChargeAllMappingProcessor.html#aec349e96753eb0ef8af0c5edfd2383ab", null ],
+    [ "Init", "classart_1_1TTimingChargeAllMappingProcessor.html#abc6792ecd4937dd346672ce5c3d26447", null ],
+    [ "Process", "classart_1_1TTimingChargeAllMappingProcessor.html#ae07215dc7c0cdd6f8d7332f0b0fd2d38", null ],
     [ "fCategorizedData", "classart_1_1TTimingChargeAllMappingProcessor.html#a730383bff5ab88b6f8cc24edd7b21f24", null ],
     [ "fCatID", "classart_1_1TTimingChargeAllMappingProcessor.html#a05b6cc4e920644aac462601b30de48e0", null ],
     [ "fChargeType", "classart_1_1TTimingChargeAllMappingProcessor.html#a08e869bd3da0f78c5e32051da10152b1", null ],
