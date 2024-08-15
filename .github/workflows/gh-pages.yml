@@ -27,7 +27,7 @@ jobs:
           # extended: true
 
       - name: install doxygen
-        run: sudo apt-get install doxygen graphviz
+        run: sudo apt-get install doxygen graphviz texlive-font-utils
 
       - name: generate doxygen files
         run: doxygen Doxyfile
