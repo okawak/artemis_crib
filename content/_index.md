@@ -14,6 +14,8 @@ See also [the official site (in Japanese)](https://artemis-dev.github.io/ja/)!
 
 Document author: Kodai Okawa, <okawa@cns.s.u-tokyo.ac.jp>
 
+For the developer of artemis_crib, please check also [this doxygen pages](docs/html).
+
 ## Contents
 
 {{% children style="h4" description="true" %}}
