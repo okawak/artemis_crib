@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"namespaces.html":[1,0],
 "pages.html":[],
 "run__AlphaCalibration_8C.html":[3,0,0,7],
 "run__AlphaCalibration_8C.html#a0297de9f654cd48ef4cac81d62b78173":[3,0,0,7,0],

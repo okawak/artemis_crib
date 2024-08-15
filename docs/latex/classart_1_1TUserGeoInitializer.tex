@@ -14,13 +14,13 @@ Inheritance diagram for art\+::TUser\+Geo\+Initializer\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classart_1_1TUserGeoInitializer_aa6ab5bfa10d39a7d9706349da5a65d51}{TUser\+Geo\+Initializer}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classart_1_1TUserGeoInitializer_a1f3732b5f7fbd95ce38a4b8ceab60dbf}{$\sim$\+TUser\+Geo\+Initializer}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classart_1_1TUserGeoInitializer_ac34d1a603509d31dbf7c4ed3061462db}{Init}} (TEvent\+Collection $\ast$col) override
-\item 
+\begin{DoxyCompactList}\small\item\em init \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classart_1_1TUserGeoInitializer_a537af5b1d56eb9b66397face9fe1a027}{Process}} () override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em process \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -58,7 +58,25 @@ Definition at line 24 of file TUser\+Geo\+Initializer.\+h.
 
 
 
-Definition at line 54 of file TUser\+Geo\+Initializer.\+cc.
+constructor 
+
+In the steering file, we set two parameters,
+
+
+\begin{DoxyItemize}
+\item \char`\"{}\+File\+Name\char`\"{}\+: geometry file, like prm/geo/expname.\+yaml
+\item \char`\"{}\+Visible\char`\"{}\+: make detector geometry figure
+\end{DoxyItemize}
+
+in the source code, the geometry parameter objects can be used by the name of \char`\"{}prm\+\_\+detector\char`\"{} or \char`\"{}prm\+\_\+target\char`\"{} in the constructor of other processor, you can get this object by 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{RegisterOptionalInputInfo(\textcolor{stringliteral}{"{}DetectorParameter"{}}, \textcolor{stringliteral}{"{}name of telescope parameter"{}}, fDetectorParameterName,}
+\DoxyCodeLine{                           TString(\textcolor{stringliteral}{"{}prm\_detectors"{}}), \&fDetectorPrm, \textcolor{stringliteral}{"{}TClonesArray"{}}, \textcolor{stringliteral}{"{}art::TDetectorParameter"{}});}
+
+\end{DoxyCode}
+ 
+
+Definition at line 69 of file TUser\+Geo\+Initializer.\+cc.
 
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_a1f3732b5f7fbd95ce38a4b8ceab60dbf}\label{classart_1_1TUserGeoInitializer_a1f3732b5f7fbd95ce38a4b8ceab60dbf}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!````~TUserGeoInitializer@{$\sim$TUserGeoInitializer}}
@@ -68,7 +86,11 @@ Definition at line 54 of file TUser\+Geo\+Initializer.\+cc.
 
 
 
-Definition at line 62 of file TUser\+Geo\+Initializer.\+cc.
+destructor 
+
+
+
+Definition at line 77 of file TUser\+Geo\+Initializer.\+cc.
 
 
 
@@ -81,7 +103,11 @@ Definition at line 62 of file TUser\+Geo\+Initializer.\+cc.
 
 
 
-Definition at line 71 of file TUser\+Geo\+Initializer.\+cc.
+init 
+
+
+
+Definition at line 86 of file TUser\+Geo\+Initializer.\+cc.
 
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_a537af5b1d56eb9b66397face9fe1a027}\label{classart_1_1TUserGeoInitializer_a537af5b1d56eb9b66397face9fe1a027}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!Process@{Process}}
@@ -91,7 +117,11 @@ Definition at line 71 of file TUser\+Geo\+Initializer.\+cc.
 
 
 
-Definition at line 95 of file TUser\+Geo\+Initializer.\+cc.
+process 
+
+
+
+Definition at line 110 of file TUser\+Geo\+Initializer.\+cc.
 
 
 
@@ -108,7 +138,7 @@ angle converter, degree to radian
 
 
 
-Definition at line 73 of file TUser\+Geo\+Initializer.\+h.
+Definition at line 56 of file TUser\+Geo\+Initializer.\+h.
 
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_aa58e58adff799b98dca7cf94a987643c}\label{classart_1_1TUserGeoInitializer_aa58e58adff799b98dca7cf94a987643c}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fDetParameterArray@{fDetParameterArray}}
@@ -122,7 +152,7 @@ Detector parameter object (\mbox{\hyperlink{classart_1_1TDetectorParameter}{art\
 
 
 
-Definition at line 68 of file TUser\+Geo\+Initializer.\+h.
+Definition at line 51 of file TUser\+Geo\+Initializer.\+h.
 
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_abc20ff3b73b8abbfc653660678bf4f36}\label{classart_1_1TUserGeoInitializer_abc20ff3b73b8abbfc653660678bf4f36}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fDetPrmName@{fDetPrmName}}
@@ -136,7 +166,7 @@ It should be \char`\"{}prm\+\_\+detector\char`\"{}.
 
 
 
-Definition at line 60 of file TUser\+Geo\+Initializer.\+h.
+Definition at line 43 of file TUser\+Geo\+Initializer.\+h.
 
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_a5446ae323a565ed7ca8aa79d33c4a95e}\label{classart_1_1TUserGeoInitializer_a5446ae323a565ed7ca8aa79d33c4a95e}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fFileName@{fFileName}}
@@ -150,7 +180,7 @@ Input geometry file name. You can define in steering file.
 
 
 
-Definition at line 58 of file TUser\+Geo\+Initializer.\+h.
+Definition at line 41 of file TUser\+Geo\+Initializer.\+h.
 
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_abdcc7af864d474cbe8d9d77875cfa97b}\label{classart_1_1TUserGeoInitializer_abdcc7af864d474cbe8d9d77875cfa97b}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fGeom@{fGeom}}
@@ -164,7 +194,7 @@ It is used for TGeo\+Manager process.
 
 
 
-Definition at line 55 of file TUser\+Geo\+Initializer.\+h.
+Definition at line 38 of file TUser\+Geo\+Initializer.\+h.
 
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_ad6ede7e11f59ab7a8cf4805e20d0805f}\label{classart_1_1TUserGeoInitializer_ad6ede7e11f59ab7a8cf4805e20d0805f}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fIsVisible@{fIsVisible}}
@@ -178,7 +208,7 @@ Make figure of Detectors of not.
 
 
 
-Definition at line 65 of file TUser\+Geo\+Initializer.\+h.
+Definition at line 48 of file TUser\+Geo\+Initializer.\+h.
 
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_a72eae9e755ddde2a962cbf953a5a973e}\label{classart_1_1TUserGeoInitializer_a72eae9e755ddde2a962cbf953a5a973e}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fTargetParameterArray@{fTargetParameterArray}}
@@ -192,7 +222,7 @@ Target parameter object (\mbox{\hyperlink{classart_1_1TTargetParameter}{art\+::\
 
 
 
-Definition at line 70 of file TUser\+Geo\+Initializer.\+h.
+Definition at line 53 of file TUser\+Geo\+Initializer.\+h.
 
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_a6d69b9edc18088113ad9c43ff3005597}\label{classart_1_1TUserGeoInitializer_a6d69b9edc18088113ad9c43ff3005597}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fTargetPrmName@{fTargetPrmName}}
@@ -206,7 +236,7 @@ It should be \char`\"{}prm\+\_\+target\char`\"{}.
 
 
 
-Definition at line 62 of file TUser\+Geo\+Initializer.\+h.
+Definition at line 45 of file TUser\+Geo\+Initializer.\+h.
 
 
 

@@ -5,6 +5,5 @@ var searchData=
   ['alphacalibration_2',['AlphaCalibration',['../AlphaCalibration_8C.html#a0ade4648db697094d28f671f62ea9ac9',1,'AlphaCalibration.C']]],
   ['alphacalibration_2ec_3',['AlphaCalibration.C',['../AlphaCalibration_8C.html',1,'']]],
   ['art_4',['art',['../namespaceart.html',1,'']]],
-  ['artcrib_5flinkdef_2eh_5',['artcrib_linkdef.h',['../artcrib__linkdef_8h.html',1,'']]],
-  ['artemis_5fcrib_20doxygen_20source_20code_6',['artemis_crib doxygen source code',['../index.html',1,'']]]
+  ['artcrib_5flinkdef_2eh_5',['artcrib_linkdef.h',['../artcrib__linkdef_8h.html',1,'']]]
 ];

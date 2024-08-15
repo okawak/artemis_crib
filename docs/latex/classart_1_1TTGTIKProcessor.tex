@@ -14,13 +14,13 @@ Inheritance diagram for art\+::TTGTIKProcessor\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a05e324a3d8c50020472d61c10d539b58}{TTGTIKProcessor}} ()
-\item 
-virtual \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a2c2c8a28f4efef0edbd1406a07528d3e}{$\sim$\+TTGTIKProcessor}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classart_1_1TTGTIKProcessor_a2c2c8a28f4efef0edbd1406a07528d3e}{$\sim$\+TTGTIKProcessor}} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a8982871c667e9b844534cdb0d3f2c17e}{Init}} (TEvent\+Collection $\ast$col) override
-\item 
+\begin{DoxyCompactList}\small\item\em init \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a2a6bd0af727a35af8de6167bd7c6195f}{Process}} () override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em process \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -34,47 +34,45 @@ const Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a49e7356b423948
 \begin{DoxyCompactItemize}
 \item 
 TString \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a59d682c3fc51757e1441de5474add20a}{f\+Input\+Col\+Name}}
-\item 
+\begin{DoxyCompactList}\small\item\em input telescope collection name (\mbox{\hyperlink{classart_1_1TTelescopeData}{art\+::\+TTelescope\+Data}}) \end{DoxyCompactList}\item 
 TString \mbox{\hyperlink{classart_1_1TTGTIKProcessor_adde93e8901acacfe0366eb6db6272ab5}{f\+Input\+Track\+Col\+Name}}
-\item 
+\begin{DoxyCompactList}\small\item\em input tracking collection name (art\+::\+TTrack) \end{DoxyCompactList}\item 
 TString \mbox{\hyperlink{classart_1_1TTGTIKProcessor_ad39916e65440d8e3681cc73065c031ec}{f\+Output\+Col\+Name}}
-\item 
-TString \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a775a7c69427def45c6a2d1f01811315a}{f\+Parameter\+Name}}
-\item 
+\begin{DoxyCompactList}\small\item\em output collection name (\mbox{\hyperlink{classart_1_1TReactionInfo}{art\+::\+TReaction\+Info}}) \end{DoxyCompactList}\item 
+TString \mbox{\hyperlink{classart_1_1TTGTIKProcessor_aec5086aa954527f5b0def4d59e358059}{f\+Detector\+Parameter\+Name}}
+\begin{DoxyCompactList}\small\item\em detector parameter name (\mbox{\hyperlink{classart_1_1TDetectorParameter}{art\+::\+TDetector\+Parameter}}) \end{DoxyCompactList}\item 
+TString \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a08e9b4cba124c67e2a58d4ef87ac6dff}{f\+Target\+Parameter\+Name}}
+\begin{DoxyCompactList}\small\item\em target parameter name (\mbox{\hyperlink{classart_1_1TTargetParameter}{art\+::\+TTarget\+Parameter}}) \end{DoxyCompactList}\item 
 TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a9ac1648cacee98912ad39fcb6ca58f83}{f\+In\+Data}}
-\item 
+\begin{DoxyCompactList}\small\item\em telescope input object (TClones\+Array(art\+::\+TTelescope\+Data)) \end{DoxyCompactList}\item 
 TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a2bbd33cfc164922f5f801745552f1cff}{f\+In\+Track\+Data}}
-\item 
+\begin{DoxyCompactList}\small\item\em tracking input object (TClones\+Array(art\+::\+TTrack)) \end{DoxyCompactList}\item 
 TClones\+Array $\ast$ \mbox{\hyperlink{classart_1_1TTGTIKProcessor_ad523c0b9f30354fee148ca1fd715a1c4}{f\+Out\+Data}}
-\item 
+\begin{DoxyCompactList}\small\item\em output object (TClones\+Array(art\+::\+TReaction\+Info)) \end{DoxyCompactList}\item 
 TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1TTGTIKProcessor_ac7be3a4fd23a537a4de629d8dc39b6c9}{f\+Detector\+Prm}}
-\item 
+\begin{DoxyCompactList}\small\item\em detector parameter object (TClones\+Array(art\+::\+TDetector\+Parameter)) \end{DoxyCompactList}\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a222caa3e2414a1fa32db2b24a99c2105}{f\+Target\+Prm}}
+\begin{DoxyCompactList}\small\item\em target parameter obejct (TClones\+Array(art\+::\+TTarget\+Parameter)) \end{DoxyCompactList}\item 
 Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a931096dbbacf1732cc7bf1dfc4257e93}{f\+Initial\+Beam\+Energy}}
-\item 
-Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a0dd2c4cd42167893544abda38e317a2d}{f\+Energy\+Threshold}}
-\item 
+\begin{DoxyCompactList}\small\item\em initial (after window) beam energy (MeV) \end{DoxyCompactList}\item 
 TString \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a3075023f2ad2fd6c72a4a5e6adec38cf}{f\+Target\+Name}}
-\item 
-String\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a91ba3a5388c742f745517f2e1a09d57e}{f\+Particle\+Name}}
-\item 
-Double\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a6f568cd510b86f2b7b727fe8e59922fb}{f\+Particle\+Mass}}
-\item 
-Int\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a8ea594a958e8821eeb0bf9e7ff013c9a}{f\+Particle\+Atomic\+Num}}
-\item 
-Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_aba73f89c77e572e5bdc83c11f3136f5c}{f\+Max\+Length}}
-\item 
-SRIMData $\ast$ \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a0b5d73d56e42363741c11dfbcdc35b1e}{f\+Eloss\+Table}}
-\item 
-SRIMtable $\ast$ \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a7d408c699c1280f7ee8c3d6d655eee50}{f\+Eloss\+Beam}}
-\item 
-SRIMtable $\ast$ \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a71ded9eca03d51709b6a9bdb2779dd08}{f\+Eloss\+Detect\+Particle}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em gas target name used in TSrim calculation \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a3ae58c23bd3012adf0e7e9f441e7c772}{f\+Pressure}}
+\begin{DoxyCompactList}\small\item\em gas pressure in Torr unit \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a90ad083ea2b6f78b2b3fd2a158a70eb2}{f\+Temperature}}
+\begin{DoxyCompactList}\small\item\em gas temperature in K unit \end{DoxyCompactList}\item 
+Int\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a68677b9baf4ad858b2ba509d8a709e18}{f\+Particle\+ZArray}}
+\begin{DoxyCompactList}\small\item\em reaction particles Atomic num array \end{DoxyCompactList}\item 
+Int\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a99dbb680489f15611973b2c96de80a39}{f\+Particle\+AArray}}
+\begin{DoxyCompactList}\small\item\em reaction particles Mass num array \end{DoxyCompactList}\item 
+TSrim $\ast$ \mbox{\hyperlink{classart_1_1TTGTIKProcessor_adec5399bdcda2a7ce01a226d71ae746b}{srim}}
+\begin{DoxyCompactList}\small\item\em TSrim object to calculate energy loss. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 
 
-Definition at line 27 of file TTGTIKProcessor.\+h.
+Definition at line 23 of file TTGTIKProcessor.\+h.
 
 
 
@@ -87,17 +85,54 @@ Definition at line 27 of file TTGTIKProcessor.\+h.
 
 
 
-Definition at line 30 of file TTGTIKProcessor.\+cc.
+constructor 
+
+From telescope object and beam (tracking) object, it calculate the reaction position (event reconstruction) using Thick Gas Target method. (Thick Gas Target Inverse Kinematics \+: TGTIK)
+
+need variables in the steering file
+\begin{DoxyItemize}
+\item Input\+Collection\+: telescope object, inherit from \mbox{\hyperlink{classart_1_1TTelescopeData}{art\+::\+TTelescope\+Data}}
+\item Input\+Track\+Collection\+: tracking object, inherit from art\+::\+TTrack
+\item Output\+Collection\+: name of output branch, inherit from \mbox{\hyperlink{classart_1_1TReactionInfo}{art\+::\+TReaction\+Info}}
+\item Initial\+Beam\+Energy\+: beam energy in LAB system in MeV unit
+\item Target\+Name\+: target gas name for TSrim input
+\item Target\+Pressure\+: gas pressure in Torr unit
+\item Target\+Temperature\+: gas emperature
+\item Particle\+ZArray\+: \mbox{[}Z1, Z2, Z3, Z4\mbox{]}
+\item Particle\+AArray\+: \mbox{[}A1, A2, A3, A4\mbox{]}
+\begin{DoxyItemize}
+\item assuming two body reaction (NEED size 4 aray)
+\item \mbox{[}beam, target, fragment, residual\mbox{]}
+\item example\+: A(a,b)B reaction,
+\item the order is \mbox{[}a, A, b, B\mbox{]}
+\item this is \char`\"{}inverse kinematics\char`\"{}, so we assume the detected particle is \char`\"{}\+B\char`\"{}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Option\+:
+\begin{DoxyItemize}
+\item On\+Custom\+Function\+: if you need extra treatment, you can add the process.
+\begin{DoxyItemize}
+\item if it is \char`\"{}true\char`\"{}, the custom treatment is on.
+\item this is for 26Si(a, p)29P analysis to treat the excited state effect. 
+\end{DoxyItemize}
+\end{DoxyItemize}currently not use this object
+
+Definition at line 59 of file TTGTIKProcessor.\+cc.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a2c2c8a28f4efef0edbd1406a07528d3e}\label{classart_1_1TTGTIKProcessor_a2c2c8a28f4efef0edbd1406a07528d3e}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!````~TTGTIKProcessor@{$\sim$TTGTIKProcessor}}
 \index{````~TTGTIKProcessor@{$\sim$TTGTIKProcessor}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
 \doxysubsubsection{\texorpdfstring{$\sim$TTGTIKProcessor()}{~TTGTIKProcessor()}}
-{\footnotesize\ttfamily TTGTIKProcessor\+::$\sim$\+TTGTIKProcessor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily TTGTIKProcessor\+::$\sim$\+TTGTIKProcessor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 53 of file TTGTIKProcessor.\+cc.
+destructor 
+
+destrucor. free the memory 
+
+Definition at line 87 of file TTGTIKProcessor.\+cc.
 
 
 
@@ -110,7 +145,11 @@ Definition at line 53 of file TTGTIKProcessor.\+cc.
 
 
 
-Definition at line 60 of file TTGTIKProcessor.\+cc.
+init 
+
+Initialization process. in this process, it prepares some variables 
+
+Definition at line 98 of file TTGTIKProcessor.\+cc.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a2a6bd0af727a35af8de6167bd7c6195f}\label{classart_1_1TTGTIKProcessor_a2a6bd0af727a35af8de6167bd7c6195f}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!Process@{Process}}
@@ -120,11 +159,29 @@ Definition at line 60 of file TTGTIKProcessor.\+cc.
 
 
 
-Definition at line 124 of file TTGTIKProcessor.\+cc.
+process 
+
+
+
+Definition at line 164 of file TTGTIKProcessor.\+cc.
 
 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_aec5086aa954527f5b0def4d59e358059}\label{classart_1_1TTGTIKProcessor_aec5086aa954527f5b0def4d59e358059}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fDetectorParameterName@{fDetectorParameterName}}
+\index{fDetectorParameterName@{fDetectorParameterName}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{fDetectorParameterName}{fDetectorParameterName}}
+{\footnotesize\ttfamily TString art\+::\+TTGTIKProcessor\+::f\+Detector\+Parameter\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+detector parameter name (\mbox{\hyperlink{classart_1_1TDetectorParameter}{art\+::\+TDetector\+Parameter}}) 
+
+
+
+Definition at line 47 of file TTGTIKProcessor.\+h.
+
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_ac7be3a4fd23a537a4de629d8dc39b6c9}\label{classart_1_1TTGTIKProcessor_ac7be3a4fd23a537a4de629d8dc39b6c9}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fDetectorPrm@{fDetectorPrm}}
 \index{fDetectorPrm@{fDetectorPrm}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
@@ -133,47 +190,11 @@ Definition at line 124 of file TTGTIKProcessor.\+cc.
 
 
 
-Definition at line 49 of file TTGTIKProcessor.\+h.
-
-\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a7d408c699c1280f7ee8c3d6d655eee50}\label{classart_1_1TTGTIKProcessor_a7d408c699c1280f7ee8c3d6d655eee50}} 
-\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fElossBeam@{fElossBeam}}
-\index{fElossBeam@{fElossBeam}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
-\doxysubsubsection{\texorpdfstring{fElossBeam}{fElossBeam}}
-{\footnotesize\ttfamily SRIMtable$\ast$ art\+::\+TTGTIKProcessor\+::f\+Eloss\+Beam\hspace{0.3cm}{\ttfamily [protected]}}
+detector parameter object (TClones\+Array(art\+::\+TDetector\+Parameter)) 
 
 
 
-Definition at line 61 of file TTGTIKProcessor.\+h.
-
-\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a71ded9eca03d51709b6a9bdb2779dd08}\label{classart_1_1TTGTIKProcessor_a71ded9eca03d51709b6a9bdb2779dd08}} 
-\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fElossDetectParticle@{fElossDetectParticle}}
-\index{fElossDetectParticle@{fElossDetectParticle}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
-\doxysubsubsection{\texorpdfstring{fElossDetectParticle}{fElossDetectParticle}}
-{\footnotesize\ttfamily SRIMtable$\ast$ art\+::\+TTGTIKProcessor\+::f\+Eloss\+Detect\+Particle\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 62 of file TTGTIKProcessor.\+h.
-
-\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a0b5d73d56e42363741c11dfbcdc35b1e}\label{classart_1_1TTGTIKProcessor_a0b5d73d56e42363741c11dfbcdc35b1e}} 
-\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fElossTable@{fElossTable}}
-\index{fElossTable@{fElossTable}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
-\doxysubsubsection{\texorpdfstring{fElossTable}{fElossTable}}
-{\footnotesize\ttfamily SRIMData$\ast$ art\+::\+TTGTIKProcessor\+::f\+Eloss\+Table\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 60 of file TTGTIKProcessor.\+h.
-
-\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a0dd2c4cd42167893544abda38e317a2d}\label{classart_1_1TTGTIKProcessor_a0dd2c4cd42167893544abda38e317a2d}} 
-\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fEnergyThreshold@{fEnergyThreshold}}
-\index{fEnergyThreshold@{fEnergyThreshold}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
-\doxysubsubsection{\texorpdfstring{fEnergyThreshold}{fEnergyThreshold}}
-{\footnotesize\ttfamily Double\+\_\+t art\+::\+TTGTIKProcessor\+::f\+Energy\+Threshold\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 52 of file TTGTIKProcessor.\+h.
+Definition at line 59 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a9ac1648cacee98912ad39fcb6ca58f83}\label{classart_1_1TTGTIKProcessor_a9ac1648cacee98912ad39fcb6ca58f83}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fInData@{fInData}}
@@ -183,7 +204,11 @@ Definition at line 52 of file TTGTIKProcessor.\+h.
 
 
 
-Definition at line 46 of file TTGTIKProcessor.\+h.
+telescope input object (TClones\+Array(art\+::\+TTelescope\+Data)) 
+
+
+
+Definition at line 52 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a931096dbbacf1732cc7bf1dfc4257e93}\label{classart_1_1TTGTIKProcessor_a931096dbbacf1732cc7bf1dfc4257e93}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fInitialBeamEnergy@{fInitialBeamEnergy}}
@@ -193,13 +218,21 @@ Definition at line 46 of file TTGTIKProcessor.\+h.
 
 
 
-Definition at line 51 of file TTGTIKProcessor.\+h.
+initial (after window) beam energy (MeV) 
+
+
+
+Definition at line 64 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a59d682c3fc51757e1441de5474add20a}\label{classart_1_1TTGTIKProcessor_a59d682c3fc51757e1441de5474add20a}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fInputColName@{fInputColName}}
 \index{fInputColName@{fInputColName}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
 \doxysubsubsection{\texorpdfstring{fInputColName}{fInputColName}}
 {\footnotesize\ttfamily TString art\+::\+TTGTIKProcessor\+::f\+Input\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+input telescope collection name (\mbox{\hyperlink{classart_1_1TTelescopeData}{art\+::\+TTelescope\+Data}}) 
 
 
 
@@ -213,7 +246,11 @@ Definition at line 41 of file TTGTIKProcessor.\+h.
 
 
 
-Definition at line 42 of file TTGTIKProcessor.\+h.
+input tracking collection name (art\+::\+TTrack) 
+
+
+
+Definition at line 43 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a2bbd33cfc164922f5f801745552f1cff}\label{classart_1_1TTGTIKProcessor_a2bbd33cfc164922f5f801745552f1cff}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fInTrackData@{fInTrackData}}
@@ -223,17 +260,11 @@ Definition at line 42 of file TTGTIKProcessor.\+h.
 
 
 
-Definition at line 47 of file TTGTIKProcessor.\+h.
-
-\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_aba73f89c77e572e5bdc83c11f3136f5c}\label{classart_1_1TTGTIKProcessor_aba73f89c77e572e5bdc83c11f3136f5c}} 
-\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fMaxLength@{fMaxLength}}
-\index{fMaxLength@{fMaxLength}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
-\doxysubsubsection{\texorpdfstring{fMaxLength}{fMaxLength}}
-{\footnotesize\ttfamily Double\+\_\+t art\+::\+TTGTIKProcessor\+::f\+Max\+Length\hspace{0.3cm}{\ttfamily [protected]}}
+tracking input object (TClones\+Array(art\+::\+TTrack)) 
 
 
 
-Definition at line 58 of file TTGTIKProcessor.\+h.
+Definition at line 54 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_ad523c0b9f30354fee148ca1fd715a1c4}\label{classart_1_1TTGTIKProcessor_ad523c0b9f30354fee148ca1fd715a1c4}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fOutData@{fOutData}}
@@ -243,7 +274,11 @@ Definition at line 58 of file TTGTIKProcessor.\+h.
 
 
 
-Definition at line 48 of file TTGTIKProcessor.\+h.
+output object (TClones\+Array(art\+::\+TReaction\+Info)) 
+
+
+
+Definition at line 56 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_ad39916e65440d8e3681cc73065c031ec}\label{classart_1_1TTGTIKProcessor_ad39916e65440d8e3681cc73065c031ec}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fOutputColName@{fOutputColName}}
@@ -253,47 +288,53 @@ Definition at line 48 of file TTGTIKProcessor.\+h.
 
 
 
-Definition at line 43 of file TTGTIKProcessor.\+h.
-
-\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a775a7c69427def45c6a2d1f01811315a}\label{classart_1_1TTGTIKProcessor_a775a7c69427def45c6a2d1f01811315a}} 
-\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fParameterName@{fParameterName}}
-\index{fParameterName@{fParameterName}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
-\doxysubsubsection{\texorpdfstring{fParameterName}{fParameterName}}
-{\footnotesize\ttfamily TString art\+::\+TTGTIKProcessor\+::f\+Parameter\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+output collection name (\mbox{\hyperlink{classart_1_1TReactionInfo}{art\+::\+TReaction\+Info}}) 
 
 
 
-Definition at line 44 of file TTGTIKProcessor.\+h.
+Definition at line 45 of file TTGTIKProcessor.\+h.
 
-\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a8ea594a958e8821eeb0bf9e7ff013c9a}\label{classart_1_1TTGTIKProcessor_a8ea594a958e8821eeb0bf9e7ff013c9a}} 
-\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fParticleAtomicNum@{fParticleAtomicNum}}
-\index{fParticleAtomicNum@{fParticleAtomicNum}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
-\doxysubsubsection{\texorpdfstring{fParticleAtomicNum}{fParticleAtomicNum}}
-{\footnotesize\ttfamily Int\+Vec\+\_\+t art\+::\+TTGTIKProcessor\+::f\+Particle\+Atomic\+Num\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 56 of file TTGTIKProcessor.\+h.
-
-\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a6f568cd510b86f2b7b727fe8e59922fb}\label{classart_1_1TTGTIKProcessor_a6f568cd510b86f2b7b727fe8e59922fb}} 
-\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fParticleMass@{fParticleMass}}
-\index{fParticleMass@{fParticleMass}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
-\doxysubsubsection{\texorpdfstring{fParticleMass}{fParticleMass}}
-{\footnotesize\ttfamily Double\+Vec\+\_\+t art\+::\+TTGTIKProcessor\+::f\+Particle\+Mass\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a99dbb680489f15611973b2c96de80a39}\label{classart_1_1TTGTIKProcessor_a99dbb680489f15611973b2c96de80a39}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fParticleAArray@{fParticleAArray}}
+\index{fParticleAArray@{fParticleAArray}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{fParticleAArray}{fParticleAArray}}
+{\footnotesize\ttfamily Int\+Vec\+\_\+t art\+::\+TTGTIKProcessor\+::f\+Particle\+AArray\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Definition at line 55 of file TTGTIKProcessor.\+h.
-
-\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a91ba3a5388c742f745517f2e1a09d57e}\label{classart_1_1TTGTIKProcessor_a91ba3a5388c742f745517f2e1a09d57e}} 
-\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fParticleName@{fParticleName}}
-\index{fParticleName@{fParticleName}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
-\doxysubsubsection{\texorpdfstring{fParticleName}{fParticleName}}
-{\footnotesize\ttfamily String\+Vec\+\_\+t art\+::\+TTGTIKProcessor\+::f\+Particle\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+reaction particles Mass num array 
 
 
 
-Definition at line 54 of file TTGTIKProcessor.\+h.
+Definition at line 74 of file TTGTIKProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a68677b9baf4ad858b2ba509d8a709e18}\label{classart_1_1TTGTIKProcessor_a68677b9baf4ad858b2ba509d8a709e18}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fParticleZArray@{fParticleZArray}}
+\index{fParticleZArray@{fParticleZArray}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{fParticleZArray}{fParticleZArray}}
+{\footnotesize\ttfamily Int\+Vec\+\_\+t art\+::\+TTGTIKProcessor\+::f\+Particle\+ZArray\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+reaction particles Atomic num array 
+
+
+
+Definition at line 72 of file TTGTIKProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a3ae58c23bd3012adf0e7e9f441e7c772}\label{classart_1_1TTGTIKProcessor_a3ae58c23bd3012adf0e7e9f441e7c772}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fPressure@{fPressure}}
+\index{fPressure@{fPressure}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{fPressure}{fPressure}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::\+TTGTIKProcessor\+::f\+Pressure\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+gas pressure in Torr unit 
+
+
+
+Definition at line 68 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a3075023f2ad2fd6c72a4a5e6adec38cf}\label{classart_1_1TTGTIKProcessor_a3075023f2ad2fd6c72a4a5e6adec38cf}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fTargetName@{fTargetName}}
@@ -303,7 +344,53 @@ Definition at line 54 of file TTGTIKProcessor.\+h.
 
 
 
-Definition at line 53 of file TTGTIKProcessor.\+h.
+gas target name used in TSrim calculation 
+
+
+
+Definition at line 66 of file TTGTIKProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a08e9b4cba124c67e2a58d4ef87ac6dff}\label{classart_1_1TTGTIKProcessor_a08e9b4cba124c67e2a58d4ef87ac6dff}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fTargetParameterName@{fTargetParameterName}}
+\index{fTargetParameterName@{fTargetParameterName}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetParameterName}{fTargetParameterName}}
+{\footnotesize\ttfamily TString art\+::\+TTGTIKProcessor\+::f\+Target\+Parameter\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+target parameter name (\mbox{\hyperlink{classart_1_1TTargetParameter}{art\+::\+TTarget\+Parameter}}) 
+
+
+
+Definition at line 49 of file TTGTIKProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a222caa3e2414a1fa32db2b24a99c2105}\label{classart_1_1TTGTIKProcessor_a222caa3e2414a1fa32db2b24a99c2105}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fTargetPrm@{fTargetPrm}}
+\index{fTargetPrm@{fTargetPrm}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetPrm}{fTargetPrm}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::\+TTGTIKProcessor\+::f\+Target\+Prm\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+target parameter obejct (TClones\+Array(art\+::\+TTarget\+Parameter)) 
+
+
+
+Definition at line 61 of file TTGTIKProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a90ad083ea2b6f78b2b3fd2a158a70eb2}\label{classart_1_1TTGTIKProcessor_a90ad083ea2b6f78b2b3fd2a158a70eb2}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fTemperature@{fTemperature}}
+\index{fTemperature@{fTemperature}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{fTemperature}{fTemperature}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::\+TTGTIKProcessor\+::f\+Temperature\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+gas temperature in K unit 
+
+
+
+Definition at line 70 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_abb30c8c58d5a41be9c98ea31d44e5977}\label{classart_1_1TTGTIKProcessor_abb30c8c58d5a41be9c98ea31d44e5977}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!kEpsilon@{kEpsilon}}
@@ -313,7 +400,7 @@ Definition at line 53 of file TTGTIKProcessor.\+h.
 
 
 
-Definition at line 36 of file TTGTIKProcessor.\+h.
+Definition at line 35 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_ac92319eddc20e647b44b93cc40193581}\label{classart_1_1TTGTIKProcessor_ac92319eddc20e647b44b93cc40193581}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!kMaxIteration@{kMaxIteration}}
@@ -323,7 +410,7 @@ Definition at line 36 of file TTGTIKProcessor.\+h.
 
 
 
-Definition at line 37 of file TTGTIKProcessor.\+h.
+Definition at line 36 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a49e7356b4239488ceda10524c81e2b71}\label{classart_1_1TTGTIKProcessor_a49e7356b4239488ceda10524c81e2b71}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!kWindowUncertainty@{kWindowUncertainty}}
@@ -333,7 +420,21 @@ Definition at line 37 of file TTGTIKProcessor.\+h.
 
 
 
-Definition at line 38 of file TTGTIKProcessor.\+h.
+Definition at line 37 of file TTGTIKProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_adec5399bdcda2a7ce01a226d71ae746b}\label{classart_1_1TTGTIKProcessor_adec5399bdcda2a7ce01a226d71ae746b}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!srim@{srim}}
+\index{srim@{srim}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{srim}{srim}}
+{\footnotesize\ttfamily TSrim$\ast$ art\+::\+TTGTIKProcessor\+::srim\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+TSrim object to calculate energy loss. 
+
+
+
+Definition at line 77 of file TTGTIKProcessor.\+h.
 
 
 

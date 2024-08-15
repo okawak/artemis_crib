@@ -103,12 +103,16 @@ Inheritance diagram for art::TUserGeoInitializer:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa6ab5bfa10d39a7d9706349da5a65d51"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TUserGeoInitializer.html#aa6ab5bfa10d39a7d9706349da5a65d51">TUserGeoInitializer</a> ()</td></tr>
+<tr class="memdesc:aa6ab5bfa10d39a7d9706349da5a65d51"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor  <a href="classart_1_1TUserGeoInitializer.html#aa6ab5bfa10d39a7d9706349da5a65d51">More...</a><br /></td></tr>
 <tr class="separator:aa6ab5bfa10d39a7d9706349da5a65d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f3732b5f7fbd95ce38a4b8ceab60dbf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TUserGeoInitializer.html#a1f3732b5f7fbd95ce38a4b8ceab60dbf">~TUserGeoInitializer</a> ()</td></tr>
+<tr class="memdesc:a1f3732b5f7fbd95ce38a4b8ceab60dbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">destructor  <a href="classart_1_1TUserGeoInitializer.html#a1f3732b5f7fbd95ce38a4b8ceab60dbf">More...</a><br /></td></tr>
 <tr class="separator:a1f3732b5f7fbd95ce38a4b8ceab60dbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac34d1a603509d31dbf7c4ed3061462db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TUserGeoInitializer.html#ac34d1a603509d31dbf7c4ed3061462db">Init</a> (TEventCollection *col) override</td></tr>
+<tr class="memdesc:ac34d1a603509d31dbf7c4ed3061462db"><td class="mdescLeft">&#160;</td><td class="mdescRight">init  <a href="classart_1_1TUserGeoInitializer.html#ac34d1a603509d31dbf7c4ed3061462db">More...</a><br /></td></tr>
 <tr class="separator:ac34d1a603509d31dbf7c4ed3061462db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a537af5b1d56eb9b66397face9fe1a027"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TUserGeoInitializer.html#a537af5b1d56eb9b66397face9fe1a027">Process</a> () override</td></tr>
+<tr class="memdesc:a537af5b1d56eb9b66397face9fe1a027"><td class="mdescLeft">&#160;</td><td class="mdescRight">process  <a href="classart_1_1TUserGeoInitializer.html#a537af5b1d56eb9b66397face9fe1a027">More...</a><br /></td></tr>
 <tr class="separator:a537af5b1d56eb9b66397face9fe1a027"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -157,7 +161,16 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8cc_source.html#l00054">54</a> of file <a class="el" href="TUserGeoInitializer_8cc_source.html">TUserGeoInitializer.cc</a>.</p>
+<p>constructor </p>
+<p>In the steering file, we set two parameters,</p>
+<ul>
+<li>"FileName": geometry file, like prm/geo/expname.yaml</li>
+<li>"Visible": make detector geometry figure</li>
+</ul>
+<p>in the source code, the geometry parameter objects can be used by the name of "prm_detector" or "prm_target" in the constructor of other processor, you can get this object by </p><div class="fragment"><div class="line">RegisterOptionalInputInfo(<span class="stringliteral">&quot;DetectorParameter&quot;</span>, <span class="stringliteral">&quot;name of telescope parameter&quot;</span>, fDetectorParameterName,</div>
+<div class="line">                           TString(<span class="stringliteral">&quot;prm_detectors&quot;</span>), &amp;fDetectorPrm, <span class="stringliteral">&quot;TClonesArray&quot;</span>, <span class="stringliteral">&quot;art::TDetectorParameter&quot;</span>);</div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8cc_source.html#l00069">69</a> of file <a class="el" href="TUserGeoInitializer_8cc_source.html">TUserGeoInitializer.cc</a>.</p>
 
 </div>
 </div>
@@ -176,7 +189,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8cc_source.html#l00062">62</a> of file <a class="el" href="TUserGeoInitializer_8cc_source.html">TUserGeoInitializer.cc</a>.</p>
+<p>destructor </p>
+
+<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8cc_source.html#l00077">77</a> of file <a class="el" href="TUserGeoInitializer_8cc_source.html">TUserGeoInitializer.cc</a>.</p>
 
 </div>
 </div>
@@ -205,7 +220,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8cc_source.html#l00071">71</a> of file <a class="el" href="TUserGeoInitializer_8cc_source.html">TUserGeoInitializer.cc</a>.</p>
+<p>init </p>
+
+<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8cc_source.html#l00086">86</a> of file <a class="el" href="TUserGeoInitializer_8cc_source.html">TUserGeoInitializer.cc</a>.</p>
 
 </div>
 </div>
@@ -232,7 +249,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8cc_source.html#l00095">95</a> of file <a class="el" href="TUserGeoInitializer_8cc_source.html">TUserGeoInitializer.cc</a>.</p>
+<p>process </p>
+
+<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8cc_source.html#l00110">110</a> of file <a class="el" href="TUserGeoInitializer_8cc_source.html">TUserGeoInitializer.cc</a>.</p>
 
 </div>
 </div>
@@ -259,7 +278,7 @@ Protected Attributes</h2></td></tr>
 
 <p>angle converter, degree to radian </p>
 
-<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8h_source.html#l00073">73</a> of file <a class="el" href="TUserGeoInitializer_8h_source.html">TUserGeoInitializer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8h_source.html#l00056">56</a> of file <a class="el" href="TUserGeoInitializer_8h_source.html">TUserGeoInitializer.h</a>.</p>
 
 </div>
 </div>
@@ -285,7 +304,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Detector parameter object (<a class="el" href="classart_1_1TDetectorParameter.html">art::TDetectorParameter</a> array) </p>
 
-<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8h_source.html#l00068">68</a> of file <a class="el" href="TUserGeoInitializer_8h_source.html">TUserGeoInitializer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8h_source.html#l00051">51</a> of file <a class="el" href="TUserGeoInitializer_8h_source.html">TUserGeoInitializer.h</a>.</p>
 
 </div>
 </div>
@@ -311,7 +330,7 @@ Protected Attributes</h2></td></tr>
 
 <p>It should be "prm_detector". </p>
 
-<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8h_source.html#l00060">60</a> of file <a class="el" href="TUserGeoInitializer_8h_source.html">TUserGeoInitializer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8h_source.html#l00043">43</a> of file <a class="el" href="TUserGeoInitializer_8h_source.html">TUserGeoInitializer.h</a>.</p>
 
 </div>
 </div>
@@ -337,7 +356,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Input geometry file name. You can define in steering file. </p>
 
-<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8h_source.html#l00058">58</a> of file <a class="el" href="TUserGeoInitializer_8h_source.html">TUserGeoInitializer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8h_source.html#l00041">41</a> of file <a class="el" href="TUserGeoInitializer_8h_source.html">TUserGeoInitializer.h</a>.</p>
 
 </div>
 </div>
@@ -363,7 +382,7 @@ Protected Attributes</h2></td></tr>
 
 <p>It is used for TGeoManager process. </p>
 
-<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8h_source.html#l00055">55</a> of file <a class="el" href="TUserGeoInitializer_8h_source.html">TUserGeoInitializer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8h_source.html#l00038">38</a> of file <a class="el" href="TUserGeoInitializer_8h_source.html">TUserGeoInitializer.h</a>.</p>
 
 </div>
 </div>
@@ -389,7 +408,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Make figure of Detectors of not. </p>
 
-<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8h_source.html#l00065">65</a> of file <a class="el" href="TUserGeoInitializer_8h_source.html">TUserGeoInitializer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8h_source.html#l00048">48</a> of file <a class="el" href="TUserGeoInitializer_8h_source.html">TUserGeoInitializer.h</a>.</p>
 
 </div>
 </div>
@@ -415,7 +434,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Target parameter object (<a class="el" href="classart_1_1TTargetParameter.html">art::TTargetParameter</a> array) </p>
 
-<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8h_source.html#l00070">70</a> of file <a class="el" href="TUserGeoInitializer_8h_source.html">TUserGeoInitializer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8h_source.html#l00053">53</a> of file <a class="el" href="TUserGeoInitializer_8h_source.html">TUserGeoInitializer.h</a>.</p>
 
 </div>
 </div>
@@ -441,7 +460,7 @@ Protected Attributes</h2></td></tr>
 
 <p>It should be "prm_target". </p>
 
-<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8h_source.html#l00062">62</a> of file <a class="el" href="TUserGeoInitializer_8h_source.html">TUserGeoInitializer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TUserGeoInitializer_8h_source.html#l00045">45</a> of file <a class="el" href="TUserGeoInitializer_8h_source.html">TUserGeoInitializer.h</a>.</p>
 
 </div>
 </div>

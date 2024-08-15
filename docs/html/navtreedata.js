@@ -25,7 +25,10 @@
 var NAVTREE =
 [
   [ "artemis_crib", "index.html", [
-    [ "artemis_crib doxygen source code", "index.html", null ],
+    [ "Home", "index.html", [
+      [ "Doxygen LISENSE", "index.html#autotoc_md1", null ],
+      [ "豆知識", "index.html#autotoc_md2", null ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]
     ] ],
@@ -57,8 +60,8 @@ var NAVTREEINDEX =
 "AlphaCalibration_8C.html",
 "classTCatCmdTCutG.html#ad0d68c07c74cee6a7f0950b65076b45d",
 "classart_1_1TMUXPositionValidator.html#acbcd0e1b2cdda93198547b733eb5a810",
-"classart_1_1TTargetParameter.html#a05a540f6dc1e70abed18d2124693f301",
-"pages.html"
+"classart_1_1TTargetParameter.html#a31724ce3d3b32ebaf26b34eef241b2fd",
+"namespaces.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

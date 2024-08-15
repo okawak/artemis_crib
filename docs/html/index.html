@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>artemis_crib: artemis_crib doxygen source code</title>
+<title>artemis_crib: Home</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -84,11 +84,45 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">artemis_crib doxygen source code </div>  </div>
+<div class="title">Home </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_doxy_main"></a> This is a detailed instruction for the developer of artemis_crib made by "Doxygen".</p>
-<p><a href="../..">To Main Manual.</a> </p>
+<div class="textblock"><p><a class="anchor" id="md_doxy_main"></a> This is a detailed instruction about source code for developers. For installation and usage, please go to <a href="../..">this page</a> created by Hugo.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Doxygen LISENSE</h1>
+<p>This pages are created by <a href="https://www.doxygen.nl/">doxygen</a> and <a href="https://jothepro.github.io/doxygen-awesome-css/">Doxygen Awesome theme</a>.</p>
+<p>Copyright © 1997-2009 by Dimitri van Heesch.</p>
+<p>Permission to use, copy, modify, and distribute this software and its documentation under the terms of the GNU General Public License is hereby granted. No representations are made about the suitability of this software for any purpose. It is provided "as is" without express or implied warranty. See the GNU General Public License for more details.</p>
+<p>Documents produced by doxygen are derivative works derived from the input used in their production; they are not affected by this license.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+豆知識</h1>
+<p>日本語ですみません。ライブラリを整備している中で、気になったことをメモしておきます。 時間がある時に英語で整備し直すかもしれません。</p>
+<ol type="1">
+<li>//!の意味</li>
+</ol>
+<p>プロセッサなどを作成していると、</p>
+<div class="fragment"><div class="line">TClonesArray **fInData; //!</div>
+</div><!-- fragment --><p>のようなコードに出くわすことがあるが、この最後の"//!"についてはよくわかっていなかった。 このおまじないのようなものを消すとエラーが出てくるし、調べてもDoxygenのコメント形式だというような情報しか得られずよくわからないままだった。</p>
+<p>最近CharGPTに聞いてみると、初めて知ったことだが、ROOTのCINTやClingインタープリタででポインタのポインタをI/Oシステムで使うことが難しく、 正しく解析できないというエラーで、//!をつけるとこのI/O処理から除外するように伝えることができるらしい。</p>
+<p>難しくて完全には理解できていないが、ポインタのポインタをROOTで扱うのは難しいから、//!をつけるとROOTの範疇から外すという意味合いになるということなのかな??? ROOTの作法ではなく、純粋なC++な知識だけが必要なものがいいなあと感じたり。。。</p>
+<ol type="1">
+<li>ClassDefについて</li>
+</ol>
+<p>ClassをDictionaryに登録するときに、ClassDefを使うが、クラスメソッドをoverrideするときにClassDefを使うと長い警告文が出てくる。</p>
+<p>調べてみると、ClassDefにも種類があるようで、オーバーライドを使用する時には、ClassDefOverrideというものが定義されているらしい。 <a href="https://root-forum.cern.ch/t/classdef-variants/44736">情報</a>の通り全てを列挙してみると、</p>
+<ul>
+<li>ClassDef: Regular</li>
+<li>ClassDefOverride: Use this one if your class definition use the c++ <code>override</code> keyword for virtual functions (If you use the regular ClassDef, the compiler might warn that the function declared in the ClassDef are missing the override keyword).</li>
+<li>ClassDefNV: Use if you class does not (and shoud not) have a virtual function table (i.e. no virtual function in the class and any of its base classes</li>
+</ul>
+<p>ROOTには認識されるが、Dictionaryに登録しない場合は、</p>
+<ul>
+<li>ClassDefInline</li>
+<li>ClassDefInlineOverride</li>
+<li>ClassDefInlineNV</li>
+</ul>
+<p>という書き方もできるらしいが、一応まだexperimentalらしい。</p>
+<p>通常は、ClassDefかClassDefOverrideだけ使えば良さそうな感じかな? </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
