@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 21:30:15
- * @note    last modified: 2024-08-15 14:31:43
+ * @note    last modified: 2024-08-15 14:49:10
  * @details
  */
 
@@ -23,31 +23,14 @@ class TClonesArray;
 
 class art::TUserGeoInitializer : public TProcessor {
   public:
-    /**
-     * @fn constructor
-     * @brief constructor
-     * @detail in the steering file, we set two parameters,
-     *
-     * "FileName": geometry file, like prm/geo/expname.yaml
-     * "Visible": make detector geometry figure
-     *
-     * in the source code, the geometry parameter objects
-     * can be used by the name of "prm_detector" or "prm_target"
-     * in the constructor of other processor, you can get this
-     * object by
-     *
-     * RegisterOptionalInputInfo("DetectorParameter", "name of telescope parameter", fDetectorParameterName,
-     *                            TString("prm_detectors"), &fDetectorPrm, "TClonesArray", "art::TDetectorParameter");
-     *
-     */
+    /// @brief constructor
     TUserGeoInitializer();
-    /**
-     * @fn destructor
-     * @brief destructor
-     */
+    /// @brief destructor
     ~TUserGeoInitializer();
 
+    /// @brief init
     void Init(TEventCollection *col) override;
+    /// @brief process
     void Process() override;
 
   protected:

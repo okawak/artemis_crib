@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 21:27:49
- * @note    last modified: 2024-07-19 16:52:07
+ * @note    last modified: 2024-08-15 14:49:35
  * @details
  */
 
@@ -50,6 +50,21 @@ const char *kNodeKeyIsGas = "is_gas";
 const char *kNodeKeyZ = "z_position";
 const char *kNodeKeyPedestal = "pedestal";
 } // namespace
+
+////////////////////////////////////////////////////////////////////////////////
+/// In the steering file, we set two parameters,
+///
+/// - "FileName": geometry file, like prm/geo/expname.yaml
+/// - "Visible": make detector geometry figure
+///
+/// in the source code, the geometry parameter objects
+/// can be used by the name of "prm_detector" or "prm_target"
+/// in the constructor of other processor, you can get this
+/// object by
+/// ```
+/// RegisterOptionalInputInfo("DetectorParameter", "name of telescope parameter", fDetectorParameterName,
+///                            TString("prm_detectors"), &fDetectorPrm, "TClonesArray", "art::TDetectorParameter");
+/// ```
 
 TUserGeoInitializer::TUserGeoInitializer() : fGeom(nullptr) {
     RegisterProcessorParameter("DetName", "parameter name of detectors", fDetPrmName, TString("prm_detectors"));

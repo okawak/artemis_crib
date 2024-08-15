@@ -3,20 +3,16 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 11:11:02
- * @note    last modified: 2024-08-14 18:25:17
+ * @note    last modified: 2024-08-15 16:25:57
  * @details
  */
 
 #ifndef _TTGTIKPROCESSOR_H_
 #define _TTGTIKPROCESSOR_H_
 
-#include <SRIMData.h>
-#include <SRIMtable.h>
 #include <TProcessor.h>
+#include <TSrim.h>
 #include <TTrack.h>
-
-#include "../geo/TDetectorParameter.h"
-#include "../telescope/TTelescopeData.h"
 
 namespace art {
 class TTGTIKProcessor;
@@ -26,11 +22,14 @@ class TClonesArray;
 
 class art::TTGTIKProcessor : public TProcessor {
   public:
-    // Default constructor
+    /// @brief constructor
     TTGTIKProcessor();
-    virtual ~TTGTIKProcessor();
+    /// @brief destructor
+    ~TTGTIKProcessor();
 
+    /// @brief init
     void Init(TEventCollection *col) override;
+    /// @brief process
     void Process() override;
 
     const Double_t kEpsilon = 1.0e-3;
@@ -38,41 +37,57 @@ class art::TTGTIKProcessor : public TProcessor {
     const Double_t kWindowUncertainty = 250.0;
 
   protected:
+    /// @brief input telescope collection name (art::TTelescopeData)
     TString fInputColName;
+    /// @brief input tracking collection name (art::TTrack)
     TString fInputTrackColName;
+    /// @brief output collection name (art::TReactionInfo)
     TString fOutputColName;
-    TString fParameterName;
+    /// @brief detector parameter name (art::TDetectorParameter)
+    TString fDetectorParameterName;
+    /// @brief target parameter name (art::TTargetParameter)
+    TString fTargetParameterName;
 
-    TClonesArray **fInData;      //!
+    /// @brief telescope input object (TClonesArray(art::TTelescopeData))
+    TClonesArray **fInData; //!
+    /// @brief tracking input object (TClonesArray(art::TTrack))
     TClonesArray **fInTrackData; //!
-    TClonesArray *fOutData;      //!
+    /// @brief output object (TClonesArray(art::TReactionInfo))
+    TClonesArray *fOutData;
+
+    /// @brief detector parameter object (TClonesArray(art::TDetectorParameter))
     TClonesArray **fDetectorPrm; //!
+    /// @brief target parameter obejct (TClonesArray(art::TTargetParameter))
+    TClonesArray **fTargetPrm; //!
 
+    /// @brief initial (after window) beam energy (MeV)
     Double_t fInitialBeamEnergy;
-    Double_t fEnergyThreshold;
+    /// @brief gas target name used in TSrim calculation
     TString fTargetName;
-    StringVec_t fParticleName;   //!
-    DoubleVec_t fParticleMass;   //!
-    IntVec_t fParticleAtomicNum; //!
+    /// @brief gas pressure in Torr unit
+    Double_t fPressure;
+    /// @brief gas temperature in K unit
+    Double_t fTemperature;
+    /// @brief reaction particles Atomic num array
+    IntVec_t fParticleZArray;
+    /// @brief reaction particles Mass num array
+    IntVec_t fParticleAArray;
 
-    Double_t fMaxLength;
-
-    SRIMData *fElossTable;           //!
-    SRIMtable *fElossBeam;           //!
-    SRIMtable *fElossDetectParticle; //!
+    /// @brief TSrim object to calculate energy loss
+    TSrim *srim;
 
   private:
-    Double_t GetReactionPosition(const TTrack *track, const TTelescopeData *data);
-    Double_t newton(const TTrack *track, const TTelescopeData *data);
-    Double_t bisection(const TTrack *track, const TTelescopeData *data);
-    Double_t TargetFunction(Double_t z, const TTrack *track, const TTelescopeData *data);
+    // Double_t GetReactionPosition(const TTrack *track, const TTelescopeData *data);
+    // Double_t newton(const TTrack *track, const TTelescopeData *data);
+    // Double_t bisection(const TTrack *track, const TTelescopeData *data);
+    // Double_t TargetFunction(Double_t z, const TTrack *track, const TTelescopeData *data);
 
-    Double_t GetEcmFromBeam(Double_t z, const TTrack *track);
+    // Double_t GetEcmFromBeam(Double_t z, const TTrack *track);
 
-    Double_t GetEcmFromDetectParticle(Double_t z, const TTrack *track, const TTelescopeData *data);
-    Double_t GetEcm_kinematics(Double_t energy, Double_t theta, Double_t low_e, Double_t high_e);
-    Double_t GetEcm_classic_kinematics(Double_t energy, Double_t theta);
-    Double_t GetLabAngle(Double_t energy, Double_t energy_cm);
+    // Double_t GetEcmFromDetectParticle(Double_t z, const TTrack *track, const TTelescopeData *data);
+    // Double_t GetEcm_kinematics(Double_t energy, Double_t theta, Double_t low_e, Double_t high_e);
+    // Double_t GetEcm_classic_kinematics(Double_t energy, Double_t theta);
+    // Double_t GetLabAngle(Double_t energy, Double_t energy_cm);
 
     // Copy constructor (prohibited)
     TTGTIKProcessor(const TTGTIKProcessor &rhs) = delete;
