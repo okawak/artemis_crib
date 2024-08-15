@@ -3,15 +3,16 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 11:11:02
- * @note    last modified: 2024-08-15 16:25:57
+ * @note    last modified: 2024-08-15 22:45:00
  * @details
  */
 
 #ifndef _TTGTIKPROCESSOR_H_
 #define _TTGTIKPROCESSOR_H_
 
+#include "../telescope/TTelescopeData.h"
 #include <TProcessor.h>
-#include <TSrim.h>
+#include <TSrim.h> // TSrim library
 #include <TTrack.h>
 
 namespace art {
@@ -22,19 +23,15 @@ class TClonesArray;
 
 class art::TTGTIKProcessor : public TProcessor {
   public:
-    /// @brief constructor
+    /// @brief Default constructor.
     TTGTIKProcessor();
-    /// @brief destructor
+    /// @brief Default destructor.
     ~TTGTIKProcessor();
 
-    /// @brief init
+    /// @brief Initialization
     void Init(TEventCollection *col) override;
-    /// @brief process
+    /// @brief Main process
     void Process() override;
-
-    const Double_t kEpsilon = 1.0e-3;
-    const Int_t kMaxIteration = 1000;
-    const Double_t kWindowUncertainty = 250.0;
 
   protected:
     /// @brief input telescope collection name (art::TTelescopeData)
@@ -72,22 +69,79 @@ class art::TTGTIKProcessor : public TProcessor {
     IntVec_t fParticleZArray;
     /// @brief reaction particles Mass num array
     IntVec_t fParticleAArray;
+    /// @brief Flag of custom processor
+    Bool_t fDoCustom;
 
     /// @brief TSrim object to calculate energy loss
     TSrim *srim;
 
+    /// @brief initial minimum value of bisection method
+    const Double_t kInitialMin = -250.0;
+    /// @brief initial maximum value of bisection method
+    const Double_t kInitialMax = 1000.0;
+    /// @brief Accuracy of the bisection method
+    const Double_t kEpsilon = 1.0e-3;
+    /// @brief Max iteration number of the bisection method
+    const Int_t kMaxIteration = 1000;
+
   private:
-    // Double_t GetReactionPosition(const TTrack *track, const TTelescopeData *data);
-    // Double_t newton(const TTrack *track, const TTelescopeData *data);
-    // Double_t bisection(const TTrack *track, const TTelescopeData *data);
-    // Double_t TargetFunction(Double_t z, const TTrack *track, const TTelescopeData *data);
+    /// @brief Calculate reaction Z position
+    /// @param track (art::TTrack)
+    /// @param data (art::TTelescopeData)
+    /// @return Z position (mm)
+    Double_t GetReactionPosition(const TTrack *track, const TTelescopeData *data);
 
-    // Double_t GetEcmFromBeam(Double_t z, const TTrack *track);
+    /// @brief Newtom method (unavalable)
+    /// @param track (art::TTrack)
+    /// @param data (art::TTelescopeData)
+    /// @return Z position (mm)
+    Double_t newton(const TTrack *, const TTelescopeData *);
 
-    // Double_t GetEcmFromDetectParticle(Double_t z, const TTrack *track, const TTelescopeData *data);
-    // Double_t GetEcm_kinematics(Double_t energy, Double_t theta, Double_t low_e, Double_t high_e);
-    // Double_t GetEcm_classic_kinematics(Double_t energy, Double_t theta);
-    // Double_t GetLabAngle(Double_t energy, Double_t energy_cm);
+    /// @brief Bisection method
+    /// @param track (art::TTrack)
+    /// @param data (art::TTelescopeData)
+    /// @return Z position (mm)
+    Double_t bisection(const TTrack *track, const TTelescopeData *data);
+
+    /// @brief Target function to be set to 0 by bisection (newton) method
+    /// @param z (mm)
+    /// @param track (art::TTrack)
+    /// @param data (art::TTelescopeData)
+    /// @return Ecm (beam) - Ecm (data)
+    Double_t TargetFunction(Double_t z, const TTrack *track, const TTelescopeData *data);
+
+    /// @brief Get Ecm from beam information
+    /// @param z (mm)
+    /// @param track (art::TTrack)
+    /// @return Ecm (MeV)
+    Double_t GetEcmFromBeam(Double_t z, const TTrack *track);
+
+    /// @brief Get Ecm from detected particle information
+    /// @param z (mm)
+    /// @param track (art::TTrack)
+    /// @param data (art::TTelescopeData)
+    /// @return Ecm (MeV)
+    Double_t GetEcmFromDetectParticle(Double_t z, const TTrack *track, const TTelescopeData *data);
+
+    /// @brief Get Ecm from detected particle information (relativity kinematics)
+    /// @param energy (MeV)
+    /// @param theta (radian)
+    /// @param low_e (minimum energy)
+    /// @param high_e (maxmum energy)
+    /// @return Ecm (MeV)
+    Double_t GetEcm_kinematics(Double_t energy, Double_t theta, Double_t low_e, Double_t high_e);
+
+    /// @brief Get Ecm from detected particle information (classic kinematics)
+    /// @param energy (MeV)
+    /// @param theta (radian)
+    /// @return Ecm (MeV)
+    Double_t GetEcm_classic_kinematics(Double_t energy, Double_t theta);
+
+    /// @brief Get Lab Angle after reconstruction
+    /// @param energy (MeV)
+    /// @param energy_cm (MeV)
+    /// @return angle (radian)
+    Double_t GetLabAngle(Double_t energy, Double_t energy_cm);
 
     // Copy constructor (prohibited)
     TTGTIKProcessor(const TTGTIKProcessor &rhs) = delete;
