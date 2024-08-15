@@ -14,22 +14,13 @@ Inheritance diagram for art\+::TTGTIKProcessor\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a05e324a3d8c50020472d61c10d539b58}{TTGTIKProcessor}} ()
-\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a2c2c8a28f4efef0edbd1406a07528d3e}{$\sim$\+TTGTIKProcessor}} ()
-\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a8982871c667e9b844534cdb0d3f2c17e}{Init}} (TEvent\+Collection $\ast$col) override
-\begin{DoxyCompactList}\small\item\em init \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Initialization. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a2a6bd0af727a35af8de6167bd7c6195f}{Process}} () override
-\begin{DoxyCompactList}\small\item\em process \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-const Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_abb30c8c58d5a41be9c98ea31d44e5977}{k\+Epsilon}} = 1.\+0e-\/3
-\item 
-const Int\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_ac92319eddc20e647b44b93cc40193581}{k\+Max\+Iteration}} = 1000
-\item 
-const Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a49e7356b4239488ceda10524c81e2b71}{k\+Window\+Uncertainty}} = 250.\+0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Main process. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -65,14 +56,24 @@ Int\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a68677b9baf4ad858b2
 \begin{DoxyCompactList}\small\item\em reaction particles Atomic num array \end{DoxyCompactList}\item 
 Int\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a99dbb680489f15611973b2c96de80a39}{f\+Particle\+AArray}}
 \begin{DoxyCompactList}\small\item\em reaction particles Mass num array \end{DoxyCompactList}\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a201c8c1dc9c41f6eb7bfe5a8a5690dfe}{f\+Do\+Custom}}
+\begin{DoxyCompactList}\small\item\em Flag of custom processor. \end{DoxyCompactList}\item 
 TSrim $\ast$ \mbox{\hyperlink{classart_1_1TTGTIKProcessor_adec5399bdcda2a7ce01a226d71ae746b}{srim}}
-\begin{DoxyCompactList}\small\item\em TSrim object to calculate energy loss. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em TSrim object to calculate energy loss. \end{DoxyCompactList}\item 
+const Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a57b4b633a1be58bcf888d53c782c14b9}{k\+Initial\+Min}} = -\/250.\+0
+\begin{DoxyCompactList}\small\item\em initial minimum value of bisection method \end{DoxyCompactList}\item 
+const Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a47d40d2a8ddbb2c2f637aeb24059b9c0}{k\+Initial\+Max}} = 1000.\+0
+\begin{DoxyCompactList}\small\item\em initial maximum value of bisection method \end{DoxyCompactList}\item 
+const Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_abb30c8c58d5a41be9c98ea31d44e5977}{k\+Epsilon}} = 1.\+0e-\/3
+\begin{DoxyCompactList}\small\item\em Accuracy of the bisection method. \end{DoxyCompactList}\item 
+const Int\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_ac92319eddc20e647b44b93cc40193581}{k\+Max\+Iteration}} = 1000
+\begin{DoxyCompactList}\small\item\em Max iteration number of the bisection method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 
 
-Definition at line 23 of file TTGTIKProcessor.\+h.
+Definition at line 24 of file TTGTIKProcessor.\+h.
 
 
 
@@ -85,11 +86,11 @@ Definition at line 23 of file TTGTIKProcessor.\+h.
 
 
 
-constructor 
+Default constructor. 
 
 From telescope object and beam (tracking) object, it calculate the reaction position (event reconstruction) using Thick Gas Target method. (Thick Gas Target Inverse Kinematics \+: TGTIK)
 
-need variables in the steering file
+Need variables in the steering file\+:
 \begin{DoxyItemize}
 \item Input\+Collection\+: telescope object, inherit from \mbox{\hyperlink{classart_1_1TTelescopeData}{art\+::\+TTelescope\+Data}}
 \item Input\+Track\+Collection\+: tracking object, inherit from art\+::\+TTrack
@@ -111,14 +112,14 @@ need variables in the steering file
 
 Option\+:
 \begin{DoxyItemize}
-\item On\+Custom\+Function\+: if you need extra treatment, you can add the process.
+\item Use\+Custom\+Function\+: if you need extra treatment, you can add the process.
 \begin{DoxyItemize}
 \item if it is \char`\"{}true\char`\"{}, the custom treatment is on.
 \item this is for 26Si(a, p)29P analysis to treat the excited state effect. 
 \end{DoxyItemize}
-\end{DoxyItemize}currently not use this object
+\end{DoxyItemize}
 
-Definition at line 59 of file TTGTIKProcessor.\+cc.
+Definition at line 57 of file TTGTIKProcessor.\+cc.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a2c2c8a28f4efef0edbd1406a07528d3e}\label{classart_1_1TTGTIKProcessor_a2c2c8a28f4efef0edbd1406a07528d3e}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!````~TTGTIKProcessor@{$\sim$TTGTIKProcessor}}
@@ -128,11 +129,11 @@ Definition at line 59 of file TTGTIKProcessor.\+cc.
 
 
 
-destructor 
+Default destructor. 
 
-destrucor. free the memory 
+free the memory 
 
-Definition at line 87 of file TTGTIKProcessor.\+cc.
+Definition at line 86 of file TTGTIKProcessor.\+cc.
 
 
 
@@ -145,11 +146,11 @@ Definition at line 87 of file TTGTIKProcessor.\+cc.
 
 
 
-init 
+Initialization. 
 
-Initialization process. in this process, it prepares some variables 
+in this process, it prepares some variables 
 
-Definition at line 98 of file TTGTIKProcessor.\+cc.
+Definition at line 96 of file TTGTIKProcessor.\+cc.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a2a6bd0af727a35af8de6167bd7c6195f}\label{classart_1_1TTGTIKProcessor_a2a6bd0af727a35af8de6167bd7c6195f}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!Process@{Process}}
@@ -159,11 +160,11 @@ Definition at line 98 of file TTGTIKProcessor.\+cc.
 
 
 
-process 
+Main process. 
 
 
 
-Definition at line 164 of file TTGTIKProcessor.\+cc.
+Definition at line 165 of file TTGTIKProcessor.\+cc.
 
 
 
@@ -180,7 +181,7 @@ detector parameter name (\mbox{\hyperlink{classart_1_1TDetectorParameter}{art\+:
 
 
 
-Definition at line 47 of file TTGTIKProcessor.\+h.
+Definition at line 44 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_ac7be3a4fd23a537a4de629d8dc39b6c9}\label{classart_1_1TTGTIKProcessor_ac7be3a4fd23a537a4de629d8dc39b6c9}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fDetectorPrm@{fDetectorPrm}}
@@ -194,7 +195,21 @@ detector parameter object (TClones\+Array(art\+::\+TDetector\+Parameter))
 
 
 
-Definition at line 59 of file TTGTIKProcessor.\+h.
+Definition at line 56 of file TTGTIKProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a201c8c1dc9c41f6eb7bfe5a8a5690dfe}\label{classart_1_1TTGTIKProcessor_a201c8c1dc9c41f6eb7bfe5a8a5690dfe}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fDoCustom@{fDoCustom}}
+\index{fDoCustom@{fDoCustom}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{fDoCustom}{fDoCustom}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::\+TTGTIKProcessor\+::f\+Do\+Custom\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Flag of custom processor. 
+
+
+
+Definition at line 73 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a9ac1648cacee98912ad39fcb6ca58f83}\label{classart_1_1TTGTIKProcessor_a9ac1648cacee98912ad39fcb6ca58f83}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fInData@{fInData}}
@@ -208,7 +223,7 @@ telescope input object (TClones\+Array(art\+::\+TTelescope\+Data))
 
 
 
-Definition at line 52 of file TTGTIKProcessor.\+h.
+Definition at line 49 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a931096dbbacf1732cc7bf1dfc4257e93}\label{classart_1_1TTGTIKProcessor_a931096dbbacf1732cc7bf1dfc4257e93}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fInitialBeamEnergy@{fInitialBeamEnergy}}
@@ -222,7 +237,7 @@ initial (after window) beam energy (MeV)
 
 
 
-Definition at line 64 of file TTGTIKProcessor.\+h.
+Definition at line 61 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a59d682c3fc51757e1441de5474add20a}\label{classart_1_1TTGTIKProcessor_a59d682c3fc51757e1441de5474add20a}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fInputColName@{fInputColName}}
@@ -236,7 +251,7 @@ input telescope collection name (\mbox{\hyperlink{classart_1_1TTelescopeData}{ar
 
 
 
-Definition at line 41 of file TTGTIKProcessor.\+h.
+Definition at line 38 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_adde93e8901acacfe0366eb6db6272ab5}\label{classart_1_1TTGTIKProcessor_adde93e8901acacfe0366eb6db6272ab5}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fInputTrackColName@{fInputTrackColName}}
@@ -250,7 +265,7 @@ input tracking collection name (art\+::\+TTrack)
 
 
 
-Definition at line 43 of file TTGTIKProcessor.\+h.
+Definition at line 40 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a2bbd33cfc164922f5f801745552f1cff}\label{classart_1_1TTGTIKProcessor_a2bbd33cfc164922f5f801745552f1cff}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fInTrackData@{fInTrackData}}
@@ -264,7 +279,7 @@ tracking input object (TClones\+Array(art\+::\+TTrack))
 
 
 
-Definition at line 54 of file TTGTIKProcessor.\+h.
+Definition at line 51 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_ad523c0b9f30354fee148ca1fd715a1c4}\label{classart_1_1TTGTIKProcessor_ad523c0b9f30354fee148ca1fd715a1c4}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fOutData@{fOutData}}
@@ -278,7 +293,7 @@ output object (TClones\+Array(art\+::\+TReaction\+Info))
 
 
 
-Definition at line 56 of file TTGTIKProcessor.\+h.
+Definition at line 53 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_ad39916e65440d8e3681cc73065c031ec}\label{classart_1_1TTGTIKProcessor_ad39916e65440d8e3681cc73065c031ec}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fOutputColName@{fOutputColName}}
@@ -292,7 +307,7 @@ output collection name (\mbox{\hyperlink{classart_1_1TReactionInfo}{art\+::\+TRe
 
 
 
-Definition at line 45 of file TTGTIKProcessor.\+h.
+Definition at line 42 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a99dbb680489f15611973b2c96de80a39}\label{classart_1_1TTGTIKProcessor_a99dbb680489f15611973b2c96de80a39}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fParticleAArray@{fParticleAArray}}
@@ -306,7 +321,7 @@ reaction particles Mass num array
 
 
 
-Definition at line 74 of file TTGTIKProcessor.\+h.
+Definition at line 71 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a68677b9baf4ad858b2ba509d8a709e18}\label{classart_1_1TTGTIKProcessor_a68677b9baf4ad858b2ba509d8a709e18}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fParticleZArray@{fParticleZArray}}
@@ -320,7 +335,7 @@ reaction particles Atomic num array
 
 
 
-Definition at line 72 of file TTGTIKProcessor.\+h.
+Definition at line 69 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a3ae58c23bd3012adf0e7e9f441e7c772}\label{classart_1_1TTGTIKProcessor_a3ae58c23bd3012adf0e7e9f441e7c772}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fPressure@{fPressure}}
@@ -334,7 +349,7 @@ gas pressure in Torr unit
 
 
 
-Definition at line 68 of file TTGTIKProcessor.\+h.
+Definition at line 65 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a3075023f2ad2fd6c72a4a5e6adec38cf}\label{classart_1_1TTGTIKProcessor_a3075023f2ad2fd6c72a4a5e6adec38cf}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fTargetName@{fTargetName}}
@@ -348,7 +363,7 @@ gas target name used in TSrim calculation
 
 
 
-Definition at line 66 of file TTGTIKProcessor.\+h.
+Definition at line 63 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a08e9b4cba124c67e2a58d4ef87ac6dff}\label{classart_1_1TTGTIKProcessor_a08e9b4cba124c67e2a58d4ef87ac6dff}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fTargetParameterName@{fTargetParameterName}}
@@ -362,7 +377,7 @@ target parameter name (\mbox{\hyperlink{classart_1_1TTargetParameter}{art\+::\+T
 
 
 
-Definition at line 49 of file TTGTIKProcessor.\+h.
+Definition at line 46 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a222caa3e2414a1fa32db2b24a99c2105}\label{classart_1_1TTGTIKProcessor_a222caa3e2414a1fa32db2b24a99c2105}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fTargetPrm@{fTargetPrm}}
@@ -376,7 +391,7 @@ target parameter obejct (TClones\+Array(art\+::\+TTarget\+Parameter))
 
 
 
-Definition at line 61 of file TTGTIKProcessor.\+h.
+Definition at line 58 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a90ad083ea2b6f78b2b3fd2a158a70eb2}\label{classart_1_1TTGTIKProcessor_a90ad083ea2b6f78b2b3fd2a158a70eb2}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!fTemperature@{fTemperature}}
@@ -390,37 +405,63 @@ gas temperature in K unit
 
 
 
-Definition at line 70 of file TTGTIKProcessor.\+h.
+Definition at line 67 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_abb30c8c58d5a41be9c98ea31d44e5977}\label{classart_1_1TTGTIKProcessor_abb30c8c58d5a41be9c98ea31d44e5977}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!kEpsilon@{kEpsilon}}
 \index{kEpsilon@{kEpsilon}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
 \doxysubsubsection{\texorpdfstring{kEpsilon}{kEpsilon}}
-{\footnotesize\ttfamily const Double\+\_\+t art\+::\+TTGTIKProcessor\+::k\+Epsilon = 1.\+0e-\/3}
+{\footnotesize\ttfamily const Double\+\_\+t art\+::\+TTGTIKProcessor\+::k\+Epsilon = 1.\+0e-\/3\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Definition at line 35 of file TTGTIKProcessor.\+h.
+Accuracy of the bisection method. 
+
+
+
+Definition at line 83 of file TTGTIKProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a47d40d2a8ddbb2c2f637aeb24059b9c0}\label{classart_1_1TTGTIKProcessor_a47d40d2a8ddbb2c2f637aeb24059b9c0}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!kInitialMax@{kInitialMax}}
+\index{kInitialMax@{kInitialMax}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{kInitialMax}{kInitialMax}}
+{\footnotesize\ttfamily const Double\+\_\+t art\+::\+TTGTIKProcessor\+::k\+Initial\+Max = 1000.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+initial maximum value of bisection method 
+
+
+
+Definition at line 81 of file TTGTIKProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a57b4b633a1be58bcf888d53c782c14b9}\label{classart_1_1TTGTIKProcessor_a57b4b633a1be58bcf888d53c782c14b9}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!kInitialMin@{kInitialMin}}
+\index{kInitialMin@{kInitialMin}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{kInitialMin}{kInitialMin}}
+{\footnotesize\ttfamily const Double\+\_\+t art\+::\+TTGTIKProcessor\+::k\+Initial\+Min = -\/250.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+initial minimum value of bisection method 
+
+
+
+Definition at line 79 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_ac92319eddc20e647b44b93cc40193581}\label{classart_1_1TTGTIKProcessor_ac92319eddc20e647b44b93cc40193581}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!kMaxIteration@{kMaxIteration}}
 \index{kMaxIteration@{kMaxIteration}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
 \doxysubsubsection{\texorpdfstring{kMaxIteration}{kMaxIteration}}
-{\footnotesize\ttfamily const Int\+\_\+t art\+::\+TTGTIKProcessor\+::k\+Max\+Iteration = 1000}
+{\footnotesize\ttfamily const Int\+\_\+t art\+::\+TTGTIKProcessor\+::k\+Max\+Iteration = 1000\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Definition at line 36 of file TTGTIKProcessor.\+h.
-
-\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a49e7356b4239488ceda10524c81e2b71}\label{classart_1_1TTGTIKProcessor_a49e7356b4239488ceda10524c81e2b71}} 
-\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!kWindowUncertainty@{kWindowUncertainty}}
-\index{kWindowUncertainty@{kWindowUncertainty}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
-\doxysubsubsection{\texorpdfstring{kWindowUncertainty}{kWindowUncertainty}}
-{\footnotesize\ttfamily const Double\+\_\+t art\+::\+TTGTIKProcessor\+::k\+Window\+Uncertainty = 250.\+0}
+Max iteration number of the bisection method. 
 
 
 
-Definition at line 37 of file TTGTIKProcessor.\+h.
+Definition at line 85 of file TTGTIKProcessor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_adec5399bdcda2a7ce01a226d71ae746b}\label{classart_1_1TTGTIKProcessor_adec5399bdcda2a7ce01a226d71ae746b}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!srim@{srim}}
@@ -434,7 +475,7 @@ TSrim object to calculate energy loss.
 
 
 
-Definition at line 77 of file TTGTIKProcessor.\+h.
+Definition at line 76 of file TTGTIKProcessor.\+h.
 
 
 

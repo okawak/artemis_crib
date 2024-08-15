@@ -8,13 +8,7 @@ Copyright © 1997-\/2009 by Dimitri van Heesch.
 Permission to use, copy, modify, and distribute this software and its documentation under the terms of the GNU General Public License is hereby granted. No representations are made about the suitability of this software for any purpose. It is provided \char`\"{}as is\char`\"{} without express or implied warranty. See the GNU General Public License for more details.
 
 Documents produced by doxygen are derivative works derived from the input used in their production; they are not affected by this license.\hypertarget{index_autotoc_md2}{}\doxysection{豆知識}\label{index_autotoc_md2}
-日本語ですみません。ライブラリを整備している中で、気になったことをメモしておきます。 時間がある時に英語で整備し直すかもしれません。
-
-
-\begin{DoxyEnumerate}
-\item //!の意味
-\end{DoxyEnumerate}
-
+日本語ですみません。ライブラリを整備している中で、気になったことをメモしておきます。 時間がある時に英語で整備し直すかもしれません。\hypertarget{index_autotoc_md3}{}\doxysubsection{1. //!の意味}\label{index_autotoc_md3}
 プロセッサなどを作成していると、
 
 
@@ -26,15 +20,9 @@ Documents produced by doxygen are derivative works derived from the input used i
 
 のようなコードに出くわすことがあるが、この最後の\char`\"{}//!\char`\"{}についてはよくわかっていなかった。 このおまじないのようなものを消すとエラーが出てくるし、調べても\+Doxygenのコメント形式だというような情報しか得られずよくわからないままだった。
 
-最近\+Char\+GPTに聞いてみると、初めて知ったことだが、\+ROOTの\+CINTや\+Clingインタープリタででポインタのポインタを\+I/\+Oシステムで使うことが難しく、 正しく解析できないというエラーで、//!をつけるとこの\+I/\+O処理から除外するように伝えることができるらしい。
+最近\+Chat\+GPTに聞いてみると、初めて知ったことだが、\+ROOTの\+CINTや\+Clingインタープリタででポインタのポインタを\+I/\+Oシステムで使うことが難しく、 正しく解析できないというエラーで、//!をつけるとこの\+I/\+O処理から除外するように伝えることができるらしい。
 
-難しくて完全には理解できていないが、ポインタのポインタを\+ROOTで扱うのは難しいから、//!をつけると\+ROOTの範疇から外すという意味合いになるということなのかな??? ROOTの作法ではなく、純粋な\+C++な知識だけが必要なものがいいなあと感じたり。。。
-
-
-\begin{DoxyEnumerate}
-\item Class\+Defについて
-\end{DoxyEnumerate}
-
+難しくて完全には理解できていないが、ポインタのポインタを\+ROOTで扱うのは難しいから、//!をつけると\+ROOTの範疇から外すという意味合いになるということなのかな??? ROOTの作法ではなく、純粋な\+C++な知識だけが必要なものがいいなあと感じたり。。。\hypertarget{index_autotoc_md4}{}\doxysubsection{2. Class\+Defについて}\label{index_autotoc_md4}
 Classを\+Dictionaryに登録するときに、\+Class\+Defを使うが、クラスメソッドをoverrideするときに\+Class\+Defを使うと長い警告文が出てくる。
 
 調べてみると、\+Class\+Defにも種類があるようで、オーバーライドを使用する時には、\+Class\+Def\+Overrideというものが定義されているらしい。 \href{https://root-forum.cern.ch/t/classdef-variants/44736}{\texttt{ 情報}}の通り全てを列挙してみると、

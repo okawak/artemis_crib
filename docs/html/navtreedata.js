@@ -27,7 +27,10 @@ var NAVTREE =
   [ "artemis_crib", "index.html", [
     [ "Home", "index.html", [
       [ "Doxygen LISENSE", "index.html#autotoc_md1", null ],
-      [ "豆知識", "index.html#autotoc_md2", null ]
+      [ "豆知識", "index.html#autotoc_md2", [
+        [ "1. //!の意味", "index.html#autotoc_md3", null ],
+        [ "2. ClassDefについて", "index.html#autotoc_md4", null ]
+      ] ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]
@@ -60,8 +63,8 @@ var NAVTREEINDEX =
 "AlphaCalibration_8C.html",
 "classTCatCmdTCutG.html#ad0d68c07c74cee6a7f0950b65076b45d",
 "classart_1_1TMUXPositionValidator.html#acbcd0e1b2cdda93198547b733eb5a810",
-"classart_1_1TTargetParameter.html#a31724ce3d3b32ebaf26b34eef241b2fd",
-"namespaces.html"
+"classart_1_1TTargetParameter.html",
+"load__tcutg_8C.html#a87058d46f4fe2f5bb7d8e744ab99f7c9"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

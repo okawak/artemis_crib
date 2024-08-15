@@ -6,6 +6,7 @@ var classart_1_1TTGTIKProcessor =
     [ "Process", "classart_1_1TTGTIKProcessor.html#a2a6bd0af727a35af8de6167bd7c6195f", null ],
     [ "fDetectorParameterName", "classart_1_1TTGTIKProcessor.html#aec5086aa954527f5b0def4d59e358059", null ],
     [ "fDetectorPrm", "classart_1_1TTGTIKProcessor.html#ac7be3a4fd23a537a4de629d8dc39b6c9", null ],
+    [ "fDoCustom", "classart_1_1TTGTIKProcessor.html#a201c8c1dc9c41f6eb7bfe5a8a5690dfe", null ],
     [ "fInData", "classart_1_1TTGTIKProcessor.html#a9ac1648cacee98912ad39fcb6ca58f83", null ],
     [ "fInitialBeamEnergy", "classart_1_1TTGTIKProcessor.html#a931096dbbacf1732cc7bf1dfc4257e93", null ],
     [ "fInputColName", "classart_1_1TTGTIKProcessor.html#a59d682c3fc51757e1441de5474add20a", null ],
@@ -21,7 +22,8 @@ var classart_1_1TTGTIKProcessor =
     [ "fTargetPrm", "classart_1_1TTGTIKProcessor.html#a222caa3e2414a1fa32db2b24a99c2105", null ],
     [ "fTemperature", "classart_1_1TTGTIKProcessor.html#a90ad083ea2b6f78b2b3fd2a158a70eb2", null ],
     [ "kEpsilon", "classart_1_1TTGTIKProcessor.html#abb30c8c58d5a41be9c98ea31d44e5977", null ],
+    [ "kInitialMax", "classart_1_1TTGTIKProcessor.html#a47d40d2a8ddbb2c2f637aeb24059b9c0", null ],
+    [ "kInitialMin", "classart_1_1TTGTIKProcessor.html#a57b4b633a1be58bcf888d53c782c14b9", null ],
     [ "kMaxIteration", "classart_1_1TTGTIKProcessor.html#ac92319eddc20e647b44b93cc40193581", null ],
-    [ "kWindowUncertainty", "classart_1_1TTGTIKProcessor.html#a49e7356b4239488ceda10524c81e2b71", null ],
     [ "srim", "classart_1_1TTGTIKProcessor.html#adec5399bdcda2a7ce01a226d71ae746b", null ]
 ];
