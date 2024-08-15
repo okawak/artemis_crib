@@ -67,7 +67,7 @@ void art::TScalerMonitorProcessor::Init(TEventCollection *col) {
     Info("Init", "\tshort time chart: interval %d s, time range %d s", fShortInterval, fShortDuration);
     Info("Init", "\tlong time chart : interval %d s, time range %d s", fLongInterval, fLongDuration);
     Info("Init", "Display: channel, name, scale factor");
-    for (Int_t i = 0; i < fChannels.size(); i++) {
+    for (Size_t i = 0; i < fChannels.size(); i++) {
         Info("Init", "Display: %s", fChannels[i].Data());
     }
 
@@ -77,7 +77,7 @@ void art::TScalerMonitorProcessor::Init(TEventCollection *col) {
         return;
     }
 
-    for (Int_t i = 0; i < fChannels.size(); i++) {
+    for (Size_t i = 0; i < fChannels.size(); i++) {
         Int_t first = fChannels[i].First(',');
         Int_t last = fChannels[i].Last(',');
         Int_t len = fChannels[i].Length();
@@ -114,7 +114,7 @@ void art::TScalerMonitorProcessor::Init(TEventCollection *col) {
         fGr_l[i]->SetMaximum(1000.);
     }
 
-    for (Int_t i = 0; i < fChannels.size(); i++) {
+    for (Size_t i = 0; i < fChannels.size(); i++) {
         fGr_s[fDisplayCh[i]]->SetTitle("count rate (short);;cps");
         fGr_s[fDisplayCh[i]]->SetName(fNames[i]);
         fGr_s[fDisplayCh[i]]->SetLineColor(fColor_list[i]);
@@ -198,7 +198,7 @@ void art::TScalerMonitorProcessor::ProcessShort(Long_t now) {
         pad_s->cd();
         Bool_t isfirst_obj = true;
         TLegend *legend = new TLegend(0.78, 0.70, 0.95, 0.95);
-        for (Int_t i = 0; i < fDisplayCh.size(); i++) {
+        for (Size_t i = 0; i < fDisplayCh.size(); i++) {
             if (isfirst_obj) {
                 fGr_s[fDisplayCh[i]]->Draw("apl");
                 legend->AddEntry(fGr_s[fDisplayCh[i]], fNames[i], "pl");
