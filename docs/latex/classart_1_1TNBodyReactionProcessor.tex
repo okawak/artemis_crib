@@ -72,6 +72,26 @@ const Double\+\_\+t \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a0607b5
 \begin{DoxyCompactList}\small\item\em SRIM table. \end{DoxyCompactList}\item 
 const Double\+\_\+t \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_af4455b0b470bb43b74c2c3ed4df113d5}{c}} = 299.\+792458
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a7339e8882e2dec9c0b92b54785d93b83}{Init\+Generating\+Func}} ()
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a93b1bfee5891f36676f720d5cbb79e06}{Get\+Random\+Reaction\+Distance}} (Double\+\_\+t range)
+\item 
+TLorentz\+Vector \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a5a90f00df7fa69c169880d93964baee3}{Get\+Loss\+Energy\+Vector}} (TLorentz\+Vector vec, Double\+\_\+t eloss)
+\item 
+\mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a3ace2082f566d240a421dd3e95de51c6}{TNBody\+Reaction\+Processor}} (const \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor}{TNBody\+Reaction\+Processor}} \&rhs)=delete
+\item 
+\mbox{\hyperlink{classart_1_1TNBodyReactionProcessor}{TNBody\+Reaction\+Processor}} \& \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a0661d3a8992e8c47da0c6c936613a02e}{operator=}} (const \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor}{TNBody\+Reaction\+Processor}} \&rhs)=delete
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TGraph $\ast$ \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_aaa0930090760560a9296c716125ae73e}{gr\+\_\+generating\+\_\+func}}
+\item 
+TGraph $\ast$ \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor_a624b4e5ab33f6c6a1aca260e142e5b32}{gr\+\_\+generating\+\_\+func\+\_\+inv}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -85,7 +105,7 @@ Definition at line 26 of file TNBody\+Reaction\+Processor.\+h.
 \mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a6024a9b747e36415cbce33f565af1ad1}\label{classart_1_1TNBodyReactionProcessor_a6024a9b747e36415cbce33f565af1ad1}} 
 \index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!TNBodyReactionProcessor@{TNBodyReactionProcessor}}
 \index{TNBodyReactionProcessor@{TNBodyReactionProcessor}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
-\doxysubsubsection{\texorpdfstring{TNBodyReactionProcessor()}{TNBodyReactionProcessor()}}
+\doxysubsubsection{\texorpdfstring{TNBodyReactionProcessor()}{TNBodyReactionProcessor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily TNBody\+Reaction\+Processor\+::\+TNBody\+Reaction\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -102,9 +122,35 @@ Definition at line 31 of file TNBody\+Reaction\+Processor.\+cc.
 
 Definition at line 64 of file TNBody\+Reaction\+Processor.\+cc.
 
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a3ace2082f566d240a421dd3e95de51c6}\label{classart_1_1TNBodyReactionProcessor_a3ace2082f566d240a421dd3e95de51c6}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!TNBodyReactionProcessor@{TNBodyReactionProcessor}}
+\index{TNBodyReactionProcessor@{TNBodyReactionProcessor}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{TNBodyReactionProcessor()}{TNBodyReactionProcessor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily art\+::\+TNBody\+Reaction\+Processor\+::\+TNBody\+Reaction\+Processor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor}{TNBody\+Reaction\+Processor}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a5a90f00df7fa69c169880d93964baee3}\label{classart_1_1TNBodyReactionProcessor_a5a90f00df7fa69c169880d93964baee3}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!GetLossEnergyVector@{GetLossEnergyVector}}
+\index{GetLossEnergyVector@{GetLossEnergyVector}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{GetLossEnergyVector()}{GetLossEnergyVector()}}
+{\footnotesize\ttfamily TLorentz\+Vector TNBody\+Reaction\+Processor\+::\+Get\+Loss\+Energy\+Vector (\begin{DoxyParamCaption}\item[{TLorentz\+Vector}]{vec,  }\item[{Double\+\_\+t}]{eloss }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 386 of file TNBody\+Reaction\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a93b1bfee5891f36676f720d5cbb79e06}\label{classart_1_1TNBodyReactionProcessor_a93b1bfee5891f36676f720d5cbb79e06}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!GetRandomReactionDistance@{GetRandomReactionDistance}}
+\index{GetRandomReactionDistance@{GetRandomReactionDistance}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{GetRandomReactionDistance()}{GetRandomReactionDistance()}}
+{\footnotesize\ttfamily Double\+\_\+t TNBody\+Reaction\+Processor\+::\+Get\+Random\+Reaction\+Distance (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{range }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 371 of file TNBody\+Reaction\+Processor.\+cc.
+
 \mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_aaddc093559a73a2e06c00b351a9e67ee}\label{classart_1_1TNBodyReactionProcessor_aaddc093559a73a2e06c00b351a9e67ee}} 
 \index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!Init@{Init}}
 \index{Init@{Init}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
@@ -114,6 +160,25 @@ Definition at line 64 of file TNBody\+Reaction\+Processor.\+cc.
 
 
 Definition at line 77 of file TNBody\+Reaction\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a7339e8882e2dec9c0b92b54785d93b83}\label{classart_1_1TNBodyReactionProcessor_a7339e8882e2dec9c0b92b54785d93b83}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!InitGeneratingFunc@{InitGeneratingFunc}}
+\index{InitGeneratingFunc@{InitGeneratingFunc}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{InitGeneratingFunc()}{InitGeneratingFunc()}}
+{\footnotesize\ttfamily void TNBody\+Reaction\+Processor\+::\+Init\+Generating\+Func (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyEnumerate}
+\item function 
+\end{DoxyEnumerate}
+
+Definition at line 272 of file TNBody\+Reaction\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a0661d3a8992e8c47da0c6c936613a02e}\label{classart_1_1TNBodyReactionProcessor_a0661d3a8992e8c47da0c6c936613a02e}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!operator=@{operator=}}
+\index{operator=@{operator=}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor}{TNBody\+Reaction\+Processor}}\& art\+::\+TNBody\+Reaction\+Processor\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1TNBodyReactionProcessor}{TNBody\+Reaction\+Processor}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
 
 \mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a0c5270eb2f61ec0dd249a3acfe3cfb29}\label{classart_1_1TNBodyReactionProcessor_a0c5270eb2f61ec0dd249a3acfe3cfb29}} 
 \index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!Process@{Process}}
@@ -365,6 +430,37 @@ Definition at line 51 of file TNBody\+Reaction\+Processor.\+h.
 
 
 Definition at line 50 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_aaa0930090760560a9296c716125ae73e}\label{classart_1_1TNBodyReactionProcessor_aaa0930090760560a9296c716125ae73e}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!gr\_generating\_func@{gr\_generating\_func}}
+\index{gr\_generating\_func@{gr\_generating\_func}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{gr\_generating\_func}{gr\_generating\_func}}
+{\footnotesize\ttfamily TGraph$\ast$ art\+::\+TNBody\+Reaction\+Processor\+::gr\+\_\+generating\+\_\+func\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyEnumerate}
+\item cross section function\+: (x, y) = (beam LAB energy (MeV), arbitrary unit)
+\item convert x using range\+: (x, y) = (range (mm), arbitrary unit)
+\item integrate the 2. function\+: (x, y) = (range (mm), arbitrary unit)
+\item inversed 3. function\+: (x, y) = (arbitrary unit, range (mm))
+\item get pos with random number\+: uniform X -\/$>$ get Y value
+\item get reac pos with the Y value\+: init\+\_\+range -\/ Y =$>$ distance 
+\end{DoxyEnumerate}
+
+Definition at line 74 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a624b4e5ab33f6c6a1aca260e142e5b32}\label{classart_1_1TNBodyReactionProcessor_a624b4e5ab33f6c6a1aca260e142e5b32}} 
+\index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!gr\_generating\_func\_inv@{gr\_generating\_func\_inv}}
+\index{gr\_generating\_func\_inv@{gr\_generating\_func\_inv}!art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{gr\_generating\_func\_inv}{gr\_generating\_func\_inv}}
+{\footnotesize\ttfamily TGraph$\ast$ art\+::\+TNBody\+Reaction\+Processor\+::gr\+\_\+generating\+\_\+func\+\_\+inv\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyEnumerate}
+\item function 
+\end{DoxyEnumerate}
+
+Definition at line 75 of file TNBody\+Reaction\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TNBodyReactionProcessor_a3ce7a04502fab1084fbf83223b656961}\label{classart_1_1TNBodyReactionProcessor_a3ce7a04502fab1084fbf83223b656961}} 
 \index{art::TNBodyReactionProcessor@{art::TNBodyReactionProcessor}!srim@{srim}}

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['scaler_5fch_1170',['SCALER_CH',['../classart_1_1TScalerMonitorProcessor.html#a7e74a60c468006be0f1d7f3922e769a6',1,'art::TScalerMonitorProcessor']]],
-  ['srim_1171',['srim',['../classart_1_1TTGTIKProcessor.html#adec5399bdcda2a7ce01a226d71ae746b',1,'art::TTGTIKProcessor::srim()'],['../classart_1_1TDetectParticleProcessor.html#a3ddcf4781d0c971f88689f3665b7f5a9',1,'art::TDetectParticleProcessor::srim()'],['../classart_1_1TNBodyReactionProcessor.html#a3ce7a04502fab1084fbf83223b656961',1,'art::TNBodyReactionProcessor::srim()']]]
+  ['gr_5fgenerating_5ffunc_1310',['gr_generating_func',['../classart_1_1TNBodyReactionProcessor.html#aaa0930090760560a9296c716125ae73e',1,'art::TNBodyReactionProcessor']]],
+  ['gr_5fgenerating_5ffunc_5finv_1311',['gr_generating_func_inv',['../classart_1_1TNBodyReactionProcessor.html#a624b4e5ab33f6c6a1aca260e142e5b32',1,'art::TNBodyReactionProcessor']]]
 ];

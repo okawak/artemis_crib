@@ -2,7 +2,9 @@ var classart_1_1TMUXDataMappingProcessor =
 [
     [ "TMUXDataMappingProcessor", "classart_1_1TMUXDataMappingProcessor.html#a0ad7b046424016db024b137c4c0754d5", null ],
     [ "~TMUXDataMappingProcessor", "classart_1_1TMUXDataMappingProcessor.html#ac80465186f26cbb6a1d568e9c0a0eaa5", null ],
+    [ "TMUXDataMappingProcessor", "classart_1_1TMUXDataMappingProcessor.html#a89b32d3aa8a65222d53c552c235364ae", null ],
     [ "Init", "classart_1_1TMUXDataMappingProcessor.html#a707b80d8a67381e3adf01f3430851c67", null ],
+    [ "operator=", "classart_1_1TMUXDataMappingProcessor.html#a4ee4fa07745a073f4553e6bc27d078c2", null ],
     [ "Process", "classart_1_1TMUXDataMappingProcessor.html#a2221fa807cf63ecdcada7fb3b8eb83f9", null ],
     [ "fCategorizedData", "classart_1_1TMUXDataMappingProcessor.html#a8a005beba75312b7007479209ee62d67", null ],
     [ "fCatID", "classart_1_1TMUXDataMappingProcessor.html#a406d22a050c9acde97fe2154ab7ee81a", null ],

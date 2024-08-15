@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_526',['Y',['../classart_1_1TTelescopeData.html#a6a9791caf23ed11eb2785006258fe010',1,'art::TTelescopeData']]]
+  ['usage_609',['Usage',['../MUXParamMaker_8C.html#a5ae07f63d6b390e42068d941038dadf2',1,'MUXParamMaker.C']]]
 ];

@@ -4,5 +4,6 @@ var classTCatCmdLoopStart =
     [ "~TCatCmdLoopStart", "classTCatCmdLoopStart.html#ae22044ce101f37f0163881501d01c5e0", null ],
     [ "ClassDefOverride", "classTCatCmdLoopStart.html#adf4ca0d493dc0a1214f758d2e45fc228", null ],
     [ "Cmd", "classTCatCmdLoopStart.html#a49794f2102f7294d5368b5b00c0f4fd6", null ],
-    [ "Help", "classTCatCmdLoopStart.html#a2d9ab8ee25188ade119b2045648cc4da", null ]
+    [ "Help", "classTCatCmdLoopStart.html#a2d9ab8ee25188ade119b2045648cc4da", null ],
+    [ "Instance", "classTCatCmdLoopStart.html#a31efeee8cbeb4b5cedb5d5704a65be10", null ]
 ];

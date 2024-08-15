@@ -2,7 +2,9 @@ var classart_1_1TSolidAngleProcessor =
 [
     [ "TSolidAngleProcessor", "classart_1_1TSolidAngleProcessor.html#a1aaeb81d9adb24651f6f8fac56303bb4", null ],
     [ "~TSolidAngleProcessor", "classart_1_1TSolidAngleProcessor.html#a106fe042a3cc1848a7e9e2dc1524233d", null ],
+    [ "TSolidAngleProcessor", "classart_1_1TSolidAngleProcessor.html#a336614b67facf411afb66f44b0e3781c", null ],
     [ "Init", "classart_1_1TSolidAngleProcessor.html#a8a4a32dcb31d710fcf6ee867cd95e863", null ],
+    [ "operator=", "classart_1_1TSolidAngleProcessor.html#afc2ecce116ecd629c8ee04e0032b4d17", null ],
     [ "PostLoop", "classart_1_1TSolidAngleProcessor.html#a1de6dff2a65bd24eabb1121f60dcdef1", null ],
     [ "Process", "classart_1_1TSolidAngleProcessor.html#a44094996fc3d6a3b063d5d16563a8e65", null ],
     [ "fFileName", "classart_1_1TSolidAngleProcessor.html#ae80cf64e4cf55b8607f25c0185974c01", null ],

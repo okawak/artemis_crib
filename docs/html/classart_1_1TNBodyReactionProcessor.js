@@ -2,7 +2,12 @@ var classart_1_1TNBodyReactionProcessor =
 [
     [ "TNBodyReactionProcessor", "classart_1_1TNBodyReactionProcessor.html#a6024a9b747e36415cbce33f565af1ad1", null ],
     [ "~TNBodyReactionProcessor", "classart_1_1TNBodyReactionProcessor.html#a0b19895bfb324db400596bd264dbe1eb", null ],
+    [ "TNBodyReactionProcessor", "classart_1_1TNBodyReactionProcessor.html#a3ace2082f566d240a421dd3e95de51c6", null ],
+    [ "GetLossEnergyVector", "classart_1_1TNBodyReactionProcessor.html#a5a90f00df7fa69c169880d93964baee3", null ],
+    [ "GetRandomReactionDistance", "classart_1_1TNBodyReactionProcessor.html#a93b1bfee5891f36676f720d5cbb79e06", null ],
     [ "Init", "classart_1_1TNBodyReactionProcessor.html#aaddc093559a73a2e06c00b351a9e67ee", null ],
+    [ "InitGeneratingFunc", "classart_1_1TNBodyReactionProcessor.html#a7339e8882e2dec9c0b92b54785d93b83", null ],
+    [ "operator=", "classart_1_1TNBodyReactionProcessor.html#a0661d3a8992e8c47da0c6c936613a02e", null ],
     [ "Process", "classart_1_1TNBodyReactionProcessor.html#a0c5270eb2f61ec0dd249a3acfe3cfb29", null ],
     [ "c", "classart_1_1TNBodyReactionProcessor.html#af4455b0b470bb43b74c2c3ed4df113d5", null ],
     [ "deg2rad", "classart_1_1TNBodyReactionProcessor.html#a0607b546c63c6cf032adc6e8579c687c", null ],
@@ -27,5 +32,7 @@ var classart_1_1TNBodyReactionProcessor =
     [ "fTargetName", "classart_1_1TNBodyReactionProcessor.html#a7537a1c7b349027fdff30c755c833813", null ],
     [ "fTargetPressure", "classart_1_1TNBodyReactionProcessor.html#ab99525206ce6d91bfcccc0b97b37f010", null ],
     [ "fTargetThickness", "classart_1_1TNBodyReactionProcessor.html#a2a8462ce000a7ac448dd1ef99da1067c", null ],
+    [ "gr_generating_func", "classart_1_1TNBodyReactionProcessor.html#aaa0930090760560a9296c716125ae73e", null ],
+    [ "gr_generating_func_inv", "classart_1_1TNBodyReactionProcessor.html#a624b4e5ab33f6c6a1aca260e142e5b32", null ],
     [ "srim", "classart_1_1TNBodyReactionProcessor.html#a3ce7a04502fab1084fbf83223b656961", null ]
 ];

@@ -58,6 +58,17 @@ TSrim $\ast$ \mbox{\hyperlink{classart_1_1TDetectParticleProcessor_a3ddcf4781d0c
 \begin{DoxyCompactList}\small\item\em x 100 = \%, index=telescope id \end{DoxyCompactList}\item 
 const Double\+\_\+t \mbox{\hyperlink{classart_1_1TDetectParticleProcessor_a5a8f4af827791145ba68feea6ab07eb0}{c}} = 299.\+792458
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ TString $>$ \mbox{\hyperlink{classart_1_1TDetectParticleProcessor_adb23ce32306edaab797d344587abc374}{Get\+Unique\+Elements}} (const std\+::vector$<$ TString $>$ \&input)
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1TDetectParticleProcessor_ad93a7c5ab0a1a5c36340c7ced48ddc19}{Get\+Strip\+ID}} (Double\+\_\+t pos, Int\+\_\+t max\+\_\+strip, Double\+\_\+t size)
+\item 
+\mbox{\hyperlink{classart_1_1TDetectParticleProcessor_a85bb06fb7b12b96aac459c458715f214}{TDetect\+Particle\+Processor}} (const \mbox{\hyperlink{classart_1_1TDetectParticleProcessor}{TDetect\+Particle\+Processor}} \&rhs)=delete
+\item 
+\mbox{\hyperlink{classart_1_1TDetectParticleProcessor}{TDetect\+Particle\+Processor}} \& \mbox{\hyperlink{classart_1_1TDetectParticleProcessor_a63646c9d0aba0a3e1a04c43bb0d032a0}{operator=}} (const \mbox{\hyperlink{classart_1_1TDetectParticleProcessor}{TDetect\+Particle\+Processor}} \&rhs)=delete
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -71,7 +82,7 @@ Definition at line 26 of file TDetect\+Particle\+Processor.\+h.
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_a9f93eab9536b37bbe426fff8a79c8a50}\label{classart_1_1TDetectParticleProcessor_a9f93eab9536b37bbe426fff8a79c8a50}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!TDetectParticleProcessor@{TDetectParticleProcessor}}
 \index{TDetectParticleProcessor@{TDetectParticleProcessor}!art::TDetectParticleProcessor@{art::TDetectParticleProcessor}}
-\doxysubsubsection{\texorpdfstring{TDetectParticleProcessor()}{TDetectParticleProcessor()}}
+\doxysubsubsection{\texorpdfstring{TDetectParticleProcessor()}{TDetectParticleProcessor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily TDetect\+Particle\+Processor\+::\+TDetect\+Particle\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 currently not use this object
@@ -88,9 +99,35 @@ Definition at line 32 of file TDetect\+Particle\+Processor.\+cc.
 
 Definition at line 54 of file TDetect\+Particle\+Processor.\+cc.
 
+\mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_a85bb06fb7b12b96aac459c458715f214}\label{classart_1_1TDetectParticleProcessor_a85bb06fb7b12b96aac459c458715f214}} 
+\index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!TDetectParticleProcessor@{TDetectParticleProcessor}}
+\index{TDetectParticleProcessor@{TDetectParticleProcessor}!art::TDetectParticleProcessor@{art::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{TDetectParticleProcessor()}{TDetectParticleProcessor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily art\+::\+TDetect\+Particle\+Processor\+::\+TDetect\+Particle\+Processor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1TDetectParticleProcessor}{TDetect\+Particle\+Processor}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_ad93a7c5ab0a1a5c36340c7ced48ddc19}\label{classart_1_1TDetectParticleProcessor_ad93a7c5ab0a1a5c36340c7ced48ddc19}} 
+\index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!GetStripID@{GetStripID}}
+\index{GetStripID@{GetStripID}!art::TDetectParticleProcessor@{art::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{GetStripID()}{GetStripID()}}
+{\footnotesize\ttfamily Int\+\_\+t TDetect\+Particle\+Processor\+::\+Get\+Strip\+ID (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{pos,  }\item[{Int\+\_\+t}]{max\+\_\+strip,  }\item[{Double\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 264 of file TDetect\+Particle\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_adb23ce32306edaab797d344587abc374}\label{classart_1_1TDetectParticleProcessor_adb23ce32306edaab797d344587abc374}} 
+\index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!GetUniqueElements@{GetUniqueElements}}
+\index{GetUniqueElements@{GetUniqueElements}!art::TDetectParticleProcessor@{art::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{GetUniqueElements()}{GetUniqueElements()}}
+{\footnotesize\ttfamily std\+::vector$<$ TString $>$ TDetect\+Particle\+Processor\+::\+Get\+Unique\+Elements (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ TString $>$ \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 250 of file TDetect\+Particle\+Processor.\+cc.
+
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_aaca8d2a0cbfb72f340acebfed2d2c6aa}\label{classart_1_1TDetectParticleProcessor_aaca8d2a0cbfb72f340acebfed2d2c6aa}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!Init@{Init}}
 \index{Init@{Init}!art::TDetectParticleProcessor@{art::TDetectParticleProcessor}}
@@ -104,6 +141,12 @@ ignore energy resolution
 initialization for TSrim
 
 Definition at line 61 of file TDetect\+Particle\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_a63646c9d0aba0a3e1a04c43bb0d032a0}\label{classart_1_1TDetectParticleProcessor_a63646c9d0aba0a3e1a04c43bb0d032a0}} 
+\index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!operator=@{operator=}}
+\index{operator=@{operator=}!art::TDetectParticleProcessor@{art::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classart_1_1TDetectParticleProcessor}{TDetect\+Particle\+Processor}}\& art\+::\+TDetect\+Particle\+Processor\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1TDetectParticleProcessor}{TDetect\+Particle\+Processor}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
 
 \mbox{\Hypertarget{classart_1_1TDetectParticleProcessor_aefe8c61538dafd19a58f71b1af2d0b74}\label{classart_1_1TDetectParticleProcessor_aefe8c61538dafd19a58f71b1af2d0b74}} 
 \index{art::TDetectParticleProcessor@{art::TDetectParticleProcessor}!Process@{Process}}

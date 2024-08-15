@@ -28,5 +28,6 @@ var classart_1_1TMUXData =
     [ "fE2", "classart_1_1TMUXData.html#a00ae66448088f6a7dae0ff37ca261c2b", null ],
     [ "fP1", "classart_1_1TMUXData.html#a2a20d02a254e618f46f08d911ba706e0", null ],
     [ "fP2", "classart_1_1TMUXData.html#acfdd285340498da169c0b26d959ac06f", null ],
-    [ "fTiming", "classart_1_1TMUXData.html#aaa392ce6665a1cee6dff36f16818dd0a", null ]
+    [ "fTiming", "classart_1_1TMUXData.html#aaa392ce6665a1cee6dff36f16818dd0a", null ],
+    [ "kNRAW", "classart_1_1TMUXData.html#ab7ca4a2332782a933f5db549e54553ca", null ]
 ];

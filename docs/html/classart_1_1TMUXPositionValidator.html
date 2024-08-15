@@ -86,6 +86,7 @@ $(document).ready(function(){initNavTree('classart_1_1TMUXPositionValidator.html
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classart_1_1TMUXPositionValidator-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">art::TMUXPositionValidator Class Reference</div>  </div>
@@ -117,6 +118,25 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a2016835fe6cd61d49550adba9bd17029"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa276e94cc59a8f9db47f65da9d76a598"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TMUXPositionValidator.html#aa276e94cc59a8f9db47f65da9d76a598">Process</a> () override</td></tr>
 <tr class="separator:aa276e94cc59a8f9db47f65da9d76a598"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a029b5d93867fb9e2021ad1b0b89418d9"><td class="memItemLeft" align="right" valign="top">TString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TMUXPositionValidator.html#a029b5d93867fb9e2021ad1b0b89418d9">fInputName</a></td></tr>
+<tr class="separator:a029b5d93867fb9e2021ad1b0b89418d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a459c9befd11b79b79cfadf338ee71999"><td class="memItemLeft" align="right" valign="top">TString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TMUXPositionValidator.html#a459c9befd11b79b79cfadf338ee71999">fOutputName</a></td></tr>
+<tr class="separator:a459c9befd11b79b79cfadf338ee71999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af13b8dbcd5c0fe8eca6ed0eeb3571606"><td class="memItemLeft" align="right" valign="top">TClonesArray **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TMUXPositionValidator.html#af13b8dbcd5c0fe8eca6ed0eeb3571606">fInput</a></td></tr>
+<tr class="separator:af13b8dbcd5c0fe8eca6ed0eeb3571606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c50af44758ef5c70e54f54a28a4a459"><td class="memItemLeft" align="right" valign="top">TClonesArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TMUXPositionValidator.html#a4c50af44758ef5c70e54f54a28a4a459">fOutput</a></td></tr>
+<tr class="memdesc:a4c50af44758ef5c70e54f54a28a4a459"><td class="mdescLeft">&#160;</td><td class="mdescRight">input  <a href="classart_1_1TMUXPositionValidator.html#a4c50af44758ef5c70e54f54a28a4a459">More...</a><br /></td></tr>
+<tr class="separator:a4c50af44758ef5c70e54f54a28a4a459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a544117331c4c23a415550c8f45652730"><td class="memItemLeft" align="right" valign="top">DoubleVec_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TMUXPositionValidator.html#a544117331c4c23a415550c8f45652730">fValidPositionRange</a></td></tr>
+<tr class="memdesc:a544117331c4c23a415550c8f45652730"><td class="mdescLeft">&#160;</td><td class="mdescRight">output  <a href="classart_1_1TMUXPositionValidator.html#a544117331c4c23a415550c8f45652730">More...</a><br /></td></tr>
+<tr class="separator:a544117331c4c23a415550c8f45652730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a590ff9c085e402a90bc9b24da44a5e21"><td class="memItemLeft" align="right" valign="top">Double_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TMUXPositionValidator.html#a590ff9c085e402a90bc9b24da44a5e21">fValidPositionMin</a></td></tr>
+<tr class="separator:a590ff9c085e402a90bc9b24da44a5e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d948549b327493a1f70b3653d55544b"><td class="memItemLeft" align="right" valign="top">Double_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TMUXPositionValidator.html#a6d948549b327493a1f70b3653d55544b">fValidPositionMax</a></td></tr>
+<tr class="separator:a6d948549b327493a1f70b3653d55544b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -253,6 +273,179 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="TMUXPositionValidator_8cc_source.html#l00067">67</a> of file <a class="el" href="TMUXPositionValidator_8cc_source.html">TMUXPositionValidator.cc</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="af13b8dbcd5c0fe8eca6ed0eeb3571606"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af13b8dbcd5c0fe8eca6ed0eeb3571606">&#9670;&nbsp;</a></span>fInput</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TClonesArray** art::TMUXPositionValidator::fInput</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TMUXPositionValidator_8h_source.html#l00035">35</a> of file <a class="el" href="TMUXPositionValidator_8h_source.html">TMUXPositionValidator.h</a>.</p>
+
+</div>
+</div>
+<a id="a029b5d93867fb9e2021ad1b0b89418d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a029b5d93867fb9e2021ad1b0b89418d9">&#9670;&nbsp;</a></span>fInputName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TString art::TMUXPositionValidator::fInputName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TMUXPositionValidator_8h_source.html#l00033">33</a> of file <a class="el" href="TMUXPositionValidator_8h_source.html">TMUXPositionValidator.h</a>.</p>
+
+</div>
+</div>
+<a id="a4c50af44758ef5c70e54f54a28a4a459"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c50af44758ef5c70e54f54a28a4a459">&#9670;&nbsp;</a></span>fOutput</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TClonesArray* art::TMUXPositionValidator::fOutput</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>input </p>
+
+<p class="definition">Definition at line <a class="el" href="TMUXPositionValidator_8h_source.html#l00036">36</a> of file <a class="el" href="TMUXPositionValidator_8h_source.html">TMUXPositionValidator.h</a>.</p>
+
+</div>
+</div>
+<a id="a459c9befd11b79b79cfadf338ee71999"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a459c9befd11b79b79cfadf338ee71999">&#9670;&nbsp;</a></span>fOutputName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TString art::TMUXPositionValidator::fOutputName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TMUXPositionValidator_8h_source.html#l00034">34</a> of file <a class="el" href="TMUXPositionValidator_8h_source.html">TMUXPositionValidator.h</a>.</p>
+
+</div>
+</div>
+<a id="a6d948549b327493a1f70b3653d55544b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d948549b327493a1f70b3653d55544b">&#9670;&nbsp;</a></span>fValidPositionMax</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Double_t art::TMUXPositionValidator::fValidPositionMax</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TMUXPositionValidator_8h_source.html#l00041">41</a> of file <a class="el" href="TMUXPositionValidator_8h_source.html">TMUXPositionValidator.h</a>.</p>
+
+</div>
+</div>
+<a id="a590ff9c085e402a90bc9b24da44a5e21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a590ff9c085e402a90bc9b24da44a5e21">&#9670;&nbsp;</a></span>fValidPositionMin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Double_t art::TMUXPositionValidator::fValidPositionMin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TMUXPositionValidator_8h_source.html#l00040">40</a> of file <a class="el" href="TMUXPositionValidator_8h_source.html">TMUXPositionValidator.h</a>.</p>
+
+</div>
+</div>
+<a id="a544117331c4c23a415550c8f45652730"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a544117331c4c23a415550c8f45652730">&#9670;&nbsp;</a></span>fValidPositionRange</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DoubleVec_t art::TMUXPositionValidator::fValidPositionRange</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>output </p>
+
+<p class="definition">Definition at line <a class="el" href="TMUXPositionValidator_8h_source.html#l00039">39</a> of file <a class="el" href="TMUXPositionValidator_8h_source.html">TMUXPositionValidator.h</a>.</p>
 
 </div>
 </div>

@@ -68,6 +68,31 @@ const Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_abb30c8c58d5a41
 \begin{DoxyCompactList}\small\item\em Accuracy of the bisection method. \end{DoxyCompactList}\item 
 const Int\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_ac92319eddc20e647b44b93cc40193581}{k\+Max\+Iteration}} = 1000
 \begin{DoxyCompactList}\small\item\em Max iteration number of the bisection method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a6a5aa299096cd2119eb05c1abd3ac296}{Get\+Reaction\+Position}} (const TTrack $\ast$track, const \mbox{\hyperlink{classart_1_1TTelescopeData}{TTelescope\+Data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Calculate reaction Z position. \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a3c3f7e62f82788d5974ead334c1d33f9}{newton}} (const TTrack $\ast$, const \mbox{\hyperlink{classart_1_1TTelescopeData}{TTelescope\+Data}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Newtom method (unavalable) \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a6ff06634345a824c070a4119c79127dd}{bisection}} (const TTrack $\ast$track, const \mbox{\hyperlink{classart_1_1TTelescopeData}{TTelescope\+Data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Bisection method. \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a06e4d3f42138cfb104f125c280a3d7dc}{Target\+Function}} (Double\+\_\+t z, const TTrack $\ast$track, const \mbox{\hyperlink{classart_1_1TTelescopeData}{TTelescope\+Data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Target function to be set to 0 by bisection (newton) method. \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a472bf93bb0dd4feaae5b059b138eec04}{Get\+Ecm\+From\+Beam}} (Double\+\_\+t z, const TTrack $\ast$track)
+\begin{DoxyCompactList}\small\item\em Get Ecm from beam information. \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_adc9df08311c35273e89de378d7c71e01}{Get\+Ecm\+From\+Detect\+Particle}} (Double\+\_\+t z, const TTrack $\ast$track, const \mbox{\hyperlink{classart_1_1TTelescopeData}{TTelescope\+Data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Get Ecm from detected particle information. \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_ae91c61c1d621e02db8139685f814c615}{Get\+Ecm\+\_\+kinematics}} (Double\+\_\+t energy, Double\+\_\+t theta, Double\+\_\+t low\+\_\+e, Double\+\_\+t high\+\_\+e)
+\begin{DoxyCompactList}\small\item\em Get Ecm from detected particle information (relativity kinematics) \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_ade8a8ad701318a592497b546335aac3c}{Get\+Ecm\+\_\+classic\+\_\+kinematics}} (Double\+\_\+t energy, Double\+\_\+t theta)
+\begin{DoxyCompactList}\small\item\em Get Ecm from detected particle information (classic kinematics) \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a245b19d50209238008c194d488e53a37}{Get\+Lab\+Angle}} (Double\+\_\+t energy, Double\+\_\+t energy\+\_\+cm)
+\begin{DoxyCompactList}\small\item\em Get Lab Angle after reconstruction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classart_1_1TTGTIKProcessor_ab690884fb5ec833b005931bc7829dab4}{TTGTIKProcessor}} (const \mbox{\hyperlink{classart_1_1TTGTIKProcessor}{TTGTIKProcessor}} \&rhs)=delete
+\item 
+\mbox{\hyperlink{classart_1_1TTGTIKProcessor}{TTGTIKProcessor}} \& \mbox{\hyperlink{classart_1_1TTGTIKProcessor_a54ce21480bd47b47a100e2caac984eb7}{operator=}} (const \mbox{\hyperlink{classart_1_1TTGTIKProcessor}{TTGTIKProcessor}} \&rhs)=delete
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -81,7 +106,7 @@ Definition at line 24 of file TTGTIKProcessor.\+h.
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a05e324a3d8c50020472d61c10d539b58}\label{classart_1_1TTGTIKProcessor_a05e324a3d8c50020472d61c10d539b58}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!TTGTIKProcessor@{TTGTIKProcessor}}
 \index{TTGTIKProcessor@{TTGTIKProcessor}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
-\doxysubsubsection{\texorpdfstring{TTGTIKProcessor()}{TTGTIKProcessor()}}
+\doxysubsubsection{\texorpdfstring{TTGTIKProcessor()}{TTGTIKProcessor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily TTGTIKProcessor\+::\+TTGTIKProcessor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -135,9 +160,193 @@ free the memory
 
 Definition at line 86 of file TTGTIKProcessor.\+cc.
 
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_ab690884fb5ec833b005931bc7829dab4}\label{classart_1_1TTGTIKProcessor_ab690884fb5ec833b005931bc7829dab4}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!TTGTIKProcessor@{TTGTIKProcessor}}
+\index{TTGTIKProcessor@{TTGTIKProcessor}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{TTGTIKProcessor()}{TTGTIKProcessor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily art\+::\+TTGTIKProcessor\+::\+TTGTIKProcessor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1TTGTIKProcessor}{TTGTIKProcessor}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a6ff06634345a824c070a4119c79127dd}\label{classart_1_1TTGTIKProcessor_a6ff06634345a824c070a4119c79127dd}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!bisection@{bisection}}
+\index{bisection@{bisection}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{bisection()}{bisection()}}
+{\footnotesize\ttfamily Double\+\_\+t TTGTIKProcessor\+::bisection (\begin{DoxyParamCaption}\item[{const TTrack $\ast$}]{track,  }\item[{const \mbox{\hyperlink{classart_1_1TTelescopeData}{TTelescope\+Data}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bisection method. 
+
+Normal bisection method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em track} & (art\+::\+TTrack) \\
+\hline
+{\em data} & (\mbox{\hyperlink{classart_1_1TTelescopeData}{art\+::\+TTelescope\+Data}}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Z position (mm) 
+\end{DoxyReturn}
+
+
+Definition at line 218 of file TTGTIKProcessor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_ade8a8ad701318a592497b546335aac3c}\label{classart_1_1TTGTIKProcessor_ade8a8ad701318a592497b546335aac3c}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!GetEcm\_classic\_kinematics@{GetEcm\_classic\_kinematics}}
+\index{GetEcm\_classic\_kinematics@{GetEcm\_classic\_kinematics}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{GetEcm\_classic\_kinematics()}{GetEcm\_classic\_kinematics()}}
+{\footnotesize\ttfamily Double\+\_\+t TTGTIKProcessor\+::\+Get\+Ecm\+\_\+classic\+\_\+kinematics (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{energy,  }\item[{Double\+\_\+t}]{theta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get Ecm from detected particle information (classic kinematics) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em energy} & (MeV) \\
+\hline
+{\em theta} & (radian) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ecm (MeV)
+\end{DoxyReturn}
+From detected energy and angle, calculate kinematics using classic. This is used in Get\+Ecm\+From\+Detect\+Partice method. Please refer from okawa\textquotesingle{}s master thesis for an detail. 
+
+Definition at line 426 of file TTGTIKProcessor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_ae91c61c1d621e02db8139685f814c615}\label{classart_1_1TTGTIKProcessor_ae91c61c1d621e02db8139685f814c615}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!GetEcm\_kinematics@{GetEcm\_kinematics}}
+\index{GetEcm\_kinematics@{GetEcm\_kinematics}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{GetEcm\_kinematics()}{GetEcm\_kinematics()}}
+{\footnotesize\ttfamily Double\+\_\+t TTGTIKProcessor\+::\+Get\+Ecm\+\_\+kinematics (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{energy,  }\item[{Double\+\_\+t}]{theta,  }\item[{Double\+\_\+t}]{low\+\_\+e,  }\item[{Double\+\_\+t}]{high\+\_\+e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get Ecm from detected particle information (relativity kinematics) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em energy} & (MeV) \\
+\hline
+{\em theta} & (radian) \\
+\hline
+{\em low\+\_\+e} & (minimum energy) \\
+\hline
+{\em high\+\_\+e} & (maxmum energy) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ecm (MeV)
+\end{DoxyReturn}
+From detected energy and angle, calculate kinematics using relativity. This is used in Get\+Ecm\+From\+Detect\+Partice method. currently not avalable. 
+
+Definition at line 417 of file TTGTIKProcessor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a472bf93bb0dd4feaae5b059b138eec04}\label{classart_1_1TTGTIKProcessor_a472bf93bb0dd4feaae5b059b138eec04}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!GetEcmFromBeam@{GetEcmFromBeam}}
+\index{GetEcmFromBeam@{GetEcmFromBeam}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{GetEcmFromBeam()}{GetEcmFromBeam()}}
+{\footnotesize\ttfamily Double\+\_\+t TTGTIKProcessor\+::\+Get\+Ecm\+From\+Beam (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{z,  }\item[{const TTrack $\ast$}]{track }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get Ecm from beam information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & (mm) \\
+\hline
+{\em track} & (art\+::\+TTrack) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ecm (MeV)
+\end{DoxyReturn}
+From {\bfseries{assuming Z position (reaction position)}}, calculate the Ecm from beam kinematics and energy loss. The beam is Z1 particle of \mbox{[}Z1, Z2, Z3, Z4\mbox{]}. 
+
+Definition at line 313 of file TTGTIKProcessor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_adc9df08311c35273e89de378d7c71e01}\label{classart_1_1TTGTIKProcessor_adc9df08311c35273e89de378d7c71e01}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!GetEcmFromDetectParticle@{GetEcmFromDetectParticle}}
+\index{GetEcmFromDetectParticle@{GetEcmFromDetectParticle}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{GetEcmFromDetectParticle()}{GetEcmFromDetectParticle()}}
+{\footnotesize\ttfamily Double\+\_\+t TTGTIKProcessor\+::\+Get\+Ecm\+From\+Detect\+Particle (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{z,  }\item[{const TTrack $\ast$}]{track,  }\item[{const \mbox{\hyperlink{classart_1_1TTelescopeData}{TTelescope\+Data}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get Ecm from detected particle information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & (mm) \\
+\hline
+{\em track} & (art\+::\+TTrack) \\
+\hline
+{\em data} & (\mbox{\hyperlink{classart_1_1TTelescopeData}{art\+::\+TTelescope\+Data}}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ecm (MeV)
+\end{DoxyReturn}
+From {\bfseries{assuming Z position (reaction position)}}, calculate the Ecm from detected particle information. Currently it uses classsic kinematics. 
+
+Definition at line 346 of file TTGTIKProcessor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a245b19d50209238008c194d488e53a37}\label{classart_1_1TTGTIKProcessor_a245b19d50209238008c194d488e53a37}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!GetLabAngle@{GetLabAngle}}
+\index{GetLabAngle@{GetLabAngle}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{GetLabAngle()}{GetLabAngle()}}
+{\footnotesize\ttfamily Double\+\_\+t TTGTIKProcessor\+::\+Get\+Lab\+Angle (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{energy,  }\item[{Double\+\_\+t}]{energy\+\_\+cm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get Lab Angle after reconstruction. 
+
+assuming Ecm and detected energy, calculate LAB angle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em energy} & (MeV) \\
+\hline
+{\em energy\+\_\+cm} & (MeV) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+angle (radian) 
+\end{DoxyReturn}
+
+
+Definition at line 462 of file TTGTIKProcessor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a6a5aa299096cd2119eb05c1abd3ac296}\label{classart_1_1TTGTIKProcessor_a6a5aa299096cd2119eb05c1abd3ac296}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!GetReactionPosition@{GetReactionPosition}}
+\index{GetReactionPosition@{GetReactionPosition}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{GetReactionPosition()}{GetReactionPosition()}}
+{\footnotesize\ttfamily Double\+\_\+t TTGTIKProcessor\+::\+Get\+Reaction\+Position (\begin{DoxyParamCaption}\item[{const TTrack $\ast$}]{track,  }\item[{const \mbox{\hyperlink{classart_1_1TTelescopeData}{TTelescope\+Data}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculate reaction Z position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em track} & (art\+::\+TTrack) \\
+\hline
+{\em data} & (\mbox{\hyperlink{classart_1_1TTelescopeData}{art\+::\+TTelescope\+Data}}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Z position (mm)
+\end{DoxyReturn}
+Using bisection method (if you want Newton method is also available, but in default, we use bisection method) 
+
+Definition at line 203 of file TTGTIKProcessor.\+cc.
+
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a8982871c667e9b844534cdb0d3f2c17e}\label{classart_1_1TTGTIKProcessor_a8982871c667e9b844534cdb0d3f2c17e}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!Init@{Init}}
 \index{Init@{Init}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
@@ -152,6 +361,38 @@ in this process, it prepares some variables
 
 Definition at line 96 of file TTGTIKProcessor.\+cc.
 
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a3c3f7e62f82788d5974ead334c1d33f9}\label{classart_1_1TTGTIKProcessor_a3c3f7e62f82788d5974ead334c1d33f9}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!newton@{newton}}
+\index{newton@{newton}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{newton()}{newton()}}
+{\footnotesize\ttfamily Double\+\_\+t TTGTIKProcessor\+::newton (\begin{DoxyParamCaption}\item[{const TTrack $\ast$}]{,  }\item[{const \mbox{\hyperlink{classart_1_1TTelescopeData}{TTelescope\+Data}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Newtom method (unavalable) 
+
+Currently not available, return k\+InvalidD.
+
+
+\begin{DoxyParams}{Parameters}
+{\em track} & (art\+::\+TTrack) \\
+\hline
+{\em data} & (\mbox{\hyperlink{classart_1_1TTelescopeData}{art\+::\+TTelescope\+Data}}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Z position (mm) 
+\end{DoxyReturn}
+
+
+Definition at line 211 of file TTGTIKProcessor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a54ce21480bd47b47a100e2caac984eb7}\label{classart_1_1TTGTIKProcessor_a54ce21480bd47b47a100e2caac984eb7}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!operator=@{operator=}}
+\index{operator=@{operator=}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classart_1_1TTGTIKProcessor}{TTGTIKProcessor}}\& art\+::\+TTGTIKProcessor\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1TTGTIKProcessor}{TTGTIKProcessor}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
 \mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a2a6bd0af727a35af8de6167bd7c6195f}\label{classart_1_1TTGTIKProcessor_a2a6bd0af727a35af8de6167bd7c6195f}} 
 \index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!Process@{Process}}
 \index{Process@{Process}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
@@ -165,6 +406,36 @@ Main process.
 
 
 Definition at line 165 of file TTGTIKProcessor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TTGTIKProcessor_a06e4d3f42138cfb104f125c280a3d7dc}\label{classart_1_1TTGTIKProcessor_a06e4d3f42138cfb104f125c280a3d7dc}} 
+\index{art::TTGTIKProcessor@{art::TTGTIKProcessor}!TargetFunction@{TargetFunction}}
+\index{TargetFunction@{TargetFunction}!art::TTGTIKProcessor@{art::TTGTIKProcessor}}
+\doxysubsubsection{\texorpdfstring{TargetFunction()}{TargetFunction()}}
+{\footnotesize\ttfamily Double\+\_\+t TTGTIKProcessor\+::\+Target\+Function (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{z,  }\item[{const TTrack $\ast$}]{track,  }\item[{const \mbox{\hyperlink{classart_1_1TTelescopeData}{TTelescope\+Data}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Target function to be set to 0 by bisection (newton) method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & (mm) \\
+\hline
+{\em track} & (art\+::\+TTrack) \\
+\hline
+{\em data} & (\mbox{\hyperlink{classart_1_1TTelescopeData}{art\+::\+TTelescope\+Data}}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ecm (beam) -\/ Ecm (data)
+\end{DoxyReturn}
+From {\bfseries{assuming Z position (reaction position)}}, calculate the Ecm from two direction.
+\begin{DoxyItemize}
+\item Ecm(beam)\+: Ecm calculate from beam information
+\item Ecm(data)\+: Ecm calculate from detected particle information The target function is Ecm(beam) -\/ Ecm(data). When the value become 0, the assumed Z is reconstructed position. (x, y, z) position will be calculated from tracking object. 
+\end{DoxyItemize}
+
+Definition at line 296 of file TTGTIKProcessor.\+cc.
 
 
 

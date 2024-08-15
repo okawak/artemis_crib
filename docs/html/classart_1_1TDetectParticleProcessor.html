@@ -86,6 +86,7 @@ $(document).ready(function(){initNavTree('classart_1_1TDetectParticleProcessor.h
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="classart_1_1TDetectParticleProcessor-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">art::TDetectParticleProcessor Class Reference</div>  </div>
@@ -148,13 +149,24 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a3ddcf4781d0c971f88689f3665b7f5a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a8f4af827791145ba68feea6ab07eb0"><td class="memItemLeft" align="right" valign="top">const Double_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TDetectParticleProcessor.html#a5a8f4af827791145ba68feea6ab07eb0">c</a> = 299.792458</td></tr>
 <tr class="separator:a5a8f4af827791145ba68feea6ab07eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:adb23ce32306edaab797d344587abc374"><td class="memItemLeft" align="right" valign="top">std::vector&lt; TString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TDetectParticleProcessor.html#adb23ce32306edaab797d344587abc374">GetUniqueElements</a> (const std::vector&lt; TString &gt; &amp;input)</td></tr>
+<tr class="separator:adb23ce32306edaab797d344587abc374"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad93a7c5ab0a1a5c36340c7ced48ddc19"><td class="memItemLeft" align="right" valign="top">Int_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TDetectParticleProcessor.html#ad93a7c5ab0a1a5c36340c7ced48ddc19">GetStripID</a> (Double_t pos, Int_t max_strip, Double_t size)</td></tr>
+<tr class="separator:ad93a7c5ab0a1a5c36340c7ced48ddc19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85bb06fb7b12b96aac459c458715f214"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TDetectParticleProcessor.html#a85bb06fb7b12b96aac459c458715f214">TDetectParticleProcessor</a> (const <a class="el" href="classart_1_1TDetectParticleProcessor.html">TDetectParticleProcessor</a> &amp;rhs)=delete</td></tr>
+<tr class="separator:a85bb06fb7b12b96aac459c458715f214"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63646c9d0aba0a3e1a04c43bb0d032a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classart_1_1TDetectParticleProcessor.html">TDetectParticleProcessor</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TDetectParticleProcessor.html#a63646c9d0aba0a3e1a04c43bb0d032a0">operator=</a> (const <a class="el" href="classart_1_1TDetectParticleProcessor.html">TDetectParticleProcessor</a> &amp;rhs)=delete</td></tr>
+<tr class="separator:a63646c9d0aba0a3e1a04c43bb0d032a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="TDetectParticleProcessor_8h_source.html#l00026">26</a> of file <a class="el" href="TDetectParticleProcessor_8h_source.html">TDetectParticleProcessor.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9f93eab9536b37bbe426fff8a79c8a50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f93eab9536b37bbe426fff8a79c8a50">&#9670;&nbsp;</a></span>TDetectParticleProcessor()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f93eab9536b37bbe426fff8a79c8a50">&#9670;&nbsp;</a></span>TDetectParticleProcessor() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,7 +204,105 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a85bb06fb7b12b96aac459c458715f214"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85bb06fb7b12b96aac459c458715f214">&#9670;&nbsp;</a></span>TDetectParticleProcessor() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">art::TDetectParticleProcessor::TDetectParticleProcessor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classart_1_1TDetectParticleProcessor.html">TDetectParticleProcessor</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad93a7c5ab0a1a5c36340c7ced48ddc19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad93a7c5ab0a1a5c36340c7ced48ddc19">&#9670;&nbsp;</a></span>GetStripID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Int_t TDetectParticleProcessor::GetStripID </td>
+          <td>(</td>
+          <td class="paramtype">Double_t&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Int_t&#160;</td>
+          <td class="paramname"><em>max_strip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Double_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TDetectParticleProcessor_8cc_source.html#l00264">264</a> of file <a class="el" href="TDetectParticleProcessor_8cc_source.html">TDetectParticleProcessor.cc</a>.</p>
+
+</div>
+</div>
+<a id="adb23ce32306edaab797d344587abc374"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb23ce32306edaab797d344587abc374">&#9670;&nbsp;</a></span>GetUniqueElements()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; TString &gt; TDetectParticleProcessor::GetUniqueElements </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; TString &gt; &amp;&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TDetectParticleProcessor_8cc_source.html#l00250">250</a> of file <a class="el" href="TDetectParticleProcessor_8cc_source.html">TDetectParticleProcessor.cc</a>.</p>
+
+</div>
+</div>
 <a id="aaca8d2a0cbfb72f340acebfed2d2c6aa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaca8d2a0cbfb72f340acebfed2d2c6aa">&#9670;&nbsp;</a></span>Init()</h2>
 
@@ -221,6 +331,32 @@ Protected Attributes</h2></td></tr>
 <p>initialization for TSrim</p>
 
 <p class="definition">Definition at line <a class="el" href="TDetectParticleProcessor_8cc_source.html#l00061">61</a> of file <a class="el" href="TDetectParticleProcessor_8cc_source.html">TDetectParticleProcessor.cc</a>.</p>
+
+</div>
+</div>
+<a id="a63646c9d0aba0a3e1a04c43bb0d032a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63646c9d0aba0a3e1a04c43bb0d032a0">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classart_1_1TDetectParticleProcessor.html">TDetectParticleProcessor</a>&amp; art::TDetectParticleProcessor::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classart_1_1TDetectParticleProcessor.html">TDetectParticleProcessor</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

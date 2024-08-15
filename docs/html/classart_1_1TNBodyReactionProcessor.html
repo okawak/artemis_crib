@@ -86,6 +86,8 @@ $(document).ready(function(){initNavTree('classart_1_1TNBodyReactionProcessor.ht
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classart_1_1TNBodyReactionProcessor-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">art::TNBodyReactionProcessor Class Reference</div>  </div>
@@ -163,13 +165,33 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a0607b546c63c6cf032adc6e8579c687c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4455b0b470bb43b74c2c3ed4df113d5"><td class="memItemLeft" align="right" valign="top">const Double_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TNBodyReactionProcessor.html#af4455b0b470bb43b74c2c3ed4df113d5">c</a> = 299.792458</td></tr>
 <tr class="separator:af4455b0b470bb43b74c2c3ed4df113d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a7339e8882e2dec9c0b92b54785d93b83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TNBodyReactionProcessor.html#a7339e8882e2dec9c0b92b54785d93b83">InitGeneratingFunc</a> ()</td></tr>
+<tr class="separator:a7339e8882e2dec9c0b92b54785d93b83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93b1bfee5891f36676f720d5cbb79e06"><td class="memItemLeft" align="right" valign="top">Double_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TNBodyReactionProcessor.html#a93b1bfee5891f36676f720d5cbb79e06">GetRandomReactionDistance</a> (Double_t range)</td></tr>
+<tr class="separator:a93b1bfee5891f36676f720d5cbb79e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a90f00df7fa69c169880d93964baee3"><td class="memItemLeft" align="right" valign="top">TLorentzVector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TNBodyReactionProcessor.html#a5a90f00df7fa69c169880d93964baee3">GetLossEnergyVector</a> (TLorentzVector vec, Double_t eloss)</td></tr>
+<tr class="separator:a5a90f00df7fa69c169880d93964baee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ace2082f566d240a421dd3e95de51c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TNBodyReactionProcessor.html#a3ace2082f566d240a421dd3e95de51c6">TNBodyReactionProcessor</a> (const <a class="el" href="classart_1_1TNBodyReactionProcessor.html">TNBodyReactionProcessor</a> &amp;rhs)=delete</td></tr>
+<tr class="separator:a3ace2082f566d240a421dd3e95de51c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0661d3a8992e8c47da0c6c936613a02e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classart_1_1TNBodyReactionProcessor.html">TNBodyReactionProcessor</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TNBodyReactionProcessor.html#a0661d3a8992e8c47da0c6c936613a02e">operator=</a> (const <a class="el" href="classart_1_1TNBodyReactionProcessor.html">TNBodyReactionProcessor</a> &amp;rhs)=delete</td></tr>
+<tr class="separator:a0661d3a8992e8c47da0c6c936613a02e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aaa0930090760560a9296c716125ae73e"><td class="memItemLeft" align="right" valign="top">TGraph *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TNBodyReactionProcessor.html#aaa0930090760560a9296c716125ae73e">gr_generating_func</a></td></tr>
+<tr class="separator:aaa0930090760560a9296c716125ae73e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a624b4e5ab33f6c6a1aca260e142e5b32"><td class="memItemLeft" align="right" valign="top">TGraph *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TNBodyReactionProcessor.html#a624b4e5ab33f6c6a1aca260e142e5b32">gr_generating_func_inv</a></td></tr>
+<tr class="separator:a624b4e5ab33f6c6a1aca260e142e5b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00026">26</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6024a9b747e36415cbce33f565af1ad1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6024a9b747e36415cbce33f565af1ad1">&#9670;&nbsp;</a></span>TNBodyReactionProcessor()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6024a9b747e36415cbce33f565af1ad1">&#9670;&nbsp;</a></span>TNBodyReactionProcessor() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,7 +228,99 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a3ace2082f566d240a421dd3e95de51c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ace2082f566d240a421dd3e95de51c6">&#9670;&nbsp;</a></span>TNBodyReactionProcessor() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">art::TNBodyReactionProcessor::TNBodyReactionProcessor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classart_1_1TNBodyReactionProcessor.html">TNBodyReactionProcessor</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5a90f00df7fa69c169880d93964baee3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a90f00df7fa69c169880d93964baee3">&#9670;&nbsp;</a></span>GetLossEnergyVector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TLorentzVector TNBodyReactionProcessor::GetLossEnergyVector </td>
+          <td>(</td>
+          <td class="paramtype">TLorentzVector&#160;</td>
+          <td class="paramname"><em>vec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Double_t&#160;</td>
+          <td class="paramname"><em>eloss</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8cc_source.html#l00386">386</a> of file <a class="el" href="TNBodyReactionProcessor_8cc_source.html">TNBodyReactionProcessor.cc</a>.</p>
+
+</div>
+</div>
+<a id="a93b1bfee5891f36676f720d5cbb79e06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93b1bfee5891f36676f720d5cbb79e06">&#9670;&nbsp;</a></span>GetRandomReactionDistance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Double_t TNBodyReactionProcessor::GetRandomReactionDistance </td>
+          <td>(</td>
+          <td class="paramtype">Double_t&#160;</td>
+          <td class="paramname"><em>range</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8cc_source.html#l00371">371</a> of file <a class="el" href="TNBodyReactionProcessor_8cc_source.html">TNBodyReactionProcessor.cc</a>.</p>
+
+</div>
+</div>
 <a id="aaddc093559a73a2e06c00b351a9e67ee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaddc093559a73a2e06c00b351a9e67ee">&#9670;&nbsp;</a></span>Init()</h2>
 
@@ -232,6 +346,62 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8cc_source.html#l00077">77</a> of file <a class="el" href="TNBodyReactionProcessor_8cc_source.html">TNBodyReactionProcessor.cc</a>.</p>
+
+</div>
+</div>
+<a id="a7339e8882e2dec9c0b92b54785d93b83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7339e8882e2dec9c0b92b54785d93b83">&#9670;&nbsp;</a></span>InitGeneratingFunc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TNBodyReactionProcessor::InitGeneratingFunc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<ol type="1">
+<li>function </li>
+</ol>
+
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8cc_source.html#l00272">272</a> of file <a class="el" href="TNBodyReactionProcessor_8cc_source.html">TNBodyReactionProcessor.cc</a>.</p>
+
+</div>
+</div>
+<a id="a0661d3a8992e8c47da0c6c936613a02e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0661d3a8992e8c47da0c6c936613a02e">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classart_1_1TNBodyReactionProcessor.html">TNBodyReactionProcessor</a>&amp; art::TNBodyReactionProcessor::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classart_1_1TNBodyReactionProcessor.html">TNBodyReactionProcessor</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -816,6 +986,65 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00050">50</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
+
+</div>
+</div>
+<a id="aaa0930090760560a9296c716125ae73e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa0930090760560a9296c716125ae73e">&#9670;&nbsp;</a></span>gr_generating_func</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TGraph* art::TNBodyReactionProcessor::gr_generating_func</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<ol type="1">
+<li>cross section function: (x, y) = (beam LAB energy (MeV), arbitrary unit)</li>
+<li>convert x using range: (x, y) = (range (mm), arbitrary unit)</li>
+<li>integrate the 2. function: (x, y) = (range (mm), arbitrary unit)</li>
+<li>inversed 3. function: (x, y) = (arbitrary unit, range (mm))</li>
+<li>get pos with random number: uniform X -&gt; get Y value</li>
+<li>get reac pos with the Y value: init_range - Y =&gt; distance </li>
+</ol>
+
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00074">74</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
+
+</div>
+</div>
+<a id="a624b4e5ab33f6c6a1aca260e142e5b32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a624b4e5ab33f6c6a1aca260e142e5b32">&#9670;&nbsp;</a></span>gr_generating_func_inv</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TGraph* art::TNBodyReactionProcessor::gr_generating_func_inv</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<ol type="1">
+<li>function </li>
+</ol>
+
+<p class="definition">Definition at line <a class="el" href="TNBodyReactionProcessor_8h_source.html#l00075">75</a> of file <a class="el" href="TNBodyReactionProcessor_8h_source.html">TNBodyReactionProcessor.h</a>.</p>
 
 </div>
 </div>

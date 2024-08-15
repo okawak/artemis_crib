@@ -2,8 +2,11 @@ var classart_1_1TF1PPACProcessor =
 [
     [ "TF1PPACProcessor", "classart_1_1TF1PPACProcessor.html#addf9689b100280d33481b3be90c915fd", null ],
     [ "~TF1PPACProcessor", "classart_1_1TF1PPACProcessor.html#aa28c3ff570ba1526487b012f0682ee97", null ],
+    [ "TF1PPACProcessor", "classart_1_1TF1PPACProcessor.html#abc4ffc619d68c7988524a743f7e2ee98", null ],
     [ "Init", "classart_1_1TF1PPACProcessor.html#aedf9e82ecd66d0f18b6f9e7b774b9122", null ],
+    [ "operator=", "classart_1_1TF1PPACProcessor.html#a515251f0be982adf0396601108fe2b7d", null ],
     [ "Process", "classart_1_1TF1PPACProcessor.html#a83c46b125b423b1a74b28ce72c402f9f", null ],
+    [ "DETID_ORIGIN", "classart_1_1TF1PPACProcessor.html#aae6ad44b40e5294e2f6e37263de304b4", null ],
     [ "fCategorizedData", "classart_1_1TF1PPACProcessor.html#af24e356a5fc2f479d19f82710ba447e2", null ],
     [ "fCatID", "classart_1_1TF1PPACProcessor.html#acd6784ae5ad6b826dd22baef20eb30ba", null ],
     [ "fChargeConverterArray", "classart_1_1TF1PPACProcessor.html#acba7f41f90547b81e551b5d7b5f7c546", null ],

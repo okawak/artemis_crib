@@ -1,8 +1,18 @@
 var classart_1_1TTimingChargeAllMappingProcessor =
 [
+    [ "EChargeTypeID", "classart_1_1TTimingChargeAllMappingProcessor.html#a8a6c20f3ca4c84ffefca38d1890108e7", [
+      [ "kWIDTH", "classart_1_1TTimingChargeAllMappingProcessor.html#a8a6c20f3ca4c84ffefca38d1890108e7a89b492bcc1504bb10db648322a6acdd6", null ],
+      [ "kQDC", "classart_1_1TTimingChargeAllMappingProcessor.html#a8a6c20f3ca4c84ffefca38d1890108e7af0035369b5c90314361e65d7c7dc353f", null ],
+      [ "kHINP", "classart_1_1TTimingChargeAllMappingProcessor.html#a8a6c20f3ca4c84ffefca38d1890108e7a04847ca06aeb7959e4d654b81a56d68a", null ]
+    ] ],
     [ "TTimingChargeAllMappingProcessor", "classart_1_1TTimingChargeAllMappingProcessor.html#a8590291d1e1d20feacb815a8dd7ca393", null ],
     [ "~TTimingChargeAllMappingProcessor", "classart_1_1TTimingChargeAllMappingProcessor.html#ad5cf58cb66b1cf52b941515eb27fa66d", null ],
+    [ "TTimingChargeAllMappingProcessor", "classart_1_1TTimingChargeAllMappingProcessor.html#ac97df13ff211a8444b5ea44b80099776", null ],
     [ "Init", "classart_1_1TTimingChargeAllMappingProcessor.html#abc6792ecd4937dd346672ce5c3d26447", null ],
+    [ "MapEdgedTime", "classart_1_1TTimingChargeAllMappingProcessor.html#a4a8c4abe6e2c789430ab6290458585e8", null ],
+    [ "MapPairedTimeCharge", "classart_1_1TTimingChargeAllMappingProcessor.html#afdc6a1b6a9d49c4d468e09fb395b313e", null ],
+    [ "MapTimeCharge", "classart_1_1TTimingChargeAllMappingProcessor.html#afaa12cd252fc5efc9c3d7572b8bef4f4", null ],
+    [ "operator=", "classart_1_1TTimingChargeAllMappingProcessor.html#a655be16cf2eea604d1541b6edd70651b", null ],
     [ "Process", "classart_1_1TTimingChargeAllMappingProcessor.html#ae07215dc7c0cdd6f8d7332f0b0fd2d38", null ],
     [ "fCategorizedData", "classart_1_1TTimingChargeAllMappingProcessor.html#a730383bff5ab88b6f8cc24edd7b21f24", null ],
     [ "fCatID", "classart_1_1TTimingChargeAllMappingProcessor.html#a05b6cc4e920644aac462601b30de48e0", null ],
