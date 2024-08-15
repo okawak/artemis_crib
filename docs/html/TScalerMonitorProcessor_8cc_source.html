@@ -149,7 +149,7 @@ $(document).ready(function(){initNavTree('TScalerMonitorProcessor_8cc_source.htm
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    Info(<span class="stringliteral">&quot;Init&quot;</span>, <span class="stringliteral">&quot;\tshort time chart: interval %d s, time range %d s&quot;</span>, fShortInterval, fShortDuration);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    Info(<span class="stringliteral">&quot;Init&quot;</span>, <span class="stringliteral">&quot;\tlong time chart : interval %d s, time range %d s&quot;</span>, fLongInterval, fLongDuration);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    Info(<span class="stringliteral">&quot;Init&quot;</span>, <span class="stringliteral">&quot;Display: channel, name, scale factor&quot;</span>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">for</span> (Int_t i = 0; i &lt; fChannels.size(); i++) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">for</span> (Size_t i = 0; i &lt; fChannels.size(); i++) {</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        Info(<span class="stringliteral">&quot;Init&quot;</span>, <span class="stringliteral">&quot;Display: %s&quot;</span>, fChannels[i].Data());</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
@@ -159,7 +159,7 @@ $(document).ready(function(){initNavTree('TScalerMonitorProcessor_8cc_source.htm
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">for</span> (Int_t i = 0; i &lt; fChannels.size(); i++) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">for</span> (Size_t i = 0; i &lt; fChannels.size(); i++) {</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        Int_t first = fChannels[i].First(<span class="charliteral">&#39;,&#39;</span>);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        Int_t last = fChannels[i].Last(<span class="charliteral">&#39;,&#39;</span>);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        Int_t len = fChannels[i].Length();</div>
@@ -196,7 +196,7 @@ $(document).ready(function(){initNavTree('TScalerMonitorProcessor_8cc_source.htm
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        fGr_l[i]-&gt;SetMaximum(1000.);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">for</span> (Int_t i = 0; i &lt; fChannels.size(); i++) {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">for</span> (Size_t i = 0; i &lt; fChannels.size(); i++) {</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        fGr_s[fDisplayCh[i]]-&gt;SetTitle(<span class="stringliteral">&quot;count rate (short);;cps&quot;</span>);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        fGr_s[fDisplayCh[i]]-&gt;SetName(fNames[i]);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        fGr_s[fDisplayCh[i]]-&gt;SetLineColor(fColor_list[i]);</div>
@@ -280,7 +280,7 @@ $(document).ready(function(){initNavTree('TScalerMonitorProcessor_8cc_source.htm
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        pad_s-&gt;cd();</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        Bool_t isfirst_obj = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        TLegend *legend = <span class="keyword">new</span> TLegend(0.78, 0.70, 0.95, 0.95);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">for</span> (Int_t i = 0; i &lt; fDisplayCh.size(); i++) {</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">for</span> (Size_t i = 0; i &lt; fDisplayCh.size(); i++) {</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="keywordflow">if</span> (isfirst_obj) {</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                fGr_s[fDisplayCh[i]]-&gt;Draw(<span class="stringliteral">&quot;apl&quot;</span>);</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                legend-&gt;AddEntry(fGr_s[fDisplayCh[i]], fNames[i], <span class="stringliteral">&quot;pl&quot;</span>);</div>

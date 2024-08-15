@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "artemis_crib", "index.html", [
+    [ "artemis_crib doxygen source code", "index.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]
     ] ],
@@ -57,7 +58,7 @@ var NAVTREEINDEX =
 "classTCatCmdTCutG.html#ad0d68c07c74cee6a7f0950b65076b45d",
 "classart_1_1TMUXPositionValidator.html#acbcd0e1b2cdda93198547b733eb5a810",
 "classart_1_1TTargetParameter.html#a05a540f6dc1e70abed18d2124693f301",
-"run__AlphaCalibration_8C.html"
+"pages.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

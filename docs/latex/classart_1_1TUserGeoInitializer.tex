@@ -25,21 +25,21 @@ void \mbox{\hyperlink{classart_1_1TUserGeoInitializer_a537af5b1d56eb9b66397face9
 \begin{DoxyCompactItemize}
 \item 
 TGeo\+Manager $\ast$ \mbox{\hyperlink{classart_1_1TUserGeoInitializer_abdcc7af864d474cbe8d9d77875cfa97b}{f\+Geom}}
-\item 
+\begin{DoxyCompactList}\small\item\em It is used for TGeo\+Manager process. \end{DoxyCompactList}\item 
 TString \mbox{\hyperlink{classart_1_1TUserGeoInitializer_a5446ae323a565ed7ca8aa79d33c4a95e}{f\+File\+Name}}
-\begin{DoxyCompactList}\small\item\em it is used for TGeo\+Manager process (like simulation) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Input geometry file name. You can define in steering file. \end{DoxyCompactList}\item 
 TString \mbox{\hyperlink{classart_1_1TUserGeoInitializer_abc20ff3b73b8abbfc653660678bf4f36}{f\+Det\+Prm\+Name}}
-\item 
+\begin{DoxyCompactList}\small\item\em It should be \char`\"{}prm\+\_\+detector\char`\"{}. \end{DoxyCompactList}\item 
 TString \mbox{\hyperlink{classart_1_1TUserGeoInitializer_a6d69b9edc18088113ad9c43ff3005597}{f\+Target\+Prm\+Name}}
-\item 
+\begin{DoxyCompactList}\small\item\em It should be \char`\"{}prm\+\_\+target\char`\"{}. \end{DoxyCompactList}\item 
 Bool\+\_\+t \mbox{\hyperlink{classart_1_1TUserGeoInitializer_ad6ede7e11f59ab7a8cf4805e20d0805f}{f\+Is\+Visible}}
-\item 
+\begin{DoxyCompactList}\small\item\em Make figure of Detectors of not. \end{DoxyCompactList}\item 
 TClones\+Array $\ast$ \mbox{\hyperlink{classart_1_1TUserGeoInitializer_aa58e58adff799b98dca7cf94a987643c}{f\+Det\+Parameter\+Array}}
-\item 
+\begin{DoxyCompactList}\small\item\em Detector parameter object (\mbox{\hyperlink{classart_1_1TDetectorParameter}{art\+::\+TDetector\+Parameter}} array) \end{DoxyCompactList}\item 
 TClones\+Array $\ast$ \mbox{\hyperlink{classart_1_1TUserGeoInitializer_a72eae9e755ddde2a962cbf953a5a973e}{f\+Target\+Parameter\+Array}}
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classart_1_1TDetectorParameter}{art\+::\+TDetector\+Parameter}} array \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Target parameter object (\mbox{\hyperlink{classart_1_1TTargetParameter}{art\+::\+TTarget\+Parameter}} array) \end{DoxyCompactList}\item 
 Double\+\_\+t \mbox{\hyperlink{classart_1_1TUserGeoInitializer_a2e0a4e956702e81bf21b01cc3c72a5cc}{deg2rad}} = TMath\+::\+Deg\+To\+Rad()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classart_1_1TTargetParameter}{art\+::\+TTarget\+Parameter}} array \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em angle converter, degree to radian \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -104,11 +104,11 @@ Definition at line 95 of file TUser\+Geo\+Initializer.\+cc.
 
 
 
-\mbox{\hyperlink{classart_1_1TTargetParameter}{art\+::\+TTarget\+Parameter}} array 
+angle converter, degree to radian 
 
 
 
-Definition at line 45 of file TUser\+Geo\+Initializer.\+h.
+Definition at line 73 of file TUser\+Geo\+Initializer.\+h.
 
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_aa58e58adff799b98dca7cf94a987643c}\label{classart_1_1TUserGeoInitializer_aa58e58adff799b98dca7cf94a987643c}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fDetParameterArray@{fDetParameterArray}}
@@ -118,7 +118,11 @@ Definition at line 45 of file TUser\+Geo\+Initializer.\+h.
 
 
 
-Definition at line 42 of file TUser\+Geo\+Initializer.\+h.
+Detector parameter object (\mbox{\hyperlink{classart_1_1TDetectorParameter}{art\+::\+TDetector\+Parameter}} array) 
+
+
+
+Definition at line 68 of file TUser\+Geo\+Initializer.\+h.
 
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_abc20ff3b73b8abbfc653660678bf4f36}\label{classart_1_1TUserGeoInitializer_abc20ff3b73b8abbfc653660678bf4f36}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fDetPrmName@{fDetPrmName}}
@@ -128,7 +132,11 @@ Definition at line 42 of file TUser\+Geo\+Initializer.\+h.
 
 
 
-Definition at line 37 of file TUser\+Geo\+Initializer.\+h.
+It should be \char`\"{}prm\+\_\+detector\char`\"{}. 
+
+
+
+Definition at line 60 of file TUser\+Geo\+Initializer.\+h.
 
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_a5446ae323a565ed7ca8aa79d33c4a95e}\label{classart_1_1TUserGeoInitializer_a5446ae323a565ed7ca8aa79d33c4a95e}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fFileName@{fFileName}}
@@ -138,11 +146,11 @@ Definition at line 37 of file TUser\+Geo\+Initializer.\+h.
 
 
 
-it is used for TGeo\+Manager process (like simulation) 
+Input geometry file name. You can define in steering file. 
 
 
 
-Definition at line 36 of file TUser\+Geo\+Initializer.\+h.
+Definition at line 58 of file TUser\+Geo\+Initializer.\+h.
 
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_abdcc7af864d474cbe8d9d77875cfa97b}\label{classart_1_1TUserGeoInitializer_abdcc7af864d474cbe8d9d77875cfa97b}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fGeom@{fGeom}}
@@ -152,7 +160,11 @@ Definition at line 36 of file TUser\+Geo\+Initializer.\+h.
 
 
 
-Definition at line 34 of file TUser\+Geo\+Initializer.\+h.
+It is used for TGeo\+Manager process. 
+
+
+
+Definition at line 55 of file TUser\+Geo\+Initializer.\+h.
 
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_ad6ede7e11f59ab7a8cf4805e20d0805f}\label{classart_1_1TUserGeoInitializer_ad6ede7e11f59ab7a8cf4805e20d0805f}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fIsVisible@{fIsVisible}}
@@ -162,7 +174,11 @@ Definition at line 34 of file TUser\+Geo\+Initializer.\+h.
 
 
 
-Definition at line 40 of file TUser\+Geo\+Initializer.\+h.
+Make figure of Detectors of not. 
+
+
+
+Definition at line 65 of file TUser\+Geo\+Initializer.\+h.
 
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_a72eae9e755ddde2a962cbf953a5a973e}\label{classart_1_1TUserGeoInitializer_a72eae9e755ddde2a962cbf953a5a973e}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fTargetParameterArray@{fTargetParameterArray}}
@@ -172,11 +188,11 @@ Definition at line 40 of file TUser\+Geo\+Initializer.\+h.
 
 
 
-\mbox{\hyperlink{classart_1_1TDetectorParameter}{art\+::\+TDetector\+Parameter}} array 
+Target parameter object (\mbox{\hyperlink{classart_1_1TTargetParameter}{art\+::\+TTarget\+Parameter}} array) 
 
 
 
-Definition at line 43 of file TUser\+Geo\+Initializer.\+h.
+Definition at line 70 of file TUser\+Geo\+Initializer.\+h.
 
 \mbox{\Hypertarget{classart_1_1TUserGeoInitializer_a6d69b9edc18088113ad9c43ff3005597}\label{classart_1_1TUserGeoInitializer_a6d69b9edc18088113ad9c43ff3005597}} 
 \index{art::TUserGeoInitializer@{art::TUserGeoInitializer}!fTargetPrmName@{fTargetPrmName}}
@@ -186,7 +202,11 @@ Definition at line 43 of file TUser\+Geo\+Initializer.\+h.
 
 
 
-Definition at line 38 of file TUser\+Geo\+Initializer.\+h.
+It should be \char`\"{}prm\+\_\+target\char`\"{}. 
+
+
+
+Definition at line 62 of file TUser\+Geo\+Initializer.\+h.
 
 
 
