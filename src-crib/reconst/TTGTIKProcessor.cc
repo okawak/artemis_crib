@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:35:07
- * @note    last modified: 2024-08-15 23:38:19
+ * @note    last modified: 2024-08-16 10:48:14
  * @details bisection method (not Newton method)
  */
 
@@ -50,6 +50,8 @@ ClassImp(art::TTGTIKProcessor);
 ///   - this is "inverse kinematics", so we assume the detected particle is "B"
 ///
 /// Option:
+/// - ExcitedEnergy: if you want to treat excited state transition, input the
+/// excited energy (MeV) of Z3 particles
 /// - UseCustomFunction: if you need extra treatment, you can add the process.
 ///   - if it is "true", the custom treatment is on.
 ///   - this is for 26Si(a, p)29P analysis to treat the excited state effect.
@@ -72,6 +74,7 @@ TTGTIKProcessor::TTGTIKProcessor() : fInData(nullptr), fInTrackData(nullptr), fO
     RegisterProcessorParameter("ParticleAArray", "particle mass numbers of the reaction", fParticleAArray, init_i_vec);
 
     // custom function
+    RegisterProcessorParameter("ExcitedEnergy", "excited energy", fExcitedEnergy, -1.0);
     RegisterProcessorParameter("UseCustomFunction", "custom process", fDoCustom, false);
 
     RegisterOptionalInputInfo("DetectorParameter", "name of telescope parameter", fDetectorParameterName,
@@ -134,13 +137,24 @@ void TTGTIKProcessor::Init(TEventCollection *col) {
         return;
     }
 
+    // unit = mass (MeV)
+    M1 = amdc::Mass(fParticleZArray[0], fParticleAArray[0]) * amdc::amu;
+    M2 = amdc::Mass(fParticleZArray[1], fParticleAArray[1]) * amdc::amu;
+    Double_t M3_default = amdc::Mass(fParticleZArray[2], fParticleAArray[2]) * amdc::amu;
+    M4 = amdc::Mass(fParticleZArray[3], fParticleAArray[3]) * amdc::amu;
+
+    if (!fDoCustom && fExcitedEnergy > 0)
+        M3 = M3_default + fExcitedEnergy;
+    else
+        M3 = M3_default;
+
     Info("Init", "reconstract the reaction: %d%s + %d%s -> %d%s + %d%s <- detect",
          fParticleAArray[0], amdc::GetEl(fParticleZArray[0]).c_str(),
          fParticleAArray[1], amdc::GetEl(fParticleZArray[1]).c_str(),
          fParticleAArray[2], amdc::GetEl(fParticleZArray[2]).c_str(),
          fParticleAArray[3], amdc::GetEl(fParticleZArray[3]).c_str());
 
-    // Info("Init", "\tQ-value: %lf MeV", (fParticleMass[0] + fParticleMass[1]) - (fParticleMass[2] + fParticleMass[3]));
+    Info("Init", "\tQ-value: %lf MeV", (M1 + M2) - (M3 + M4));
 
     // TSrim object
     const char *tsrim_path = std::getenv("TSRIM_DATA_HOME");
@@ -184,6 +198,10 @@ void TTGTIKProcessor::Process() {
     const TTelescopeData *const Data = dynamic_cast<const TTelescopeData *>(inData);
     const TDataObject *const inTrackData = static_cast<TDataObject *>((*fInTrackData)->At(0));
     const TTrack *const TrackData = dynamic_cast<const TTrack *>(inTrackData);
+
+    // excited energy process
+    if (fDoCustom)
+        M3 += GetCustomExcitedEnergy();
 
     Double_t reac_z = GetReactionPosition(TrackData, Data);
 
@@ -251,7 +269,10 @@ Double_t TTGTIKProcessor::bisection(const TTrack *track, const TTelescopeData *d
         return kInvalidD;
     }
     if (flow * fhigh > 0) {
-        std::cerr << "[Warning in bisect] f(low) * f(high) > 0, f(low): " << flow << ", f(high): " << fhigh << std::endl;
+        std::cerr << "[Warning in bisect] f(low) * f(high) > 0"
+                  << ", f(low): " << flow << ", f(high): " << fhigh
+                  << ", energy = " << data->GetEtotal()
+                  << std::endl;
         return kInvalidD;
     }
 
@@ -296,10 +317,7 @@ Double_t TTGTIKProcessor::bisection(const TTrack *track, const TTelescopeData *d
 Double_t TTGTIKProcessor::TargetFunction(Double_t z, const TTrack *track, const TTelescopeData *data) {
     Double_t Ecm_beam = GetEcmFromBeam(z, track);
     Double_t Ecm_detect = GetEcmFromDetectParticle(z, track, data);
-    if (!IsValid(Ecm_beam)) {
-        return kInvalidD;
-    }
-    if (!IsValid(Ecm_detect)) {
+    if (!IsValid(Ecm_beam) || !IsValid(Ecm_detect)) {
         return kInvalidD;
     }
     return Ecm_beam - Ecm_detect;
@@ -312,23 +330,23 @@ Double_t TTGTIKProcessor::TargetFunction(Double_t z, const TTrack *track, const 
 
 Double_t TTGTIKProcessor::GetEcmFromBeam(Double_t z, const TTrack *track) {
     // if sign > 0 enewz, sign < 0, eoldz (thickness is negative)
-    Int_t sign = z > 0 : 1 ? -1;
+    Int_t sign = z > 0 ? 1 : -1;
     TVector3 beam_flight(track->GetX(z) - track->GetX(0), track->GetY(z) - track->GetY(0), z);
     Double_t energy = srim->EnergyNew(fParticleZArray[0], fParticleAArray[0],
                                       fInitialBeamEnergy, std::string(fTargetName.Data()),
-                                      sign * beam_flight.Mag());
+                                      sign * beam_flight.Mag(), fPressure, fTemperature);
     if (energy < 0.01)
         return 0.0;
 
-    Double_t beta = TMath::Sqrt(1.0 - TMath::Power(fParticleMass[0] / (fParticleMass[0] + energy), 2));
+    Double_t beta = TMath::Sqrt(1.0 - TMath::Power(M1 / (M1 + energy), 2));
     Double_t ang[2] = {track->GetA(), track->GetB()};
     Double_t norm = TMath::Sqrt(TMath::Tan(ang[0]) * TMath::Tan(ang[0]) + TMath::Tan(ang[1]) * TMath::Tan(ang[1]) + 1.0);
     Double_t beta_array[3] = {beta * TMath::Tan(ang[0]) / norm, beta * TMath::Tan(ang[1]) / norm, beta * 1.0 / norm};
 
-    TLorentzVector beam(0., 0., 0., fParticleMass[0]);
+    TLorentzVector beam(0., 0., 0., M1);
     beam.Boost(beta_array[0], beta_array[1], beta_array[2]);
 
-    TLorentzVector target(0., 0., 0., fParticleMass[1]);
+    TLorentzVector target(0., 0., 0., M2);
 
     TLorentzVector cm_vec = beam + target;
     TVector3 beta_cm = cm_vec.BoostVector();
@@ -344,7 +362,7 @@ Double_t TTGTIKProcessor::GetEcmFromBeam(Double_t z, const TTrack *track) {
 /// Currently it uses classsic kinematics.
 
 Double_t TTGTIKProcessor::GetEcmFromDetectParticle(Double_t z, const TTrack *track, const TTelescopeData *data) {
-    Int_t tel_id = data->GetID();
+    Int_t tel_id = data->GetTelID();
     const TParameterObject *const inPrm = static_cast<TParameterObject *>((*fDetectorPrm)->At(tel_id - 1));
     const TDetectorParameter *Prm = dynamic_cast<const TDetectorParameter *>(inPrm);
     if (!Prm) {
@@ -377,30 +395,10 @@ Double_t TTGTIKProcessor::GetEcmFromDetectParticle(Double_t z, const TTrack *tra
     TVector3 track_direction(track->GetX(1.) - track->GetX(0.), track->GetY(1.) - track->GetY(0.), 1.0);
 
     Double_t theta = track_direction.Angle(detect_position - reaction_position); // LAB, rad
-    Double_t energy = fElossDetectParticle->GetOldE(data->GetEtotal(), (detect_position - reaction_position).Mag());
-
-#if 0
-  std::cout << "x_det: " << detect_position.X() << ", x_real: " << data->GetPosition().X() << std::endl;
-  std::cout << "y_det: " << detect_position.Y() << ", y_real: " << data->GetPosition().Y() << std::endl;
-  std::cout << "z_det: " << detect_position.Z() << ", z_real: " << data->GetPosition().Z() << std::endl;
-  std::cout << "--" << std::endl;
-
-  for(Double_t ecm=0.01; ecm<1.0e+4; ecm *= 1.1){
-    Double_t energy_L = energy + fParticleMass[3];
-    Double_t energy_cm_all = ecm + fParticleMass[0] + fParticleMass[1];
-    Double_t energy_4cm = (energy_cm_all - (fParticleMass[2]*fParticleMass[2] - fParticleMass[3]*fParticleMass[3])
-                          /energy_cm_all)/2.0;
-    Double_t energy1 = (ecm * ecm + 2.0*ecm*(fParticleMass[0]+fParticleMass[1])
-                        + 2.0*fParticleMass[0]*fParticleMass[1])/(2.0 * fParticleMass[1]);
-    Double_t beta = TMath::Sqrt(energy1 * energy1 - fParticleMass[0]*fParticleMass[0])
-                    /(energy1 + fParticleMass[1]);
-
-    Double_t arg = (energy_L - energy_4cm*TMath::Sqrt(1.0 - beta*beta))
-                        /(beta * TMath::Sqrt(energy_L * energy_L - fParticleMass[3]*fParticleMass[3]));
-    std::cout << "ecm: " << ecm << " , costheta: " << arg << " , theta: " << TMath::ACos(arg)*TMath::RadToDeg() << std::endl;
-  }
-  std::cout << "==" << std::endl;
-#endif
+    Double_t energy = srim->EnergyNew(fParticleZArray[3], fParticleAArray[3],    // id = 3 particle
+                                      data->GetEtotal(), std::string(fTargetName.Data()),
+                                      -(detect_position - reaction_position).Mag(),
+                                      fPressure, fTemperature);
 
     // kinematics (using bisection method) detected particle id=3
     // return GetEcm_kinematics(energy, theta, 0.01, 1.0e+4);
@@ -424,12 +422,11 @@ Double_t TTGTIKProcessor::GetEcm_kinematics(Double_t, Double_t, Double_t, Double
 /// Please refer from okawa's master thesis for an detail.
 
 Double_t TTGTIKProcessor::GetEcm_classic_kinematics(Double_t energy, Double_t theta) {
-    // unit = mass (MeV)
-    Double_t alpha = (fParticleMass[1] * (fParticleMass[0] + fParticleMass[1])) / (2.0 * fParticleMass[0]);
-    Double_t beta = (fParticleMass[3] * (fParticleMass[2] + fParticleMass[3])) / (2.0 * fParticleMass[2]);
-    Double_t qvalue = (fParticleMass[0] + fParticleMass[1]) - (fParticleMass[2] + fParticleMass[3]);
+    Double_t alpha = (M2 * (M1 + M2)) / (2.0 * M1);
+    Double_t beta = (M4 * (M3 + M4)) / (2.0 * M3);
+    Double_t qvalue = (M1 + M2) - (M3 + M4);
 
-    Double_t v4 = TMath::Sqrt(2.0 * energy / fParticleMass[3]);
+    Double_t v4 = TMath::Sqrt(2.0 * energy / M4);
     Double_t b = (beta * v4 * TMath::Cos(theta)) / (alpha - beta);
     Double_t c = (qvalue - beta * v4 * v4) / (alpha - beta);
     Double_t D = b * b - c;
@@ -437,14 +434,14 @@ Double_t TTGTIKProcessor::GetEcm_classic_kinematics(Double_t energy, Double_t th
         if (TMath::Abs(D) < 1.0e-5) {
             D = 0.0;
         } else {
-            std::cout << "b^2 - c = " << D << " < 0, det_energy : " << energy << ", theta : " << theta << std::endl;
+            std::cerr << "b^2 - c = " << D << " < 0, det_energy : " << energy << ", theta : " << theta << std::endl;
             return kInvalidD;
         }
     }
 
     Double_t vcm = -b + TMath::Sqrt(D);
     if (vcm < 0) {
-        std::cout << "vcm < 0! : vcm = " << -b << " + " << TMath::Sqrt(D) << ", det_energy : " << energy
+        std::cerr << "vcm < 0! : vcm = " << -b << " + " << TMath::Sqrt(D) << ", det_energy : " << energy
                   << ", theta : " << theta << std::endl;
         return kInvalidD;
     }
@@ -452,26 +449,33 @@ Double_t TTGTIKProcessor::GetEcm_classic_kinematics(Double_t energy, Double_t th
     return alpha * vcm * vcm;
 }
 
-Double_t TTGTIKProcessor::GetEcm_kinematics(Double_t energy, Double_t theta, Double_t low_e, Double_t high_e) {
-    return kInvalidD;
-}
-
 ////////////////////////////////////////////////////////////////////////////////
 /// assuming Ecm and detected energy, calculate LAB angle.
 
 Double_t TTGTIKProcessor::GetLabAngle(Double_t energy, Double_t energy_cm) {
-    Double_t energy_L = energy + fParticleMass[3];
-    Double_t energy_cm_all = energy_cm + fParticleMass[0] + fParticleMass[1];
+    Double_t energy_L = energy + M4;
+    Double_t energy_cm_all = energy_cm + M1 + M2;
     Double_t energy_4cm =
-        (energy_cm_all - (fParticleMass[2] * fParticleMass[2] - fParticleMass[3] * fParticleMass[3]) / energy_cm_all) /
-        2.0;
-    Double_t energy1 = (energy_cm * energy_cm + 2.0 * energy_cm * (fParticleMass[0] + fParticleMass[1]) +
-                        2.0 * fParticleMass[0] * fParticleMass[1]) /
-                       (2.0 * fParticleMass[1]);
-    Double_t beta = TMath::Sqrt(energy1 * energy1 - fParticleMass[0] * fParticleMass[0]) / (energy1 + fParticleMass[1]);
+        (energy_cm_all - (M3 * M3 - M4 * M4) / energy_cm_all) / 2.0;
+    Double_t energy1 = (energy_cm * energy_cm + 2.0 * energy_cm * (M1 + M2) +
+                        2.0 * M1 * M2) /
+                       (2.0 * M2);
+    Double_t beta = TMath::Sqrt(energy1 * energy1 - M1 * M1) / (energy1 + M2);
 
     Double_t arg = (energy_L - energy_4cm * TMath::Sqrt(1.0 - beta * beta)) /
-                   (beta * TMath::Sqrt(energy_L * energy_L - fParticleMass[3] * fParticleMass[3]));
+                   (beta * TMath::Sqrt(energy_L * energy_L - M4 * M4));
 
     return TMath::ACos(arg);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+/// This is used for 26Si(a, p)29P analysis.
+/// from TALYS simulation data, the ratio of excited energy
+/// are calculated and from the saved custom ROOT file,
+/// assign the excited energy randomly.
+///
+/// You can modify as you like.
+
+Double_t TTGTIKProcessor::GetCustomExcitedEnergy() {
+    return 0.0;
 }

@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 13:11:23
- * @note    last modified: 2024-08-14 18:47:17
+ * @note    last modified: 2024-08-15 23:46:13
  * @details
  */
 
@@ -73,10 +73,10 @@ class art::TNBodyReactionProcessor : public TProcessor {
     //! 6. get reac pos with the Y value: init_range - Y => distance
     TGraph *gr_generating_func;     //! 3. function
     TGraph *gr_generating_func_inv; //! 4. function
-    void InitGeneratingFunc();      //! read from data file and set 3. 4. functions
+    void InitGeneratingFunc(void);  //! read from data file and set 3. 4. functions
 
     /**
-     * @fn
+     * @fn random generator
      * From beam range and target thickness, get random beam energy just before reaction
      * and distance from target window (for gas target)
      * @param (range) range of the beam

@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 11:11:02
- * @note    last modified: 2024-08-15 22:45:00
+ * @note    last modified: 2024-08-16 10:21:47
  * @details
  */
 
@@ -69,6 +69,8 @@ class art::TTGTIKProcessor : public TProcessor {
     IntVec_t fParticleZArray;
     /// @brief reaction particles Mass num array
     IntVec_t fParticleAArray;
+    /// @brief Excited Energy
+    Double_t fExcitedEnergy;
     /// @brief Flag of custom processor
     Bool_t fDoCustom;
 
@@ -83,6 +85,12 @@ class art::TTGTIKProcessor : public TProcessor {
     const Double_t kEpsilon = 1.0e-3;
     /// @brief Max iteration number of the bisection method
     const Int_t kMaxIteration = 1000;
+
+    Double_t M1;
+    Double_t M2;
+    Double_t M3_default;
+    Double_t M3;
+    Double_t M4;
 
   private:
     /// @brief Calculate reaction Z position
@@ -142,6 +150,11 @@ class art::TTGTIKProcessor : public TProcessor {
     /// @param energy_cm (MeV)
     /// @return angle (radian)
     Double_t GetLabAngle(Double_t energy, Double_t energy_cm);
+
+    /// @brief Custom function, random excited energy generator
+    /// @param void
+    /// @return Excited energy (MeV)
+    Double_t GetCustomExcitedEnergy(void);
 
     // Copy constructor (prohibited)
     TTGTIKProcessor(const TTGTIKProcessor &rhs) = delete;
