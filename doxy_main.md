@@ -22,7 +22,7 @@ Documents produced by doxygen are derivative works derived from the input used i
 
 プロセッサなどを作成していると、
 
-```
+```cpp
 TClonesArray **fInData; //!
 ```
 
@@ -55,3 +55,26 @@ ROOTには認識されるが、Dictionaryに登録しない場合は、
 という書き方もできるらしいが、一応まだexperimentalらしい。
 
 通常は、ClassDefかClassDefOverrideだけ使えば良さそうな感じかな?
+
+### Processorの仮想関数について
+
+TProcessorを継承して新しいプロセッサを作成するときに、オーバーライドすることができる汎用的に使えそうな(自分が使っている)クラスメソッドの一覧のメモ。
+
+```cpp
+   // InitProcメソッドで呼ばれる
+   virtual void Init (TEventCollection *) {;}
+
+   // user defined member functions to process data
+   virtual void BeginOfRun() {;}
+   virtual void EndOfRun() {;}
+   virtual void PreProcess() {;}
+   virtual void Process() {;}
+   virtual void PostProcess() {;}
+   virtual void PreLoop() {;}
+   virtual void PostLoop() {;}
+   virtual void Terminate() {;}
+```
+
+使うときは、virtual修飾子はつけなくてもよく(つけても良い)、overrideキーワードをつけておくとオーバーライドした関数であることがわかって良いかも。
+この時は、ClassDefOverrideを使う。
+どのタイミングでこの関数が呼ばれるかという違いがあるが、InitとProcessさえあれば行いたい処理は十分可能だと思う。
