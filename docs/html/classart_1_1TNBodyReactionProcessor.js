@@ -6,7 +6,7 @@ var classart_1_1TNBodyReactionProcessor =
     [ "GetLossEnergyVector", "classart_1_1TNBodyReactionProcessor.html#a5a90f00df7fa69c169880d93964baee3", null ],
     [ "GetRandomReactionDistance", "classart_1_1TNBodyReactionProcessor.html#a93b1bfee5891f36676f720d5cbb79e06", null ],
     [ "Init", "classart_1_1TNBodyReactionProcessor.html#aaddc093559a73a2e06c00b351a9e67ee", null ],
-    [ "InitGeneratingFunc", "classart_1_1TNBodyReactionProcessor.html#a7339e8882e2dec9c0b92b54785d93b83", null ],
+    [ "InitGeneratingFunc", "classart_1_1TNBodyReactionProcessor.html#a7ad99a67d63ec4002db0b98637b9951c", null ],
     [ "operator=", "classart_1_1TNBodyReactionProcessor.html#a0661d3a8992e8c47da0c6c936613a02e", null ],
     [ "Process", "classart_1_1TNBodyReactionProcessor.html#a0c5270eb2f61ec0dd249a3acfe3cfb29", null ],
     [ "c", "classart_1_1TNBodyReactionProcessor.html#af4455b0b470bb43b74c2c3ed4df113d5", null ],

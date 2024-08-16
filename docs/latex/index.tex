@@ -13,7 +13,7 @@ Documents produced by doxygen are derivative works derived from the input used i
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{TClonesArray **fInData; //!}
+\DoxyCodeLine{TClonesArray **fInData; \textcolor{comment}{//!}}
 
 \end{DoxyCode}
 
@@ -45,4 +45,25 @@ ROOTには認識されるが、\+Dictionaryに登録しない場合は、
 
 という書き方もできるらしいが、一応まだexperimentalらしい。
 
-通常は、\+Class\+Defか\+Class\+Def\+Overrideだけ使えば良さそうな感じかな? 
+通常は、\+Class\+Defか\+Class\+Def\+Overrideだけ使えば良さそうな感じかな?\hypertarget{index_autotoc_md5}{}\doxysubsection{Processorの仮想関数について}\label{index_autotoc_md5}
+TProcessorを継承して新しいプロセッサを作成するときに、オーバーライドすることができる汎用的に使えそうな(自分が使っている)クラスメソッドの一覧のメモ。
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// InitProcメソッドで呼ばれる}}
+\DoxyCodeLine{\textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Init (TEventCollection *) \{;\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// user defined member functions to process data}}
+\DoxyCodeLine{\textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRun() \{;\}}
+\DoxyCodeLine{\textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfRun() \{;\}}
+\DoxyCodeLine{\textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PreProcess() \{;\}}
+\DoxyCodeLine{\textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Process() \{;\}}
+\DoxyCodeLine{\textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PostProcess() \{;\}}
+\DoxyCodeLine{\textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PreLoop() \{;\}}
+\DoxyCodeLine{\textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PostLoop() \{;\}}
+\DoxyCodeLine{\textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Terminate() \{;\}}
+
+\end{DoxyCode}
+
+
+使うときは、virtual修飾子はつけなくてもよく(つけても良い)、overrideキーワードをつけておくとオーバーライドした関数であることがわかって良いかも。 この時は、\+Class\+Def\+Overrideを使う。 どのタイミングでこの関数が呼ばれるかという違いがあるが、\+Initと\+Processさえあれば行いたい処理は十分可能だと思う。 

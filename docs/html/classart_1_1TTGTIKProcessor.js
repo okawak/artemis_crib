@@ -4,6 +4,7 @@ var classart_1_1TTGTIKProcessor =
     [ "~TTGTIKProcessor", "classart_1_1TTGTIKProcessor.html#a2c2c8a28f4efef0edbd1406a07528d3e", null ],
     [ "TTGTIKProcessor", "classart_1_1TTGTIKProcessor.html#ab690884fb5ec833b005931bc7829dab4", null ],
     [ "bisection", "classart_1_1TTGTIKProcessor.html#a6ff06634345a824c070a4119c79127dd", null ],
+    [ "GetCustomExcitedEnergy", "classart_1_1TTGTIKProcessor.html#a33ece68d6761cb236b8f8092bce91df3", null ],
     [ "GetEcm_classic_kinematics", "classart_1_1TTGTIKProcessor.html#ade8a8ad701318a592497b546335aac3c", null ],
     [ "GetEcm_kinematics", "classart_1_1TTGTIKProcessor.html#ae91c61c1d621e02db8139685f814c615", null ],
     [ "GetEcmFromBeam", "classart_1_1TTGTIKProcessor.html#a472bf93bb0dd4feaae5b059b138eec04", null ],
@@ -18,6 +19,7 @@ var classart_1_1TTGTIKProcessor =
     [ "fDetectorParameterName", "classart_1_1TTGTIKProcessor.html#aec5086aa954527f5b0def4d59e358059", null ],
     [ "fDetectorPrm", "classart_1_1TTGTIKProcessor.html#ac7be3a4fd23a537a4de629d8dc39b6c9", null ],
     [ "fDoCustom", "classart_1_1TTGTIKProcessor.html#a201c8c1dc9c41f6eb7bfe5a8a5690dfe", null ],
+    [ "fExcitedEnergy", "classart_1_1TTGTIKProcessor.html#ab6c38ae3f9b53c11b3ec5570df3661be", null ],
     [ "fInData", "classart_1_1TTGTIKProcessor.html#a9ac1648cacee98912ad39fcb6ca58f83", null ],
     [ "fInitialBeamEnergy", "classart_1_1TTGTIKProcessor.html#a931096dbbacf1732cc7bf1dfc4257e93", null ],
     [ "fInputColName", "classart_1_1TTGTIKProcessor.html#a59d682c3fc51757e1441de5474add20a", null ],
@@ -36,5 +38,10 @@ var classart_1_1TTGTIKProcessor =
     [ "kInitialMax", "classart_1_1TTGTIKProcessor.html#a47d40d2a8ddbb2c2f637aeb24059b9c0", null ],
     [ "kInitialMin", "classart_1_1TTGTIKProcessor.html#a57b4b633a1be58bcf888d53c782c14b9", null ],
     [ "kMaxIteration", "classart_1_1TTGTIKProcessor.html#ac92319eddc20e647b44b93cc40193581", null ],
+    [ "M1", "classart_1_1TTGTIKProcessor.html#a149768f2b9b192a0b4ca1d822d2904eb", null ],
+    [ "M2", "classart_1_1TTGTIKProcessor.html#aa52a310d8a920f95dede623706f17ca3", null ],
+    [ "M3", "classart_1_1TTGTIKProcessor.html#a5579b54d8b7ce7822ba1faa035d3f0b3", null ],
+    [ "M3_default", "classart_1_1TTGTIKProcessor.html#a51b3544f2ccaa51ebec333c59fc43752", null ],
+    [ "M4", "classart_1_1TTGTIKProcessor.html#ab732c1a1db0c78b428d63f61ea3d8c00", null ],
     [ "srim", "classart_1_1TTGTIKProcessor.html#adec5399bdcda2a7ce01a226d71ae746b", null ]
 ];
