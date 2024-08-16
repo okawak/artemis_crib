@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 11:11:02
- * @note    last modified: 2024-08-16 10:21:47
+ * @note    last modified: 2024-08-16 15:12:33
  * @details
  */
 
@@ -152,9 +152,10 @@ class art::TTGTIKProcessor : public TProcessor {
     Double_t GetLabAngle(Double_t energy, Double_t energy_cm);
 
     /// @brief Custom function, random excited energy generator
-    /// @param void
+    /// @param telID
+    /// @param Etotal (MeV)
     /// @return Excited energy (MeV)
-    Double_t GetCustomExcitedEnergy(void);
+    Double_t GetCustomExcitedEnergy(Int_t telID, Double_t Etotal);
 
     // Copy constructor (prohibited)
     TTGTIKProcessor(const TTGTIKProcessor &rhs) = delete;

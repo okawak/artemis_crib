@@ -3,25 +3,21 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:35:07
- * @note    last modified: 2024-08-16 10:48:14
+ * @note    last modified: 2024-08-16 15:22:40
  * @details bisection method (not Newton method)
  */
 
 #include "TTGTIKProcessor.h"
 
 #include "../geo/TDetectorParameter.h"
-#include <ICharge.h>
-#include <ITiming.h>
-#include <Mass.h> // TSrim library
-#include <TDataObject.h>
-#include <constant.h>
-
 #include "TReactionInfo.h"
 
-#include <TClass.h>
-#include <TClonesArray.h>
+#include <Mass.h> // TSrim library
+
+#include <TFile.h>
+#include <TGraph.h>
+#include <TKey.h>
 #include <TLorentzVector.h>
-#include <TMath.h>
 #include <TRandom.h>
 
 using art::TTGTIKProcessor;
@@ -140,7 +136,7 @@ void TTGTIKProcessor::Init(TEventCollection *col) {
     // unit = mass (MeV)
     M1 = amdc::Mass(fParticleZArray[0], fParticleAArray[0]) * amdc::amu;
     M2 = amdc::Mass(fParticleZArray[1], fParticleAArray[1]) * amdc::amu;
-    Double_t M3_default = amdc::Mass(fParticleZArray[2], fParticleAArray[2]) * amdc::amu;
+    M3_default = amdc::Mass(fParticleZArray[2], fParticleAArray[2]) * amdc::amu;
     M4 = amdc::Mass(fParticleZArray[3], fParticleAArray[3]) * amdc::amu;
 
     if (!fDoCustom && fExcitedEnergy > 0)
@@ -200,8 +196,12 @@ void TTGTIKProcessor::Process() {
     const TTrack *const TrackData = dynamic_cast<const TTrack *>(inTrackData);
 
     // excited energy process
-    if (fDoCustom)
-        M3 += GetCustomExcitedEnergy();
+    Double_t excited_energy = 0.0;
+    if (fDoCustom) {
+        excited_energy = GetCustomExcitedEnergy(Data->GetTelID(), Data->GetEtotal());
+        M3 = M3_default + excited_energy;
+    } else if (fExcitedEnergy > 0)
+        excited_energy = fExcitedEnergy;
 
     Double_t reac_z = GetReactionPosition(TrackData, Data);
 
@@ -212,6 +212,8 @@ void TTGTIKProcessor::Process() {
     outData->SetID(0);
     outData->SetXYZ(TrackData->GetX(reac_z), TrackData->GetY(reac_z), reac_z);
     outData->SetEnergy(GetEcmFromBeam(reac_z, TrackData));
+    // outData->SetTheta();
+    outData->SetExEnergy(excited_energy);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -474,8 +476,112 @@ Double_t TTGTIKProcessor::GetLabAngle(Double_t energy, Double_t energy_cm) {
 /// are calculated and from the saved custom ROOT file,
 /// assign the excited energy randomly.
 ///
+/// this is not generic function, so file I/O is occur event by event.
+/// So it is not an efficient function.
+/// (almost all process can be included in Init function.)
+///
 /// You can modify as you like.
 
-Double_t TTGTIKProcessor::GetCustomExcitedEnergy() {
-    return 0.0;
+Double_t TTGTIKProcessor::GetCustomExcitedEnergy(Int_t telID, Double_t Etotal) {
+    // up to 10th excited states of 29P
+    Int_t ex_id = 0;
+    const Double_t ex_energys[11] = {
+        0.0,
+        1.38355,
+        1.95391,
+        2.4227,
+        3.1059,
+        3.4476,
+        4.0805,
+        4.343,
+        4.642,
+        4.759,
+        4.9541,
+    };
+    Double_t max_energy = 30.0; // MeV
+    if (Etotal > max_energy)
+        return 0.0;
+
+    // initialization
+    TString filepath = "/home/okawa/art_analysis/develop/develop/ana/random_generator.root";
+    TFile *file = TFile::Open(filepath);
+    if (!file || file->IsZombie()) {
+        std::cerr << "Error opening file! :\n"
+                  << filepath << std::endl;
+        return 0.0;
+    }
+
+    TDirectory *dir = (TDirectory *)file->Get(Form("tel%d", telID));
+    if (!dir) {
+        std::cerr << "Error opening directory: tel" << telID << std::endl;
+        file->Close();
+        return 0.0;
+    }
+
+    std::vector<TGraph *> graphs;
+    std::vector<TGraph *> grs_ratio;
+    TList *keys = dir->GetListOfKeys();
+    TIter next(keys);
+    TKey *key;
+    while ((key = (TKey *)next())) {
+        TObject *obj = key->ReadObj();
+        if (obj->InheritsFrom(TGraph::Class())) {
+            graphs.emplace_back((TGraph *)obj);
+            TGraph *g = new TGraph();
+            grs_ratio.emplace_back(g);
+        }
+    }
+
+    Int_t i_point = 0;
+    for (Double_t ene = 5.0; ene < max_energy; ene += 0.1) {
+        Double_t total = 0.0;
+        for (const auto *gr : graphs) {
+            Double_t val = gr->Eval(ene, nullptr, "S");
+            if (val < 0.0)
+                val = 0.0;
+            total += val;
+        }
+
+        // for (const auto *gr : graphs) {
+        for (Size_t j = 0; j < graphs.size(); j++) {
+            Double_t raw_val = graphs[j]->Eval(ene, nullptr, "S");
+            if (raw_val < 0.0)
+                raw_val = 0.0;
+            Double_t ratio = 0.0;
+
+            if (total > 0.001)
+                ratio = raw_val / total;
+
+            if (TString(graphs[j]->GetName()) == Form("tel%d(a,p0)", telID) && total < 0.001)
+                ratio = 1.0;
+
+            grs_ratio[j]->SetPoint(i_point, ene, ratio);
+        }
+        i_point++;
+    }
+
+    // process of random number
+    Double_t uniform = gRandom->Uniform();
+    Double_t tmp = 0.0;
+    for (Size_t i = 0; i < grs_ratio.size(); i++) {
+        Double_t val = grs_ratio[i]->Eval(Etotal, nullptr, "S");
+        if (val < 0.0)
+            val = 0.0;
+        tmp += val;
+        if (uniform < tmp) {
+            ex_id = i;
+            break;
+        }
+        if (i == grs_ratio.size() - 1) {
+            std::cerr << "could not assign excited id!" << std::endl;
+        }
+    }
+
+    file->Close();
+    delete file;
+
+    // debug
+    // std::cout << Etotal << ", assigned ex_id = " << ex_id << std::endl;
+
+    return ex_energys[ex_id];
 }

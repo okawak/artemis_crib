@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:27:43
- * @note    last modified: 2024-08-14 19:10:44
+ * @note    last modified: 2024-08-16 13:42:57
  * @details
  */
 
@@ -47,20 +47,26 @@ class art::TReactionInfo : public TDataObject {
     Double_t GetExEnergy() const { return fExEnergy; }
     void SetExEnergy(Double_t arg) { fExEnergy = arg; }
 
-    virtual void Copy(TObject &dest) const;
-    virtual void Clear(Option_t *opt = "");
+    void Copy(TObject &dest) const override;
+    void Clear(Option_t *opt = "") override;
 
   protected:
-    Double_t fEnergy; /// Ecm of the reaction
-    Double_t fTheta;  /// Thetacm of the reaction
+    /// @brief Ecm of the reaction
+    Double_t fEnergy;
+    /// @brief Theta cm of the reaction
+    Double_t fTheta;
 
-    Double_t fX; /// reaction position at LAB system, x
-    Double_t fY; /// reaction position at LAB system, y
-    Double_t fZ; /// reaction position at LAB system, z
+    /// @brief reaction position at LAB system, x
+    Double_t fX;
+    /// @brief reaction position at LAB system, y
+    Double_t fY;
+    /// @brief reaction position at LAB system, z
+    Double_t fZ;
 
-    Double_t fExEnergy; /// excited energy of residual nucleus
+    /// @brief excited energy of residual nucleus
+    Double_t fExEnergy;
 
-    ClassDef(TReactionInfo, 1)
+    ClassDefOverride(TReactionInfo, 1)
 };
 
 #endif // end of #ifndef _TREACTIONINFO_H_
