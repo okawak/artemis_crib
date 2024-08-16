@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:35:07
- * @note    last modified: 2024-08-16 15:22:40
+ * @note    last modified: 2024-08-16 21:43:05
  * @details bisection method (not Newton method)
  */
 
@@ -211,8 +211,12 @@ void TTGTIKProcessor::Process() {
     TReactionInfo *outData = static_cast<TReactionInfo *>(fOutData->ConstructedAt(0));
     outData->SetID(0);
     outData->SetXYZ(TrackData->GetX(reac_z), TrackData->GetY(reac_z), reac_z);
-    outData->SetEnergy(GetEcmFromBeam(reac_z, TrackData));
-    // outData->SetTheta();
+
+    Double_t Ecm = GetEcmFromBeam(reac_z, TrackData);
+    outData->SetEnergy(Ecm);
+
+    auto [ELab, ALab] = GetELabALabPair(reac_z, TrackData, Data);
+    outData->SetTheta(180.0 - (180.0 / TMath::Pi()) * GetCMAngle(ELab, Ecm, ALab));
     outData->SetExEnergy(excited_energy);
 }
 
@@ -364,12 +368,29 @@ Double_t TTGTIKProcessor::GetEcmFromBeam(Double_t z, const TTrack *track) {
 /// Currently it uses classsic kinematics.
 
 Double_t TTGTIKProcessor::GetEcmFromDetectParticle(Double_t z, const TTrack *track, const TTelescopeData *data) {
+    auto [energy, theta] = GetELabALabPair(z, track, data);
+    if (!IsValid(energy))
+        return kInvalidD;
+
+    // kinematics (using bisection method) detected particle id=3
+    // return GetEcm_kinematics(energy, theta, 0.01, 1.0e+4);
+
+    // classic kinematics
+    return GetEcm_classic_kinematics(energy, theta);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+/// From <b>assuming Z position (reaction position)</b>,
+/// calculate the ELab and ALab of Z4 from detected particle information.
+/// It uses TSrim library.
+
+std::pair<Double_t, Double_t> TTGTIKProcessor::GetELabALabPair(Double_t z, const TTrack *track, const TTelescopeData *data) {
     Int_t tel_id = data->GetTelID();
     const TParameterObject *const inPrm = static_cast<TParameterObject *>((*fDetectorPrm)->At(tel_id - 1));
     const TDetectorParameter *Prm = dynamic_cast<const TDetectorParameter *>(inPrm);
     if (!Prm) {
         std::cerr << "parameter is not found" << std::endl;
-        return kInvalidD;
+        return {kInvalidD, kInvalidD};
     }
 
     Int_t stripNum[2] = {Prm->GetStripNum(0), Prm->GetStripNum(1)};
@@ -401,12 +422,7 @@ Double_t TTGTIKProcessor::GetEcmFromDetectParticle(Double_t z, const TTrack *tra
                                       data->GetEtotal(), std::string(fTargetName.Data()),
                                       -(detect_position - reaction_position).Mag(),
                                       fPressure, fTemperature);
-
-    // kinematics (using bisection method) detected particle id=3
-    // return GetEcm_kinematics(energy, theta, 0.01, 1.0e+4);
-
-    // classic kinematics
-    return GetEcm_classic_kinematics(energy, theta);
+    return {energy, theta};
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -452,22 +468,20 @@ Double_t TTGTIKProcessor::GetEcm_classic_kinematics(Double_t energy, Double_t th
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-/// assuming Ecm and detected energy, calculate LAB angle.
+/// Assuming Ecm and detected energy, calculate CM angle.
+/// This is also used classic kinematics
 
-Double_t TTGTIKProcessor::GetLabAngle(Double_t energy, Double_t energy_cm) {
-    Double_t energy_L = energy + M4;
-    Double_t energy_cm_all = energy_cm + M1 + M2;
-    Double_t energy_4cm =
-        (energy_cm_all - (M3 * M3 - M4 * M4) / energy_cm_all) / 2.0;
-    Double_t energy1 = (energy_cm * energy_cm + 2.0 * energy_cm * (M1 + M2) +
-                        2.0 * M1 * M2) /
-                       (2.0 * M2);
-    Double_t beta = TMath::Sqrt(energy1 * energy1 - M1 * M1) / (energy1 + M2);
+Double_t TTGTIKProcessor::GetCMAngle(Double_t ELab, Double_t Ecm, Double_t ALab) {
+    Double_t alpha = (M2 * (M1 + M2)) / (2.0 * M1);
+    Double_t beta = (M4 * (M3 + M4)) / (2.0 * M3);
+    Double_t qvalue = (M1 + M2) - (M3 + M4);
 
-    Double_t arg = (energy_L - energy_4cm * TMath::Sqrt(1.0 - beta * beta)) /
-                   (beta * TMath::Sqrt(energy_L * energy_L - M4 * M4));
+    Double_t v4 = TMath::Sqrt(2.0 * ELab / M4);
+    Double_t vcm = TMath::Sqrt(Ecm / alpha);
+    Double_t v4cm = TMath::Sqrt((Ecm + qvalue) / beta);
 
-    return TMath::ACos(arg);
+    Double_t theta_cm = TMath::ACos((v4 * TMath::Cos(ALab) - vcm) / v4cm);
+    return theta_cm;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

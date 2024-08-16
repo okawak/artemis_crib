@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 11:11:02
- * @note    last modified: 2024-08-16 15:12:33
+ * @note    last modified: 2024-08-16 21:40:48
  * @details
  */
 
@@ -124,6 +124,13 @@ class art::TTGTIKProcessor : public TProcessor {
     /// @return Ecm (MeV)
     Double_t GetEcmFromBeam(Double_t z, const TTrack *track);
 
+    /// @brief Get LAB energy and angle from detected particle information
+    /// @param z (mm)
+    /// @param track (art::TTrack)
+    /// @param data (art::TTelescopeData)
+    /// @return Ecm (MeV)
+    std::pair<Double_t, Double_t> GetELabALabPair(Double_t z, const TTrack *track, const TTelescopeData *data);
+
     /// @brief Get Ecm from detected particle information
     /// @param z (mm)
     /// @param track (art::TTrack)
@@ -146,10 +153,11 @@ class art::TTGTIKProcessor : public TProcessor {
     Double_t GetEcm_classic_kinematics(Double_t energy, Double_t theta);
 
     /// @brief Get Lab Angle after reconstruction
-    /// @param energy (MeV)
-    /// @param energy_cm (MeV)
+    /// @param ELab (MeV)
+    /// @param Ecm (MeV)
+    /// @param ALab (radian)
     /// @return angle (radian)
-    Double_t GetLabAngle(Double_t energy, Double_t energy_cm);
+    Double_t GetCMAngle(Double_t ELab, Double_t Ecm, Double_t ALab);
 
     /// @brief Custom function, random excited energy generator
     /// @param telID
