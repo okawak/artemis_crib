@@ -1,10 +1,11 @@
-/*
-   @File name     : TSolidAngleProcessor.h
-   @description   :
-   @Author        : Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
-   @Created date  : 2023-08-01 11:08:17
-   @Last modified : 2024-05-06 16:59:20
-*/
+/**
+ * @file    TSolidAngleProcessor.h
+ * @brief
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2023-08-01 11:08:17
+ * @note    last modified: 2024-08-17 16:12:57
+ * @details
+ */
 
 #ifndef _TSOLIDANGLEPROCESSOR_H_
 #define _TSOLIDANGLEPROCESSOR_H_
@@ -22,38 +23,60 @@ class TClonesArray;
 
 class art::TSolidAngleProcessor : public TProcessor {
   public:
+    /// @brief default constructor
     TSolidAngleProcessor();
-    virtual ~TSolidAngleProcessor();
+    /// @brief default destructor
+    ~TSolidAngleProcessor();
 
-    virtual void Init(TEventCollection *col);
-    virtual void Process();
-    virtual void PostLoop();
+    /// @brief Init (override)
+    /// @param col
+    void Init(TEventCollection *col) override;
+
+    /// @brief Process (override)
+    void Process() override;
+    /// @brief EndOfRun process (override)
+    void EndOfRun() override;
 
   protected:
-    TString fInputColName_cm;
-    TString fInputColName_det;
-    TClonesArray **fInData_cm;  //!
-    TClonesArray **fInData_det; //!
+    /// @brief Input detected particle object name
+    TString fInputColName;
+    /// @brief Input reaction object name
+    TString fInputReacColName;
+    /// @brief Input detected particle object
+    TClonesArray **fInData; //!
+    /// @brief Input reaction object
+    TClonesArray **fInReacData; //!
 
+    /// @brief Histogram bin number
     Int_t fNbin_angle;
+    /// @brief Histogram range (min, max)
     DoubleVec_t fRange_angle;
+    /// @brief Histogram bin number
     Int_t fNbin_energy;
+    /// @brief Histogram range (min, max)
     DoubleVec_t fRange_energy;
-    TString fFileName;
-    Bool_t fIsIK;
 
-    TH1D *h1_e;     // solid angle (x: Ecm)
-    TH1D *h1_e_all; // for normalize (x: Ecm)
-    TH1D *h1_a;     // solid angle (x: angle_cm)
-    TH1D *h1_a_all; // for nbormalize (x: angle_cm)
-    TH2D *h2;       // solid angle (x: Ecm, y: angle_cm)
-    TH2D *h2_all;   // for normalize (x: Ecm, y: angle_cm)
+    /// @brief Output histogram ROOT file name
+    TString fFileName;
+
+    /// @brief solid angle (x: angle_cm)
+    TH1D *h1_a;
+    /// @brief for normalize (x: angle_cm)
+    TH1D *h1_a_all;
+    /// @brief solid angle (x: Ecm)
+    TH1D *h1_e;
+    /// @brief for normalize (x: Ecm)
+    TH1D *h1_e_all;
+    /// @brief solid angle (x: Ecm, y: angle_cm)
+    TH2D *h2;
+    /// @brief for normalie (x: Ecm, y: angle_cm)
+    TH2D *h2_all;
 
   private:
-    TSolidAngleProcessor(const TSolidAngleProcessor &rhs);
-    TSolidAngleProcessor &operator=(const TSolidAngleProcessor &rhs);
+    TSolidAngleProcessor(const TSolidAngleProcessor &rhs) = delete;
+    TSolidAngleProcessor &operator=(const TSolidAngleProcessor &rhs) = delete;
 
-    ClassDef(TSolidAngleProcessor, 1)
+    ClassDefOverride(TSolidAngleProcessor, 1)
 };
 
 #endif // end of #ifndef _TSOLIDANGLEPROCESSOR_H_

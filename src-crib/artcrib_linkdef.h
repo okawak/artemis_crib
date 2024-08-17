@@ -52,7 +52,7 @@
 #pragma link C++ class art::TTreeBeamGenerator;
 #pragma link C++ class art::TSolidAngleProcessor;
 // #pragma link C++ class art::TRutherfordScattering;
-#pragma link C++ class art::TCRIBPIDProcessor;
+// #pragma link C++ class art::TCRIBPIDProcessor;
 // timestamp
 #pragma link C++ class art::TTSData + ;
 #pragma link C++ class art::TTSMappingProcessor;

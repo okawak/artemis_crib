@@ -25,14 +25,6 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 find_package(artemis HINTS ${ARTPATH} REQUIRED)
 find_package(yaml-cpp HINTS ${ARTEMIS_YAML_CPP_LIB_DIR}/../ REQUIRED)
 
-# we will not support SRIMlib in the future
-find_package(SRIMlib HINTS ${SRIMLIB_DIR})
-if(SRIMlib_FOUND)
-  message(STATUS "Found SRIMlib library")
-else()
-  message(STATUS "Not Found SRIMlib library")
-endif()
-
 find_package(TSrim)
 if(TSrim_FOUND)
   message(STATUS "Found TSrim library")

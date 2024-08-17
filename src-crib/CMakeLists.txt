@@ -18,7 +18,7 @@ set(CRIBSOURCES
     # telescope
     telescope/TTelescopeData.cc
     telescope/TTelescopeProcessor.cc
-    # reconst reconst/TTGTIKProcessor.cc
+    # reconst
     reconst/TReactionInfo.cc
     # commands
     commands/TCatCmdLoopStart.cc
@@ -36,12 +36,8 @@ set(CRIBSOURCES
     geo/TTargetParameter.cc
     # simulation
     simulation/TTreePeriodicEventStore.cc
-    # simulation/TEffectiveThickness.cc simulation/TDetectParticleProcessor.cc
-    # simulation/TNBodyReactionProcessor.cc
     simulation/TParticleInfo.cc
-    # simulation/TRandomBeamGenerator.cc simulation/TTreeBeamGenerator.cc
     simulation/TSolidAngleProcessor.cc
-    # simulation/TRutherfordScattering.cc simulation/TCRIBPIDProcessor.cc
     # timestamp
     timestamp/TTSData.cc
     timestamp/TTSMappingProcessor.cc
@@ -65,7 +61,7 @@ set(CRIBHEADERS
     # telescope
     telescope/TTelescopeData.h
     telescope/TTelescopeProcessor.h
-    # reconst reconst/TTGTIKProcessor.h
+    # reconst
     reconst/TReactionInfo.h
     # commands
     commands/TCatCmdLoopStart.h
@@ -83,36 +79,32 @@ set(CRIBHEADERS
     geo/TTargetParameter.h
     # simulation
     simulation/TTreePeriodicEventStore.h
-    # simulation/TEffectiveThickness.h simulation/TDetectParticleProcessor.h
-    # simulation/TNBodyReactionProcessor.h
     simulation/TParticleInfo.h
-    # simulation/TRandomBeamGenerator.h simulation/TTreeBeamGenerator.h
     simulation/TSolidAngleProcessor.h
-    # simulation/TRutherfordScattering.h simulation/TCRIBPIDProcessor.h
     # timestamp
     timestamp/TTSData.h
     timestamp/TTSMappingProcessor.h
     timestamp/TModuleDecoderTimestamp.h)
 
-if(SRIMlib_FOUND AND TSrim_FOUND)
+if(TSrim_FOUND)
   list(
     APPEND
     CRIBSOURCES
     reconst/TTGTIKProcessor.cc
+    # simulation/TCRIBPIDProcessor.cc
     simulation/TDetectParticleProcessor.cc
     simulation/TNBodyReactionProcessor.cc
     simulation/TTreeBeamGenerator.cc
-    simulation/TRandomBeamGenerator.cc
-    simulation/TCRIBPIDProcessor.cc)
+    simulation/TRandomBeamGenerator.cc)
   list(
     APPEND
     CRIBHEADERS
     reconst/TTGTIKProcessor.h
+    # simulation/TCRIBPIDProcessor.h
     simulation/TDetectParticleProcessor.h
     simulation/TNBodyReactionProcessor.h
     simulation/TTreeBeamGenerator.h
-    simulation/TRandomBeamGenerator.h
-    simulation/TCRIBPIDProcessor.h)
+    simulation/TRandomBeamGenerator.h)
 endif()
 
 add_library(${CRIBLIB_NAME} SHARED ${CRIBSOURCES})
@@ -139,10 +131,6 @@ target_link_libraries(
           artemis::artparam
           artemis::artshare
           artemis::CAT)
-# we will not support SRIMlib in the future
-if(SRIMlib_FOUND)
-  target_link_libraries(${CRIBLIB_NAME} PRIVATE SRIMlib)
-endif()
 
 if(TSrim_FOUND)
   target_link_libraries(${CRIBLIB_NAME} PRIVATE TSrim::Srim)

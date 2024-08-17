@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:36:36
- * @note    last modified: 2024-08-14 18:40:27
+ * @note    last modified: 2024-08-17 14:09:39
  * @details just modify the process() from TTreeEventStore to return 0
  */
 
@@ -23,6 +23,9 @@
 #include <TTree.h>
 
 ClassImp(art::TTreePeriodicEventStore);
+
+////////////////////////////////////////////////////////////////////////////////
+/// default constructor.
 
 art::TTreePeriodicEventStore::TTreePeriodicEventStore()
     : fFile(nullptr), fTree(nullptr), fEventHeader(nullptr) {

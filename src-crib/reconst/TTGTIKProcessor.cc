@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:35:07
- * @note    last modified: 2024-08-16 21:43:05
+ * @note    last modified: 2024-08-17 16:18:42
  * @details bisection method (not Newton method)
  */
 
@@ -522,6 +522,7 @@ Double_t TTGTIKProcessor::GetCustomExcitedEnergy(Int_t telID, Double_t Etotal) {
     if (!file || file->IsZombie()) {
         std::cerr << "Error opening file! :\n"
                   << filepath << std::endl;
+        delete file;
         return 0.0;
     }
 
