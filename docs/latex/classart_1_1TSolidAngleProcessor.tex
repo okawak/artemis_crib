@@ -14,63 +14,61 @@ Inheritance diagram for art\+::TSolid\+Angle\+Processor\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a1aaeb81d9adb24651f6f8fac56303bb4}{TSolid\+Angle\+Processor}} ()
-\item 
-virtual \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a106fe042a3cc1848a7e9e2dc1524233d}{$\sim$\+TSolid\+Angle\+Processor}} ()
-\item 
-virtual void \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a8a4a32dcb31d710fcf6ee867cd95e863}{Init}} (TEvent\+Collection $\ast$col)
-\item 
-virtual void \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a44094996fc3d6a3b063d5d16563a8e65}{Process}} ()
-\item 
-virtual void \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a1de6dff2a65bd24eabb1121f60dcdef1}{Post\+Loop}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a106fe042a3cc1848a7e9e2dc1524233d}{$\sim$\+TSolid\+Angle\+Processor}} ()
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a96d2ee24505060f68f18c5004aaa1c98}{Init}} (TEvent\+Collection $\ast$col) override
+\begin{DoxyCompactList}\small\item\em Init (override) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_adda1c25a6217f8a39cdaf82510c4c881}{Process}} () override
+\begin{DoxyCompactList}\small\item\em Process (override) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a158f09025777526b71d938ac687f307a}{End\+Of\+Run}} () override
+\begin{DoxyCompactList}\small\item\em End\+Of\+Run process (override) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-TString \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a97ffdb6cd0962db395c1aebd73c852b8}{f\+Input\+Col\+Name\+\_\+cm}}
-\item 
-TString \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_af75d923d4bab899e590bfacae7bedb97}{f\+Input\+Col\+Name\+\_\+det}}
-\item 
-TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a2afd9f844d5a87f53ad2e3a911a2226e}{f\+In\+Data\+\_\+cm}}
-\item 
-TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a2dab7efc6890a6ad74ab5db988f05ad6}{f\+In\+Data\+\_\+det}}
-\item 
+TString \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a449d4e801841a2738f61f789314bbb11}{f\+Input\+Col\+Name}}
+\begin{DoxyCompactList}\small\item\em Input detected particle object name. \end{DoxyCompactList}\item 
+TString \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_aa2659574cea8c895e8136dea317e9849}{f\+Input\+Reac\+Col\+Name}}
+\begin{DoxyCompactList}\small\item\em Input reaction object name. \end{DoxyCompactList}\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a2ecf7da531afb0d17d62933033a24fbd}{f\+In\+Data}}
+\begin{DoxyCompactList}\small\item\em Input detected particle object. \end{DoxyCompactList}\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a779489b2d92d9976b80e4cbec5c0f0f7}{f\+In\+Reac\+Data}}
+\begin{DoxyCompactList}\small\item\em Input reaction object. \end{DoxyCompactList}\item 
 Int\+\_\+t \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a818289903b59a53c0a4e3ef716d99929}{f\+Nbin\+\_\+angle}}
-\item 
+\begin{DoxyCompactList}\small\item\em Histogram bin number. \end{DoxyCompactList}\item 
 Double\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_abc6fa6cad8ec49776bdd8599c3e98d45}{f\+Range\+\_\+angle}}
-\item 
+\begin{DoxyCompactList}\small\item\em Histogram range (min, max) \end{DoxyCompactList}\item 
 Int\+\_\+t \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a383e1fd7e7e8e5704281fef61aed6588}{f\+Nbin\+\_\+energy}}
-\item 
+\begin{DoxyCompactList}\small\item\em Histogram bin number. \end{DoxyCompactList}\item 
 Double\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_ada3ac1f7304bbd3183b82360c73e5c3b}{f\+Range\+\_\+energy}}
-\item 
+\begin{DoxyCompactList}\small\item\em Histogram range (min, max) \end{DoxyCompactList}\item 
 TString \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_ae80cf64e4cf55b8607f25c0185974c01}{f\+File\+Name}}
-\item 
-Bool\+\_\+t \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_aac468bc9613f1b6d989397c577d0cb8d}{f\+Is\+IK}}
-\item 
-TH1D $\ast$ \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a4580fc7f05352364197192a29a42f4e8}{h1\+\_\+e}}
-\item 
-TH1D $\ast$ \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a892966fe26120af76ef572d52afd0011}{h1\+\_\+e\+\_\+all}}
-\item 
+\begin{DoxyCompactList}\small\item\em Output histogram ROOT file name. \end{DoxyCompactList}\item 
 TH1D $\ast$ \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a2b9e7eb33bec4969a5765d4e34ee234a}{h1\+\_\+a}}
-\item 
+\begin{DoxyCompactList}\small\item\em solid angle (x\+: angle\+\_\+cm) \end{DoxyCompactList}\item 
 TH1D $\ast$ \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a7ddd3c6c00e5ed3fc7f74c9da24cbdb9}{h1\+\_\+a\+\_\+all}}
-\item 
+\begin{DoxyCompactList}\small\item\em for normalize (x\+: angle\+\_\+cm) \end{DoxyCompactList}\item 
+TH1D $\ast$ \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a4580fc7f05352364197192a29a42f4e8}{h1\+\_\+e}}
+\begin{DoxyCompactList}\small\item\em solid angle (x\+: Ecm) \end{DoxyCompactList}\item 
+TH1D $\ast$ \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a892966fe26120af76ef572d52afd0011}{h1\+\_\+e\+\_\+all}}
+\begin{DoxyCompactList}\small\item\em for normalize (x\+: Ecm) \end{DoxyCompactList}\item 
 TH2D $\ast$ \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a3e581cce60a137fda48a997ef259032d}{h2}}
-\item 
+\begin{DoxyCompactList}\small\item\em solid angle (x\+: Ecm, y\+: angle\+\_\+cm) \end{DoxyCompactList}\item 
 TH2D $\ast$ \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_aa11e279e2ebbeebf6f90d40d73cab9fb}{h2\+\_\+all}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em for normalie (x\+: Ecm, y\+: angle\+\_\+cm) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a336614b67facf411afb66f44b0e3781c}{TSolid\+Angle\+Processor}} (const \mbox{\hyperlink{classart_1_1TSolidAngleProcessor}{TSolid\+Angle\+Processor}} \&rhs)
+\mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a85ee9b9895eb48f2f20e32d5be97e309}{TSolid\+Angle\+Processor}} (const \mbox{\hyperlink{classart_1_1TSolidAngleProcessor}{TSolid\+Angle\+Processor}} \&rhs)=delete
 \item 
-\mbox{\hyperlink{classart_1_1TSolidAngleProcessor}{TSolid\+Angle\+Processor}} \& \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_afc2ecce116ecd629c8ee04e0032b4d17}{operator=}} (const \mbox{\hyperlink{classart_1_1TSolidAngleProcessor}{TSolid\+Angle\+Processor}} \&rhs)
+\mbox{\hyperlink{classart_1_1TSolidAngleProcessor}{TSolid\+Angle\+Processor}} \& \mbox{\hyperlink{classart_1_1TSolidAngleProcessor_a067f6d1544af881e6d4acbb8ecbef74a}{operator=}} (const \mbox{\hyperlink{classart_1_1TSolidAngleProcessor}{TSolid\+Angle\+Processor}} \&rhs)=delete
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 
 
-Definition at line 23 of file TSolid\+Angle\+Processor.\+h.
+Definition at line 24 of file TSolid\+Angle\+Processor.\+h.
 
 
 
@@ -83,62 +81,104 @@ Definition at line 23 of file TSolid\+Angle\+Processor.\+h.
 
 
 
-Definition at line 26 of file TSolid\+Angle\+Processor.\+cc.
+default constructor 
+
+steering file definition\+:
+\begin{DoxyItemize}
+\item Input\+Collection\+: detected particle branch (size = 1 of \mbox{\hyperlink{classart_1_1TTelescopeData}{art\+::\+TTelescope\+Data}})
+\item Input\+Reac\+Collection\+: simulated reaction branch
+\item Nbin\+\_\+angle\+: A1
+\item range\+\_\+angle\+: \mbox{[}A2, A3\mbox{]}
+\begin{DoxyItemize}
+\item histogram binning like tree-\/$>$Draw(\+A1, A2, A3)
+\end{DoxyItemize}
+\item Nbin\+\_\+energy\+: E1
+\item range\+\_\+energy\+: \mbox{[}E2, E3\mbox{]}
+\begin{DoxyItemize}
+\item histogram binning like tree-\/$>$Draw(\+E1, E2, E3)
+\end{DoxyItemize}
+\item Hist\+File\+: saved histogram ROOT file name 
+\end{DoxyItemize}
+
+Definition at line 65 of file TSolid\+Angle\+Processor.\+cc.
 
 \mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a106fe042a3cc1848a7e9e2dc1524233d}\label{classart_1_1TSolidAngleProcessor_a106fe042a3cc1848a7e9e2dc1524233d}} 
 \index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!````~TSolidAngleProcessor@{$\sim$TSolidAngleProcessor}}
 \index{````~TSolidAngleProcessor@{$\sim$TSolidAngleProcessor}!art::TSolidAngleProcessor@{art::TSolidAngleProcessor}}
 \doxysubsubsection{\texorpdfstring{$\sim$TSolidAngleProcessor()}{~TSolidAngleProcessor()}}
-{\footnotesize\ttfamily TSolid\+Angle\+Processor\+::$\sim$\+TSolid\+Angle\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily TSolid\+Angle\+Processor\+::$\sim$\+TSolid\+Angle\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 41 of file TSolid\+Angle\+Processor.\+cc.
+default destructor 
 
-\mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a336614b67facf411afb66f44b0e3781c}\label{classart_1_1TSolidAngleProcessor_a336614b67facf411afb66f44b0e3781c}} 
+free the memory. 
+
+Definition at line 81 of file TSolid\+Angle\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a85ee9b9895eb48f2f20e32d5be97e309}\label{classart_1_1TSolidAngleProcessor_a85ee9b9895eb48f2f20e32d5be97e309}} 
 \index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!TSolidAngleProcessor@{TSolidAngleProcessor}}
 \index{TSolidAngleProcessor@{TSolidAngleProcessor}!art::TSolidAngleProcessor@{art::TSolidAngleProcessor}}
 \doxysubsubsection{\texorpdfstring{TSolidAngleProcessor()}{TSolidAngleProcessor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily art\+::\+TSolid\+Angle\+Processor\+::\+TSolid\+Angle\+Processor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1TSolidAngleProcessor}{TSolid\+Angle\+Processor}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily art\+::\+TSolid\+Angle\+Processor\+::\+TSolid\+Angle\+Processor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1TSolidAngleProcessor}{TSolid\+Angle\+Processor}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a8a4a32dcb31d710fcf6ee867cd95e863}\label{classart_1_1TSolidAngleProcessor_a8a4a32dcb31d710fcf6ee867cd95e863}} 
+\mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a158f09025777526b71d938ac687f307a}\label{classart_1_1TSolidAngleProcessor_a158f09025777526b71d938ac687f307a}} 
+\index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!EndOfRun@{EndOfRun}}
+\index{EndOfRun@{EndOfRun}!art::TSolidAngleProcessor@{art::TSolidAngleProcessor}}
+\doxysubsubsection{\texorpdfstring{EndOfRun()}{EndOfRun()}}
+{\footnotesize\ttfamily void TSolid\+Angle\+Processor\+::\+End\+Of\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+End\+Of\+Run process (override) 
+
+After all the events are processed, scale the histograms and save them 
+
+Definition at line 176 of file TSolid\+Angle\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a96d2ee24505060f68f18c5004aaa1c98}\label{classart_1_1TSolidAngleProcessor_a96d2ee24505060f68f18c5004aaa1c98}} 
 \index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!Init@{Init}}
 \index{Init@{Init}!art::TSolidAngleProcessor@{art::TSolidAngleProcessor}}
 \doxysubsubsection{\texorpdfstring{Init()}{Init()}}
-{\footnotesize\ttfamily void TSolid\+Angle\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void TSolid\+Angle\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
 
 
-Definition at line 54 of file TSolid\+Angle\+Processor.\+cc.
+Init (override) 
 
-\mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_afc2ecce116ecd629c8ee04e0032b4d17}\label{classart_1_1TSolidAngleProcessor_afc2ecce116ecd629c8ee04e0032b4d17}} 
+Initialization process.
+
+
+\begin{DoxyParams}{Parameters}
+{\em col} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 97 of file TSolid\+Angle\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a067f6d1544af881e6d4acbb8ecbef74a}\label{classart_1_1TSolidAngleProcessor_a067f6d1544af881e6d4acbb8ecbef74a}} 
 \index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!operator=@{operator=}}
 \index{operator=@{operator=}!art::TSolidAngleProcessor@{art::TSolidAngleProcessor}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classart_1_1TSolidAngleProcessor}{TSolid\+Angle\+Processor}}\& art\+::\+TSolid\+Angle\+Processor\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1TSolidAngleProcessor}{TSolid\+Angle\+Processor}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classart_1_1TSolidAngleProcessor}{TSolid\+Angle\+Processor}}\& art\+::\+TSolid\+Angle\+Processor\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1TSolidAngleProcessor}{TSolid\+Angle\+Processor}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
 
-\mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a1de6dff2a65bd24eabb1121f60dcdef1}\label{classart_1_1TSolidAngleProcessor_a1de6dff2a65bd24eabb1121f60dcdef1}} 
-\index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!PostLoop@{PostLoop}}
-\index{PostLoop@{PostLoop}!art::TSolidAngleProcessor@{art::TSolidAngleProcessor}}
-\doxysubsubsection{\texorpdfstring{PostLoop()}{PostLoop()}}
-{\footnotesize\ttfamily void TSolid\+Angle\+Processor\+::\+Post\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Definition at line 124 of file TSolid\+Angle\+Processor.\+cc.
-
-\mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a44094996fc3d6a3b063d5d16563a8e65}\label{classart_1_1TSolidAngleProcessor_a44094996fc3d6a3b063d5d16563a8e65}} 
+\mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_adda1c25a6217f8a39cdaf82510c4c881}\label{classart_1_1TSolidAngleProcessor_adda1c25a6217f8a39cdaf82510c4c881}} 
 \index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!Process@{Process}}
 \index{Process@{Process}!art::TSolidAngleProcessor@{art::TSolidAngleProcessor}}
 \doxysubsubsection{\texorpdfstring{Process()}{Process()}}
-{\footnotesize\ttfamily void TSolid\+Angle\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void TSolid\+Angle\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
 
 
-Definition at line 94 of file TSolid\+Angle\+Processor.\+cc.
+Process (override) 
+
+Judge the event is detected at the detector and fill to the histograms 
+
+Definition at line 145 of file TSolid\+Angle\+Processor.\+cc.
 
 
 
@@ -151,57 +191,67 @@ Definition at line 94 of file TSolid\+Angle\+Processor.\+cc.
 
 
 
+Output histogram ROOT file name. 
+
+
+
+Definition at line 60 of file TSolid\+Angle\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a2ecf7da531afb0d17d62933033a24fbd}\label{classart_1_1TSolidAngleProcessor_a2ecf7da531afb0d17d62933033a24fbd}} 
+\index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!fInData@{fInData}}
+\index{fInData@{fInData}!art::TSolidAngleProcessor@{art::TSolidAngleProcessor}}
+\doxysubsubsection{\texorpdfstring{fInData}{fInData}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::\+TSolid\+Angle\+Processor\+::f\+In\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Input detected particle object. 
+
+
+
+Definition at line 46 of file TSolid\+Angle\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a449d4e801841a2738f61f789314bbb11}\label{classart_1_1TSolidAngleProcessor_a449d4e801841a2738f61f789314bbb11}} 
+\index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!fInputColName@{fInputColName}}
+\index{fInputColName@{fInputColName}!art::TSolidAngleProcessor@{art::TSolidAngleProcessor}}
+\doxysubsubsection{\texorpdfstring{fInputColName}{fInputColName}}
+{\footnotesize\ttfamily TString art\+::\+TSolid\+Angle\+Processor\+::f\+Input\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Input detected particle object name. 
+
+
+
 Definition at line 42 of file TSolid\+Angle\+Processor.\+h.
 
-\mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a2afd9f844d5a87f53ad2e3a911a2226e}\label{classart_1_1TSolidAngleProcessor_a2afd9f844d5a87f53ad2e3a911a2226e}} 
-\index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!fInData\_cm@{fInData\_cm}}
-\index{fInData\_cm@{fInData\_cm}!art::TSolidAngleProcessor@{art::TSolidAngleProcessor}}
-\doxysubsubsection{\texorpdfstring{fInData\_cm}{fInData\_cm}}
-{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::\+TSolid\+Angle\+Processor\+::f\+In\+Data\+\_\+cm\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_aa2659574cea8c895e8136dea317e9849}\label{classart_1_1TSolidAngleProcessor_aa2659574cea8c895e8136dea317e9849}} 
+\index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!fInputReacColName@{fInputReacColName}}
+\index{fInputReacColName@{fInputReacColName}!art::TSolidAngleProcessor@{art::TSolidAngleProcessor}}
+\doxysubsubsection{\texorpdfstring{fInputReacColName}{fInputReacColName}}
+{\footnotesize\ttfamily TString art\+::\+TSolid\+Angle\+Processor\+::f\+Input\+Reac\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Definition at line 35 of file TSolid\+Angle\+Processor.\+h.
-
-\mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a2dab7efc6890a6ad74ab5db988f05ad6}\label{classart_1_1TSolidAngleProcessor_a2dab7efc6890a6ad74ab5db988f05ad6}} 
-\index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!fInData\_det@{fInData\_det}}
-\index{fInData\_det@{fInData\_det}!art::TSolidAngleProcessor@{art::TSolidAngleProcessor}}
-\doxysubsubsection{\texorpdfstring{fInData\_det}{fInData\_det}}
-{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::\+TSolid\+Angle\+Processor\+::f\+In\+Data\+\_\+det\hspace{0.3cm}{\ttfamily [protected]}}
+Input reaction object name. 
 
 
 
-Definition at line 36 of file TSolid\+Angle\+Processor.\+h.
+Definition at line 44 of file TSolid\+Angle\+Processor.\+h.
 
-\mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a97ffdb6cd0962db395c1aebd73c852b8}\label{classart_1_1TSolidAngleProcessor_a97ffdb6cd0962db395c1aebd73c852b8}} 
-\index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!fInputColName\_cm@{fInputColName\_cm}}
-\index{fInputColName\_cm@{fInputColName\_cm}!art::TSolidAngleProcessor@{art::TSolidAngleProcessor}}
-\doxysubsubsection{\texorpdfstring{fInputColName\_cm}{fInputColName\_cm}}
-{\footnotesize\ttfamily TString art\+::\+TSolid\+Angle\+Processor\+::f\+Input\+Col\+Name\+\_\+cm\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 33 of file TSolid\+Angle\+Processor.\+h.
-
-\mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_af75d923d4bab899e590bfacae7bedb97}\label{classart_1_1TSolidAngleProcessor_af75d923d4bab899e590bfacae7bedb97}} 
-\index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!fInputColName\_det@{fInputColName\_det}}
-\index{fInputColName\_det@{fInputColName\_det}!art::TSolidAngleProcessor@{art::TSolidAngleProcessor}}
-\doxysubsubsection{\texorpdfstring{fInputColName\_det}{fInputColName\_det}}
-{\footnotesize\ttfamily TString art\+::\+TSolid\+Angle\+Processor\+::f\+Input\+Col\+Name\+\_\+det\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a779489b2d92d9976b80e4cbec5c0f0f7}\label{classart_1_1TSolidAngleProcessor_a779489b2d92d9976b80e4cbec5c0f0f7}} 
+\index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!fInReacData@{fInReacData}}
+\index{fInReacData@{fInReacData}!art::TSolidAngleProcessor@{art::TSolidAngleProcessor}}
+\doxysubsubsection{\texorpdfstring{fInReacData}{fInReacData}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::\+TSolid\+Angle\+Processor\+::f\+In\+Reac\+Data\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Definition at line 34 of file TSolid\+Angle\+Processor.\+h.
-
-\mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_aac468bc9613f1b6d989397c577d0cb8d}\label{classart_1_1TSolidAngleProcessor_aac468bc9613f1b6d989397c577d0cb8d}} 
-\index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!fIsIK@{fIsIK}}
-\index{fIsIK@{fIsIK}!art::TSolidAngleProcessor@{art::TSolidAngleProcessor}}
-\doxysubsubsection{\texorpdfstring{fIsIK}{fIsIK}}
-{\footnotesize\ttfamily Bool\+\_\+t art\+::\+TSolid\+Angle\+Processor\+::f\+Is\+IK\hspace{0.3cm}{\ttfamily [protected]}}
+Input reaction object. 
 
 
 
-Definition at line 43 of file TSolid\+Angle\+Processor.\+h.
+Definition at line 48 of file TSolid\+Angle\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a818289903b59a53c0a4e3ef716d99929}\label{classart_1_1TSolidAngleProcessor_a818289903b59a53c0a4e3ef716d99929}} 
 \index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!fNbin\_angle@{fNbin\_angle}}
@@ -211,7 +261,11 @@ Definition at line 43 of file TSolid\+Angle\+Processor.\+h.
 
 
 
-Definition at line 38 of file TSolid\+Angle\+Processor.\+h.
+Histogram bin number. 
+
+
+
+Definition at line 51 of file TSolid\+Angle\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a383e1fd7e7e8e5704281fef61aed6588}\label{classart_1_1TSolidAngleProcessor_a383e1fd7e7e8e5704281fef61aed6588}} 
 \index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!fNbin\_energy@{fNbin\_energy}}
@@ -221,7 +275,11 @@ Definition at line 38 of file TSolid\+Angle\+Processor.\+h.
 
 
 
-Definition at line 40 of file TSolid\+Angle\+Processor.\+h.
+Histogram bin number. 
+
+
+
+Definition at line 55 of file TSolid\+Angle\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_abc6fa6cad8ec49776bdd8599c3e98d45}\label{classart_1_1TSolidAngleProcessor_abc6fa6cad8ec49776bdd8599c3e98d45}} 
 \index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!fRange\_angle@{fRange\_angle}}
@@ -231,7 +289,11 @@ Definition at line 40 of file TSolid\+Angle\+Processor.\+h.
 
 
 
-Definition at line 39 of file TSolid\+Angle\+Processor.\+h.
+Histogram range (min, max) 
+
+
+
+Definition at line 53 of file TSolid\+Angle\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_ada3ac1f7304bbd3183b82360c73e5c3b}\label{classart_1_1TSolidAngleProcessor_ada3ac1f7304bbd3183b82360c73e5c3b}} 
 \index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!fRange\_energy@{fRange\_energy}}
@@ -241,7 +303,11 @@ Definition at line 39 of file TSolid\+Angle\+Processor.\+h.
 
 
 
-Definition at line 41 of file TSolid\+Angle\+Processor.\+h.
+Histogram range (min, max) 
+
+
+
+Definition at line 57 of file TSolid\+Angle\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a2b9e7eb33bec4969a5765d4e34ee234a}\label{classart_1_1TSolidAngleProcessor_a2b9e7eb33bec4969a5765d4e34ee234a}} 
 \index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!h1\_a@{h1\_a}}
@@ -251,7 +317,11 @@ Definition at line 41 of file TSolid\+Angle\+Processor.\+h.
 
 
 
-Definition at line 47 of file TSolid\+Angle\+Processor.\+h.
+solid angle (x\+: angle\+\_\+cm) 
+
+
+
+Definition at line 63 of file TSolid\+Angle\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a7ddd3c6c00e5ed3fc7f74c9da24cbdb9}\label{classart_1_1TSolidAngleProcessor_a7ddd3c6c00e5ed3fc7f74c9da24cbdb9}} 
 \index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!h1\_a\_all@{h1\_a\_all}}
@@ -261,7 +331,11 @@ Definition at line 47 of file TSolid\+Angle\+Processor.\+h.
 
 
 
-Definition at line 48 of file TSolid\+Angle\+Processor.\+h.
+for normalize (x\+: angle\+\_\+cm) 
+
+
+
+Definition at line 65 of file TSolid\+Angle\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a4580fc7f05352364197192a29a42f4e8}\label{classart_1_1TSolidAngleProcessor_a4580fc7f05352364197192a29a42f4e8}} 
 \index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!h1\_e@{h1\_e}}
@@ -271,7 +345,11 @@ Definition at line 48 of file TSolid\+Angle\+Processor.\+h.
 
 
 
-Definition at line 45 of file TSolid\+Angle\+Processor.\+h.
+solid angle (x\+: Ecm) 
+
+
+
+Definition at line 67 of file TSolid\+Angle\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a892966fe26120af76ef572d52afd0011}\label{classart_1_1TSolidAngleProcessor_a892966fe26120af76ef572d52afd0011}} 
 \index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!h1\_e\_all@{h1\_e\_all}}
@@ -281,7 +359,11 @@ Definition at line 45 of file TSolid\+Angle\+Processor.\+h.
 
 
 
-Definition at line 46 of file TSolid\+Angle\+Processor.\+h.
+for normalize (x\+: Ecm) 
+
+
+
+Definition at line 69 of file TSolid\+Angle\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_a3e581cce60a137fda48a997ef259032d}\label{classart_1_1TSolidAngleProcessor_a3e581cce60a137fda48a997ef259032d}} 
 \index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!h2@{h2}}
@@ -291,7 +373,11 @@ Definition at line 46 of file TSolid\+Angle\+Processor.\+h.
 
 
 
-Definition at line 49 of file TSolid\+Angle\+Processor.\+h.
+solid angle (x\+: Ecm, y\+: angle\+\_\+cm) 
+
+
+
+Definition at line 71 of file TSolid\+Angle\+Processor.\+h.
 
 \mbox{\Hypertarget{classart_1_1TSolidAngleProcessor_aa11e279e2ebbeebf6f90d40d73cab9fb}\label{classart_1_1TSolidAngleProcessor_aa11e279e2ebbeebf6f90d40d73cab9fb}} 
 \index{art::TSolidAngleProcessor@{art::TSolidAngleProcessor}!h2\_all@{h2\_all}}
@@ -301,7 +387,11 @@ Definition at line 49 of file TSolid\+Angle\+Processor.\+h.
 
 
 
-Definition at line 50 of file TSolid\+Angle\+Processor.\+h.
+for normalie (x\+: Ecm, y\+: angle\+\_\+cm) 
+
+
+
+Definition at line 73 of file TSolid\+Angle\+Processor.\+h.
 
 
 

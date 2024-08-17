@@ -88,23 +88,23 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_doxy_main"></a> This is a detailed instruction about source code for developers. For installation and usage, please go to <a href="../..">this page</a> created by Hugo.</p>
-<h1><a class="anchor" id="autotoc_md1"></a>
+<h1><a class="anchor" id="autotoc_md4"></a>
 Doxygen LISENSE</h1>
 <p>This pages are created by <a href="https://www.doxygen.nl/">doxygen</a> and <a href="https://jothepro.github.io/doxygen-awesome-css/">Doxygen Awesome theme</a>.</p>
 <p>Copyright © 1997-2009 by Dimitri van Heesch.</p>
 <p>Permission to use, copy, modify, and distribute this software and its documentation under the terms of the GNU General Public License is hereby granted. No representations are made about the suitability of this software for any purpose. It is provided "as is" without express or implied warranty. See the GNU General Public License for more details.</p>
 <p>Documents produced by doxygen are derivative works derived from the input used in their production; they are not affected by this license.</p>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 豆知識</h1>
 <p>日本語ですみません。ライブラリを整備している中で、気になったことをメモしておきます。 時間がある時に英語で整備し直すかもしれません。</p>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 1. //!の意味</h2>
 <p>プロセッサなどを作成していると、</p>
 <div class="fragment"><div class="line">TClonesArray **fInData; <span class="comment">//!</span></div>
 </div><!-- fragment --><p>のようなコードに出くわすことがあるが、この最後の"//!"についてはよくわかっていなかった。 このおまじないのようなものを消すとエラーが出てくるし、調べてもDoxygenのコメント形式だというような情報しか得られずよくわからないままだった。</p>
 <p>最近ChatGPTに聞いてみると、初めて知ったことだが、ROOTのCINTやClingインタープリタででポインタのポインタをI/Oシステムで使うことが難しく、 正しく解析できないというエラーで、//!をつけるとこのI/O処理から除外するように伝えることができるらしい。</p>
 <p>難しくて完全には理解できていないが、ポインタのポインタをROOTで扱うのは難しいから、//!をつけるとROOTの範疇から外すという意味合いになるということなのかな??? ROOTの作法ではなく、純粋なC++な知識だけが必要なものがいいなあと感じたり。。。</p>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 2. ClassDefについて</h2>
 <p>ClassをDictionaryに登録するときに、ClassDefを使うが、クラスメソッドをoverrideするときにClassDefを使うと長い警告文が出てくる。</p>
 <p>調べてみると、ClassDefにも種類があるようで、オーバーライドを使用する時には、ClassDefOverrideというものが定義されているらしい。 <a href="https://root-forum.cern.ch/t/classdef-variants/44736">情報</a>の通り全てを列挙してみると、</p>
@@ -121,7 +121,7 @@ Doxygen LISENSE</h1>
 </ul>
 <p>という書き方もできるらしいが、一応まだexperimentalらしい。</p>
 <p>通常は、ClassDefかClassDefOverrideだけ使えば良さそうな感じかな?</p>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Processorの仮想関数について</h2>
 <p>TProcessorを継承して新しいプロセッサを作成するときに、オーバーライドすることができる汎用的に使えそうな(自分が使っている)クラスメソッドの一覧のメモ。</p>
 <div class="fragment"><div class="line"><span class="comment">// InitProcメソッドで呼ばれる</span></div>

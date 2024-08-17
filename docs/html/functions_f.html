@@ -370,6 +370,7 @@ $(document).ready(function(){initNavTree('functions_f.html',''); initResizable()
 , <a class="el" href="classart_1_1TMUXCalibrationProcessor.html#a79fa5263b374a6828b6aecff57a50598">art::TMUXCalibrationProcessor</a>
 , <a class="el" href="classart_1_1TNBodyReactionProcessor.html#ad98f27e5781607d09ea0b26f61882f3a">art::TNBodyReactionProcessor</a>
 , <a class="el" href="classart_1_1TScalerMonitorProcessor.html#a9fa9aa2a86eb3c6743ec358b068389cb">art::TScalerMonitorProcessor</a>
+, <a class="el" href="classart_1_1TSolidAngleProcessor.html#a2ecf7da531afb0d17d62933033a24fbd">art::TSolidAngleProcessor</a>
 , <a class="el" href="classart_1_1TTGTIKProcessor.html#a9ac1648cacee98912ad39fcb6ca58f83">art::TTGTIKProcessor</a>
 , <a class="el" href="classart_1_1TTreeBeamGenerator.html#ae41d27b1498bb1710df6d6aa69d88454">art::TTreeBeamGenerator</a>
 </li>
@@ -381,12 +382,6 @@ $(document).ready(function(){initNavTree('functions_f.html',''); initResizable()
 </li>
 <li>fInData3
 : <a class="el" href="classart_1_1TTelescopeProcessor.html#a403d9f099479c6a2957a7206529747be">art::TTelescopeProcessor</a>
-</li>
-<li>fInData_cm
-: <a class="el" href="classart_1_1TSolidAngleProcessor.html#a2afd9f844d5a87f53ad2e3a911a2226e">art::TSolidAngleProcessor</a>
-</li>
-<li>fInData_det
-: <a class="el" href="classart_1_1TSolidAngleProcessor.html#a2dab7efc6890a6ad74ab5db988f05ad6">art::TSolidAngleProcessor</a>
 </li>
 <li>fInGeom
 : <a class="el" href="classart_1_1TDetectParticleProcessor.html#a33a196de00f1abf2c47a1390ae3f01b5">art::TDetectParticleProcessor</a>
@@ -405,6 +400,7 @@ $(document).ready(function(){initNavTree('functions_f.html',''); initResizable()
 , <a class="el" href="classart_1_1TMUXDataMappingProcessor.html#ae7c510266edc9fe383f20db09055061f">art::TMUXDataMappingProcessor</a>
 , <a class="el" href="classart_1_1TNBodyReactionProcessor.html#aa6a26ba220cfbf32bd0b3790e654df7d">art::TNBodyReactionProcessor</a>
 , <a class="el" href="classart_1_1TScalerMonitorProcessor.html#a25dba5cf87835f9149d515949d86fc46">art::TScalerMonitorProcessor</a>
+, <a class="el" href="classart_1_1TSolidAngleProcessor.html#a449d4e801841a2738f61f789314bbb11">art::TSolidAngleProcessor</a>
 , <a class="el" href="classart_1_1TTGTIKProcessor.html#a59d682c3fc51757e1441de5474add20a">art::TTGTIKProcessor</a>
 , <a class="el" href="classart_1_1TTimingChargeAllMappingProcessor.html#aab6a211c743765719110a59f3f5c9683">art::TTimingChargeAllMappingProcessor</a>
 , <a class="el" href="classart_1_1TTimingDataMappingProcessor.html#a491fda3202a327b324274ebee163ed81">art::TTimingDataMappingProcessor</a>
@@ -420,12 +416,6 @@ $(document).ready(function(){initNavTree('functions_f.html',''); initResizable()
 <li>fInputColName3
 : <a class="el" href="classart_1_1TTelescopeProcessor.html#a681562e57e85084b97d894ff1f1dd267">art::TTelescopeProcessor</a>
 </li>
-<li>fInputColName_cm
-: <a class="el" href="classart_1_1TSolidAngleProcessor.html#a97ffdb6cd0962db395c1aebd73c852b8">art::TSolidAngleProcessor</a>
-</li>
-<li>fInputColName_det
-: <a class="el" href="classart_1_1TSolidAngleProcessor.html#af75d923d4bab899e590bfacae7bedb97">art::TSolidAngleProcessor</a>
-</li>
 <li>fInputHasData
 : <a class="el" href="classart_1_1TTelescopeProcessor.html#a009e90cf09ce7c6778c7ccfdc5449565">art::TTelescopeProcessor</a>
 </li>
@@ -438,9 +428,15 @@ $(document).ready(function(){initNavTree('functions_f.html',''); initResizable()
 <li>fInputName
 : <a class="el" href="classart_1_1TMUXPositionValidator.html#a029b5d93867fb9e2021ad1b0b89418d9">art::TMUXPositionValidator</a>
 </li>
+<li>fInputReacColName
+: <a class="el" href="classart_1_1TSolidAngleProcessor.html#aa2659574cea8c895e8136dea317e9849">art::TSolidAngleProcessor</a>
+</li>
 <li>fInputTrackColName
 : <a class="el" href="classart_1_1TDetectParticleProcessor.html#a943d2b556b928baaae579e1db1c9f82b">art::TDetectParticleProcessor</a>
 , <a class="el" href="classart_1_1TTGTIKProcessor.html#adde93e8901acacfe0366eb6db6272ab5">art::TTGTIKProcessor</a>
+</li>
+<li>fInReacData
+: <a class="el" href="classart_1_1TSolidAngleProcessor.html#a779489b2d92d9976b80e4cbec5c0f0f7">art::TSolidAngleProcessor</a>
 </li>
 <li>fInTrackData
 : <a class="el" href="classart_1_1TDetectParticleProcessor.html#a2cc709be0e946dee91e0e8ef1d8ba095">art::TDetectParticleProcessor</a>
@@ -460,9 +456,6 @@ $(document).ready(function(){initNavTree('functions_f.html',''); initResizable()
 </li>
 <li>fIsGas
 : <a class="el" href="classart_1_1TTargetParameter.html#a54ed13e97abf0c6ef453ce6d8167066b">art::TTargetParameter</a>
-</li>
-<li>fIsIK
-: <a class="el" href="classart_1_1TSolidAngleProcessor.html#aac468bc9613f1b6d989397c577d0cb8d">art::TSolidAngleProcessor</a>
 </li>
 <li>fIsSparse
 : <a class="el" href="classart_1_1TMUXCalibrationProcessor.html#abc8e37847d8e865e8b2fea3d47745010">art::TMUXCalibrationProcessor</a>
