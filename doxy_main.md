@@ -78,3 +78,16 @@ TProcessorを継承して新しいプロセッサを作成するときに、オ�
 使うときは、virtual修飾子はつけなくてもよく(つけても良い)、overrideキーワードをつけておくとオーバーライドした関数であることがわかって良いかも。
 この時は、ClassDefOverrideを使う。
 どのタイミングでこの関数が呼ばれるかという違いがあるが、InitとProcessさえあれば行いたい処理は十分可能だと思う。
+
+関数が呼ばれるタイミングは以下の通り。
+
+- <add> -> Init
+- -> <res> -> BeginOfRun -> PreLoop -> (PreProcess -> Process -> PostProcess) -> (PreProcess -> Process -> PostProcess) -> ...
+- -> PostProcess -> PostLoop -> EndOfRun
+- -> <.q> -> Terminate
+
+途中でsusを挟んだ場合は、
+
+- PostProcess) -> <sus> -> PostLoop -> <res> -> PreLoop -> (PreProcess -> Process -> PreProcess) -> ...
+
+といったような順番で呼ばれる。
