@@ -136,7 +136,19 @@ Processorの仮想関数について</h2>
 <div class="line"><span class="keyword">virtual</span> <span class="keywordtype">void</span> PreLoop() {;}</div>
 <div class="line"><span class="keyword">virtual</span> <span class="keywordtype">void</span> PostLoop() {;}</div>
 <div class="line"><span class="keyword">virtual</span> <span class="keywordtype">void</span> Terminate() {;}</div>
-</div><!-- fragment --><p>使うときは、virtual修飾子はつけなくてもよく(つけても良い)、overrideキーワードをつけておくとオーバーライドした関数であることがわかって良いかも。 この時は、ClassDefOverrideを使う。 どのタイミングでこの関数が呼ばれるかという違いがあるが、InitとProcessさえあれば行いたい処理は十分可能だと思う。 </p>
+</div><!-- fragment --><p>使うときは、virtual修飾子はつけなくてもよく(つけても良い)、overrideキーワードをつけておくとオーバーライドした関数であることがわかって良いかも。 この時は、ClassDefOverrideを使う。 どのタイミングでこの関数が呼ばれるかという違いがあるが、InitとProcessさえあれば行いたい処理は十分可能だと思う。</p>
+<p>関数が呼ばれるタイミングは以下の通り。</p>
+<ul>
+<li>&lt;add&gt; -&gt; Init</li>
+<li>-&gt; &lt;res&gt; -&gt; BeginOfRun -&gt; PreLoop -&gt; (PreProcess -&gt; Process -&gt; PostProcess) -&gt; (PreProcess -&gt; Process -&gt; PostProcess) -&gt; ...</li>
+<li>-&gt; PostProcess -&gt; PostLoop -&gt; EndOfRun</li>
+<li>-&gt; &lt;.q&gt; -&gt; Terminate</li>
+</ul>
+<p>途中でsusを挟んだ場合は、</p>
+<ul>
+<li>PostProcess) -&gt; &lt;sus&gt; -&gt; PostLoop -&gt; &lt;res&gt; -&gt; PreLoop -&gt; (PreProcess -&gt; Process -&gt; PreProcess) -&gt; ...</li>
+</ul>
+<p>といったような順番で呼ばれる。 </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -52,25 +52,25 @@ Double\+\_\+t \mbox{\hyperlink{classart_1_1TReactionInfo_aeee54ffcd7845fcecd79d8
 \item 
 void \mbox{\hyperlink{classart_1_1TReactionInfo_a0f2fe44b7385bae71792e85e4cde376d}{Set\+Ex\+Energy}} (Double\+\_\+t arg)
 \item 
-virtual void \mbox{\hyperlink{classart_1_1TReactionInfo_ac6e3c276182bd19ea728c98f6c1be730}{Copy}} (TObject \&dest) const
+void \mbox{\hyperlink{classart_1_1TReactionInfo_a1b05ae750fcbd1b3d3439e83eb24c8a3}{Copy}} (TObject \&dest) const override
 \item 
-virtual void \mbox{\hyperlink{classart_1_1TReactionInfo_aabf27236baab896732900f588f30b3b3}{Clear}} (Option\+\_\+t $\ast$opt=\char`\"{}\char`\"{})
+void \mbox{\hyperlink{classart_1_1TReactionInfo_a5710a86ab75236e2cb3d216456ea59fb}{Clear}} (Option\+\_\+t $\ast$opt=\char`\"{}\char`\"{}) override
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 Double\+\_\+t \mbox{\hyperlink{classart_1_1TReactionInfo_ab357dd235d2200ac71b4efa401734be0}{f\+Energy}}
-\item 
-Double\+\_\+t \mbox{\hyperlink{classart_1_1TReactionInfo_af710b29e83a5f010b98726444bcda03d}{f\+Theta}}
 \begin{DoxyCompactList}\small\item\em Ecm of the reaction. \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1TReactionInfo_af710b29e83a5f010b98726444bcda03d}{f\+Theta}}
+\begin{DoxyCompactList}\small\item\em Theta cm of the reaction. \end{DoxyCompactList}\item 
 Double\+\_\+t \mbox{\hyperlink{classart_1_1TReactionInfo_a0a1c728677125089b5c3155c6e3d943e}{fX}}
-\begin{DoxyCompactList}\small\item\em Thetacm of the reaction. \end{DoxyCompactList}\item 
-Double\+\_\+t \mbox{\hyperlink{classart_1_1TReactionInfo_afee39c586bce5f679ab1ba4abd7005f8}{fY}}
 \begin{DoxyCompactList}\small\item\em reaction position at LAB system, x \end{DoxyCompactList}\item 
-Double\+\_\+t \mbox{\hyperlink{classart_1_1TReactionInfo_af6504fdf4ef393ffdc4b564f73acb83d}{fZ}}
+Double\+\_\+t \mbox{\hyperlink{classart_1_1TReactionInfo_afee39c586bce5f679ab1ba4abd7005f8}{fY}}
 \begin{DoxyCompactList}\small\item\em reaction position at LAB system, y \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1TReactionInfo_af6504fdf4ef393ffdc4b564f73acb83d}{fZ}}
+\begin{DoxyCompactList}\small\item\em reaction position at LAB system, z \end{DoxyCompactList}\item 
 Double\+\_\+t \mbox{\hyperlink{classart_1_1TReactionInfo_a702657e9ffadf8b7ff3e1b4efbf9ff99}{f\+Ex\+Energy}}
-\begin{DoxyCompactList}\small\item\em reaction position at LAB system, z \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em excited energy of residual nucleus \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -157,21 +157,21 @@ Definition at line 30 of file TReaction\+Info.\+cc.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classart_1_1TReactionInfo_aabf27236baab896732900f588f30b3b3}\label{classart_1_1TReactionInfo_aabf27236baab896732900f588f30b3b3}} 
+\mbox{\Hypertarget{classart_1_1TReactionInfo_a5710a86ab75236e2cb3d216456ea59fb}\label{classart_1_1TReactionInfo_a5710a86ab75236e2cb3d216456ea59fb}} 
 \index{art::TReactionInfo@{art::TReactionInfo}!Clear@{Clear}}
 \index{Clear@{Clear}!art::TReactionInfo@{art::TReactionInfo}}
 \doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
-{\footnotesize\ttfamily void TReaction\+Info\+::\+Clear (\begin{DoxyParamCaption}\item[{Option\+\_\+t $\ast$}]{opt = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void TReaction\+Info\+::\+Clear (\begin{DoxyParamCaption}\item[{Option\+\_\+t $\ast$}]{opt = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
 
 
 Definition at line 58 of file TReaction\+Info.\+cc.
 
-\mbox{\Hypertarget{classart_1_1TReactionInfo_ac6e3c276182bd19ea728c98f6c1be730}\label{classart_1_1TReactionInfo_ac6e3c276182bd19ea728c98f6c1be730}} 
+\mbox{\Hypertarget{classart_1_1TReactionInfo_a1b05ae750fcbd1b3d3439e83eb24c8a3}\label{classart_1_1TReactionInfo_a1b05ae750fcbd1b3d3439e83eb24c8a3}} 
 \index{art::TReactionInfo@{art::TReactionInfo}!Copy@{Copy}}
 \index{Copy@{Copy}!art::TReactionInfo@{art::TReactionInfo}}
 \doxysubsubsection{\texorpdfstring{Copy()}{Copy()}}
-{\footnotesize\ttfamily void TReaction\+Info\+::\+Copy (\begin{DoxyParamCaption}\item[{TObject \&}]{dest }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void TReaction\+Info\+::\+Copy (\begin{DoxyParamCaption}\item[{TObject \&}]{dest }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
 
 
 
@@ -298,7 +298,11 @@ Definition at line 41 of file TReaction\+Info.\+h.
 
 
 
-Definition at line 54 of file TReaction\+Info.\+h.
+Ecm of the reaction. 
+
+
+
+Definition at line 55 of file TReaction\+Info.\+h.
 
 \mbox{\Hypertarget{classart_1_1TReactionInfo_a702657e9ffadf8b7ff3e1b4efbf9ff99}\label{classart_1_1TReactionInfo_a702657e9ffadf8b7ff3e1b4efbf9ff99}} 
 \index{art::TReactionInfo@{art::TReactionInfo}!fExEnergy@{fExEnergy}}
@@ -308,11 +312,11 @@ Definition at line 54 of file TReaction\+Info.\+h.
 
 
 
-reaction position at LAB system, z 
+excited energy of residual nucleus 
 
 
 
-Definition at line 61 of file TReaction\+Info.\+h.
+Definition at line 67 of file TReaction\+Info.\+h.
 
 \mbox{\Hypertarget{classart_1_1TReactionInfo_af710b29e83a5f010b98726444bcda03d}\label{classart_1_1TReactionInfo_af710b29e83a5f010b98726444bcda03d}} 
 \index{art::TReactionInfo@{art::TReactionInfo}!fTheta@{fTheta}}
@@ -322,11 +326,11 @@ Definition at line 61 of file TReaction\+Info.\+h.
 
 
 
-Ecm of the reaction. 
+Theta cm of the reaction. 
 
 
 
-Definition at line 55 of file TReaction\+Info.\+h.
+Definition at line 57 of file TReaction\+Info.\+h.
 
 \mbox{\Hypertarget{classart_1_1TReactionInfo_a0a1c728677125089b5c3155c6e3d943e}\label{classart_1_1TReactionInfo_a0a1c728677125089b5c3155c6e3d943e}} 
 \index{art::TReactionInfo@{art::TReactionInfo}!fX@{fX}}
@@ -336,11 +340,11 @@ Definition at line 55 of file TReaction\+Info.\+h.
 
 
 
-Thetacm of the reaction. 
+reaction position at LAB system, x 
 
 
 
-Definition at line 57 of file TReaction\+Info.\+h.
+Definition at line 60 of file TReaction\+Info.\+h.
 
 \mbox{\Hypertarget{classart_1_1TReactionInfo_afee39c586bce5f679ab1ba4abd7005f8}\label{classart_1_1TReactionInfo_afee39c586bce5f679ab1ba4abd7005f8}} 
 \index{art::TReactionInfo@{art::TReactionInfo}!fY@{fY}}
@@ -350,11 +354,11 @@ Definition at line 57 of file TReaction\+Info.\+h.
 
 
 
-reaction position at LAB system, x 
+reaction position at LAB system, y 
 
 
 
-Definition at line 58 of file TReaction\+Info.\+h.
+Definition at line 62 of file TReaction\+Info.\+h.
 
 \mbox{\Hypertarget{classart_1_1TReactionInfo_af6504fdf4ef393ffdc4b564f73acb83d}\label{classart_1_1TReactionInfo_af6504fdf4ef393ffdc4b564f73acb83d}} 
 \index{art::TReactionInfo@{art::TReactionInfo}!fZ@{fZ}}
@@ -364,11 +368,11 @@ Definition at line 58 of file TReaction\+Info.\+h.
 
 
 
-reaction position at LAB system, y 
+reaction position at LAB system, z 
 
 
 
-Definition at line 59 of file TReaction\+Info.\+h.
+Definition at line 64 of file TReaction\+Info.\+h.
 
 
 

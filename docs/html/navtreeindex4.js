@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"classart_1_1TTelescopeProcessor.html#a9c03da9389ad347271d4005c77a7b852":[2,0,0,27,26],
 "classart_1_1TTelescopeProcessor.html#a9d1b3bc7a292ba2c5136ad079e87d357":[2,0,0,27,24],
 "classart_1_1TTelescopeProcessor.html#ac495401786f79c0707ecf07d36a35624":[2,0,0,27,20],
 "classart_1_1TTelescopeProcessor.html#ac7b6b7a2a4e4622e73535d3ca847b8b8":[2,0,0,27,7],
@@ -159,8 +160,8 @@ var NAVTREEINDEX4 =
 "functions_r.html":[2,3,0,15],
 "functions_s.html":[2,3,0,16],
 "functions_t.html":[2,3,0,17],
-"functions_vars.html":[2,3,2,0],
 "functions_vars.html":[2,3,2],
+"functions_vars.html":[2,3,2,0],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],

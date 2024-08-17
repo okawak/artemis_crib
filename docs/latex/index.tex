@@ -66,4 +66,23 @@ TProcessorを継承して新しいプロセッサを作成するときに、オ�
 \end{DoxyCode}
 
 
-使うときは、virtual修飾子はつけなくてもよく(つけても良い)、overrideキーワードをつけておくとオーバーライドした関数であることがわかって良いかも。 この時は、\+Class\+Def\+Overrideを使う。 どのタイミングでこの関数が呼ばれるかという違いがあるが、\+Initと\+Processさえあれば行いたい処理は十分可能だと思う。 
+使うときは、virtual修飾子はつけなくてもよく(つけても良い)、overrideキーワードをつけておくとオーバーライドした関数であることがわかって良いかも。 この時は、\+Class\+Def\+Overrideを使う。 どのタイミングでこの関数が呼ばれるかという違いがあるが、\+Initと\+Processさえあれば行いたい処理は十分可能だと思う。
+
+関数が呼ばれるタイミングは以下の通り。
+
+
+\begin{DoxyItemize}
+\item $<$add$>$ -\/$>$ Init
+\item -\/$>$ $<$res$>$ -\/$>$ Begin\+Of\+Run -\/$>$ Pre\+Loop -\/$>$ (Pre\+Process -\/$>$ Process -\/$>$ Post\+Process) -\/$>$ (Pre\+Process -\/$>$ Process -\/$>$ Post\+Process) -\/$>$ ...
+\item -\/$>$ Post\+Process -\/$>$ Post\+Loop -\/$>$ End\+Of\+Run
+\item -\/$>$ $<$.q$>$ -\/$>$ Terminate
+\end{DoxyItemize}
+
+途中でsusを挟んだ場合は、
+
+
+\begin{DoxyItemize}
+\item Post\+Process) -\/$>$ $<$sus$>$ -\/$>$ Post\+Loop -\/$>$ $<$res$>$ -\/$>$ Pre\+Loop -\/$>$ (Pre\+Process -\/$>$ Process -\/$>$ Pre\+Process) -\/$>$ ...
+\end{DoxyItemize}
+
+といったような順番で呼ばれる。 

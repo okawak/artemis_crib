@@ -215,6 +215,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a472bf93bb0dd4feaae5b059b138eec04"><td class="memItemLeft" align="right" valign="top">Double_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTGTIKProcessor.html#a472bf93bb0dd4feaae5b059b138eec04">GetEcmFromBeam</a> (Double_t z, const TTrack *track)</td></tr>
 <tr class="memdesc:a472bf93bb0dd4feaae5b059b138eec04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Ecm from beam information.  <a href="classart_1_1TTGTIKProcessor.html#a472bf93bb0dd4feaae5b059b138eec04">More...</a><br /></td></tr>
 <tr class="separator:a472bf93bb0dd4feaae5b059b138eec04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ca4e696bf539388c92a053aa1893e28"><td class="memItemLeft" align="right" valign="top">std::pair&lt; Double_t, Double_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTGTIKProcessor.html#a3ca4e696bf539388c92a053aa1893e28">GetELabALabPair</a> (Double_t z, const TTrack *track, const <a class="el" href="classart_1_1TTelescopeData.html">TTelescopeData</a> *data)</td></tr>
+<tr class="memdesc:a3ca4e696bf539388c92a053aa1893e28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get LAB energy and angle from detected particle information.  <a href="classart_1_1TTGTIKProcessor.html#a3ca4e696bf539388c92a053aa1893e28">More...</a><br /></td></tr>
+<tr class="separator:a3ca4e696bf539388c92a053aa1893e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc9df08311c35273e89de378d7c71e01"><td class="memItemLeft" align="right" valign="top">Double_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTGTIKProcessor.html#adc9df08311c35273e89de378d7c71e01">GetEcmFromDetectParticle</a> (Double_t z, const TTrack *track, const <a class="el" href="classart_1_1TTelescopeData.html">TTelescopeData</a> *data)</td></tr>
 <tr class="memdesc:adc9df08311c35273e89de378d7c71e01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Ecm from detected particle information.  <a href="classart_1_1TTGTIKProcessor.html#adc9df08311c35273e89de378d7c71e01">More...</a><br /></td></tr>
 <tr class="separator:adc9df08311c35273e89de378d7c71e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -224,12 +227,12 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:ade8a8ad701318a592497b546335aac3c"><td class="memItemLeft" align="right" valign="top">Double_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTGTIKProcessor.html#ade8a8ad701318a592497b546335aac3c">GetEcm_classic_kinematics</a> (Double_t energy, Double_t theta)</td></tr>
 <tr class="memdesc:ade8a8ad701318a592497b546335aac3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Ecm from detected particle information (classic kinematics)  <a href="classart_1_1TTGTIKProcessor.html#ade8a8ad701318a592497b546335aac3c">More...</a><br /></td></tr>
 <tr class="separator:ade8a8ad701318a592497b546335aac3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a245b19d50209238008c194d488e53a37"><td class="memItemLeft" align="right" valign="top">Double_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTGTIKProcessor.html#a245b19d50209238008c194d488e53a37">GetLabAngle</a> (Double_t energy, Double_t energy_cm)</td></tr>
-<tr class="memdesc:a245b19d50209238008c194d488e53a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Lab Angle after reconstruction.  <a href="classart_1_1TTGTIKProcessor.html#a245b19d50209238008c194d488e53a37">More...</a><br /></td></tr>
-<tr class="separator:a245b19d50209238008c194d488e53a37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33ece68d6761cb236b8f8092bce91df3"><td class="memItemLeft" align="right" valign="top">Double_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTGTIKProcessor.html#a33ece68d6761cb236b8f8092bce91df3">GetCustomExcitedEnergy</a> (void)</td></tr>
-<tr class="memdesc:a33ece68d6761cb236b8f8092bce91df3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom function, random excited energy generator.  <a href="classart_1_1TTGTIKProcessor.html#a33ece68d6761cb236b8f8092bce91df3">More...</a><br /></td></tr>
-<tr class="separator:a33ece68d6761cb236b8f8092bce91df3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af32efefbe5c08d0ba5cdc8b666ee4afe"><td class="memItemLeft" align="right" valign="top">Double_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTGTIKProcessor.html#af32efefbe5c08d0ba5cdc8b666ee4afe">GetCMAngle</a> (Double_t ELab, Double_t Ecm, Double_t ALab)</td></tr>
+<tr class="memdesc:af32efefbe5c08d0ba5cdc8b666ee4afe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Lab Angle after reconstruction.  <a href="classart_1_1TTGTIKProcessor.html#af32efefbe5c08d0ba5cdc8b666ee4afe">More...</a><br /></td></tr>
+<tr class="separator:af32efefbe5c08d0ba5cdc8b666ee4afe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af503e8f192a30ef290f053fa7b0aaeef"><td class="memItemLeft" align="right" valign="top">Double_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTGTIKProcessor.html#af503e8f192a30ef290f053fa7b0aaeef">GetCustomExcitedEnergy</a> (Int_t telID, Double_t Etotal)</td></tr>
+<tr class="memdesc:af503e8f192a30ef290f053fa7b0aaeef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom function, random excited energy generator.  <a href="classart_1_1TTGTIKProcessor.html#af503e8f192a30ef290f053fa7b0aaeef">More...</a><br /></td></tr>
+<tr class="separator:af503e8f192a30ef290f053fa7b0aaeef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab690884fb5ec833b005931bc7829dab4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTGTIKProcessor.html#ab690884fb5ec833b005931bc7829dab4">TTGTIKProcessor</a> (const <a class="el" href="classart_1_1TTGTIKProcessor.html">TTGTIKProcessor</a> &amp;rhs)=delete</td></tr>
 <tr class="separator:ab690884fb5ec833b005931bc7829dab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54ce21480bd47b47a100e2caac984eb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classart_1_1TTGTIKProcessor.html">TTGTIKProcessor</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTGTIKProcessor.html#a54ce21480bd47b47a100e2caac984eb7">operator=</a> (const <a class="el" href="classart_1_1TTGTIKProcessor.html">TTGTIKProcessor</a> &amp;rhs)=delete</td></tr>
@@ -283,7 +286,7 @@ Private Member Functions</h2></td></tr>
 </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00059">59</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00055">55</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -305,7 +308,7 @@ Private Member Functions</h2></td></tr>
 <p>Default destructor. </p>
 <p>free the memory </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00089">89</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00085">85</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -381,12 +384,68 @@ Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Z position (mm) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00236">236</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00242">242</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
-<a id="a33ece68d6761cb236b8f8092bce91df3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33ece68d6761cb236b8f8092bce91df3">&#9670;&nbsp;</a></span>GetCustomExcitedEnergy()</h2>
+<a id="af32efefbe5c08d0ba5cdc8b666ee4afe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af32efefbe5c08d0ba5cdc8b666ee4afe">&#9670;&nbsp;</a></span>GetCMAngle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Double_t TTGTIKProcessor::GetCMAngle </td>
+          <td>(</td>
+          <td class="paramtype">Double_t&#160;</td>
+          <td class="paramname"><em>ELab</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Double_t&#160;</td>
+          <td class="paramname"><em>Ecm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Double_t&#160;</td>
+          <td class="paramname"><em>ALab</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get Lab Angle after reconstruction. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ELab</td><td>(MeV) </td></tr>
+    <tr><td class="paramname">Ecm</td><td>(MeV) </td></tr>
+    <tr><td class="paramname">ALab</td><td>(radian) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>angle (radian)</dd></dl>
+<p>Assuming Ecm and detected energy, calculate CM angle. This is also used classic kinematics </p>
+
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00474">474</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+
+</div>
+</div>
+<a id="af503e8f192a30ef290f053fa7b0aaeef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af503e8f192a30ef290f053fa7b0aaeef">&#9670;&nbsp;</a></span>GetCustomExcitedEnergy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -397,9 +456,19 @@ Private Member Functions</h2></td></tr>
         <tr>
           <td class="memname">Double_t TTGTIKProcessor::GetCustomExcitedEnergy </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">Int_t&#160;</td>
+          <td class="paramname"><em>telID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">Double_t&#160;</td>
+          <td class="paramname"><em>Etotal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -412,15 +481,17 @@ Private Member Functions</h2></td></tr>
 <p>Custom function, random excited energy generator. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">void</td><td></td></tr>
+    <tr><td class="paramname">telID</td><td></td></tr>
+    <tr><td class="paramname">Etotal</td><td>(MeV) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Excited energy (MeV)</dd></dl>
 <p>This is used for 26Si(a, p)29P analysis. from TALYS simulation data, the ratio of excited energy are calculated and from the saved custom ROOT file, assign the excited energy randomly.</p>
+<p>this is not generic function, so file I/O is occur event by event. So it is not an efficient function. (almost all process can be included in Init function.)</p>
 <p>You can modify as you like. </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00479">479</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00499">499</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -469,7 +540,7 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Ecm (MeV)</dd></dl>
 <p>From detected energy and angle, calculate kinematics using classic. This is used in GetEcmFromDetectPartice method. Please refer from okawa's master thesis for an detail. </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00424">424</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00442">442</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -532,7 +603,7 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Ecm (MeV)</dd></dl>
 <p>From detected energy and angle, calculate kinematics using relativity. This is used in GetEcmFromDetectPartice method. currently not avalable. </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00415">415</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00433">433</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -581,7 +652,7 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Ecm (MeV)</dd></dl>
 <p>From <b>assuming Z position (reaction position)</b>, calculate the Ecm from beam kinematics and energy loss. The beam is Z1 particle of [Z1, Z2, Z3, Z4]. </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00331">331</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00337">337</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -637,12 +708,12 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Ecm (MeV)</dd></dl>
 <p>From <b>assuming Z position (reaction position)</b>, calculate the Ecm from detected particle information. Currently it uses classsic kinematics. </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00364">364</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00370">370</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
-<a id="a245b19d50209238008c194d488e53a37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a245b19d50209238008c194d488e53a37">&#9670;&nbsp;</a></span>GetLabAngle()</h2>
+<a id="a3ca4e696bf539388c92a053aa1893e28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ca4e696bf539388c92a053aa1893e28">&#9670;&nbsp;</a></span>GetELabALabPair()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -651,16 +722,22 @@ Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Double_t TTGTIKProcessor::GetLabAngle </td>
+          <td class="memname">std::pair&lt; Double_t, Double_t &gt; TTGTIKProcessor::GetELabALabPair </td>
           <td>(</td>
           <td class="paramtype">Double_t&#160;</td>
-          <td class="paramname"><em>energy</em>, </td>
+          <td class="paramname"><em>z</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Double_t&#160;</td>
-          <td class="paramname"><em>energy_cm</em>&#160;</td>
+          <td class="paramtype">const TTrack *&#160;</td>
+          <td class="paramname"><em>track</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classart_1_1TTelescopeData.html">TTelescopeData</a> *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -675,18 +752,19 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get Lab Angle after reconstruction. </p>
-<p>assuming Ecm and detected energy, calculate LAB angle.</p>
+<p>Get LAB energy and angle from detected particle information. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">energy</td><td>(MeV) </td></tr>
-    <tr><td class="paramname">energy_cm</td><td>(MeV) </td></tr>
+    <tr><td class="paramname">z</td><td>(mm) </td></tr>
+    <tr><td class="paramname">track</td><td>(art::TTrack) </td></tr>
+    <tr><td class="paramname">data</td><td>(<a class="el" href="classart_1_1TTelescopeData.html">art::TTelescopeData</a>) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>angle (radian) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Ecm (MeV)</dd></dl>
+<p>From <b>assuming Z position (reaction position)</b>, calculate the ELab and ALab of Z4 from detected particle information. It uses TSrim library. </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00455">455</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00387">387</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -735,7 +813,7 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Z position (mm)</dd></dl>
 <p>Using bisection method (if you want Newton method is also available, but in default, we use bisection method) </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00221">221</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00227">227</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -766,7 +844,7 @@ Private Member Functions</h2></td></tr>
 <p>Initialization. </p>
 <p>in this process, it prepares some variables </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00099">99</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00095">95</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -815,7 +893,7 @@ Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Z position (mm) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00229">229</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00235">235</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -870,7 +948,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Main process. </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00179">179</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00175">175</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -929,7 +1007,7 @@ Private Member Functions</h2></td></tr>
 <li>Ecm(data): Ecm calculate from detected particle information The target function is Ecm(beam) - Ecm(data). When the value become 0, the assumed Z is reconstructed position. (x, y, z) position will be calculated from tracking object. </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00317">317</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00323">323</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
