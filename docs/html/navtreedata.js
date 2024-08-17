@@ -33,6 +33,9 @@ var NAVTREE =
         [ "Processorの仮想関数について", "index.html#autotoc_md8", null ]
       ] ]
     ] ],
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
