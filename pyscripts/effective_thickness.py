@@ -10,16 +10,29 @@ class EffectiveThickness:
         raise EnvironmentError("Please set the TSrim environment variable!")
 
     def __init__(self, z=None, a=None, target=None, pressure=None, temperature=None):
-        self.beam_z = z
-        self.beam_a = a
-        self.target = target
-        self.pressure = pressure or sr.P1
-        self.temperature = temperature or sr.T0
+        self.beam_z = None
+        self.beam_a = None
+        self.target = None
+        self.pressure = None
+        self.temperature = None
         self.datapath = None
-        self.__set_datapath()
+        self.do_init = False
+
+        self.set_parameters(z, a, target, pressure, temperature)
 
     def set_parameters(self, z, a, target, pressure=None, temperature=None) -> None:
-        if self.beam_z is not None or self.beam_a is not None:
+        if z is not None and not isinstance(z, int):
+            raise TypeError("beam_z must be an int or None")
+        if a is not None and not isinstance(a, int):
+            raise TypeError("beam_a must be an int or None")
+        if target is not None and not isinstance(target, str):
+            raise TypeError("target must be a str or None")
+        if pressure is not None and not isinstance(pressure, float):
+            raise TypeError("pressure must be a float or None")
+        if temperature is not None and not isinstance(temperature, float):
+            raise TypeError("temperature must be a float or None")
+
+        if self.do_init:
             self.show_status()
             raise ValueError("Beam and target information is already registered")
 
@@ -41,9 +54,11 @@ class EffectiveThickness:
             raise FileNotFoundError(f"{data_path} does not exist!")
 
         self.datapath = data_path
+        self.do_init = True
 
     def show_status(self) -> None:
         status = {
+            "do_init": self.do_init,
             "beam_z": self.beam_z,
             "beam_a": self.beam_a,
             "target": self.target,
@@ -54,7 +69,10 @@ class EffectiveThickness:
         for key, value in status.items():
             print(f"{key}: {value}")
 
-    def get_thickness(delta: float, unit_type: str) -> ROOT.TGraph:
+    def get_thickness_gr(self, delta: float, unit_type: str) -> ROOT.TGraph:
+        if not self.do_init:
+            raise ValueError("not initialized the instance")
+
         if unit_type == "mm":
             unit_flag = 0
         elif unit_type == "g/cm2":
@@ -73,6 +91,7 @@ class EffectiveThickness:
 
 if __name__ == "__main__":
     ef = EffectiveThickness()
-    # ef.set_parameters(6, 12, "he", 250.0, 300.0)
-    ef.set_parameters(6, 12, "he")
+    ef.set_parameters(6, 12, "he", 250.0, 300.0)
+    # ef.set_parameters(6, 12, "he", 250.0, "300.0")
+    # ef.set_parameters(6, 12, "he")
     ef.show_status()
