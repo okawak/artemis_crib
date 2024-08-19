@@ -7,7 +7,7 @@ Anchor:
  - &output rootfile/tmp.root
  - &histout rootfile/solid/si26.hist.root
 
- - &loopnum 5000000
+ - &loopnum 10000000
  - &beam_A 26
  - &beam_Z 14
  - &beam_E 55.36 # MeV (just before target)
@@ -142,7 +142,7 @@ Processor:
       InputReacCollection: reaction
       Nbin_angle: 180
       range_angle: [0., 180.]
-      Nbin_energy: 50
+      Nbin_energy: 20
       range_energy: [0., 10.]
       HistFile: *histout
 

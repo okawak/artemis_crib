@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:35:07
- * @note    last modified: 2024-08-17 16:18:42
+ * @note    last modified: 2024-08-19 21:49:09
  * @details bisection method (not Newton method)
  */
 
@@ -51,6 +51,8 @@ ClassImp(art::TTGTIKProcessor);
 /// - UseCustomFunction: if you need extra treatment, you can add the process.
 ///   - if it is "true", the custom treatment is on.
 ///   - this is for 26Si(a, p)29P analysis to treat the excited state effect.
+/// - UseCenterPosition: use center position at the detector.
+///   - if DSSSD is not working, this flag is used.
 
 TTGTIKProcessor::TTGTIKProcessor() : fInData(nullptr), fInTrackData(nullptr), fOutData(nullptr) {
     RegisterInputCollection("InputCollection", "telescope data inherit from TTelescopeData", fInputColName,
@@ -77,6 +79,7 @@ TTGTIKProcessor::TTGTIKProcessor() : fInData(nullptr), fInTrackData(nullptr), fO
                               TString("prm_detectors"), &fDetectorPrm, "TClonesArray", "art::TDetectorParameter");
     RegisterOptionalInputInfo("TargetParameter", "name of target parameter", fTargetParameterName,
                               TString("prm_targets"), &fTargetPrm, "TClonesArray", "art::TTargetParameter");
+    RegisterProcessorParameter("UseCenterPosition", "custom, use center position at the detecgtor", fDoCenterPos, false);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -195,6 +198,13 @@ void TTGTIKProcessor::Process() {
     const TDataObject *const inTrackData = static_cast<TDataObject *>((*fInTrackData)->At(0));
     const TTrack *const TrackData = dynamic_cast<const TTrack *>(inTrackData);
 
+    if (!IsValid(Data->GetTelID()))
+        return;
+
+    // energy threshold
+    if (Data->GetEtotal() < 0.01)
+        return;
+
     // excited energy process
     Double_t excited_energy = 0.0;
     if (fDoCustom) {
@@ -207,6 +217,8 @@ void TTGTIKProcessor::Process() {
 
     if (!IsValid(reac_z))
         return;
+
+    // std::cout << reac_z << std::endl;
 
     TReactionInfo *outData = static_cast<TReactionInfo *>(fOutData->ConstructedAt(0));
     outData->SetID(0);
@@ -245,27 +257,21 @@ Double_t TTGTIKProcessor::bisection(const TTrack *track, const TTelescopeData *d
     Double_t low = kInitialMin;
     Double_t high = kInitialMax;
     Double_t ftmp = TargetFunction(kInitialMin, track, data);
-    Int_t sign = 1;
-    Bool_t isFirst = true;
 
     // search initial z position (rough bisection)
-    for (Int_t i = 0; i < 10; i++) {
-        Double_t tmpz = kInitialMin + (Double_t)i * (kInitialMax - kInitialMin);
+    Int_t step = 10;
+    for (Int_t i = 0; i < step + 1; i++) {
+        Double_t tmpz = kInitialMin + (Double_t)i * (kInitialMax - kInitialMin) / (Double_t)step;
         Double_t f = TargetFunction(tmpz, track, data);
         if (!IsValid(f))
             continue;
 
-        if (isFirst) {
-            sign = f >= 0 ? 1 : -1;
-            isFirst = false;
-        }
-
-        if (sign == (f >= 0 ? 1 : -1)) {
+        if (ftmp * f > 0.0) {
             ftmp = f;
         } else {
             flow = ftmp;
             fhigh = f;
-            low = kInitialMin + (Double_t)(i - 1) * (kInitialMax - kInitialMin);
+            low = kInitialMin + (Double_t)(i - 1) * (kInitialMax - kInitialMin) / (Double_t)step;
             high = tmpz;
             break;
         }
@@ -279,6 +285,10 @@ Double_t TTGTIKProcessor::bisection(const TTrack *track, const TTelescopeData *d
                   << ", f(low): " << flow << ", f(high): " << fhigh
                   << ", energy = " << data->GetEtotal()
                   << std::endl;
+        return kInvalidD;
+    }
+    if (low == kInitialMin || high == kInitialMax) {
+        std::cerr << "[Warning in bisect] could not find =0 position" << std::endl;
         return kInvalidD;
     }
 
@@ -398,17 +408,19 @@ std::pair<Double_t, Double_t> TTGTIKProcessor::GetELabALabPair(Double_t z, const
     Double_t stripSize[2] = {Prm->GetSize(0) / (Double_t)stripNum[0], Prm->GetSize(1) / (Double_t)stripNum[1]};
 
     Double_t det_x, det_y;
-    if (stripID[0] >= 0 && stripID[0] < stripNum[0]) {
-        det_x = -Prm->GetSize(0) / 2.0 + stripSize[0] * ((Double_t)stripID[0] + gRandom->Uniform());
-    } else {
-        det_x = -Prm->GetSize(0) / 2.0 + Prm->GetSize(0) * gRandom->Uniform();
-    }
+    if (fDoCenterPos)
+        det_x = -Prm->GetSize(0) / 2.0 + Prm->GetSize(0);
+    else if (stripID[0] >= 0 && stripID[0] < stripNum[0])
+        det_x = -Prm->GetSize(0) / 2.0 + stripSize[0] * (Double_t)stripID[0];
+    else
+        det_x = -Prm->GetSize(0) / 2.0 + Prm->GetSize(0);
 
-    if (stripID[1] >= 0 && stripID[1] < stripNum[1]) {
-        det_y = -Prm->GetSize(1) / 2.0 + stripSize[1] * ((Double_t)stripID[1] + gRandom->Uniform());
-    } else {
-        det_y = -Prm->GetSize(1) / 2.0 + Prm->GetSize(1) * gRandom->Uniform();
-    }
+    if (fDoCenterPos)
+        det_y = -Prm->GetSize(1) / 2.0 + Prm->GetSize(1);
+    else if (stripID[1] >= 0 && stripID[1] < stripNum[1])
+        det_y = -Prm->GetSize(1) / 2.0 + stripSize[1] * (Double_t)stripID[1];
+    else
+        det_y = -Prm->GetSize(1) / 2.0 + Prm->GetSize(1);
 
     TVector3 detect_position(det_x, det_y, Prm->GetDistance());
     detect_position.RotateY(Prm->GetAngle()); // rad

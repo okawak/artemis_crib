@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 11:11:02
- * @note    last modified: 2024-08-16 21:40:48
+ * @note    last modified: 2024-08-19 21:46:30
  * @details
  */
 
@@ -73,6 +73,8 @@ class art::TTGTIKProcessor : public TProcessor {
     Double_t fExcitedEnergy;
     /// @brief Flag of custom processor
     Bool_t fDoCustom;
+    /// @brief Flag of custom processor
+    Bool_t fDoCenterPos;
 
     /// @brief TSrim object to calculate energy loss
     TSrim *srim;

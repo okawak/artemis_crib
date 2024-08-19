@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-18 22:37:37
- * @note    last modified: 2024-08-17 16:42:28
+ * @note    last modified: 2024-08-19 15:43:12
  * @details
  */
 
@@ -184,15 +184,18 @@ void TSolidAngleProcessor::EndOfRun() {
 
     h1_a->Divide(h1_a_all);
     h1_a->Scale(4.0 * TMath::Pi());
-    h1_a->Write("Acm");
+    h1_a->SetTitle("Solid Angle;Angle CM (deg);");
+    h1_a->Write();
 
     h1_e->Divide(h1_e_all);
     h1_e->Scale(4.0 * TMath::Pi());
-    h1_e->Write("Ecm");
+    h1_e->SetTitle("Solid Angle;Energy CM (MeV);");
+    h1_e->Write();
 
     h2->Divide(h2_all);
     h2->Scale(4.0 * TMath::Pi());
-    h2->Write("2D");
+    h2->SetTitle("Solid Angle;Energy CM (MeV);Angle CM (deg)");
+    h2->Write();
 
     file->Close();
     delete file;

@@ -27,8 +27,8 @@ Processor:
   - name: timer
     type: art::TTimerProcessor
 
-# =====================================
-# using random number
+## =====================================
+## using random number
 #  - name: random_eventstore
 #    type: art::TRandomNumberEventStore
 #    parameter:
@@ -52,8 +52,8 @@ Processor:
 #      Bsigma: 0.0 # deg
 #      Esigma: *beam_Esigma
 
-#=====================================
-# using TTree events
+##=====================================
+## using TTree events
   - name: periodic_tree
     type: art::TTreePeriodicEventStore
     parameter:
@@ -80,7 +80,7 @@ Processor:
       IniEnergy: *beam_E
       Esigma: *beam_Esigma
 
-#=====================================
+##=====================================
   - name: reaction_proc
     type: art::TNBodyReactionProcessor
     parameter:

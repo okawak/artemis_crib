@@ -17,9 +17,9 @@ class EffectiveThickness:
         target_z (int)     : Z number of target ion to calculate Ecm
         target_a (int)     : A number of target ion to calculate Ecm
         pressure (float)   : target gas pressure (Torr)
-                             if not, use 760.0 Torr
+                             if not, use 760.0 Torr (defined TSrim::P1)
         temperature (float): target gas temperature (K)
-                             if not, use 273.15 K
+                             if not, use 273.15 K (defined TSrin::E0)
 
         e_min (float)      : minimum Ecm to calculate effective thickness
         e_max (float)      : maximum Ecm to calculate effective thickness
@@ -113,7 +113,7 @@ class EffectiveThickness:
             "> ins = EffectiveThickness()\n"
             "> ins.set_beam_parameters(beam_z, beam_a)\n"
             "> ins.set_target_parameters(target, target_z, target_a, pressure, temperature)\n"
-            "> obj = ins.get_thickness(e_min, e_max, delta, unit_type)\n"
+            "> obj = ins.get_thickness(e_min, e_max, delta, unit_type)"
         )
         print(message)
 
@@ -157,7 +157,7 @@ class EffectiveThickness:
             raise ValueError(f"e_max - e_min should be larger than {self.e_step}")
 
         density = self.gas_density()
-        # thickness unit
+        graph_title = f"dE = {delta} MeV;Ecm (MeV);"
         if unit_type == "mm":
             # default mm
             thickness_factor = 1.0
@@ -172,8 +172,10 @@ class EffectiveThickness:
                 f"{unit_type} unit is not supported.\nuse mm, g/cm2 or /cm2"
             )
 
+        graph_title += f"effective thickness ({unit_type})"
         print(f"calculate effective thickness unit: {unit_type}")
         gr = ROOT.TGraph()
+        gr.SetTitle(graph_title)
 
         # TSrim initialization
         srim = sr.TSrim()
