@@ -37,9 +37,9 @@ class EffectiveThickness:
     TORR2PA = 133.322
     AVOGADRO = 6.0221367e23  # Avogadro's number (/mol)
     BOLTZMANN = 1.380658e-23  # Boltzmann constant (J/K)
+    ESTEP = 0.01  # MeV
 
     def __init__(self):
-        self.e_step = 0.01  # MeV
         tsrim_home = os.getenv("TSRIM_DATA_HOME")
         if not tsrim_home:
             raise EnvironmentError("Please set the TSrim environment variable!")
@@ -153,8 +153,8 @@ class EffectiveThickness:
         if not self.do_beam_init or not self.do_target_init:
             raise ValueError("not initialized the instance")
 
-        if e_max - e_min < self.e_step:
-            raise ValueError(f"e_max - e_min should be larger than {self.e_step}")
+        if e_max - e_min < self.ESTEP:
+            raise ValueError(f"e_max - e_min should be larger than {self.ESTEP}")
 
         density = self.gas_density()
         graph_title = f"dE = {delta} MeV;Ecm (MeV);"
@@ -181,7 +181,7 @@ class EffectiveThickness:
         srim = sr.TSrim()
         srim.AddElement("srim", 16, self.datapath, self.beam_z, self.beam_a)
 
-        for i, e in enumerate(np.arange(e_min, e_max, 0.01)):
+        for i, e in enumerate(np.arange(e_min, e_max, self.ESTEP)):
             e_low = e - delta / 2.0
             e_high = e + delta / 2.0
             if e_low < 0.0:
@@ -251,7 +251,7 @@ if __name__ == "__main__":
 
     do_test = True
     if do_test:
-        canvas = ROOT.TCanvas("c1", "c1", 800, 600)
+        canvas = ROOT.TCanvas("c1", "c1", 800, 800)
         canvas.Clear()
         g = ef.get_thickness_gr(0.5, 8.0, 0.5, "/cm2")
         g.Draw("apl")
