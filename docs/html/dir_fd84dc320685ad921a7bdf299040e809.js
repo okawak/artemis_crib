@@ -8,10 +8,6 @@ var dir_fd84dc320685ad921a7bdf299040e809 =
     [ "TDetectParticleProcessor.h", "TDetectParticleProcessor_8h.html", [
       [ "TDetectParticleProcessor", "classart_1_1TDetectParticleProcessor.html", "classart_1_1TDetectParticleProcessor" ]
     ] ],
-    [ "TEffectiveThickness.cc", "TEffectiveThickness_8cc.html", "TEffectiveThickness_8cc" ],
-    [ "TEffectiveThickness.h", "TEffectiveThickness_8h.html", [
-      [ "TEffectiveThickness", "classart_1_1TEffectiveThickness.html", "classart_1_1TEffectiveThickness" ]
-    ] ],
     [ "TNBodyReactionProcessor.cc", "TNBodyReactionProcessor_8cc.html", "TNBodyReactionProcessor_8cc" ],
     [ "TNBodyReactionProcessor.h", "TNBodyReactionProcessor_8h.html", [
       [ "TNBodyReactionProcessor", "classart_1_1TNBodyReactionProcessor.html", "classart_1_1TNBodyReactionProcessor" ]

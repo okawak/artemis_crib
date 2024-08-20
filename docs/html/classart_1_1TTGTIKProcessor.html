@@ -172,6 +172,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a201c8c1dc9c41f6eb7bfe5a8a5690dfe"><td class="memItemLeft" align="right" valign="top">Bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTGTIKProcessor.html#a201c8c1dc9c41f6eb7bfe5a8a5690dfe">fDoCustom</a></td></tr>
 <tr class="memdesc:a201c8c1dc9c41f6eb7bfe5a8a5690dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag of custom processor.  <a href="classart_1_1TTGTIKProcessor.html#a201c8c1dc9c41f6eb7bfe5a8a5690dfe">More...</a><br /></td></tr>
 <tr class="separator:a201c8c1dc9c41f6eb7bfe5a8a5690dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a988a38070aa0daca889053e495b5b0b1"><td class="memItemLeft" align="right" valign="top">Bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTGTIKProcessor.html#a988a38070aa0daca889053e495b5b0b1">fDoCenterPos</a></td></tr>
+<tr class="memdesc:a988a38070aa0daca889053e495b5b0b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag of custom processor.  <a href="classart_1_1TTGTIKProcessor.html#a988a38070aa0daca889053e495b5b0b1">More...</a><br /></td></tr>
+<tr class="separator:a988a38070aa0daca889053e495b5b0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adec5399bdcda2a7ce01a226d71ae746b"><td class="memItemLeft" align="right" valign="top">TSrim *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1TTGTIKProcessor.html#adec5399bdcda2a7ce01a226d71ae746b">srim</a></td></tr>
 <tr class="memdesc:adec5399bdcda2a7ce01a226d71ae746b"><td class="mdescLeft">&#160;</td><td class="mdescRight">TSrim object to calculate energy loss.  <a href="classart_1_1TTGTIKProcessor.html#adec5399bdcda2a7ce01a226d71ae746b">More...</a><br /></td></tr>
 <tr class="separator:adec5399bdcda2a7ce01a226d71ae746b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -281,12 +284,16 @@ Private Member Functions</h2></td></tr>
 <li>ExcitedEnergy: if you want to treat excited state transition, input the excited energy (MeV) of Z3 particles</li>
 <li>UseCustomFunction: if you need extra treatment, you can add the process.<ul>
 <li>if it is "true", the custom treatment is on.</li>
-<li>this is for 26Si(a, p)29P analysis to treat the excited state effect. </li>
+<li>this is for 26Si(a, p)29P analysis to treat the excited state effect.</li>
+</ul>
+</li>
+<li>UseCenterPosition: use center position at the detector.<ul>
+<li>if DSSSD is not working, this flag is used. </li>
 </ul>
 </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00055">55</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00057">57</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -308,7 +315,7 @@ Private Member Functions</h2></td></tr>
 <p>Default destructor. </p>
 <p>free the memory </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00085">85</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00088">88</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -384,7 +391,7 @@ Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Z position (mm) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00242">242</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00254">254</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -440,7 +447,7 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>angle (radian)</dd></dl>
 <p>Assuming Ecm and detected energy, calculate CM angle. This is also used classic kinematics </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00474">474</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00486">486</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -491,7 +498,7 @@ Private Member Functions</h2></td></tr>
 <p>this is not generic function, so file I/O is occur event by event. So it is not an efficient function. (almost all process can be included in Init function.)</p>
 <p>You can modify as you like. </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00499">499</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00511">511</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -540,7 +547,7 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Ecm (MeV)</dd></dl>
 <p>From detected energy and angle, calculate kinematics using classic. This is used in GetEcmFromDetectPartice method. Please refer from okawa's master thesis for an detail. </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00442">442</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00454">454</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -603,7 +610,7 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Ecm (MeV)</dd></dl>
 <p>From detected energy and angle, calculate kinematics using relativity. This is used in GetEcmFromDetectPartice method. currently not avalable. </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00433">433</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00445">445</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -652,7 +659,7 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Ecm (MeV)</dd></dl>
 <p>From <b>assuming Z position (reaction position)</b>, calculate the Ecm from beam kinematics and energy loss. The beam is Z1 particle of [Z1, Z2, Z3, Z4]. </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00337">337</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00347">347</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -708,7 +715,7 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Ecm (MeV)</dd></dl>
 <p>From <b>assuming Z position (reaction position)</b>, calculate the Ecm from detected particle information. Currently it uses classsic kinematics. </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00370">370</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00380">380</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -764,7 +771,7 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Ecm (MeV)</dd></dl>
 <p>From <b>assuming Z position (reaction position)</b>, calculate the ELab and ALab of Z4 from detected particle information. It uses TSrim library. </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00387">387</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00397">397</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -813,7 +820,7 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Z position (mm)</dd></dl>
 <p>Using bisection method (if you want Newton method is also available, but in default, we use bisection method) </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00227">227</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00239">239</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -844,7 +851,7 @@ Private Member Functions</h2></td></tr>
 <p>Initialization. </p>
 <p>in this process, it prepares some variables </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00095">95</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00098">98</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -893,7 +900,7 @@ Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Z position (mm) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00235">235</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00247">247</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -948,7 +955,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Main process. </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00175">175</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00178">178</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -1007,7 +1014,7 @@ Private Member Functions</h2></td></tr>
 <li>Ecm(data): Ecm calculate from detected particle information The target function is Ecm(beam) - Ecm(data). When the value become 0, the assumed Z is reconstructed position. (x, y, z) position will be calculated from tracking object. </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00323">323</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8cc_source.html#l00333">333</a> of file <a class="el" href="TTGTIKProcessor_8cc_source.html">TTGTIKProcessor.cc</a>.</p>
 
 </div>
 </div>
@@ -1061,6 +1068,32 @@ Private Member Functions</h2></td></tr>
 <p>detector parameter object (TClonesArray(art::TDetectorParameter)) </p>
 
 <p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00056">56</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+
+</div>
+</div>
+<a id="a988a38070aa0daca889053e495b5b0b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a988a38070aa0daca889053e495b5b0b1">&#9670;&nbsp;</a></span>fDoCenterPos</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Bool_t art::TTGTIKProcessor::fDoCenterPos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flag of custom processor. </p>
+
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00077">77</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -1502,7 +1535,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Accuracy of the bisection method. </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00085">85</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00087">87</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -1528,7 +1561,7 @@ Private Member Functions</h2></td></tr>
 
 <p>initial maximum value of bisection method </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00083">83</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00085">85</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -1554,7 +1587,7 @@ Private Member Functions</h2></td></tr>
 
 <p>initial minimum value of bisection method </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00081">81</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00083">83</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -1580,7 +1613,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Max iteration number of the bisection method. </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00087">87</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00089">89</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -1604,7 +1637,7 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00089">89</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00091">91</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -1628,7 +1661,7 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00090">90</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00092">92</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -1652,7 +1685,7 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00092">92</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00094">94</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -1676,7 +1709,7 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00091">91</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00093">93</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -1700,7 +1733,7 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00093">93</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00095">95</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -1726,7 +1759,7 @@ Private Member Functions</h2></td></tr>
 
 <p>TSrim object to calculate energy loss. </p>
 
-<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00078">78</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TTGTIKProcessor_8h_source.html#l00080">80</a> of file <a class="el" href="TTGTIKProcessor_8h_source.html">TTGTIKProcessor.h</a>.</p>
 
 </div>
 </div>

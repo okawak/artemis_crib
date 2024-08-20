@@ -95,16 +95,28 @@ Doxygen LISENSE</h1>
 <p>Permission to use, copy, modify, and distribute this software and its documentation under the terms of the GNU General Public License is hereby granted. No representations are made about the suitability of this software for any purpose. It is provided "as is" without express or implied warranty. See the GNU General Public License for more details.</p>
 <p>Documents produced by doxygen are derivative works derived from the input used in their production; they are not affected by this license.</p>
 <h1><a class="anchor" id="autotoc_md5"></a>
+version管理</h1>
+<p>基本的には後方互換性はありません。 厳密にどういった変更をしたかなどのノートは残さないので、解析をするときは、その環境をそのまま使う方が良いと思います。 artemis自体、artemis-workdir (artemis_crib)のバージョン、使っているenergy lossのツールのバージョン、 pythonのバージョン(pyROOTや便利スクリプトに使用、artemisの動作自体には使いません。)などを記録し、それをベースに解析を始めることをお勧めします。 同じ動作をすることが確認できてから、versionアップデートすると良いと思います。</p>
+<p>pythonとartemis_cribのバージョン管理をしやすくするためのversion管理を2024年8月のバージョンから導入することにしました。 versionの名前は、年.月.0 (major.minor.patch)としています。(CMakeLists.txtとpyproject.toml) ある程度動作確認が済んだら、gitのtagで分けていこうと思います。</p>
+<p>以下動作未確認です。 gitのmainブランチを使用している場合は、<code>install/lib</code>の中にあるライブラリのシンボリックリンクを変えれば古いバージョンのものが使えるはず？</p>
+<p>pythonのバージョンは<code>poetry</code>を用いて管理することにしました。 公式サイトからインストールするか、<code>pip install poetry</code>でインストールできます。 仮想環境(.venv)をそのディレクトリ内に作りたいときは、グローバルな設定で、</p>
+<div class="fragment"><div class="line">poetry config virtualenvs.in-project true</div>
+</div><!-- fragment --><p>とすれば良いです。(ローカルな設定にもできます。) その後、art_workdirで、</p>
+<div class="fragment"><div class="line">poetry install</div>
+</div><!-- fragment --><p>で仮想環境の準備ができます。が、仮想環境がなくてもartemisは動作します。 うまくいかない場合は、lockファイルを消してからもう一度試してみてください。(うまくいくかはわからずです。) .venvをそのディレクトリ内に作成する場合は、artloginで自動的にその環境には入るように設定していますが、 そうでない場合、作成した仮想環境に入りたい場合は、</p>
+<div class="fragment"><div class="line">poetry shell</div>
+</div><!-- fragment --><p>で有効化できます。</p>
+<h1><a class="anchor" id="autotoc_md6"></a>
 豆知識</h1>
 <p>日本語ですみません。ライブラリを整備している中で、気になったことをメモしておきます。 時間がある時に英語で整備し直すかもしれません。</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 1. //!の意味</h2>
 <p>プロセッサなどを作成していると、</p>
 <div class="fragment"><div class="line">TClonesArray **fInData; <span class="comment">//!</span></div>
 </div><!-- fragment --><p>のようなコードに出くわすことがあるが、この最後の"//!"についてはよくわかっていなかった。 このおまじないのようなものを消すとエラーが出てくるし、調べてもDoxygenのコメント形式だというような情報しか得られずよくわからないままだった。</p>
 <p>最近ChatGPTに聞いてみると、初めて知ったことだが、ROOTのCINTやClingインタープリタででポインタのポインタをI/Oシステムで使うことが難しく、 正しく解析できないというエラーで、//!をつけるとこのI/O処理から除外するように伝えることができるらしい。</p>
 <p>難しくて完全には理解できていないが、ポインタのポインタをROOTで扱うのは難しいから、//!をつけるとROOTの範疇から外すという意味合いになるということなのかな??? ROOTの作法ではなく、純粋なC++な知識だけが必要なものがいいなあと感じたり。。。</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 2. ClassDefについて</h2>
 <p>ClassをDictionaryに登録するときに、ClassDefを使うが、クラスメソッドをoverrideするときにClassDefを使うと長い警告文が出てくる。</p>
 <p>調べてみると、ClassDefにも種類があるようで、オーバーライドを使用する時には、ClassDefOverrideというものが定義されているらしい。 <a href="https://root-forum.cern.ch/t/classdef-variants/44736">情報</a>の通り全てを列挙してみると、</p>
@@ -121,7 +133,7 @@ Doxygen LISENSE</h1>
 </ul>
 <p>という書き方もできるらしいが、一応まだexperimentalらしい。</p>
 <p>通常は、ClassDefかClassDefOverrideだけ使えば良さそうな感じかな?</p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
 Processorの仮想関数について</h2>
 <p>TProcessorを継承して新しいプロセッサを作成するときに、オーバーライドすることができる汎用的に使えそうな(自分が使っている)クラスメソッドの一覧のメモ。</p>
 <div class="fragment"><div class="line"><span class="comment">// InitProcメソッドで呼ばれる</span></div>

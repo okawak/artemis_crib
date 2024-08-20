@@ -219,19 +219,22 @@ $(document).ready(function(){initNavTree('TSolidAngleProcessor_8cc_source.html',
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="classart_1_1TSolidAngleProcessor.html#a2b9e7eb33bec4969a5765d4e34ee234a">h1_a</a>-&gt;Divide(<a class="code" href="classart_1_1TSolidAngleProcessor.html#a7ddd3c6c00e5ed3fc7f74c9da24cbdb9">h1_a_all</a>);</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <a class="code" href="classart_1_1TSolidAngleProcessor.html#a2b9e7eb33bec4969a5765d4e34ee234a">h1_a</a>-&gt;Scale(4.0 * TMath::Pi());</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <a class="code" href="classart_1_1TSolidAngleProcessor.html#a2b9e7eb33bec4969a5765d4e34ee234a">h1_a</a>-&gt;Write(<span class="stringliteral">&quot;Acm&quot;</span>);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <a class="code" href="classart_1_1TSolidAngleProcessor.html#a4580fc7f05352364197192a29a42f4e8">h1_e</a>-&gt;Divide(<a class="code" href="classart_1_1TSolidAngleProcessor.html#a892966fe26120af76ef572d52afd0011">h1_e_all</a>);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <a class="code" href="classart_1_1TSolidAngleProcessor.html#a4580fc7f05352364197192a29a42f4e8">h1_e</a>-&gt;Scale(4.0 * TMath::Pi());</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="classart_1_1TSolidAngleProcessor.html#a4580fc7f05352364197192a29a42f4e8">h1_e</a>-&gt;Write(<span class="stringliteral">&quot;Ecm&quot;</span>);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="classart_1_1TSolidAngleProcessor.html#a3e581cce60a137fda48a997ef259032d">h2</a>-&gt;Divide(<a class="code" href="classart_1_1TSolidAngleProcessor.html#aa11e279e2ebbeebf6f90d40d73cab9fb">h2_all</a>);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="classart_1_1TSolidAngleProcessor.html#a3e581cce60a137fda48a997ef259032d">h2</a>-&gt;Scale(4.0 * TMath::Pi());</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <a class="code" href="classart_1_1TSolidAngleProcessor.html#a3e581cce60a137fda48a997ef259032d">h2</a>-&gt;Write(<span class="stringliteral">&quot;2D&quot;</span>);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    file-&gt;Close();</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keyword">delete</span> file;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <a class="code" href="classart_1_1TSolidAngleProcessor.html#a2b9e7eb33bec4969a5765d4e34ee234a">h1_a</a>-&gt;SetTitle(<span class="stringliteral">&quot;Solid Angle;Angle CM (deg);&quot;</span>);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <a class="code" href="classart_1_1TSolidAngleProcessor.html#a2b9e7eb33bec4969a5765d4e34ee234a">h1_a</a>-&gt;Write();</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <a class="code" href="classart_1_1TSolidAngleProcessor.html#a4580fc7f05352364197192a29a42f4e8">h1_e</a>-&gt;Divide(<a class="code" href="classart_1_1TSolidAngleProcessor.html#a892966fe26120af76ef572d52afd0011">h1_e_all</a>);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="classart_1_1TSolidAngleProcessor.html#a4580fc7f05352364197192a29a42f4e8">h1_e</a>-&gt;Scale(4.0 * TMath::Pi());</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="classart_1_1TSolidAngleProcessor.html#a4580fc7f05352364197192a29a42f4e8">h1_e</a>-&gt;SetTitle(<span class="stringliteral">&quot;Solid Angle;Energy CM (MeV);&quot;</span>);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="classart_1_1TSolidAngleProcessor.html#a4580fc7f05352364197192a29a42f4e8">h1_e</a>-&gt;Write();</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <a class="code" href="classart_1_1TSolidAngleProcessor.html#a3e581cce60a137fda48a997ef259032d">h2</a>-&gt;Divide(<a class="code" href="classart_1_1TSolidAngleProcessor.html#aa11e279e2ebbeebf6f90d40d73cab9fb">h2_all</a>);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <a class="code" href="classart_1_1TSolidAngleProcessor.html#a3e581cce60a137fda48a997ef259032d">h2</a>-&gt;Scale(4.0 * TMath::Pi());</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="classart_1_1TSolidAngleProcessor.html#a3e581cce60a137fda48a997ef259032d">h2</a>-&gt;SetTitle(<span class="stringliteral">&quot;Solid Angle;Energy CM (MeV);Angle CM (deg)&quot;</span>);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <a class="code" href="classart_1_1TSolidAngleProcessor.html#a3e581cce60a137fda48a997ef259032d">h2</a>-&gt;Write();</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    file-&gt;Close();</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keyword">delete</span> file;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
 <div class="ttc" id="aTSolidAngleProcessor_8cc_html_a175c5921e040048e9f6de2c075e94cfd"><div class="ttname"><a href="TSolidAngleProcessor_8cc.html#a175c5921e040048e9f6de2c075e94cfd">ClassImp</a></div><div class="ttdeci">ClassImp(TSolidAngleProcessor)</div></div>
 <div class="ttc" id="aTSolidAngleProcessor_8h_html"><div class="ttname"><a href="TSolidAngleProcessor_8h.html">TSolidAngleProcessor.h</a></div></div>
 <div class="ttc" id="aclassart_1_1TReactionInfo_html"><div class="ttname"><a href="classart_1_1TReactionInfo.html">art::TReactionInfo</a></div><div class="ttdef"><b>Definition:</b> <a href="TReactionInfo_8h_source.html#l00020">TReactionInfo.h:20</a></div></div>

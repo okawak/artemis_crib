@@ -19,6 +19,7 @@ var classart_1_1TTGTIKProcessor =
     [ "TargetFunction", "classart_1_1TTGTIKProcessor.html#a06e4d3f42138cfb104f125c280a3d7dc", null ],
     [ "fDetectorParameterName", "classart_1_1TTGTIKProcessor.html#aec5086aa954527f5b0def4d59e358059", null ],
     [ "fDetectorPrm", "classart_1_1TTGTIKProcessor.html#ac7be3a4fd23a537a4de629d8dc39b6c9", null ],
+    [ "fDoCenterPos", "classart_1_1TTGTIKProcessor.html#a988a38070aa0daca889053e495b5b0b1", null ],
     [ "fDoCustom", "classart_1_1TTGTIKProcessor.html#a201c8c1dc9c41f6eb7bfe5a8a5690dfe", null ],
     [ "fExcitedEnergy", "classart_1_1TTGTIKProcessor.html#ab6c38ae3f9b53c11b3ec5570df3661be", null ],
     [ "fInData", "classart_1_1TTGTIKProcessor.html#a9ac1648cacee98912ad39fcb6ca58f83", null ],

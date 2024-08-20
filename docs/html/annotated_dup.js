@@ -19,7 +19,6 @@ var annotated_dup =
       [ "TTGTIKProcessor", "classart_1_1TTGTIKProcessor.html", "classart_1_1TTGTIKProcessor" ],
       [ "TCRIBPIDProcessor", "classart_1_1TCRIBPIDProcessor.html", "classart_1_1TCRIBPIDProcessor" ],
       [ "TDetectParticleProcessor", "classart_1_1TDetectParticleProcessor.html", "classart_1_1TDetectParticleProcessor" ],
-      [ "TEffectiveThickness", "classart_1_1TEffectiveThickness.html", "classart_1_1TEffectiveThickness" ],
       [ "TNBodyReactionProcessor", "classart_1_1TNBodyReactionProcessor.html", "classart_1_1TNBodyReactionProcessor" ],
       [ "TParticleInfo", "classart_1_1TParticleInfo.html", "classart_1_1TParticleInfo" ],
       [ "TRandomBeamGenerator", "classart_1_1TRandomBeamGenerator.html", "classart_1_1TRandomBeamGenerator" ],

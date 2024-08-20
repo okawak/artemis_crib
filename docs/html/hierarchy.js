@@ -38,7 +38,6 @@ var hierarchy =
       [ "art::TBranchCopyProcessor", "classart_1_1TBranchCopyProcessor.html", null ],
       [ "art::TCRIBPIDProcessor", "classart_1_1TCRIBPIDProcessor.html", null ],
       [ "art::TDetectParticleProcessor", "classart_1_1TDetectParticleProcessor.html", null ],
-      [ "art::TEffectiveThickness", "classart_1_1TEffectiveThickness.html", null ],
       [ "art::TEvtNumProcessor", "classart_1_1TEvtNumProcessor.html", null ],
       [ "art::TF1PPACProcessor", "classart_1_1TF1PPACProcessor.html", null ],
       [ "art::TMUXCalibrationProcessor", "classart_1_1TMUXCalibrationProcessor.html", null ],

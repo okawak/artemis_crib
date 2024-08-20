@@ -7,8 +7,42 @@ Copyright © 1997-\/2009 by Dimitri van Heesch.
 
 Permission to use, copy, modify, and distribute this software and its documentation under the terms of the GNU General Public License is hereby granted. No representations are made about the suitability of this software for any purpose. It is provided \char`\"{}as is\char`\"{} without express or implied warranty. See the GNU General Public License for more details.
 
-Documents produced by doxygen are derivative works derived from the input used in their production; they are not affected by this license.\hypertarget{index_autotoc_md5}{}\doxysection{豆知識}\label{index_autotoc_md5}
-日本語ですみません。ライブラリを整備している中で、気になったことをメモしておきます。 時間がある時に英語で整備し直すかもしれません。\hypertarget{index_autotoc_md6}{}\doxysubsection{1. //!の意味}\label{index_autotoc_md6}
+Documents produced by doxygen are derivative works derived from the input used in their production; they are not affected by this license.\hypertarget{index_autotoc_md5}{}\doxysection{version管理}\label{index_autotoc_md5}
+基本的には後方互換性はありません。 厳密にどういった変更をしたかなどのノートは残さないので、解析をするときは、その環境をそのまま使う方が良いと思います。 artemis自体、artemis-\/workdir (artemis\+\_\+crib)のバージョン、使っているenergy lossのツールのバージョン、 pythonのバージョン(py\+ROOTや便利スクリプトに使用、artemisの動作自体には使いません。)などを記録し、それをベースに解析を始めることをお勧めします。 同じ動作をすることが確認できてから、versionアップデートすると良いと思います。
+
+pythonとartemis\+\_\+cribのバージョン管理をしやすくするためのversion管理を2024年8月のバージョンから導入することにしました。 versionの名前は、年.\+月.0 (major.\+minor.\+patch)としています。(CMake\+Lists.\+txtとpyproject.\+toml) ある程度動作確認が済んだら、gitのtagで分けていこうと思います。
+
+以下動作未確認です。 gitのmainブランチを使用している場合は、{\ttfamily install/lib}の中にあるライブラリのシンボリックリンクを変えれば古いバージョンのものが使えるはず？
+
+pythonのバージョンは{\ttfamily poetry}を用いて管理することにしました。 公式サイトからインストールするか、{\ttfamily pip install poetry}でインストールできます。 仮想環境(.venv)をそのディレクトリ内に作りたいときは、グローバルな設定で、
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{poetry config virtualenvs.in-\/project true}
+
+\end{DoxyCode}
+
+
+とすれば良いです。(ローカルな設定にもできます。) その後、art\+\_\+workdirで、
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{poetry install}
+
+\end{DoxyCode}
+
+
+で仮想環境の準備ができます。が、仮想環境がなくてもartemisは動作します。 うまくいかない場合は、lockファイルを消してからもう一度試してみてください。(うまくいくかはわからずです。) .venvをそのディレクトリ内に作成する場合は、artloginで自動的にその環境には入るように設定していますが、 そうでない場合、作成した仮想環境に入りたい場合は、
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{poetry shell}
+
+\end{DoxyCode}
+
+
+で有効化できます。\hypertarget{index_autotoc_md6}{}\doxysection{豆知識}\label{index_autotoc_md6}
+日本語ですみません。ライブラリを整備している中で、気になったことをメモしておきます。 時間がある時に英語で整備し直すかもしれません。\hypertarget{index_autotoc_md7}{}\doxysubsection{1. //!の意味}\label{index_autotoc_md7}
 プロセッサなどを作成していると、
 
 
@@ -22,7 +56,7 @@ Documents produced by doxygen are derivative works derived from the input used i
 
 最近\+Chat\+GPTに聞いてみると、初めて知ったことだが、\+ROOTの\+CINTや\+Clingインタープリタででポインタのポインタを\+I/\+Oシステムで使うことが難しく、 正しく解析できないというエラーで、//!をつけるとこの\+I/\+O処理から除外するように伝えることができるらしい。
 
-難しくて完全には理解できていないが、ポインタのポインタを\+ROOTで扱うのは難しいから、//!をつけると\+ROOTの範疇から外すという意味合いになるということなのかな??? ROOTの作法ではなく、純粋な\+C++な知識だけが必要なものがいいなあと感じたり。。。\hypertarget{index_autotoc_md7}{}\doxysubsection{2. Class\+Defについて}\label{index_autotoc_md7}
+難しくて完全には理解できていないが、ポインタのポインタを\+ROOTで扱うのは難しいから、//!をつけると\+ROOTの範疇から外すという意味合いになるということなのかな??? ROOTの作法ではなく、純粋な\+C++な知識だけが必要なものがいいなあと感じたり。。。\hypertarget{index_autotoc_md8}{}\doxysubsection{2. Class\+Defについて}\label{index_autotoc_md8}
 Classを\+Dictionaryに登録するときに、\+Class\+Defを使うが、クラスメソッドをoverrideするときに\+Class\+Defを使うと長い警告文が出てくる。
 
 調べてみると、\+Class\+Defにも種類があるようで、オーバーライドを使用する時には、\+Class\+Def\+Overrideというものが定義されているらしい。 \href{https://root-forum.cern.ch/t/classdef-variants/44736}{\texttt{ 情報}}の通り全てを列挙してみると、
@@ -45,7 +79,7 @@ ROOTには認識されるが、\+Dictionaryに登録しない場合は、
 
 という書き方もできるらしいが、一応まだexperimentalらしい。
 
-通常は、\+Class\+Defか\+Class\+Def\+Overrideだけ使えば良さそうな感じかな?\hypertarget{index_autotoc_md8}{}\doxysubsection{Processorの仮想関数について}\label{index_autotoc_md8}
+通常は、\+Class\+Defか\+Class\+Def\+Overrideだけ使えば良さそうな感じかな?\hypertarget{index_autotoc_md9}{}\doxysubsection{Processorの仮想関数について}\label{index_autotoc_md9}
 TProcessorを継承して新しいプロセッサを作成するときに、オーバーライドすることができる汎用的に使えそうな(自分が使っている)クラスメソッドの一覧のメモ。
 
 
