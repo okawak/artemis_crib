@@ -13,6 +13,47 @@ Permission to use, copy, modify, and distribute this software and its documentat
 
 Documents produced by doxygen are derivative works derived from the input used in their production; they are not affected by this license.
 
+## version管理
+
+基本的には後方互換性はありません。
+厳密にどういった変更をしたかなどのノートは残さないので、解析をするときは、その環境をそのまま使う方が良いと思います。
+artemis自体、artemis-workdir (artemis_crib)のバージョン、使っているenergy lossのツールのバージョン、
+pythonのバージョン(pyROOTや便利スクリプトに使用、artemisの動作自体には使いません。)などを記録し、それをベースに解析を始めることをお勧めします。
+同じ動作をすることが確認できてから、versionアップデートすると良いと思います。
+
+pythonとartemis_cribのバージョン管理をしやすくするためのversion管理を2024年8月のバージョンから導入することにしました。
+versionの名前は、年.月.0 (major.minor.patch)としています。(CMakeLists.txtとpyproject.toml)
+ある程度動作確認が済んだら、gitのtagで分けていこうと思います。
+
+以下動作未確認です。
+gitのmainブランチを使用している場合は、`install/lib`の中にあるライブラリのシンボリックリンクを変えれば古いバージョンのものが使えるはず？
+
+pythonのバージョンは`poetry`を用いて管理することにしました。
+公式サイトからインストールするか、`pip install poetry`でインストールできます。
+仮想環境(.venv)をそのディレクトリ内に作りたいときは、グローバルな設定で、
+
+```
+poetry config virtualenvs.in-project true
+```
+
+とすれば良いです。(ローカルな設定にもできます。)
+その後、art_workdirで、
+
+```
+poetry install
+```
+
+で仮想環境の準備ができます。が、仮想環境がなくてもartemisは動作します。
+うまくいかない場合は、lockファイルを消してからもう一度試してみてください。(うまくいくかはわからずです。)
+.venvをそのディレクトリ内に作成する場合は、artloginで自動的にその環境には入るように設定していますが、
+そうでない場合、作成した仮想環境に入りたい場合は、
+
+```
+poetry shell
+```
+
+で有効化できます。
+
 ## 豆知識
 
 日本語ですみません。ライブラリを整備している中で、気になったことをメモしておきます。
