@@ -1,0 +1,28 @@
+var classart_1_1crib_1_1TDetectParticleProcessor =
+[
+    [ "TDetectParticleProcessor", "classart_1_1crib_1_1TDetectParticleProcessor.html#a9f93eab9536b37bbe426fff8a79c8a50", null ],
+    [ "~TDetectParticleProcessor", "classart_1_1crib_1_1TDetectParticleProcessor.html#ae3415eb6ab912dab9b3e123703996c7d", null ],
+    [ "TDetectParticleProcessor", "classart_1_1crib_1_1TDetectParticleProcessor.html#ad696fc02039da36232992c1149273b7f", null ],
+    [ "GetStripID", "classart_1_1crib_1_1TDetectParticleProcessor.html#ad93a7c5ab0a1a5c36340c7ced48ddc19", null ],
+    [ "GetUniqueElements", "classart_1_1crib_1_1TDetectParticleProcessor.html#adb23ce32306edaab797d344587abc374", null ],
+    [ "Init", "classart_1_1crib_1_1TDetectParticleProcessor.html#aaca8d2a0cbfb72f340acebfed2d2c6aa", null ],
+    [ "operator=", "classart_1_1crib_1_1TDetectParticleProcessor.html#a9d581d143d98565bd6572cc483d803de", null ],
+    [ "Process", "classart_1_1crib_1_1TDetectParticleProcessor.html#aefe8c61538dafd19a58f71b1af2d0b74", null ],
+    [ "c", "classart_1_1crib_1_1TDetectParticleProcessor.html#ac05dee0e393040bbb0d0d2707b1f6b5c", null ],
+    [ "fDetectorParameterName", "classart_1_1crib_1_1TDetectParticleProcessor.html#a5ad352adb366e2ee2ee197991af2c094", null ],
+    [ "fDetectorPrm", "classart_1_1crib_1_1TDetectParticleProcessor.html#a79f4d7222da5a990c11b6c556a10d99f", null ],
+    [ "fInData", "classart_1_1crib_1_1TDetectParticleProcessor.html#ab5ff79e7eb0398f3a24788925d96af85", null ],
+    [ "fInGeom", "classart_1_1crib_1_1TDetectParticleProcessor.html#af9bb69573bfc7291f258928eac7c1371", null ],
+    [ "fInputColName", "classart_1_1crib_1_1TDetectParticleProcessor.html#ad0867ef173d4eef63ad06ec1588bf375", null ],
+    [ "fInputTrackColName", "classart_1_1crib_1_1TDetectParticleProcessor.html#aa8fb7f6ff32e6a4692658ef1bd1dde4b", null ],
+    [ "fInTrackData", "classart_1_1crib_1_1TDetectParticleProcessor.html#a2cc8625fa3ae71bd2254296cd5871f3c", null ],
+    [ "fOutData", "classart_1_1crib_1_1TDetectParticleProcessor.html#a7775e2f2ea7b108818aa9553db42a624", null ],
+    [ "fOutputColName", "classart_1_1crib_1_1TDetectParticleProcessor.html#ac217b6873a61be0ca84d2b0e856c7dc7", null ],
+    [ "fResolution", "classart_1_1crib_1_1TDetectParticleProcessor.html#a9fc69a4d4deb0c9c639318ee8fd2e789", null ],
+    [ "fTargetIsGas", "classart_1_1crib_1_1TDetectParticleProcessor.html#aee5932fc548b71f7d794df670d2f28c5", null ],
+    [ "fTargetName", "classart_1_1crib_1_1TDetectParticleProcessor.html#a0b9ee98bd548b4a04f612ef38f333eee", null ],
+    [ "fTargetParameterName", "classart_1_1crib_1_1TDetectParticleProcessor.html#a4ef6699779db69594a3146ddb11f1796", null ],
+    [ "fTargetPressure", "classart_1_1crib_1_1TDetectParticleProcessor.html#aa3e5b4c463529628b7a85c16eb8e2de3", null ],
+    [ "fTargetPrm", "classart_1_1crib_1_1TDetectParticleProcessor.html#a0de24eea6069031e2d1ac3eba1e5bd91", null ],
+    [ "srim", "classart_1_1crib_1_1TDetectParticleProcessor.html#afd71a294a7425da86c7734728bd3f0c6", null ]
+];

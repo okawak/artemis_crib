@@ -1,0 +1,238 @@
+\hypertarget{classart_1_1crib_1_1TTSData}{}\doxysection{art\+::crib\+::TTSData Class Reference}
+\label{classart_1_1crib_1_1TTSData}\index{art::crib::TTSData@{art::crib::TTSData}}
+
+
+{\ttfamily \#include $<$TTSData.\+h$>$}
+
+Inheritance diagram for art\+::crib\+::TTSData\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classart_1_1crib_1_1TTSData}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classart_1_1crib_1_1TTSData_a88d9ce371b0692b6b695fa5c8a0feed9}{ESort\+Type}} \{ \mbox{\hyperlink{classart_1_1crib_1_1TTSData_a88d9ce371b0692b6b695fa5c8a0feed9a9f6a904d41132927915d190b54f18594}{k\+ID}}
+, \mbox{\hyperlink{classart_1_1crib_1_1TTSData_a88d9ce371b0692b6b695fa5c8a0feed9a35e7d4ca41c0ebef418dde6d8363f3d5}{k\+Timing}}
+ \}
+\item 
+enum \mbox{\hyperlink{classart_1_1crib_1_1TTSData_ac56465632f9d22a51d141513a475a43e}{ESort\+Order}} \{ \mbox{\hyperlink{classart_1_1crib_1_1TTSData_ac56465632f9d22a51d141513a475a43ea80fe3619864508ebe4a62e277be3e57e}{k\+ASC}}
+, \mbox{\hyperlink{classart_1_1crib_1_1TTSData_ac56465632f9d22a51d141513a475a43ea279a9d19d5ffa34578c6481d7780e608}{k\+DESC}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TTSData_a7f3adc00c5577d0006fe29f14f96c93d}{TTSData}} ()
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TTSData_a1c134e9e38549a47fef0b9a31ca5cf77}{$\sim$\+TTSData}} ()
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TTSData_ac1b5fcf1b41dce2435b8278d36e5cb83}{TTSData}} (const \mbox{\hyperlink{classart_1_1crib_1_1TTSData}{TTSData}} \&rhs)
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TTSData}{TTSData}} \& \mbox{\hyperlink{classart_1_1crib_1_1TTSData_a164fd777432b8744be5b976c3a99f466}{operator=}} (const \mbox{\hyperlink{classart_1_1crib_1_1TTSData}{TTSData}} \&rhs)
+\item 
+ULong64\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TTSData_a7ae026ee8d2ee8c427de60a51587083e}{Get\+TS}} () const
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TTSData_ab041eccd7e1e1f2e4b4d2fadb3178483}{Set\+TS}} (ULong64\+\_\+t arg)
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TTSData_a272d2b062f83ac69ec8b55e367e8fe46}{Get\+TScal}} () const
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TTSData_aa4687c1d858eb2bff966a9b0ee177077}{Set\+TScal}} (Double\+\_\+t arg)
+\item 
+virtual void \mbox{\hyperlink{classart_1_1crib_1_1TTSData_a352719381073f5b45afd8d8493db1947}{Copy}} (TObject \&dest) const
+\item 
+virtual void \mbox{\hyperlink{classart_1_1crib_1_1TTSData_abbb1a18cd44ca55818dab2802aadc0f7}{Clear}} (Option\+\_\+t $\ast$opt=\char`\"{}\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ULong64\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TTSData_af6b09280eeb710a1bdc01f496af1dd6c}{f\+TS}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TTSData_a4355c9a7b42c8659915bfbcb888fa9fa}{f\+TScal}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 20 of file TTSData.\+h.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TTSData_ac56465632f9d22a51d141513a475a43e}\label{classart_1_1crib_1_1TTSData_ac56465632f9d22a51d141513a475a43e}} 
+\index{art::crib::TTSData@{art::crib::TTSData}!ESortOrder@{ESortOrder}}
+\index{ESortOrder@{ESortOrder}!art::crib::TTSData@{art::crib::TTSData}}
+\doxysubsubsection{\texorpdfstring{ESortOrder}{ESortOrder}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classart_1_1crib_1_1TTSData_ac56465632f9d22a51d141513a475a43e}{art\+::crib\+::\+TTSData\+::\+ESort\+Order}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kASC@{kASC}!art::crib::TTSData@{art::crib::TTSData}}\index{art::crib::TTSData@{art::crib::TTSData}!kASC@{kASC}}}\mbox{\Hypertarget{classart_1_1crib_1_1TTSData_ac56465632f9d22a51d141513a475a43ea80fe3619864508ebe4a62e277be3e57e}\label{classart_1_1crib_1_1TTSData_ac56465632f9d22a51d141513a475a43ea80fe3619864508ebe4a62e277be3e57e}} 
+k\+ASC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kDESC@{kDESC}!art::crib::TTSData@{art::crib::TTSData}}\index{art::crib::TTSData@{art::crib::TTSData}!kDESC@{kDESC}}}\mbox{\Hypertarget{classart_1_1crib_1_1TTSData_ac56465632f9d22a51d141513a475a43ea279a9d19d5ffa34578c6481d7780e608}\label{classart_1_1crib_1_1TTSData_ac56465632f9d22a51d141513a475a43ea279a9d19d5ffa34578c6481d7780e608}} 
+k\+DESC&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 24 of file TTSData.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTSData_a88d9ce371b0692b6b695fa5c8a0feed9}\label{classart_1_1crib_1_1TTSData_a88d9ce371b0692b6b695fa5c8a0feed9}} 
+\index{art::crib::TTSData@{art::crib::TTSData}!ESortType@{ESortType}}
+\index{ESortType@{ESortType}!art::crib::TTSData@{art::crib::TTSData}}
+\doxysubsubsection{\texorpdfstring{ESortType}{ESortType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classart_1_1crib_1_1TTSData_a88d9ce371b0692b6b695fa5c8a0feed9}{art\+::crib\+::\+TTSData\+::\+ESort\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kID@{kID}!art::crib::TTSData@{art::crib::TTSData}}\index{art::crib::TTSData@{art::crib::TTSData}!kID@{kID}}}\mbox{\Hypertarget{classart_1_1crib_1_1TTSData_a88d9ce371b0692b6b695fa5c8a0feed9a9f6a904d41132927915d190b54f18594}\label{classart_1_1crib_1_1TTSData_a88d9ce371b0692b6b695fa5c8a0feed9a9f6a904d41132927915d190b54f18594}} 
+k\+ID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTiming@{kTiming}!art::crib::TTSData@{art::crib::TTSData}}\index{art::crib::TTSData@{art::crib::TTSData}!kTiming@{kTiming}}}\mbox{\Hypertarget{classart_1_1crib_1_1TTSData_a88d9ce371b0692b6b695fa5c8a0feed9a35e7d4ca41c0ebef418dde6d8363f3d5}\label{classart_1_1crib_1_1TTSData_a88d9ce371b0692b6b695fa5c8a0feed9a35e7d4ca41c0ebef418dde6d8363f3d5}} 
+k\+Timing&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 22 of file TTSData.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TTSData_a7f3adc00c5577d0006fe29f14f96c93d}\label{classart_1_1crib_1_1TTSData_a7f3adc00c5577d0006fe29f14f96c93d}} 
+\index{art::crib::TTSData@{art::crib::TTSData}!TTSData@{TTSData}}
+\index{TTSData@{TTSData}!art::crib::TTSData@{art::crib::TTSData}}
+\doxysubsubsection{\texorpdfstring{TTSData()}{TTSData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily TTSData\+::\+TTSData (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file TTSData.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTSData_a1c134e9e38549a47fef0b9a31ca5cf77}\label{classart_1_1crib_1_1TTSData_a1c134e9e38549a47fef0b9a31ca5cf77}} 
+\index{art::crib::TTSData@{art::crib::TTSData}!````~TTSData@{$\sim$TTSData}}
+\index{````~TTSData@{$\sim$TTSData}!art::crib::TTSData@{art::crib::TTSData}}
+\doxysubsubsection{\texorpdfstring{$\sim$TTSData()}{~TTSData()}}
+{\footnotesize\ttfamily TTSData\+::$\sim$\+TTSData (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file TTSData.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTSData_ac1b5fcf1b41dce2435b8278d36e5cb83}\label{classart_1_1crib_1_1TTSData_ac1b5fcf1b41dce2435b8278d36e5cb83}} 
+\index{art::crib::TTSData@{art::crib::TTSData}!TTSData@{TTSData}}
+\index{TTSData@{TTSData}!art::crib::TTSData@{art::crib::TTSData}}
+\doxysubsubsection{\texorpdfstring{TTSData()}{TTSData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily TTSData\+::\+TTSData (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1crib_1_1TTSData}{TTSData}} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Definition at line 24 of file TTSData.\+cc.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TTSData_abbb1a18cd44ca55818dab2802aadc0f7}\label{classart_1_1crib_1_1TTSData_abbb1a18cd44ca55818dab2802aadc0f7}} 
+\index{art::crib::TTSData@{art::crib::TTSData}!Clear@{Clear}}
+\index{Clear@{Clear}!art::crib::TTSData@{art::crib::TTSData}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void TTSData\+::\+Clear (\begin{DoxyParamCaption}\item[{Option\+\_\+t $\ast$}]{opt = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 43 of file TTSData.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTSData_a352719381073f5b45afd8d8493db1947}\label{classart_1_1crib_1_1TTSData_a352719381073f5b45afd8d8493db1947}} 
+\index{art::crib::TTSData@{art::crib::TTSData}!Copy@{Copy}}
+\index{Copy@{Copy}!art::crib::TTSData@{art::crib::TTSData}}
+\doxysubsubsection{\texorpdfstring{Copy()}{Copy()}}
+{\footnotesize\ttfamily void TTSData\+::\+Copy (\begin{DoxyParamCaption}\item[{TObject \&}]{dest }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 36 of file TTSData.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTSData_a7ae026ee8d2ee8c427de60a51587083e}\label{classart_1_1crib_1_1TTSData_a7ae026ee8d2ee8c427de60a51587083e}} 
+\index{art::crib::TTSData@{art::crib::TTSData}!GetTS@{GetTS}}
+\index{GetTS@{GetTS}!art::crib::TTSData@{art::crib::TTSData}}
+\doxysubsubsection{\texorpdfstring{GetTS()}{GetTS()}}
+{\footnotesize\ttfamily ULong64\+\_\+t art\+::crib\+::\+TTSData\+::\+Get\+TS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 33 of file TTSData.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTSData_a272d2b062f83ac69ec8b55e367e8fe46}\label{classart_1_1crib_1_1TTSData_a272d2b062f83ac69ec8b55e367e8fe46}} 
+\index{art::crib::TTSData@{art::crib::TTSData}!GetTScal@{GetTScal}}
+\index{GetTScal@{GetTScal}!art::crib::TTSData@{art::crib::TTSData}}
+\doxysubsubsection{\texorpdfstring{GetTScal()}{GetTScal()}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TTSData\+::\+Get\+TScal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 35 of file TTSData.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTSData_a164fd777432b8744be5b976c3a99f466}\label{classart_1_1crib_1_1TTSData_a164fd777432b8744be5b976c3a99f466}} 
+\index{art::crib::TTSData@{art::crib::TTSData}!operator=@{operator=}}
+\index{operator=@{operator=}!art::crib::TTSData@{art::crib::TTSData}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classart_1_1crib_1_1TTSData}{TTSData}} \& TTSData\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1crib_1_1TTSData}{TTSData}} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file TTSData.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTSData_ab041eccd7e1e1f2e4b4d2fadb3178483}\label{classart_1_1crib_1_1TTSData_ab041eccd7e1e1f2e4b4d2fadb3178483}} 
+\index{art::crib::TTSData@{art::crib::TTSData}!SetTS@{SetTS}}
+\index{SetTS@{SetTS}!art::crib::TTSData@{art::crib::TTSData}}
+\doxysubsubsection{\texorpdfstring{SetTS()}{SetTS()}}
+{\footnotesize\ttfamily void art\+::crib\+::\+TTSData\+::\+Set\+TS (\begin{DoxyParamCaption}\item[{ULong64\+\_\+t}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 34 of file TTSData.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTSData_aa4687c1d858eb2bff966a9b0ee177077}\label{classart_1_1crib_1_1TTSData_aa4687c1d858eb2bff966a9b0ee177077}} 
+\index{art::crib::TTSData@{art::crib::TTSData}!SetTScal@{SetTScal}}
+\index{SetTScal@{SetTScal}!art::crib::TTSData@{art::crib::TTSData}}
+\doxysubsubsection{\texorpdfstring{SetTScal()}{SetTScal()}}
+{\footnotesize\ttfamily void art\+::crib\+::\+TTSData\+::\+Set\+TScal (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 36 of file TTSData.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TTSData_af6b09280eeb710a1bdc01f496af1dd6c}\label{classart_1_1crib_1_1TTSData_af6b09280eeb710a1bdc01f496af1dd6c}} 
+\index{art::crib::TTSData@{art::crib::TTSData}!fTS@{fTS}}
+\index{fTS@{fTS}!art::crib::TTSData@{art::crib::TTSData}}
+\doxysubsubsection{\texorpdfstring{fTS}{fTS}}
+{\footnotesize\ttfamily ULong64\+\_\+t art\+::crib\+::\+TTSData\+::f\+TS\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 42 of file TTSData.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTSData_a4355c9a7b42c8659915bfbcb888fa9fa}\label{classart_1_1crib_1_1TTSData_a4355c9a7b42c8659915bfbcb888fa9fa}} 
+\index{art::crib::TTSData@{art::crib::TTSData}!fTScal@{fTScal}}
+\index{fTScal@{fTScal}!art::crib::TTSData@{art::crib::TTSData}}
+\doxysubsubsection{\texorpdfstring{fTScal}{fTScal}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TTSData\+::f\+TScal\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 43 of file TTSData.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src-\/crib/timestamp/\mbox{\hyperlink{TTSData_8h}{TTSData.\+h}}\item 
+src-\/crib/timestamp/\mbox{\hyperlink{TTSData_8cc}{TTSData.\+cc}}\end{DoxyCompactItemize}

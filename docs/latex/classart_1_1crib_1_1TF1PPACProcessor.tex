@@ -1,0 +1,422 @@
+\hypertarget{classart_1_1crib_1_1TF1PPACProcessor}{}\doxysection{art\+::crib\+::TF1\+PPACProcessor Class Reference}
+\label{classart_1_1crib_1_1TF1PPACProcessor}\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+
+
+{\ttfamily \#include $<$TF1\+PPACProcessor.\+h$>$}
+
+Inheritance diagram for art\+::crib\+::TF1\+PPACProcessor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classart_1_1crib_1_1TF1PPACProcessor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_a8d56221143859d8f9cf1672f27b76906}{TF1\+PPACProcessor}} ()
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_aa28c3ff570ba1526487b012f0682ee97}{$\sim$\+TF1\+PPACProcessor}} ()
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_aedf9e82ecd66d0f18b6f9e7b774b9122}{Init}} (TEvent\+Collection $\ast$col) override
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_a83c46b125b423b1a74b28ce72c402f9f}{Process}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_a562cf1c244e567fe2eaef880d8355df6}{f\+Input\+Col\+Name}}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_a0f7c262cd41a4f8a6a06621ede86d3cc}{f\+Output\+Col\+Name}}
+\item 
+TCategorized\+Data $\ast$$\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_a5ed142946cad7e9afbce14ed740ca8a1}{f\+Categorized\+Data}}
+\item 
+TClones\+Array $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_aa51dac294c06842c903e3a229d82d62f}{f\+PPACOut}}
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_ac861f98e25b2083eee019e10cc61965f}{f\+Cat\+ID}}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_a6e869444f160deb1a3acef34e156e4ff}{f\+Timing\+Converter\+Array\+Name}}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_a25b47689d6f1f30df8f9f1e915fcbc05}{f\+Charge\+Converter\+Array\+Name}}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_a9520d13ae35d7975671b1f574996255a}{f\+XConverter\+Array\+Name}}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_a66d79bc7988ef55f44a20b105be80771}{f\+YConverter\+Array\+Name}}
+\item 
+std\+::vector$<$ TConverter\+Base $\ast$ $>$ $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_afef8539089096676dd40f71bfa5155d0}{f\+Timing\+Converter\+Array}}
+\item 
+std\+::vector$<$ TConverter\+Base $\ast$ $>$ $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_a1fe6f3dea19fa683fc3d99b3f6fd56a6}{f\+Charge\+Converter\+Array}}
+\item 
+std\+::vector$<$ TConverter\+Base $\ast$ $>$ $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_aa1baebdd57eee8df279e21049868b771}{f\+XConverter\+Array}}
+\item 
+std\+::vector$<$ TConverter\+Base $\ast$ $>$ $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_ab9a82f2094ef552607f96f67bd396ca1}{f\+YConverter\+Array}}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_a56c317e2c6e60f49caf4ef2a299155f4}{f\+Parameter\+Name}}
+\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_a3b19b688a5c989e192ff2f552f1fc483}{f\+Parameter\+Set}}
+\item 
+String\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_aa58ee61486039ad5b073804ce4feb953}{f\+List\+Of\+Parameter\+Names}}
+\begin{DoxyCompactList}\small\item\em parameter set \end{DoxyCompactList}\item 
+std\+::vector$<$ TPPACParameter $\ast$ $>$ \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_ab50dd53b584718b4868a22b13b5d12ce}{f\+PPACParameter}}
+\item 
+String\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_adaf4e3a3adee6ce546c6731a3b8d3477}{f\+List\+Of\+PPACNames}}
+\begin{DoxyCompactList}\small\item\em list of parmaeter for each ppac \end{DoxyCompactList}\item 
+std\+::vector$<$ TClones\+Array $\ast$ $>$ \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_a04f1851f76a38cbcd9a3e85ef935d7bb}{f\+PPACArray}}
+\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_a7af73ed30be2f6901b99065826a0c246}{f\+Do\+Separate\+PPACs}}
+\begin{DoxyCompactList}\small\item\em list of ppacs \end{DoxyCompactList}\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_a8606128886758dcfffcdfff42d718e23}{f\+Has\+Each\+Ch\+Converter}}
+\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_a65e9664e36e9c32e67abd2a4c402fe7e}{f\+Do\+Inside\+Offset}}
+\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_ad5fadded0be851ecf366d88d36e007b4}{f\+Do\+Outside\+Offset}}
+\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_aef3801674320dd2ead958911771ac129}{f\+Do\+Geometry\+Offset}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const Int\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_a8d061e9c07448e243d86ab92caf86aee}{DETID\+\_\+\+ORIGIN}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_ac521a388c117ae7196a26bbd4e0ed9eb}{TF1\+PPACProcessor}} (const \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor}{TF1\+PPACProcessor}} \&rhs)=delete
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor}{TF1\+PPACProcessor}} \& \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor_a1da94e1f6c475859277a94e6edeffe21}{operator=}} (const \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor}{TF1\+PPACProcessor}} \&rhs)=delete
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 29 of file TF1\+PPACProcessor.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_a8d56221143859d8f9cf1672f27b76906}\label{classart_1_1crib_1_1TF1PPACProcessor_a8d56221143859d8f9cf1672f27b76906}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!TF1PPACProcessor@{TF1PPACProcessor}}
+\index{TF1PPACProcessor@{TF1PPACProcessor}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{TF1PPACProcessor()}{TF1PPACProcessor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily TF1\+PPACProcessor\+::\+TF1\+PPACProcessor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 28 of file TF1\+PPACProcessor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_aa28c3ff570ba1526487b012f0682ee97}\label{classart_1_1crib_1_1TF1PPACProcessor_aa28c3ff570ba1526487b012f0682ee97}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!````~TF1PPACProcessor@{$\sim$TF1PPACProcessor}}
+\index{````~TF1PPACProcessor@{$\sim$TF1PPACProcessor}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{$\sim$TF1PPACProcessor()}{~TF1PPACProcessor()}}
+{\footnotesize\ttfamily TF1\+PPACProcessor\+::$\sim$\+TF1\+PPACProcessor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 66 of file TF1\+PPACProcessor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_ac521a388c117ae7196a26bbd4e0ed9eb}\label{classart_1_1crib_1_1TF1PPACProcessor_ac521a388c117ae7196a26bbd4e0ed9eb}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!TF1PPACProcessor@{TF1PPACProcessor}}
+\index{TF1PPACProcessor@{TF1PPACProcessor}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{TF1PPACProcessor()}{TF1PPACProcessor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily art\+::crib\+::\+TF1\+PPACProcessor\+::\+TF1\+PPACProcessor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor}{TF1\+PPACProcessor}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_aedf9e82ecd66d0f18b6f9e7b774b9122}\label{classart_1_1crib_1_1TF1PPACProcessor_aedf9e82ecd66d0f18b6f9e7b774b9122}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!Init@{Init}}
+\index{Init@{Init}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void TF1\+PPACProcessor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 74 of file TF1\+PPACProcessor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_a1da94e1f6c475859277a94e6edeffe21}\label{classart_1_1crib_1_1TF1PPACProcessor_a1da94e1f6c475859277a94e6edeffe21}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!operator=@{operator=}}
+\index{operator=@{operator=}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor}{TF1\+PPACProcessor}}\& art\+::crib\+::\+TF1\+PPACProcessor\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1crib_1_1TF1PPACProcessor}{TF1\+PPACProcessor}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_a83c46b125b423b1a74b28ce72c402f9f}\label{classart_1_1crib_1_1TF1PPACProcessor_a83c46b125b423b1a74b28ce72c402f9f}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!Process@{Process}}
+\index{Process@{Process}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{Process()}{Process()}}
+{\footnotesize\ttfamily void TF1\+PPACProcessor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 122 of file TF1\+PPACProcessor.\+cc.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_a8d061e9c07448e243d86ab92caf86aee}\label{classart_1_1crib_1_1TF1PPACProcessor_a8d061e9c07448e243d86ab92caf86aee}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!DETID\_ORIGIN@{DETID\_ORIGIN}}
+\index{DETID\_ORIGIN@{DETID\_ORIGIN}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{DETID\_ORIGIN}{DETID\_ORIGIN}}
+{\footnotesize\ttfamily const Int\+\_\+t art\+::crib\+::\+TF1\+PPACProcessor\+::\+DETID\+\_\+\+ORIGIN\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 47 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_a5ed142946cad7e9afbce14ed740ca8a1}\label{classart_1_1crib_1_1TF1PPACProcessor_a5ed142946cad7e9afbce14ed740ca8a1}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fCategorizedData@{fCategorizedData}}
+\index{fCategorizedData@{fCategorizedData}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fCategorizedData}{fCategorizedData}}
+{\footnotesize\ttfamily TCategorized\+Data$\ast$$\ast$ art\+::crib\+::\+TF1\+PPACProcessor\+::f\+Categorized\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 42 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_ac861f98e25b2083eee019e10cc61965f}\label{classart_1_1crib_1_1TF1PPACProcessor_ac861f98e25b2083eee019e10cc61965f}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fCatID@{fCatID}}
+\index{fCatID@{fCatID}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fCatID}{fCatID}}
+{\footnotesize\ttfamily Int\+\_\+t art\+::crib\+::\+TF1\+PPACProcessor\+::f\+Cat\+ID\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 45 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_a1fe6f3dea19fa683fc3d99b3f6fd56a6}\label{classart_1_1crib_1_1TF1PPACProcessor_a1fe6f3dea19fa683fc3d99b3f6fd56a6}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fChargeConverterArray@{fChargeConverterArray}}
+\index{fChargeConverterArray@{fChargeConverterArray}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fChargeConverterArray}{fChargeConverterArray}}
+{\footnotesize\ttfamily std\+::vector$<$TConverter\+Base $\ast$$>$$\ast$ art\+::crib\+::\+TF1\+PPACProcessor\+::f\+Charge\+Converter\+Array\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 55 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_a25b47689d6f1f30df8f9f1e915fcbc05}\label{classart_1_1crib_1_1TF1PPACProcessor_a25b47689d6f1f30df8f9f1e915fcbc05}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fChargeConverterArrayName@{fChargeConverterArrayName}}
+\index{fChargeConverterArrayName@{fChargeConverterArrayName}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fChargeConverterArrayName}{fChargeConverterArrayName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TF1\+PPACProcessor\+::f\+Charge\+Converter\+Array\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 50 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_aef3801674320dd2ead958911771ac129}\label{classart_1_1crib_1_1TF1PPACProcessor_aef3801674320dd2ead958911771ac129}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fDoGeometryOffset@{fDoGeometryOffset}}
+\index{fDoGeometryOffset@{fDoGeometryOffset}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fDoGeometryOffset}{fDoGeometryOffset}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::crib\+::\+TF1\+PPACProcessor\+::f\+Do\+Geometry\+Offset\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 71 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_a65e9664e36e9c32e67abd2a4c402fe7e}\label{classart_1_1crib_1_1TF1PPACProcessor_a65e9664e36e9c32e67abd2a4c402fe7e}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fDoInsideOffset@{fDoInsideOffset}}
+\index{fDoInsideOffset@{fDoInsideOffset}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fDoInsideOffset}{fDoInsideOffset}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::crib\+::\+TF1\+PPACProcessor\+::f\+Do\+Inside\+Offset\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 69 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_ad5fadded0be851ecf366d88d36e007b4}\label{classart_1_1crib_1_1TF1PPACProcessor_ad5fadded0be851ecf366d88d36e007b4}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fDoOutsideOffset@{fDoOutsideOffset}}
+\index{fDoOutsideOffset@{fDoOutsideOffset}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fDoOutsideOffset}{fDoOutsideOffset}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::crib\+::\+TF1\+PPACProcessor\+::f\+Do\+Outside\+Offset\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 70 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_a7af73ed30be2f6901b99065826a0c246}\label{classart_1_1crib_1_1TF1PPACProcessor_a7af73ed30be2f6901b99065826a0c246}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fDoSeparatePPACs@{fDoSeparatePPACs}}
+\index{fDoSeparatePPACs@{fDoSeparatePPACs}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fDoSeparatePPACs}{fDoSeparatePPACs}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::crib\+::\+TF1\+PPACProcessor\+::f\+Do\+Separate\+PPACs\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+list of ppacs 
+
+
+
+Definition at line 67 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_a8606128886758dcfffcdfff42d718e23}\label{classart_1_1crib_1_1TF1PPACProcessor_a8606128886758dcfffcdfff42d718e23}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fHasEachChConverter@{fHasEachChConverter}}
+\index{fHasEachChConverter@{fHasEachChConverter}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fHasEachChConverter}{fHasEachChConverter}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::crib\+::\+TF1\+PPACProcessor\+::f\+Has\+Each\+Ch\+Converter\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 68 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_a562cf1c244e567fe2eaef880d8355df6}\label{classart_1_1crib_1_1TF1PPACProcessor_a562cf1c244e567fe2eaef880d8355df6}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fInputColName@{fInputColName}}
+\index{fInputColName@{fInputColName}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fInputColName}{fInputColName}}
+{\footnotesize\ttfamily String\+Vec\+\_\+t art\+::crib\+::\+TF1\+PPACProcessor\+::f\+Input\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 40 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_aa58ee61486039ad5b073804ce4feb953}\label{classart_1_1crib_1_1TF1PPACProcessor_aa58ee61486039ad5b073804ce4feb953}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fListOfParameterNames@{fListOfParameterNames}}
+\index{fListOfParameterNames@{fListOfParameterNames}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fListOfParameterNames}{fListOfParameterNames}}
+{\footnotesize\ttfamily String\+Vec\+\_\+t art\+::crib\+::\+TF1\+PPACProcessor\+::f\+List\+Of\+Parameter\+Names\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+parameter set 
+
+
+
+Definition at line 62 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_adaf4e3a3adee6ce546c6731a3b8d3477}\label{classart_1_1crib_1_1TF1PPACProcessor_adaf4e3a3adee6ce546c6731a3b8d3477}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fListOfPPACNames@{fListOfPPACNames}}
+\index{fListOfPPACNames@{fListOfPPACNames}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fListOfPPACNames}{fListOfPPACNames}}
+{\footnotesize\ttfamily String\+Vec\+\_\+t art\+::crib\+::\+TF1\+PPACProcessor\+::f\+List\+Of\+PPACNames\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+list of parmaeter for each ppac 
+
+
+
+Definition at line 65 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_a0f7c262cd41a4f8a6a06621ede86d3cc}\label{classart_1_1crib_1_1TF1PPACProcessor_a0f7c262cd41a4f8a6a06621ede86d3cc}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fOutputColName@{fOutputColName}}
+\index{fOutputColName@{fOutputColName}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fOutputColName}{fOutputColName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TF1\+PPACProcessor\+::f\+Output\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 41 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_a56c317e2c6e60f49caf4ef2a299155f4}\label{classart_1_1crib_1_1TF1PPACProcessor_a56c317e2c6e60f49caf4ef2a299155f4}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fParameterName@{fParameterName}}
+\index{fParameterName@{fParameterName}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fParameterName}{fParameterName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TF1\+PPACProcessor\+::f\+Parameter\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 60 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_a3b19b688a5c989e192ff2f552f1fc483}\label{classart_1_1crib_1_1TF1PPACProcessor_a3b19b688a5c989e192ff2f552f1fc483}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fParameterSet@{fParameterSet}}
+\index{fParameterSet@{fParameterSet}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fParameterSet}{fParameterSet}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::crib\+::\+TF1\+PPACProcessor\+::f\+Parameter\+Set\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 61 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_a04f1851f76a38cbcd9a3e85ef935d7bb}\label{classart_1_1crib_1_1TF1PPACProcessor_a04f1851f76a38cbcd9a3e85ef935d7bb}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fPPACArray@{fPPACArray}}
+\index{fPPACArray@{fPPACArray}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fPPACArray}{fPPACArray}}
+{\footnotesize\ttfamily std\+::vector$<$TClones\+Array $\ast$$>$ art\+::crib\+::\+TF1\+PPACProcessor\+::f\+PPACArray\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 66 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_aa51dac294c06842c903e3a229d82d62f}\label{classart_1_1crib_1_1TF1PPACProcessor_aa51dac294c06842c903e3a229d82d62f}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fPPACOut@{fPPACOut}}
+\index{fPPACOut@{fPPACOut}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fPPACOut}{fPPACOut}}
+{\footnotesize\ttfamily TClones\+Array$\ast$ art\+::crib\+::\+TF1\+PPACProcessor\+::f\+PPACOut\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 43 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_ab50dd53b584718b4868a22b13b5d12ce}\label{classart_1_1crib_1_1TF1PPACProcessor_ab50dd53b584718b4868a22b13b5d12ce}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fPPACParameter@{fPPACParameter}}
+\index{fPPACParameter@{fPPACParameter}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fPPACParameter}{fPPACParameter}}
+{\footnotesize\ttfamily std\+::vector$<$TPPACParameter $\ast$$>$ art\+::crib\+::\+TF1\+PPACProcessor\+::f\+PPACParameter\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 63 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_afef8539089096676dd40f71bfa5155d0}\label{classart_1_1crib_1_1TF1PPACProcessor_afef8539089096676dd40f71bfa5155d0}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fTimingConverterArray@{fTimingConverterArray}}
+\index{fTimingConverterArray@{fTimingConverterArray}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fTimingConverterArray}{fTimingConverterArray}}
+{\footnotesize\ttfamily std\+::vector$<$TConverter\+Base $\ast$$>$$\ast$ art\+::crib\+::\+TF1\+PPACProcessor\+::f\+Timing\+Converter\+Array\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 54 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_a6e869444f160deb1a3acef34e156e4ff}\label{classart_1_1crib_1_1TF1PPACProcessor_a6e869444f160deb1a3acef34e156e4ff}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fTimingConverterArrayName@{fTimingConverterArrayName}}
+\index{fTimingConverterArrayName@{fTimingConverterArrayName}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fTimingConverterArrayName}{fTimingConverterArrayName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TF1\+PPACProcessor\+::f\+Timing\+Converter\+Array\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 49 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_aa1baebdd57eee8df279e21049868b771}\label{classart_1_1crib_1_1TF1PPACProcessor_aa1baebdd57eee8df279e21049868b771}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fXConverterArray@{fXConverterArray}}
+\index{fXConverterArray@{fXConverterArray}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fXConverterArray}{fXConverterArray}}
+{\footnotesize\ttfamily std\+::vector$<$TConverter\+Base $\ast$$>$$\ast$ art\+::crib\+::\+TF1\+PPACProcessor\+::f\+XConverter\+Array\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 56 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_a9520d13ae35d7975671b1f574996255a}\label{classart_1_1crib_1_1TF1PPACProcessor_a9520d13ae35d7975671b1f574996255a}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fXConverterArrayName@{fXConverterArrayName}}
+\index{fXConverterArrayName@{fXConverterArrayName}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fXConverterArrayName}{fXConverterArrayName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TF1\+PPACProcessor\+::f\+XConverter\+Array\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 51 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_ab9a82f2094ef552607f96f67bd396ca1}\label{classart_1_1crib_1_1TF1PPACProcessor_ab9a82f2094ef552607f96f67bd396ca1}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fYConverterArray@{fYConverterArray}}
+\index{fYConverterArray@{fYConverterArray}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fYConverterArray}{fYConverterArray}}
+{\footnotesize\ttfamily std\+::vector$<$TConverter\+Base $\ast$$>$$\ast$ art\+::crib\+::\+TF1\+PPACProcessor\+::f\+YConverter\+Array\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 57 of file TF1\+PPACProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TF1PPACProcessor_a66d79bc7988ef55f44a20b105be80771}\label{classart_1_1crib_1_1TF1PPACProcessor_a66d79bc7988ef55f44a20b105be80771}} 
+\index{art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}!fYConverterArrayName@{fYConverterArrayName}}
+\index{fYConverterArrayName@{fYConverterArrayName}!art::crib::TF1PPACProcessor@{art::crib::TF1PPACProcessor}}
+\doxysubsubsection{\texorpdfstring{fYConverterArrayName}{fYConverterArrayName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TF1\+PPACProcessor\+::f\+YConverter\+Array\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 52 of file TF1\+PPACProcessor.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src-\/crib/\mbox{\hyperlink{TF1PPACProcessor_8h}{TF1\+PPACProcessor.\+h}}\item 
+src-\/crib/\mbox{\hyperlink{TF1PPACProcessor_8cc}{TF1\+PPACProcessor.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,280 @@
+\hypertarget{classart_1_1crib_1_1TTreePeriodicEventStore}{}\doxysection{art\+::crib\+::TTree\+Periodic\+Event\+Store Class Reference}
+\label{classart_1_1crib_1_1TTreePeriodicEventStore}\index{art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}}
+
+
+{\ttfamily \#include $<$TTree\+Periodic\+Event\+Store.\+h$>$}
+
+Inheritance diagram for art\+::crib\+::TTree\+Periodic\+Event\+Store\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classart_1_1crib_1_1TTreePeriodicEventStore}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TTreePeriodicEventStore_a60c96c9bf809cd58b5a40a3c241392c8}{TTree\+Periodic\+Event\+Store}} ()
+\begin{DoxyCompactList}\small\item\em default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TTreePeriodicEventStore_ac8af7031916e749315b1a5988f06f6c2}{$\sim$\+TTree\+Periodic\+Event\+Store}} ()
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TTreePeriodicEventStore_a90010b845e06680ee704f5e6d74d6f06}{Init}} (TEvent\+Collection $\ast$col) override
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TTreePeriodicEventStore_aec6b7613cbe64fe7ccdf23230ba2b33e}{Process}} () override
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TTreePeriodicEventStore_ab4424697f4bd6faf2c2da7f1d8e9df0c}{Get\+Run\+Number}} () const override
+\begin{DoxyCompactList}\small\item\em override from IEvent\+Store \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TTreePeriodicEventStore_a7999732a5be53930b08e7dee6d32b3cd}{Get\+Run\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em override from IEvent\+Store but it is UNSAFE \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classart_1_1crib_1_1TTreePeriodicEventStore_abe140c2bba503768bd676c0aec31807e}{Get\+Str\+Run\+Name}} () const
+\begin{DoxyCompactList}\small\item\em safe function to get run name \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TTreePeriodicEventStore_a736d7f333d6764d196b49b9a916b8c30}{Class\+Def\+Override}} (\mbox{\hyperlink{classart_1_1crib_1_1TTreePeriodicEventStore}{TTree\+Periodic\+Event\+Store}}, 1)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TTreePeriodicEventStore_a22739e3731316286793d90a8bb3368a0}{f\+File\+Name}}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TTreePeriodicEventStore_a742ab6b918ac0edb296865f85e807b80}{f\+Tree\+Name}}
+\item 
+TFile $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TTreePeriodicEventStore_a5c8b954fd5a0d95a0a9a5ba48c388494}{f\+File}}
+\item 
+TTree $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TTreePeriodicEventStore_acf696dc52bcf12b30665cb4be98a53a0}{f\+Tree}}
+\item 
+TList $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TTreePeriodicEventStore_abe9ca070875151d65ba7713614563a9a}{f\+Objects}}
+\item 
+Long\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TTreePeriodicEventStore_a68c261f39bb214e9403bd0b9de13c2ee}{f\+Event\+Num}}
+\item 
+Long\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TTreePeriodicEventStore_adcb2a3abdcd9dd40142016df42a35519}{f\+Max\+Event\+Num}}
+\item 
+Long\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TTreePeriodicEventStore_a7f520d430cdcd7025c4f347ce1989168}{f\+Tree\+Event\+Num}}
+\item 
+Long\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TTreePeriodicEventStore_a42dd09133fea3b5f5a86b9cd8ef48570}{f\+Current\+Num}}
+\item 
+TEvent\+Header $\ast$$\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TTreePeriodicEventStore_a10133aded0ff3e3e0cd20692f14eff4d}{f\+Event\+Header}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 38 of file TTree\+Periodic\+Event\+Store.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreePeriodicEventStore_a60c96c9bf809cd58b5a40a3c241392c8}\label{classart_1_1crib_1_1TTreePeriodicEventStore_a60c96c9bf809cd58b5a40a3c241392c8}} 
+\index{art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}!TTreePeriodicEventStore@{TTreePeriodicEventStore}}
+\index{TTreePeriodicEventStore@{TTreePeriodicEventStore}!art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}}
+\doxysubsubsection{\texorpdfstring{TTreePeriodicEventStore()}{TTreePeriodicEventStore()}}
+{\footnotesize\ttfamily TTree\+Periodic\+Event\+Store\+::\+TTree\+Periodic\+Event\+Store (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default constructor. 
+
+
+
+Definition at line 32 of file TTree\+Periodic\+Event\+Store.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreePeriodicEventStore_ac8af7031916e749315b1a5988f06f6c2}\label{classart_1_1crib_1_1TTreePeriodicEventStore_ac8af7031916e749315b1a5988f06f6c2}} 
+\index{art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}!````~TTreePeriodicEventStore@{$\sim$TTreePeriodicEventStore}}
+\index{````~TTreePeriodicEventStore@{$\sim$TTreePeriodicEventStore}!art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}}
+\doxysubsubsection{\texorpdfstring{$\sim$TTreePeriodicEventStore()}{~TTreePeriodicEventStore()}}
+{\footnotesize\ttfamily TTree\+Periodic\+Event\+Store\+::$\sim$\+TTree\+Periodic\+Event\+Store (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 39 of file TTree\+Periodic\+Event\+Store.\+cc.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreePeriodicEventStore_a736d7f333d6764d196b49b9a916b8c30}\label{classart_1_1crib_1_1TTreePeriodicEventStore_a736d7f333d6764d196b49b9a916b8c30}} 
+\index{art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}!ClassDefOverride@{ClassDefOverride}}
+\index{ClassDefOverride@{ClassDefOverride}!art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}}
+\doxysubsubsection{\texorpdfstring{ClassDefOverride()}{ClassDefOverride()}}
+{\footnotesize\ttfamily art\+::crib\+::\+TTree\+Periodic\+Event\+Store\+::\+Class\+Def\+Override (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classart_1_1crib_1_1TTreePeriodicEventStore}{TTree\+Periodic\+Event\+Store}}}]{,  }\item[{1}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreePeriodicEventStore_a7999732a5be53930b08e7dee6d32b3cd}\label{classart_1_1crib_1_1TTreePeriodicEventStore_a7999732a5be53930b08e7dee6d32b3cd}} 
+\index{art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}!GetRunName@{GetRunName}}
+\index{GetRunName@{GetRunName}!art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}}
+\doxysubsubsection{\texorpdfstring{GetRunName()}{GetRunName()}}
+{\footnotesize\ttfamily const char $\ast$ TTree\+Periodic\+Event\+Store\+::\+Get\+Run\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+override from IEvent\+Store but it is UNSAFE 
+
+\begin{DoxyReturn}{Returns}
+not return anything 
+\end{DoxyReturn}
+
+
+Definition at line 207 of file TTree\+Periodic\+Event\+Store.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreePeriodicEventStore_ab4424697f4bd6faf2c2da7f1d8e9df0c}\label{classart_1_1crib_1_1TTreePeriodicEventStore_ab4424697f4bd6faf2c2da7f1d8e9df0c}} 
+\index{art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}!GetRunNumber@{GetRunNumber}}
+\index{GetRunNumber@{GetRunNumber}!art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}}
+\doxysubsubsection{\texorpdfstring{GetRunNumber()}{GetRunNumber()}}
+{\footnotesize\ttfamily Int\+\_\+t TTree\+Periodic\+Event\+Store\+::\+Get\+Run\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+override from IEvent\+Store 
+
+\begin{DoxyReturn}{Returns}
+Run number 
+\end{DoxyReturn}
+
+
+Definition at line 201 of file TTree\+Periodic\+Event\+Store.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreePeriodicEventStore_abe140c2bba503768bd676c0aec31807e}\label{classart_1_1crib_1_1TTreePeriodicEventStore_abe140c2bba503768bd676c0aec31807e}} 
+\index{art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}!GetStrRunName@{GetStrRunName}}
+\index{GetStrRunName@{GetStrRunName}!art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}}
+\doxysubsubsection{\texorpdfstring{GetStrRunName()}{GetStrRunName()}}
+{\footnotesize\ttfamily std\+::string TTree\+Periodic\+Event\+Store\+::\+Get\+Str\+Run\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+safe function to get run name 
+
+\begin{DoxyReturn}{Returns}
+std\+::string runname 
+\end{DoxyReturn}
+
+
+Definition at line 211 of file TTree\+Periodic\+Event\+Store.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreePeriodicEventStore_a90010b845e06680ee704f5e6d74d6f06}\label{classart_1_1crib_1_1TTreePeriodicEventStore_a90010b845e06680ee704f5e6d74d6f06}} 
+\index{art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}!Init@{Init}}
+\index{Init@{Init}!art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void TTree\+Periodic\+Event\+Store\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 45 of file TTree\+Periodic\+Event\+Store.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreePeriodicEventStore_aec6b7613cbe64fe7ccdf23230ba2b33e}\label{classart_1_1crib_1_1TTreePeriodicEventStore_aec6b7613cbe64fe7ccdf23230ba2b33e}} 
+\index{art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}!Process@{Process}}
+\index{Process@{Process}!art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}}
+\doxysubsubsection{\texorpdfstring{Process()}{Process()}}
+{\footnotesize\ttfamily void TTree\+Periodic\+Event\+Store\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 188 of file TTree\+Periodic\+Event\+Store.\+cc.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreePeriodicEventStore_a42dd09133fea3b5f5a86b9cd8ef48570}\label{classart_1_1crib_1_1TTreePeriodicEventStore_a42dd09133fea3b5f5a86b9cd8ef48570}} 
+\index{art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}!fCurrentNum@{fCurrentNum}}
+\index{fCurrentNum@{fCurrentNum}!art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}}
+\doxysubsubsection{\texorpdfstring{fCurrentNum}{fCurrentNum}}
+{\footnotesize\ttfamily Long\+\_\+t art\+::crib\+::\+TTree\+Periodic\+Event\+Store\+::f\+Current\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 68 of file TTree\+Periodic\+Event\+Store.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreePeriodicEventStore_a10133aded0ff3e3e0cd20692f14eff4d}\label{classart_1_1crib_1_1TTreePeriodicEventStore_a10133aded0ff3e3e0cd20692f14eff4d}} 
+\index{art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}!fEventHeader@{fEventHeader}}
+\index{fEventHeader@{fEventHeader}!art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}}
+\doxysubsubsection{\texorpdfstring{fEventHeader}{fEventHeader}}
+{\footnotesize\ttfamily TEvent\+Header$\ast$$\ast$ art\+::crib\+::\+TTree\+Periodic\+Event\+Store\+::f\+Event\+Header\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 70 of file TTree\+Periodic\+Event\+Store.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreePeriodicEventStore_a68c261f39bb214e9403bd0b9de13c2ee}\label{classart_1_1crib_1_1TTreePeriodicEventStore_a68c261f39bb214e9403bd0b9de13c2ee}} 
+\index{art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}!fEventNum@{fEventNum}}
+\index{fEventNum@{fEventNum}!art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}}
+\doxysubsubsection{\texorpdfstring{fEventNum}{fEventNum}}
+{\footnotesize\ttfamily Long\+\_\+t art\+::crib\+::\+TTree\+Periodic\+Event\+Store\+::f\+Event\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 65 of file TTree\+Periodic\+Event\+Store.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreePeriodicEventStore_a5c8b954fd5a0d95a0a9a5ba48c388494}\label{classart_1_1crib_1_1TTreePeriodicEventStore_a5c8b954fd5a0d95a0a9a5ba48c388494}} 
+\index{art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}!fFile@{fFile}}
+\index{fFile@{fFile}!art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}}
+\doxysubsubsection{\texorpdfstring{fFile}{fFile}}
+{\footnotesize\ttfamily TFile$\ast$ art\+::crib\+::\+TTree\+Periodic\+Event\+Store\+::f\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 62 of file TTree\+Periodic\+Event\+Store.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreePeriodicEventStore_a22739e3731316286793d90a8bb3368a0}\label{classart_1_1crib_1_1TTreePeriodicEventStore_a22739e3731316286793d90a8bb3368a0}} 
+\index{art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}!fFileName@{fFileName}}
+\index{fFileName@{fFileName}!art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}}
+\doxysubsubsection{\texorpdfstring{fFileName}{fFileName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TTree\+Periodic\+Event\+Store\+::f\+File\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 60 of file TTree\+Periodic\+Event\+Store.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreePeriodicEventStore_adcb2a3abdcd9dd40142016df42a35519}\label{classart_1_1crib_1_1TTreePeriodicEventStore_adcb2a3abdcd9dd40142016df42a35519}} 
+\index{art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}!fMaxEventNum@{fMaxEventNum}}
+\index{fMaxEventNum@{fMaxEventNum}!art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}}
+\doxysubsubsection{\texorpdfstring{fMaxEventNum}{fMaxEventNum}}
+{\footnotesize\ttfamily Long\+\_\+t art\+::crib\+::\+TTree\+Periodic\+Event\+Store\+::f\+Max\+Event\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 66 of file TTree\+Periodic\+Event\+Store.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreePeriodicEventStore_abe9ca070875151d65ba7713614563a9a}\label{classart_1_1crib_1_1TTreePeriodicEventStore_abe9ca070875151d65ba7713614563a9a}} 
+\index{art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}!fObjects@{fObjects}}
+\index{fObjects@{fObjects}!art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}}
+\doxysubsubsection{\texorpdfstring{fObjects}{fObjects}}
+{\footnotesize\ttfamily TList$\ast$ art\+::crib\+::\+TTree\+Periodic\+Event\+Store\+::f\+Objects\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 64 of file TTree\+Periodic\+Event\+Store.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreePeriodicEventStore_acf696dc52bcf12b30665cb4be98a53a0}\label{classart_1_1crib_1_1TTreePeriodicEventStore_acf696dc52bcf12b30665cb4be98a53a0}} 
+\index{art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}!fTree@{fTree}}
+\index{fTree@{fTree}!art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}}
+\doxysubsubsection{\texorpdfstring{fTree}{fTree}}
+{\footnotesize\ttfamily TTree$\ast$ art\+::crib\+::\+TTree\+Periodic\+Event\+Store\+::f\+Tree\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 63 of file TTree\+Periodic\+Event\+Store.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreePeriodicEventStore_a7f520d430cdcd7025c4f347ce1989168}\label{classart_1_1crib_1_1TTreePeriodicEventStore_a7f520d430cdcd7025c4f347ce1989168}} 
+\index{art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}!fTreeEventNum@{fTreeEventNum}}
+\index{fTreeEventNum@{fTreeEventNum}!art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}}
+\doxysubsubsection{\texorpdfstring{fTreeEventNum}{fTreeEventNum}}
+{\footnotesize\ttfamily Long\+\_\+t art\+::crib\+::\+TTree\+Periodic\+Event\+Store\+::f\+Tree\+Event\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 67 of file TTree\+Periodic\+Event\+Store.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreePeriodicEventStore_a742ab6b918ac0edb296865f85e807b80}\label{classart_1_1crib_1_1TTreePeriodicEventStore_a742ab6b918ac0edb296865f85e807b80}} 
+\index{art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}!fTreeName@{fTreeName}}
+\index{fTreeName@{fTreeName}!art::crib::TTreePeriodicEventStore@{art::crib::TTreePeriodicEventStore}}
+\doxysubsubsection{\texorpdfstring{fTreeName}{fTreeName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TTree\+Periodic\+Event\+Store\+::f\+Tree\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 61 of file TTree\+Periodic\+Event\+Store.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src-\/crib/simulation/\mbox{\hyperlink{TTreePeriodicEventStore_8h}{TTree\+Periodic\+Event\+Store.\+h}}\item 
+src-\/crib/simulation/\mbox{\hyperlink{TTreePeriodicEventStore_8cc}{TTree\+Periodic\+Event\+Store.\+cc}}\end{DoxyCompactItemize}

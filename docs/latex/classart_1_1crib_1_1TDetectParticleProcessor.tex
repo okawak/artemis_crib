@@ -1,0 +1,345 @@
+\hypertarget{classart_1_1crib_1_1TDetectParticleProcessor}{}\doxysection{art\+::crib\+::TDetect\+Particle\+Processor Class Reference}
+\label{classart_1_1crib_1_1TDetectParticleProcessor}\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+
+
+{\ttfamily \#include $<$TDetect\+Particle\+Processor.\+h$>$}
+
+Inheritance diagram for art\+::crib\+::TDetect\+Particle\+Processor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classart_1_1crib_1_1TDetectParticleProcessor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_a9f93eab9536b37bbe426fff8a79c8a50}{TDetect\+Particle\+Processor}} ()
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_ae3415eb6ab912dab9b3e123703996c7d}{$\sim$\+TDetect\+Particle\+Processor}} ()
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_aaca8d2a0cbfb72f340acebfed2d2c6aa}{Init}} (TEvent\+Collection $\ast$col) override
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_aefe8c61538dafd19a58f71b1af2d0b74}{Process}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_ad0867ef173d4eef63ad06ec1588bf375}{f\+Input\+Col\+Name}}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_aa8fb7f6ff32e6a4692658ef1bd1dde4b}{f\+Input\+Track\+Col\+Name}}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_ac217b6873a61be0ca84d2b0e856c7dc7}{f\+Output\+Col\+Name}}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_a5ad352adb366e2ee2ee197991af2c094}{f\+Detector\+Parameter\+Name}}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_a4ef6699779db69594a3146ddb11f1796}{f\+Target\+Parameter\+Name}}
+\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_ab5ff79e7eb0398f3a24788925d96af85}{f\+In\+Data}}
+\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_a2cc8625fa3ae71bd2254296cd5871f3c}{f\+In\+Track\+Data}}
+\item 
+TClones\+Array $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_a7775e2f2ea7b108818aa9553db42a624}{f\+Out\+Data}}
+\item 
+TGeo\+Manager $\ast$$\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_af9bb69573bfc7291f258928eac7c1371}{f\+In\+Geom}}
+\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_a79f4d7222da5a990c11b6c556a10d99f}{f\+Detector\+Prm}}
+\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_a0de24eea6069031e2d1ac3eba1e5bd91}{f\+Target\+Prm}}
+\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_aee5932fc548b71f7d794df670d2f28c5}{f\+Target\+Is\+Gas}}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_a0b9ee98bd548b4a04f612ef38f333eee}{f\+Target\+Name}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_aa3e5b4c463529628b7a85c16eb8e2de3}{f\+Target\+Pressure}}
+\item 
+Double\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_a9fc69a4d4deb0c9c639318ee8fd2e789}{f\+Resolution}}
+\item 
+TSrim $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_afd71a294a7425da86c7734728bd3f0c6}{srim}}
+\begin{DoxyCompactList}\small\item\em x 100 = \%, index=telescope id \end{DoxyCompactList}\item 
+const Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_ac05dee0e393040bbb0d0d2707b1f6b5c}{c}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ TString $>$ \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_adb23ce32306edaab797d344587abc374}{Get\+Unique\+Elements}} (const std\+::vector$<$ TString $>$ \&input)
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_ad93a7c5ab0a1a5c36340c7ced48ddc19}{Get\+Strip\+ID}} (Double\+\_\+t pos, Int\+\_\+t max\+\_\+strip, Double\+\_\+t size)
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_ad696fc02039da36232992c1149273b7f}{TDetect\+Particle\+Processor}} (const \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor}{TDetect\+Particle\+Processor}} \&rhs)=delete
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor}{TDetect\+Particle\+Processor}} \& \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor_a9d581d143d98565bd6572cc483d803de}{operator=}} (const \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor}{TDetect\+Particle\+Processor}} \&rhs)=delete
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 26 of file TDetect\+Particle\+Processor.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_a9f93eab9536b37bbe426fff8a79c8a50}\label{classart_1_1crib_1_1TDetectParticleProcessor_a9f93eab9536b37bbe426fff8a79c8a50}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!TDetectParticleProcessor@{TDetectParticleProcessor}}
+\index{TDetectParticleProcessor@{TDetectParticleProcessor}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{TDetectParticleProcessor()}{TDetectParticleProcessor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily TDetect\+Particle\+Processor\+::\+TDetect\+Particle\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+currently not use this object
+
+Definition at line 32 of file TDetect\+Particle\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_ae3415eb6ab912dab9b3e123703996c7d}\label{classart_1_1crib_1_1TDetectParticleProcessor_ae3415eb6ab912dab9b3e123703996c7d}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!````~TDetectParticleProcessor@{$\sim$TDetectParticleProcessor}}
+\index{````~TDetectParticleProcessor@{$\sim$TDetectParticleProcessor}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{$\sim$TDetectParticleProcessor()}{~TDetectParticleProcessor()}}
+{\footnotesize\ttfamily TDetect\+Particle\+Processor\+::$\sim$\+TDetect\+Particle\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 54 of file TDetect\+Particle\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_ad696fc02039da36232992c1149273b7f}\label{classart_1_1crib_1_1TDetectParticleProcessor_ad696fc02039da36232992c1149273b7f}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!TDetectParticleProcessor@{TDetectParticleProcessor}}
+\index{TDetectParticleProcessor@{TDetectParticleProcessor}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{TDetectParticleProcessor()}{TDetectParticleProcessor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily art\+::crib\+::\+TDetect\+Particle\+Processor\+::\+TDetect\+Particle\+Processor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor}{TDetect\+Particle\+Processor}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_ad93a7c5ab0a1a5c36340c7ced48ddc19}\label{classart_1_1crib_1_1TDetectParticleProcessor_ad93a7c5ab0a1a5c36340c7ced48ddc19}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!GetStripID@{GetStripID}}
+\index{GetStripID@{GetStripID}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{GetStripID()}{GetStripID()}}
+{\footnotesize\ttfamily Int\+\_\+t TDetect\+Particle\+Processor\+::\+Get\+Strip\+ID (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{pos,  }\item[{Int\+\_\+t}]{max\+\_\+strip,  }\item[{Double\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 264 of file TDetect\+Particle\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_adb23ce32306edaab797d344587abc374}\label{classart_1_1crib_1_1TDetectParticleProcessor_adb23ce32306edaab797d344587abc374}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!GetUniqueElements@{GetUniqueElements}}
+\index{GetUniqueElements@{GetUniqueElements}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{GetUniqueElements()}{GetUniqueElements()}}
+{\footnotesize\ttfamily std\+::vector$<$ TString $>$ TDetect\+Particle\+Processor\+::\+Get\+Unique\+Elements (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ TString $>$ \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 250 of file TDetect\+Particle\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_aaca8d2a0cbfb72f340acebfed2d2c6aa}\label{classart_1_1crib_1_1TDetectParticleProcessor_aaca8d2a0cbfb72f340acebfed2d2c6aa}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!Init@{Init}}
+\index{Init@{Init}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void TDetect\+Particle\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+same energy resolution for all detector
+
+ignore energy resolution
+
+initialization for TSrim
+
+Definition at line 61 of file TDetect\+Particle\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_a9d581d143d98565bd6572cc483d803de}\label{classart_1_1crib_1_1TDetectParticleProcessor_a9d581d143d98565bd6572cc483d803de}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!operator=@{operator=}}
+\index{operator=@{operator=}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor}{TDetect\+Particle\+Processor}}\& art\+::crib\+::\+TDetect\+Particle\+Processor\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1crib_1_1TDetectParticleProcessor}{TDetect\+Particle\+Processor}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_aefe8c61538dafd19a58f71b1af2d0b74}\label{classart_1_1crib_1_1TDetectParticleProcessor_aefe8c61538dafd19a58f71b1af2d0b74}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!Process@{Process}}
+\index{Process@{Process}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{Process()}{Process()}}
+{\footnotesize\ttfamily void TDetect\+Particle\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+1 start (not 0)
+
+hit from side, so not caliculate energy
+
+Definition at line 148 of file TDetect\+Particle\+Processor.\+cc.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_ac05dee0e393040bbb0d0d2707b1f6b5c}\label{classart_1_1crib_1_1TDetectParticleProcessor_ac05dee0e393040bbb0d0d2707b1f6b5c}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!c@{c}}
+\index{c@{c}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily const Double\+\_\+t art\+::crib\+::\+TDetect\+Particle\+Processor\+::c\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 56 of file TDetect\+Particle\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_a5ad352adb366e2ee2ee197991af2c094}\label{classart_1_1crib_1_1TDetectParticleProcessor_a5ad352adb366e2ee2ee197991af2c094}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!fDetectorParameterName@{fDetectorParameterName}}
+\index{fDetectorParameterName@{fDetectorParameterName}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{fDetectorParameterName}{fDetectorParameterName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TDetect\+Particle\+Processor\+::f\+Detector\+Parameter\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 38 of file TDetect\+Particle\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_a79f4d7222da5a990c11b6c556a10d99f}\label{classart_1_1crib_1_1TDetectParticleProcessor_a79f4d7222da5a990c11b6c556a10d99f}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!fDetectorPrm@{fDetectorPrm}}
+\index{fDetectorPrm@{fDetectorPrm}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{fDetectorPrm}{fDetectorPrm}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::crib\+::\+TDetect\+Particle\+Processor\+::f\+Detector\+Prm\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 45 of file TDetect\+Particle\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_ab5ff79e7eb0398f3a24788925d96af85}\label{classart_1_1crib_1_1TDetectParticleProcessor_ab5ff79e7eb0398f3a24788925d96af85}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!fInData@{fInData}}
+\index{fInData@{fInData}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{fInData}{fInData}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::crib\+::\+TDetect\+Particle\+Processor\+::f\+In\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 40 of file TDetect\+Particle\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_af9bb69573bfc7291f258928eac7c1371}\label{classart_1_1crib_1_1TDetectParticleProcessor_af9bb69573bfc7291f258928eac7c1371}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!fInGeom@{fInGeom}}
+\index{fInGeom@{fInGeom}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{fInGeom}{fInGeom}}
+{\footnotesize\ttfamily TGeo\+Manager$\ast$$\ast$ art\+::crib\+::\+TDetect\+Particle\+Processor\+::f\+In\+Geom\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 43 of file TDetect\+Particle\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_ad0867ef173d4eef63ad06ec1588bf375}\label{classart_1_1crib_1_1TDetectParticleProcessor_ad0867ef173d4eef63ad06ec1588bf375}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!fInputColName@{fInputColName}}
+\index{fInputColName@{fInputColName}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{fInputColName}{fInputColName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TDetect\+Particle\+Processor\+::f\+Input\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 35 of file TDetect\+Particle\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_aa8fb7f6ff32e6a4692658ef1bd1dde4b}\label{classart_1_1crib_1_1TDetectParticleProcessor_aa8fb7f6ff32e6a4692658ef1bd1dde4b}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!fInputTrackColName@{fInputTrackColName}}
+\index{fInputTrackColName@{fInputTrackColName}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{fInputTrackColName}{fInputTrackColName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TDetect\+Particle\+Processor\+::f\+Input\+Track\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 36 of file TDetect\+Particle\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_a2cc8625fa3ae71bd2254296cd5871f3c}\label{classart_1_1crib_1_1TDetectParticleProcessor_a2cc8625fa3ae71bd2254296cd5871f3c}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!fInTrackData@{fInTrackData}}
+\index{fInTrackData@{fInTrackData}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{fInTrackData}{fInTrackData}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::crib\+::\+TDetect\+Particle\+Processor\+::f\+In\+Track\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 41 of file TDetect\+Particle\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_a7775e2f2ea7b108818aa9553db42a624}\label{classart_1_1crib_1_1TDetectParticleProcessor_a7775e2f2ea7b108818aa9553db42a624}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!fOutData@{fOutData}}
+\index{fOutData@{fOutData}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{fOutData}{fOutData}}
+{\footnotesize\ttfamily TClones\+Array$\ast$ art\+::crib\+::\+TDetect\+Particle\+Processor\+::f\+Out\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 42 of file TDetect\+Particle\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_ac217b6873a61be0ca84d2b0e856c7dc7}\label{classart_1_1crib_1_1TDetectParticleProcessor_ac217b6873a61be0ca84d2b0e856c7dc7}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!fOutputColName@{fOutputColName}}
+\index{fOutputColName@{fOutputColName}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{fOutputColName}{fOutputColName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TDetect\+Particle\+Processor\+::f\+Output\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 37 of file TDetect\+Particle\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_a9fc69a4d4deb0c9c639318ee8fd2e789}\label{classart_1_1crib_1_1TDetectParticleProcessor_a9fc69a4d4deb0c9c639318ee8fd2e789}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!fResolution@{fResolution}}
+\index{fResolution@{fResolution}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{fResolution}{fResolution}}
+{\footnotesize\ttfamily Double\+Vec\+\_\+t art\+::crib\+::\+TDetect\+Particle\+Processor\+::f\+Resolution\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 52 of file TDetect\+Particle\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_aee5932fc548b71f7d794df670d2f28c5}\label{classart_1_1crib_1_1TDetectParticleProcessor_aee5932fc548b71f7d794df670d2f28c5}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!fTargetIsGas@{fTargetIsGas}}
+\index{fTargetIsGas@{fTargetIsGas}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetIsGas}{fTargetIsGas}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::crib\+::\+TDetect\+Particle\+Processor\+::f\+Target\+Is\+Gas\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 48 of file TDetect\+Particle\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_a0b9ee98bd548b4a04f612ef38f333eee}\label{classart_1_1crib_1_1TDetectParticleProcessor_a0b9ee98bd548b4a04f612ef38f333eee}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!fTargetName@{fTargetName}}
+\index{fTargetName@{fTargetName}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetName}{fTargetName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TDetect\+Particle\+Processor\+::f\+Target\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 49 of file TDetect\+Particle\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_a4ef6699779db69594a3146ddb11f1796}\label{classart_1_1crib_1_1TDetectParticleProcessor_a4ef6699779db69594a3146ddb11f1796}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!fTargetParameterName@{fTargetParameterName}}
+\index{fTargetParameterName@{fTargetParameterName}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetParameterName}{fTargetParameterName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TDetect\+Particle\+Processor\+::f\+Target\+Parameter\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 39 of file TDetect\+Particle\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_aa3e5b4c463529628b7a85c16eb8e2de3}\label{classart_1_1crib_1_1TDetectParticleProcessor_aa3e5b4c463529628b7a85c16eb8e2de3}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!fTargetPressure@{fTargetPressure}}
+\index{fTargetPressure@{fTargetPressure}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetPressure}{fTargetPressure}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TDetect\+Particle\+Processor\+::f\+Target\+Pressure\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 50 of file TDetect\+Particle\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_a0de24eea6069031e2d1ac3eba1e5bd91}\label{classart_1_1crib_1_1TDetectParticleProcessor_a0de24eea6069031e2d1ac3eba1e5bd91}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!fTargetPrm@{fTargetPrm}}
+\index{fTargetPrm@{fTargetPrm}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetPrm}{fTargetPrm}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::crib\+::\+TDetect\+Particle\+Processor\+::f\+Target\+Prm\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 46 of file TDetect\+Particle\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TDetectParticleProcessor_afd71a294a7425da86c7734728bd3f0c6}\label{classart_1_1crib_1_1TDetectParticleProcessor_afd71a294a7425da86c7734728bd3f0c6}} 
+\index{art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}!srim@{srim}}
+\index{srim@{srim}!art::crib::TDetectParticleProcessor@{art::crib::TDetectParticleProcessor}}
+\doxysubsubsection{\texorpdfstring{srim}{srim}}
+{\footnotesize\ttfamily TSrim$\ast$ art\+::crib\+::\+TDetect\+Particle\+Processor\+::srim\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+x 100 = \%, index=telescope id 
+
+
+
+Definition at line 54 of file TDetect\+Particle\+Processor.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src-\/crib/simulation/\mbox{\hyperlink{TDetectParticleProcessor_8h}{TDetect\+Particle\+Processor.\+h}}\item 
+src-\/crib/simulation/\mbox{\hyperlink{TDetectParticleProcessor_8cc}{TDetect\+Particle\+Processor.\+cc}}\end{DoxyCompactItemize}

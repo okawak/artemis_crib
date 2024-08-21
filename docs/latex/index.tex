@@ -7,7 +7,10 @@ Copyright © 1997-\/2009 by Dimitri van Heesch.
 
 Permission to use, copy, modify, and distribute this software and its documentation under the terms of the GNU General Public License is hereby granted. No representations are made about the suitability of this software for any purpose. It is provided \char`\"{}as is\char`\"{} without express or implied warranty. See the GNU General Public License for more details.
 
-Documents produced by doxygen are derivative works derived from the input used in their production; they are not affected by this license.\hypertarget{index_autotoc_md5}{}\doxysection{version管理}\label{index_autotoc_md5}
+Documents produced by doxygen are derivative works derived from the input used in their production; they are not affected by this license.\hypertarget{index_autotoc_md5}{}\doxysection{名前空間}\label{index_autotoc_md5}
+CRIB独自で開発したクラス、コードに対しては、cribという名前空間でラップして、artemis本体にあるコードと分けて管理できるようにしようと考えています。 例えば、{\ttfamily art\+::\+TTiming\+Charge\+Mapping\+Processor}はartemis自体にあるプロセッサから使用しており、{\ttfamily art\+::crib\+::\+TMUXMapping\+Processsor}はartemis\+\_\+cribで独自に 作成したプロセッサを使用している、といった形です。
+
+もし、artemis自身にある同名、同じ役割のプロセッサを編集して使いたいと思った場合は、cribという名前空間を使用して追加してください。 また、今後も\+CRIB実験で使える汎用的なものを開発した場合もcribという名前空間を用いてプルリクエスト等を送ってください。\hypertarget{index_autotoc_md6}{}\doxysection{version管理}\label{index_autotoc_md6}
 基本的には後方互換性はありません。 厳密にどういった変更をしたかなどのノートは残さないので、解析をするときは、その環境をそのまま使う方が良いと思います。 artemis自体、artemis-\/workdir (artemis\+\_\+crib)のバージョン、使っているenergy lossのツールのバージョン、 pythonのバージョン(py\+ROOTや便利スクリプトに使用、artemisの動作自体には使いません。)などを記録し、それをベースに解析を始めることをお勧めします。 同じ動作をすることが確認できてから、versionアップデートすると良いと思います。
 
 pythonとartemis\+\_\+cribのバージョン管理をしやすくするためのversion管理を2024年8月のバージョンから導入することにしました。 versionの名前は、年.\+月.0 (major.\+minor.\+patch)としています。(CMake\+Lists.\+txtとpyproject.\+toml) ある程度動作確認が済んだら、gitのtagで分けていこうと思います。
@@ -41,8 +44,8 @@ pythonのバージョンは{\ttfamily poetry}を用いて管理することに�
 \end{DoxyCode}
 
 
-で有効化できます。\hypertarget{index_autotoc_md6}{}\doxysection{豆知識}\label{index_autotoc_md6}
-日本語ですみません。ライブラリを整備している中で、気になったことをメモしておきます。 時間がある時に英語で整備し直すかもしれません。\hypertarget{index_autotoc_md7}{}\doxysubsection{1. //!の意味}\label{index_autotoc_md7}
+で有効化できます。\hypertarget{index_autotoc_md7}{}\doxysection{豆知識}\label{index_autotoc_md7}
+日本語ですみません。ライブラリを整備している中で、気になったことをメモしておきます。 時間がある時に英語で整備し直すかもしれません。\hypertarget{index_autotoc_md8}{}\doxysubsection{1. //!の意味}\label{index_autotoc_md8}
 プロセッサなどを作成していると、
 
 
@@ -56,7 +59,7 @@ pythonのバージョンは{\ttfamily poetry}を用いて管理することに�
 
 最近\+Chat\+GPTに聞いてみると、初めて知ったことだが、\+ROOTの\+CINTや\+Clingインタープリタででポインタのポインタを\+I/\+Oシステムで使うことが難しく、 正しく解析できないというエラーで、//!をつけるとこの\+I/\+O処理から除外するように伝えることができるらしい。
 
-難しくて完全には理解できていないが、ポインタのポインタを\+ROOTで扱うのは難しいから、//!をつけると\+ROOTの範疇から外すという意味合いになるということなのかな??? ROOTの作法ではなく、純粋な\+C++な知識だけが必要なものがいいなあと感じたり。。。\hypertarget{index_autotoc_md8}{}\doxysubsection{2. Class\+Defについて}\label{index_autotoc_md8}
+難しくて完全には理解できていないが、ポインタのポインタを\+ROOTで扱うのは難しいから、//!をつけると\+ROOTの範疇から外すという意味合いになるということなのかな??? ROOTの作法ではなく、純粋な\+C++な知識だけが必要なものがいいなあと感じたり。。。\hypertarget{index_autotoc_md9}{}\doxysubsection{2. Class\+Defについて}\label{index_autotoc_md9}
 Classを\+Dictionaryに登録するときに、\+Class\+Defを使うが、クラスメソッドをoverrideするときに\+Class\+Defを使うと長い警告文が出てくる。
 
 調べてみると、\+Class\+Defにも種類があるようで、オーバーライドを使用する時には、\+Class\+Def\+Overrideというものが定義されているらしい。 \href{https://root-forum.cern.ch/t/classdef-variants/44736}{\texttt{ 情報}}の通り全てを列挙してみると、
@@ -79,7 +82,7 @@ ROOTには認識されるが、\+Dictionaryに登録しない場合は、
 
 という書き方もできるらしいが、一応まだexperimentalらしい。
 
-通常は、\+Class\+Defか\+Class\+Def\+Overrideだけ使えば良さそうな感じかな?\hypertarget{index_autotoc_md9}{}\doxysubsection{Processorの仮想関数について}\label{index_autotoc_md9}
+通常は、\+Class\+Defか\+Class\+Def\+Overrideだけ使えば良さそうな感じかな?\hypertarget{index_autotoc_md10}{}\doxysubsection{Processorの仮想関数について}\label{index_autotoc_md10}
 TProcessorを継承して新しいプロセッサを作成するときに、オーバーライドすることができる汎用的に使えそうな(自分が使っている)クラスメソッドの一覧のメモ。
 
 

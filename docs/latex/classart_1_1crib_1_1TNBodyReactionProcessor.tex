@@ -1,0 +1,480 @@
+\hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor}{}\doxysection{art\+::crib\+::TNBody\+Reaction\+Processor Class Reference}
+\label{classart_1_1crib_1_1TNBodyReactionProcessor}\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+
+
+{\ttfamily \#include $<$TNBody\+Reaction\+Processor.\+h$>$}
+
+Inheritance diagram for art\+::crib\+::TNBody\+Reaction\+Processor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classart_1_1crib_1_1TNBodyReactionProcessor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a6024a9b747e36415cbce33f565af1ad1}{TNBody\+Reaction\+Processor}} ()
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a0b19895bfb324db400596bd264dbe1eb}{$\sim$\+TNBody\+Reaction\+Processor}} ()
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_aaddc093559a73a2e06c00b351a9e67ee}{Init}} (TEvent\+Collection $\ast$col) override
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a0c5270eb2f61ec0dd249a3acfe3cfb29}{Process}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a41ac2daa90970589e9c24db4afa26f8f}{f\+Input\+Col\+Name}}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a9670ce6540071c90f6ecfbc72d89692e}{f\+Output\+Col\+Name}}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a1156926e519aac053f72fee7246867f6}{f\+Output\+Reac\+Col\+Name}}
+\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_af88a812402719b8abf1a7a8e0ee0933c}{f\+In\+Data}}
+\item 
+TClones\+Array $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a5a008466f433f49b8dbb69fdd02e0dc2}{f\+Out\+Data}}
+\item 
+TClones\+Array $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a8891970421fab7e25d71247ad57f25ce}{f\+Out\+Reac\+Data}}
+\item 
+Int\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a4ace01eeff8e27151411e67a90ba76da}{f\+Beam\+Nucleus}}
+\begin{DoxyCompactList}\small\item\em used only initialization at TSrim object \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a7b842313bcbad0f5955183544bb5c24a}{f\+Beam\+Energy}}
+\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_aa707bddebf5df2c80422542c4984d480}{f\+Target\+Is\+Gas}}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a453a97640a49c3be9932dd4c81dd002c}{f\+Target\+Name}}
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a8562f27da34b18008a2aa11a73538807}{f\+Target\+Mass\+Num}}
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a811e4709315433a0c0f7b139a0a88f45}{f\+Target\+Atm\+Num}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a3e4825e492180b96749d761fe9e72f72}{f\+Target\+Thickness}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_ac6b07d72543fc4030712aa7a7fb5c6f3}{f\+Target\+Pressure}}
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_ae1a55d988c3d904f9a4568c92fe9cb97}{f\+Decay\+Num}}
+\item 
+Int\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a1476695fba38df5c4cdc3b9581d4a927}{f\+Reac\+Mass\+Num}}
+\item 
+Int\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_ab03907c0cd4a8ffa489bb88f64e499dc}{f\+Reac\+Atm\+Num}}
+\item 
+Double\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a34a938360036114182bb634b08668f5c}{f\+Excite\+Level}}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a578b5f3f1446245912b9f1ef824b4572}{f\+CSData\+Path}}
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a0d78b9a96bfc003c1c93779998c6b0c0}{f\+CSType}}
+\item 
+TGen\+Phase\+Space \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a60b75eefeed8b4abf4391cb1155de17c}{event}}
+\item 
+TSrim $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_af5f044dd687bcf3cb9e7d4daf6fe33ac}{srim}}
+\item 
+const Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a1cd8e680b2056adadf935acf5571e3df}{deg2rad}}
+\begin{DoxyCompactList}\small\item\em SRIM table. \end{DoxyCompactList}\item 
+const Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_afdf2e42317e482aa7308deb10913d446}{c}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a7ad99a67d63ec4002db0b98637b9951c}{Init\+Generating\+Func}} (void)
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a93b1bfee5891f36676f720d5cbb79e06}{Get\+Random\+Reaction\+Distance}} (Double\+\_\+t range)
+\item 
+TLorentz\+Vector \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a5a90f00df7fa69c169880d93964baee3}{Get\+Loss\+Energy\+Vector}} (TLorentz\+Vector vec, Double\+\_\+t eloss)
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_af13adeaf5c9896a353423dce8142a4c0}{TNBody\+Reaction\+Processor}} (const \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor}{TNBody\+Reaction\+Processor}} \&rhs)=delete
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor}{TNBody\+Reaction\+Processor}} \& \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_afa8ec010f06f92d94778a33f201883a9}{operator=}} (const \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor}{TNBody\+Reaction\+Processor}} \&rhs)=delete
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TGraph $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_a43bf7f5ca01352856984ba569242ee66}{gr\+\_\+generating\+\_\+func}}
+\item 
+TGraph $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor_ac5ed91eb2a649f5a1a82cc9764fbdda4}{gr\+\_\+generating\+\_\+func\+\_\+inv}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 26 of file TNBody\+Reaction\+Processor.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a6024a9b747e36415cbce33f565af1ad1}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a6024a9b747e36415cbce33f565af1ad1}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!TNBodyReactionProcessor@{TNBodyReactionProcessor}}
+\index{TNBodyReactionProcessor@{TNBodyReactionProcessor}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{TNBodyReactionProcessor()}{TNBodyReactionProcessor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily TNBody\+Reaction\+Processor\+::\+TNBody\+Reaction\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 31 of file TNBody\+Reaction\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a0b19895bfb324db400596bd264dbe1eb}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a0b19895bfb324db400596bd264dbe1eb}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!````~TNBodyReactionProcessor@{$\sim$TNBodyReactionProcessor}}
+\index{````~TNBodyReactionProcessor@{$\sim$TNBodyReactionProcessor}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{$\sim$TNBodyReactionProcessor()}{~TNBodyReactionProcessor()}}
+{\footnotesize\ttfamily TNBody\+Reaction\+Processor\+::$\sim$\+TNBody\+Reaction\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 64 of file TNBody\+Reaction\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_af13adeaf5c9896a353423dce8142a4c0}\label{classart_1_1crib_1_1TNBodyReactionProcessor_af13adeaf5c9896a353423dce8142a4c0}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!TNBodyReactionProcessor@{TNBodyReactionProcessor}}
+\index{TNBodyReactionProcessor@{TNBodyReactionProcessor}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{TNBodyReactionProcessor()}{TNBodyReactionProcessor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily art\+::crib\+::\+TNBody\+Reaction\+Processor\+::\+TNBody\+Reaction\+Processor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor}{TNBody\+Reaction\+Processor}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a5a90f00df7fa69c169880d93964baee3}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a5a90f00df7fa69c169880d93964baee3}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!GetLossEnergyVector@{GetLossEnergyVector}}
+\index{GetLossEnergyVector@{GetLossEnergyVector}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{GetLossEnergyVector()}{GetLossEnergyVector()}}
+{\footnotesize\ttfamily TLorentz\+Vector TNBody\+Reaction\+Processor\+::\+Get\+Loss\+Energy\+Vector (\begin{DoxyParamCaption}\item[{TLorentz\+Vector}]{vec,  }\item[{Double\+\_\+t}]{eloss }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 386 of file TNBody\+Reaction\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a93b1bfee5891f36676f720d5cbb79e06}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a93b1bfee5891f36676f720d5cbb79e06}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!GetRandomReactionDistance@{GetRandomReactionDistance}}
+\index{GetRandomReactionDistance@{GetRandomReactionDistance}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{GetRandomReactionDistance()}{GetRandomReactionDistance()}}
+{\footnotesize\ttfamily Double\+\_\+t TNBody\+Reaction\+Processor\+::\+Get\+Random\+Reaction\+Distance (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{range }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 371 of file TNBody\+Reaction\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_aaddc093559a73a2e06c00b351a9e67ee}\label{classart_1_1crib_1_1TNBodyReactionProcessor_aaddc093559a73a2e06c00b351a9e67ee}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!Init@{Init}}
+\index{Init@{Init}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void TNBody\+Reaction\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 77 of file TNBody\+Reaction\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a7ad99a67d63ec4002db0b98637b9951c}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a7ad99a67d63ec4002db0b98637b9951c}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!InitGeneratingFunc@{InitGeneratingFunc}}
+\index{InitGeneratingFunc@{InitGeneratingFunc}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{InitGeneratingFunc()}{InitGeneratingFunc()}}
+{\footnotesize\ttfamily void TNBody\+Reaction\+Processor\+::\+Init\+Generating\+Func (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyEnumerate}
+\item function 
+\end{DoxyEnumerate}
+
+Definition at line 272 of file TNBody\+Reaction\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_afa8ec010f06f92d94778a33f201883a9}\label{classart_1_1crib_1_1TNBodyReactionProcessor_afa8ec010f06f92d94778a33f201883a9}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!operator=@{operator=}}
+\index{operator=@{operator=}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor}{TNBody\+Reaction\+Processor}}\& art\+::crib\+::\+TNBody\+Reaction\+Processor\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1crib_1_1TNBodyReactionProcessor}{TNBody\+Reaction\+Processor}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a0c5270eb2f61ec0dd249a3acfe3cfb29}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a0c5270eb2f61ec0dd249a3acfe3cfb29}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!Process@{Process}}
+\index{Process@{Process}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{Process()}{Process()}}
+{\footnotesize\ttfamily void TNBody\+Reaction\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 134 of file TNBody\+Reaction\+Processor.\+cc.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_afdf2e42317e482aa7308deb10913d446}\label{classart_1_1crib_1_1TNBodyReactionProcessor_afdf2e42317e482aa7308deb10913d446}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!c@{c}}
+\index{c@{c}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily const Double\+\_\+t art\+::crib\+::\+TNBody\+Reaction\+Processor\+::c\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 65 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a1cd8e680b2056adadf935acf5571e3df}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a1cd8e680b2056adadf935acf5571e3df}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!deg2rad@{deg2rad}}
+\index{deg2rad@{deg2rad}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{deg2rad}{deg2rad}}
+{\footnotesize\ttfamily const Double\+\_\+t art\+::crib\+::\+TNBody\+Reaction\+Processor\+::deg2rad\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+SRIM table. 
+
+
+
+Definition at line 64 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a60b75eefeed8b4abf4391cb1155de17c}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a60b75eefeed8b4abf4391cb1155de17c}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!event@{event}}
+\index{event@{event}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{event}{event}}
+{\footnotesize\ttfamily TGen\+Phase\+Space art\+::crib\+::\+TNBody\+Reaction\+Processor\+::event\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 60 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a7b842313bcbad0f5955183544bb5c24a}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a7b842313bcbad0f5955183544bb5c24a}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!fBeamEnergy@{fBeamEnergy}}
+\index{fBeamEnergy@{fBeamEnergy}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fBeamEnergy}{fBeamEnergy}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TNBody\+Reaction\+Processor\+::f\+Beam\+Energy\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 44 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a4ace01eeff8e27151411e67a90ba76da}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a4ace01eeff8e27151411e67a90ba76da}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!fBeamNucleus@{fBeamNucleus}}
+\index{fBeamNucleus@{fBeamNucleus}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fBeamNucleus}{fBeamNucleus}}
+{\footnotesize\ttfamily Int\+Vec\+\_\+t art\+::crib\+::\+TNBody\+Reaction\+Processor\+::f\+Beam\+Nucleus\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+used only initialization at TSrim object 
+
+
+
+Definition at line 43 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a578b5f3f1446245912b9f1ef824b4572}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a578b5f3f1446245912b9f1ef824b4572}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!fCSDataPath@{fCSDataPath}}
+\index{fCSDataPath@{fCSDataPath}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fCSDataPath}{fCSDataPath}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TNBody\+Reaction\+Processor\+::f\+CSData\+Path\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 57 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a0d78b9a96bfc003c1c93779998c6b0c0}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a0d78b9a96bfc003c1c93779998c6b0c0}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!fCSType@{fCSType}}
+\index{fCSType@{fCSType}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fCSType}{fCSType}}
+{\footnotesize\ttfamily Int\+\_\+t art\+::crib\+::\+TNBody\+Reaction\+Processor\+::f\+CSType\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 58 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_ae1a55d988c3d904f9a4568c92fe9cb97}\label{classart_1_1crib_1_1TNBodyReactionProcessor_ae1a55d988c3d904f9a4568c92fe9cb97}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!fDecayNum@{fDecayNum}}
+\index{fDecayNum@{fDecayNum}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fDecayNum}{fDecayNum}}
+{\footnotesize\ttfamily Int\+\_\+t art\+::crib\+::\+TNBody\+Reaction\+Processor\+::f\+Decay\+Num\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 53 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a34a938360036114182bb634b08668f5c}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a34a938360036114182bb634b08668f5c}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!fExciteLevel@{fExciteLevel}}
+\index{fExciteLevel@{fExciteLevel}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fExciteLevel}{fExciteLevel}}
+{\footnotesize\ttfamily Double\+Vec\+\_\+t art\+::crib\+::\+TNBody\+Reaction\+Processor\+::f\+Excite\+Level\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 56 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_af88a812402719b8abf1a7a8e0ee0933c}\label{classart_1_1crib_1_1TNBodyReactionProcessor_af88a812402719b8abf1a7a8e0ee0933c}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!fInData@{fInData}}
+\index{fInData@{fInData}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fInData}{fInData}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::crib\+::\+TNBody\+Reaction\+Processor\+::f\+In\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 38 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a41ac2daa90970589e9c24db4afa26f8f}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a41ac2daa90970589e9c24db4afa26f8f}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!fInputColName@{fInputColName}}
+\index{fInputColName@{fInputColName}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fInputColName}{fInputColName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TNBody\+Reaction\+Processor\+::f\+Input\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 35 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a5a008466f433f49b8dbb69fdd02e0dc2}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a5a008466f433f49b8dbb69fdd02e0dc2}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!fOutData@{fOutData}}
+\index{fOutData@{fOutData}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fOutData}{fOutData}}
+{\footnotesize\ttfamily TClones\+Array$\ast$ art\+::crib\+::\+TNBody\+Reaction\+Processor\+::f\+Out\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 39 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a9670ce6540071c90f6ecfbc72d89692e}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a9670ce6540071c90f6ecfbc72d89692e}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!fOutputColName@{fOutputColName}}
+\index{fOutputColName@{fOutputColName}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fOutputColName}{fOutputColName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TNBody\+Reaction\+Processor\+::f\+Output\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 36 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a1156926e519aac053f72fee7246867f6}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a1156926e519aac053f72fee7246867f6}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!fOutputReacColName@{fOutputReacColName}}
+\index{fOutputReacColName@{fOutputReacColName}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fOutputReacColName}{fOutputReacColName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TNBody\+Reaction\+Processor\+::f\+Output\+Reac\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 37 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a8891970421fab7e25d71247ad57f25ce}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a8891970421fab7e25d71247ad57f25ce}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!fOutReacData@{fOutReacData}}
+\index{fOutReacData@{fOutReacData}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fOutReacData}{fOutReacData}}
+{\footnotesize\ttfamily TClones\+Array$\ast$ art\+::crib\+::\+TNBody\+Reaction\+Processor\+::f\+Out\+Reac\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 40 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_ab03907c0cd4a8ffa489bb88f64e499dc}\label{classart_1_1crib_1_1TNBodyReactionProcessor_ab03907c0cd4a8ffa489bb88f64e499dc}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!fReacAtmNum@{fReacAtmNum}}
+\index{fReacAtmNum@{fReacAtmNum}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fReacAtmNum}{fReacAtmNum}}
+{\footnotesize\ttfamily Int\+Vec\+\_\+t art\+::crib\+::\+TNBody\+Reaction\+Processor\+::f\+Reac\+Atm\+Num\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 55 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a1476695fba38df5c4cdc3b9581d4a927}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a1476695fba38df5c4cdc3b9581d4a927}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!fReacMassNum@{fReacMassNum}}
+\index{fReacMassNum@{fReacMassNum}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fReacMassNum}{fReacMassNum}}
+{\footnotesize\ttfamily Int\+Vec\+\_\+t art\+::crib\+::\+TNBody\+Reaction\+Processor\+::f\+Reac\+Mass\+Num\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 54 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a811e4709315433a0c0f7b139a0a88f45}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a811e4709315433a0c0f7b139a0a88f45}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!fTargetAtmNum@{fTargetAtmNum}}
+\index{fTargetAtmNum@{fTargetAtmNum}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetAtmNum}{fTargetAtmNum}}
+{\footnotesize\ttfamily Int\+\_\+t art\+::crib\+::\+TNBody\+Reaction\+Processor\+::f\+Target\+Atm\+Num\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 49 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_aa707bddebf5df2c80422542c4984d480}\label{classart_1_1crib_1_1TNBodyReactionProcessor_aa707bddebf5df2c80422542c4984d480}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!fTargetIsGas@{fTargetIsGas}}
+\index{fTargetIsGas@{fTargetIsGas}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetIsGas}{fTargetIsGas}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::crib\+::\+TNBody\+Reaction\+Processor\+::f\+Target\+Is\+Gas\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 46 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a8562f27da34b18008a2aa11a73538807}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a8562f27da34b18008a2aa11a73538807}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!fTargetMassNum@{fTargetMassNum}}
+\index{fTargetMassNum@{fTargetMassNum}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetMassNum}{fTargetMassNum}}
+{\footnotesize\ttfamily Int\+\_\+t art\+::crib\+::\+TNBody\+Reaction\+Processor\+::f\+Target\+Mass\+Num\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 48 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a453a97640a49c3be9932dd4c81dd002c}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a453a97640a49c3be9932dd4c81dd002c}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!fTargetName@{fTargetName}}
+\index{fTargetName@{fTargetName}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetName}{fTargetName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TNBody\+Reaction\+Processor\+::f\+Target\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 47 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_ac6b07d72543fc4030712aa7a7fb5c6f3}\label{classart_1_1crib_1_1TNBodyReactionProcessor_ac6b07d72543fc4030712aa7a7fb5c6f3}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!fTargetPressure@{fTargetPressure}}
+\index{fTargetPressure@{fTargetPressure}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetPressure}{fTargetPressure}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TNBody\+Reaction\+Processor\+::f\+Target\+Pressure\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 51 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a3e4825e492180b96749d761fe9e72f72}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a3e4825e492180b96749d761fe9e72f72}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!fTargetThickness@{fTargetThickness}}
+\index{fTargetThickness@{fTargetThickness}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetThickness}{fTargetThickness}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TNBody\+Reaction\+Processor\+::f\+Target\+Thickness\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 50 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_a43bf7f5ca01352856984ba569242ee66}\label{classart_1_1crib_1_1TNBodyReactionProcessor_a43bf7f5ca01352856984ba569242ee66}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!gr\_generating\_func@{gr\_generating\_func}}
+\index{gr\_generating\_func@{gr\_generating\_func}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{gr\_generating\_func}{gr\_generating\_func}}
+{\footnotesize\ttfamily TGraph$\ast$ art\+::crib\+::\+TNBody\+Reaction\+Processor\+::gr\+\_\+generating\+\_\+func\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyEnumerate}
+\item cross section function\+: (x, y) = (beam LAB energy (MeV), arbitrary unit)
+\item convert x using range\+: (x, y) = (range (mm), arbitrary unit)
+\item integrate the 2. function\+: (x, y) = (range (mm), arbitrary unit)
+\item inversed 3. function\+: (x, y) = (arbitrary unit, range (mm))
+\item get pos with random number\+: uniform X -\/$>$ get Y value
+\item get reac pos with the Y value\+: init\+\_\+range -\/ Y =$>$ distance 
+\end{DoxyEnumerate}
+
+Definition at line 74 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_ac5ed91eb2a649f5a1a82cc9764fbdda4}\label{classart_1_1crib_1_1TNBodyReactionProcessor_ac5ed91eb2a649f5a1a82cc9764fbdda4}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!gr\_generating\_func\_inv@{gr\_generating\_func\_inv}}
+\index{gr\_generating\_func\_inv@{gr\_generating\_func\_inv}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{gr\_generating\_func\_inv}{gr\_generating\_func\_inv}}
+{\footnotesize\ttfamily TGraph$\ast$ art\+::crib\+::\+TNBody\+Reaction\+Processor\+::gr\+\_\+generating\+\_\+func\+\_\+inv\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyEnumerate}
+\item function 
+\end{DoxyEnumerate}
+
+Definition at line 75 of file TNBody\+Reaction\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TNBodyReactionProcessor_af5f044dd687bcf3cb9e7d4daf6fe33ac}\label{classart_1_1crib_1_1TNBodyReactionProcessor_af5f044dd687bcf3cb9e7d4daf6fe33ac}} 
+\index{art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}!srim@{srim}}
+\index{srim@{srim}!art::crib::TNBodyReactionProcessor@{art::crib::TNBodyReactionProcessor}}
+\doxysubsubsection{\texorpdfstring{srim}{srim}}
+{\footnotesize\ttfamily TSrim$\ast$ art\+::crib\+::\+TNBody\+Reaction\+Processor\+::srim\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 62 of file TNBody\+Reaction\+Processor.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src-\/crib/simulation/\mbox{\hyperlink{TNBodyReactionProcessor_8h}{TNBody\+Reaction\+Processor.\+h}}\item 
+src-\/crib/simulation/\mbox{\hyperlink{TNBodyReactionProcessor_8cc}{TNBody\+Reaction\+Processor.\+cc}}\end{DoxyCompactItemize}

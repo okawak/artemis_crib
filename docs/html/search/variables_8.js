@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['ion_5fcharges_1295',['ion_charges',['../classart_1_1TCRIBPIDProcessor.html#a7d8d9ec4838cc24e61cc7409ea91bf17',1,'art::TCRIBPIDProcessor']]],
-  ['ion_5fcolors_1296',['ion_colors',['../classart_1_1TCRIBPIDProcessor.html#a9ede7e9400d590d1836379498a2b9d20',1,'art::TCRIBPIDProcessor']]],
-  ['ion_5fmasses_1297',['ion_masses',['../classart_1_1TCRIBPIDProcessor.html#a72dbcad05acc9ee3a61a58860cec4b53',1,'art::TCRIBPIDProcessor']]],
-  ['ion_5fnames_1298',['ion_names',['../classart_1_1TCRIBPIDProcessor.html#ae569660dc10973c9f151a20d165dec56',1,'art::TCRIBPIDProcessor']]]
+  ['ion_5fcharges_1298',['ion_charges',['../classart_1_1crib_1_1TCRIBPIDProcessor.html#a2acbe0ec6d7a0aa36e0af7995d34dd57',1,'art::crib::TCRIBPIDProcessor']]],
+  ['ion_5fcolors_1299',['ion_colors',['../classart_1_1crib_1_1TCRIBPIDProcessor.html#a727621e1ade8ddd7df1e56d9b493fbd4',1,'art::crib::TCRIBPIDProcessor']]],
+  ['ion_5fmasses_1300',['ion_masses',['../classart_1_1crib_1_1TCRIBPIDProcessor.html#a1e97e57bcf2ef2ffe2c41db064da15a1',1,'art::crib::TCRIBPIDProcessor']]],
+  ['ion_5fmassnum_1301',['ion_massnum',['../classart_1_1crib_1_1TCRIBPIDProcessor.html#a8c2113de8ed02c1eb5afa3e496cc4756',1,'art::crib::TCRIBPIDProcessor']]],
+  ['ion_5fnames_1302',['ion_names',['../classart_1_1crib_1_1TCRIBPIDProcessor.html#a20030bd0f8d11d349c02ccdc2986ea86',1,'art::crib::TCRIBPIDProcessor']]]
 ];

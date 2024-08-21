@@ -1,0 +1,474 @@
+\hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor}{}\doxysection{art\+::crib\+::TScaler\+Monitor\+Processor Class Reference}
+\label{classart_1_1crib_1_1TScalerMonitorProcessor}\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+
+
+{\ttfamily \#include $<$TScaler\+Monitor\+Processor.\+h$>$}
+
+Inheritance diagram for art\+::crib\+::TScaler\+Monitor\+Processor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classart_1_1crib_1_1TScalerMonitorProcessor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a5460422757abd79e63f3645c0669c33b}{TScaler\+Monitor\+Processor}} ()
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a74e76538027de3ccecc225b2df267a57}{$\sim$\+TScaler\+Monitor\+Processor}} ()
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a92c8d31a6ccaf70aea8e0458998a0937}{Init}} (TEvent\+Collection $\ast$col) override
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_aa1f9078a00ce3ed6cbffd6a438f7e808}{Process}} () override
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a1e3b7d7316407b492017c788075fd380}{Process\+Short}} (Long\+\_\+t now)
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a9f0871b22c380ed81006564d7bdd5fe6}{Process\+Long}} (Long\+\_\+t now)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const Int\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a1307ebe8fe9f534d5f1af659ae447ad3}{SCALER\+\_\+\+CH}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_aaeb7b5143fe8b703ba490edcaefdf9e4}{Class\+Def\+Override}} (\mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor}{TScaler\+Monitor\+Processor}}, 1)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TCanvas $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_af158e02da117855d867c491fef16c73b}{main}}
+\item 
+TPad $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a219db32b615a551e28ed345bf1e6e4fc}{pad\+\_\+s}}
+\item 
+TPad $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a5b6c27158872c7891f0e32be2309c9da}{pad\+\_\+l}}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_ad5586a1beb3c2ad324ac5a0844484d04}{f\+Input\+Col\+Name}}
+\item 
+TScaler\+Data $\ast$$\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a1310ce83add5e60f9a31ab19dddcd4b3}{f\+In\+Data}}
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a28a6a9c27bc6fff9e32b0ac105bb8780}{f\+Short\+Interval}}
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a2fa2fbfb9e53dc40ba433546fb42ba06}{f\+Short\+Duration}}
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_aac6fba6be24d463a7e18ac46a9a97f7c}{f\+Long\+Interval}}
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a9f1b317b3ad4250b3a3778d49329ef94}{f\+Long\+Duration}}
+\item 
+Int\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a5b8cbf7fbc0025272d1476349a709134}{f\+Clock}}
+\item 
+String\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a0089d84fcdb0a7b22c19503fc10c222b}{f\+Channels}}
+\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a1be6dab33526f993adc4f1ee7ba94455}{f\+Is\+First}}
+\item 
+Long\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_addf5cae5b7ae6664a745f07093490840}{f\+Start\+Short}}
+\item 
+Long\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_ac66925e3cf0953a60bb10e5c9d7dcce0}{f\+Current\+Short}}
+\item 
+UInt\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a1bc942ccc59859c75f37fe222b58a336}{f\+Short\+Scatot}} \mbox{[}\mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a1307ebe8fe9f534d5f1af659ae447ad3}{SCALER\+\_\+\+CH}}\mbox{]}
+\item 
+UInt\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a087b5d1481fbcb008f1e71d367742842}{f\+Short\+Scadiff}} \mbox{[}\mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a1307ebe8fe9f534d5f1af659ae447ad3}{SCALER\+\_\+\+CH}}\mbox{]}
+\item 
+TGraph $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a94a12aba13a88380c09d561b9677d77f}{f\+Gr\+\_\+s}} \mbox{[}\mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a1307ebe8fe9f534d5f1af659ae447ad3}{SCALER\+\_\+\+CH}}\mbox{]}
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_af2abc762c258d64dc6acc4c2d0412e24}{f\+Short\+Count}}
+\item 
+Long\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_ae423c33eac05cbf608ad98da32d7dd48}{f\+Start\+Long}}
+\item 
+Long\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_ac65c5db79ba47a7fa708399d5e6cd0e4}{f\+Current\+Long}}
+\item 
+UInt\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a5e1dbe4ec620b660ae6a2d0ba55c64bb}{f\+Long\+Scatot}} \mbox{[}\mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a1307ebe8fe9f534d5f1af659ae447ad3}{SCALER\+\_\+\+CH}}\mbox{]}
+\item 
+UInt\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a7cd7446a089dad07ca6d31bed298f286}{f\+Long\+Scadiff}} \mbox{[}\mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a1307ebe8fe9f534d5f1af659ae447ad3}{SCALER\+\_\+\+CH}}\mbox{]}
+\item 
+TGraph $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a9f1d6fb09a760f19fee3b155be4a4c6b}{f\+Gr\+\_\+l}} \mbox{[}\mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a1307ebe8fe9f534d5f1af659ae447ad3}{SCALER\+\_\+\+CH}}\mbox{]}
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_aa3e34fc7fbd3a1088dee87d5fb3f003f}{f\+Long\+Count}}
+\item 
+Int\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a55f5b6a83236e697e51a90f972779c30}{f\+Display\+Ch}}
+\item 
+String\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_ae4c1ed24bac4cf0508683f9da80e9288}{f\+Names}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a7a51474be446654842a0d6313b36cfc4}{f\+Factors}} \mbox{[}\mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a1307ebe8fe9f534d5f1af659ae447ad3}{SCALER\+\_\+\+CH}}\mbox{]}
+\item 
+Int\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a6ad2c979740c6e640006da91be1d5382}{f\+Color\+\_\+list}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 29 of file TScaler\+Monitor\+Processor.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a5460422757abd79e63f3645c0669c33b}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a5460422757abd79e63f3645c0669c33b}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!TScalerMonitorProcessor@{TScalerMonitorProcessor}}
+\index{TScalerMonitorProcessor@{TScalerMonitorProcessor}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{TScalerMonitorProcessor()}{TScalerMonitorProcessor()}}
+{\footnotesize\ttfamily TScaler\+Monitor\+Processor\+::\+TScaler\+Monitor\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 21 of file TScaler\+Monitor\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a74e76538027de3ccecc225b2df267a57}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a74e76538027de3ccecc225b2df267a57}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!````~TScalerMonitorProcessor@{$\sim$TScalerMonitorProcessor}}
+\index{````~TScalerMonitorProcessor@{$\sim$TScalerMonitorProcessor}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{$\sim$TScalerMonitorProcessor()}{~TScalerMonitorProcessor()}}
+{\footnotesize\ttfamily TScaler\+Monitor\+Processor\+::$\sim$\+TScaler\+Monitor\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 50 of file TScaler\+Monitor\+Processor.\+cc.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_aaeb7b5143fe8b703ba490edcaefdf9e4}\label{classart_1_1crib_1_1TScalerMonitorProcessor_aaeb7b5143fe8b703ba490edcaefdf9e4}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!ClassDefOverride@{ClassDefOverride}}
+\index{ClassDefOverride@{ClassDefOverride}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{ClassDefOverride()}{ClassDefOverride()}}
+{\footnotesize\ttfamily art\+::crib\+::\+TScaler\+Monitor\+Processor\+::\+Class\+Def\+Override (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor}{TScaler\+Monitor\+Processor}}}]{,  }\item[{1}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a92c8d31a6ccaf70aea8e0458998a0937}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a92c8d31a6ccaf70aea8e0458998a0937}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!Init@{Init}}
+\index{Init@{Init}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void TScaler\+Monitor\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 61 of file TScaler\+Monitor\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_aa1f9078a00ce3ed6cbffd6a438f7e808}\label{classart_1_1crib_1_1TScalerMonitorProcessor_aa1f9078a00ce3ed6cbffd6a438f7e808}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!Process@{Process}}
+\index{Process@{Process}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{Process()}{Process()}}
+{\footnotesize\ttfamily void TScaler\+Monitor\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 144 of file TScaler\+Monitor\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a9f0871b22c380ed81006564d7bdd5fe6}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a9f0871b22c380ed81006564d7bdd5fe6}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!ProcessLong@{ProcessLong}}
+\index{ProcessLong@{ProcessLong}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{ProcessLong()}{ProcessLong()}}
+{\footnotesize\ttfamily void TScaler\+Monitor\+Processor\+::\+Process\+Long (\begin{DoxyParamCaption}\item[{Long\+\_\+t}]{now }\end{DoxyParamCaption})}
+
+
+
+Definition at line 223 of file TScaler\+Monitor\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a1e3b7d7316407b492017c788075fd380}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a1e3b7d7316407b492017c788075fd380}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!ProcessShort@{ProcessShort}}
+\index{ProcessShort@{ProcessShort}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{ProcessShort()}{ProcessShort()}}
+{\footnotesize\ttfamily void TScaler\+Monitor\+Processor\+::\+Process\+Short (\begin{DoxyParamCaption}\item[{Long\+\_\+t}]{now }\end{DoxyParamCaption})}
+
+
+
+Definition at line 168 of file TScaler\+Monitor\+Processor.\+cc.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a0089d84fcdb0a7b22c19503fc10c222b}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a0089d84fcdb0a7b22c19503fc10c222b}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fChannels@{fChannels}}
+\index{fChannels@{fChannels}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fChannels}{fChannels}}
+{\footnotesize\ttfamily String\+Vec\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Channels\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 57 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a5b8cbf7fbc0025272d1476349a709134}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a5b8cbf7fbc0025272d1476349a709134}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fClock@{fClock}}
+\index{fClock@{fClock}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fClock}{fClock}}
+{\footnotesize\ttfamily Int\+Vec\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Clock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 56 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a6ad2c979740c6e640006da91be1d5382}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a6ad2c979740c6e640006da91be1d5382}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fColor\_list@{fColor\_list}}
+\index{fColor\_list@{fColor\_list}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fColor\_list}{fColor\_list}}
+{\footnotesize\ttfamily Int\+Vec\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Color\+\_\+list\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 81 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_ac65c5db79ba47a7fa708399d5e6cd0e4}\label{classart_1_1crib_1_1TScalerMonitorProcessor_ac65c5db79ba47a7fa708399d5e6cd0e4}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fCurrentLong@{fCurrentLong}}
+\index{fCurrentLong@{fCurrentLong}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fCurrentLong}{fCurrentLong}}
+{\footnotesize\ttfamily Long\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Current\+Long\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 71 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_ac66925e3cf0953a60bb10e5c9d7dcce0}\label{classart_1_1crib_1_1TScalerMonitorProcessor_ac66925e3cf0953a60bb10e5c9d7dcce0}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fCurrentShort@{fCurrentShort}}
+\index{fCurrentShort@{fCurrentShort}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fCurrentShort}{fCurrentShort}}
+{\footnotesize\ttfamily Long\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Current\+Short\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 63 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a55f5b6a83236e697e51a90f972779c30}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a55f5b6a83236e697e51a90f972779c30}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fDisplayCh@{fDisplayCh}}
+\index{fDisplayCh@{fDisplayCh}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fDisplayCh}{fDisplayCh}}
+{\footnotesize\ttfamily Int\+Vec\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Display\+Ch\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 77 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a7a51474be446654842a0d6313b36cfc4}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a7a51474be446654842a0d6313b36cfc4}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fFactors@{fFactors}}
+\index{fFactors@{fFactors}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fFactors}{fFactors}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Factors\mbox{[}\mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a1307ebe8fe9f534d5f1af659ae447ad3}{SCALER\+\_\+\+CH}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 79 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a9f1d6fb09a760f19fee3b155be4a4c6b}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a9f1d6fb09a760f19fee3b155be4a4c6b}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fGr\_l@{fGr\_l}}
+\index{fGr\_l@{fGr\_l}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fGr\_l}{fGr\_l}}
+{\footnotesize\ttfamily TGraph$\ast$ art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Gr\+\_\+l\mbox{[}\mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a1307ebe8fe9f534d5f1af659ae447ad3}{SCALER\+\_\+\+CH}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 74 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a94a12aba13a88380c09d561b9677d77f}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a94a12aba13a88380c09d561b9677d77f}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fGr\_s@{fGr\_s}}
+\index{fGr\_s@{fGr\_s}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fGr\_s}{fGr\_s}}
+{\footnotesize\ttfamily TGraph$\ast$ art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Gr\+\_\+s\mbox{[}\mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a1307ebe8fe9f534d5f1af659ae447ad3}{SCALER\+\_\+\+CH}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 66 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a1310ce83add5e60f9a31ab19dddcd4b3}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a1310ce83add5e60f9a31ab19dddcd4b3}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fInData@{fInData}}
+\index{fInData@{fInData}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fInData}{fInData}}
+{\footnotesize\ttfamily TScaler\+Data$\ast$$\ast$ art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+In\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 49 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_ad5586a1beb3c2ad324ac5a0844484d04}\label{classart_1_1crib_1_1TScalerMonitorProcessor_ad5586a1beb3c2ad324ac5a0844484d04}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fInputColName@{fInputColName}}
+\index{fInputColName@{fInputColName}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fInputColName}{fInputColName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Input\+Col\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 48 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a1be6dab33526f993adc4f1ee7ba94455}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a1be6dab33526f993adc4f1ee7ba94455}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fIsFirst@{fIsFirst}}
+\index{fIsFirst@{fIsFirst}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fIsFirst}{fIsFirst}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Is\+First\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 59 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_aa3e34fc7fbd3a1088dee87d5fb3f003f}\label{classart_1_1crib_1_1TScalerMonitorProcessor_aa3e34fc7fbd3a1088dee87d5fb3f003f}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fLongCount@{fLongCount}}
+\index{fLongCount@{fLongCount}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fLongCount}{fLongCount}}
+{\footnotesize\ttfamily Int\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Long\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 75 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a9f1b317b3ad4250b3a3778d49329ef94}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a9f1b317b3ad4250b3a3778d49329ef94}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fLongDuration@{fLongDuration}}
+\index{fLongDuration@{fLongDuration}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fLongDuration}{fLongDuration}}
+{\footnotesize\ttfamily Int\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Long\+Duration\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 54 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_aac6fba6be24d463a7e18ac46a9a97f7c}\label{classart_1_1crib_1_1TScalerMonitorProcessor_aac6fba6be24d463a7e18ac46a9a97f7c}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fLongInterval@{fLongInterval}}
+\index{fLongInterval@{fLongInterval}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fLongInterval}{fLongInterval}}
+{\footnotesize\ttfamily Int\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Long\+Interval\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 53 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a7cd7446a089dad07ca6d31bed298f286}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a7cd7446a089dad07ca6d31bed298f286}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fLongScadiff@{fLongScadiff}}
+\index{fLongScadiff@{fLongScadiff}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fLongScadiff}{fLongScadiff}}
+{\footnotesize\ttfamily UInt\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Long\+Scadiff\mbox{[}\mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a1307ebe8fe9f534d5f1af659ae447ad3}{SCALER\+\_\+\+CH}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 73 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a5e1dbe4ec620b660ae6a2d0ba55c64bb}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a5e1dbe4ec620b660ae6a2d0ba55c64bb}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fLongScatot@{fLongScatot}}
+\index{fLongScatot@{fLongScatot}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fLongScatot}{fLongScatot}}
+{\footnotesize\ttfamily UInt\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Long\+Scatot\mbox{[}\mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a1307ebe8fe9f534d5f1af659ae447ad3}{SCALER\+\_\+\+CH}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 72 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_ae4c1ed24bac4cf0508683f9da80e9288}\label{classart_1_1crib_1_1TScalerMonitorProcessor_ae4c1ed24bac4cf0508683f9da80e9288}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fNames@{fNames}}
+\index{fNames@{fNames}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fNames}{fNames}}
+{\footnotesize\ttfamily String\+Vec\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Names\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 78 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_af2abc762c258d64dc6acc4c2d0412e24}\label{classart_1_1crib_1_1TScalerMonitorProcessor_af2abc762c258d64dc6acc4c2d0412e24}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fShortCount@{fShortCount}}
+\index{fShortCount@{fShortCount}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fShortCount}{fShortCount}}
+{\footnotesize\ttfamily Int\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Short\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 67 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a2fa2fbfb9e53dc40ba433546fb42ba06}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a2fa2fbfb9e53dc40ba433546fb42ba06}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fShortDuration@{fShortDuration}}
+\index{fShortDuration@{fShortDuration}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fShortDuration}{fShortDuration}}
+{\footnotesize\ttfamily Int\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Short\+Duration\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 52 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a28a6a9c27bc6fff9e32b0ac105bb8780}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a28a6a9c27bc6fff9e32b0ac105bb8780}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fShortInterval@{fShortInterval}}
+\index{fShortInterval@{fShortInterval}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fShortInterval}{fShortInterval}}
+{\footnotesize\ttfamily Int\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Short\+Interval\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 51 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a087b5d1481fbcb008f1e71d367742842}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a087b5d1481fbcb008f1e71d367742842}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fShortScadiff@{fShortScadiff}}
+\index{fShortScadiff@{fShortScadiff}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fShortScadiff}{fShortScadiff}}
+{\footnotesize\ttfamily UInt\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Short\+Scadiff\mbox{[}\mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a1307ebe8fe9f534d5f1af659ae447ad3}{SCALER\+\_\+\+CH}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 65 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a1bc942ccc59859c75f37fe222b58a336}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a1bc942ccc59859c75f37fe222b58a336}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fShortScatot@{fShortScatot}}
+\index{fShortScatot@{fShortScatot}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fShortScatot}{fShortScatot}}
+{\footnotesize\ttfamily UInt\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Short\+Scatot\mbox{[}\mbox{\hyperlink{classart_1_1crib_1_1TScalerMonitorProcessor_a1307ebe8fe9f534d5f1af659ae447ad3}{SCALER\+\_\+\+CH}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 64 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_ae423c33eac05cbf608ad98da32d7dd48}\label{classart_1_1crib_1_1TScalerMonitorProcessor_ae423c33eac05cbf608ad98da32d7dd48}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fStartLong@{fStartLong}}
+\index{fStartLong@{fStartLong}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fStartLong}{fStartLong}}
+{\footnotesize\ttfamily Long\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Start\+Long\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 70 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_addf5cae5b7ae6664a745f07093490840}\label{classart_1_1crib_1_1TScalerMonitorProcessor_addf5cae5b7ae6664a745f07093490840}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!fStartShort@{fStartShort}}
+\index{fStartShort@{fStartShort}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{fStartShort}{fStartShort}}
+{\footnotesize\ttfamily Long\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::f\+Start\+Short\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 62 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_af158e02da117855d867c491fef16c73b}\label{classart_1_1crib_1_1TScalerMonitorProcessor_af158e02da117855d867c491fef16c73b}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!main@{main}}
+\index{main@{main}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{main}{main}}
+{\footnotesize\ttfamily TCanvas$\ast$ art\+::crib\+::\+TScaler\+Monitor\+Processor\+::main\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 44 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a5b6c27158872c7891f0e32be2309c9da}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a5b6c27158872c7891f0e32be2309c9da}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!pad\_l@{pad\_l}}
+\index{pad\_l@{pad\_l}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{pad\_l}{pad\_l}}
+{\footnotesize\ttfamily TPad$\ast$ art\+::crib\+::\+TScaler\+Monitor\+Processor\+::pad\+\_\+l\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 46 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a219db32b615a551e28ed345bf1e6e4fc}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a219db32b615a551e28ed345bf1e6e4fc}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!pad\_s@{pad\_s}}
+\index{pad\_s@{pad\_s}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{pad\_s}{pad\_s}}
+{\footnotesize\ttfamily TPad$\ast$ art\+::crib\+::\+TScaler\+Monitor\+Processor\+::pad\+\_\+s\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 45 of file TScaler\+Monitor\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TScalerMonitorProcessor_a1307ebe8fe9f534d5f1af659ae447ad3}\label{classart_1_1crib_1_1TScalerMonitorProcessor_a1307ebe8fe9f534d5f1af659ae447ad3}} 
+\index{art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}!SCALER\_CH@{SCALER\_CH}}
+\index{SCALER\_CH@{SCALER\_CH}!art::crib::TScalerMonitorProcessor@{art::crib::TScalerMonitorProcessor}}
+\doxysubsubsection{\texorpdfstring{SCALER\_CH}{SCALER\_CH}}
+{\footnotesize\ttfamily const Int\+\_\+t art\+::crib\+::\+TScaler\+Monitor\+Processor\+::\+SCALER\+\_\+\+CH\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 41 of file TScaler\+Monitor\+Processor.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src-\/crib/\mbox{\hyperlink{TScalerMonitorProcessor_8h}{TScaler\+Monitor\+Processor.\+h}}\item 
+src-\/crib/\mbox{\hyperlink{TScalerMonitorProcessor_8cc}{TScaler\+Monitor\+Processor.\+cc}}\end{DoxyCompactItemize}

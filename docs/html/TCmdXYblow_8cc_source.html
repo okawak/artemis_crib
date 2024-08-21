@@ -106,21 +106,21 @@ $(document).ready(function(){initNavTree('TCmdXYblow_8cc_source.html',''); initR
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;TROOT.h&gt;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;TStyle.h&gt;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">using</span> <a class="code" href="classart_1_1TCmdXYblow.html">art::TCmdXYblow</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">using</span> <a class="code" href="classart_1_1crib_1_1TCmdXYblow.html">art::crib::TCmdXYblow</a>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="TCmdXYblow_8cc.html#af9d7b00e552f48f5ae294d75fed5a661">   30</a></span>&#160;<a class="code" href="TCmdXYblow_8cc.html#af9d7b00e552f48f5ae294d75fed5a661">ClassImp</a>(<a class="code" href="classart_1_1TCmdXYblow.html">TCmdXYblow</a>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="TCmdXYblow_8cc.html#af9d7b00e552f48f5ae294d75fed5a661">   30</a></span>&#160;<a class="code" href="TCmdXYblow_8cc.html#af9d7b00e552f48f5ae294d75fed5a661">ClassImp</a>(<a class="code" href="classart_1_1crib_1_1TCmdXYblow.html">TCmdXYblow</a>);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *TCmdXYblow::kFuncNameBase = <span class="stringliteral">&quot;f&quot;</span>;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *TCmdXYblow::kLabelNameBase = <span class="stringliteral">&quot;l&quot;</span>;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classart_1_1TCmdXYblow.html#a0218f372f40d6776164dd916c3a9318e">   35</a></span>&#160;TCmdXYblow::TCmdXYblow() {</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdXYblow.html#a0218f372f40d6776164dd916c3a9318e">   35</a></span>&#160;TCmdXYblow::TCmdXYblow() {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    SetName(<span class="stringliteral">&quot;xyblow&quot;</span>);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    SetTitle(<span class="stringliteral">&quot;Crop histogram  (using mouse)&quot;</span>);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classart_1_1TCmdXYblow.html#ae1dc59133eaec38383d9d822f2fd04b5">   40</a></span>&#160;<a class="code" href="classart_1_1TCmdXYblow.html#ae1dc59133eaec38383d9d822f2fd04b5">TCmdXYblow::~TCmdXYblow</a>() {}</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdXYblow.html#ae1dc59133eaec38383d9d822f2fd04b5">   40</a></span>&#160;<a class="code" href="classart_1_1crib_1_1TCmdXYblow.html#ae1dc59133eaec38383d9d822f2fd04b5">TCmdXYblow::~TCmdXYblow</a>() {}</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classart_1_1TCmdXYblow.html#a5c87321b4df7eabee40323971d4c499a">   42</a></span>&#160;Long_t <a class="code" href="classart_1_1TCmdXYblow.html#a5c87321b4df7eabee40323971d4c499a">TCmdXYblow::Cmd</a>(vector&lt;TString&gt; args) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdXYblow.html#a5c87321b4df7eabee40323971d4c499a">   42</a></span>&#160;Long_t <a class="code" href="classart_1_1crib_1_1TCmdXYblow.html#a5c87321b4df7eabee40323971d4c499a">TCmdXYblow::Cmd</a>(vector&lt;TString&gt; args) {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">const</span> TString opt = args.size() &gt; 2 ? args[2] : <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> (gPad == <span class="keyword">nullptr</span>) {</div>
@@ -143,14 +143,14 @@ $(document).ready(function(){initNavTree('TCmdXYblow_8cc_source.html',''); initR
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    Int_t nid = (gDirectory-&gt;GetList())-&gt;GetEntries();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="classart_1_1TCmdXYblow.html#a049c846933f7a1557a15e4001d09b4d8">Run</a>((TH2 *)hist_now, opt);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="classart_1_1crib_1_1TCmdXYblow.html#a049c846933f7a1557a15e4001d09b4d8">Run</a>((TH2 *)hist_now, opt);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    Info(<span class="stringliteral">&quot;Run&quot;</span>, <span class="stringliteral">&quot;id = %d hist is created&quot;</span>, nid);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    TCatHistManager::Instance()-&gt;DrawObject(nid, <span class="stringliteral">&quot;colz&quot;</span>);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classart_1_1TCmdXYblow.html#a049c846933f7a1557a15e4001d09b4d8">   72</a></span>&#160;TH2 *<a class="code" href="classart_1_1TCmdXYblow.html#a049c846933f7a1557a15e4001d09b4d8">TCmdXYblow::Run</a>(TH2 *h2, Option_t *) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdXYblow.html#a049c846933f7a1557a15e4001d09b4d8">   72</a></span>&#160;TH2 *<a class="code" href="classart_1_1crib_1_1TCmdXYblow.html#a049c846933f7a1557a15e4001d09b4d8">TCmdXYblow::Run</a>(TH2 *h2, Option_t *) {</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    Double_t x1 = 0., y1 = 0., x2 = 0., y2 = 0.;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    Info(<span class="stringliteral">&quot;Run&quot;</span>, <span class="stringliteral">&quot;click on one corner: &quot;</span>);</div>
@@ -204,16 +204,16 @@ $(document).ready(function(){initNavTree('TCmdXYblow_8cc_source.html',''); initR
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">return</span> hnew;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="classart_1_1TCmdXYblow.html#a5fa817807546e0b2c0993854fe439e1e">  126</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classart_1_1TCmdXYblow.html#a5fa817807546e0b2c0993854fe439e1e">TCmdXYblow::Help</a>() {</div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdXYblow.html#a5fa817807546e0b2c0993854fe439e1e">  126</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classart_1_1crib_1_1TCmdXYblow.html#a5fa817807546e0b2c0993854fe439e1e">TCmdXYblow::Help</a>() {</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;crop some part of the histogram&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
 <div class="ttc" id="aTCmdXYblow_8cc_html_af9d7b00e552f48f5ae294d75fed5a661"><div class="ttname"><a href="TCmdXYblow_8cc.html#af9d7b00e552f48f5ae294d75fed5a661">ClassImp</a></div><div class="ttdeci">ClassImp(TCmdXYblow)</div></div>
 <div class="ttc" id="aTCmdXYblow_8h_html"><div class="ttname"><a href="TCmdXYblow_8h.html">TCmdXYblow.h</a></div></div>
-<div class="ttc" id="aclassart_1_1TCmdXYblow_html"><div class="ttname"><a href="classart_1_1TCmdXYblow.html">art::TCmdXYblow</a></div><div class="ttdef"><b>Definition:</b> <a href="TCmdXYblow_8h_source.html#l00021">TCmdXYblow.h:21</a></div></div>
-<div class="ttc" id="aclassart_1_1TCmdXYblow_html_a049c846933f7a1557a15e4001d09b4d8"><div class="ttname"><a href="classart_1_1TCmdXYblow.html#a049c846933f7a1557a15e4001d09b4d8">art::TCmdXYblow::Run</a></div><div class="ttdeci">TH2 * Run(TH2 *h2, Option_t *)</div><div class="ttdef"><b>Definition:</b> <a href="TCmdXYblow_8cc_source.html#l00072">TCmdXYblow.cc:72</a></div></div>
-<div class="ttc" id="aclassart_1_1TCmdXYblow_html_a5c87321b4df7eabee40323971d4c499a"><div class="ttname"><a href="classart_1_1TCmdXYblow.html#a5c87321b4df7eabee40323971d4c499a">art::TCmdXYblow::Cmd</a></div><div class="ttdeci">Long_t Cmd(vector&lt; TString &gt;) override</div><div class="ttdef"><b>Definition:</b> <a href="TCmdXYblow_8cc_source.html#l00042">TCmdXYblow.cc:42</a></div></div>
-<div class="ttc" id="aclassart_1_1TCmdXYblow_html_a5fa817807546e0b2c0993854fe439e1e"><div class="ttname"><a href="classart_1_1TCmdXYblow.html#a5fa817807546e0b2c0993854fe439e1e">art::TCmdXYblow::Help</a></div><div class="ttdeci">void Help() override</div><div class="ttdef"><b>Definition:</b> <a href="TCmdXYblow_8cc_source.html#l00126">TCmdXYblow.cc:126</a></div></div>
-<div class="ttc" id="aclassart_1_1TCmdXYblow_html_ae1dc59133eaec38383d9d822f2fd04b5"><div class="ttname"><a href="classart_1_1TCmdXYblow.html#ae1dc59133eaec38383d9d822f2fd04b5">art::TCmdXYblow::~TCmdXYblow</a></div><div class="ttdeci">~TCmdXYblow()</div><div class="ttdef"><b>Definition:</b> <a href="TCmdXYblow_8cc_source.html#l00040">TCmdXYblow.cc:40</a></div></div>
+<div class="ttc" id="aclassart_1_1crib_1_1TCmdXYblow_html"><div class="ttname"><a href="classart_1_1crib_1_1TCmdXYblow.html">art::crib::TCmdXYblow</a></div><div class="ttdef"><b>Definition:</b> <a href="TCmdXYblow_8h_source.html#l00021">TCmdXYblow.h:21</a></div></div>
+<div class="ttc" id="aclassart_1_1crib_1_1TCmdXYblow_html_a049c846933f7a1557a15e4001d09b4d8"><div class="ttname"><a href="classart_1_1crib_1_1TCmdXYblow.html#a049c846933f7a1557a15e4001d09b4d8">art::crib::TCmdXYblow::Run</a></div><div class="ttdeci">TH2 * Run(TH2 *h2, Option_t *)</div><div class="ttdef"><b>Definition:</b> <a href="TCmdXYblow_8cc_source.html#l00072">TCmdXYblow.cc:72</a></div></div>
+<div class="ttc" id="aclassart_1_1crib_1_1TCmdXYblow_html_a5c87321b4df7eabee40323971d4c499a"><div class="ttname"><a href="classart_1_1crib_1_1TCmdXYblow.html#a5c87321b4df7eabee40323971d4c499a">art::crib::TCmdXYblow::Cmd</a></div><div class="ttdeci">Long_t Cmd(vector&lt; TString &gt;) override</div><div class="ttdef"><b>Definition:</b> <a href="TCmdXYblow_8cc_source.html#l00042">TCmdXYblow.cc:42</a></div></div>
+<div class="ttc" id="aclassart_1_1crib_1_1TCmdXYblow_html_a5fa817807546e0b2c0993854fe439e1e"><div class="ttname"><a href="classart_1_1crib_1_1TCmdXYblow.html#a5fa817807546e0b2c0993854fe439e1e">art::crib::TCmdXYblow::Help</a></div><div class="ttdeci">void Help() override</div><div class="ttdef"><b>Definition:</b> <a href="TCmdXYblow_8cc_source.html#l00126">TCmdXYblow.cc:126</a></div></div>
+<div class="ttc" id="aclassart_1_1crib_1_1TCmdXYblow_html_ae1dc59133eaec38383d9d822f2fd04b5"><div class="ttname"><a href="classart_1_1crib_1_1TCmdXYblow.html#ae1dc59133eaec38383d9d822f2fd04b5">art::crib::TCmdXYblow::~TCmdXYblow</a></div><div class="ttdeci">~TCmdXYblow()</div><div class="ttdef"><b>Definition:</b> <a href="TCmdXYblow_8cc_source.html#l00040">TCmdXYblow.cc:40</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

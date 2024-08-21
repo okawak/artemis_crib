@@ -1,0 +1,238 @@
+\hypertarget{classart_1_1crib_1_1TTreeBeamGenerator}{}\doxysection{art\+::crib\+::TTree\+Beam\+Generator Class Reference}
+\label{classart_1_1crib_1_1TTreeBeamGenerator}\index{art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}}
+
+
+{\ttfamily \#include $<$TTree\+Beam\+Generator.\+h$>$}
+
+Inheritance diagram for art\+::crib\+::TTree\+Beam\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classart_1_1crib_1_1TTreeBeamGenerator}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator_ac986c3f086ed4a23804b34f9e84f4eca}{TTree\+Beam\+Generator}} ()
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator_a4417f828fdf854ab7ac15d822519b845}{$\sim$\+TTree\+Beam\+Generator}} ()
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator_a5302cb6f5a9ef33f65746cde054502db}{Init}} (TEvent\+Collection $\ast$) override
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator_a7b3bce48993085956d542883223115d0}{Process}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator_ab8fa1a157c0fafc9f0b4158644094731}{f\+Input\+Col\+Name}}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator_a7c7fd40a664cfbe547774c6a1a408232}{f\+Output\+Col\+Name}}
+\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator_aa1fe6f21337a52655ab4073219d21651}{f\+In\+Data}}
+\item 
+TClones\+Array $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator_a0d2ba5acbc9ad8bf4eb252a9f5fc87ef}{f\+Out\+Data}}
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator_a7e5bc3dd88cd8db5a23a92066643d7b8}{f\+Mass\+Num}}
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator_a0e79c8535f2bee1aec26757bcfa3717e}{f\+Atm\+Num}}
+\item 
+Int\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator_ab56bd9b137efe7219ec5702a65238eec}{f\+Charge\+Num}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator_acea691b142b3200171b9803ef4448896}{f\+Beam\+Energy}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator_a6c0acc4d1d47d78cb99337f0c84a58b9}{f\+Esigma}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator_a5338031ec691e78fa4731420a5f13cd1}{TTree\+Beam\+Generator}} (const \mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator}{TTree\+Beam\+Generator}} \&rhs)=delete
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator}{TTree\+Beam\+Generator}} \& \mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator_ac76f9e853aadb7d8a9b5a22d9a7ca908}{operator=}} (const \mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator}{TTree\+Beam\+Generator}} \&rhs)=delete
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator_ac966cf3866a743014652ded71779ee16}{Class\+Def\+Override}} (\mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator}{TTree\+Beam\+Generator}}, 1)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator_a2f14d44c68ed684b70e69ff541731833}{f\+Mass}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 21 of file TTree\+Beam\+Generator.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreeBeamGenerator_ac986c3f086ed4a23804b34f9e84f4eca}\label{classart_1_1crib_1_1TTreeBeamGenerator_ac986c3f086ed4a23804b34f9e84f4eca}} 
+\index{art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}!TTreeBeamGenerator@{TTreeBeamGenerator}}
+\index{TTreeBeamGenerator@{TTreeBeamGenerator}!art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}}
+\doxysubsubsection{\texorpdfstring{TTreeBeamGenerator()}{TTreeBeamGenerator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily TTree\+Beam\+Generator\+::\+TTree\+Beam\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 23 of file TTree\+Beam\+Generator.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreeBeamGenerator_a4417f828fdf854ab7ac15d822519b845}\label{classart_1_1crib_1_1TTreeBeamGenerator_a4417f828fdf854ab7ac15d822519b845}} 
+\index{art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}!````~TTreeBeamGenerator@{$\sim$TTreeBeamGenerator}}
+\index{````~TTreeBeamGenerator@{$\sim$TTreeBeamGenerator}!art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}}
+\doxysubsubsection{\texorpdfstring{$\sim$TTreeBeamGenerator()}{~TTreeBeamGenerator()}}
+{\footnotesize\ttfamily TTree\+Beam\+Generator\+::$\sim$\+TTree\+Beam\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 35 of file TTree\+Beam\+Generator.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreeBeamGenerator_a5338031ec691e78fa4731420a5f13cd1}\label{classart_1_1crib_1_1TTreeBeamGenerator_a5338031ec691e78fa4731420a5f13cd1}} 
+\index{art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}!TTreeBeamGenerator@{TTreeBeamGenerator}}
+\index{TTreeBeamGenerator@{TTreeBeamGenerator}!art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}}
+\doxysubsubsection{\texorpdfstring{TTreeBeamGenerator()}{TTreeBeamGenerator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily art\+::crib\+::\+TTree\+Beam\+Generator\+::\+TTree\+Beam\+Generator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator}{TTree\+Beam\+Generator}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreeBeamGenerator_ac966cf3866a743014652ded71779ee16}\label{classart_1_1crib_1_1TTreeBeamGenerator_ac966cf3866a743014652ded71779ee16}} 
+\index{art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}!ClassDefOverride@{ClassDefOverride}}
+\index{ClassDefOverride@{ClassDefOverride}!art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}}
+\doxysubsubsection{\texorpdfstring{ClassDefOverride()}{ClassDefOverride()}}
+{\footnotesize\ttfamily art\+::crib\+::\+TTree\+Beam\+Generator\+::\+Class\+Def\+Override (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator}{TTree\+Beam\+Generator}}}]{,  }\item[{1}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreeBeamGenerator_a5302cb6f5a9ef33f65746cde054502db}\label{classart_1_1crib_1_1TTreeBeamGenerator_a5302cb6f5a9ef33f65746cde054502db}} 
+\index{art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}!Init@{Init}}
+\index{Init@{Init}!art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void TTree\+Beam\+Generator\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+using TSrim library
+
+Definition at line 40 of file TTree\+Beam\+Generator.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreeBeamGenerator_ac76f9e853aadb7d8a9b5a22d9a7ca908}\label{classart_1_1crib_1_1TTreeBeamGenerator_ac76f9e853aadb7d8a9b5a22d9a7ca908}} 
+\index{art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}!operator=@{operator=}}
+\index{operator=@{operator=}!art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator}{TTree\+Beam\+Generator}}\& art\+::crib\+::\+TTree\+Beam\+Generator\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1crib_1_1TTreeBeamGenerator}{TTree\+Beam\+Generator}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreeBeamGenerator_a7b3bce48993085956d542883223115d0}\label{classart_1_1crib_1_1TTreeBeamGenerator_a7b3bce48993085956d542883223115d0}} 
+\index{art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}!Process@{Process}}
+\index{Process@{Process}!art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}}
+\doxysubsubsection{\texorpdfstring{Process()}{Process()}}
+{\footnotesize\ttfamily void TTree\+Beam\+Generator\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 64 of file TTree\+Beam\+Generator.\+cc.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreeBeamGenerator_a0e79c8535f2bee1aec26757bcfa3717e}\label{classart_1_1crib_1_1TTreeBeamGenerator_a0e79c8535f2bee1aec26757bcfa3717e}} 
+\index{art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}!fAtmNum@{fAtmNum}}
+\index{fAtmNum@{fAtmNum}!art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}}
+\doxysubsubsection{\texorpdfstring{fAtmNum}{fAtmNum}}
+{\footnotesize\ttfamily Int\+\_\+t art\+::crib\+::\+TTree\+Beam\+Generator\+::f\+Atm\+Num\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 37 of file TTree\+Beam\+Generator.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreeBeamGenerator_acea691b142b3200171b9803ef4448896}\label{classart_1_1crib_1_1TTreeBeamGenerator_acea691b142b3200171b9803ef4448896}} 
+\index{art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}!fBeamEnergy@{fBeamEnergy}}
+\index{fBeamEnergy@{fBeamEnergy}!art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}}
+\doxysubsubsection{\texorpdfstring{fBeamEnergy}{fBeamEnergy}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TTree\+Beam\+Generator\+::f\+Beam\+Energy\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 39 of file TTree\+Beam\+Generator.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreeBeamGenerator_ab56bd9b137efe7219ec5702a65238eec}\label{classart_1_1crib_1_1TTreeBeamGenerator_ab56bd9b137efe7219ec5702a65238eec}} 
+\index{art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}!fChargeNum@{fChargeNum}}
+\index{fChargeNum@{fChargeNum}!art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}}
+\doxysubsubsection{\texorpdfstring{fChargeNum}{fChargeNum}}
+{\footnotesize\ttfamily Int\+\_\+t art\+::crib\+::\+TTree\+Beam\+Generator\+::f\+Charge\+Num\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 38 of file TTree\+Beam\+Generator.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreeBeamGenerator_a6c0acc4d1d47d78cb99337f0c84a58b9}\label{classart_1_1crib_1_1TTreeBeamGenerator_a6c0acc4d1d47d78cb99337f0c84a58b9}} 
+\index{art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}!fEsigma@{fEsigma}}
+\index{fEsigma@{fEsigma}!art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}}
+\doxysubsubsection{\texorpdfstring{fEsigma}{fEsigma}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TTree\+Beam\+Generator\+::f\+Esigma\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 41 of file TTree\+Beam\+Generator.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreeBeamGenerator_aa1fe6f21337a52655ab4073219d21651}\label{classart_1_1crib_1_1TTreeBeamGenerator_aa1fe6f21337a52655ab4073219d21651}} 
+\index{art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}!fInData@{fInData}}
+\index{fInData@{fInData}!art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}}
+\doxysubsubsection{\texorpdfstring{fInData}{fInData}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::crib\+::\+TTree\+Beam\+Generator\+::f\+In\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 33 of file TTree\+Beam\+Generator.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreeBeamGenerator_ab8fa1a157c0fafc9f0b4158644094731}\label{classart_1_1crib_1_1TTreeBeamGenerator_ab8fa1a157c0fafc9f0b4158644094731}} 
+\index{art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}!fInputColName@{fInputColName}}
+\index{fInputColName@{fInputColName}!art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}}
+\doxysubsubsection{\texorpdfstring{fInputColName}{fInputColName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TTree\+Beam\+Generator\+::f\+Input\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 30 of file TTree\+Beam\+Generator.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreeBeamGenerator_a2f14d44c68ed684b70e69ff541731833}\label{classart_1_1crib_1_1TTreeBeamGenerator_a2f14d44c68ed684b70e69ff541731833}} 
+\index{art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}!fMass@{fMass}}
+\index{fMass@{fMass}!art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}}
+\doxysubsubsection{\texorpdfstring{fMass}{fMass}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TTree\+Beam\+Generator\+::f\+Mass\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 44 of file TTree\+Beam\+Generator.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreeBeamGenerator_a7e5bc3dd88cd8db5a23a92066643d7b8}\label{classart_1_1crib_1_1TTreeBeamGenerator_a7e5bc3dd88cd8db5a23a92066643d7b8}} 
+\index{art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}!fMassNum@{fMassNum}}
+\index{fMassNum@{fMassNum}!art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}}
+\doxysubsubsection{\texorpdfstring{fMassNum}{fMassNum}}
+{\footnotesize\ttfamily Int\+\_\+t art\+::crib\+::\+TTree\+Beam\+Generator\+::f\+Mass\+Num\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 36 of file TTree\+Beam\+Generator.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreeBeamGenerator_a0d2ba5acbc9ad8bf4eb252a9f5fc87ef}\label{classart_1_1crib_1_1TTreeBeamGenerator_a0d2ba5acbc9ad8bf4eb252a9f5fc87ef}} 
+\index{art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}!fOutData@{fOutData}}
+\index{fOutData@{fOutData}!art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}}
+\doxysubsubsection{\texorpdfstring{fOutData}{fOutData}}
+{\footnotesize\ttfamily TClones\+Array$\ast$ art\+::crib\+::\+TTree\+Beam\+Generator\+::f\+Out\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 34 of file TTree\+Beam\+Generator.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TTreeBeamGenerator_a7c7fd40a664cfbe547774c6a1a408232}\label{classart_1_1crib_1_1TTreeBeamGenerator_a7c7fd40a664cfbe547774c6a1a408232}} 
+\index{art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}!fOutputColName@{fOutputColName}}
+\index{fOutputColName@{fOutputColName}!art::crib::TTreeBeamGenerator@{art::crib::TTreeBeamGenerator}}
+\doxysubsubsection{\texorpdfstring{fOutputColName}{fOutputColName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TTree\+Beam\+Generator\+::f\+Output\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 31 of file TTree\+Beam\+Generator.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src-\/crib/simulation/\mbox{\hyperlink{TTreeBeamGenerator_8h}{TTree\+Beam\+Generator.\+h}}\item 
+src-\/crib/simulation/\mbox{\hyperlink{TTreeBeamGenerator_8cc}{TTree\+Beam\+Generator.\+cc}}\end{DoxyCompactItemize}

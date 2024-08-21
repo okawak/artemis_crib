@@ -1,0 +1,521 @@
+\hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor}{}\doxysection{art\+::crib\+::TCRIBPIDProcessor Class Reference}
+\label{classart_1_1crib_1_1TCRIBPIDProcessor}\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+
+
+{\ttfamily \#include $<$TCRIBPIDProcessor.\+h$>$}
+
+Inheritance diagram for art\+::crib\+::TCRIBPIDProcessor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classart_1_1crib_1_1TCRIBPIDProcessor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a6a2dfa578227f8a31ff98a487c8568a1}{TCRIBPIDProcessor}} ()
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_ada6d0aa647585dadc3201494cdbba9df}{$\sim$\+TCRIBPIDProcessor}} ()
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_ab6e61679a2c66f62a5da0b1ba0c4363f}{Init}} (TEvent\+Collection $\ast$) override
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_ae3b01e38833aef56988e0cc1474140e5}{Process}} () override
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_ac4a705ce90ad7e61c01504be6766a16b}{E2m\+\_\+s}} (Double\+\_\+t Ekin, Double\+\_\+t mass)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a89e2f3c734620bd7a0900653ddc0c1ad}{k\+Amu2\+MeV}}
+\item 
+const Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a6dc1dd0c2508a2e4aa105bdb363ce0fa}{k\+Light\+Speed}}
+\item 
+const Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a5165d41f604c0a2c66279c484f646bfa}{k\+J2\+MeV}}
+\item 
+const Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a0d3631be7996981ab8f5b91e6887d84b}{k\+Unit\+Charge}}
+\item 
+const Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a659e96ed4718e7a3e6c71bd3c9e70fd4}{k\+Length\+F0\+F2}}
+\item 
+const Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a551cd0cc32c59da0ec836be613a49160}{k\+Length\+F0\+F3}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a0896661d3d6474ac87649c77122c157c}{f\+File\+Name}}
+\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_aa5324c70fe166d045ab2c53e54920600}{f\+Is\+Batch}}
+\item 
+TSrim $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a7b4ac2a1403e7c956fa3d929ba2864b7}{srim}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a4ee5bdf16f69e4a0f89f1b589f77d89a}{Load\+PIDyaml}} ()
+\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_aac40e748a34d4135debb11862c1df610}{Set\+SRIMObject}} ()
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_afb23cf600f4a64781e5d43a547cc1928}{TCRIBPIDProcessor}} (const \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor}{TCRIBPIDProcessor}} \&rhs)=delete
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor}{TCRIBPIDProcessor}} \& \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a207bf119588b53afc4de0d26b05e7f31}{operator=}} (const \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor}{TCRIBPIDProcessor}} \&rhs)=delete
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a20030bd0f8d11d349c02ccdc2986ea86}{ion\+\_\+names}}
+\item 
+Int\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a8c2113de8ed02c1eb5afa3e496cc4756}{ion\+\_\+massnum}}
+\item 
+Int\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a2acbe0ec6d7a0aa36e0af7995d34dd57}{ion\+\_\+charges}}
+\item 
+Double\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a1e97e57bcf2ef2ffe2c41db064da15a1}{ion\+\_\+masses}}
+\item 
+Int\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a727621e1ade8ddd7df1e56d9b493fbd4}{ion\+\_\+colors}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_aef9f88e734d73e6af5d3d8a59aa6ee26}{f1\+\_\+brho}}
+\item 
+std\+::string \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a9ca8e27b1ddb3ba8889ba262c32a40de}{degrader\+\_\+mat}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a4e7e1dac8a0e16911b00ff40da4f2ba5}{degrader\+\_\+thick}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a0b8a389076810bc75e27032566bf1c5c}{rf\+\_\+period}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_af2013b5935b9fa3f88a638f90c46f511}{f2\+\_\+ppac\+\_\+thickness}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a6d1fd63a8e9f901cecd0f72c3f227f20}{f2\+\_\+ssd\+\_\+thickness}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a7e06e506e9c37b4537a66d2fcf1013a2}{a\+\_\+thickness}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_aa3b54ec952543611c168d53e9d761365}{b\+\_\+thickness}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a827e80ffec73bf7d986a5b7c25eea8d6}{distance}}
+\item 
+UShort\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_af9a7971bee042e09d4dc6da03032a66d}{trigger}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a7b9d49dcc962e277d99e6dae97e7be0c}{f2\+\_\+rf\+\_\+offset}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a523f4477be8df161a398bb6b7e022350}{f3\+\_\+rf\+\_\+offset}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_ac07570aedeebb2781c8c711687ffe8b2}{tof\+\_\+offset}}
+\item 
+Double\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_ad3cb2f2017ae22f8c28a9cd28854eff8}{f2\+\_\+rf\+\_\+range}}
+\item 
+Double\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a2a29d23555d7e991fe1affb608b2cce3}{f3\+\_\+rf\+\_\+range}}
+\item 
+Double\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_ae918d30222b7f4ba308194706aad51c1}{tof\+\_\+range}}
+\item 
+Double\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor_a5ecb92c1cff041334428213894239bb5}{energy\+\_\+range}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 25 of file TCRIBPIDProcessor.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a6a2dfa578227f8a31ff98a487c8568a1}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a6a2dfa578227f8a31ff98a487c8568a1}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!TCRIBPIDProcessor@{TCRIBPIDProcessor}}
+\index{TCRIBPIDProcessor@{TCRIBPIDProcessor}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{TCRIBPIDProcessor()}{TCRIBPIDProcessor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily TCRIBPIDProcessor\+::\+TCRIBPIDProcessor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 56 of file TCRIBPIDProcessor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_ada6d0aa647585dadc3201494cdbba9df}\label{classart_1_1crib_1_1TCRIBPIDProcessor_ada6d0aa647585dadc3201494cdbba9df}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!````~TCRIBPIDProcessor@{$\sim$TCRIBPIDProcessor}}
+\index{````~TCRIBPIDProcessor@{$\sim$TCRIBPIDProcessor}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{$\sim$TCRIBPIDProcessor()}{~TCRIBPIDProcessor()}}
+{\footnotesize\ttfamily TCRIBPIDProcessor\+::$\sim$\+TCRIBPIDProcessor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 61 of file TCRIBPIDProcessor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_afb23cf600f4a64781e5d43a547cc1928}\label{classart_1_1crib_1_1TCRIBPIDProcessor_afb23cf600f4a64781e5d43a547cc1928}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!TCRIBPIDProcessor@{TCRIBPIDProcessor}}
+\index{TCRIBPIDProcessor@{TCRIBPIDProcessor}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{TCRIBPIDProcessor()}{TCRIBPIDProcessor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily art\+::crib\+::\+TCRIBPIDProcessor\+::\+TCRIBPIDProcessor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor}{TCRIBPIDProcessor}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_ac4a705ce90ad7e61c01504be6766a16b}\label{classart_1_1crib_1_1TCRIBPIDProcessor_ac4a705ce90ad7e61c01504be6766a16b}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!E2m\_s@{E2m\_s}}
+\index{E2m\_s@{E2m\_s}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{E2m\_s()}{E2m\_s()}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::\+E2m\+\_\+s (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{Ekin,  }\item[{Double\+\_\+t}]{mass }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 40 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_ab6e61679a2c66f62a5da0b1ba0c4363f}\label{classart_1_1crib_1_1TCRIBPIDProcessor_ab6e61679a2c66f62a5da0b1ba0c4363f}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!Init@{Init}}
+\index{Init@{Init}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void TCRIBPIDProcessor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 66 of file TCRIBPIDProcessor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a4ee5bdf16f69e4a0f89f1b589f77d89a}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a4ee5bdf16f69e4a0f89f1b589f77d89a}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!LoadPIDyaml@{LoadPIDyaml}}
+\index{LoadPIDyaml@{LoadPIDyaml}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{LoadPIDyaml()}{LoadPIDyaml()}}
+{\footnotesize\ttfamily void TCRIBPIDProcessor\+::\+Load\+PIDyaml (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 255 of file TCRIBPIDProcessor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a207bf119588b53afc4de0d26b05e7f31}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a207bf119588b53afc4de0d26b05e7f31}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!operator=@{operator=}}
+\index{operator=@{operator=}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor}{TCRIBPIDProcessor}}\& art\+::crib\+::\+TCRIBPIDProcessor\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1crib_1_1TCRIBPIDProcessor}{TCRIBPIDProcessor}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_ae3b01e38833aef56988e0cc1474140e5}\label{classart_1_1crib_1_1TCRIBPIDProcessor_ae3b01e38833aef56988e0cc1474140e5}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!Process@{Process}}
+\index{Process@{Process}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{Process()}{Process()}}
+{\footnotesize\ttfamily void TCRIBPIDProcessor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 253 of file TCRIBPIDProcessor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_aac40e748a34d4135debb11862c1df610}\label{classart_1_1crib_1_1TCRIBPIDProcessor_aac40e748a34d4135debb11862c1df610}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!SetSRIMObject@{SetSRIMObject}}
+\index{SetSRIMObject@{SetSRIMObject}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{SetSRIMObject()}{SetSRIMObject()}}
+{\footnotesize\ttfamily void TCRIBPIDProcessor\+::\+Set\+SRIMObject (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 313 of file TCRIBPIDProcessor.\+cc.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a7e06e506e9c37b4537a66d2fcf1013a2}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a7e06e506e9c37b4537a66d2fcf1013a2}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!a\_thickness@{a\_thickness}}
+\index{a\_thickness@{a\_thickness}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{a\_thickness}{a\_thickness}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::a\+\_\+thickness\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 65 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_aa3b54ec952543611c168d53e9d761365}\label{classart_1_1crib_1_1TCRIBPIDProcessor_aa3b54ec952543611c168d53e9d761365}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!b\_thickness@{b\_thickness}}
+\index{b\_thickness@{b\_thickness}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{b\_thickness}{b\_thickness}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::b\+\_\+thickness\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 66 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a9ca8e27b1ddb3ba8889ba262c32a40de}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a9ca8e27b1ddb3ba8889ba262c32a40de}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!degrader\_mat@{degrader\_mat}}
+\index{degrader\_mat@{degrader\_mat}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{degrader\_mat}{degrader\_mat}}
+{\footnotesize\ttfamily std\+::string art\+::crib\+::\+TCRIBPIDProcessor\+::degrader\+\_\+mat\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 58 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a4e7e1dac8a0e16911b00ff40da4f2ba5}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a4e7e1dac8a0e16911b00ff40da4f2ba5}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!degrader\_thick@{degrader\_thick}}
+\index{degrader\_thick@{degrader\_thick}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{degrader\_thick}{degrader\_thick}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::degrader\+\_\+thick\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 59 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a827e80ffec73bf7d986a5b7c25eea8d6}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a827e80ffec73bf7d986a5b7c25eea8d6}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!distance@{distance}}
+\index{distance@{distance}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{distance}{distance}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::distance\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 67 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a5ecb92c1cff041334428213894239bb5}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a5ecb92c1cff041334428213894239bb5}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!energy\_range@{energy\_range}}
+\index{energy\_range@{energy\_range}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{energy\_range}{energy\_range}}
+{\footnotesize\ttfamily Double\+Vec\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::energy\+\_\+range\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 76 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_aef9f88e734d73e6af5d3d8a59aa6ee26}\label{classart_1_1crib_1_1TCRIBPIDProcessor_aef9f88e734d73e6af5d3d8a59aa6ee26}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!f1\_brho@{f1\_brho}}
+\index{f1\_brho@{f1\_brho}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{f1\_brho}{f1\_brho}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::f1\+\_\+brho\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 57 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_af2013b5935b9fa3f88a638f90c46f511}\label{classart_1_1crib_1_1TCRIBPIDProcessor_af2013b5935b9fa3f88a638f90c46f511}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!f2\_ppac\_thickness@{f2\_ppac\_thickness}}
+\index{f2\_ppac\_thickness@{f2\_ppac\_thickness}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{f2\_ppac\_thickness}{f2\_ppac\_thickness}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::f2\+\_\+ppac\+\_\+thickness\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 62 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a7b9d49dcc962e277d99e6dae97e7be0c}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a7b9d49dcc962e277d99e6dae97e7be0c}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!f2\_rf\_offset@{f2\_rf\_offset}}
+\index{f2\_rf\_offset@{f2\_rf\_offset}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{f2\_rf\_offset}{f2\_rf\_offset}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::f2\+\_\+rf\+\_\+offset\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 70 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_ad3cb2f2017ae22f8c28a9cd28854eff8}\label{classart_1_1crib_1_1TCRIBPIDProcessor_ad3cb2f2017ae22f8c28a9cd28854eff8}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!f2\_rf\_range@{f2\_rf\_range}}
+\index{f2\_rf\_range@{f2\_rf\_range}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{f2\_rf\_range}{f2\_rf\_range}}
+{\footnotesize\ttfamily Double\+Vec\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::f2\+\_\+rf\+\_\+range\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 73 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a6d1fd63a8e9f901cecd0f72c3f227f20}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a6d1fd63a8e9f901cecd0f72c3f227f20}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!f2\_ssd\_thickness@{f2\_ssd\_thickness}}
+\index{f2\_ssd\_thickness@{f2\_ssd\_thickness}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{f2\_ssd\_thickness}{f2\_ssd\_thickness}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::f2\+\_\+ssd\+\_\+thickness\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 63 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a523f4477be8df161a398bb6b7e022350}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a523f4477be8df161a398bb6b7e022350}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!f3\_rf\_offset@{f3\_rf\_offset}}
+\index{f3\_rf\_offset@{f3\_rf\_offset}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{f3\_rf\_offset}{f3\_rf\_offset}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::f3\+\_\+rf\+\_\+offset\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 71 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a2a29d23555d7e991fe1affb608b2cce3}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a2a29d23555d7e991fe1affb608b2cce3}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!f3\_rf\_range@{f3\_rf\_range}}
+\index{f3\_rf\_range@{f3\_rf\_range}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{f3\_rf\_range}{f3\_rf\_range}}
+{\footnotesize\ttfamily Double\+Vec\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::f3\+\_\+rf\+\_\+range\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 74 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a0896661d3d6474ac87649c77122c157c}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a0896661d3d6474ac87649c77122c157c}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!fFileName@{fFileName}}
+\index{fFileName@{fFileName}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{fFileName}{fFileName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TCRIBPIDProcessor\+::f\+File\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 45 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_aa5324c70fe166d045ab2c53e54920600}\label{classart_1_1crib_1_1TCRIBPIDProcessor_aa5324c70fe166d045ab2c53e54920600}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!fIsBatch@{fIsBatch}}
+\index{fIsBatch@{fIsBatch}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{fIsBatch}{fIsBatch}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::f\+Is\+Batch\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 46 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a2acbe0ec6d7a0aa36e0af7995d34dd57}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a2acbe0ec6d7a0aa36e0af7995d34dd57}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!ion\_charges@{ion\_charges}}
+\index{ion\_charges@{ion\_charges}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{ion\_charges}{ion\_charges}}
+{\footnotesize\ttfamily Int\+Vec\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::ion\+\_\+charges\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 53 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a727621e1ade8ddd7df1e56d9b493fbd4}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a727621e1ade8ddd7df1e56d9b493fbd4}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!ion\_colors@{ion\_colors}}
+\index{ion\_colors@{ion\_colors}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{ion\_colors}{ion\_colors}}
+{\footnotesize\ttfamily Int\+Vec\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::ion\+\_\+colors\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 55 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a1e97e57bcf2ef2ffe2c41db064da15a1}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a1e97e57bcf2ef2ffe2c41db064da15a1}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!ion\_masses@{ion\_masses}}
+\index{ion\_masses@{ion\_masses}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{ion\_masses}{ion\_masses}}
+{\footnotesize\ttfamily Double\+Vec\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::ion\+\_\+masses\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 54 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a8c2113de8ed02c1eb5afa3e496cc4756}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a8c2113de8ed02c1eb5afa3e496cc4756}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!ion\_massnum@{ion\_massnum}}
+\index{ion\_massnum@{ion\_massnum}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{ion\_massnum}{ion\_massnum}}
+{\footnotesize\ttfamily Int\+Vec\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::ion\+\_\+massnum\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 52 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a20030bd0f8d11d349c02ccdc2986ea86}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a20030bd0f8d11d349c02ccdc2986ea86}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!ion\_names@{ion\_names}}
+\index{ion\_names@{ion\_names}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{ion\_names}{ion\_names}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ art\+::crib\+::\+TCRIBPIDProcessor\+::ion\+\_\+names\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 51 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a89e2f3c734620bd7a0900653ddc0c1ad}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a89e2f3c734620bd7a0900653ddc0c1ad}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!kAmu2MeV@{kAmu2MeV}}
+\index{kAmu2MeV@{kAmu2MeV}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{kAmu2MeV}{kAmu2MeV}}
+{\footnotesize\ttfamily const Double\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::k\+Amu2\+MeV}
+
+
+
+Definition at line 33 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a5165d41f604c0a2c66279c484f646bfa}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a5165d41f604c0a2c66279c484f646bfa}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!kJ2MeV@{kJ2MeV}}
+\index{kJ2MeV@{kJ2MeV}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{kJ2MeV}{kJ2MeV}}
+{\footnotesize\ttfamily const Double\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::k\+J2\+MeV}
+
+
+
+Definition at line 35 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a659e96ed4718e7a3e6c71bd3c9e70fd4}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a659e96ed4718e7a3e6c71bd3c9e70fd4}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!kLengthF0F2@{kLengthF0F2}}
+\index{kLengthF0F2@{kLengthF0F2}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{kLengthF0F2}{kLengthF0F2}}
+{\footnotesize\ttfamily const Double\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::k\+Length\+F0\+F2}
+
+
+
+Definition at line 37 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a551cd0cc32c59da0ec836be613a49160}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a551cd0cc32c59da0ec836be613a49160}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!kLengthF0F3@{kLengthF0F3}}
+\index{kLengthF0F3@{kLengthF0F3}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{kLengthF0F3}{kLengthF0F3}}
+{\footnotesize\ttfamily const Double\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::k\+Length\+F0\+F3}
+
+
+
+Definition at line 38 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a6dc1dd0c2508a2e4aa105bdb363ce0fa}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a6dc1dd0c2508a2e4aa105bdb363ce0fa}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!kLightSpeed@{kLightSpeed}}
+\index{kLightSpeed@{kLightSpeed}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{kLightSpeed}{kLightSpeed}}
+{\footnotesize\ttfamily const Double\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::k\+Light\+Speed}
+
+
+
+Definition at line 34 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a0d3631be7996981ab8f5b91e6887d84b}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a0d3631be7996981ab8f5b91e6887d84b}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!kUnitCharge@{kUnitCharge}}
+\index{kUnitCharge@{kUnitCharge}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{kUnitCharge}{kUnitCharge}}
+{\footnotesize\ttfamily const Double\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::k\+Unit\+Charge}
+
+
+
+Definition at line 36 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a0b8a389076810bc75e27032566bf1c5c}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a0b8a389076810bc75e27032566bf1c5c}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!rf\_period@{rf\_period}}
+\index{rf\_period@{rf\_period}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{rf\_period}{rf\_period}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::rf\+\_\+period\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 60 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_a7b4ac2a1403e7c956fa3d929ba2864b7}\label{classart_1_1crib_1_1TCRIBPIDProcessor_a7b4ac2a1403e7c956fa3d929ba2864b7}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!srim@{srim}}
+\index{srim@{srim}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{srim}{srim}}
+{\footnotesize\ttfamily TSrim$\ast$ art\+::crib\+::\+TCRIBPIDProcessor\+::srim\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 48 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_ac07570aedeebb2781c8c711687ffe8b2}\label{classart_1_1crib_1_1TCRIBPIDProcessor_ac07570aedeebb2781c8c711687ffe8b2}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!tof\_offset@{tof\_offset}}
+\index{tof\_offset@{tof\_offset}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{tof\_offset}{tof\_offset}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::tof\+\_\+offset\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 72 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_ae918d30222b7f4ba308194706aad51c1}\label{classart_1_1crib_1_1TCRIBPIDProcessor_ae918d30222b7f4ba308194706aad51c1}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!tof\_range@{tof\_range}}
+\index{tof\_range@{tof\_range}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{tof\_range}{tof\_range}}
+{\footnotesize\ttfamily Double\+Vec\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::tof\+\_\+range\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 75 of file TCRIBPIDProcessor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TCRIBPIDProcessor_af9a7971bee042e09d4dc6da03032a66d}\label{classart_1_1crib_1_1TCRIBPIDProcessor_af9a7971bee042e09d4dc6da03032a66d}} 
+\index{art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}!trigger@{trigger}}
+\index{trigger@{trigger}!art::crib::TCRIBPIDProcessor@{art::crib::TCRIBPIDProcessor}}
+\doxysubsubsection{\texorpdfstring{trigger}{trigger}}
+{\footnotesize\ttfamily UShort\+\_\+t art\+::crib\+::\+TCRIBPIDProcessor\+::trigger\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 68 of file TCRIBPIDProcessor.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src-\/crib/simulation/\mbox{\hyperlink{TCRIBPIDProcessor_8h}{TCRIBPIDProcessor.\+h}}\item 
+src-\/crib/simulation/\mbox{\hyperlink{TCRIBPIDProcessor_8cc}{TCRIBPIDProcessor.\+cc}}\end{DoxyCompactItemize}
