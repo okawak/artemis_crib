@@ -13,6 +13,15 @@ Permission to use, copy, modify, and distribute this software and its documentat
 
 Documents produced by doxygen are derivative works derived from the input used in their production; they are not affected by this license.
 
+## 名前空間
+
+CRIB独自で開発したクラス、コードに対しては、cribという名前空間でラップして、artemis本体にあるコードと分けて管理できるようにしようと考えています。
+例えば、`art::TTimingChargeMappingProcessor`はartemis自体にあるプロセッサから使用しており、`art::crib::TMUXMappingProcesssor`はartemis_cribで独自に
+作成したプロセッサを使用している、といった形です。
+
+もし、artemis自身にある同名、同じ役割のプロセッサを編集して使いたいと思った場合は、cribという名前空間を使用して追加してください。
+また、今後もCRIB実験で使える汎用的なものを開発した場合もcribという名前空間を用いてプルリクエスト等を送ってください。
+
 ## version管理
 
 基本的には後方互換性はありません。

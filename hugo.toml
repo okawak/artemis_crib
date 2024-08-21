@@ -47,7 +47,7 @@ style = "monokai"
 
 # For menu extra shortcuts
 [[menu.shortcuts]]
-name = "<i class='fas fa-fw fa-file'></i> Source Code"
+name = "<i class='fas fa-fw fa-file'></i> For developer"
 url = "docs/html"
 weight = 1
 [[menu.shortcuts]]
