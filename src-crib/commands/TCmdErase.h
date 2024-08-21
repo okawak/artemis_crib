@@ -3,23 +3,23 @@
  * @brief
  * @author
  * @date    2023-06-13 17:34:58
- * @note    last modified: 2024-08-14 22:22:20
+ * @note    last modified: 2024-08-21 18:20:18
  * @details
  */
 
-#ifndef _TCMDERASE_H_
-#define _TCMDERASE_H_
+#ifndef _CRIB_TCMDERASE_H_
+#define _CRIB_TCMDERASE_H_
 
 #include <TCatCmd.h>
 
-namespace art {
+namespace art::crib {
 class TCmdErase;
-}
+} // namespace art::crib
 
 class TDirectory;
 class TList;
 
-class art::TCmdErase : public TCatCmd {
+class art::crib::TCmdErase : public TCatCmd {
 
   public:
     TCmdErase();

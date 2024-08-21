@@ -14,25 +14,25 @@ Processor:
       TreeName: tree
 
   - name: proc_copy_processor
-    type: art::TBranchCopyProcessor
+    type: art::crib::TBranchCopyProcessor
     parameter:
       InputCollection:     @TEL@
       OutputCollection:    tel
 
   - name: proc_copy_processor
-    type: art::TBranchCopyProcessor
+    type: art::crib::TBranchCopyProcessor
     parameter:
       InputCollection:     f3appac
       OutputCollection:    ppaca
 
   - name: proc_copy_processor
-    type: art::TBranchCopyProcessor
+    type: art::crib::TBranchCopyProcessor
     parameter:
       InputCollection:     f3bppac
       OutputCollection:    ppacb
 
   - name: proc_copy_processor
-    type: art::TBranchCopyProcessor
+    type: art::crib::TBranchCopyProcessor
     parameter:
       InputCollection:     f3ppac
       OutputCollection:    track

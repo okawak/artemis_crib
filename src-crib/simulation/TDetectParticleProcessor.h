@@ -3,12 +3,12 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:34:15
- * @note    last modified: 2024-08-14 18:49:32
+ * @note    last modified: 2024-08-21 17:59:28
  * @details
  */
 
-#ifndef _TDETECTPARTICLEPROCESSOR_H_
-#define _TDETECTPARTICLEPROCESSOR_H_
+#ifndef _CRIB_TDETECTPARTICLEPROCESSOR_H_
+#define _CRIB_TDETECTPARTICLEPROCESSOR_H_
 
 #include "TArtTypes.h"
 #include <TGeoManager.h>
@@ -17,13 +17,13 @@
 
 #include <TProcessor.h>
 
-namespace art {
+namespace art::crib {
 class TDetectParticleProcessor;
-}
+} // namespace art::crib
 
 class TClonesArray;
 
-class art::TDetectParticleProcessor : public TProcessor {
+class art::crib::TDetectParticleProcessor : public TProcessor {
   public:
     TDetectParticleProcessor();
     ~TDetectParticleProcessor();

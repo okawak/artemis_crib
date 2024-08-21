@@ -41,7 +41,7 @@ Processor:
 
   # TTree
   - name: SegmentOutputTree
-    type: art::TSegmentOutputProcessor
+    type: art::crib::TSegmentOutputProcessor
     parameter:
       Ignore: # [StringVec_t] ignore segment list
         - ""

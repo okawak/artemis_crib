@@ -17,6 +17,7 @@ rootfile
 .vncdisplay
 figure
 build
+install
 model
 ana
 

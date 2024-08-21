@@ -1,9 +1,9 @@
 /**
  * @file    TParticleInfo.h
  * @brief   particle information class
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-05-08 18:07:32
- * @note    last modified: 2024-08-14 19:03:15
+ * @note    last modified: 2024-08-21 18:02:38
  * @details
  */
 
@@ -14,11 +14,11 @@
 #include <TLorentzVector.h>
 #include <TTrack.h>
 
-namespace art {
+namespace art::crib {
 class TParticleInfo;
 }
 
-class art::TParticleInfo : public TDataObject {
+class art::crib::TParticleInfo : public TDataObject {
   public:
     typedef enum { kID,
                    kTiming } ESortType;

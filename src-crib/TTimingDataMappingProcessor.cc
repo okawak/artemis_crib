@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-07-19 18:36:37
- * @note    last modified: 2024-08-14 22:00:44
+ * @note    last modified: 2024-08-21 21:12:14
  * @details
  */
 
@@ -15,7 +15,7 @@
 
 #include "constant.h"
 
-using art::TTimingDataMappingProcessor;
+using art::crib::TTimingDataMappingProcessor;
 
 ClassImp(TTimingDataMappingProcessor);
 

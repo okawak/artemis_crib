@@ -3,21 +3,21 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-07-30 09:48:52
- * @note    last modified: 2024-08-14 19:07:37
+ * @note    last modified: 2024-08-21 17:40:52
  * @details
  */
 
-#ifndef _TMUXDATA_H
-#define _TMUXDATA_H
+#ifndef _CRIB_TMUXDATA_H
+#define _CRIB_TMUXDATA_H
 
 #include "TDataObject.h"
 #include "constant.h"
 
-namespace art {
+namespace art::crib {
 class TMUXData;
-}
+} // namespace art::crib
 
-class art::TMUXData : public TDataObject {
+class art::crib::TMUXData : public TDataObject {
   public:
     typedef enum { kID,
                    kTiming } ESortType;

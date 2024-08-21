@@ -1,24 +1,24 @@
 /**
  * @file    TRandomBeamGenerator.h
  * @brief   position and angle random beam generator
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-09 17:10:35
- * @note    last modified: 2024-08-14 19:02:23
+ * @note    last modified: 2024-08-21 18:03:35
  * @details
  */
 
-#ifndef _TRANDOMBEAMGENERATOR_H_
-#define _TRANDOMBEAMGENERATOR_H_
+#ifndef _CRIB_TRANDOMBEAMGENERATOR_H_
+#define _CRIB_TRANDOMBEAMGENERATOR_H_
 
 #include <TProcessor.h>
 
-namespace art {
+namespace art::crib {
 class TRandomBeamGenerator;
 }
 
 class TClonesArray;
 
-class art::TRandomBeamGenerator : public TProcessor {
+class art::crib::TRandomBeamGenerator : public TProcessor {
   public:
     TRandomBeamGenerator();
     ~TRandomBeamGenerator();

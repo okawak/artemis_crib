@@ -1,15 +1,22 @@
-// K.Okawa modified <okawa@cns.s.u-tokyo.ac.jp>
+/**
+ * @file    TModuleDecoderTimestamp.h
+ * @brief
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2022?
+ * @note    last modified: 2024-08-21 18:11:43
+ * @details
+ */
 
-#ifndef _TMODULEDECODERTIMESTAMP_h_
-#define _TMODULEDECODERTIMESTAMP_h_
+#ifndef _CRIB_TMODULEDECODERTIMESTAMP_h_
+#define _CRIB_TMODULEDECODERTIMESTAMP_h_
 
 #include "TModuleDecoder.h"
 
-namespace art {
+namespace art::crib {
 class TModuleDecoderTimestamp;
 }
 
-class art::TModuleDecoderTimestamp : public TModuleDecoder {
+class art::crib::TModuleDecoderTimestamp : public TModuleDecoder {
   public:
     static const int kID = 8;
     TModuleDecoderTimestamp();

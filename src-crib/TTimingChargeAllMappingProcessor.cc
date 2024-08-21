@@ -1,12 +1,10 @@
 /**
- * @file   TTimingChargeAllMappingProcessor.cc
- * @brief
- *
- * @date   Created:       2013-08-12 12:45:58
- *         Last Modified:  2024-03-14 11:00:19
- * @author KAWASE Shoichiro <kawase@cns.s.u-tokyo.ac.jp>
- *
- *    Copyright (C) 2013 KAWASE Shoichiro All rights reserved.
+ * @file    TTimingChargeAllMappingProcessor.cc
+ * @brief   from TTimingChargeMappingProcessor, both E and T
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2022?
+ * @note    last modified: 2024-08-21 17:17:16
+ * @details
  */
 
 #include "TTimingChargeAllMappingProcessor.h"
@@ -17,12 +15,12 @@
 
 #include "constant.h"
 
-using art::TTimingChargeAllMappingProcessor;
+using art::crib::TTimingChargeAllMappingProcessor;
 
-ClassImp(art::TTimingChargeAllMappingProcessor)
+ClassImp(TTimingChargeAllMappingProcessor);
 
-    // Default constructor
-    TTimingChargeAllMappingProcessor::TTimingChargeAllMappingProcessor()
+// Default constructor
+TTimingChargeAllMappingProcessor::TTimingChargeAllMappingProcessor()
     : fPlastic(nullptr) {
     RegisterInputCollection("InputCollection", "rawdata object returned by TRIDFEventStore",
                             fInputColName, TString("catdata"),

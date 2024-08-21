@@ -3,25 +3,25 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 11:08:17
- * @note    last modified: 2024-08-17 16:12:57
+ * @note    last modified: 2024-08-21 17:56:52
  * @details
  */
 
-#ifndef _TSOLIDANGLEPROCESSOR_H_
-#define _TSOLIDANGLEPROCESSOR_H_
+#ifndef _CRIB_TSOLIDANGLEPROCESSOR_H_
+#define _CRIB_TSOLIDANGLEPROCESSOR_H_
 
 #include <TProcessor.h>
 
 #include <TH1.h>
 #include <TH2.h>
 
-namespace art {
+namespace art::crib {
 class TSolidAngleProcessor;
 }
 
 class TClonesArray;
 
-class art::TSolidAngleProcessor : public TProcessor {
+class art::crib::TSolidAngleProcessor : public TProcessor {
   public:
     /// @brief default constructor
     TSolidAngleProcessor();

@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-07-19 20:20:07
- * @note    last modified: 2024-08-14 22:00:48
+ * @note    last modified: 2024-08-21 17:23:56
  * @details
  */
 
@@ -13,11 +13,14 @@
 #include <TProcessor.h>
 
 namespace art {
-class TTimingDataMappingProcessor;
 class TCategorizedData;
 } // namespace art
 
-class art::TTimingDataMappingProcessor : public TProcessor {
+namespace art::crib {
+class TTimingDataMappingProcessor;
+} // namespace art::crib
+
+class art::crib::TTimingDataMappingProcessor : public TProcessor {
   public:
     TTimingDataMappingProcessor();
     ~TTimingDataMappingProcessor();

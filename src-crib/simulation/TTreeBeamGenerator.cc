@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-09 15:57:01
- * @note    last modified: 2024-07-19 17:54:02
+ * @note    last modified: 2024-08-21 21:09:18
  * @details
  */
 
@@ -16,7 +16,7 @@
 
 #include <Mass.h> // TSrim library
 
-using art::TTreeBeamGenerator;
+using art::crib::TTreeBeamGenerator;
 
 ClassImp(TTreeBeamGenerator);
 
@@ -54,7 +54,7 @@ void TTreeBeamGenerator::Init(TEventCollection *col) {
         SetStateError("contents of input array must inherit from art::TTrack");
     }
 
-    fOutData = new TClonesArray("art::TParticleInfo");
+    fOutData = new TClonesArray("art::crib::TParticleInfo");
     fOutData->SetName(fOutputColName);
     col->Add(fOutputColName, fOutData, fOutputIsTransparent);
 

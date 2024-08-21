@@ -1,23 +1,23 @@
 /**
  * @file    TReactionInfo.h
  * @brief
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:27:43
- * @note    last modified: 2024-08-16 13:42:57
+ * @note    last modified: 2024-08-21 17:55:42
  * @details
  */
 
-#ifndef _TREACTIONINFO_H_
-#define _TREACTIONINFO_H_
+#ifndef _CRIB_TREACTIONINFO_H_
+#define _CRIB_TREACTIONINFO_H_
 
 #include <TDataObject.h>
 #include <constant.h>
 
-namespace art {
+namespace art::crib {
 class TReactionInfo;
 }
 
-class art::TReactionInfo : public TDataObject {
+class art::crib::TReactionInfo : public TDataObject {
   public:
     typedef enum { kID,
                    kTiming } ESortType;

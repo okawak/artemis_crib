@@ -1,6 +1,6 @@
 Processor:
   - name: proc_coin_map
-    type: art::TTimingDataMappingProcessor
+    type: art::crib::TTimingDataMappingProcessor
     parameter:
       CatID: 2
       DataTypeID: 0
@@ -15,4 +15,3 @@ Processor:
         - single
         - coin
         - pileup
-

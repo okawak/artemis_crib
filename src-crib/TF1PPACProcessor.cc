@@ -1,13 +1,10 @@
 /**
- * @file   TF1PPACProcessor.cc
- * @brief  Created from TPPACProcessor.cc
- *
- * @date   Created:       2013-10-30 14:18:35
- *         Last Modified : 2022-08-08 17:25:02 JST (K.Okawa)
- * @author KAWASE Shoichiro <kawase@cns.s.u-tokyo.ac.jp>
- *         OTA Shinsuke <ota@cns.s.u-tokyo.ac.jp>
- *         OKAWA Kodai <okawa@cns.s.u-tokyo.ac.jp>
- *    Copyright (C) 2013-2014 KAWASE Shoichiro, Shinauke OTA All rights reserved.
+ * @file    TF1PPACProcessor.cc
+ * @brief   Created from TPPACPrcessor
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2022-08-08 17:25:02
+ * @note    last modified: 2024-08-21 17:07:54
+ * @details
  */
 
 #include "TF1PPACProcessor.h"
@@ -23,12 +20,12 @@
 
 #include <TClonesArray.h>
 
-using art::TF1PPACProcessor;
+using art::crib::TF1PPACProcessor;
 
-ClassImp(art::TF1PPACProcessor)
+ClassImp(TF1PPACProcessor);
 
-    // Default constructor
-    TF1PPACProcessor::TF1PPACProcessor()
+// Default constructor
+TF1PPACProcessor::TF1PPACProcessor()
     : fPPACOut(nullptr),
       fTimingConverterArray(nullptr), fChargeConverterArray(nullptr),
       fXConverterArray(nullptr), fYConverterArray(nullptr) {

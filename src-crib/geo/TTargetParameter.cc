@@ -3,13 +3,13 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 22:14:38
- * @note    last modified: 2024-08-14 18:52:30
+ * @note    last modified: 2024-08-21 17:53:50
  * @details
  */
 
 #include "TTargetParameter.h"
 
-using art::TTargetParameter;
+using art::crib::TTargetParameter;
 
 ClassImp(TTargetParameter);
 

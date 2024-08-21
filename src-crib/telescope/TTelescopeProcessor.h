@@ -3,25 +3,25 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 16:53:01
- * @note    last modified: 2024-08-14 19:11:45
+ * @note    last modified: 2024-08-21 17:51:51
  * @details if no valid converter given, this processor does nothing.
  *          it assume we use DSSSD
  */
 
-#ifndef _TTELESCOPEPROCESSOR_H_
-#define _TTELESCOPEPROCESSOR_H_
+#ifndef _CRIB_TTELESCOPEPROCESSOR_H_
+#define _CRIB_TTELESCOPEPROCESSOR_H_
 
 #include <TProcessor.h>
 
-namespace art {
+namespace art::crib {
 class TTelescopeProcessor;
 class TDetectorParameter;
 class TTargetParameter;
-} // namespace art
+} // namespace art::crib
 
 class TClonesArray;
 
-class art::TTelescopeProcessor : public TProcessor {
+class art::crib::TTelescopeProcessor : public TProcessor {
   public:
     // Default constructor
     TTelescopeProcessor();

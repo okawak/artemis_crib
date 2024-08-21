@@ -3,12 +3,14 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-13 17:29:21
- * @note    last modified: 2024-08-14 22:09:17
+ * @note    last modified: 2024-08-21 18:16:22
  * @details
  */
 
 #include "TCatCmdLoopStop.h"
 #include <TLoopManager.h>
+
+using art::crib::TCatCmdLoopStop;
 
 ClassImp(TCatCmdLoopStop);
 

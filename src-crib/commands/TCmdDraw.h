@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-13 17:52:08
- * @note    last modified: 2024-08-14 22:19:00
+ * @note    last modified: 2024-08-21 18:19:22
  * @details
  */
 
@@ -12,13 +12,13 @@
 
 #include "TCatCmd.h"
 
-namespace art {
+namespace art::crib {
 class TCmdDraw;
 }
 
 class TF1;
 
-class art::TCmdDraw : public TCatCmd {
+class art::crib::TCmdDraw : public TCatCmd {
   public:
     TCmdDraw();
     ~TCmdDraw();

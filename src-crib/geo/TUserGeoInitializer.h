@@ -3,25 +3,25 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 21:30:15
- * @note    last modified: 2024-08-15 14:49:10
+ * @note    last modified: 2024-08-21 17:52:37
  * @details
  */
 
-#ifndef _TUSERGEOINITIALIZER_H_
-#define _TUSERGEOINITIALIZER_H_
+#ifndef _CRIB_TUSERGEOINITIALIZER_H_
+#define _CRIB_TUSERGEOINITIALIZER_H_
 
 #include <TClonesArray.h>
 #include <TGeoManager.h>
 #include <TMath.h>
 #include <TProcessor.h>
 
-namespace art {
+namespace art::crib {
 class TUserGeoInitializer;
 }
 
 class TClonesArray;
 
-class art::TUserGeoInitializer : public TProcessor {
+class art::crib::TUserGeoInitializer : public TProcessor {
   public:
     /// @brief constructor
     TUserGeoInitializer();

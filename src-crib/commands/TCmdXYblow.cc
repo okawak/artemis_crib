@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-13 17:38:35
- * @note    last modified: 2024-08-14 22:33:24
+ * @note    last modified: 2024-08-21 18:22:53
  * @details
  */
 
@@ -25,7 +25,7 @@
 #include <TROOT.h>
 #include <TStyle.h>
 
-using art::TCmdXYblow;
+using art::crib::TCmdXYblow;
 
 ClassImp(TCmdXYblow);
 

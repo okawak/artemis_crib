@@ -3,16 +3,16 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 17:14:39
- * @note    last modified: 2024-07-22 17:51:57
+ * @note    last modified: 2024-08-21 17:51:10
  * @details
  */
 
 #include "TTelescopeData.h"
 #include <TConverterBase.h>
 
-using art::TTelescopeData;
+using art::crib::TTelescopeData;
 
-ClassImp(art::TTelescopeData);
+ClassImp(TTelescopeData);
 
 TTelescopeData::TTelescopeData()
     : fTelID(kInvalidI), fXID(kInvalidI), fYID(kInvalidI), fNE(0),

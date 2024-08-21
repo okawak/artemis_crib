@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:35:07
- * @note    last modified: 2024-08-19 21:49:09
+ * @note    last modified: 2024-08-21 21:05:55
  * @details bisection method (not Newton method)
  */
 
@@ -20,9 +20,9 @@
 #include <TLorentzVector.h>
 #include <TRandom.h>
 
-using art::TTGTIKProcessor;
+using art::crib::TTGTIKProcessor;
 
-ClassImp(art::TTGTIKProcessor);
+ClassImp(TTGTIKProcessor);
 
 ////////////////////////////////////////////////////////////////////////////////
 /// From telescope object and beam (tracking) object, it calculate the
@@ -76,9 +76,9 @@ TTGTIKProcessor::TTGTIKProcessor() : fInData(nullptr), fInTrackData(nullptr), fO
     RegisterProcessorParameter("UseCustomFunction", "custom process", fDoCustom, false);
 
     RegisterOptionalInputInfo("DetectorParameter", "name of telescope parameter", fDetectorParameterName,
-                              TString("prm_detectors"), &fDetectorPrm, "TClonesArray", "art::TDetectorParameter");
+                              TString("prm_detectors"), &fDetectorPrm, "TClonesArray", "art::crib::TDetectorParameter");
     RegisterOptionalInputInfo("TargetParameter", "name of target parameter", fTargetParameterName,
-                              TString("prm_targets"), &fTargetPrm, "TClonesArray", "art::TTargetParameter");
+                              TString("prm_targets"), &fTargetPrm, "TClonesArray", "art::crib::TTargetParameter");
     RegisterProcessorParameter("UseCenterPosition", "custom, use center position at the detecgtor", fDoCenterPos, false);
 }
 
@@ -112,7 +112,7 @@ void TTGTIKProcessor::Init(TEventCollection *col) {
 
     const TClass *const cl1 = (*fInData)->GetClass();
     const TClass *const cl2 = (*fInTrackData)->GetClass();
-    if (!(cl1->InheritsFrom(art::TTelescopeData::Class()))) {
+    if (!(cl1->InheritsFrom(art::crib::TTelescopeData::Class()))) {
         SetStateError(Form("%s need to inherit from TTelescopeData", fInputColName.Data()));
         return;
     }
@@ -165,7 +165,7 @@ void TTGTIKProcessor::Init(TEventCollection *col) {
     srim->AddElement("srim", 16, Form("%s/%s/range_fit_pol16_%s.txt", tsrim_path, fTargetName.Data(), fTargetName.Data()));
 
     // prepare output collection
-    fOutData = new TClonesArray("art::TReactionInfo");
+    fOutData = new TClonesArray("art::crib::TReactionInfo");
     fOutData->SetName(fOutputColName);
     col->Add(fOutputColName, fOutData, fOutputIsTransparent);
 

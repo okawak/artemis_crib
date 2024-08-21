@@ -1,9 +1,9 @@
 /**
  * @file    TMUXDataMappingProcessor.cc
  * @brief
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-01-30 09:47:17
- * @note    last modified: 2024-08-14 19:09:49
+ * @note    last modified: 2024-08-21 21:02:40
  * @details
  */
 
@@ -15,7 +15,7 @@
 
 #include "constant.h"
 
-using art::TMUXDataMappingProcessor;
+using art::crib::TMUXDataMappingProcessor;
 
 ClassImp(TMUXDataMappingProcessor);
 
@@ -28,7 +28,7 @@ TMUXDataMappingProcessor::TMUXDataMappingProcessor()
     RegisterOutputCollection("OutputCollection", "output collection name",
                              fOutputColName, TString("simple"),
                              reinterpret_cast<void **>(&fOutputArray),
-                             "TClonesArray", "art::TMUXData");
+                             "TClonesArray", "art::crib::TMUXData");
     RegisterProcessorParameter("CatID", "Category ID", fCatID, 0);
 }
 

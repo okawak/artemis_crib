@@ -3,18 +3,22 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-13 18:33:54
- * @note    last modified: 2024-08-14 22:14:46
+ * @note    last modified: 2024-08-21 18:18:11
  * @details
  */
 
-#ifndef _TCATCMDTCUTG_H_
-#define _TCATCMDTCUTG_H_
+#ifndef _CRIB_TCATCMDTCUTG_H_
+#define _CRIB_TCATCMDTCUTG_H_
 
 #include <TCatCmd.h>
 
+namespace art::crib {
+class TCatCmdTCutG;
+} // namespace art::crib
+
 class TPad;
 
-class TCatCmdTCutG : public TCatCmd {
+class art::crib::TCatCmdTCutG : public TCatCmd {
   protected:
     TCatCmdTCutG();
     Double_t fX;

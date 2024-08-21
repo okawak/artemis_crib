@@ -1,34 +1,34 @@
 /**
  * @file    TCRIBPIDProcessor.h
  * @brief   Beam PID at F2 and F3 of CRIB
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
- * @date    2023-12-19 15:30:15
- * @note
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2023-12-19 15:30:55
+ * @note    last modified: 2024-08-21 17:16:17
+ * @details
  */
 
-#ifndef _TCRIBPIDPROCESSOR_H_
-#define _TCRIBPIDPROCESSOR_H_
+#ifndef _CRIB_TCRIBPIDPROCESSOR_H_
+#define _CRIB_TCRIBPIDPROCESSOR_H_
 
 #include "TArtTypes.h"
 #include <TMath.h>
 
-#include <SRIMData.h>
-#include <SRIMtable.h>
 #include <TProcessor.h>
+#include <TSrim.h> // TSrim library
 
-namespace art {
+namespace art::crib {
 class TCRIBPIDProcessor;
-}
+} // namespace art::crib
 
 class TClonesArray;
 
-class art::TCRIBPIDProcessor : public TProcessor {
+class art::crib::TCRIBPIDProcessor : public TProcessor {
   public:
     TCRIBPIDProcessor();
-    virtual ~TCRIBPIDProcessor();
+    ~TCRIBPIDProcessor();
 
-    virtual void Init(TEventCollection *col);
-    virtual void Process();
+    void Init(TEventCollection *) override;
+    void Process() override;
 
     const Double_t kAmu2MeV = 931.49432;         // amu -> MeV/c^2
     const Double_t kLightSpeed = 299792458.0;    // m/s
@@ -45,17 +45,19 @@ class art::TCRIBPIDProcessor : public TProcessor {
     TString fFileName;
     Bool_t fIsBatch;
 
-    SRIMData *fElossTable;
-    std::vector<std::vector<SRIMtable *>> fEloss_vvec; // [particle_id][0: mylar, 1: SSD]
+    TSrim *srim;
 
   private:
-    StringVec_t ion_names;
+    std::vector<std::string> ion_names;
+    IntVec_t ion_massnum;
     IntVec_t ion_charges;
     DoubleVec_t ion_masses; // MeV/c^2
     IntVec_t ion_colors;
 
-    Double_t f1_brho;   // Tm
-    Double_t rf_period; // ns
+    Double_t f1_brho; // Tm
+    std::string degrader_mat;
+    Double_t degrader_thick; // mm
+    Double_t rf_period;      // ns
 
     Double_t f2_ppac_thickness; // mm, mylar
     Double_t f2_ssd_thickness;  // mm
@@ -76,10 +78,10 @@ class art::TCRIBPIDProcessor : public TProcessor {
     void LoadPIDyaml();
     void SetSRIMObject();
 
-    TCRIBPIDProcessor(const TCRIBPIDProcessor &rhs);
-    TCRIBPIDProcessor &operator=(const TCRIBPIDProcessor &rhs);
+    TCRIBPIDProcessor(const TCRIBPIDProcessor &rhs) = delete;
+    TCRIBPIDProcessor &operator=(const TCRIBPIDProcessor &rhs) = delete;
 
-    ClassDef(TCRIBPIDProcessor, 1)
+    ClassDefOverride(TCRIBPIDProcessor, 1)
 };
 
 #endif // end of #ifndef _TCRIBPIDPROCESSOR_H_

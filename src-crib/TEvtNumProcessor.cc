@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022?
- * @note    last modified: 2024-08-14 18:58:14
+ * @note    last modified: 2024-08-21 17:31:09
  * @details originally made by J. W. Hwang
  */
 
@@ -14,9 +14,11 @@
 #include <TBenchmark.h>
 #include <TStopwatch.h>
 
-ClassImp(art::TEvtNumProcessor);
+using art::crib::TEvtNumProcessor;
 
-art::TEvtNumProcessor::TEvtNumProcessor() : fCurNum(0), fLimEvNum(0), fPriEv(kFALSE), fPriEvNum(100) {
+ClassImp(TEvtNumProcessor);
+
+TEvtNumProcessor::TEvtNumProcessor() : fCurNum(0), fLimEvNum(0), fPriEv(kFALSE), fPriEvNum(100) {
     RegisterProcessorParameter("EventNumLimit", "the limit of the event number",
                                fLimEvNum, 0);
     RegisterOptionalParameter("PrintEvent", "print the current event number",
@@ -25,15 +27,15 @@ art::TEvtNumProcessor::TEvtNumProcessor() : fCurNum(0), fLimEvNum(0), fPriEv(kFA
                                fPriEvNum, 100);
 }
 
-art::TEvtNumProcessor::~TEvtNumProcessor() {}
+TEvtNumProcessor::~TEvtNumProcessor() {}
 
-void art::TEvtNumProcessor::Init(TEventCollection *) {}
+void TEvtNumProcessor::Init(TEventCollection *) {}
 
-void art::TEvtNumProcessor::EndOfRun() {
+void TEvtNumProcessor::EndOfRun() {
     std::cout << "  Event Number: " << fCurNum << std::endl;
 }
 
-void art::TEvtNumProcessor::Process() {
+void TEvtNumProcessor::Process() {
     fCurNum++;
     if (fPriEv && !(fCurNum % fPriEvNum)) {
         std::cout << "\r  Event Number: " << fCurNum;

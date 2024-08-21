@@ -3,7 +3,7 @@
  * @brief   gather the telescope information to the one object
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 17:52:58
- * @note    last modified: 2024-07-30 10:54:05
+ * @note    last modified: 2024-08-21 21:01:25
  * @details treat the largest value of each layor
  *          the data of X side is used for DSSSD
  *          assume beam position (0, 0) and direction (0, 0, 1)
@@ -26,9 +26,9 @@
 #include <TMath.h>
 #include <TRandom.h>
 
-using art::TTelescopeProcessor;
+using art::crib::TTelescopeProcessor;
 
-ClassImp(art::TTelescopeProcessor);
+ClassImp(TTelescopeProcessor);
 
 // Default constructor
 TTelescopeProcessor::TTelescopeProcessor()
@@ -42,16 +42,16 @@ TTelescopeProcessor::TTelescopeProcessor()
     RegisterInputCollection("InputCollection3",
                             "array of objects inheriting from art::TTimingChargeData",
                             fInputColName3, TString("E"));
-    RegisterOutputCollection("OutputCollection", "output class will be art::TTelescopeData",
+    RegisterOutputCollection("OutputCollection", "output class will be art::crib::TTelescopeData",
                              fOutputColName, TString("telescope"));
 
     RegisterProcessorParameter("IsDSSSD", "Bool, true: first layer is DSSSD, false: first and second layer is SSSSD", fIsDSSSD, true);
     RegisterProcessorParameter("UseRandom", "Bool, true: Uniform distribution in one pixel, false: center of the pixel", fUseRandom, false);
 
     RegisterOptionalInputInfo("DetectorParameter", "name of detector parameter defined in TUserGeoInitializer", fDetPrmName,
-                              TString("prm_detectors"), &fDetParameters, "TClonesArray", "art::TDetectorParameter");
+                              TString("prm_detectors"), &fDetParameters, "TClonesArray", "art::crib::TDetectorParameter");
     RegisterOptionalInputInfo("TargetParameter", "name of target parameter defined in TUserGeoInitializer", fTargetPrmName,
-                              TString("prm_targets"), &fTargetParameters, "TClonesArray", "art::TTargetParameter");
+                              TString("prm_targets"), &fTargetParameters, "TClonesArray", "art::crib::TTargetParameter");
 }
 
 TTelescopeProcessor::~TTelescopeProcessor() {
@@ -134,7 +134,7 @@ void TTelescopeProcessor::Init(TEventCollection *col) {
         return;
     }
 
-    fOutData = new TClonesArray("art::TTelescopeData");
+    fOutData = new TClonesArray("art::crib::TTelescopeData");
     fOutData->SetName(fOutputColName);
     col->Add(fOutputColName, fOutData, fOutputIsTransparent);
 

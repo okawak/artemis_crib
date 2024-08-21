@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-01-30 11:50:14
- * @note    last modified: 2024-07-30 11:50:31
+ * @note    last modified: 2024-08-21 17:49:53
  * @details
  */
 
@@ -17,9 +17,9 @@
 #include <TROOT.h>
 #include <TString.h>
 
-using art::TMUXPositionConverter;
+using art::crib::TMUXPositionConverter;
 
-ClassImp(art::TMUXPositionConverter);
+ClassImp(TMUXPositionConverter);
 
 TMUXPositionConverter::~TMUXPositionConverter() {
 }

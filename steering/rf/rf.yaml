@@ -9,7 +9,7 @@ Processor:
 
 
   - name: proc_rf_raw
-    type: art::TTimingDataMappingProcessor
+    type: art::crib::TTimingDataMappingProcessor
     parameter:
       CatID:         1
       DataTypeID:    0

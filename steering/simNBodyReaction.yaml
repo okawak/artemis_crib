@@ -30,13 +30,13 @@ Processor:
 ## =====================================
 ## using random number
 #  - name: random_eventstore
-#    type: art::TRandomNumberEventStore
+#    type: art::crib::TRandomNumberEventStore
 #    parameter:
 #      OutputTransparency: 1
 #      MaxLoop: *loopnum
 #
 #  - name: beam_generator
-#    type: art::TRandomBeamGenerator
+#    type: art::crib::TRandomBeamGenerator
 #    parameter:
 #      OutputCollection: beam
 #      OutputTrackCollection: track
@@ -55,7 +55,7 @@ Processor:
 ##=====================================
 ## using TTree events
   - name: periodic_tree
-    type: art::TTreePeriodicEventStore
+    type: art::crib::TTreePeriodicEventStore
     parameter:
       OutputTransparency: 1
       FileName: *input
@@ -63,13 +63,13 @@ Processor:
       MaxEventNum: *loopnum
 
   - name: proc_copy_processor
-    type: art::TBranchCopyProcessor
+    type: art::crib::TBranchCopyProcessor
     parameter:
       InputCollection: f3ppac # need to inherit from TTrack
       OutputCollection: track
 
   - name: beam_generator
-    type: art::TTreeBeamGenerator
+    type: art::crib::TTreeBeamGenerator
     parameter:
       InputCollection: track
       OutputCollection: beam
@@ -82,7 +82,7 @@ Processor:
 
 ##=====================================
   - name: reaction_proc
-    type: art::TNBodyReactionProcessor
+    type: art::crib::TNBodyReactionProcessor
     parameter:
       InputCollection: beam
       OutputCollection: products # size is DecayParticleNum
@@ -108,14 +108,14 @@ Processor:
       CrossSectionType: 0 # 0: LAB, kinematics is different, 1: LAB, kinematics is same, 2: CM
 
   - name: detector_initialize
-    type: art::TUserGeoInitializer
+    type: art::crib::TUserGeoInitializer
     parameter:
       FileName: prm/geo/current
       Visible: false
       OutputTransparency: 1
 
   - name: detector_proc
-    type: art::TDetectParticleProcessor
+    type: art::crib::TDetectParticleProcessor
     parameter:
       InputCollection: products
       InputTrackCollection: track
@@ -135,7 +135,7 @@ Processor:
         - light
 
   - name: progress
-    type: art::TEvtNumProcessor
+    type: art::crib::TEvtNumProcessor
     parameter:
       OutputTransparency: 0
       PrintEvent: 1

@@ -1,27 +1,28 @@
 /**
- * @file   TTimingChargeAllMappingProcessor.h
- * @brief
- *
- * @date   Created:       2013-08-12 12:36:40
- *         Last Modified: 2014-06-18 11:03:41 JST (kawase)
- * @author KAWASE Shoichiro <kawase@cns.s.u-tokyo.ac.jp>
- *
- *    Copyright (C) 2013 KAWASE Shoichiro All rights reserved
+ * @file    TTimingChargeAllMappingProcessor.h
+ * @brief   from TTimingChargeMappingProcessor, both E and T
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2022?
+ * @note    last modified: 2024-08-21 17:24:11
+ * @details
  */
 
-#ifndef TTIMINGCHARGEALLMAPPINGPROCESSOR_H
-#define TTIMINGCHARGEALLMAPPINGPROCESSOR_H
+#ifndef _CRIB_TTIMINGCHARGEALLMAPPINGPROCESSOR_H
+#define _CRIB_TTIMINGCHARGEALLMAPPINGPROCESSOR_H
 
 #include <TProcessor.h>
 
 namespace art {
-class TTimingChargeAllMappingProcessor;
 class TCategorizedData;
 } // namespace art
 
+namespace art::crib {
+class TTimingChargeAllMappingProcessor;
+} // namespace art::crib
+
 class TClonesArray;
 
-class art::TTimingChargeAllMappingProcessor : public TProcessor {
+class art::crib::TTimingChargeAllMappingProcessor : public TProcessor {
 
   public:
     // Default constructor

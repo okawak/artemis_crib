@@ -20,7 +20,7 @@ Processor:
 # data mapping
   - name: proc_@NAME@_E_raw
     #type: art::TTimingChargeMappingProcessor
-    type: art::TTimingChargeAllMappingProcessor
+    type: art::crib::TTimingChargeAllMappingProcessor
     parameter:
       CatID:         @CATID_E@
       ChargeType:    1
@@ -38,4 +38,3 @@ Processor:
       OutputCollection:     @NAME@_cal
       ChargeConverterArray: prm_@NAME@_E_ch2MeV
       TimingConverterArray: prm_@NAME@_E_ch2ns
-

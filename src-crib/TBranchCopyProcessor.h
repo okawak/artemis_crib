@@ -3,22 +3,22 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-13 16:06:58
- * @note    last modified: 2024-08-14 18:44:32
+ * @note    last modified: 2024-08-21 17:28:04
  * @details
  */
 
-#ifndef _TBRANCHCOPYPROCESSOR_H_
-#define _TBRANCHCOPYPROCESSOR_H_
+#ifndef _CRIB_TBRANCHCOPYPROCESSOR_H_
+#define _CRIB_TBRANCHCOPYPROCESSOR_H_
 
 #include <TProcessor.h>
 
-namespace art {
+namespace art::crib {
 class TBranchCopyProcessor;
 }
 
 class TClonesArray;
 
-class art::TBranchCopyProcessor : public TProcessor {
+class art::crib::TBranchCopyProcessor : public TProcessor {
   public:
     TBranchCopyProcessor();
     ~TBranchCopyProcessor();

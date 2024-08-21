@@ -3,22 +3,22 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-13 17:47:20
- * @note    last modified: 2024-08-14 22:27:04
+ * @note    last modified: 2024-08-21 18:21:30
  * @details
  */
 
-#ifndef _TCMDXBLOW_H_
-#define _TCMDXBLOW_H_
+#ifndef _CRIB_TCMDXBLOW_H_
+#define _CRIB_TCMDXBLOW_H_
 
 #include <TCatCmd.h>
 
-namespace art {
+namespace art::crib {
 class TCmdXblow;
 }
 
 class TH1;
 
-class art::TCmdXblow : public TCatCmd {
+class art::crib::TCmdXblow : public TCatCmd {
   public:
     TCmdXblow();
     ~TCmdXblow();

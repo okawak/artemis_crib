@@ -9,54 +9,54 @@
 
 // segment and category
 // main
-#pragma link C++ class art::TF1PPACProcessor;
-#pragma link C++ class art::TTimingChargeAllMappingProcessor;
-#pragma link C++ class art::TTimingDataMappingProcessor;
-#pragma link C++ class art::TBranchCopyProcessor;
-#pragma link C++ class art::TEvtNumProcessor;
-#pragma link C++ class art::TModuleData + ;
-#pragma link C++ class art::TSegmentOutputProcessor;
-#pragma link C++ class art::TScalerMonitorProcessor;
+#pragma link C++ class art::crib::TF1PPACProcessor;
+#pragma link C++ class art::crib::TTimingChargeAllMappingProcessor;
+#pragma link C++ class art::crib::TTimingDataMappingProcessor;
+#pragma link C++ class art::crib::TBranchCopyProcessor;
+#pragma link C++ class art::crib::TEvtNumProcessor;
+#pragma link C++ class art::crib::TModuleData + ;
+#pragma link C++ class art::crib::TSegmentOutputProcessor;
+#pragma link C++ class art::crib::TScalerMonitorProcessor;
 // MUX
-#pragma link C++ class art::TMUXData + ;
-#pragma link C++ class art::TMUXDataMappingProcessor;
-#pragma link C++ class art::TMUXPositionConverter;
-#pragma link C++ class art::TMUXPositionValidator;
-#pragma link C++ class art::TMUXCalibrationProcessor;
+#pragma link C++ class art::crib::TMUXData + ;
+#pragma link C++ class art::crib::TMUXDataMappingProcessor;
+#pragma link C++ class art::crib::TMUXPositionConverter;
+#pragma link C++ class art::crib::TMUXPositionValidator;
+#pragma link C++ class art::crib::TMUXCalibrationProcessor;
 // telescope
-#pragma link C++ class art::TTelescopeData + ;
-#pragma link C++ class art::TTelescopeProcessor;
+#pragma link C++ class art::crib::TTelescopeData + ;
+#pragma link C++ class art::crib::TTelescopeProcessor;
 // reconst
-#pragma link C++ class art::TTGTIKProcessor;
-#pragma link C++ class art::TReactionInfo + ;
+#pragma link C++ class art::crib::TTGTIKProcessor;
+#pragma link C++ class art::crib::TReactionInfo + ;
 //  commands
-#pragma link C++ class TCatCmdLoopStart;
-#pragma link C++ class TCatCmdLoopStop;
-#pragma link C++ class art::TCmdXfitg;
-#pragma link C++ class art::TCmdXstatus;
-#pragma link C++ class art::TCmdXYblow;
-#pragma link C++ class art::TCmdXblow;
-#pragma link C++ class TCatCmdTCutG;
-#pragma link C++ class art::TCmdErase;
-#pragma link C++ class art::TCmdDraw;
+#pragma link C++ class art::crib::TCatCmdLoopStart;
+#pragma link C++ class art::crib::TCatCmdLoopStop;
+#pragma link C++ class art::crib::TCmdXfitg;
+#pragma link C++ class art::crib::TCmdXstatus;
+#pragma link C++ class art::crib::TCmdXYblow;
+#pragma link C++ class art::crib::TCmdXblow;
+#pragma link C++ class art::crib::TCatCmdTCutG;
+#pragma link C++ class art::crib::TCmdErase;
+#pragma link C++ class art::crib::TCmdDraw;
 // geo
-#pragma link C++ class art::TUserGeoInitializer;
-#pragma link C++ class art::TDetectorParameter + ;
-#pragma link C++ class art::TTargetParameter + ;
+#pragma link C++ class art::crib::TUserGeoInitializer;
+#pragma link C++ class art::crib::TDetectorParameter + ;
+#pragma link C++ class art::crib::TTargetParameter + ;
 // simulation
-#pragma link C++ class art::TTreePeriodicEventStore;
-#pragma link C++ class art::TDetectParticleProcessor;
-#pragma link C++ class art::TNBodyReactionProcessor;
-#pragma link C++ class art::TParticleInfo + ;
-#pragma link C++ class art::TRandomBeamGenerator;
-#pragma link C++ class art::TTreeBeamGenerator;
-#pragma link C++ class art::TSolidAngleProcessor;
-// #pragma link C++ class art::TRutherfordScattering;
-// #pragma link C++ class art::TCRIBPIDProcessor;
+#pragma link C++ class art::crib::TTreePeriodicEventStore;
+#pragma link C++ class art::crib::TDetectParticleProcessor;
+#pragma link C++ class art::crib::TNBodyReactionProcessor;
+#pragma link C++ class art::crib::TParticleInfo + ;
+#pragma link C++ class art::crib::TRandomBeamGenerator;
+#pragma link C++ class art::crib::TTreeBeamGenerator;
+#pragma link C++ class art::crib::TSolidAngleProcessor;
+// #pragma link C++ class art::crib::TRutherfordScattering;
+#pragma link C++ class art::crib::TCRIBPIDProcessor;
 // timestamp
-#pragma link C++ class art::TTSData + ;
-#pragma link C++ class art::TTSMappingProcessor;
-#pragma link C++ class art::TModuleDecoderTimestamp;
+#pragma link C++ class art::crib::TTSData + ;
+#pragma link C++ class art::crib::TTSMappingProcessor;
+#pragma link C++ class art::crib::TModuleDecoderTimestamp;
 #endif // __CINT__
 
 #endif // LINKDEF_CRIB_H

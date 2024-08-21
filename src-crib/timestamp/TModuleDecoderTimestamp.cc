@@ -5,13 +5,13 @@
 #include <TObjArray.h>
 #include <TRawDataSimple.h>
 
-using art::TModuleDecoderTimestamp;
+using art::crib::TModuleDecoderTimestamp;
 
 typedef art::TRawDataSimple<ULong64_t> TimestampRaw_t;
 
-ClassImp(TModuleDecoderTimestamp)
+ClassImp(TModuleDecoderTimestamp);
 
-    TModuleDecoderTimestamp::TModuleDecoderTimestamp()
+TModuleDecoderTimestamp::TModuleDecoderTimestamp()
     : TModuleDecoder(kID, TimestampRaw_t::Class()) {
     fHitData = new TObjArray;
 }

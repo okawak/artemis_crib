@@ -1,21 +1,22 @@
 /**
  * @file    TModuleData.h
  * @brief   inherit from TModuleInfo
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-08 17:51:01
- * @note
+ * @note    last modified: 2024-08-21 17:32:39
+ * @details
  */
 
-#ifndef _TMODULEDATA_H_
-#define _TMODULEDATA_H_
+#ifndef _CRIB_TMODULEDATA_H_
+#define _CRIB_TMODULEDATA_H_
 
 #include <TModuleInfo.h>
 
-namespace art {
+namespace art::crib {
 class TModuleData;
-} // namespace art
+} // namespace art::crib
 
-class art::TModuleData : public art::TModuleInfo {
+class art::crib::TModuleData : public art::TModuleInfo {
   public:
     TModuleData(const TModuleInfo &info);
     ~TModuleData();

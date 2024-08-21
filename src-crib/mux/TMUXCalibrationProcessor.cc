@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-01-30 11:09:46
- * @note    last modified: 2024-07-30 11:11:02
+ * @note    last modified: 2024-08-21 21:04:48
  * @details treat only pos1 and ene1
  */
 
@@ -23,13 +23,13 @@
 #include <TClonesArray.h>
 #include <TRandom.h>
 
-using art::TMUXCalibrationProcessor;
+using art::crib::TMUXCalibrationProcessor;
 
 namespace {
 const TString DEFAULT_CONV_NAME("no_conversion");
 }
 
-ClassImp(art::TMUXCalibrationProcessor);
+ClassImp(TMUXCalibrationProcessor);
 
 // Default constructor
 TMUXCalibrationProcessor::TMUXCalibrationProcessor()
@@ -38,7 +38,7 @@ TMUXCalibrationProcessor::TMUXCalibrationProcessor()
       fPositionConverterArray(nullptr),
       fInputHasMUXData(kFALSE) {
     RegisterInputCollection("InputCollection",
-                            "array of objects inheriting from art::TMUXData",
+                            "array of objects inheriting from art::crib::TMUXData",
                             fInputColName, TString("mux_raw"));
     RegisterOutputCollection("OutputCollection", "output class will be art::TTimingChargeData",
                              fOutputColName, TString("mux_cal"));
@@ -79,10 +79,10 @@ void TMUXCalibrationProcessor::Init(TEventCollection *col) {
     }
 
     const TClass *const cl = (*fInData)->GetClass();
-    fInputHasMUXData = cl->InheritsFrom(art::TMUXData::Class());
+    fInputHasMUXData = cl->InheritsFrom(art::crib::TMUXData::Class());
 
     if (!fInputHasMUXData) {
-        SetStateError("contents of input array must inherit from art::TMUXData");
+        SetStateError("contents of input array must inherit from art::crib::TMUXData");
         return;
     }
 

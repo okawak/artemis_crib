@@ -1,15 +1,16 @@
 /**
  * @file    TModuleData.cc
  * @brief   inherit from TModuleInfo
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-08 17:49:53
- * @note
+ * @note    last modified: 2024-08-21 17:33:30
+ * @details
  */
 
 #include "TModuleData.h"
 #include <TROOT.h>
 
-using art::TModuleData;
+using art::crib::TModuleData;
 
 ClassImp(TModuleData);
 

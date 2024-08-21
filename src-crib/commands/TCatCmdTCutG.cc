@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-13 18:34:21
- * @note    last modified: 2024-08-14 22:16:55
+ * @note    last modified: 2024-08-21 18:17:21
  * @details
  */
 
@@ -25,6 +25,7 @@
 #include <TPad.h>
 #include <TROOT.h>
 
+using art::crib::TCatCmdTCutG;
 ClassImp(TCatCmdTCutG);
 
 TCatCmdTCutG::TCatCmdTCutG() : fX(0.), fY(0.), fEventtype(0), fisFirst(true) {

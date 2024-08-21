@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-13 17:51:08
- * @note    last modified: 2024-08-14 22:28:06
+ * @note    last modified: 2024-08-21 18:21:48
  * @details
  */
 
@@ -24,7 +24,7 @@
 #include <TH1.h>
 #include <TH2.h>
 
-using art::TCmdXfitg;
+using art::crib::TCmdXfitg;
 
 ClassImp(TCmdXfitg);
 

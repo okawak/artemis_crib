@@ -1,24 +1,24 @@
 /**
  * @file    TTreeBeamGenerator.h
  * @brief
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-09 15:57:38
- * @note    last modified: 2024-08-14 18:46:03
+ * @note    last modified: 2024-08-21 18:04:53
  * @details
  */
 
-#ifndef _TTREEBEAMGENERATOR_H_
-#define _TTREEBEAMGENERATOR_H_
+#ifndef _CRIB_TTREEBEAMGENERATOR_H_
+#define _CRIB_TTREEBEAMGENERATOR_H_
 
 #include <TProcessor.h>
 
-namespace art {
+namespace art::crib {
 class TTreeBeamGenerator;
 }
 
 class TClonesArray;
 
-class art::TTreeBeamGenerator : public TProcessor {
+class art::crib::TTreeBeamGenerator : public TProcessor {
   public:
     TTreeBeamGenerator();
     ~TTreeBeamGenerator();

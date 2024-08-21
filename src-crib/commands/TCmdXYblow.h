@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-13 17:37:11
- * @note    last modified: 2024-08-14 22:33:13
+ * @note    last modified: 2024-08-21 18:23:04
  * @details
  */
 
@@ -12,13 +12,13 @@
 
 #include <TCatCmd.h>
 
-namespace art {
+namespace art::crib {
 class TCmdXYblow;
 }
 
 class TH2;
 
-class art::TCmdXYblow : public TCatCmd {
+class art::crib::TCmdXYblow : public TCatCmd {
   public:
     TCmdXYblow();
     ~TCmdXYblow();

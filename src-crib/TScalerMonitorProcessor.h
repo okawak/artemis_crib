@@ -1,13 +1,14 @@
 /**
  * @file    TScalerMonitorProcessor.h
  * @brief
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-28 14:23:16
- * @note
+ * @note    last modified: 2024-08-21 17:38:51
+ * @details
  */
 
-#ifndef _TSCALERMONITORPROCESSOR_H_
-#define _TSCALERMONITORPROCESSOR_H_
+#ifndef _CRIB_TSCALERMONITORPROCESSOR_H_
+#define _CRIB_TSCALERMONITORPROCESSOR_H_
 
 #include "TProcessor.h"
 #include <TCanvas.h>
@@ -18,11 +19,14 @@
 #include <TScalerData.h>
 
 namespace art {
-class TScalerMonitorProcessor;
 class TScalerData;
 } // namespace art
 
-class art::TScalerMonitorProcessor : public TProcessor {
+namespace art::crib {
+class TScalerMonitorProcessor;
+} // namespace art::crib
+
+class art::crib::TScalerMonitorProcessor : public TProcessor {
 
   public:
     TScalerMonitorProcessor();

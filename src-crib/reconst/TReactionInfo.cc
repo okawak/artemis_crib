@@ -1,9 +1,9 @@
 /**
  * @file    TReactionInfo.cc
  * @brief
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:28:15
- * @note    last modified: 2024-07-18 17:34:28
+ * @note    last modified: 2024-08-21 17:55:56
  * @details
  */
 
@@ -11,9 +11,9 @@
 #include <TConverterBase.h>
 #include <constant.h>
 
-using art::TReactionInfo;
+using art::crib::TReactionInfo;
 
-ClassImp(art::TReactionInfo);
+ClassImp(TReactionInfo);
 
 TReactionInfo::TReactionInfo()
     : fEnergy(kInvalidD),

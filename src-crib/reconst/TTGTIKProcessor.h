@@ -3,25 +3,25 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 11:11:02
- * @note    last modified: 2024-08-19 21:46:30
+ * @note    last modified: 2024-08-21 17:55:11
  * @details
  */
 
-#ifndef _TTGTIKPROCESSOR_H_
-#define _TTGTIKPROCESSOR_H_
+#ifndef _CRIB_TTGTIKPROCESSOR_H_
+#define _CRIB_TTGTIKPROCESSOR_H_
 
 #include "../telescope/TTelescopeData.h"
 #include <TProcessor.h>
 #include <TSrim.h> // TSrim library
 #include <TTrack.h>
 
-namespace art {
+namespace art::crib {
 class TTGTIKProcessor;
-}
+} // namespace art::crib
 
 class TClonesArray;
 
-class art::TTGTIKProcessor : public TProcessor {
+class art::crib::TTGTIKProcessor : public TProcessor {
   public:
     /// @brief Default constructor.
     TTGTIKProcessor();

@@ -1,9 +1,9 @@
 /**
  * @file    TTreePeriodicEventStore.cc
  * @brief
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:36:36
- * @note    last modified: 2024-08-17 14:09:39
+ * @note    last modified: 2024-08-21 18:06:52
  * @details just modify the process() from TTreeEventStore to return 0
  */
 
@@ -22,25 +22,27 @@
 #include <TROOT.h>
 #include <TTree.h>
 
-ClassImp(art::TTreePeriodicEventStore);
+using art::crib::TTreePeriodicEventStore;
+
+ClassImp(TTreePeriodicEventStore);
 
 ////////////////////////////////////////////////////////////////////////////////
 /// default constructor.
 
-art::TTreePeriodicEventStore::TTreePeriodicEventStore()
+TTreePeriodicEventStore::TTreePeriodicEventStore()
     : fFile(nullptr), fTree(nullptr), fEventHeader(nullptr) {
     RegisterProcessorParameter("FileName", "The name of input file", fFileName, TString("temp.root"));
     RegisterProcessorParameter("TreeName", "The name of input tree", fTreeName, TString("tree"));
     RegisterProcessorParameter("MaxEventNum", "The maximum event number to be analyzed. Analyze all the data if this is set to be 0", fMaxEventNum, 0L);
     fObjects = new TList;
 }
-art::TTreePeriodicEventStore::~TTreePeriodicEventStore() {
+TTreePeriodicEventStore::~TTreePeriodicEventStore() {
     if (fFile)
         fFile->Close();
     fTree = nullptr;
 }
 
-void art::TTreePeriodicEventStore::Init(TEventCollection *col) {
+void TTreePeriodicEventStore::Init(TEventCollection *col) {
     // extract files to be analyzed by this process
     std::vector<TString> files;
     TString filelist = gSystem->GetFromPipe(Form("ls -tr %s", fFileName.Data()));
@@ -182,7 +184,8 @@ void art::TTreePeriodicEventStore::Init(TEventCollection *col) {
     fTree->GetEntry(0);
     fTreeEventNum = fTree->GetEntries();
 }
-void art::TTreePeriodicEventStore::Process() {
+
+void TTreePeriodicEventStore::Process() {
     fTree->GetEntry(fCurrentNum);
     fCurrentNum++;
     fEventNum++;
@@ -195,17 +198,17 @@ void art::TTreePeriodicEventStore::Process() {
     }
 }
 
-Int_t art::TTreePeriodicEventStore::GetRunNumber() const {
+Int_t TTreePeriodicEventStore::GetRunNumber() const {
     if (nullptr == fEventHeader)
         return 0;
     return (*fEventHeader)->GetRunNumber();
 }
 
-const char *art::TTreePeriodicEventStore::GetRunName() const {
+const char *TTreePeriodicEventStore::GetRunName() const {
     return "";
 }
 
-std::string art::TTreePeriodicEventStore::GetStrRunName() const {
+std::string TTreePeriodicEventStore::GetStrRunName() const {
     if (nullptr == fEventHeader)
         return "";
     return std::string((*fEventHeader)->GetRunName());

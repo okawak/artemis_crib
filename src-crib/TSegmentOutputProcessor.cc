@@ -1,10 +1,10 @@
 /**
  * @file    TSegmentOutputProcessor.cc
  * @brief   from seg conf, output raw data TTree object
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
- * @date    2023-12-25 11:41:51
- * @note    the outputted root file can be opened by normal ROOT
- *          (using std::vector)
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2024-08-21 17:36:19
+ * @note    last modified: 2024-08-21 17:36:39
+ * @details
  */
 
 #include "TSegmentOutputProcessor.h"
@@ -25,7 +25,7 @@
 #include <algorithm>
 #include <constant.h>
 
-using art::TSegmentOutputProcessor;
+using art::crib::TSegmentOutputProcessor;
 
 ClassImp(TSegmentOutputProcessor);
 

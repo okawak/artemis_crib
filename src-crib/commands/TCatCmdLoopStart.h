@@ -1,17 +1,22 @@
-/*
-   @File name     : TCatCmdLoopStart.h
-   @description   :
-   @Author        : Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
-   @Created date  : 2023-06-13 17:24:46
-   @Last modified : 2023-06-13 17:24:46
-*/
+/**
+ * @file    TCatCmdLoopStart.h
+ * @brief
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2023-06-13 17:24:46
+ * @note    last modified: 2024-08-21 18:14:23
+ * @details
+ */
 
-#ifndef _TCATCMDLOOPSTART_H_
-#define _TCATCMDLOOPSTART_H_
+#ifndef _CRIB_TCATCMDLOOPSTART_H_
+#define _CRIB_TCATCMDLOOPSTART_H_
 
 #include <TCatCmd.h>
 
-class TCatCmdLoopStart : public TCatCmd {
+namespace art::crib {
+class TCatCmdLoopStart;
+} // namespace art::crib
+
+class art::crib::TCatCmdLoopStart : public TCatCmd {
   protected:
     TCatCmdLoopStart();
 

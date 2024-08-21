@@ -1,29 +1,33 @@
 /**
  * @file    TSegmentOutputProcessor.h
  * @brief   from seg conf, output raw data TTree object
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-12-25 11:40:53
- * @note    the outputted root file can be opened by normal ROOT
+ * @note    last modified: 2024-08-21 17:35:47
+ * @details
  */
 
-#ifndef _TSEGNEMTOUTPUTPROCESSOR_H_
-#define _TSEGNEMTOUTPUTPROCESSOR_H_
+#ifndef _CRIB_TSEGNEMTOUTPUTPROCESSOR_H_
+#define _CRIB_TSEGNEMTOUTPUTPROCESSOR_H_
 
 #include "TProcessor.h"
 #include <TFile.h>
 #include <vector>
 
 namespace art {
-class TSegmentOutputProcessor;
 class TSegmentInfo;
 class TSegmentedData;
 class TModuleInfo;
-class TModuleData;
 } // namespace art
+
+namespace art::crib {
+class TSegmentOutputProcessor;
+class TModuleData;
+} // namespace art::crib
 
 class TClonesArray;
 
-class art::TSegmentOutputProcessor : public TProcessor {
+class art::crib::TSegmentOutputProcessor : public TProcessor {
   public:
     TSegmentOutputProcessor();
     ~TSegmentOutputProcessor();

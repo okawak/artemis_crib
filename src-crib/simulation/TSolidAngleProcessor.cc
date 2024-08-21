@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-18 22:37:37
- * @note    last modified: 2024-08-19 15:43:12
+ * @note    last modified: 2024-08-21 21:08:56
  * @details
  */
 
@@ -19,7 +19,7 @@
 /// ### Solid Target
 ///
 /// We can assume the reaction position is one point (like (0, 0, 0)).
-/// The art::TNBodyReactionProcessor can produce events from this
+/// The art::crib::TNBodyReactionProcessor can produce events from this
 /// point uniformly in CM system (angle), so if we calculate the ratio
 /// of generated event number and detected event number.
 ///
@@ -45,7 +45,7 @@
 #include <TFile.h>
 #include <TMath.h>
 
-using art::TSolidAngleProcessor;
+using art::crib::TSolidAngleProcessor;
 
 ClassImp(TSolidAngleProcessor);
 
@@ -113,8 +113,8 @@ void TSolidAngleProcessor::Init(TEventCollection *col) {
         return;
     }
     const TClass *const cl = (*fInData)->GetClass();
-    if (!cl->InheritsFrom(art::TTelescopeData::Class())) {
-        SetStateError("contents of input array must inherit from art::TTelescopeData");
+    if (!cl->InheritsFrom(art::crib::TTelescopeData::Class())) {
+        SetStateError("contents of input array must inherit from art::crib::TTelescopeData");
     }
 
     fInReacData = reinterpret_cast<TClonesArray **>(col->GetObjectRef(fInputReacColName.Data()));
@@ -123,8 +123,8 @@ void TSolidAngleProcessor::Init(TEventCollection *col) {
         return;
     }
     const TClass *const cl_reac = (*fInReacData)->GetClass();
-    if (!cl_reac->InheritsFrom(art::TReactionInfo::Class())) {
-        SetStateError("contents of input array must inherit from art::TReactionInfo");
+    if (!cl_reac->InheritsFrom(art::crib::TReactionInfo::Class())) {
+        SetStateError("contents of input array must inherit from art::crib::TReactionInfo");
     }
 
     h1_a_all = new TH1D("norm_Acm", "norm_Acm", fNbin_angle, fRange_angle[0], fRange_angle[1]);

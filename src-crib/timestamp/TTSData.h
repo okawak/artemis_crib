@@ -1,4 +1,11 @@
-// K.Okawa created <okawa@cns.s.u-tokyo.ac.jp>
+/**
+ * @file    TTSData.h
+ * @brief
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2022?
+ * @note    last modified: 2024-08-21 18:10:11
+ * @details
+ */
 
 #ifndef _TTSDATA_H_
 #define _TTSDATA_H_
@@ -6,11 +13,11 @@
 #include "TDataObject.h"
 #include "constant.h"
 
-namespace art {
+namespace art::crib {
 class TTSData;
-}
+} // namespace art::crib
 
-class art::TTSData : public TDataObject {
+class art::crib::TTSData : public TDataObject {
   public:
     typedef enum { kID,
                    kTiming } ESortType;

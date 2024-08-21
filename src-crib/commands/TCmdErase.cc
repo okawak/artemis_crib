@@ -3,7 +3,7 @@
  * @brief
  * @author
  * @date    2023-06-13 17:34:11
- * @note    last modified: 2024-08-14 22:22:15
+ * @note    last modified: 2024-08-21 18:19:50
  * @details
  */
 
@@ -15,7 +15,7 @@
 #include <TH2FTreeProj.h>
 #include <TH3FTreeProj.h>
 
-using art::TCmdErase;
+using art::crib::TCmdErase;
 
 ClassImp(TCmdErase);
 

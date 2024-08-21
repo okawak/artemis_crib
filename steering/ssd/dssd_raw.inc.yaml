@@ -1,7 +1,7 @@
 Processor:
   - name: proc_@NAME@_@SIDE@_raw
     #type: art::TTimingChargeMappingProcessor
-    type: art::TTimingChargeAllMappingProcessor
+    type: art::crib::TTimingChargeAllMappingProcessor
     parameter:
       CatID:         @CATID@
       ChargeType:    1
@@ -9,4 +9,3 @@ Processor:
       TimingTypeID:  1
       Sparse:        1
       OutputCollection: @NAME@@SIDE@_raw
-

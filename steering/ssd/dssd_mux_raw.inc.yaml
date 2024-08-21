@@ -27,15 +27,15 @@ Processor:
 
 # data mapping
   - name: proc_@NAME@@SIDE@_raw
-    type: art::TMUXDataMappingProcessor
+    type: art::crib::TMUXDataMappingProcessor
     parameter:
-      CatID:         @CATID@ 
+      CatID:         @CATID@
       OutputCollection: @NAME@@SIDE@_raw
 
 
 # calibration branch using dummy parameters
   - name: proc_@NAME@@SIDE@
-    type: art::TMUXCalibrationProcessor
+    type: art::crib::TMUXCalibrationProcessor
     parameter:
       InputCollection:      @NAME@@SIDE@_raw
       OutputCollection:     @NAME@@SIDE@_cal
@@ -43,5 +43,3 @@ Processor:
       TimingConverterArray: prm_@NAME@@SIDE@_ch2ns
       PositionConverterArray: prm_@NAME@@SIDE@_position
       HasReflection: @REFLECT@
-
-

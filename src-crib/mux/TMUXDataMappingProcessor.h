@@ -1,9 +1,9 @@
 /**
  * @file    TMUXDataMappingProcessor.h
  * @brief
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-01-30 09:46:45
- * @note    last modified: 2024-08-14 19:09:16
+ * @note    last modified: 2024-08-21 17:44:44
  * @details
  */
 
@@ -13,11 +13,14 @@
 #include <TProcessor.h>
 
 namespace art {
-class TMUXDataMappingProcessor;
 class TCategorizedData;
 } // namespace art
 
-class art::TMUXDataMappingProcessor : public TProcessor {
+namespace art::crib {
+class TMUXDataMappingProcessor;
+}
+
+class art::crib::TMUXDataMappingProcessor : public TProcessor {
   public:
     TMUXDataMappingProcessor();
     ~TMUXDataMappingProcessor();

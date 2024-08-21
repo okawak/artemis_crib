@@ -3,12 +3,12 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 13:11:23
- * @note    last modified: 2024-08-15 23:46:13
+ * @note    last modified: 2024-08-21 18:00:31
  * @details
  */
 
-#ifndef _TNBODYREACTIONPROCESSOR_H_
-#define _TNBODYREACTIONPROCESSOR_H_
+#ifndef _CRIB_TNBODYREACTIONPROCESSOR_H_
+#define _CRIB_TNBODYREACTIONPROCESSOR_H_
 
 #include <TGenPhaseSpace.h>
 #include <TGraph.h>
@@ -17,13 +17,13 @@
 #include <TProcessor.h>
 #include <TSrim.h> // TSrim library
 
-namespace art {
+namespace art::crib {
 class TNBodyReactionProcessor;
-}
+} // namespace art::crib
 
 class TClonesArray;
 
-class art::TNBodyReactionProcessor : public TProcessor {
+class art::crib::TNBodyReactionProcessor : public TProcessor {
   public:
     TNBodyReactionProcessor();
     ~TNBodyReactionProcessor();

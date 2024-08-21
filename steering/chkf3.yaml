@@ -21,7 +21,7 @@ Processor:
       OutputTransparency: 1
 
   - name: detector_initialize
-    type: art::TUserGeoInitializer
+    type: art::crib::TUserGeoInitializer
     parameter:
       FileName: prm/geo/current
       Visible: false

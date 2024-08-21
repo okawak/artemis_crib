@@ -3,7 +3,7 @@
  * @brief   position and angle random beam generator
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-09 15:57:01
- * @note    last modified: 2024-07-19 17:53:46
+ * @note    last modified: 2024-08-21 21:08:17
  * @details
  */
 
@@ -15,7 +15,7 @@
 
 #include <Mass.h> // TSrim library
 
-using art::TRandomBeamGenerator;
+using art::crib::TRandomBeamGenerator;
 
 ClassImp(TRandomBeamGenerator);
 
@@ -54,7 +54,7 @@ void TRandomBeamGenerator::Init(TEventCollection *col) {
     fMass = amdc::Mass(fAtmNum, fMassNum) * amdc::amu; // MeV
     Info("Init", "beam: (Z, A, M) = (%d, %d, %.5lf)", fAtmNum, fMassNum, fMass / amdc::amu);
 
-    fOutData = new TClonesArray("art::TParticleInfo");
+    fOutData = new TClonesArray("art::crib::TParticleInfo");
     fOutData->SetName(fOutputColName);
     col->Add(fOutputColName, fOutData, fOutputIsTransparent);
 

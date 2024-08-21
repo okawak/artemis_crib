@@ -16,7 +16,7 @@ Processor:
 
 
   - name: proc_f2ssdraw
-    type: art::TTimingChargeAllMappingProcessor
+    type: art::crib::TTimingChargeAllMappingProcessor
     parameter:
       CatID:         5
       ChargeType:    1
@@ -33,4 +33,3 @@ Processor:
       OutputCollection:     f2ssd_cal
       ChargeConverterArray: prm_f2si_ch2MeV
 #      TimingConverterArray: prm_f2si_ch2ns
-

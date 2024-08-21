@@ -52,9 +52,9 @@ Processor:
 # data mapping
   - name: proc_@NAME@_dEX_raw
     #type: art::TTimingChargeMappingProcessor
-    type: art::TTimingChargeAllMappingProcessor
+    type: art::crib::TTimingChargeAllMappingProcessor
     parameter:
-      CatID:         @CATID_dEX@ 
+      CatID:         @CATID_dEX@
       ChargeType:    1
       ChargeTypeID:  0
       TimingTypeID:  1
@@ -63,9 +63,9 @@ Processor:
 
   - name: proc_@NAME@_dEY_raw
     #type: art::TTimingChargeMappingProcessor
-    type: art::TTimingChargeAllMappingProcessor
+    type: art::crib::TTimingChargeAllMappingProcessor
     parameter:
-      CatID:         @CATID_dEY@ 
+      CatID:         @CATID_dEY@
       ChargeType:    1
       ChargeTypeID:  0
       TimingTypeID:  1
@@ -74,9 +74,9 @@ Processor:
 
   - name: proc_@NAME@_E_raw
     #type: art::TTimingChargeMappingProcessor
-    type: art::TTimingChargeAllMappingProcessor
+    type: art::crib::TTimingChargeAllMappingProcessor
     parameter:
-      CatID:         @CATID_E@ 
+      CatID:         @CATID_E@
       ChargeType:    1
       ChargeTypeID:  0
       TimingTypeID:  1
@@ -165,13 +165,10 @@ Processor:
 
 # process telescope
   - name: proc_@NAME@
-    type: art::TTelescopeProcessor
+    type: art::crib::TTelescopeProcessor
     parameter:
       InputCollection1:      @NAME@dEX_cal
       InputCollection2:      @NAME@dEY_cal
       InputCollection3:      @NAME@E_cal
       OutputCollection:      @NAME@
       IsDSSSD: true
-
-
-

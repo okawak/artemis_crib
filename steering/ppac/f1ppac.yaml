@@ -16,7 +16,7 @@ Processor:
       FileFormat: yaml
 # ---------------------------------------
   - name: proc_f1_ppac
-    type: art::TF1PPACProcessor
+    type: art::crib::TF1PPACProcessor
     parameter:
       CatID: 3
       PPACParameter: prm_f1_ppac
@@ -27,4 +27,3 @@ Processor:
       OutputTransparency: 0
       ListOfPPACNames:
         - f1ppac
-

@@ -1,22 +1,22 @@
 /**
  * @file    TTargetParameter.h
  * @brief
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 22:14:55
- * @note    last modified: 2024-08-14 18:52:39
+ * @note    last modified: 2024-08-21 17:53:40
  * @details
  */
 
-#ifndef _TTARGETPARAMETER_H_
-#define _TTARGETPARAMETER_H_
+#ifndef _CRIB_TTARGETPARAMETER_H_
+#define _CRIB_TTARGETPARAMETER_H_
 
 #include <TParameterObject.h>
 
-namespace art {
+namespace art::crib {
 class TTargetParameter;
 }
 
-class art::TTargetParameter : public TParameterObject {
+class art::crib::TTargetParameter : public TParameterObject {
   public:
     TTargetParameter();
     ~TTargetParameter();

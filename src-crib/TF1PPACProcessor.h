@@ -1,31 +1,32 @@
 /**
- * @file   TF1PPACProcessor.h
- * @brief  Created from TPPACProcessor.h
- *
- * @date   Created:       2013-10-30 14:01:27
- *         Last Modified : 2022-08-08 17:27:59 JST (K.Okawa)
- * @author KAWASE Shoichiro <kawase@cns.s.u-tokyo.ac.jp>, OTA Shinsuke <ota@cns.s.u-tokyo.ac.jp>
- *         OKAWA Kodai <okawa@cns.s.u-tokyo.ac.jp>
- *    Copyright (C) 2013-2014 KAWASE Shoichiro, OTA Shinsuke  All rights reserved
+ * @file    TF1PPACProcessor.h
+ * @brief   Created from TPPACProcessor
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2022-08-08 17:27:59
+ * @note    last modified: 2024-08-21 17:16:04
+ * @details
  */
 
-#ifndef TF1PPACPROCESSOR_H
-#define TF1PPACPROCESSOR_H
+#ifndef _CRIB_TF1PPACPROCESSOR_H
+#define _CRIB_TF1PPACPROCESSOR_H
 
 #include <TProcessor.h>
 
 #include <vector>
 
 namespace art {
-class TF1PPACProcessor;
 class TCategorizedData;
 class TConverterBase;
 class TPPACParameter;
 } // namespace art
 
+namespace art::crib {
+class TF1PPACProcessor;
+} // namespace art::crib
+
 class TClonesArray;
 
-class art::TF1PPACProcessor : public TProcessor {
+class art::crib::TF1PPACProcessor : public TProcessor {
 
   public:
     // Default constructor

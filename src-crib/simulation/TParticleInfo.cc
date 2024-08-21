@@ -1,18 +1,18 @@
 /**
  * @file    TParticleInfo.cc
  * @brief   particle information class
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-05-08 18:07:50
- * @note    last modified: 2024-07-16 14:49:50
+ * @note    last modified: 2024-08-21 18:03:14
  * @details
  */
 
 #include "TParticleInfo.h"
 #include <constant.h>
 
-using art::TParticleInfo;
+using art::crib::TParticleInfo;
 
-ClassImp(art::TParticleInfo);
+ClassImp(TParticleInfo);
 
 TParticleInfo::TParticleInfo()
     : fMassNumber(kInvalidI), fAtomicNumber(kInvalidI), fCharge(kInvalidI),

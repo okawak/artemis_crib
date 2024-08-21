@@ -3,16 +3,20 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-13 17:28:09
- * @note    last modified: 2024-08-14 22:10:26
+ * @note    last modified: 2024-08-21 18:18:40
  * @details
  */
 
-#ifndef _TCATCMDLOOPSTOP_H_
-#define _TCATCMDLOOPSTOP_H_
+#ifndef _CRIB_TCATCMDLOOPSTOP_H_
+#define _CRIB_TCATCMDLOOPSTOP_H_
 
 #include <TCatCmd.h>
 
-class TCatCmdLoopStop : public TCatCmd {
+namespace art::crib {
+class TCatCmdLoopStop;
+} // namespace art::crib
+
+class art::crib::TCatCmdLoopStop : public TCatCmd {
   protected:
     TCatCmdLoopStop();
 

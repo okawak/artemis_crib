@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-13 10:54:46
- * @note    last modified: 2024-08-14 22:29:57
+ * @note    last modified: 2024-08-21 18:22:26
  * @details
  */
 
@@ -25,7 +25,7 @@
 #include <TROOT.h>
 #include <TStyle.h>
 
-using art::TCmdXstatus;
+using art::crib::TCmdXstatus;
 
 ClassImp(TCmdXstatus);
 

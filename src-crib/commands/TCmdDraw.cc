@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-13 18:57:52
- * @note    last modified: 2024-08-14 22:18:09
+ * @note    last modified: 2024-08-21 18:19:04
  * @details under development
  */
 
@@ -21,7 +21,7 @@
 #include <TH1.h>
 #include <TH2.h>
 
-using art::TCmdDraw;
+using art::crib::TCmdDraw;
 
 ClassImp(TCmdDraw);
 

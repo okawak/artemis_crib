@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:36:36
- * @note    last modified: 2024-08-14 14:58:05
+ * @note    last modified: 2024-08-21 21:07:38
  * @details for (angle) constant cross section
  */
 
@@ -24,7 +24,7 @@
 #include <string>
 #include <vector>
 
-using art::TNBodyReactionProcessor;
+using art::crib::TNBodyReactionProcessor;
 
 ClassImp(TNBodyReactionProcessor);
 
@@ -101,16 +101,16 @@ void TNBodyReactionProcessor::Init(TEventCollection *col) {
         return;
     }
     const TClass *const cl = (*fInData)->GetClass();
-    if (!cl->InheritsFrom(art::TParticleInfo::Class())) {
-        SetStateError("contents of input array must inherit from art::TParticleInfo");
+    if (!cl->InheritsFrom(art::crib::TParticleInfo::Class())) {
+        SetStateError("contents of input array must inherit from art::crib::TParticleInfo");
         return;
     }
 
-    fOutData = new TClonesArray("art::TParticleInfo");
+    fOutData = new TClonesArray("art::crib::TParticleInfo");
     fOutData->SetName(fOutputColName);
     col->Add(fOutputColName, fOutData, fOutputIsTransparent);
 
-    fOutReacData = new TClonesArray("art::TReactionInfo");
+    fOutReacData = new TClonesArray("art::crib::TReactionInfo");
     fOutReacData->SetName(fOutputReacColName);
     col->Add(fOutputReacColName, fOutReacData, fOutputIsTransparent);
 

@@ -1,22 +1,22 @@
 /**
  * @file    TDetectorParameter.h
  * @brief
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-18 11:32:42
- * @note    last modified: 2024-08-14 18:52:57
+ * @note    last modified: 2024-08-21 17:54:21
  * @details
  */
 
-#ifndef _TDETECTORPARAMETER_H_
-#define _TDETECTORPARAMETER_H_
+#ifndef _CRIB_TDETECTORPARAMETER_H_
+#define _CRIB_TDETECTORPARAMETER_H_
 
 #include <TParameterObject.h>
 
-namespace art {
+namespace art::crib {
 class TDetectorParameter;
 }
 
-class art::TDetectorParameter : public TParameterObject {
+class art::crib::TDetectorParameter : public TParameterObject {
   public:
     TDetectorParameter();
     ~TDetectorParameter();

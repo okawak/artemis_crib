@@ -1,24 +1,24 @@
 /**
  * @file    TMUXPositionConverter.h
  * @brief
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-01-30 11:50:01
- * @note    last modified: 2024-08-14 19:06:02
+ * @note    last modified: 2024-08-21 17:48:33
  * @details
  */
 
-#ifndef TMUXPOSITIONCONVERTER_H
-#define TMUXPOSITIONCONVERTER_H
+#ifndef _CRIB_TMUXPOSITIONCONVERTER_H
+#define _CRIB_TMUXPOSITIONCONVERTER_H
 
 #include <TFixedNumberParameter.h>
 
-namespace art {
+namespace art::crib {
 class TMUXPositionConverter;
 }
 
 class TString;
 
-class art::TMUXPositionConverter : public TFixedNumberParameter {
+class art::crib::TMUXPositionConverter : public TFixedNumberParameter {
   public:
     // Default constructor
     TMUXPositionConverter() : TFixedNumberParameter(2) { fParam[1] = 1.; }

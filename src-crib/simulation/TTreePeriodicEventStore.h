@@ -3,12 +3,12 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-07-16 15:16:56
- * @note    last modified: 2024-08-14 18:40:53
+ * @note    last modified: 2024-08-21 18:05:52
  * @details
  */
 
-#ifndef _TTREEPERIODICEVENTSTORE_H_
-#define _TTREEPERIODICEVENTSTORE_H_
+#ifndef _CRIB_TTREEPERIODICEVENTSTORE_H_
+#define _CRIB_TTREEPERIODICEVENTSTORE_H_
 
 #include "IEventStore.h"
 #include "TProcessor.h"
@@ -22,17 +22,20 @@
 #endif
 
 namespace art {
-class TTreePeriodicEventStore;
 class TConditionBit;
 class TEventHeader;
 } // namespace art
+
+namespace art::crib {
+class TTreePeriodicEventStore;
+} // namespace art::crib
 
 class TString;
 class TFile;
 class TTree;
 class TList;
 
-class art::TTreePeriodicEventStore : public TProcessor, public IEventStore {
+class art::crib::TTreePeriodicEventStore : public TProcessor, public IEventStore {
 
   public:
     TTreePeriodicEventStore();

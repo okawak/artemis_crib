@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-13 16:06:15
- * @note    last modified: 2024-08-01 14:44:56
+ * @note    last modified: 2024-08-21 17:28:16
  * @details
  */
 
@@ -15,7 +15,7 @@
 #include "TDataObject.h"
 #include "constant.h"
 
-using art::TBranchCopyProcessor;
+using art::crib::TBranchCopyProcessor;
 
 ClassImp(TBranchCopyProcessor);
 

@@ -5,7 +5,7 @@ Anchor:
 
 Processor:
   - name: pid
-    type: art::TCRIBPIDProcessor
+    type: art::crib::TCRIBPIDProcessor
     parameter:
       FileName: prm/pid/c15ms.yaml
       Batch: false

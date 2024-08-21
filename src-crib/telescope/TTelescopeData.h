@@ -1,25 +1,25 @@
 /**
  * @file    TTelescopeData.h
  * @brief
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 17:11:50
- * @note    last modified: 2024-08-14 19:12:18
+ * @note    last modified: 2024-08-21 17:50:51
  * @details
  */
 
-#ifndef _TTELESCOPEDATA_H_
-#define _TTELESCOPEDATA_H_
+#ifndef _CRIB_TTELESCOPEDATA_H_
+#define _CRIB_TTELESCOPEDATA_H_
 
 #include "TArtTypes.h"
 #include <TDataObject.h>
 #include <TVector3.h>
 #include <constant.h>
 
-namespace art {
+namespace art::crib {
 class TTelescopeData;
-}
+} // namespace art::crib
 
-class art::TTelescopeData : public TDataObject {
+class art::crib::TTelescopeData : public TDataObject {
   public:
     typedef enum { kID,
                    kTiming } ESortType;

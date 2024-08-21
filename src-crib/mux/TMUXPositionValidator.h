@@ -1,23 +1,24 @@
 /**
  * @file    TMUXPositionValidator.h
  * @brief
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-30 10:02:32
- * @note    last modified: 2024-08-14 19:04:39
+ * @note    last modified: 2024-08-21 17:47:25
  * @details
  */
 
-#ifndef _TMUXPOSITIONVALIDATOR_H_
-#define _TMUXPOSITIONVALIDATOR_H_
+#ifndef _CRIB_TMUXPOSITIONVALIDATOR_H_
+#define _CRIB_TMUXPOSITIONVALIDATOR_H_
 
 #include <TProcessor.h>
 
-namespace art {
+namespace art::crib {
 class TMUXPositionValidator;
-}
+} // namespace art::crib
+
 class TClonesArray;
 
-class art::TMUXPositionValidator : public TProcessor {
+class art::crib::TMUXPositionValidator : public TProcessor {
   public:
     TMUXPositionValidator();
     ~TMUXPositionValidator();

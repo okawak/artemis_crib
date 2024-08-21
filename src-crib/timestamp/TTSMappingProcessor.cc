@@ -8,7 +8,7 @@
 
 #include "constant.h"
 
-using art::TTSMappingProcessor;
+using art::crib::TTSMappingProcessor;
 
 ClassImp(TTSMappingProcessor);
 
@@ -21,7 +21,7 @@ TTSMappingProcessor::TTSMappingProcessor()
     RegisterOutputCollection("OutputCollection", "output collection name",
                              fOutputColName, TString("simple"),
                              reinterpret_cast<void **>(&fOutputArray),
-                             "TClonesArray", "art::TTSData");
+                             "TClonesArray", "art::crib::TTSData");
     RegisterProcessorParameter("CatID", "Category ID", fCatID, 0);
     RegisterProcessorParameter("DataTypeID", "data type id for input",
                                fDataTypeID, 0);

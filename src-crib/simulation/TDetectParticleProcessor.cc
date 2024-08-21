@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-18 14:36:43
- * @note    last modified: 2024-08-14 14:55:16
+ * @note    last modified: 2024-08-21 21:07:09
  * @details
  */
 
@@ -25,7 +25,7 @@
 #include <string>
 #include <unordered_set>
 
-using art::TDetectParticleProcessor;
+using art::crib::TDetectParticleProcessor;
 
 ClassImp(TDetectParticleProcessor);
 
@@ -45,10 +45,10 @@ TDetectParticleProcessor::TDetectParticleProcessor()
     RegisterProcessorParameter("EnergyResolution", "energy resolution \% unit", fResolution, init_d_vec);
 
     RegisterOptionalInputInfo("DetectorParameter", "name of telescope parameter", fDetectorParameterName,
-                              TString("prm_detectors"), &fDetectorPrm, "TClonesArray", "art::TDetectorParameter");
+                              TString("prm_detectors"), &fDetectorPrm, "TClonesArray", "art::crib::TDetectorParameter");
     /// currently not use this object
     RegisterOptionalInputInfo("TargetParameter", "name of target parameter", fTargetParameterName,
-                              TString("prm_targets"), &fTargetPrm, "TClonesArray", "art::TTargetParameter");
+                              TString("prm_targets"), &fTargetPrm, "TClonesArray", "art::crib::TTargetParameter");
 }
 
 TDetectParticleProcessor::~TDetectParticleProcessor() {
@@ -73,8 +73,8 @@ void TDetectParticleProcessor::Init(TEventCollection *col) {
         return;
     }
     const TClass *const cl1 = (*fInData)->GetClass();
-    if (!cl1->InheritsFrom(art::TParticleInfo::Class())) {
-        SetStateError("contents of input array must inherit from art::TParticleInfo");
+    if (!cl1->InheritsFrom(art::crib::TParticleInfo::Class())) {
+        SetStateError("contents of input array must inherit from art::crib::TParticleInfo");
         return;
     }
     fInTrackData = reinterpret_cast<TClonesArray **>(col->GetObjectRef(fInputTrackColName.Data()));
@@ -114,7 +114,7 @@ void TDetectParticleProcessor::Init(TEventCollection *col) {
         return;
     }
 
-    fOutData = new TClonesArray("art::TTelescopeData");
+    fOutData = new TClonesArray("art::crib::TTelescopeData");
     fOutData->SetName(fOutputColName);
     col->Add(fOutputColName, fOutData, fOutputIsTransparent);
 

@@ -3,13 +3,13 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-18 14:43:02
- * @note    last modified: 2024-08-14 18:53:03
+ * @note    last modified: 2024-08-21 17:54:28
  * @details
  */
 
 #include "TDetectorParameter.h"
 
-using art::TDetectorParameter;
+using art::crib::TDetectorParameter;
 
 ClassImp(TDetectorParameter);
 

@@ -1,9 +1,9 @@
 /**
  * @file    TMUXPositionValidator.cc
  * @brief
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-30 10:02:46
- * @note    last modified: 2024-08-14 19:04:05
+ * @note    last modified: 2024-08-21 17:47:48
  * @details
  */
 
@@ -12,7 +12,7 @@
 #include <TClonesArray.h>
 #include <TDataObject.h>
 
-using art::TMUXPositionValidator;
+using art::crib::TMUXPositionValidator;
 
 ClassImp(TMUXPositionValidator);
 

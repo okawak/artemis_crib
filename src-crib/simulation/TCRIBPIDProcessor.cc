@@ -1,9 +1,10 @@
 /**
  * @file    TCRIBPIDProcessor.cc
  * @brief   Beam PID at F2 and F3 of CRIB
- * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-12-19 15:30:55
- * @note
+ * @note    last modified: 2024-08-21 12:55:28
+ * @details
  */
 
 #include "TCRIBPIDProcessor.h"
@@ -16,28 +17,28 @@
 #include <TText.h>
 #include <constant.h>
 
+#include <Mass.h> // TSrim library
 #include <yaml-cpp/yaml.h>
 
 #include <TCanvas.h>
 #include <TClass.h>
+#include <TROOT.h>
 #include <TStyle.h>
 #include <TSystem.h>
 
-using art::TCRIBPIDProcessor;
+using art::crib::TCRIBPIDProcessor;
 
 ClassImp(TCRIBPIDProcessor);
 
 // definition of constant strings for the key of each node
 namespace {
 const char *kNodeKeyIons = "input_ions";
-const char *kNodeKeyName = "name";
-const char *kNodeKeyCharge = "charge";
-const char *kNodeKeyMass = "mass";
-const char *kNodeKeyColor = "color";
 const char *kNodeKeyF1Param = "f1_parameters";
 const char *kNodeKeyF2Param = "f2_parameters";
 const char *kNodeKeyF3Param = "f3_parameters";
 const char *kNodeKeyBrho = "brho";
+const char *kNodeKeyDegMat = "degrader_material";
+const char *kNodeKeyDegThickness = "degrader_thickness";
 const char *kNodeKeyRfPeriod = "rf_period";
 const char *kNodeKeyPPACThickness = "PPAC_thickness";
 const char *kNodeKeySSDThickness = "SSD_thickness";
@@ -45,13 +46,11 @@ const char *kNodeKeyAThickness = "a_thickness";
 const char *kNodeKeyBThickness = "b_thickness";
 const char *kNodeKeyDistance = "distance";
 const char *kNodeKeyTrigger = "trigger";
-const char *kNodeKeyF2Display = "f2_display";
-const char *kNodeKeyF3Display = "f3_display";
 const char *kNodeKeyRfOffset = "rf_offset";
-const char *kNodeKeyTofOffset = "tof_offset";
 const char *kNodeKeyRfRange = "rf_range";
-const char *kNodeKeyTofRange = "tof_range";
 const char *kNodeKeyERange = "energy_range";
+const char *kNodeKeyTofOffset = "tof_offset";
+const char *kNodeKeyTofRange = "tof_range";
 } // namespace
 
 TCRIBPIDProcessor::TCRIBPIDProcessor() {
@@ -60,11 +59,11 @@ TCRIBPIDProcessor::TCRIBPIDProcessor() {
 }
 
 TCRIBPIDProcessor::~TCRIBPIDProcessor() {
-    delete fElossTable;
-    fElossTable = NULL;
+    delete srim;
+    srim = nullptr;
 }
 
-void TCRIBPIDProcessor::Init(TEventCollection *col) {
+void TCRIBPIDProcessor::Init(TEventCollection *) {
     Info("Init", "PID parameters are loaded from %s", fFileName.Data());
     LoadPIDyaml();
     SetSRIMObject();
@@ -78,22 +77,27 @@ void TCRIBPIDProcessor::Init(TEventCollection *col) {
     std::vector<TGraph *> graphs_f2_pid;
     std::vector<TGraph *> graphs_f3_pid;
 
-    for (Int_t i = 0; i < ion_names.size(); i++) {
+    for (Size_t i = 0, n = ion_names.size(); i < n; i++) {
+        Int_t z = amdc::GetZ(ion_names[i]);
+        Int_t a = ion_massnum[i];
+        Double_t mass = ion_masses[i];
+
         // calculate the kinetic energy from Brho
         Double_t Brhoqc = f1_brho * ion_charges[i] * kUnitCharge * kLightSpeed * kJ2MeV;
-        Double_t Ekin = ion_masses[i] * (TMath::Sqrt(1.0 + TMath::Power(Brhoqc / ion_masses[i], 2.0)) - 1.0);
+        Double_t Ekin = mass * (TMath::Sqrt(1.0 + TMath::Power(Brhoqc / mass, 2.0)) - 1.0);
+        Double_t E_after_degrader = srim->EnergyNew(z, a, Ekin, degrader_mat, degrader_thick);
 
         // calculate energy loss
-        Double_t E_after_f2ppac = fEloss_vvec[i][0]->GetNewE(Ekin, f2_ppac_thickness);
-        Double_t E_in_f2ssd = E_after_f2ppac - fEloss_vvec[i][1]->GetNewE(E_after_f2ppac, f2_ssd_thickness);
+        Double_t E_after_f2ppac = srim->EnergyNew(z, a, E_after_degrader, "mylar", f2_ppac_thickness);
+        Double_t E_in_f2ssd = E_after_f2ppac - srim->EnergyNew(z, a, E_after_f2ppac, "si", f2_ssd_thickness);
 
-        Double_t E_after_ppaca = fEloss_vvec[i][0]->GetNewE(Ekin, a_thickness);
-        Double_t E_after_ppacb = fEloss_vvec[i][0]->GetNewE(E_after_ppaca, b_thickness);
+        Double_t E_after_ppaca = srim->EnergyNew(z, a, E_after_degrader, "mylar", a_thickness);
+        // Double_t E_after_ppacb = srim->EnergyNew(z, a, E_after_ppaca, "mylar", b_thickness);
 
         // calculate tof (ns)
-        Double_t tof_f0f2 = 1.0e+9 * kLengthF0F2 / E2m_s(Ekin, ion_masses[i]);
-        Double_t tof_f0f3 = 1.0e+9 * kLengthF0F3 / E2m_s(Ekin, ion_masses[i]);
-        Double_t tof_ppacs = 1.0e+9 * distance * 1.0e-3 / E2m_s(E_after_ppaca, ion_masses[i]);
+        Double_t tof_f0f2 = 1.0e+9 * kLengthF0F2 / E2m_s(Ekin, mass);
+        Double_t tof_f0f3 = 1.0e+9 * kLengthF0F3 / E2m_s(Ekin, mass);
+        Double_t tof_ppacs = 1.0e+9 * distance * 1.0e-3 / E2m_s(E_after_ppaca, mass);
 
         // calculate data points
         // for F2
@@ -116,8 +120,8 @@ void TCRIBPIDProcessor::Init(TEventCollection *col) {
             rf_f2 += rf_period;
         }
         // set TGraph style
-        gr_f2->SetName(Form("%s_%d+", ion_names[i].Data(), ion_charges[i]));
-        gr_f2->SetTitle(Form("%s_%d+", ion_names[i].Data(), ion_charges[i]));
+        gr_f2->SetName(Form("%s_%d+", ion_names[i].c_str(), ion_charges[i]));
+        gr_f2->SetTitle(Form("%s_%d+", ion_names[i].c_str(), ion_charges[i]));
         gr_f2->SetMarkerStyle(20 + i);
         if (ion_colors[i] == 0) {
             gr_f2->SetMarkerColor(kRed);
@@ -151,8 +155,8 @@ void TCRIBPIDProcessor::Init(TEventCollection *col) {
             rf_f3 += rf_period;
         }
         // set TGraph style
-        gr_f3->SetName(Form("%s_%d+", ion_names[i].Data(), ion_charges[i]));
-        gr_f3->SetTitle(Form("%s_%d+", ion_names[i].Data(), ion_charges[i]));
+        gr_f3->SetName(Form("%s_%d+", ion_names[i].c_str(), ion_charges[i]));
+        gr_f3->SetTitle(Form("%s_%d+", ion_names[i].c_str(), ion_charges[i]));
         gr_f3->SetMarkerStyle(20 + i);
         if (ion_colors[i] == 0) {
             gr_f3->SetMarkerColor(kRed);
@@ -175,12 +179,12 @@ void TCRIBPIDProcessor::Init(TEventCollection *col) {
     mg_f2->GetHistogram()->GetXaxis()->SetTitleOffset(1.3);
 
     std::vector<TText *> txts_f2;
-    for (Int_t i = 0; i < graphs_f2_pid.size(); i++) {
+    for (Size_t i = 0, n = graphs_f2_pid.size(); i < n; i++) {
         mg_f2->Add(graphs_f2_pid[i]);
         for (Int_t j = 0; j < graphs_f2_pid[i]->GetN(); j++) {
             Double_t x, y;
             graphs_f2_pid[i]->GetPoint(j, x, y);
-            TText *txt = new TText(x + 3.0, y, Form("%s_%d+", ion_names[i].Data(), ion_charges[i]));
+            TText *txt = new TText(x + 3.0, y, Form("%s_%d+", ion_names[i].c_str(), ion_charges[i]));
             txt->SetTextAlign(12);
             if (ion_colors[i] == 0) {
                 txt->SetTextColor(kRed);
@@ -193,7 +197,7 @@ void TCRIBPIDProcessor::Init(TEventCollection *col) {
         }
     }
     mg_f2->Draw("ap");
-    for (Int_t i = 0; i < txts_f2.size(); i++) {
+    for (Size_t i = 0, n = txts_f2.size(); i < n; i++) {
         txts_f2[i]->Draw("same");
     }
     gPad->SetGrid();
@@ -209,12 +213,12 @@ void TCRIBPIDProcessor::Init(TEventCollection *col) {
     mg_f3->GetHistogram()->GetXaxis()->SetTitleOffset(1.3);
 
     std::vector<TText *> txts_f3;
-    for (Int_t i = 0; i < graphs_f3_pid.size(); i++) {
+    for (Size_t i = 0, n = graphs_f3_pid.size(); i < n; i++) {
         mg_f3->Add(graphs_f3_pid[i]);
         for (Int_t j = 0; j < graphs_f3_pid[i]->GetN(); j++) {
             Double_t x, y;
             graphs_f3_pid[i]->GetPoint(j, x, y);
-            TText *txt = new TText(x + 3.0, y, Form("%s_%d+", ion_names[i].Data(), ion_charges[i]));
+            TText *txt = new TText(x + 3.0, y, Form("%s_%d+", ion_names[i].c_str(), ion_charges[i]));
             txt->SetTextAlign(12);
             if (ion_colors[i] == 0) {
                 txt->SetTextColor(kRed);
@@ -227,7 +231,7 @@ void TCRIBPIDProcessor::Init(TEventCollection *col) {
         }
     }
     mg_f3->Draw("ap");
-    for (Int_t i = 0; i < txts_f3.size(); i++) {
+    for (Size_t i = 0, n = txts_f3.size(); i < n; i++) {
         txts_f3[i]->Draw("same");
     }
     gPad->SetGrid();
@@ -249,6 +253,7 @@ void TCRIBPIDProcessor::Init(TEventCollection *col) {
 void TCRIBPIDProcessor::Process() {}
 
 void TCRIBPIDProcessor::LoadPIDyaml() {
+    Info("Init", "Loading yaml file...");
     FileStat_t info;
     if (gSystem->GetPathInfo(fFileName.Data(), info) != 0) {
         SetStateError(Form("File %s does not exist.", fFileName.Data()));
@@ -266,46 +271,69 @@ void TCRIBPIDProcessor::LoadPIDyaml() {
 
     // set ions
     YAML::Node yaml_ions = yaml_all[kNodeKeyIons].as<YAML::Node>();
-    for (Int_t i = 0; i < yaml_ions.size(); i++) {
-        TString name = yaml_ions[i][kNodeKeyName].as<std::string>();
-        Int_t charge = yaml_ions[i][kNodeKeyCharge].as<int>();
-        Double_t mass = yaml_ions[i][kNodeKeyMass].as<double>();
-        Int_t color = yaml_ions[i][kNodeKeyColor].as<int>();
+    for (Size_t i = 0, n = yaml_ions.size(); i < n; i++) {
+        IntVec_t ion_config = yaml_ions[i].as<std::vector<int>>();
+        if (ion_config.size() != 4) {
+            std::cerr << "input yaml file: ion array size is not 4!" << std::endl;
+            return;
+        }
 
-        ion_names.emplace_back(name);
-        ion_charges.emplace_back(charge);
-        ion_masses.emplace_back(mass * kAmu2MeV);
-        ion_colors.emplace_back(color);
+        ion_names.emplace_back(amdc::GetEl(ion_config[0]));
+        ion_massnum.emplace_back(ion_config[1]);
+        ion_charges.emplace_back(ion_config[2]);
+        ion_masses.emplace_back(amdc::Mass(ion_config[0], ion_config[1]) * amdc::amu);
+        ion_colors.emplace_back(ion_config[3]);
     }
 
     // set BLD parameters
-    f1_brho = yaml_all[kNodeKeyF1Param][kNodeKeyBrho].as<double>();
-    rf_period = yaml_all[kNodeKeyF1Param][kNodeKeyRfPeriod].as<double>();
-    f2_ppac_thickness = 1.0e-3 * yaml_all[kNodeKeyF2Param][kNodeKeyPPACThickness].as<double>();
-    f2_ssd_thickness = 1.0e-3 * yaml_all[kNodeKeyF2Param][kNodeKeySSDThickness].as<double>();
-    a_thickness = 1.0e-3 * yaml_all[kNodeKeyF3Param][kNodeKeyAThickness].as<double>();
-    b_thickness = 1.0e-3 * yaml_all[kNodeKeyF3Param][kNodeKeyBThickness].as<double>();
-    distance = yaml_all[kNodeKeyF3Param][kNodeKeyDistance].as<double>();
-    trigger = yaml_all[kNodeKeyF3Param][kNodeKeyTrigger].as<ushort>();
+    YAML::Node yaml_f1 = yaml_all[kNodeKeyF1Param].as<YAML::Node>();
+    f1_brho = yaml_f1[kNodeKeyBrho].as<double>();
+    degrader_mat = yaml_f1[kNodeKeyDegMat].as<std::string>();
+    degrader_thick = 1.0e-3 * yaml_f1[kNodeKeyDegThickness].as<double>();
+    rf_period = yaml_f1[kNodeKeyRfPeriod].as<double>();
 
-    // set display parameters
-    f2_rf_offset = yaml_all[kNodeKeyF2Display][kNodeKeyRfOffset].as<double>();
-    f3_rf_offset = yaml_all[kNodeKeyF3Display][kNodeKeyRfOffset].as<double>();
-    tof_offset = yaml_all[kNodeKeyF3Display][kNodeKeyTofOffset].as<double>();
-    f2_rf_range = yaml_all[kNodeKeyF2Display][kNodeKeyRfRange].as<std::vector<double>>();
-    f3_rf_range = yaml_all[kNodeKeyF3Display][kNodeKeyRfRange].as<std::vector<double>>();
-    tof_range = yaml_all[kNodeKeyF3Display][kNodeKeyTofRange].as<std::vector<double>>();
-    energy_range = yaml_all[kNodeKeyF2Display][kNodeKeyERange].as<std::vector<double>>();
+    YAML::Node yaml_f2 = yaml_all[kNodeKeyF2Param].as<YAML::Node>();
+    f2_ppac_thickness = 1.0e-3 * yaml_f2[kNodeKeyPPACThickness].as<double>();
+    f2_ssd_thickness = 1.0e-3 * yaml_f2[kNodeKeySSDThickness].as<double>();
+    f2_rf_offset = yaml_f2[kNodeKeyRfOffset].as<double>();
+    f2_rf_range = yaml_f2[kNodeKeyRfRange].as<std::vector<double>>();
+    energy_range = yaml_f2[kNodeKeyERange].as<std::vector<double>>();
+
+    YAML::Node yaml_f3 = yaml_all[kNodeKeyF3Param].as<YAML::Node>();
+    a_thickness = 1.0e-3 * yaml_f3[kNodeKeyAThickness].as<double>();
+    b_thickness = 1.0e-3 * yaml_f3[kNodeKeyBThickness].as<double>();
+    distance = yaml_f3[kNodeKeyDistance].as<double>();
+    trigger = yaml_f3[kNodeKeyTrigger].as<ushort>();
+    f3_rf_offset = yaml_f3[kNodeKeyRfOffset].as<double>();
+    tof_offset = yaml_f3[kNodeKeyTofOffset].as<double>();
+    f3_rf_range = yaml_f3[kNodeKeyRfRange].as<std::vector<double>>();
+    tof_range = yaml_f3[kNodeKeyTofRange].as<std::vector<double>>();
 }
 
 void TCRIBPIDProcessor::SetSRIMObject() {
-    fElossTable = new SRIMData();
-    for (Int_t iPart = 0; iPart < ion_names.size(); iPart++) {
-        std::vector<SRIMtable *> srim_v;
-        srim_v.emplace_back(fElossTable->GetTable(ion_names[iPart], "Mylar"));
-        srim_v.emplace_back(fElossTable->GetTable(ion_names[iPart], "Si"));
+    Info("Init", "Setting TSrim object...");
+    Info("Init", "\t(Z, A) is same but Q is different, warning message will appear...");
+    const char *tsrim_path = std::getenv("TSRIM_DATA_HOME");
+    if (!tsrim_path) {
+        SetStateError("TSRIM_DATA_HOME environment variable is not defined");
+        return;
+    }
+    srim = new TSrim();
+    for (Size_t iPart = 0, n = ion_names.size(); iPart < n; iPart++) {
+        Int_t z = amdc::GetZ(ion_names[iPart]);
+        Int_t a = ion_massnum[iPart];
+        srim->AddElement("srim", 16,
+                         Form("%s/%s/range_fit_pol16_%s.txt", tsrim_path, degrader_mat.c_str(), degrader_mat.c_str()),
+                         z, a);
 
-        fEloss_vvec.emplace_back(srim_v);
-        srim_v.clear();
+        srim->AddElement("srim", 16,
+                         Form("%s/si/range_fit_pol16_si.txt", tsrim_path),
+                         z, a);
+
+        if (degrader_mat != "mylar") {
+            srim->AddElement("srim", 16,
+                             Form("%s/mylar/range_fit_pol16_mylar.txt", tsrim_path),
+                             z, a);
+        }
     }
 }

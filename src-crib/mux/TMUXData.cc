@@ -3,16 +3,16 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-07-30 09:49:05
- * @note    last modified: 2024-07-30 09:49:19
+ * @note    last modified: 2024-08-21 17:41:16
  * @details
  */
 
 #include "TMUXData.h"
 #include "TConverterBase.h"
 
-using art::TMUXData;
+using art::crib::TMUXData;
 
-ClassImp(art::TMUXData);
+ClassImp(TMUXData);
 
 TMUXData::TMUXData()
     : fE1(kInvalidD), fE2(kInvalidD), fP1(kInvalidD), fP2(kInvalidD), fTiming(kInvalidD) {

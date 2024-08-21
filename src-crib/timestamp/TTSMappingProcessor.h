@@ -1,16 +1,26 @@
-// K.Okawa modified <okawa@cns.s.u-tokyo.ac.jp>
+/**
+ * @file    TTSMappingProcessor.h
+ * @brief
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2022?
+ * @note    last modified: 2024-08-21 18:08:52
+ * @details
+ */
 
-#ifndef _TTSMAPPINGPROCESSOR_H_
-#define _TTSMAPPINGPROCESSOR_H_
+#ifndef _CRIB_TTSMAPPINGPROCESSOR_H_
+#define _CRIB_TTSMAPPINGPROCESSOR_H_
 
 #include <TProcessor.h>
 
 namespace art {
-class TTSMappingProcessor;
 class TCategorizedData;
 } // namespace art
 
-class art::TTSMappingProcessor : public TProcessor {
+namespace art::crib {
+class TTSMappingProcessor;
+} // namespace art::crib
+
+class art::crib::TTSMappingProcessor : public TProcessor {
   public:
     TTSMappingProcessor();
     ~TTSMappingProcessor();

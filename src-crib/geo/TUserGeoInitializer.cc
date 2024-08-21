@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 21:27:49
- * @note    last modified: 2024-08-15 14:49:35
+ * @note    last modified: 2024-08-21 21:03:54
  * @details
  */
 
@@ -22,9 +22,9 @@
 #include <TSystem.h>
 #include <TVector3.h>
 
-using art::TUserGeoInitializer;
+using art::crib::TUserGeoInitializer;
 
-ClassImp(art::TUserGeoInitializer);
+ClassImp(TUserGeoInitializer);
 
 // definition of constant strings for the key of each node
 namespace {
@@ -63,7 +63,7 @@ const char *kNodeKeyPedestal = "pedestal";
 /// object by
 /// ```
 /// RegisterOptionalInputInfo("DetectorParameter", "name of telescope parameter", fDetectorParameterName,
-///                            TString("prm_detectors"), &fDetectorPrm, "TClonesArray", "art::TDetectorParameter");
+///                            TString("prm_detectors"), &fDetectorPrm, "TClonesArray", "art::crib::TDetectorParameter");
 /// ```
 
 TUserGeoInitializer::TUserGeoInitializer() : fGeom(nullptr) {
@@ -91,10 +91,10 @@ void TUserGeoInitializer::Init(TEventCollection *col) {
     fGeom = new TGeoManager("geometry", "Detector Geometry");
 
     Info("Init", "detector parameters are produced to %s", fDetPrmName.Data());
-    fDetParameterArray = new TClonesArray("art::TDetectorParameter");
+    fDetParameterArray = new TClonesArray("art::crib::TDetectorParameter");
 
     Info("Init", "target parameters are produced to %s", fTargetPrmName.Data());
-    fTargetParameterArray = new TClonesArray("art::TTargetParameter");
+    fTargetParameterArray = new TClonesArray("art::crib::TTargetParameter");
 
     GeometryFromYaml(fFileName);
 

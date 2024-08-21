@@ -14,9 +14,11 @@
 #include <TStyle.h>
 #include <chrono>
 
-ClassImp(art::TScalerMonitorProcessor);
+using art::crib::TScalerMonitorProcessor;
 
-art::TScalerMonitorProcessor::TScalerMonitorProcessor()
+ClassImp(TScalerMonitorProcessor);
+
+TScalerMonitorProcessor::TScalerMonitorProcessor()
     : fShortCount(0), fLongCount(0) {
     RegisterInputCollection("InputCollection",
                             "Scaler object inheriting from art::TScalerData",
@@ -45,7 +47,7 @@ art::TScalerMonitorProcessor::TScalerMonitorProcessor()
     }
 }
 
-art::TScalerMonitorProcessor::~TScalerMonitorProcessor() {
+TScalerMonitorProcessor::~TScalerMonitorProcessor() {
     for (Int_t i = 0; i < SCALER_CH; i++) {
         delete fGr_s[i];
         delete fGr_l[i];
@@ -56,7 +58,7 @@ art::TScalerMonitorProcessor::~TScalerMonitorProcessor() {
     // delete pad_l;
 }
 
-void art::TScalerMonitorProcessor::Init(TEventCollection *col) {
+void TScalerMonitorProcessor::Init(TEventCollection *col) {
     gStyle->SetTimeOffset(-788918400); // to UNIX time
     gStyle->SetNdivisions(505);
     gStyle->SetPadGridX(1);
@@ -139,7 +141,7 @@ void art::TScalerMonitorProcessor::Init(TEventCollection *col) {
     fIsFirst = true;
 }
 
-void art::TScalerMonitorProcessor::Process() {
+void TScalerMonitorProcessor::Process() {
     Long_t now = std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 
     if (fIsFirst) {
@@ -163,7 +165,7 @@ void art::TScalerMonitorProcessor::Process() {
     ProcessLong(now);
 }
 
-void art::TScalerMonitorProcessor::ProcessShort(Long_t now) {
+void TScalerMonitorProcessor::ProcessShort(Long_t now) {
     if (now - fCurrentShort > fShortInterval) {
         const TScalerData *const scadata = static_cast<TScalerData *>(*fInData);
         if (scadata->GetValue(fClock[0]) - fShortScatot[fClock[0]] <= 0) {
@@ -218,7 +220,7 @@ void art::TScalerMonitorProcessor::ProcessShort(Long_t now) {
     }
 }
 
-void art::TScalerMonitorProcessor::ProcessLong(Long_t now) {
+void TScalerMonitorProcessor::ProcessLong(Long_t now) {
     if (now - fCurrentLong > fLongInterval) {
         const TScalerData *const scadata = static_cast<TScalerData *>(*fInData);
         if (scadata->GetValue(fClock[0]) - fLongScatot[fClock[0]] <= 0) {

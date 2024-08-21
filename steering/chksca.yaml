@@ -23,7 +23,7 @@ Processor:
 
   # need to set the factor so that the rate become 0 -- 1000 cps range
   - name: proc_scaler_monitor
-    type: art::TScalerMonitorProcessor
+    type: art::crib::TScalerMonitorProcessor
     parameter:
       ShortInterval: 5 # : Int_t, seconds
       ShortDuration: 500 # : Int_t, seconds
