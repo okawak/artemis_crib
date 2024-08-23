@@ -3,24 +3,16 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-01-30 11:09:46
- * @note    last modified: 2024-08-21 21:04:48
+ * @note    last modified: 2024-08-23 21:28:40
  * @details treat only pos1 and ene1
  */
 
 #include "TMUXCalibrationProcessor.h"
 
-#include "ICharge.h"
-#include "ITiming.h"
-#include "TConverterBase.h"
 #include "TConverterUtil.h"
-#include "TDataObject.h"
 #include "TMUXData.h"
 #include "TMUXPositionConverter.h"
 #include "TTimingChargeData.h"
-#include "constant.h"
-
-#include <TClass.h>
-#include <TClonesArray.h>
 #include <TRandom.h>
 
 using art::crib::TMUXCalibrationProcessor;

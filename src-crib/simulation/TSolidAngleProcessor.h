@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 11:08:17
- * @note    last modified: 2024-08-21 17:56:52
+ * @note    last modified: 2024-08-23 21:20:38
  * @details
  */
 
@@ -12,7 +12,6 @@
 
 #include <TProcessor.h>
 
-#include <TH1.h>
 #include <TH2.h>
 
 namespace art::crib {

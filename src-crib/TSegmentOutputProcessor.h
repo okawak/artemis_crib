@@ -3,7 +3,7 @@
  * @brief   from seg conf, output raw data TTree object
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-12-25 11:40:53
- * @note    last modified: 2024-08-21 17:35:47
+ * @note    last modified: 2024-08-23 20:57:10
  * @details
  */
 
@@ -12,7 +12,6 @@
 
 #include "TProcessor.h"
 #include <TFile.h>
-#include <vector>
 
 namespace art {
 class TSegmentInfo;

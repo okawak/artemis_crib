@@ -3,26 +3,20 @@
  * @brief   from seg conf, output raw data TTree object
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-08-21 17:36:19
- * @note    last modified: 2024-08-21 17:36:39
+ * @note    last modified: 2024-08-23 20:56:40
  * @details
  */
 
 #include "TSegmentOutputProcessor.h"
-#include <TAnalysisInfo.h>
+
 #include <TArtemisUtil.h>
-#include <TClass.h>
-#include <TClonesArray.h>
-#include <TEventObject.h>
 #include <TModuleData.h>
-#include <TModuleInfo.h>
 #include <TModuleType.h>
 #include <TROOT.h>
 #include <TRawDataObject.h>
 #include <TSegmentInfo.h>
 #include <TSegmentedData.h>
-#include <TSystem.h>
 #include <TTree.h>
-#include <algorithm>
 #include <constant.h>
 
 using art::crib::TSegmentOutputProcessor;

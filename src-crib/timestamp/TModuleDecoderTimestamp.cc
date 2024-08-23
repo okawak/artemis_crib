@@ -1,8 +1,14 @@
-// K.Okawa modified <okawa@cns.s.u-tokyo.ac.jp>
+/**
+ * @file    TModuleDecoderTimestamp.cc
+ * @brief
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2022?
+ * @note    last modified: 2024-08-23 20:59:52
+ * @details
+ */
 
 #include "TModuleDecoderTimestamp.h"
 
-#include <TObjArray.h>
 #include <TRawDataSimple.h>
 
 using art::crib::TModuleDecoderTimestamp;

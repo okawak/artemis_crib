@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-13 18:57:52
- * @note    last modified: 2024-08-21 18:19:04
+ * @note    last modified: 2024-08-23 21:37:11
  * @details under development
  */
 
@@ -11,15 +11,8 @@
 
 #include <TCatHistManager.h>
 #include <TCatPadManager.h>
-
 #include <TF1.h>
-#include <TLine.h>
-#include <TPad.h>
-#include <TROOT.h>
 #include <TView3D.h>
-
-#include <TH1.h>
-#include <TH2.h>
 
 using art::crib::TCmdDraw;
 

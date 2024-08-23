@@ -3,17 +3,14 @@
  * @brief
  * @author
  * @date    2023-06-13 17:34:11
- * @note    last modified: 2024-08-21 18:19:50
+ * @note    last modified: 2024-08-23 21:38:12
  * @details
  */
 
 #include "TCmdErase.h"
-#include "TArtemisUtil.h"
+
 #include <TFile.h>
 #include <TH1.h>
-#include <TH1FTreeProj.h>
-#include <TH2FTreeProj.h>
-#include <TH3FTreeProj.h>
 
 using art::crib::TCmdErase;
 

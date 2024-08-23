@@ -1,12 +1,17 @@
-// K.Okawa modified <okawa@cns.s.u-tokyo.ac.jp>
+/**
+ * @file    TTSMappingProcessor.cc
+ * @brief
+ * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
+ * @date    2022?
+ * @note    last modified: 2024-08-23 21:01:55
+ * @details
+ */
 
 #include "TTSMappingProcessor.h"
 
 #include "TTSData.h"
 #include <TCategorizedData.h>
 #include <TRawDataObject.h>
-
-#include "constant.h"
 
 using art::crib::TTSMappingProcessor;
 

@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-18 22:37:37
- * @note    last modified: 2024-08-21 21:08:56
+ * @note    last modified: 2024-08-23 21:20:12
  * @details
  */
 
@@ -33,17 +33,11 @@
 ///
 
 #include "TSolidAngleProcessor.h"
+
 #include "../reconst/TReactionInfo.h"
 #include "../telescope/TTelescopeData.h"
-
 #include <TArtemisUtil.h>
-#include <TDataObject.h>
-#include <constant.h>
-
-#include <TClass.h>
-#include <TClonesArray.h>
 #include <TFile.h>
-#include <TMath.h>
 
 using art::crib::TSolidAngleProcessor;
 

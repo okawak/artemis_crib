@@ -3,17 +3,15 @@
  * @brief   position and angle random beam generator
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-09 15:57:01
- * @note    last modified: 2024-08-21 21:08:17
+ * @note    last modified: 2024-08-23 21:18:45
  * @details
  */
 
 #include "TRandomBeamGenerator.h"
-#include "TParticleInfo.h"
-#include <TClonesArray.h>
-#include <TMath.h>
-#include <TRandom.h>
 
+#include "TParticleInfo.h"
 #include <Mass.h> // TSrim library
+#include <TRandom.h>
 
 using art::crib::TRandomBeamGenerator;
 

@@ -3,12 +3,11 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022?
- * @note    last modified: 2024-08-21 18:10:42
+ * @note    last modified: 2024-08-23 21:00:16
  * @details
  */
 
 #include "TTSData.h"
-#include "TConverterBase.h"
 
 using art::crib::TTSData;
 

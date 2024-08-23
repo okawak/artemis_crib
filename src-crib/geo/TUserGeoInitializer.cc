@@ -3,24 +3,17 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 21:27:49
- * @note    last modified: 2024-08-21 21:03:54
+ * @note    last modified: 2024-08-23 21:33:03
  * @details
  */
 
 #include "TUserGeoInitializer.h"
+
 #include "TDetectorParameter.h"
 #include "TTargetParameter.h"
-#include <TArtTypes.h>
-#include <TGeoMaterial.h>
-#include <TGeoMatrix.h>
-#include <TGeoMedium.h>
-
-#include <yaml-cpp/yaml.h>
-
 #include <TDirectory.h>
-#include <TGeoManager.h>
-#include <TSystem.h>
 #include <TVector3.h>
+#include <yaml-cpp/yaml.h>
 
 using art::crib::TUserGeoInitializer;
 

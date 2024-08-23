@@ -3,18 +3,15 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-09 15:57:01
- * @note    last modified: 2024-08-21 21:09:18
+ * @note    last modified: 2024-08-23 21:21:37
  * @details
  */
 
 #include "TTreeBeamGenerator.h"
-#include "TParticleInfo.h"
-#include <TClonesArray.h>
-#include <TMath.h>
-#include <TRandom.h>
-#include <TTrack.h>
 
+#include "TParticleInfo.h"
 #include <Mass.h> // TSrim library
+#include <TRandom.h>
 
 using art::crib::TTreeBeamGenerator;
 

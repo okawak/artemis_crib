@@ -3,12 +3,11 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-07-30 09:49:05
- * @note    last modified: 2024-08-21 17:41:16
+ * @note    last modified: 2024-08-23 21:29:16
  * @details
  */
 
 #include "TMUXData.h"
-#include "TConverterBase.h"
 
 using art::crib::TMUXData;
 

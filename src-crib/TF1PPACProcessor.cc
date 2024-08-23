@@ -3,22 +3,19 @@
  * @brief   Created from TPPACPrcessor
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-08-08 17:25:02
- * @note    last modified: 2024-08-21 17:07:54
+ * @note    last modified: 2024-08-23 20:50:50
  * @details
  */
 
 #include "TF1PPACProcessor.h"
+
 #include "TConverterBase.h"
 #include "TConverterUtil.h"
 #include "TPPACData.h"
 #include "TPPACParameter.h"
 
-#include "constant.h"
-
 #include <TCategorizedData.h>
 #include <TRawDataObject.h>
-
-#include <TClonesArray.h>
 
 using art::crib::TF1PPACProcessor;
 

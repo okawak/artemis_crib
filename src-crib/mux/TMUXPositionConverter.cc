@@ -3,19 +3,14 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-01-30 11:50:14
- * @note    last modified: 2024-08-21 17:49:53
+ * @note    last modified: 2024-08-23 21:30:56
  * @details
  */
 
 #include "TMUXPositionConverter.h"
 
-#include <cstdio>
-#include <iostream>
-
 #include "constant.h"
-#include <TClass.h>
 #include <TROOT.h>
-#include <TString.h>
 
 using art::crib::TMUXPositionConverter;
 

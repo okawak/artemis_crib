@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-13 10:54:46
- * @note    last modified: 2024-08-21 18:22:26
+ * @note    last modified: 2024-08-23 21:44:35
  * @details
  */
 
@@ -11,19 +11,11 @@
 
 #include <TCatCmdXval.h>
 #include <TCatHistManager.h>
-#include <TCatPadManager.h>
 #include <TCmdComment.h>
-
-#include <TBox.h>
 #include <TF1.h>
-#include <TGraph.h>
-#include <TH1.h>
 #include <TH2.h>
-#include <TLatex.h>
 #include <TLine.h>
 #include <TPad.h>
-#include <TROOT.h>
-#include <TStyle.h>
 
 using art::crib::TCmdXstatus;
 

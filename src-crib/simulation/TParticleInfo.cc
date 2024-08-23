@@ -3,11 +3,12 @@
  * @brief   particle information class
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-05-08 18:07:50
- * @note    last modified: 2024-08-21 18:03:14
+ * @note    last modified: 2024-08-23 21:17:03
  * @details
  */
 
 #include "TParticleInfo.h"
+
 #include <constant.h>
 
 using art::crib::TParticleInfo;

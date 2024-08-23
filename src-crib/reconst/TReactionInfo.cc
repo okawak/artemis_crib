@@ -3,13 +3,11 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:28:15
- * @note    last modified: 2024-08-21 17:55:56
+ * @note    last modified: 2024-08-23 21:24:41
  * @details
  */
 
 #include "TReactionInfo.h"
-#include <TConverterBase.h>
-#include <constant.h>
 
 using art::crib::TReactionInfo;
 

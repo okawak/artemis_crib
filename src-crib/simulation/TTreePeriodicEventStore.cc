@@ -3,24 +3,18 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:36:36
- * @note    last modified: 2024-08-21 18:06:52
+ * @note    last modified: 2024-08-23 21:23:30
  * @details just modify the process() from TTreeEventStore to return 0
  */
 
 #include "TTreePeriodicEventStore.h"
+
 #include "TChain.h"
 #include "TObjString.h"
 #include "TSystem.h"
-#include <TClonesArray.h>
-#include <TConditionBit.h>
 #include <TEventHeader.h>
 #include <TFile.h>
 #include <TLeaf.h>
-#include <TList.h>
-#include <TLoop.h>
-#include <TProcessor.h>
-#include <TROOT.h>
-#include <TTree.h>
 
 using art::crib::TTreePeriodicEventStore;
 

@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 13:11:23
- * @note    last modified: 2024-08-21 18:00:31
+ * @note    last modified: 2024-08-23 21:16:24
  * @details
  */
 
@@ -12,8 +12,6 @@
 
 #include <TGenPhaseSpace.h>
 #include <TGraph.h>
-#include <TLorentzVector.h>
-#include <TMath.h>
 #include <TProcessor.h>
 #include <TSrim.h> // TSrim library
 

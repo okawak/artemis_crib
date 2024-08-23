@@ -3,17 +3,16 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-07-19 18:36:37
- * @note    last modified: 2024-08-21 21:12:14
+ * @note    last modified: 2024-08-23 20:58:57
  * @details
  */
 
 #include "TTimingDataMappingProcessor.h"
 
+#include "constant.h"
 #include <TCategorizedData.h>
 #include <TRawDataObject.h>
 #include <TTimingData.h>
-
-#include "constant.h"
 
 using art::crib::TTimingDataMappingProcessor;
 

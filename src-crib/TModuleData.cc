@@ -3,12 +3,11 @@
  * @brief   inherit from TModuleInfo
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-08 17:49:53
- * @note    last modified: 2024-08-21 17:33:30
+ * @note    last modified: 2024-08-23 20:52:27
  * @details
  */
 
 #include "TModuleData.h"
-#include <TROOT.h>
 
 using art::crib::TModuleData;
 

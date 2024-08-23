@@ -3,26 +3,18 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:36:36
- * @note    last modified: 2024-08-21 21:07:38
+ * @note    last modified: 2024-08-23 21:15:32
  * @details for (angle) constant cross section
  */
 
 #include "TNBodyReactionProcessor.h"
+
 #include "../reconst/TReactionInfo.h"
 #include "TParticleInfo.h"
 #include <Mass.h> // TSrim library
-#include <TClass.h>
-#include <TClonesArray.h>
-#include <TDataObject.h>
 #include <TRandom.h>
-#include <constant.h>
-
-#include <cstdio>
-#include <cstdlib>
 #include <fstream>
 #include <regex>
-#include <string>
-#include <vector>
 
 using art::crib::TNBodyReactionProcessor;
 

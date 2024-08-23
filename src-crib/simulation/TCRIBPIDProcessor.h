@@ -3,15 +3,12 @@
  * @brief   Beam PID at F2 and F3 of CRIB
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-12-19 15:30:55
- * @note    last modified: 2024-08-21 17:16:17
+ * @note    last modified: 2024-08-23 21:08:29
  * @details
  */
 
 #ifndef _CRIB_TCRIBPIDPROCESSOR_H_
 #define _CRIB_TCRIBPIDPROCESSOR_H_
-
-#include "TArtTypes.h"
-#include <TMath.h>
 
 #include <TProcessor.h>
 #include <TSrim.h> // TSrim library

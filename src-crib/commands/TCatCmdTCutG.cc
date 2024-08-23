@@ -3,29 +3,22 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-13 18:34:21
- * @note    last modified: 2024-08-21 18:17:21
+ * @note    last modified: 2024-08-23 21:35:53
  * @details
  */
 
 #include "TCatCmdTCutG.h"
 
 #include <TCatHistManager.h>
-
-#include <iostream>
-#include <unistd.h>
-#include <vector>
-
-#include <TAxis.h>
 #include <TCutG.h>
 #include <TFile.h>
-#include <TGraph.h>
-#include <TH1.h>
 #include <TH2.h>
 #include <TLine.h>
 #include <TPad.h>
-#include <TROOT.h>
+#include <iostream>
 
 using art::crib::TCatCmdTCutG;
+
 ClassImp(TCatCmdTCutG);
 
 TCatCmdTCutG::TCatCmdTCutG() : fX(0.), fY(0.), fEventtype(0), fisFirst(true) {

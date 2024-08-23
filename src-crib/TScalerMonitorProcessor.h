@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-28 14:23:16
- * @note    last modified: 2024-08-21 17:38:51
+ * @note    last modified: 2024-08-23 20:54:16
  * @details
  */
 
@@ -13,9 +13,6 @@
 #include "TProcessor.h"
 #include <TCanvas.h>
 #include <TGraph.h>
-#include <TPad.h>
-#include <TROOT.h>
-
 #include <TScalerData.h>
 
 namespace art {

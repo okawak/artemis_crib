@@ -3,17 +3,13 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-13 16:06:15
- * @note    last modified: 2024-08-21 17:28:16
+ * @note    last modified: 2024-08-23 20:47:25
  * @details
  */
 
 #include "TBranchCopyProcessor.h"
 
-#include <TClass.h>
-#include <TClonesArray.h>
-
 #include "TDataObject.h"
-#include "constant.h"
 
 using art::crib::TBranchCopyProcessor;
 

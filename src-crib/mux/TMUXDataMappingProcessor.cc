@@ -3,17 +3,15 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-01-30 09:47:17
- * @note    last modified: 2024-08-21 21:02:40
+ * @note    last modified: 2024-08-23 21:30:10
  * @details
  */
 
 #include "TMUXDataMappingProcessor.h"
-#include "TMUXData.h"
 
+#include "TMUXData.h"
 #include <TCategorizedData.h>
 #include <TRawDataObject.h>
-
-#include "constant.h"
 
 using art::crib::TMUXDataMappingProcessor;
 

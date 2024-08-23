@@ -10,7 +10,6 @@
 
 #include <TAxis.h>
 #include <TLegend.h>
-#include <TROOT.h>
 #include <TStyle.h>
 #include <chrono>
 

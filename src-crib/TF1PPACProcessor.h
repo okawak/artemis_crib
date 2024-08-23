@@ -3,7 +3,7 @@
  * @brief   Created from TPPACProcessor
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-08-08 17:27:59
- * @note    last modified: 2024-08-21 17:16:04
+ * @note    last modified: 2024-08-23 20:51:28
  * @details
  */
 
@@ -11,8 +11,6 @@
 #define _CRIB_TF1PPACPROCESSOR_H
 
 #include <TProcessor.h>
-
-#include <vector>
 
 namespace art {
 class TCategorizedData;

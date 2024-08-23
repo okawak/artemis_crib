@@ -3,17 +3,17 @@
  * @brief   from TTimingChargeMappingProcessor, both E and T
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022?
- * @note    last modified: 2024-08-21 17:17:16
+ * @note    last modified: 2024-08-23 20:58:00
  * @details
  */
 
 #include "TTimingChargeAllMappingProcessor.h"
+
 #include "TTimingChargeData.h"
+#include "constant.h"
 #include <TCategorizedData.h>
 #include <TRawDataTimingCharge.h>
 #include <TRawTimingWithEdge.h>
-
-#include "constant.h"
 
 using art::crib::TTimingChargeAllMappingProcessor;
 

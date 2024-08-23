@@ -3,7 +3,7 @@
  * @brief   gather the telescope information to the one object
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 17:52:58
- * @note    last modified: 2024-08-21 21:01:25
+ * @note    last modified: 2024-08-23 21:05:12
  * @details treat the largest value of each layor
  *          the data of X side is used for DSSSD
  *          assume beam position (0, 0) and direction (0, 0, 1)
@@ -14,16 +14,8 @@
 
 #include "../geo/TDetectorParameter.h"
 #include "../geo/TTargetParameter.h"
-#include "ICharge.h"
-#include "ITiming.h"
-#include "TDataObject.h"
 #include "TTelescopeData.h"
 #include "TTimingChargeData.h"
-#include "constant.h"
-
-#include <TClass.h>
-#include <TClonesArray.h>
-#include <TMath.h>
 #include <TRandom.h>
 
 using art::crib::TTelescopeProcessor;

@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-01-30 11:08:53
- * @note    last modified: 2024-08-21 17:42:55
+ * @note    last modified: 2024-08-23 21:28:58
  * @details if no valid converter given, this processor does nothing.
  */
 
@@ -11,8 +11,6 @@
 #define _CRIB_TMUXCALIBRATIONPROCESSOR_H
 
 #include <TProcessor.h>
-
-#include <vector>
 
 namespace art {
 class TConverterBase;

@@ -3,16 +3,11 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022?
- * @note    last modified: 2024-08-21 17:31:09
+ * @note    last modified: 2024-08-23 20:49:16
  * @details originally made by J. W. Hwang
  */
 
 #include "TEvtNumProcessor.h"
-#include <cstdlib>
-#include <iostream>
-
-#include <TBenchmark.h>
-#include <TStopwatch.h>
 
 using art::crib::TEvtNumProcessor;
 

@@ -3,28 +3,22 @@
  * @brief   Beam PID at F2 and F3 of CRIB
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-12-19 15:30:55
- * @note    last modified: 2024-08-21 12:55:28
+ * @note    last modified: 2024-08-23 21:07:34
  * @details
  */
 
 #include "TCRIBPIDProcessor.h"
 
-#include <TAxis.h>
-#include <TDataObject.h>
+#include <Mass.h> // TSrim library
+#include <TCanvas.h>
 #include <TGraph.h>
 #include <TH1.h>
 #include <TMultiGraph.h>
-#include <TText.h>
-#include <constant.h>
-
-#include <Mass.h> // TSrim library
-#include <yaml-cpp/yaml.h>
-
-#include <TCanvas.h>
-#include <TClass.h>
 #include <TROOT.h>
 #include <TStyle.h>
 #include <TSystem.h>
+#include <TText.h>
+#include <yaml-cpp/yaml.h>
 
 using art::crib::TCRIBPIDProcessor;
 

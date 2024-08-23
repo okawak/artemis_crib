@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:35:07
- * @note    last modified: 2024-08-21 21:05:55
+ * @note    last modified: 2024-08-23 21:26:04
  * @details bisection method (not Newton method)
  */
 
@@ -11,9 +11,7 @@
 
 #include "../geo/TDetectorParameter.h"
 #include "TReactionInfo.h"
-
 #include <Mass.h> // TSrim library
-
 #include <TFile.h>
 #include <TGraph.h>
 #include <TKey.h>

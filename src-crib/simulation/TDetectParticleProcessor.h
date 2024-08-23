@@ -3,19 +3,16 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:34:15
- * @note    last modified: 2024-08-21 17:59:28
+ * @note    last modified: 2024-08-23 21:12:51
  * @details
  */
 
 #ifndef _CRIB_TDETECTPARTICLEPROCESSOR_H_
 #define _CRIB_TDETECTPARTICLEPROCESSOR_H_
 
-#include "TArtTypes.h"
 #include <TGeoManager.h>
-#include <TLorentzVector.h>
-#include <TSrim.h> // TSrim library
-
 #include <TProcessor.h>
+#include <TSrim.h> // TSrim library
 
 namespace art::crib {
 class TDetectParticleProcessor;

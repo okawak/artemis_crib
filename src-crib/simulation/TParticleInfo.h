@@ -3,14 +3,13 @@
  * @brief   particle information class
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-05-08 18:07:32
- * @note    last modified: 2024-08-21 18:02:38
+ * @note    last modified: 2024-08-23 21:18:02
  * @details
  */
 
 #ifndef _TPARTICLEINFO_H_
 #define _TPARTICLEINFO_H_
 
-#include <TDataObject.h>
 #include <TLorentzVector.h>
 #include <TTrack.h>
 

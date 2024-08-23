@@ -3,27 +3,18 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-18 14:36:43
- * @note    last modified: 2024-08-21 21:07:09
+ * @note    last modified: 2024-08-23 21:10:55
  * @details
  */
 
 #include "TDetectParticleProcessor.h"
+
 #include "../geo/TDetectorParameter.h"
 #include "../geo/TTargetParameter.h"
 #include "../telescope/TTelescopeData.h"
 #include "TParticleInfo.h"
-
 #include <Mass.h> // TSrim library
-#include <TClass.h>
-#include <TClonesArray.h>
-#include <TDataObject.h>
-#include <TGeoManager.h>
-#include <TLorentzVector.h>
 #include <TRandom.h>
-#include <constant.h>
-
-#include <string>
-#include <unordered_set>
 
 using art::crib::TDetectParticleProcessor;
 

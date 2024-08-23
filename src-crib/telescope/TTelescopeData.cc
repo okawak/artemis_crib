@@ -3,12 +3,11 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 17:14:39
- * @note    last modified: 2024-08-21 17:51:10
+ * @note    last modified: 2024-08-23 21:02:18
  * @details
  */
 
 #include "TTelescopeData.h"
-#include <TConverterBase.h>
 
 using art::crib::TTelescopeData;
 

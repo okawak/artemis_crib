@@ -3,14 +3,13 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-30 10:02:46
- * @note    last modified: 2024-08-21 17:47:48
+ * @note    last modified: 2024-08-23 21:31:27
  * @details
  */
 
 #include "TMUXPositionValidator.h"
+
 #include "TMUXData.h"
-#include <TClonesArray.h>
-#include <TDataObject.h>
 
 using art::crib::TMUXPositionValidator;
 

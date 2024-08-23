@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022?
- * @note    last modified: 2024-08-21 17:30:09
+ * @note    last modified: 2024-08-23 20:48:59
  * @details originally made by J. W. Hwang
  */
 
@@ -11,7 +11,6 @@
 #define _CRIB_TEVTNUMPROCESSOR_H_
 
 #include "TProcessor.h"
-#include <TStopwatch.h>
 
 namespace art::crib {
 class TEvtNumProcessor;
