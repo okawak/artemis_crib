@@ -106,9 +106,10 @@ ROOTには認識されるが、Dictionaryに登録しない場合は、
 
 通常は、ClassDefかClassDefOverrideだけ使えば良さそうな感じかな?
 
-### Processorの仮想関数について
+### 3. Processorの仮想関数について
 
-TProcessorを継承して新しいプロセッサを作成するときに、オーバーライドすることができる汎用的に使えそうな(自分が使っている)クラスメソッドの一覧のメモ。
+TProcessorを継承して新しいプロセッサを作成するときに、TProcessorを継承し、
+関数をオーバーライドするときに汎用的に使えそうな(自分が使っている)クラスメソッドの一覧のメモ。
 
 ```cpp
    // InitProcメソッドで呼ばれる
@@ -141,3 +142,24 @@ TProcessorを継承して新しいプロセッサを作成するときに、オ�
 - PostProcess) -> <sus> -> PostLoop -> <res> -> PreLoop -> (PreProcess -> Process -> PreProcess) -> ...
 
 といったような順番で呼ばれる。
+
+### 4. Data classの仮想関数について
+
+新しいData classを作成する(ROOTのブランチに新しいクラスを入れたい)ときには、
+TDataObjectを継承し、そのときに汎用的に使えそうな仮想関数は以下の通りです。
+(他にも仮想関数はあります。)
+
+```cpp
+   virtual void Clear(Option_t *option = "");
+   virtual void Copy(TObject& object) const;
+   virtual void Print(Option_t* option = "") const;
+   virtual void SetID(Int_t id) { fID = id; }
+   virtual Int_t GetID() const { return fID; }
+```
+
+この中で、特にClearとCopyは、必ず実装しておくべきで、Clearは各processorのなかで、
+最初にオブジェクトを初期化するときに使用し、Copyは、
+art::crib::TBranchCopyProcessorでTTreeEventStoreからartemisを回すときに、
+アウトプットされるROOTファイルにも同じブランチをコピーするときに使えます。
+
+こちらも同様に、overrideキーワードをつけ、ClassDefOverrideで実装してください。
