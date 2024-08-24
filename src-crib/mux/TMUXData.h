@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022-07-30 09:48:52
- * @note    last modified: 2024-08-23 21:29:31
+ * @note    last modified: 2024-08-24 10:32:10
  * @details
  */
 
@@ -41,8 +41,8 @@ class art::crib::TMUXData : public TDataObject {
     Double_t GetTrig() const { return fTiming; }
     void SetTrig(Double_t arg) { fTiming = arg; }
 
-    virtual void Copy(TObject &dest) const;
-    virtual void Clear(Option_t *opt = "");
+    void Copy(TObject &dest) const override;
+    void Clear(Option_t *opt = "") override;
 
     static const Int_t kNRAW = 5; // number (e1, e2, p1, p2, T)
 
@@ -53,7 +53,7 @@ class art::crib::TMUXData : public TDataObject {
     Double_t fP2;
     Double_t fTiming;
 
-    ClassDef(TMUXData, 1)
+    ClassDefOverride(TMUXData, 1)
 };
 
 #endif // _TMUXDATA_H

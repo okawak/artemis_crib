@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2022?
- * @note    last modified: 2024-08-23 21:00:31
+ * @note    last modified: 2024-08-24 10:29:05
  * @details
  */
 
@@ -35,14 +35,14 @@ class art::crib::TTSData : public TDataObject {
     Double_t GetTScal() const { return fTScal; }
     void SetTScal(Double_t arg) { fTScal = arg; }
 
-    virtual void Copy(TObject &dest) const;
-    virtual void Clear(Option_t *opt = "");
+    void Copy(TObject &dest) const override;
+    void Clear(Option_t *opt = "") override;
 
   protected:
     ULong64_t fTS;
     Double_t fTScal;
 
-    ClassDef(TTSData, 1)
+    ClassDefOverride(TTSData, 1)
 };
 
 #endif // _TTSDATA_H_

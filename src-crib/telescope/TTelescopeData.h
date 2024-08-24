@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-17 17:11:50
- * @note    last modified: 2024-08-23 21:03:22
+ * @note    last modified: 2024-08-24 10:30:23
  * @details
  */
 
@@ -104,8 +104,8 @@ class art::crib::TTelescopeData : public TDataObject {
     Double_t Y() const { return fPos.Y(); } // get hit Y position (mm)
     Double_t Z() const { return fPos.Z(); } // get hit Z position (mm)
 
-    virtual void Copy(TObject &dest) const;
-    virtual void Clear(Option_t *opt = "");
+    void Copy(TObject &dest) const override;
+    void Clear(Option_t *opt = "") override;
 
   protected:
     TVector3 fPos; // detected position (X, Y, Z)
@@ -128,7 +128,7 @@ class art::crib::TTelescopeData : public TDataObject {
     DoubleVec_t fEnergyArray; // energy array for each SSD
     DoubleVec_t fTimingArray; // timing array for each SSD
 
-    ClassDef(TTelescopeData, 3)
+    ClassDefOverride(TTelescopeData, 3)
 };
 
 #endif // _TTELESCOPEDATA_H_

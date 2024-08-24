@@ -3,7 +3,7 @@
  * @brief   particle information class
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-05-08 18:07:32
- * @note    last modified: 2024-08-23 21:18:02
+ * @note    last modified: 2024-08-24 10:31:15
  * @details
  */
 
@@ -60,8 +60,8 @@ class art::crib::TParticleInfo : public TDataObject {
     void SetPhiCM(Double_t val) { fPhi_cm = val; }
     Double_t GetPhiCM() const { return fPhi_cm; }
 
-    virtual void Copy(TObject &dest) const;
-    virtual void Clear(Option_t *opt = "");
+    void Copy(TObject &dest) const override;
+    void Clear(Option_t *opt = "") override;
 
   protected:
     Int_t fMassNumber;
@@ -78,7 +78,7 @@ class art::crib::TParticleInfo : public TDataObject {
     Double_t fTheta_cm; // theta angle (deg) in CM system
     Double_t fPhi_cm;   // phi angle (deg) in CM system
 
-    ClassDef(TParticleInfo, 1);
+    ClassDefOverride(TParticleInfo, 1);
 };
 
 #endif // end of #ifndef _TPARTICLEINFO_H_
