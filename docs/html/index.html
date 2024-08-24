@@ -138,8 +138,8 @@ version管理</h1>
 <p>という書き方もできるらしいが、一応まだexperimentalらしい。</p>
 <p>通常は、ClassDefかClassDefOverrideだけ使えば良さそうな感じかな?</p>
 <h2><a class="anchor" id="autotoc_md10"></a>
-Processorの仮想関数について</h2>
-<p>TProcessorを継承して新しいプロセッサを作成するときに、オーバーライドすることができる汎用的に使えそうな(自分が使っている)クラスメソッドの一覧のメモ。</p>
+3. Processorの仮想関数について</h2>
+<p>TProcessorを継承して新しいプロセッサを作成するときに、TProcessorを継承し、 関数をオーバーライドするときに汎用的に使えそうな(自分が使っている)クラスメソッドの一覧のメモ。</p>
 <div class="fragment"><div class="line"><span class="comment">// InitProcメソッドで呼ばれる</span></div>
 <div class="line"><span class="keyword">virtual</span> <span class="keywordtype">void</span> Init (TEventCollection *) {;}</div>
 <div class="line"> </div>
@@ -164,7 +164,17 @@ Processorの仮想関数について</h2>
 <ul>
 <li>PostProcess) -&gt; &lt;sus&gt; -&gt; PostLoop -&gt; &lt;res&gt; -&gt; PreLoop -&gt; (PreProcess -&gt; Process -&gt; PreProcess) -&gt; ...</li>
 </ul>
-<p>といったような順番で呼ばれる。 </p>
+<p>といったような順番で呼ばれる。</p>
+<h2><a class="anchor" id="autotoc_md11"></a>
+4. Data classの仮想関数について</h2>
+<p>新しいData classを作成する(ROOTのブランチに新しいクラスを入れたい)ときには、 TDataObjectを継承し、そのときに汎用的に使えそうな仮想関数は以下の通りです。 (他にも仮想関数はあります。)</p>
+<div class="fragment"><div class="line"><span class="keyword">virtual</span> <span class="keywordtype">void</span> Clear(Option_t *option = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><span class="keyword">virtual</span> <span class="keywordtype">void</span> Copy(TObject&amp; <span class="keywordtype">object</span>) <span class="keyword">const</span>;</div>
+<div class="line"><span class="keyword">virtual</span> <span class="keywordtype">void</span> Print(Option_t* option = <span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
+<div class="line"><span class="keyword">virtual</span> <span class="keywordtype">void</span> SetID(Int_t <span class="keywordtype">id</span>) { fID = id; }</div>
+<div class="line"><span class="keyword">virtual</span> Int_t GetID()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fID; }</div>
+</div><!-- fragment --><p>この中で、特にClearとCopyは、必ず実装しておくべきで、Clearは各processorのなかで、 最初にオブジェクトを初期化するときに使用し、Copyは、 art::crib::TBranchCopyProcessorでTTreeEventStoreからartemisを回すときに、 アウトプットされるROOTファイルにも同じブランチをコピーするときに使えます。</p>
+<p>こちらも同様に、overrideキーワードをつけ、ClassDefOverrideで実装してください。 </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->

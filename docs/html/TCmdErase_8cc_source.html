@@ -89,86 +89,83 @@ $(document).ready(function(){initNavTree('TCmdErase_8cc_source.html',''); initRe
 <div class="contents">
 <a href="TCmdErase_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TCmdErase_8h.html">TCmdErase.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;TArtemisUtil.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;TFile.h&gt;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;TH1.h&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;TH1FTreeProj.h&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;TH2FTreeProj.h&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;TH3FTreeProj.h&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using</span> <a class="code" href="classart_1_1crib_1_1TCmdErase.html">art::crib::TCmdErase</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="TCmdErase_8cc.html#a09682d6b4c794d22c4636c54e0e6e8e4">   20</a></span>&#160;<a class="code" href="TCmdErase_8cc.html#a09682d6b4c794d22c4636c54e0e6e8e4">ClassImp</a>(<a class="code" href="classart_1_1crib_1_1TCmdErase.html">TCmdErase</a>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdErase.html#aeff0d934b68cb39b76c50b10a74b9b1f">   22</a></span>&#160;TCmdErase::TCmdErase() {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    SetName(<span class="stringliteral">&quot;erase&quot;</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    SetTitle(<span class="stringliteral">&quot;Erase the histograms in the current directory&quot;</span>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdErase.html#afc9caee1014a23a6ff7c1af0dadd9f80">   27</a></span>&#160;<a class="code" href="classart_1_1crib_1_1TCmdErase.html#afc9caee1014a23a6ff7c1af0dadd9f80">TCmdErase::~TCmdErase</a>() {}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// TCmdErase* TCmdErase::Instance()</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//{</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//    static TCmdErase instance;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//    return &amp;instance;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// }</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdErase.html#a4b7ff2f4e491de9c08248c8eccf18c95">   35</a></span>&#160;Long_t <a class="code" href="classart_1_1crib_1_1TCmdErase.html#a4b7ff2f4e491de9c08248c8eccf18c95">TCmdErase::Cmd</a>(vector&lt;TString&gt;) {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">/*   if (args.size() == 1) {</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">        // at least one arguments except command itself is required</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">        Help();</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">        return 1;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">        }*/</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">//   TString opt(args.size()&gt;2 ? args[2] : &quot;create&quot;);</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">//   return Run(args[1],opt);</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classart_1_1crib_1_1TCmdErase.html#afe26a3c7a4ed9d5ec0d71051cc0dc14c">Run</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdErase.html#afe26a3c7a4ed9d5ec0d71051cc0dc14c">   46</a></span>&#160;Long_t <a class="code" href="classart_1_1crib_1_1TCmdErase.html#afe26a3c7a4ed9d5ec0d71051cc0dc14c">TCmdErase::Run</a>() {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    TList *objects = gDirectory-&gt;GetList();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    TDirectory *wkdir = gDirectory;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// open file</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">//   art::Util::PrepareDirectoryFor(filename);</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="classart_1_1crib_1_1TCmdErase.html#a51bb507122ab6f0efedadc28254d5ce3">EraseRecursive</a>(objects);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    wkdir-&gt;cd();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdErase.html#a51bb507122ab6f0efedadc28254d5ce3">   57</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classart_1_1crib_1_1TCmdErase.html#a51bb507122ab6f0efedadc28254d5ce3">TCmdErase::EraseRecursive</a>(TList *list) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> (!list)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    Int_t nObj = list-&gt;GetEntries();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">for</span> (Int_t i = 0; i != nObj; i++) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        TObject *obj = list-&gt;At(i);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="comment">//      parent-&gt;cd();</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">if</span> (obj-&gt;InheritsFrom(<span class="stringliteral">&quot;TH1&quot;</span>)) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="comment">/*         if (obj-&gt;InheritsFrom(&quot;art::TH1FTreeProj&quot;)) {</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">                     TH1F(*(art::TH1FTreeProj*)obj).Write();</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">                  } else if (obj-&gt;InheritsFrom(&quot;art::TH2FTreeProj&quot;)) {</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">                     TH2F(*(art::TH2FTreeProj*)obj).Write();</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">                  } else if (obj-&gt;InheritsFrom(&quot;art::TH2FTreeProj&quot;)) {</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">                     TH3F(*(art::TH3FTreeProj*)obj).Write();</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">                } else {*/</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            TH1 *hist = (TH1 *)obj;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            hist-&gt;Reset();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="comment">//}</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (obj-&gt;InheritsFrom(<span class="stringliteral">&quot;TDirectory&quot;</span>)) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            TDirectory *dir = (TDirectory *)obj;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="classart_1_1crib_1_1TCmdErase.html#a51bb507122ab6f0efedadc28254d5ce3">EraseRecursive</a>(dir-&gt;GetList());</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="comment">// obj-&gt;Write();</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">using</span> <a class="code" href="classart_1_1crib_1_1TCmdErase.html">art::crib::TCmdErase</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="TCmdErase_8cc.html#a09682d6b4c794d22c4636c54e0e6e8e4">   17</a></span>&#160;<a class="code" href="TCmdErase_8cc.html#a09682d6b4c794d22c4636c54e0e6e8e4">ClassImp</a>(<a class="code" href="classart_1_1crib_1_1TCmdErase.html">TCmdErase</a>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdErase.html#aeff0d934b68cb39b76c50b10a74b9b1f">   19</a></span>&#160;TCmdErase::TCmdErase() {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    SetName(<span class="stringliteral">&quot;erase&quot;</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    SetTitle(<span class="stringliteral">&quot;Erase the histograms in the current directory&quot;</span>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdErase.html#afc9caee1014a23a6ff7c1af0dadd9f80">   24</a></span>&#160;<a class="code" href="classart_1_1crib_1_1TCmdErase.html#afc9caee1014a23a6ff7c1af0dadd9f80">TCmdErase::~TCmdErase</a>() {}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// TCmdErase* TCmdErase::Instance()</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//{</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//    static TCmdErase instance;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//    return &amp;instance;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdErase.html#a4b7ff2f4e491de9c08248c8eccf18c95">   32</a></span>&#160;Long_t <a class="code" href="classart_1_1crib_1_1TCmdErase.html#a4b7ff2f4e491de9c08248c8eccf18c95">TCmdErase::Cmd</a>(vector&lt;TString&gt;) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">/*   if (args.size() == 1) {</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">        // at least one arguments except command itself is required</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">        Help();</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">        return 1;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">        }*/</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">//   TString opt(args.size()&gt;2 ? args[2] : &quot;create&quot;);</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">//   return Run(args[1],opt);</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classart_1_1crib_1_1TCmdErase.html#afe26a3c7a4ed9d5ec0d71051cc0dc14c">Run</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdErase.html#afe26a3c7a4ed9d5ec0d71051cc0dc14c">   43</a></span>&#160;Long_t <a class="code" href="classart_1_1crib_1_1TCmdErase.html#afe26a3c7a4ed9d5ec0d71051cc0dc14c">TCmdErase::Run</a>() {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    TList *objects = gDirectory-&gt;GetList();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    TDirectory *wkdir = gDirectory;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// open file</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">//   art::Util::PrepareDirectoryFor(filename);</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classart_1_1crib_1_1TCmdErase.html#a51bb507122ab6f0efedadc28254d5ce3">EraseRecursive</a>(objects);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    wkdir-&gt;cd();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdErase.html#a51bb507122ab6f0efedadc28254d5ce3">   54</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classart_1_1crib_1_1TCmdErase.html#a51bb507122ab6f0efedadc28254d5ce3">TCmdErase::EraseRecursive</a>(TList *list) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> (!list)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    Int_t nObj = list-&gt;GetEntries();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">for</span> (Int_t i = 0; i != nObj; i++) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        TObject *obj = list-&gt;At(i);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">//      parent-&gt;cd();</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">if</span> (obj-&gt;InheritsFrom(<span class="stringliteral">&quot;TH1&quot;</span>)) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="comment">/*         if (obj-&gt;InheritsFrom(&quot;art::TH1FTreeProj&quot;)) {</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">                     TH1F(*(art::TH1FTreeProj*)obj).Write();</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">                  } else if (obj-&gt;InheritsFrom(&quot;art::TH2FTreeProj&quot;)) {</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">                     TH2F(*(art::TH2FTreeProj*)obj).Write();</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">                  } else if (obj-&gt;InheritsFrom(&quot;art::TH2FTreeProj&quot;)) {</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">                     TH3F(*(art::TH3FTreeProj*)obj).Write();</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">                } else {*/</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            TH1 *hist = (TH1 *)obj;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            hist-&gt;Reset();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="comment">//}</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (obj-&gt;InheritsFrom(<span class="stringliteral">&quot;TDirectory&quot;</span>)) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            TDirectory *dir = (TDirectory *)obj;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <a class="code" href="classart_1_1crib_1_1TCmdErase.html#a51bb507122ab6f0efedadc28254d5ce3">EraseRecursive</a>(dir-&gt;GetList());</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="comment">// obj-&gt;Write();</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 <div class="ttc" id="aTCmdErase_8cc_html_a09682d6b4c794d22c4636c54e0e6e8e4"><div class="ttname"><a href="TCmdErase_8cc.html#a09682d6b4c794d22c4636c54e0e6e8e4">ClassImp</a></div><div class="ttdeci">ClassImp(TCmdErase)</div></div>
 <div class="ttc" id="aTCmdErase_8h_html"><div class="ttname"><a href="TCmdErase_8h.html">TCmdErase.h</a></div></div>
 <div class="ttc" id="aclassart_1_1crib_1_1TCmdErase_html"><div class="ttname"><a href="classart_1_1crib_1_1TCmdErase.html">art::crib::TCmdErase</a></div><div class="ttdef"><b>Definition:</b> <a href="TCmdErase_8h_source.html#l00022">TCmdErase.h:22</a></div></div>
-<div class="ttc" id="aclassart_1_1crib_1_1TCmdErase_html_a4b7ff2f4e491de9c08248c8eccf18c95"><div class="ttname"><a href="classart_1_1crib_1_1TCmdErase.html#a4b7ff2f4e491de9c08248c8eccf18c95">art::crib::TCmdErase::Cmd</a></div><div class="ttdeci">Long_t Cmd(vector&lt; TString &gt;) override</div><div class="ttdef"><b>Definition:</b> <a href="TCmdErase_8cc_source.html#l00035">TCmdErase.cc:35</a></div></div>
-<div class="ttc" id="aclassart_1_1crib_1_1TCmdErase_html_a51bb507122ab6f0efedadc28254d5ce3"><div class="ttname"><a href="classart_1_1crib_1_1TCmdErase.html#a51bb507122ab6f0efedadc28254d5ce3">art::crib::TCmdErase::EraseRecursive</a></div><div class="ttdeci">void EraseRecursive(TList *list)</div><div class="ttdef"><b>Definition:</b> <a href="TCmdErase_8cc_source.html#l00057">TCmdErase.cc:57</a></div></div>
-<div class="ttc" id="aclassart_1_1crib_1_1TCmdErase_html_afc9caee1014a23a6ff7c1af0dadd9f80"><div class="ttname"><a href="classart_1_1crib_1_1TCmdErase.html#afc9caee1014a23a6ff7c1af0dadd9f80">art::crib::TCmdErase::~TCmdErase</a></div><div class="ttdeci">~TCmdErase()</div><div class="ttdef"><b>Definition:</b> <a href="TCmdErase_8cc_source.html#l00027">TCmdErase.cc:27</a></div></div>
-<div class="ttc" id="aclassart_1_1crib_1_1TCmdErase_html_afe26a3c7a4ed9d5ec0d71051cc0dc14c"><div class="ttname"><a href="classart_1_1crib_1_1TCmdErase.html#afe26a3c7a4ed9d5ec0d71051cc0dc14c">art::crib::TCmdErase::Run</a></div><div class="ttdeci">Long_t Run()</div><div class="ttdef"><b>Definition:</b> <a href="TCmdErase_8cc_source.html#l00046">TCmdErase.cc:46</a></div></div>
+<div class="ttc" id="aclassart_1_1crib_1_1TCmdErase_html_a4b7ff2f4e491de9c08248c8eccf18c95"><div class="ttname"><a href="classart_1_1crib_1_1TCmdErase.html#a4b7ff2f4e491de9c08248c8eccf18c95">art::crib::TCmdErase::Cmd</a></div><div class="ttdeci">Long_t Cmd(vector&lt; TString &gt;) override</div><div class="ttdef"><b>Definition:</b> <a href="TCmdErase_8cc_source.html#l00032">TCmdErase.cc:32</a></div></div>
+<div class="ttc" id="aclassart_1_1crib_1_1TCmdErase_html_a51bb507122ab6f0efedadc28254d5ce3"><div class="ttname"><a href="classart_1_1crib_1_1TCmdErase.html#a51bb507122ab6f0efedadc28254d5ce3">art::crib::TCmdErase::EraseRecursive</a></div><div class="ttdeci">void EraseRecursive(TList *list)</div><div class="ttdef"><b>Definition:</b> <a href="TCmdErase_8cc_source.html#l00054">TCmdErase.cc:54</a></div></div>
+<div class="ttc" id="aclassart_1_1crib_1_1TCmdErase_html_afc9caee1014a23a6ff7c1af0dadd9f80"><div class="ttname"><a href="classart_1_1crib_1_1TCmdErase.html#afc9caee1014a23a6ff7c1af0dadd9f80">art::crib::TCmdErase::~TCmdErase</a></div><div class="ttdeci">~TCmdErase()</div><div class="ttdef"><b>Definition:</b> <a href="TCmdErase_8cc_source.html#l00024">TCmdErase.cc:24</a></div></div>
+<div class="ttc" id="aclassart_1_1crib_1_1TCmdErase_html_afe26a3c7a4ed9d5ec0d71051cc0dc14c"><div class="ttname"><a href="classart_1_1crib_1_1TCmdErase.html#afe26a3c7a4ed9d5ec0d71051cc0dc14c">art::crib::TCmdErase::Run</a></div><div class="ttdeci">Long_t Run()</div><div class="ttdef"><b>Definition:</b> <a href="TCmdErase_8cc_source.html#l00043">TCmdErase.cc:43</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -32,7 +32,8 @@ var NAVTREE =
       [ "豆知識", "index.html#autotoc_md7", [
         [ "1. //!の意味", "index.html#autotoc_md8", null ],
         [ "2. ClassDefについて", "index.html#autotoc_md9", null ],
-        [ "Processorの仮想関数について", "index.html#autotoc_md10", null ]
+        [ "3. Processorの仮想関数について", "index.html#autotoc_md10", null ],
+        [ "4. Data classの仮想関数について", "index.html#autotoc_md11", null ]
       ] ]
     ] ],
     [ "Namespaces", "namespaces.html", [

@@ -82,8 +82,8 @@ ROOTには認識されるが、\+Dictionaryに登録しない場合は、
 
 という書き方もできるらしいが、一応まだexperimentalらしい。
 
-通常は、\+Class\+Defか\+Class\+Def\+Overrideだけ使えば良さそうな感じかな?\hypertarget{index_autotoc_md10}{}\doxysubsection{Processorの仮想関数について}\label{index_autotoc_md10}
-TProcessorを継承して新しいプロセッサを作成するときに、オーバーライドすることができる汎用的に使えそうな(自分が使っている)クラスメソッドの一覧のメモ。
+通常は、\+Class\+Defか\+Class\+Def\+Overrideだけ使えば良さそうな感じかな?\hypertarget{index_autotoc_md10}{}\doxysubsection{3. Processorの仮想関数について}\label{index_autotoc_md10}
+TProcessorを継承して新しいプロセッサを作成するときに、\+TProcessorを継承し、 関数をオーバーライドするときに汎用的に使えそうな(自分が使っている)クラスメソッドの一覧のメモ。
 
 
 \begin{DoxyCode}{0}
@@ -122,4 +122,20 @@ TProcessorを継承して新しいプロセッサを作成するときに、オ�
 \item Post\+Process) -\/$>$ $<$sus$>$ -\/$>$ Post\+Loop -\/$>$ $<$res$>$ -\/$>$ Pre\+Loop -\/$>$ (Pre\+Process -\/$>$ Process -\/$>$ Pre\+Process) -\/$>$ ...
 \end{DoxyItemize}
 
-といったような順番で呼ばれる。 
+といったような順番で呼ばれる。\hypertarget{index_autotoc_md11}{}\doxysubsection{4. Data classの仮想関数について}\label{index_autotoc_md11}
+新しい\+Data classを作成する(ROOTのブランチに新しいクラスを入れたい)ときには、 TData\+Objectを継承し、そのときに汎用的に使えそうな仮想関数は以下の通りです。 (他にも仮想関数はあります。)
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Clear(Option\_t *option = \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Copy(TObject\& \textcolor{keywordtype}{object}) \textcolor{keyword}{const};}
+\DoxyCodeLine{\textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Print(Option\_t* option = \textcolor{stringliteral}{"{}"{}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{\textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetID(Int\_t \textcolor{keywordtype}{id}) \{ fID = id; \}}
+\DoxyCodeLine{\textcolor{keyword}{virtual} Int\_t GetID()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} fID; \}}
+
+\end{DoxyCode}
+
+
+この中で、特に\+Clearと\+Copyは、必ず実装しておくべきで、\+Clearは各processorのなかで、 最初にオブジェクトを初期化するときに使用し、\+Copyは、 art\+::crib\+::\+TBranch\+Copy\+Processorで\+TTree\+Event\+Storeからartemisを回すときに、 アウトプットされる\+ROOTファイルにも同じブランチをコピーするときに使えます。
+
+こちらも同様に、overrideキーワードをつけ、\+Class\+Def\+Overrideで実装してください。 

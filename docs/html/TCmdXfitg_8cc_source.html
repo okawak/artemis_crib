@@ -92,103 +92,95 @@ $(document).ready(function(){initNavTree('TCmdXfitg_8cc_source.html',''); initRe
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;TCatCmdXval.h&gt;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;TCatHistManager.h&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;TCatPadManager.h&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;TCmdComment.h&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;TF1.h&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;TLatex.h&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;TLine.h&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;TPad.h&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;TROOT.h&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;TStyle.h&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;TH1.h&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;TH2.h&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">using</span> <a class="code" href="classart_1_1crib_1_1TCmdXfitg.html">art::crib::TCmdXfitg</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="TCmdXfitg_8cc.html#a341832d155637dfd2b9b44573ba04eba">   29</a></span>&#160;<a class="code" href="TCmdXfitg_8cc.html#a341832d155637dfd2b9b44573ba04eba">ClassImp</a>(<a class="code" href="classart_1_1crib_1_1TCmdXfitg.html">TCmdXfitg</a>);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;TCmdComment.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;TF1.h&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;TH2.h&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;TPad.h&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using</span> <a class="code" href="classart_1_1crib_1_1TCmdXfitg.html">art::crib::TCmdXfitg</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="TCmdXfitg_8cc.html#a341832d155637dfd2b9b44573ba04eba">   21</a></span>&#160;<a class="code" href="TCmdXfitg_8cc.html#a341832d155637dfd2b9b44573ba04eba">ClassImp</a>(<a class="code" href="classart_1_1crib_1_1TCmdXfitg.html">TCmdXfitg</a>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *TCmdXfitg::kFuncNameBase = <span class="stringliteral">&quot;f&quot;</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *TCmdXfitg::kLabelNameBase = <span class="stringliteral">&quot;l&quot;</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdXfitg.html#a34c7f013589080d6be6074a4bc0136a0">   26</a></span>&#160;TCmdXfitg::TCmdXfitg() {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    SetName(<span class="stringliteral">&quot;xfitg&quot;</span>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    SetTitle(<span class="stringliteral">&quot;fit using gausian (using mouse)&quot;</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *TCmdXfitg::kFuncNameBase = <span class="stringliteral">&quot;f&quot;</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *TCmdXfitg::kLabelNameBase = <span class="stringliteral">&quot;l&quot;</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdXfitg.html#a34c7f013589080d6be6074a4bc0136a0">   34</a></span>&#160;TCmdXfitg::TCmdXfitg() {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    SetName(<span class="stringliteral">&quot;xfitg&quot;</span>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    SetTitle(<span class="stringliteral">&quot;fit using gausian (using mouse)&quot;</span>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdXfitg.html#a96519286717e60193a51485d322681ad">   31</a></span>&#160;<a class="code" href="classart_1_1crib_1_1TCmdXfitg.html#a96519286717e60193a51485d322681ad">TCmdXfitg::~TCmdXfitg</a>() {}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdXfitg.html#a46fdbf0fac1d6170ddd50f51c5897e47">   33</a></span>&#160;Long_t <a class="code" href="classart_1_1crib_1_1TCmdXfitg.html#a46fdbf0fac1d6170ddd50f51c5897e47">TCmdXfitg::Cmd</a>(vector&lt;TString&gt;) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span> (gPad == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        Info(<span class="stringliteral">&quot;Cmd&quot;</span>, <span class="stringliteral">&quot;warning: no pad&quot;</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdXfitg.html#a96519286717e60193a51485d322681ad">   39</a></span>&#160;<a class="code" href="classart_1_1crib_1_1TCmdXfitg.html#a96519286717e60193a51485d322681ad">TCmdXfitg::~TCmdXfitg</a>() {}</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdXfitg.html#a46fdbf0fac1d6170ddd50f51c5897e47">   41</a></span>&#160;Long_t <a class="code" href="classart_1_1crib_1_1TCmdXfitg.html#a46fdbf0fac1d6170ddd50f51c5897e47">TCmdXfitg::Cmd</a>(vector&lt;TString&gt;) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">if</span> (gPad == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        Info(<span class="stringliteral">&quot;Cmd&quot;</span>, <span class="stringliteral">&quot;warning: no pad&quot;</span>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// K.Okawa 2022/9/27 add</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    TObject *hist_now = gPad-&gt;GetPrimitive(<span class="stringliteral">&quot;htemp&quot;</span>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (!hist_now) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        hist_now = TCatHistManager::Instance()-&gt;GetCurrent();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span> (!hist_now || !hist_now-&gt;InheritsFrom(<span class="stringliteral">&quot;TH1&quot;</span>)) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            Info(<span class="stringliteral">&quot;Cmd&quot;</span>, <span class="stringliteral">&quot;warning: no hist, please check using ls command&quot;</span>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="comment">// std::cout &lt;&lt; &quot;  warning: no hist, please check using ls command&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> (hist_now-&gt;InheritsFrom(TH2::Class())) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        Info(<span class="stringliteral">&quot;Cmd&quot;</span>, <span class="stringliteral">&quot;warning: The current hist does not inherit from TH1 class (TH2)&quot;</span>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">// std::cout &lt;&lt; &quot;  warning: The current hist does not inherit from TH1 class (TH2)&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    Double_t x1 = 0., y1 = 0., x2 = 0., y2 = 0.;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    Info(<span class="stringliteral">&quot;Cmd&quot;</span>, <span class="stringliteral">&quot;click on the lowest edge: &quot;</span>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    TCatCmdXval::Instance()-&gt;Run(&amp;x1, &amp;y1);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// K.Okawa 2022/9/27 add</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    TObject *hist_now = gPad-&gt;GetPrimitive(<span class="stringliteral">&quot;htemp&quot;</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> (!hist_now) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        hist_now = TCatHistManager::Instance()-&gt;GetCurrent();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">if</span> (!hist_now || !hist_now-&gt;InheritsFrom(<span class="stringliteral">&quot;TH1&quot;</span>)) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            Info(<span class="stringliteral">&quot;Cmd&quot;</span>, <span class="stringliteral">&quot;warning: no hist, please check using ls command&quot;</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="comment">// std::cout &lt;&lt; &quot;  warning: no hist, please check using ls command&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span> (hist_now-&gt;InheritsFrom(TH2::Class())) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        Info(<span class="stringliteral">&quot;Cmd&quot;</span>, <span class="stringliteral">&quot;warning: The current hist does not inherit from TH1 class (TH2)&quot;</span>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">// std::cout &lt;&lt; &quot;  warning: The current hist does not inherit from TH1 class (TH2)&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    Double_t x1 = 0., y1 = 0., x2 = 0., y2 = 0.;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    Info(<span class="stringliteral">&quot;Cmd&quot;</span>, <span class="stringliteral">&quot;click on the lowest edge: &quot;</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    TCatCmdXval::Instance()-&gt;Run(&amp;x1, &amp;y1);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// static TLine *line = nullptr;</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// line = new TLine(x1, gPad-&gt;GetUymin(), x1, gPad-&gt;GetUymax());</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// line-&gt;SetLineColor(kBlack);</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// line-&gt;Draw();</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    Info(<span class="stringliteral">&quot;Cmd&quot;</span>, <span class="stringliteral">&quot;click on the highest edge: &quot;</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    TCatCmdXval::Instance()-&gt;Run(&amp;x2, &amp;y2);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// static TLine *line = nullptr;</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// line = new TLine(x1, gPad-&gt;GetUymin(), x1, gPad-&gt;GetUymax());</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// line-&gt;SetLineColor(kBlack);</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// line-&gt;Draw();</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    Info(<span class="stringliteral">&quot;Cmd&quot;</span>, <span class="stringliteral">&quot;click on the highest edge: &quot;</span>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    TCatCmdXval::Instance()-&gt;Run(&amp;x2, &amp;y2);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    Double_t temp;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> (x1 &gt; x2) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        temp = x1;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        x1 = x2;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        x2 = temp;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    Info(<span class="stringliteral">&quot;Cmd&quot;</span>, <span class="stringliteral">&quot;X1: %g, X2: %g&quot;</span>, x1, x2);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// std::cout &lt;&lt; &quot; X1: &quot; &lt;&lt; x1 &lt;&lt; &quot;, X2: &quot; &lt;&lt; x2 &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    Double_t temp;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span> (x1 &gt; x2) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        temp = x1;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        x1 = x2;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        x2 = temp;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    Info(<span class="stringliteral">&quot;Cmd&quot;</span>, <span class="stringliteral">&quot;X1: %g, X2: %g&quot;</span>, x1, x2);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// std::cout &lt;&lt; &quot; X1: &quot; &lt;&lt; x1 &lt;&lt; &quot;, X2: &quot; &lt;&lt; x2 &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// if(line) delete line;</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    TF1 *func = <span class="keyword">new</span> TF1(hist_now-&gt;GetName(), <span class="stringliteral">&quot;gaus(0)&quot;</span>, x1, x2);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    func-&gt;SetParameters(((y1 + y2) / 2) * (x2 - x1), (x1 + x2) / 2., (x2 - x1) / 4.);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    func-&gt;SetParLimits(2, 0, 1000. * (x2 - x1));</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">dynamic_cast&lt;</span>TH1 *<span class="keyword">&gt;</span>(hist_now)-&gt;Fit(func, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, x1, x2);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    func-&gt;Draw(<span class="stringliteral">&quot;same&quot;</span>);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// if(line) delete line;</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    TF1 *func = <span class="keyword">new</span> TF1(hist_now-&gt;GetName(), <span class="stringliteral">&quot;gaus(0)&quot;</span>, x1, x2);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    func-&gt;SetParameters(((y1 + y2) / 2) * (x2 - x1), (x1 + x2) / 2., (x2 - x1) / 4.);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    func-&gt;SetParLimits(2, 0, 1000. * (x2 - x1));</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">dynamic_cast&lt;</span>TH1 *<span class="keyword">&gt;</span>(hist_now)-&gt;Fit(func, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, x1, x2);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    func-&gt;Draw(<span class="stringliteral">&quot;same&quot;</span>);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    TCmdComment::Instance()-&gt;Run(</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        TString::Format(<span class="stringliteral">&quot;[xfitg] mean=%g: FWHM=%g&quot;</span>, func-&gt;GetParameter(1), 2.35 * func-&gt;GetParameter(2)));</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// K.Okawa end</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdXfitg.html#ab5ad3467b8f348ab816eedb82ef5557f">  100</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classart_1_1crib_1_1TCmdXfitg.html#ab5ad3467b8f348ab816eedb82ef5557f">TCmdXfitg::Help</a>() {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;this fit method use x1 x2 value and also use y1 y2 value to determine the first fitting &quot;</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                 <span class="stringliteral">&quot;parameters.\nso if the fitting does not work, please try to click around the center of y axis&quot;</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;              &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    TCmdComment::Instance()-&gt;Run(</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        TString::Format(<span class="stringliteral">&quot;[xfitg] mean=%g: FWHM=%g&quot;</span>, func-&gt;GetParameter(1), 2.35 * func-&gt;GetParameter(2)));</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// K.Okawa end</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TCmdXfitg.html#ab5ad3467b8f348ab816eedb82ef5557f">   92</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classart_1_1crib_1_1TCmdXfitg.html#ab5ad3467b8f348ab816eedb82ef5557f">TCmdXfitg::Help</a>() {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;this fit method use x1 x2 value and also use y1 y2 value to determine the first fitting &quot;</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                 <span class="stringliteral">&quot;parameters.\nso if the fitting does not work, please try to click around the center of y axis&quot;</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;              &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
 <div class="ttc" id="aTCmdXfitg_8cc_html_a341832d155637dfd2b9b44573ba04eba"><div class="ttname"><a href="TCmdXfitg_8cc.html#a341832d155637dfd2b9b44573ba04eba">ClassImp</a></div><div class="ttdeci">ClassImp(TCmdXfitg)</div></div>
 <div class="ttc" id="aTCmdXfitg_8h_html"><div class="ttname"><a href="TCmdXfitg_8h.html">TCmdXfitg.h</a></div></div>
 <div class="ttc" id="aclassart_1_1crib_1_1TCmdXfitg_html"><div class="ttname"><a href="classart_1_1crib_1_1TCmdXfitg.html">art::crib::TCmdXfitg</a></div><div class="ttdef"><b>Definition:</b> <a href="TCmdXfitg_8h_source.html#l00021">TCmdXfitg.h:21</a></div></div>
-<div class="ttc" id="aclassart_1_1crib_1_1TCmdXfitg_html_a46fdbf0fac1d6170ddd50f51c5897e47"><div class="ttname"><a href="classart_1_1crib_1_1TCmdXfitg.html#a46fdbf0fac1d6170ddd50f51c5897e47">art::crib::TCmdXfitg::Cmd</a></div><div class="ttdeci">Long_t Cmd(vector&lt; TString &gt;) override</div><div class="ttdef"><b>Definition:</b> <a href="TCmdXfitg_8cc_source.html#l00041">TCmdXfitg.cc:41</a></div></div>
-<div class="ttc" id="aclassart_1_1crib_1_1TCmdXfitg_html_a96519286717e60193a51485d322681ad"><div class="ttname"><a href="classart_1_1crib_1_1TCmdXfitg.html#a96519286717e60193a51485d322681ad">art::crib::TCmdXfitg::~TCmdXfitg</a></div><div class="ttdeci">~TCmdXfitg()</div><div class="ttdef"><b>Definition:</b> <a href="TCmdXfitg_8cc_source.html#l00039">TCmdXfitg.cc:39</a></div></div>
-<div class="ttc" id="aclassart_1_1crib_1_1TCmdXfitg_html_ab5ad3467b8f348ab816eedb82ef5557f"><div class="ttname"><a href="classart_1_1crib_1_1TCmdXfitg.html#ab5ad3467b8f348ab816eedb82ef5557f">art::crib::TCmdXfitg::Help</a></div><div class="ttdeci">void Help() override</div><div class="ttdef"><b>Definition:</b> <a href="TCmdXfitg_8cc_source.html#l00100">TCmdXfitg.cc:100</a></div></div>
+<div class="ttc" id="aclassart_1_1crib_1_1TCmdXfitg_html_a46fdbf0fac1d6170ddd50f51c5897e47"><div class="ttname"><a href="classart_1_1crib_1_1TCmdXfitg.html#a46fdbf0fac1d6170ddd50f51c5897e47">art::crib::TCmdXfitg::Cmd</a></div><div class="ttdeci">Long_t Cmd(vector&lt; TString &gt;) override</div><div class="ttdef"><b>Definition:</b> <a href="TCmdXfitg_8cc_source.html#l00033">TCmdXfitg.cc:33</a></div></div>
+<div class="ttc" id="aclassart_1_1crib_1_1TCmdXfitg_html_a96519286717e60193a51485d322681ad"><div class="ttname"><a href="classart_1_1crib_1_1TCmdXfitg.html#a96519286717e60193a51485d322681ad">art::crib::TCmdXfitg::~TCmdXfitg</a></div><div class="ttdeci">~TCmdXfitg()</div><div class="ttdef"><b>Definition:</b> <a href="TCmdXfitg_8cc_source.html#l00031">TCmdXfitg.cc:31</a></div></div>
+<div class="ttc" id="aclassart_1_1crib_1_1TCmdXfitg_html_ab5ad3467b8f348ab816eedb82ef5557f"><div class="ttname"><a href="classart_1_1crib_1_1TCmdXfitg.html#ab5ad3467b8f348ab816eedb82ef5557f">art::crib::TCmdXfitg::Help</a></div><div class="ttdeci">void Help() override</div><div class="ttdef"><b>Definition:</b> <a href="TCmdXfitg_8cc_source.html#l00092">TCmdXfitg.cc:92</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

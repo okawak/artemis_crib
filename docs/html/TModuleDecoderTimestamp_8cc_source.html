@@ -87,72 +87,70 @@ $(document).ready(function(){initNavTree('TModuleDecoderTimestamp_8cc_source.htm
 <div class="title">TModuleDecoderTimestamp.cc</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="TModuleDecoderTimestamp_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// K.Okawa modified &lt;okawa@cns.s.u-tokyo.ac.jp&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TModuleDecoderTimestamp_8h.html">TModuleDecoderTimestamp.h</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;TObjArray.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;TRawDataSimple.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using</span> <a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html">art::crib::TModuleDecoderTimestamp</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="TModuleDecoderTimestamp_8cc.html#ae51ae67b16abf3cc215a1747331b7bf4">   10</a></span>&#160;<span class="keyword">typedef</span> art::TRawDataSimple&lt;ULong64_t&gt; <a class="code" href="TModuleDecoderTimestamp_8cc.html#ae51ae67b16abf3cc215a1747331b7bf4">TimestampRaw_t</a>;</div>
+<a href="TModuleDecoderTimestamp_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TModuleDecoderTimestamp_8h.html">TModuleDecoderTimestamp.h</a>&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="TModuleDecoderTimestamp_8cc.html#a814ea9a0a6cf808141b45029fac40ad6">   12</a></span>&#160;<a class="code" href="TModuleDecoderTimestamp_8cc.html#a814ea9a0a6cf808141b45029fac40ad6">ClassImp</a>(<a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html">TModuleDecoderTimestamp</a>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;TRawDataSimple.h&gt;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#acdff3e094dec69f4f5e3157553fc2bfb">   14</a></span>&#160;TModuleDecoderTimestamp::TModuleDecoderTimestamp()</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    : TModuleDecoder(kID, <a class="code" href="TModuleDecoderTimestamp_8cc.html#ae51ae67b16abf3cc215a1747331b7bf4">TimestampRaw_t</a>::Class()) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a784bda8744a350701ec24363098ef8cc">fHitData</a> = <span class="keyword">new</span> TObjArray;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a9e10abf16dffe56a60681197f7a32bb4">   19</a></span>&#160;<a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a9e10abf16dffe56a60681197f7a32bb4">TModuleDecoderTimestamp::~TModuleDecoderTimestamp</a>() {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">delete</span> <a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a784bda8744a350701ec24363098ef8cc">fHitData</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a784bda8744a350701ec24363098ef8cc">fHitData</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#afb0dc5ae10a1a8e686b294ece02505c4">   24</a></span>&#160;Int_t <a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#afb0dc5ae10a1a8e686b294ece02505c4">TModuleDecoderTimestamp::Decode</a>(<span class="keywordtype">char</span> *buf, <span class="keyword">const</span> Int_t &amp;size, TObjArray *seg) {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    UShort_t *evtdata = <span class="keyword">reinterpret_cast&lt;</span>UShort_t *<span class="keyword">&gt;</span>(buf);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    UInt_t evtsize = size / <span class="keyword">sizeof</span>(UShort_t);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    Int_t igeo, ich;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    ULong64_t ts;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="TModuleDecoderTimestamp_8cc.html#ae51ae67b16abf3cc215a1747331b7bf4">TimestampRaw_t</a> *data;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// clear old hits</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a784bda8744a350701ec24363098ef8cc">fHitData</a>-&gt;Clear();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">for</span> (UInt_t i = 0; i &lt; evtsize; i++) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        igeo = 0;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        ich = 0;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        ts = (ULong64_t)evtdata[3] &lt;&lt; 48;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        ts += (ULong64_t)evtdata[2] &lt;&lt; 32;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        ts += (ULong64_t)evtdata[1] &lt;&lt; 16;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        ts += (ULong64_t)evtdata[0];</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="comment">// check if the data object exists.</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a784bda8744a350701ec24363098ef8cc">fHitData</a>-&gt;GetEntriesFast() &lt;= ich || !<a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a784bda8744a350701ec24363098ef8cc">fHitData</a>-&gt;At(ich)) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="comment">// if no data object is available, create one</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="TModuleDecoderTimestamp_8cc.html#ae51ae67b16abf3cc215a1747331b7bf4">TimestampRaw_t</a> *obj = <span class="keyword">static_cast&lt;</span><a class="code" href="TModuleDecoderTimestamp_8cc.html#ae51ae67b16abf3cc215a1747331b7bf4">TimestampRaw_t</a> *<span class="keyword">&gt;</span>(this-&gt;New());</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            obj-&gt;SetSegInfo(seg-&gt;GetUniqueID(), igeo, ich);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a784bda8744a350701ec24363098ef8cc">fHitData</a>-&gt;AddAtAndExpand(obj, ich);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            seg-&gt;Add(obj);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        data = <span class="keyword">static_cast&lt;</span><a class="code" href="TModuleDecoderTimestamp_8cc.html#ae51ae67b16abf3cc215a1747331b7bf4">TimestampRaw_t</a> *<span class="keyword">&gt;</span>(<a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a784bda8744a350701ec24363098ef8cc">fHitData</a>-&gt;At(ich));</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        data-&gt;Set(ts);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a784bda8744a350701ec24363098ef8cc">fHitData</a>-&gt;AddAt(<span class="keyword">nullptr</span>, ich);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">using</span> <a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html">art::crib::TModuleDecoderTimestamp</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="TModuleDecoderTimestamp_8cc.html#ae51ae67b16abf3cc215a1747331b7bf4">   16</a></span>&#160;<span class="keyword">typedef</span> art::TRawDataSimple&lt;ULong64_t&gt; <a class="code" href="TModuleDecoderTimestamp_8cc.html#ae51ae67b16abf3cc215a1747331b7bf4">TimestampRaw_t</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="TModuleDecoderTimestamp_8cc.html#a814ea9a0a6cf808141b45029fac40ad6">   18</a></span>&#160;<a class="code" href="TModuleDecoderTimestamp_8cc.html#a814ea9a0a6cf808141b45029fac40ad6">ClassImp</a>(<a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html">TModuleDecoderTimestamp</a>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#acdff3e094dec69f4f5e3157553fc2bfb">   20</a></span>&#160;TModuleDecoderTimestamp::TModuleDecoderTimestamp()</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    : TModuleDecoder(kID, <a class="code" href="TModuleDecoderTimestamp_8cc.html#ae51ae67b16abf3cc215a1747331b7bf4">TimestampRaw_t</a>::Class()) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a784bda8744a350701ec24363098ef8cc">fHitData</a> = <span class="keyword">new</span> TObjArray;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a9e10abf16dffe56a60681197f7a32bb4">   25</a></span>&#160;<a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a9e10abf16dffe56a60681197f7a32bb4">TModuleDecoderTimestamp::~TModuleDecoderTimestamp</a>() {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">delete</span> <a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a784bda8744a350701ec24363098ef8cc">fHitData</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a784bda8744a350701ec24363098ef8cc">fHitData</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#afb0dc5ae10a1a8e686b294ece02505c4">   30</a></span>&#160;Int_t <a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#afb0dc5ae10a1a8e686b294ece02505c4">TModuleDecoderTimestamp::Decode</a>(<span class="keywordtype">char</span> *buf, <span class="keyword">const</span> Int_t &amp;size, TObjArray *seg) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    UShort_t *evtdata = <span class="keyword">reinterpret_cast&lt;</span>UShort_t *<span class="keyword">&gt;</span>(buf);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    UInt_t evtsize = size / <span class="keyword">sizeof</span>(UShort_t);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    Int_t igeo, ich;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    ULong64_t ts;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="TModuleDecoderTimestamp_8cc.html#ae51ae67b16abf3cc215a1747331b7bf4">TimestampRaw_t</a> *data;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// clear old hits</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a784bda8744a350701ec24363098ef8cc">fHitData</a>-&gt;Clear();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">for</span> (UInt_t i = 0; i &lt; evtsize; i++) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        igeo = 0;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        ich = 0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        ts = (ULong64_t)evtdata[3] &lt;&lt; 48;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        ts += (ULong64_t)evtdata[2] &lt;&lt; 32;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        ts += (ULong64_t)evtdata[1] &lt;&lt; 16;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        ts += (ULong64_t)evtdata[0];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">// check if the data object exists.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a784bda8744a350701ec24363098ef8cc">fHitData</a>-&gt;GetEntriesFast() &lt;= ich || !<a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a784bda8744a350701ec24363098ef8cc">fHitData</a>-&gt;At(ich)) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="comment">// if no data object is available, create one</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="TModuleDecoderTimestamp_8cc.html#ae51ae67b16abf3cc215a1747331b7bf4">TimestampRaw_t</a> *obj = <span class="keyword">static_cast&lt;</span><a class="code" href="TModuleDecoderTimestamp_8cc.html#ae51ae67b16abf3cc215a1747331b7bf4">TimestampRaw_t</a> *<span class="keyword">&gt;</span>(this-&gt;New());</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            obj-&gt;SetSegInfo(seg-&gt;GetUniqueID(), igeo, ich);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a784bda8744a350701ec24363098ef8cc">fHitData</a>-&gt;AddAtAndExpand(obj, ich);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            seg-&gt;Add(obj);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        data = <span class="keyword">static_cast&lt;</span><a class="code" href="TModuleDecoderTimestamp_8cc.html#ae51ae67b16abf3cc215a1747331b7bf4">TimestampRaw_t</a> *<span class="keyword">&gt;</span>(<a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a784bda8744a350701ec24363098ef8cc">fHitData</a>-&gt;At(ich));</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        data-&gt;Set(ts);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a784bda8744a350701ec24363098ef8cc">fHitData</a>-&gt;AddAt(<span class="keyword">nullptr</span>, ich);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 <div class="ttc" id="aTModuleDecoderTimestamp_8cc_html_a814ea9a0a6cf808141b45029fac40ad6"><div class="ttname"><a href="TModuleDecoderTimestamp_8cc.html#a814ea9a0a6cf808141b45029fac40ad6">ClassImp</a></div><div class="ttdeci">ClassImp(TModuleDecoderTimestamp)</div></div>
-<div class="ttc" id="aTModuleDecoderTimestamp_8cc_html_ae51ae67b16abf3cc215a1747331b7bf4"><div class="ttname"><a href="TModuleDecoderTimestamp_8cc.html#ae51ae67b16abf3cc215a1747331b7bf4">TimestampRaw_t</a></div><div class="ttdeci">art::TRawDataSimple&lt; ULong64_t &gt; TimestampRaw_t</div><div class="ttdef"><b>Definition:</b> <a href="TModuleDecoderTimestamp_8cc_source.html#l00010">TModuleDecoderTimestamp.cc:10</a></div></div>
+<div class="ttc" id="aTModuleDecoderTimestamp_8cc_html_ae51ae67b16abf3cc215a1747331b7bf4"><div class="ttname"><a href="TModuleDecoderTimestamp_8cc.html#ae51ae67b16abf3cc215a1747331b7bf4">TimestampRaw_t</a></div><div class="ttdeci">art::TRawDataSimple&lt; ULong64_t &gt; TimestampRaw_t</div><div class="ttdef"><b>Definition:</b> <a href="TModuleDecoderTimestamp_8cc_source.html#l00016">TModuleDecoderTimestamp.cc:16</a></div></div>
 <div class="ttc" id="aTModuleDecoderTimestamp_8h_html"><div class="ttname"><a href="TModuleDecoderTimestamp_8h.html">TModuleDecoderTimestamp.h</a></div></div>
 <div class="ttc" id="aclassart_1_1crib_1_1TModuleDecoderTimestamp_html"><div class="ttname"><a href="classart_1_1crib_1_1TModuleDecoderTimestamp.html">art::crib::TModuleDecoderTimestamp</a></div><div class="ttdef"><b>Definition:</b> <a href="TModuleDecoderTimestamp_8h_source.html#l00019">TModuleDecoderTimestamp.h:19</a></div></div>
 <div class="ttc" id="aclassart_1_1crib_1_1TModuleDecoderTimestamp_html_a784bda8744a350701ec24363098ef8cc"><div class="ttname"><a href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a784bda8744a350701ec24363098ef8cc">art::crib::TModuleDecoderTimestamp::fHitData</a></div><div class="ttdeci">TObjArray * fHitData</div><div class="ttdef"><b>Definition:</b> <a href="TModuleDecoderTimestamp_8h_source.html#l00027">TModuleDecoderTimestamp.h:27</a></div></div>
-<div class="ttc" id="aclassart_1_1crib_1_1TModuleDecoderTimestamp_html_a9e10abf16dffe56a60681197f7a32bb4"><div class="ttname"><a href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a9e10abf16dffe56a60681197f7a32bb4">art::crib::TModuleDecoderTimestamp::~TModuleDecoderTimestamp</a></div><div class="ttdeci">virtual ~TModuleDecoderTimestamp()</div><div class="ttdef"><b>Definition:</b> <a href="TModuleDecoderTimestamp_8cc_source.html#l00019">TModuleDecoderTimestamp.cc:19</a></div></div>
-<div class="ttc" id="aclassart_1_1crib_1_1TModuleDecoderTimestamp_html_afb0dc5ae10a1a8e686b294ece02505c4"><div class="ttname"><a href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#afb0dc5ae10a1a8e686b294ece02505c4">art::crib::TModuleDecoderTimestamp::Decode</a></div><div class="ttdeci">Int_t Decode(char *buffer, const Int_t &amp;size, TObjArray *seg) override</div><div class="ttdef"><b>Definition:</b> <a href="TModuleDecoderTimestamp_8cc_source.html#l00024">TModuleDecoderTimestamp.cc:24</a></div></div>
+<div class="ttc" id="aclassart_1_1crib_1_1TModuleDecoderTimestamp_html_a9e10abf16dffe56a60681197f7a32bb4"><div class="ttname"><a href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#a9e10abf16dffe56a60681197f7a32bb4">art::crib::TModuleDecoderTimestamp::~TModuleDecoderTimestamp</a></div><div class="ttdeci">virtual ~TModuleDecoderTimestamp()</div><div class="ttdef"><b>Definition:</b> <a href="TModuleDecoderTimestamp_8cc_source.html#l00025">TModuleDecoderTimestamp.cc:25</a></div></div>
+<div class="ttc" id="aclassart_1_1crib_1_1TModuleDecoderTimestamp_html_afb0dc5ae10a1a8e686b294ece02505c4"><div class="ttname"><a href="classart_1_1crib_1_1TModuleDecoderTimestamp.html#afb0dc5ae10a1a8e686b294ece02505c4">art::crib::TModuleDecoderTimestamp::Decode</a></div><div class="ttdeci">Int_t Decode(char *buffer, const Int_t &amp;size, TObjArray *seg) override</div><div class="ttdef"><b>Definition:</b> <a href="TModuleDecoderTimestamp_8cc_source.html#l00030">TModuleDecoderTimestamp.cc:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
