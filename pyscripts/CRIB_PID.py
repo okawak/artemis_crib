@@ -6,6 +6,11 @@ import matplotlib.pyplot as plt
 from ruamel.yaml import YAML
 import numpy as np
 
+# Global constant
+ARTHOME = os.getenv("ARTEMIS_WORKDIR")
+if not ARTHOME:
+    raise EnvironmentError("command [artlogin user] needed")
+
 plt.rcParams["font.family"] = "Liberation Sans"
 plt.rcParams["font.size"] = 16
 # plt.rcParams["axes.labelweight"] = "bold"
@@ -28,7 +33,7 @@ class CRIBPID:
     LENGTHF0F2 = 7.8  # m, length between F0 and F2
     LENGTHF0F3 = 12.97  # m, length between F0 and F3
     SEC2MSEC = 1.0e9  # s -> ms
-    MM2M = 1.0e-3  # mm -> m
+    MM2M = 1.0e-3  # mm -> m, also used for um -> mm
 
     def __init__(self, config_path=None):
         if config_path is None:
@@ -180,7 +185,7 @@ class CRIBPID:
         self.f2_datas = f2_datas
         self.f3_datas = f3_datas
 
-    def show_f2_pid(self, figure_path="out/f2_pid.png"):
+    def show_f2_pid(self, figure_path=f"{ARTHOME}/pyscripts/out/f2_pid.png"):
         if self.f2_datas == None:
             raise ValueError("need calculation first")
 
@@ -223,7 +228,7 @@ class CRIBPID:
         print(f"saved {figure_path}")
         plt.clf()
 
-    def show_f3_pid(self, figure_path="out/f3_pid.png"):
+    def show_f3_pid(self, figure_path=f"{ARTHOME}/pyscripts/out/f3_pid.png"):
         if self.f3_datas == None:
             raise ValueError("need calculation first")
 
@@ -326,12 +331,12 @@ class CRIBPID:
             "[condition]\n"
             f"  Brho = {self.brho:.5f} Tm\n"
             f"  RF period = {self.rf_period:.1f} ns\n"
-            f"  F1: Degrader material {self.degrader_material}\n"
-            f"      Degrader thickness {self.degrader_thickness / self.MM2M} um\n"
-            f"  F2: PPAC thickness {self.ppac_thickness / self.MM2M:.1f} um\n"
-            f"      SSD thickness {self.ssd_thickness / self.MM2M:.1f} um\n"
-            f"  F3: PPACa/MWDCa thickness {self.a_thickness / self.MM2M:.1f} um\n"
-            f"      Distance between a and b {self.ab_distance:.1f} mm\n"
+            f"  F1: Degrader material: {self.degrader_material}\n"
+            f"      Degrader thickness = {self.degrader_thickness / self.MM2M} um\n"
+            f"  F2: PPAC thickness = {self.ppac_thickness / self.MM2M:.1f} um (equiv. mylar)\n"
+            f"      SSD thickness = {self.ssd_thickness / self.MM2M:.1f} um\n"
+            f"  F3: PPACa/MWDCa thickness = {self.a_thickness / self.MM2M:.1f} um (equiv. mylar)\n"
+            f"      Distance between a and b = {self.ab_distance:.1f} mm\n"
         )
 
     def check_vars(self) -> None:
