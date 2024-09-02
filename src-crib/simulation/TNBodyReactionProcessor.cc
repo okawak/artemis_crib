@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:36:36
- * @note    last modified: 2024-08-23 21:15:32
+ * @note    last modified: 2024-09-02 18:01:37
  * @details for (angle) constant cross section
  */
 
@@ -347,14 +347,14 @@ void TNBodyReactionProcessor::InitGeneratingFunc() {
     Info("Init", "please wait for a moment...");
 
     // suppress error message when calculating the integral value
-    freopen("/dev/null", "w", stderr);
+    (void)freopen("/dev/null", "w", stderr);
     index = 0;
     for (auto x = xmin; x < xmax; x += 1.0) {
         gr_generating_func->SetPoint(index, x, f->Integral(xmin, x));
         gr_generating_func_inv->SetPoint(index, f->Integral(xmin, x), x);
         index++;
     }
-    freopen("/dev/tty", "w", stderr);
+    (void)freopen("/dev/tty", "w", stderr);
 
     Info("Init", "total cross section (arbitrary unit or mb)");
     Info("Init", "\t%lf", gr_generating_func->Eval(get_range(fBeamEnergy), nullptr, "S"));
