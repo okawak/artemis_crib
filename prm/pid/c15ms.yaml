@@ -1,5 +1,5 @@
 input_ions:
-  # [Z, A, Q, color], color: 0: red, 1: blue, 2: brack
+  # [Z, A, Q, color], color: 0: red, 1: blue, 2: black
   - [7, 15, 6, 0] # 15N7
   - [6, 15, 6, 1] # 15C6
   - [6, 15, 5, 1] # 15C6

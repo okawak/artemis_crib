@@ -246,5 +246,5 @@ if __name__ == "__main__":
 
     map_dict = add_tref_info(map_dict)
 
-    # show the result in stdout and save file at arts.output
+    # show the result in stdout and save file at args.output
     show_all_mapinfo(map_dict, args.output)

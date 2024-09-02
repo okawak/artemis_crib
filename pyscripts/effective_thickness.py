@@ -34,7 +34,7 @@ class EffectiveThickness:
 
     """
 
-    TORR2PA = 133.322
+    TORR2PA = 133.322  # Torr -> Pa
     AVOGADRO = 6.0221367e23  # Avogadro's number (/mol)
     BOLTZMANN = 1.380658e-23  # Boltzmann constant (J/K)
     ESTEP = 0.01  # MeV
