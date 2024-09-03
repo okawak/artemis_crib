@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:36:36
- * @note    last modified: 2024-09-03 13:27:01
+ * @note    last modified: 2024-09-03 14:07:05
  * @details for (angle) constant cross section
  */
 
@@ -359,7 +359,8 @@ void TNBodyReactionProcessor::InitGeneratingFunc() {
     // suppress error message when calculating the integral value
     __attribute__((unused)) auto *_dev_null = std::freopen("/dev/null", "w", stderr);
     index = 0;
-    for (auto x = xmin; x < xmax; x += 1.0) {
+    Double_t x_step = (xmax - xmin) / 100.0; // 100 steps
+    for (auto x = xmin; x < xmax; x += x_step) {
         gr_generating_func->SetPoint(index, x, f->Integral(xmin, x));
         gr_generating_func_inv->SetPoint(index, f->Integral(xmin, x), x);
         index++;
