@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:36:36
- * @note    last modified: 2024-09-02 18:11:45
+ * @note    last modified: 2024-09-03 13:27:01
  * @details for (angle) constant cross section
  */
 
@@ -143,8 +143,14 @@ void TNBodyReactionProcessor::Process() {
 
     // calculate reaction position
     // target should be set at z=0 (entrance of gas target)
-    Double_t range = srim->Range(fBeamNucleus[0], fBeamNucleus[1], beam_energy,
-                                 std::string(fTargetName.Data()), fTargetPressure, 300.0);
+    Double_t range;
+    if (fTargetIsGas) {
+        range = srim->Range(fBeamNucleus[0], fBeamNucleus[1], beam_energy,
+                            std::string(fTargetName.Data()), fTargetPressure, 300.0);
+    } else {
+        range = srim->Range(fBeamNucleus[0], fBeamNucleus[1], beam_energy,
+                            std::string(fTargetName.Data()));
+    }
 
     // determine using random number
     Double_t reac_distance = GetRandomReactionDistance(range);
@@ -267,7 +273,11 @@ void TNBodyReactionProcessor::InitGeneratingFunc() {
 
     // simplize range
     auto get_range = [&](Double_t e) {
-        return srim->Range(fBeamNucleus[0], fBeamNucleus[1], e, std::string(fTargetName.Data()), fTargetPressure, 300.0);
+        if (fTargetIsGas) {
+            return srim->Range(fBeamNucleus[0], fBeamNucleus[1], e, std::string(fTargetName.Data()), fTargetPressure, 300.0);
+        } else {
+            return srim->Range(fBeamNucleus[0], fBeamNucleus[1], e, std::string(fTargetName.Data()));
+        }
     };
 
     // get dE/dx (x : range)

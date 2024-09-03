@@ -31,7 +31,7 @@ Processor:
 ## =====================================
 ## using random number
 #  - name: random_eventstore
-#    type: art::crib::TRandomNumberEventStore
+#    type: art::TRandomNumberEventStore
 #    parameter:
 #      OutputTransparency: 1
 #      MaxLoop: *loopnum
