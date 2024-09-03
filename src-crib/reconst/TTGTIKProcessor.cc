@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:35:07
- * @note    last modified: 2024-09-03 15:04:41
+ * @note    last modified: 2024-09-03 16:50:59
  * @details bisection method (not Newton method)
  */
 
@@ -455,6 +455,11 @@ Double_t TTGTIKProcessor::GetEcm_classic_kinematics(Double_t energy, Double_t th
     Double_t qvalue = (M1 + M2) - (M3 + M4);
 
     Double_t v4 = TMath::Sqrt(2.0 * energy / M4);
+    // elastic scattering
+    if (TMath::Abs(alpha - beta) < 1.0e-5) {
+        Double_t vcm_elastic = -(qvalue - beta * v4 * v4) / (2.0 * beta * v4 * TMath::Cos(theta));
+        return alpha * vcm_elastic * vcm_elastic;
+    }
     Double_t b = (beta * v4 * TMath::Cos(theta)) / (alpha - beta);
     Double_t c = (qvalue - beta * v4 * v4) / (alpha - beta);
     Double_t D = b * b - c;

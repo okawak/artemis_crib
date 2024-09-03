@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "artemis-crib"
-version = "2024.9.0"
+version = "2024.9.1"
 description = "artemis work directory for crib experiment"
 package-mode = false
 readme = "README.md"
