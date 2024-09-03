@@ -36,7 +36,6 @@ var hierarchy =
     ] ],
     [ "TProcessor", null, [
       [ "art::crib::TBranchCopyProcessor", "classart_1_1crib_1_1TBranchCopyProcessor.html", null ],
-      [ "art::crib::TCRIBPIDProcessor", "classart_1_1crib_1_1TCRIBPIDProcessor.html", null ],
       [ "art::crib::TDetectParticleProcessor", "classart_1_1crib_1_1TDetectParticleProcessor.html", null ],
       [ "art::crib::TEvtNumProcessor", "classart_1_1crib_1_1TEvtNumProcessor.html", null ],
       [ "art::crib::TF1PPACProcessor", "classart_1_1crib_1_1TF1PPACProcessor.html", null ],

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>artemis_crib: src-crib/simulation/TCRIBPIDProcessor.cc File Reference</title>
+<title>artemis_crib: macro/f3.C Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('TCRIBPIDProcessor_8cc.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('f3_8C_source.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -83,66 +83,22 @@ $(document).ready(function(){initNavTree('TCRIBPIDProcessor_8cc.html',''); initR
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">TCRIBPIDProcessor.cc File Reference</div>  </div>
+<div class="title">f3.C</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Beam PID at F2 and F3 of CRIB.  
-<a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="TCRIBPIDProcessor_8h_source.html">TCRIBPIDProcessor.h</a>&quot;</code><br />
-<code>#include &lt;Mass.h&gt;</code><br />
-<code>#include &lt;TCanvas.h&gt;</code><br />
-<code>#include &lt;TGraph.h&gt;</code><br />
-<code>#include &lt;TH1.h&gt;</code><br />
-<code>#include &lt;TMultiGraph.h&gt;</code><br />
-<code>#include &lt;TROOT.h&gt;</code><br />
-<code>#include &lt;TStyle.h&gt;</code><br />
-<code>#include &lt;TSystem.h&gt;</code><br />
-<code>#include &lt;TText.h&gt;</code><br />
-<code>#include &lt;yaml-cpp/yaml.h&gt;</code><br />
-</div>
-<p><a href="TCRIBPIDProcessor_8cc_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:afab156da683de85567b06a7772c9e5fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TCRIBPIDProcessor_8cc.html#afab156da683de85567b06a7772c9e5fd">ClassImp</a> (<a class="el" href="classart_1_1crib_1_1TCRIBPIDProcessor.html">TCRIBPIDProcessor</a>)</td></tr>
-<tr class="separator:afab156da683de85567b06a7772c9e5fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Beam PID at F2 and F3 of CRIB. </p>
-<dl class="section author"><dt>Author</dt><dd>Kodai Okawa <a href="#" onclick="location.href='mai'+'lto:'+'oka'+'wa'+'@cn'+'s.'+'s.u'+'-t'+'oky'+'o.'+'ac.'+'jp'; return false;">okawa<span style="display: none;">.nosp@m.</span>@cns<span style="display: none;">.nosp@m.</span>.s.u-<span style="display: none;">.nosp@m.</span>toky<span style="display: none;">.nosp@m.</span>o.ac.<span style="display: none;">.nosp@m.</span>jp</a> </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2023-12-19 15:30:55 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>last modified: 2024-08-23 21:07:34 </dd></dl>
-
-<p class="definition">Definition in file <a class="el" href="TCRIBPIDProcessor_8cc_source.html">TCRIBPIDProcessor.cc</a>.</p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a id="afab156da683de85567b06a7772c9e5fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afab156da683de85567b06a7772c9e5fd">&#9670;&nbsp;</a></span>ClassImp()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ClassImp </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classart_1_1crib_1_1TCRIBPIDProcessor.html">TCRIBPIDProcessor</a>&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-</div><!-- contents -->
+<a href="f3_8C.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="f3_8C.html#aca27c2bca5a66a7bc57d2d7e52975086">    1</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="f3_8C.html#aca27c2bca5a66a7bc57d2d7e52975086">f3</a>() {</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    gROOT-&gt;ProcessLine(<span class="stringliteral">&quot;add steering/chkf3.yaml&quot;</span>);</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    gROOT-&gt;ProcessLine(<span class="stringliteral">&quot;cd 0&quot;</span>);</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    gROOT-&gt;ProcessLine(<span class="stringliteral">&quot;zone&quot;</span>);</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;}</div>
+<div class="ttc" id="af3_8C_html_aca27c2bca5a66a7bc57d2d7e52975086"><div class="ttname"><a href="f3_8C.html#aca27c2bca5a66a7bc57d2d7e52975086">f3</a></div><div class="ttdeci">void f3()</div><div class="ttdef"><b>Definition:</b> <a href="f3_8C_source.html#l00001">f3.C:1</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d2f88cc52649264ea86e66ce2a7e0867.html">src-crib</a></li><li class="navelem"><a class="el" href="dir_fd84dc320685ad921a7bdf299040e809.html">simulation</a></li><li class="navelem"><a class="el" href="TCRIBPIDProcessor_8cc.html">TCRIBPIDProcessor.cc</a></li>
+    <li class="navelem"><a class="el" href="dir_3b579af105d68949fc87077585f616df.html">macro</a></li><li class="navelem"><a class="el" href="f3_8C.html">f3.C</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

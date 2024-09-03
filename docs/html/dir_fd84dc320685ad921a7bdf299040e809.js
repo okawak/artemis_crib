@@ -1,9 +1,5 @@
 var dir_fd84dc320685ad921a7bdf299040e809 =
 [
-    [ "TCRIBPIDProcessor.cc", "TCRIBPIDProcessor_8cc.html", "TCRIBPIDProcessor_8cc" ],
-    [ "TCRIBPIDProcessor.h", "TCRIBPIDProcessor_8h.html", [
-      [ "TCRIBPIDProcessor", "classart_1_1crib_1_1TCRIBPIDProcessor.html", "classart_1_1crib_1_1TCRIBPIDProcessor" ]
-    ] ],
     [ "TDetectParticleProcessor.cc", "TDetectParticleProcessor_8cc.html", "TDetectParticleProcessor_8cc" ],
     [ "TDetectParticleProcessor.h", "TDetectParticleProcessor_8h.html", [
       [ "TDetectParticleProcessor", "classart_1_1crib_1_1TDetectParticleProcessor.html", "classart_1_1crib_1_1TDetectParticleProcessor" ]

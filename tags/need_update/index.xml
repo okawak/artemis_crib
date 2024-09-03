@@ -9,13 +9,6 @@
     <lastBuildDate>Mon, 22 Jan 2024 11:23:56 +0900</lastBuildDate>
     <atom:link href="https://okawak.github.io/artemis_crib/tags/need_update/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Beam PID</title>
-      <link>https://okawak.github.io/artemis_crib/example/online_analysis/pid/index.html</link>
-      <pubDate>Tue, 19 Dec 2023 16:45:37 +0900</pubDate>
-      <guid>https://okawak.github.io/artemis_crib/example/online_analysis/pid/index.html</guid>
-      <description>last modified: 2024-01-22 by Kodai Okawa In the F2 focal plane, we check the secondary beam condition.</description>
-    </item>
-    <item>
       <title>Git</title>
       <link>https://okawak.github.io/artemis_crib/example/preparation/git/index.html</link>
       <pubDate>Wed, 13 Dec 2023 15:02:26 +0900</pubDate>
