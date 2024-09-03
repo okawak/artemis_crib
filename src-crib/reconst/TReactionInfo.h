@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:27:43
- * @note    last modified: 2024-08-23 21:25:03
+ * @note    last modified: 2024-09-03 16:14:53
  * @details
  */
 
@@ -34,6 +34,11 @@ class art::crib::TReactionInfo : public TDataObject {
     void SetEnergy(Double_t arg) { fEnergy = arg; }
     Double_t GetTheta() const { return fTheta; }
     void SetTheta(Double_t arg) { fTheta = arg; }
+    Double_t GetThetaL() const { return fThetaL; }
+    void SetThetaL(Double_t arg) { fThetaL = arg; }
+
+    Double_t GetBeamEnergy() const { return fBeamEnergy; }
+    void SetBeamEnergy(Double_t arg) { fBeamEnergy = arg; }
 
     Double_t GetX() const { return fX; }
     Double_t GetY() const { return fY; }
@@ -55,6 +60,11 @@ class art::crib::TReactionInfo : public TDataObject {
     Double_t fEnergy;
     /// @brief Theta cm of the reaction
     Double_t fTheta;
+    /// @brief Theta LAB of the reaction
+    Double_t fThetaL;
+
+    /// @brief reconst beam lab energy
+    Double_t fBeamEnergy;
 
     /// @brief reaction position at LAB system, x
     Double_t fX;
@@ -66,7 +76,7 @@ class art::crib::TReactionInfo : public TDataObject {
     /// @brief excited energy of residual nucleus
     Double_t fExEnergy;
 
-    ClassDefOverride(TReactionInfo, 1)
+    ClassDefOverride(TReactionInfo, 2)
 };
 
 #endif // end of #ifndef _TREACTIONINFO_H_

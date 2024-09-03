@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:28:15
- * @note    last modified: 2024-08-23 21:24:41
+ * @note    last modified: 2024-09-03 16:15:36
  * @details
  */
 
@@ -16,6 +16,8 @@ ClassImp(TReactionInfo);
 TReactionInfo::TReactionInfo()
     : fEnergy(kInvalidD),
       fTheta(kInvalidD),
+      fThetaL(kInvalidD),
+      fBeamEnergy(kInvalidD),
       fX(kInvalidD),
       fY(kInvalidD),
       fZ(kInvalidD),
@@ -29,6 +31,8 @@ TReactionInfo::TReactionInfo(const TReactionInfo &rhs)
     : TDataObject(rhs),
       fEnergy(rhs.fEnergy),
       fTheta(rhs.fTheta),
+      fThetaL(rhs.fThetaL),
+      fBeamEnergy(rhs.fBeamEnergy),
       fX(rhs.fX),
       fY(rhs.fY),
       fZ(rhs.fZ),
@@ -47,6 +51,8 @@ void TReactionInfo::Copy(TObject &dest) const {
     TReactionInfo &cobj = *(TReactionInfo *)&dest;
     cobj.fEnergy = this->GetEnergy();
     cobj.fTheta = this->GetTheta();
+    cobj.fThetaL = this->GetThetaL();
+    cobj.fBeamEnergy = this->GetBeamEnergy();
     cobj.fX = this->GetX();
     cobj.fY = this->GetY();
     cobj.fZ = this->GetZ();
@@ -58,6 +64,8 @@ void TReactionInfo::Clear(Option_t *opt) {
     TDataObject::SetID(kInvalidI);
     fEnergy = kInvalidD;
     fTheta = kInvalidD;
+    fThetaL = kInvalidD;
+    fBeamEnergy = kInvalidD;
     fX = kInvalidD;
     fY = kInvalidD;
     fZ = kInvalidD;

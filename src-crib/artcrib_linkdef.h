@@ -27,6 +27,7 @@
 #pragma link C++ class art::crib::TTelescopeData + ;
 #pragma link C++ class art::crib::TTelescopeProcessor;
 // reconst
+#pragma link C++ class art::crib::TReconstProcessor;
 #pragma link C++ class art::crib::TTGTIKProcessor;
 #pragma link C++ class art::crib::TReactionInfo + ;
 //  commands

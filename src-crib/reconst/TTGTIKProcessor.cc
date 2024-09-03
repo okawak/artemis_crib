@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:35:07
- * @note    last modified: 2024-08-23 21:26:04
+ * @note    last modified: 2024-09-03 15:04:41
  * @details bisection method (not Newton method)
  */
 

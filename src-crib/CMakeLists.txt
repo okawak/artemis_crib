@@ -91,6 +91,7 @@ if(TSrim_FOUND)
     APPEND
     CRIBSOURCES
     reconst/TTGTIKProcessor.cc
+    reconst/TReconstProcessor.cc
     simulation/TDetectParticleProcessor.cc
     simulation/TNBodyReactionProcessor.cc
     simulation/TTreeBeamGenerator.cc
@@ -99,6 +100,7 @@ if(TSrim_FOUND)
     APPEND
     CRIBHEADERS
     reconst/TTGTIKProcessor.h
+    reconst/TReconstProcessor.h
     simulation/TDetectParticleProcessor.h
     simulation/TNBodyReactionProcessor.h
     simulation/TTreeBeamGenerator.h
