@@ -3,7 +3,7 @@
  * @brief   position and angle random beam generator
  * @author  Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-09 15:57:01
- * @note    last modified: 2024-08-23 21:18:45
+ * @note    last modified: 2024-09-03 17:19:07
  * @details
  */
 
@@ -27,6 +27,8 @@ TRandomBeamGenerator::TRandomBeamGenerator() : fOutData(nullptr) {
     RegisterProcessorParameter("ChargeNum", "beam charge number", fChargeNum, 0);
     RegisterProcessorParameter("IniEnergy", "beam energy (MeV)", fBeamEnergy, 100.0);
 
+    DoubleVec_t init_d_vec = {0.0, 0.0, 0.0};
+    RegisterProcessorParameter("InitialPosition", "initial position of the beam", fInitialPosition, init_d_vec);
     RegisterProcessorParameter("Xsigma", "dispersion of X position (mm)", fXsigma, 1.0);
     RegisterProcessorParameter("Ysigma", "dispersion of Y position (mm)", fYsigma, 1.0);
     RegisterProcessorParameter("Asigma", "dispersion of A angle (deg)", fAsigma, 1.0);
@@ -52,6 +54,11 @@ void TRandomBeamGenerator::Init(TEventCollection *col) {
     fMass = amdc::Mass(fAtmNum, fMassNum) * amdc::amu; // MeV
     Info("Init", "beam: (Z, A, M) = (%d, %d, %.5lf)", fAtmNum, fMassNum, fMass / amdc::amu);
 
+    if (fInitialPosition.size() != 3) {
+        SetStateError("position size is not 3");
+        return;
+    }
+
     fOutData = new TClonesArray("art::crib::TParticleInfo");
     fOutData->SetName(fOutputColName);
     col->Add(fOutputColName, fOutData, fOutputIsTransparent);
@@ -72,8 +79,8 @@ void TRandomBeamGenerator::Process() {
     outData->SetAtomicNumber(fAtmNum);
     outData->SetCharge(fChargeNum);
 
-    Double_t posx = gRandom->Gaus(0., fXsigma);
-    Double_t posy = gRandom->Gaus(0., fYsigma);
+    Double_t posx = gRandom->Gaus(fInitialPosition[0], fXsigma);
+    Double_t posy = gRandom->Gaus(fInitialPosition[1], fYsigma);
     Double_t angx = gRandom->Gaus(0., fAsigma);
     Double_t angy = gRandom->Gaus(0., fBsigma);
     Double_t energy = gRandom->Gaus(fBeamEnergy, fEsigma);
@@ -93,10 +100,10 @@ void TRandomBeamGenerator::Process() {
     outData->SetEnergy(energy);
     outData->SetCurrentZ(0.);
     outData->SetZeroTime();
-    outData->SetTrack(posx, posy, 0., angx, angy);
+    outData->SetTrack(posx, posy, fInitialPosition[2], angx, angy);
 
     TTrack *outTrackData = static_cast<TTrack *>(fOutTrackData->ConstructedAt(0));
     outTrackData->SetID(0);
-    outTrackData->SetPos(posx, posy, 0.);
+    outTrackData->SetPos(posx, posy, fInitialPosition[2]);
     outTrackData->SetAngle(angx, angy);
 }

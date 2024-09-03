@@ -50,6 +50,7 @@ Processor:
       ChargeNum: *beam_Z
       IniEnergy: *beam_E
       # beam tracking information
+      InitialPosition: [0.0, 0.0, -100.0]
       Xsigma: 0.0 # mm
       Ysigma: 0.0 # mm
       Asigma: 0.0 # deg

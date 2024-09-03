@@ -3,7 +3,7 @@
  * @brief   position and angle random beam generator
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-06-09 17:10:35
- * @note    last modified: 2024-08-21 18:03:35
+ * @note    last modified: 2024-09-03 17:18:53
  * @details
  */
 
@@ -38,6 +38,8 @@ class art::crib::TRandomBeamGenerator : public TProcessor {
     Int_t fChargeNum;
     Double_t fBeamEnergy;
 
+    DoubleVec_t fInitialPosition;
+
     Double_t fXsigma;
     Double_t fYsigma;
     Double_t fAsigma;
@@ -52,7 +54,7 @@ class art::crib::TRandomBeamGenerator : public TProcessor {
     // Assignment operator (prohibited)
     TRandomBeamGenerator &operator=(const TRandomBeamGenerator &rhs) = delete;
 
-    ClassDefOverride(TRandomBeamGenerator, 1);
+    ClassDefOverride(TRandomBeamGenerator, 2);
 };
 
 #endif // end of #ifndef _TRANDOMBEAMGENERATOR_H_

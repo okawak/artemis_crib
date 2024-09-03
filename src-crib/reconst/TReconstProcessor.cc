@@ -3,7 +3,7 @@
  * @brief   for solid target reconstruction
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-09-03 14:33:39
- * @note    last modified: 2024-09-03 16:51:14
+ * @note    last modified: 2024-09-03 17:05:31
  * @details
  */
 
@@ -289,6 +289,11 @@ Double_t TReconstProcessor::GetEcm_classic_kinematics(Double_t energy, Double_t 
     // elastic scattering
     if (TMath::Abs(alpha - beta) < 1.0e-5) {
         Double_t vcm_elastic = -(qvalue - beta * v4 * v4) / (2.0 * beta * v4 * TMath::Cos(theta));
+        if (vcm_elastic < 0) {
+            std::cerr << "vcm < 0! : vcm = " << vcm_elastic
+                      << ", det_energy : " << energy << ", theta : " << theta << std::endl;
+            return kInvalidD;
+        }
         return alpha * vcm_elastic * vcm_elastic;
     }
     Double_t b = (beta * v4 * TMath::Cos(theta)) / (alpha - beta);
