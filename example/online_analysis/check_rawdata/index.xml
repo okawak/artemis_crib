@@ -3,7 +3,7 @@
   <channel>
     <title>Raw data checker :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/online_analysis/check_rawdata/index.html</link>
-    <description>last modified: 2024-01-22 by Kodai Okawa Artemis produces mainly TArtTree and the branches are TClonesArray(art::hoge).</description>
+    <description>last modified: 2024-01-22 by Kodai Okawa Artemis produces mainly TArtTree and the branches are TClonesArray(art::hoge). It means that all objects rely on the artemis library, and we cannot open and check the data by using normal ROOT.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

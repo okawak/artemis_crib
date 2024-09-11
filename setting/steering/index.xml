@@ -3,7 +3,7 @@
   <channel>
     <title>Steering :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/setting/steering/index.html</link>
-    <description>last modified: 2023-11-14 by Kodai Okawa The steering file (yaml format) is a file that directs the process of how the obtained data is to be processed.</description>
+    <description>last modified: 2023-11-14 by Kodai Okawa The steering file (yaml format) is a file that directs the process of how the obtained data is to be processed. The artemis is an object-oriented program whose components are called processors, which are combined to process data.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

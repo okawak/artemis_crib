@@ -3,7 +3,7 @@
   <channel>
     <title>Basic :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/preparation/basic/index.html</link>
-    <description>last modified: 2023-12-13 by Kodai Okawa I would now like to introduce the actual analysis using the CRIB analysis server.</description>
+    <description>last modified: 2023-12-13 by Kodai Okawa I would now like to introduce the actual analysis using the CRIB analysis server. There are two ways to enter the analysis server, directly or remotely via ssh. If you come to CRIB and operate the server directly, I think it is quicker to analyse using the server while asking the CRIB members directly as I think they are nearby.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

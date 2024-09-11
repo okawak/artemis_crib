@@ -3,7 +3,7 @@
   <channel>
     <title>New commands :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/crib_parts/newcommand/index.html</link>
-    <description>last modified: 2024-01-20 by Kodai Okawa Various commands (mainly the same with ANAPAW commands) have been developed for CRIB experiment.</description>
+    <description>last modified: 2024-01-20 by Kodai Okawa Various commands (mainly the same with ANAPAW commands) have been developed for CRIB experiment. For more information, please click here (src-crib/commands). These commands are registered in userlogon.C. (See previous section.)</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

@@ -12,35 +12,35 @@
       <link>https://okawak.github.io/artemis_crib/example/offline_analysis/new_processor/index.html</link>
       <pubDate>Wed, 13 Dec 2023 17:45:42 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/offline_analysis/new_processor/index.html</guid>
-      <description>last modified: 2023-12-15 by </description>
+      <description>last modified: 2023-12-15 by</description>
     </item>
     <item>
       <title>Merge files</title>
       <link>https://okawak.github.io/artemis_crib/example/offline_analysis/merge_files/index.html</link>
       <pubDate>Fri, 15 Dec 2023 17:28:23 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/offline_analysis/merge_files/index.html</guid>
-      <description>last modified: 2023-12-15 by Kodai Okawa </description>
+      <description>last modified: 2023-12-15 by Kodai Okawa</description>
     </item>
     <item>
       <title>Python environment</title>
       <link>https://okawak.github.io/artemis_crib/example/offline_analysis/python_environment/index.html</link>
       <pubDate>Fri, 15 Dec 2023 17:27:19 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/offline_analysis/python_environment/index.html</guid>
-      <description>last modified: 2023-12-15 by Kodai Okawa </description>
+      <description>last modified: 2023-12-15 by Kodai Okawa</description>
     </item>
     <item>
       <title>pyROOT</title>
       <link>https://okawak.github.io/artemis_crib/example/offline_analysis/pyroot/index.html</link>
       <pubDate>Fri, 15 Dec 2023 17:28:14 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/offline_analysis/pyroot/index.html</guid>
-      <description>last modified: 2023-12-15 by Kodai Okawa </description>
+      <description>last modified: 2023-12-15 by Kodai Okawa</description>
     </item>
     <item>
       <title>Analysis example</title>
       <link>https://okawak.github.io/artemis_crib/example/offline_analysis/analysis_example/index.html</link>
       <pubDate>Tue, 30 Jul 2024 17:28:14 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/offline_analysis/analysis_example/index.html</guid>
-      <description>last modified: 2024-08-14 by Kodai Okawa A brief example of an analysis flow using artemis_crib is given below.</description>
+      <description>last modified: 2024-08-14 by Kodai Okawa A brief example of an analysis flow using artemis_crib is given below. This is just the method recommended by okawak, so you can proceed with the analysis as you like.</description>
     </item>
   </channel>
 </rss>

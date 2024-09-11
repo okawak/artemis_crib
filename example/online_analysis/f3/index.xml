@@ -3,7 +3,7 @@
   <channel>
     <title>F3 :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/online_analysis/f3/index.html</link>
-    <description>last modified: 2024-01-22 by Kodai Okawa In the physics run (production run or physics measurement), we check all the detector data like tracking detector (PPAC, MWDC), TOF (RF) and Telescope data.</description>
+    <description>last modified: 2024-01-22 by Kodai Okawa In the physics run (production run or physics measurement), we check all the detector data like tracking detector (PPAC, MWDC), TOF (RF) and Telescope data. In order to analyse them, we prepared steering/chkf3.yaml steering file. This file includes all the information of F3 analysis.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

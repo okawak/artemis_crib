@@ -3,7 +3,7 @@
   <channel>
     <title>Beam Generator :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/simulation/beam_generator/index.html</link>
-    <description>last modified: 2024-07-16 by Kodai Okawa It is very useful to use Monte Carlo (MC) simulation to obtain various calculated values.</description>
+    <description>last modified: 2024-07-16 by Kodai Okawa It is very useful to use Monte Carlo (MC) simulation to obtain various calculated values. From this section, we will show the simple example how to perform MC simulation using artemis.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

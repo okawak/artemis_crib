@@ -3,7 +3,7 @@
   <channel>
     <title>PPAC calibration :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/preparation/ppac_calibration/index.html</link>
-    <description>last modified: 2023-12-18 by Kodai Okawa CRIB use two kinds of PPAC (Parallel-Plate Avalanche Counter), charge division method or delay-readout method.</description>
+    <description>last modified: 2023-12-18 by Kodai Okawa CRIB use two kinds of PPAC (Parallel-Plate Avalanche Counter), charge division method or delay-readout method. The PPAC placed at the F1 focal plane is charge-devision type, and the parameters to be converted to position are fixed and do not need to be calibrated. Therefore we explain the calibration method for delay-line PPAC (dl-PPAC).</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

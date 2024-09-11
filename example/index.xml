@@ -3,7 +3,7 @@
   <channel>
     <title>Example :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/index.html</link>
-    <description>Up to now, we have introduced the installation and concepts of artemis.</description>
+    <description>Up to now, we have introduced the installation and concepts of artemis. This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is no problem to start reading from here.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://okawak.github.io/artemis_crib/example/index.xml" rel="self" type="application/rss+xml" />
@@ -12,7 +12,7 @@
       <link>https://okawak.github.io/artemis_crib/example/segid/index.html</link>
       <pubDate>Thu, 11 Jan 2024 22:08:49 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/segid/index.html</guid>
-      <description>last modified: 2024-01-11 by Kodai Okawa This is from ANAROOT source (https://rnc.</description>
+      <description>last modified: 2024-01-11 by Kodai Okawa This is from ANAROOT source (https://rnc.riken.go.jp/RIBFDAQ/index.php?Tools%2FAnalysis%2FANAROOT%2FInstallation)</description>
     </item>
     <item>
       <title>Preparation</title>

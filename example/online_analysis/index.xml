@@ -12,7 +12,7 @@
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/f1/index.html</link>
       <pubDate>Wed, 13 Dec 2023 15:07:40 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/f1/index.html</guid>
-      <description>last modified: 2024-01-20 by Kodai Okawa From here, we would like to explain in detail how to analyze the actual experiment.</description>
+      <description>last modified: 2024-01-20 by Kodai Okawa From here, we would like to explain in detail how to analyze the actual experiment. We assume that you have already prepared your the analysis environment. It is okay either your own directory or the default directory (see CRIB configuration). If you are not ready yet, please see here.</description>
     </item>
     <item>
       <title>F2</title>
@@ -40,49 +40,49 @@
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/telescope/index.html</link>
       <pubDate>Wed, 13 Dec 2023 15:08:02 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/telescope/index.html</guid>
-      <description>last modified: 2024-01-22 by Kodai Okawa In the CRIB experiment, we often use a “telescope” consisting of DSSSD (Double-Sided SSD) and SSD (Single-Pad SSD).</description>
+      <description>last modified: 2024-01-22 by Kodai Okawa In the CRIB experiment, we often use a “telescope” consisting of DSSSD (Double-Sided SSD) and SSD (Single-Pad SSD). The combination of these multiple Si detectors as a dE-E detector is called a telescope.</description>
     </item>
     <item>
       <title>F3</title>
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/f3/index.html</link>
       <pubDate>Wed, 13 Dec 2023 15:08:05 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/f3/index.html</guid>
-      <description>last modified: 2024-01-22 by Kodai Okawa In the physics run (production run or physics measurement), we check all the detector data like tracking detector (PPAC, MWDC), TOF (RF) and Telescope data.</description>
+      <description>last modified: 2024-01-22 by Kodai Okawa In the physics run (production run or physics measurement), we check all the detector data like tracking detector (PPAC, MWDC), TOF (RF) and Telescope data. In order to analyse them, we prepared steering/chkf3.yaml steering file. This file includes all the information of F3 analysis.</description>
     </item>
     <item>
       <title>Gate</title>
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/gate/index.html</link>
       <pubDate>Fri, 15 Dec 2023 17:30:58 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/gate/index.html</guid>
-      <description>last modified: 2024-01-17 by Kodai Okawa It is very important to select events for online analysis as well.</description>
+      <description>last modified: 2024-01-17 by Kodai Okawa It is very important to select events for online analysis as well. There are several options to do so, and I will cover all of them. If you know other useful way, please let me know.</description>
     </item>
     <item>
       <title>Shifter task</title>
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/shift/index.html</link>
       <pubDate>Wed, 13 Dec 2023 15:08:11 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/shift/index.html</guid>
-      <description>last modified: 2023-12-20 by Kodai Okawa </description>
+      <description>last modified: 2023-12-20 by Kodai Okawa</description>
     </item>
     <item>
       <title>Scaler</title>
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/scaler/index.html</link>
       <pubDate>Fri, 15 Dec 2023 17:24:54 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/scaler/index.html</guid>
-      <description>last modified: 2023-12-20 by Kodai Okawa </description>
+      <description>last modified: 2023-12-20 by Kodai Okawa</description>
     </item>
     <item>
       <title>Timestamp</title>
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/timestamp/index.html</link>
       <pubDate>Fri, 15 Dec 2023 17:24:58 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/timestamp/index.html</guid>
-      <description>last modified: 2023-12-15 by Kodai Okawa </description>
+      <description>last modified: 2023-12-15 by Kodai Okawa</description>
     </item>
     <item>
       <title>Raw data checker</title>
       <link>https://okawak.github.io/artemis_crib/example/online_analysis/check_rawdata/index.html</link>
       <pubDate>Sun, 05 Nov 2023 14:57:50 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/online_analysis/check_rawdata/index.html</guid>
-      <description>last modified: 2024-01-22 by Kodai Okawa Artemis produces mainly TArtTree and the branches are TClonesArray(art::hoge).</description>
+      <description>last modified: 2024-01-22 by Kodai Okawa Artemis produces mainly TArtTree and the branches are TClonesArray(art::hoge). It means that all objects rely on the artemis library, and we cannot open and check the data by using normal ROOT.</description>
     </item>
   </channel>
 </rss>

@@ -13,14 +13,14 @@
       <link>https://okawak.github.io/artemis_crib/setting/new_experiment/index.html</link>
       <pubDate>Thu, 02 Nov 2023 13:58:35 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/setting/new_experiment/index.html</guid>
-      <description>last modified: 2023-11-05 by Kodai Okawa If you installed with “curl” command explained previous chapter, you should have artnew command.</description>
+      <description>last modified: 2023-11-05 by Kodai Okawa If you installed with “curl” command explained previous chapter, you should have artnew command. This command will make new experiment directory interactively.</description>
     </item>
     <item>
       <title>Online-mode analysis</title>
       <link>https://okawak.github.io/artemis_crib/crib_parts/onlinemode/index.html</link>
       <pubDate>Tue, 12 Dec 2023 13:13:43 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/crib_parts/onlinemode/index.html</guid>
-      <description>last modified: 2023-12-12 by Kodai Okawa We often use “nssta” (non-save mode start) analysis in the beam tuning.</description>
+      <description>last modified: 2023-12-12 by Kodai Okawa We often use “nssta” (non-save mode start) analysis in the beam tuning. It is not necessary to take data, but we need to check the beam condition by using artemis. In this case, TRIDFEventStore can be used as online mode.</description>
     </item>
     <item>
       <title>New user</title>
@@ -41,21 +41,21 @@
       <link>https://okawak.github.io/artemis_crib/setting/build/index.html</link>
       <pubDate>Thu, 02 Nov 2023 15:11:33 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/setting/build/index.html</guid>
-      <description>last modified: 2023-11-14 by Kodai Okawa Before starting analysis, you need to build.</description>
+      <description>last modified: 2023-11-14 by Kodai Okawa Before starting analysis, you need to build. The current version of the artemis use “cmake” so the following steps must be taken.</description>
     </item>
     <item>
       <title>New commands</title>
       <link>https://okawak.github.io/artemis_crib/crib_parts/newcommand/index.html</link>
       <pubDate>Tue, 12 Dec 2023 13:53:50 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/crib_parts/newcommand/index.html</guid>
-      <description>last modified: 2024-01-20 by Kodai Okawa Various commands (mainly the same with ANAPAW commands) have been developed for CRIB experiment.</description>
+      <description>last modified: 2024-01-20 by Kodai Okawa Various commands (mainly the same with ANAPAW commands) have been developed for CRIB experiment. For more information, please click here (src-crib/commands). These commands are registered in userlogon.C. (See previous section.)</description>
     </item>
     <item>
       <title>Map configuration</title>
       <link>https://okawak.github.io/artemis_crib/setting/map_config/index.html</link>
       <pubDate>Thu, 02 Nov 2023 15:31:58 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/setting/map_config/index.html</guid>
-      <description>last modified: 2023-11-14 by Kodai Okawa From this section, we start to configure the settings according to the actual experimental setup.</description>
+      <description>last modified: 2023-11-14 by Kodai Okawa From this section, we start to configure the settings according to the actual experimental setup. The setting files are followings:</description>
     </item>
     <item>
       <title>artemis</title>
@@ -69,7 +69,7 @@
       <link>https://okawak.github.io/artemis_crib/installation/mount/index.html</link>
       <pubDate>Mon, 14 Aug 2023 15:14:29 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/installation/mount/index.html</guid>
-      <description>last modified: 2024-03-21 by Kodai Okawa For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory.</description>
+      <description>last modified: 2024-03-21 by Kodai Okawa For the convinience, we use one directory to store raw data (ridf files) and make symbolic link to each user work directory. So first, we need to make raw data directory.</description>
     </item>
     <item>
       <title>energyloss calculator</title>

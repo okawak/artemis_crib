@@ -19,7 +19,7 @@
       <link>https://okawak.github.io/artemis_crib/setting/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://okawak.github.io/artemis_crib/setting/index.html</guid>
-      <description>This chapter describes how to prepare the configuration file for the experiment.</description>
+      <description>This chapter describes how to prepare the configuration file for the experiment. If you have already some CRIB artemis environment, please see from here for initial settings.</description>
     </item>
     <item>
       <title>CRIB Configuration</title>
@@ -33,14 +33,14 @@
       <link>https://okawak.github.io/artemis_crib/example/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/index.html</guid>
-      <description>Up to now, we have introduced the installation and concepts of artemis.</description>
+      <description>Up to now, we have introduced the installation and concepts of artemis. This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is no problem to start reading from here.</description>
     </item>
     <item>
       <title>Q&amp;A</title>
       <link>https://okawak.github.io/artemis_crib/q_and_a/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://okawak.github.io/artemis_crib/q_and_a/index.html</guid>
-      <description>Cannot be analysed in online mode… When you start the event loop in online mode and artemis gets stuck, babian may not have been activated.</description>
+      <description>Cannot be analysed in online mode… When you start the event loop in online mode and artemis gets stuck, babian may not have been activated. There is a shellscript to run the “babian” in cribana PC.</description>
     </item>
   </channel>
 </rss>

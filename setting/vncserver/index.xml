@@ -3,7 +3,7 @@
   <channel>
     <title>VNC server :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/setting/vncserver/index.html</link>
-    <description>last modified: 2023-11-15 by Kodai Okawa When we start the analysis, there are many situations where the analysis server on which artemis is installed is not only operated directly, but also remotely using “ssh”.</description>
+    <description>last modified: 2023-11-15 by Kodai Okawa When we start the analysis, there are many situations where the analysis server on which artemis is installed is not only operated directly, but also remotely using “ssh”. In such cases, there are various settings that need to be made in order for the figure to be displayed on the local computer, and some of these methods are described in this section. We recommended to use VNC server currently, but note that policies may change in the future.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

@@ -3,45 +3,45 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.133.1">
+    <meta name="generator" content="Hugo 0.134.2">
     <meta name="generator" content="Relearn 6.1.1">
-    <meta name="description" content="Up to now, we have introduced the installation and concepts of artemis.">
+    <meta name="description" content="Up to now, we have introduced the installation and concepts of artemis. This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is no problem to start reading from here.">
     <meta name="author" content="Kodai Okawa">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Example :: CRIB artemis">
-    <meta name="twitter:description" content="Up to now, we have introduced the installation and concepts of artemis.">
+    <meta name="twitter:description" content="Up to now, we have introduced the installation and concepts of artemis. This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is no problem to start reading from here.">
     <meta property="og:url" content="https://okawak.github.io/artemis_crib/example/index.html">
     <meta property="og:site_name" content="CRIB artemis">
     <meta property="og:title" content="Example :: CRIB artemis">
-    <meta property="og:description" content="Up to now, we have introduced the installation and concepts of artemis.">
+    <meta property="og:description" content="Up to now, we have introduced the installation and concepts of artemis. This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is no problem to start reading from here.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="Example :: CRIB artemis">
-    <meta itemprop="description" content="Up to now, we have introduced the installation and concepts of artemis.">
+    <meta itemprop="description" content="Up to now, we have introduced the installation and concepts of artemis. This chapter will show you how to analyse with artemis through practical examples; if you want to know how to use artemis, it is no problem to start reading from here.">
     <meta itemprop="dateModified" content="2023-12-23T23:02:21+09:00">
     <meta itemprop="wordCount" content="96">
     <title>Example :: CRIB artemis</title>
     <link href="https://okawak.github.io/artemis_crib/example/index.html" rel="canonical" type="text/html" title="Example :: CRIB artemis">
     <link href="/artemis_crib/example/index.xml" rel="alternate" type="application/rss+xml" title="Example :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1725329558" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1725329558" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1725329558" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1725329558" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1725329558" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1725329558" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1725329558" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1725329558" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1725329558" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-CRIB-theme.css?1725329558" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/chroma-relearn-dark.css?1725329558" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/artemis_crib/css/variant.css?1725329558" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1725329558" rel="stylesheet" media="print">
-    <link href="/artemis_crib/css/format-print.css?1725329558" rel="stylesheet">
-    <script src="/artemis_crib/js/variant.js?1725329558"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1726025687" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1726025687" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1726025687" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1726025687" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1726025687" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1726025687" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1726025687" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1726025687" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1726025687" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-CRIB-theme.css?1726025687" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/chroma-relearn-dark.css?1726025687" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/artemis_crib/css/variant.css?1726025687" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1726025687" rel="stylesheet" media="print">
+    <link href="/artemis_crib/css/format-print.css?1726025687" rel="stylesheet">
+    <script src="/artemis_crib/js/variant.js?1726025687"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..';
       window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='https:\/\/okawak.github.io\/artemis_crib';
-      window.index_js_url="/artemis_crib/index.search.js?1725329558";
+      window.index_js_url="/artemis_crib/index.search.js?1726025687";
       // variant stuff
       window.variants && variants.init( [ 'CRIB-theme', 'zen-dark', 'learn', 'relearn-dark' ] );
       // translations
@@ -222,13 +222,13 @@ As the login server is just a jump server, it is useful to be able to ssh to the
 So create the following config file. The file placed in this directory is automatically read when you ssh.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> ~/.ssh
 </span></span><span class="line"><span class="cl">vi config</span></span></code></pre></div>
-<div class="tab-panel" data-tab-group="f0f67f3a2a00cf9b7516de3d52bc098f">
+<div class="tab-panel" data-tab-group="276e9d96b64b753a8232721382e32f8a">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="sshconfig"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('f0f67f3a2a00cf9b7516de3d52bc098f','sshconfig')"
+      onclick="switchTab('276e9d96b64b753a8232721382e32f8a','sshconfig')"
     >
       <span class="tab-nav-text">~/.ssh/config</span>
     </button>
@@ -373,13 +373,13 @@ Since absolute channel values will vary, but relative channel values for a given
 Since it is essential that all events contain that data, we put the trigger signal in one of the channels and make it a Tref.</p>
 <p>The &ldquo;tref&rdquo; settings are made in the following file:</p>
 
-<div class="tab-panel" data-tab-group="387438664ee81b0e413822f32e4f37f3">
+<div class="tab-panel" data-tab-group="bbfeae4751a042ab7b9de9ceb4b6ac13">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="steeringtrefyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('387438664ee81b0e413822f32e4f37f3','steeringtrefyaml')"
+      onclick="switchTab('bbfeae4751a042ab7b9de9ceb4b6ac13','steeringtrefyaml')"
     >
       <span class="tab-nav-text">steering/tref.yaml</span>
     </button>
@@ -406,13 +406,13 @@ Therefore, the role of the processor is to subtract the &ldquo;Segconfig&rdquo; 
 <p>To apply this processor, add the following line to the steering file.
 For example,</p>
 
-<div class="tab-panel" data-tab-group="b9af2b1074a641a84935ab575fc8eebe">
+<div class="tab-panel" data-tab-group="b956a25591ec2bc011047c885eeecc4e">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="steeringchkf3yaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('b9af2b1074a641a84935ab575fc8eebe','steeringchkf3yaml')"
+      onclick="switchTab('b956a25591ec2bc011047c885eeecc4e','steeringchkf3yaml')"
     >
       <span class="tab-nav-text">steering/chkf3.yaml</span>
     </button>
@@ -520,63 +520,63 @@ First, define the parameters as follows</p>
 <span class="math align-center">$T_{Xout-offset}$</span>).</p>
 <p>The following is a list of dl-PPAC parameters used in CRIB experiment.</p>
 <table>
-<thead>
-<tr>
-<th>PPAC ID</th>
-<th>
+  <thead>
+      <tr>
+          <th style="text-align: left">PPAC ID</th>
+          <th style="text-align: left">
 <span class="math align-center">$k_x$</span> [mm/ns]</th>
-<th>
+          <th style="text-align: left">
 <span class="math align-center">$k_y$</span> [mm/ns]</th>
-<th>
+          <th style="text-align: left">
 <span class="math align-center">$T_{Xin-offset}$</span></th>
-<th>
+          <th style="text-align: left">
 <span class="math align-center">$T_{Yin-offset}$</span></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>#2</td>
-<td>1.256</td>
-<td>1.256</td>
-<td>0.29 mm</td>
-<td>0.18 mm</td>
-</tr>
-<tr>
-<td>#3</td>
-<td>1.264</td>
-<td>1.253</td>
-<td>0.22 mm</td>
-<td>0.30 mm</td>
-</tr>
-<tr>
-<td>#7</td>
-<td>1.240</td>
-<td>1.242</td>
-<td>0.92 ns</td>
-<td>1.58 ns</td>
-</tr>
-<tr>
-<td>#8</td>
-<td>1.241</td>
-<td>1.233</td>
-<td>0.17 ns</td>
-<td>0.11 ns</td>
-</tr>
-<tr>
-<td>#9</td>
-<td>1.257</td>
-<td>1.257</td>
-<td>0.05 mm</td>
-<td>0.04 mm</td>
-</tr>
-<tr>
-<td>#10</td>
-<td>1.257</td>
-<td>1.257</td>
-<td>0.05 mm</td>
-<td>0.04 mm</td>
-</tr>
-</tbody>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">#2</td>
+          <td style="text-align: left">1.256</td>
+          <td style="text-align: left">1.256</td>
+          <td style="text-align: left">0.29 mm</td>
+          <td style="text-align: left">0.18 mm</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">#3</td>
+          <td style="text-align: left">1.264</td>
+          <td style="text-align: left">1.253</td>
+          <td style="text-align: left">0.22 mm</td>
+          <td style="text-align: left">0.30 mm</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">#7</td>
+          <td style="text-align: left">1.240</td>
+          <td style="text-align: left">1.242</td>
+          <td style="text-align: left">0.92 ns</td>
+          <td style="text-align: left">1.58 ns</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">#8</td>
+          <td style="text-align: left">1.241</td>
+          <td style="text-align: left">1.233</td>
+          <td style="text-align: left">0.17 ns</td>
+          <td style="text-align: left">0.11 ns</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">#9</td>
+          <td style="text-align: left">1.257</td>
+          <td style="text-align: left">1.257</td>
+          <td style="text-align: left">0.05 mm</td>
+          <td style="text-align: left">0.04 mm</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">#10</td>
+          <td style="text-align: left">1.257</td>
+          <td style="text-align: left">1.257</td>
+          <td style="text-align: left">0.05 mm</td>
+          <td style="text-align: left">0.04 mm</td>
+      </tr>
+  </tbody>
 </table>
 
 <div class="box notices cstyle warning">
@@ -593,13 +593,13 @@ First, define the parameters as follows</p>
 </ul>
 <p>For example, it is like this:</p>
 
-<div class="tab-panel" data-tab-group="237d7c1347f50f50efd0216c62be3492">
+<div class="tab-panel" data-tab-group="ec040961bf7101500f371c0aa627446c">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="prmppacdlppacyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('237d7c1347f50f50efd0216c62be3492','prmppacdlppacyaml')"
+      onclick="switchTab('ec040961bf7101500f371c0aa627446c','prmppacdlppacyaml')"
     >
       <span class="tab-nav-text">prm/ppac/dlppac.yaml</span>
     </button>
@@ -728,13 +728,13 @@ I think all PPAC geometries used by CRIB are the same.</p>
 </ul>
 <p>When we set the parameter like this files, the XY figure can be obtained.</p>
 
-<div class="tab-panel" data-tab-group="00f1d2bd398715aafb94ae2f4bbfd168">
+<div class="tab-panel" data-tab-group="944a7fccf1629b59397c04b47ffc9c33">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="prmppacdlppacyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('00f1d2bd398715aafb94ae2f4bbfd168','prmppacdlppacyaml')"
+      onclick="switchTab('944a7fccf1629b59397c04b47ffc9c33','prmppacdlppacyaml')"
     >
       <span class="tab-nav-text">prm/ppac/dlppac.yaml</span>
     </button>
@@ -794,13 +794,13 @@ I think all PPAC geometries used by CRIB are the same.</p>
 </span></span><span class="line"><span class="cl">move parameters        : <span class="o">(</span>-1.41737, 0.382269<span class="o">)</span>
 </span></span><span class="line"><span class="cl"><span class="o">===================================================</span></span></span></code></pre></div><p>And please input this value to the dlppac.yaml.</p>
 
-<div class="tab-panel" data-tab-group="eaced4b2cd77a718750eaf32b1ce4c70">
+<div class="tab-panel" data-tab-group="d2db388679b13fb8043784f464992a03">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="prmppacdlppacyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('eaced4b2cd77a718750eaf32b1ce4c70','prmppacdlppacyaml')"
+      onclick="switchTab('d2db388679b13fb8043784f464992a03','prmppacdlppacyaml')"
     >
       <span class="tab-nav-text">prm/ppac/dlppac.yaml</span>
     </button>
@@ -902,30 +902,30 @@ I think all PPAC geometries used by CRIB are the same.</p>
 <p>This is the CRIB alpha source information.
 (unit: MeV)</p>
 <table>
-<thead>
-<tr>
-<th>ID</th>
-<th>alpha-2</th>
-<th>alpha-3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td>4.780</td>
-<td>3.148</td>
-</tr>
-<tr>
-<td></td>
-<td>5.480</td>
-<td>5.462</td>
-</tr>
-<tr>
-<td></td>
-<td>5.795</td>
-<td>5.771</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">ID</th>
+          <th style="text-align: left">alpha-2</th>
+          <th style="text-align: left">alpha-3</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">4.780</td>
+          <td style="text-align: left">3.148</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">5.480</td>
+          <td style="text-align: left">5.462</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">5.795</td>
+          <td style="text-align: left">5.771</td>
+      </tr>
+  </tbody>
 </table>
 <h3 id="calibration-files">calibration files</h3>
 <p>SSD calibration files need to be set at <code>prm/ssd/</code> directory.
@@ -964,13 +964,13 @@ The loaded parameter file name is defined SSD steering file, and we don&rsquo;t 
 </div>
 <p>The &ldquo;ch2MeV.dat&rdquo; file format is like this:</p>
 
-<div class="tab-panel" data-tab-group="59d099c42600e4174d302aa59cd62840">
+<div class="tab-panel" data-tab-group="76c5c3f71141584b363b3a407eab93b0">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="prmssdf2ch2mevdat"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('59d099c42600e4174d302aa59cd62840','prmssdf2ch2mevdat')"
+      onclick="switchTab('76c5c3f71141584b363b3a407eab93b0','prmssdf2ch2mevdat')"
     >
       <span class="tab-nav-text">prm/ssd/f2ch2MeV.dat</span>
     </button>
@@ -1487,13 +1487,13 @@ If you know other useful way, please let me know.</p>
 <p>We explained in the <a href="/artemis_crib/setting/histograms/index.html">Histograms</a> page, but again we describe about histogram definition focus on the <code>cut</code> part.</p>
 <p>The default figure defined like this:</p>
 
-<div class="tab-panel" data-tab-group="1755cbb79e36e4e1d31ba24459828223">
+<div class="tab-panel" data-tab-group="9562a2b9e251a7533acb2de787491901">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="histf2f2yaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('1755cbb79e36e4e1d31ba24459828223','histf2f2yaml')"
+      onclick="switchTab('9562a2b9e251a7533acb2de787491901','histf2f2yaml')"
     >
       <span class="tab-nav-text">hist/f2/f2.yaml</span>
     </button>
@@ -1521,13 +1521,13 @@ If you know other useful way, please let me know.</p>
 </div><p>For example, let&rsquo;s add the gate to select only &ldquo;-10.0 &lt; X &lt; 10.0&rdquo;.
 We can use alias node to define that.</p>
 
-<div class="tab-panel" data-tab-group="11dbbd8c1378508afdb707a0f231ae26">
+<div class="tab-panel" data-tab-group="36c199eb3ed857b05ccf1756087242d1">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="histf2f2yaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('11dbbd8c1378508afdb707a0f231ae26','histf2f2yaml')"
+      onclick="switchTab('36c199eb3ed857b05ccf1756087242d1','histf2f2yaml')"
     >
       <span class="tab-nav-text">hist/f2/f2.yaml</span>
     </button>
@@ -1560,13 +1560,13 @@ We can use alias node to define that.</p>
 
 <p>Also, multiple conditions can be specified at the same time.</p>
 
-<div class="tab-panel" data-tab-group="b07bbb15116bab511799a0cf76486c00">
+<div class="tab-panel" data-tab-group="5510a7538303407de1124c75825a770d">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="histf2f2yaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('b07bbb15116bab511799a0cf76486c00','histf2f2yaml')"
+      onclick="switchTab('5510a7538303407de1124c75825a770d','histf2f2yaml')"
     >
       <span class="tab-nav-text">hist/f2/f2.yaml</span>
     </button>
@@ -1606,13 +1606,13 @@ And the ROOT file and TCutG object name is <code>f2star</code>.</p>
 
 <p>If you want to use this object to select event, just add this line is fine, as long as you use <a href="/artemis_crib/crib_parts/userconfig/index.html">userlogon.C</a>.</p>
 
-<div class="tab-panel" data-tab-group="8c807ae579207df45eb3122e18d5a581">
+<div class="tab-panel" data-tab-group="1c88b778aaa1bb23f42c17eb4ab13bc3">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="histf2f2yaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('8c807ae579207df45eb3122e18d5a581','histf2f2yaml')"
+      onclick="switchTab('1c88b778aaa1bb23f42c17eb4ab13bc3','histf2f2yaml')"
     >
       <span class="tab-nav-text">hist/f2/f2.yaml</span>
     </button>
@@ -1651,13 +1651,13 @@ If you know which events you don&rsquo;t want, there are processors that allow y
 This may speed up the event loop.</p>
 <p>For example. when we want to analyze only <code>beam single</code> event (it means the events are not coincident with SSD, and let&rsquo;s suppose that condition is given by <code>single.fID==0</code>), let&rsquo;s prepare the steering file.</p>
 
-<div class="tab-panel" data-tab-group="2a6cb3903707bfb685c937cc2c69bc83">
+<div class="tab-panel" data-tab-group="dcfb35b56950eb06591b4540045d3213">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="steeringgatecoinyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('2a6cb3903707bfb685c937cc2c69bc83','steeringgatecoinyaml')"
+      onclick="switchTab('dcfb35b56950eb06591b4540045d3213','steeringgatecoinyaml')"
     >
       <span class="tab-nav-text">steering/gate/coin.yaml</span>
     </button>
@@ -1698,13 +1698,13 @@ In the case of <code>StopIf: 0</code>, artemis ignore the event that the conditi
 In other words, <code>StopIf: 0</code> means artemis will analyze the event only when the condition is <code>true</code>.</p>
 <p>Then, including this yaml file to the main steering file, you can check only the selected events.</p>
 
-<div class="tab-panel" data-tab-group="801c7e85ad45254588ce3823996d35f6">
+<div class="tab-panel" data-tab-group="5dddb74e60e1203af873c6976c6f10e2">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="steeringhogeyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('801c7e85ad45254588ce3823996d35f6','steeringhogeyaml')"
+      onclick="switchTab('5dddb74e60e1203af873c6976c6f10e2','steeringhogeyaml')"
     >
       <span class="tab-nav-text">steering/hoge.yaml</span>
     </button>
@@ -1828,13 +1828,13 @@ Of course, the real raw data is binary and therefore difficult to read, so we wi
 There are two files.
 This is an example, so please change it according to the experimental conditions.</p>
 
-<div class="tab-panel" data-tab-group="a2539ae186caaa6f4973e9415970e054">
+<div class="tab-panel" data-tab-group="769034f08df75569531274798ae63dd7">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="confsegmodulelistyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('a2539ae186caaa6f4973e9415970e054','confsegmodulelistyaml')"
+      onclick="switchTab('769034f08df75569531274798ae63dd7','confsegmodulelistyaml')"
     >
       <span class="tab-nav-text">conf/seg/modulelist.yaml</span>
     </button>
@@ -1869,13 +1869,13 @@ This is an example, so please change it according to the experimental conditions
   </div>
 </div><p>The module id list is <a href="/artemis_crib/example/segid/index.html">here</a>.</p>
 
-<div class="tab-panel" data-tab-group="a5d6eb99e615c919d1a8209b07342875">
+<div class="tab-panel" data-tab-group="cc6f6055b054ad514fc12102cd1fd008">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="confsegseglistyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('a5d6eb99e615c919d1a8209b07342875','confsegseglistyaml')"
+      onclick="switchTab('cc6f6055b054ad514fc12102cd1fd008','confsegseglistyaml')"
     >
       <span class="tab-nav-text">conf/seg/seglist.yaml</span>
     </button>
@@ -2384,13 +2384,13 @@ This figure shows the direction of one particle that is produced from this react
 <span class="badge cstyle default"><span class="badge-content">last modified: 2024-07-19 by Kodai Okawa</span></span>
 <p>Configure detector geometry to judge if the reaction particle hit the detector or not.</p>
 
-<div class="tab-panel" data-tab-group="fc74c1889a8c0f5ef1b505e0c6f72dcb">
+<div class="tab-panel" data-tab-group="43b72a42eb2a2ab445a4f4dddedad0ce">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="prmgeoexampleyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('fc74c1889a8c0f5ef1b505e0c6f72dcb','prmgeoexampleyaml')"
+      onclick="switchTab('43b72a42eb2a2ab445a4f4dddedad0ce','prmgeoexampleyaml')"
     >
       <span class="tab-nav-text">prm/geo/example.yaml</span>
     </button>
@@ -2503,13 +2503,13 @@ Also the unit is <code>mm</code> and format is (x, y, z).</p>
 <hr>
 <p>Then, let&rsquo;s check if the parameter file can be correctly used.</p>
 
-<div class="tab-panel" data-tab-group="2b579b066c1e6d1cd6b3fa26505529b2">
+<div class="tab-panel" data-tab-group="1cd8050c3535cda8dcd1eb186696ae14">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="steeringgeo_exampleyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('2b579b066c1e6d1cd6b3fa26505529b2','steeringgeo_exampleyaml')"
+      onclick="switchTab('1cd8050c3535cda8dcd1eb186696ae14','steeringgeo_exampleyaml')"
     >
       <span class="tab-nav-text">steering/geo_example.yaml</span>
     </button>
@@ -2660,8 +2660,8 @@ if the following conditions are met.</p>
         </div>
       </main>
     </div>
-    <script src="/artemis_crib/js/clipboard.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1725329558" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1726025687" defer></script>
     <script>
       function useMathJax( config ){
         window.MathJax = Object.assign( window.MathJax || {}, {
@@ -2677,20 +2677,20 @@ if the following conditions are met.</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/d3/d3-color.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/d3/d3-drag.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/d3/d3-ease.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/d3/d3-selection.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/d3/d3-timer.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/d3/d3-transition.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/js-yaml.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/mermaid.min.js?1725329558" defer></script>
+    <script src="/artemis_crib/js/d3/d3-color.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/d3/d3-drag.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/d3/d3-ease.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/d3/d3-selection.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/d3/d3-timer.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/d3/d3-transition.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/js-yaml.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/mermaid.min.js?1726025687" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{}");
     </script>
-    <script src="/artemis_crib/js/theme.js?1725329558" defer></script>
+    <script src="/artemis_crib/js/theme.js?1726025687" defer></script>
   </body>
 </html>

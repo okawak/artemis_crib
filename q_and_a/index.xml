@@ -3,7 +3,7 @@
   <channel>
     <title>Q&amp;A :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/q_and_a/index.html</link>
-    <description>Cannot be analysed in online mode… When you start the event loop in online mode and artemis gets stuck, babian may not have been activated.</description>
+    <description>Cannot be analysed in online mode… When you start the event loop in online mode and artemis gets stuck, babian may not have been activated. There is a shellscript to run the “babian” in cribana PC.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://okawak.github.io/artemis_crib/q_and_a/index.xml" rel="self" type="application/rss+xml" />

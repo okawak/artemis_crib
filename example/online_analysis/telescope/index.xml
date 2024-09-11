@@ -3,7 +3,7 @@
   <channel>
     <title>Telescope :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/online_analysis/telescope/index.html</link>
-    <description>last modified: 2024-01-22 by Kodai Okawa In the CRIB experiment, we often use a “telescope” consisting of DSSSD (Double-Sided SSD) and SSD (Single-Pad SSD).</description>
+    <description>last modified: 2024-01-22 by Kodai Okawa In the CRIB experiment, we often use a “telescope” consisting of DSSSD (Double-Sided SSD) and SSD (Single-Pad SSD). The combination of these multiple Si detectors as a dE-E detector is called a telescope.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

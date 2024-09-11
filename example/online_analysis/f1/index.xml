@@ -3,7 +3,7 @@
   <channel>
     <title>F1 :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/online_analysis/f1/index.html</link>
-    <description>last modified: 2024-01-20 by Kodai Okawa From here, we would like to explain in detail how to analyze the actual experiment.</description>
+    <description>last modified: 2024-01-20 by Kodai Okawa From here, we would like to explain in detail how to analyze the actual experiment. We assume that you have already prepared your the analysis environment. It is okay either your own directory or the default directory (see CRIB configuration). If you are not ready yet, please see here.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

@@ -3,7 +3,7 @@
   <channel>
     <title>Analysis example :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/offline_analysis/analysis_example/index.html</link>
-    <description>last modified: 2024-08-14 by Kodai Okawa A brief example of an analysis flow using artemis_crib is given below.</description>
+    <description>last modified: 2024-08-14 by Kodai Okawa A brief example of an analysis flow using artemis_crib is given below. This is just the method recommended by okawak, so you can proceed with the analysis as you like.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

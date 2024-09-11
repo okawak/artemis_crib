@@ -20,6 +20,7 @@ var annotated_dup =
         [ "TMUXPositionConverter", "classart_1_1crib_1_1TMUXPositionConverter.html", "classart_1_1crib_1_1TMUXPositionConverter" ],
         [ "TMUXPositionValidator", "classart_1_1crib_1_1TMUXPositionValidator.html", "classart_1_1crib_1_1TMUXPositionValidator" ],
         [ "TReactionInfo", "classart_1_1crib_1_1TReactionInfo.html", "classart_1_1crib_1_1TReactionInfo" ],
+        [ "TReconstProcessor", "classart_1_1crib_1_1TReconstProcessor.html", "classart_1_1crib_1_1TReconstProcessor" ],
         [ "TTGTIKProcessor", "classart_1_1crib_1_1TTGTIKProcessor.html", "classart_1_1crib_1_1TTGTIKProcessor" ],
         [ "TDetectParticleProcessor", "classart_1_1crib_1_1TDetectParticleProcessor.html", "classart_1_1crib_1_1TDetectParticleProcessor" ],
         [ "TNBodyReactionProcessor", "classart_1_1crib_1_1TNBodyReactionProcessor.html", "classart_1_1crib_1_1TNBodyReactionProcessor" ],

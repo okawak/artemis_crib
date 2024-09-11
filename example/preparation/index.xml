@@ -12,21 +12,21 @@
       <link>https://okawak.github.io/artemis_crib/example/preparation/basic/index.html</link>
       <pubDate>Wed, 13 Dec 2023 14:58:34 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/preparation/basic/index.html</guid>
-      <description>last modified: 2023-12-13 by Kodai Okawa I would now like to introduce the actual analysis using the CRIB analysis server.</description>
+      <description>last modified: 2023-12-13 by Kodai Okawa I would now like to introduce the actual analysis using the CRIB analysis server. There are two ways to enter the analysis server, directly or remotely via ssh. If you come to CRIB and operate the server directly, I think it is quicker to analyse using the server while asking the CRIB members directly as I think they are nearby.</description>
     </item>
     <item>
       <title>Tref for V1190</title>
       <link>https://okawak.github.io/artemis_crib/example/preparation/tref/index.html</link>
       <pubDate>Fri, 15 Dec 2023 17:39:54 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/preparation/tref/index.html</guid>
-      <description>last modified: 2023-12-15 by Kodai Okawa CRIB uses a multi-hit TDC called V1190 to take timing data (manual).</description>
+      <description>last modified: 2023-12-15 by Kodai Okawa CRIB uses a multi-hit TDC called V1190 to take timing data (manual). When a trigger comes into this module, it opens a window with a set time width and records the timing of the data.</description>
     </item>
     <item>
       <title>PPAC calibration</title>
       <link>https://okawak.github.io/artemis_crib/example/preparation/ppac_calibration/index.html</link>
       <pubDate>Wed, 13 Dec 2023 14:58:47 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/preparation/ppac_calibration/index.html</guid>
-      <description>last modified: 2023-12-18 by Kodai Okawa CRIB use two kinds of PPAC (Parallel-Plate Avalanche Counter), charge division method or delay-readout method.</description>
+      <description>last modified: 2023-12-18 by Kodai Okawa CRIB use two kinds of PPAC (Parallel-Plate Avalanche Counter), charge division method or delay-readout method. The PPAC placed at the F1 focal plane is charge-devision type, and the parameters to be converted to position are fixed and do not need to be calibrated. Therefore we explain the calibration method for delay-line PPAC (dl-PPAC).</description>
     </item>
     <item>
       <title>MWDC calibration</title>
@@ -40,7 +40,7 @@
       <link>https://okawak.github.io/artemis_crib/example/preparation/alpha_calibration/index.html</link>
       <pubDate>Wed, 13 Dec 2023 14:58:43 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/preparation/alpha_calibration/index.html</guid>
-      <description>last modified: 2023-12-23 by Kodai Okawa This is the CRIB alpha source information.</description>
+      <description>last modified: 2023-12-23 by Kodai Okawa This is the CRIB alpha source information. (unit: MeV)</description>
     </item>
     <item>
       <title>MUX calibration</title>
@@ -61,7 +61,7 @@
       <link>https://okawak.github.io/artemis_crib/example/preparation/git/index.html</link>
       <pubDate>Wed, 13 Dec 2023 15:02:26 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/example/preparation/git/index.html</guid>
-      <description>last modified: 2024-01-22 by Kodai Okawa Analysis files for each experiment are managed using git.</description>
+      <description>last modified: 2024-01-22 by Kodai Okawa Analysis files for each experiment are managed using git. This is so that they can be quickly restored if they are all lost for some reason.</description>
     </item>
   </channel>
 </rss>

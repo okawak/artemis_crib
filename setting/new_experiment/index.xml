@@ -3,7 +3,7 @@
   <channel>
     <title>New experiment :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/setting/new_experiment/index.html</link>
-    <description>last modified: 2023-11-05 by Kodai Okawa If you installed with “curl” command explained previous chapter, you should have artnew command.</description>
+    <description>last modified: 2023-11-05 by Kodai Okawa If you installed with “curl” command explained previous chapter, you should have artnew command. This command will make new experiment directory interactively.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

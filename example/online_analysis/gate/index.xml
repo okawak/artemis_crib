@@ -3,7 +3,7 @@
   <channel>
     <title>Gate :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/online_analysis/gate/index.html</link>
-    <description>last modified: 2024-01-17 by Kodai Okawa It is very important to select events for online analysis as well.</description>
+    <description>last modified: 2024-01-17 by Kodai Okawa It is very important to select events for online analysis as well. There are several options to do so, and I will cover all of them. If you know other useful way, please let me know.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

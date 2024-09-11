@@ -3,7 +3,7 @@
   <channel>
     <title>Build :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/setting/build/index.html</link>
-    <description>last modified: 2023-11-14 by Kodai Okawa Before starting analysis, you need to build.</description>
+    <description>last modified: 2023-11-14 by Kodai Okawa Before starting analysis, you need to build. The current version of the artemis use “cmake” so the following steps must be taken.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

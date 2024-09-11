@@ -1,0 +1,572 @@
+\hypertarget{classart_1_1crib_1_1TReconstProcessor}{}\doxysection{art\+::crib\+::TReconst\+Processor Class Reference}
+\label{classart_1_1crib_1_1TReconstProcessor}\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+
+
+{\ttfamily \#include $<$TReconst\+Processor.\+h$>$}
+
+Inheritance diagram for art\+::crib\+::TReconst\+Processor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classart_1_1crib_1_1TReconstProcessor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a3968836d9b88ef634d14ba640624d597}{TReconst\+Processor}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_aa4db24af0e9cd173b0ce8781f4275d3b}{$\sim$\+TReconst\+Processor}} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a3adeb5121a1f387f764b3ad9fb286317}{Init}} (TEvent\+Collection $\ast$col) override
+\begin{DoxyCompactList}\small\item\em Initialization. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a3f8a9c810846fd364719a7eaa32357de}{Process}} () override
+\begin{DoxyCompactList}\small\item\em Main process. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a3b794f5a9de9031c7ef7d483b77eecb7}{f\+Input\+Col\+Name}}
+\begin{DoxyCompactList}\small\item\em input telescope collection name (art\+::\+TTelescope\+Data) \end{DoxyCompactList}\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a36a9996b22d35173097d0c6f89f95273}{f\+Input\+Track\+Col\+Name}}
+\begin{DoxyCompactList}\small\item\em input tracking collection name (art\+::\+TTrack) \end{DoxyCompactList}\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a64085c9ea9c2df20eaf256d76696e3da}{f\+Output\+Col\+Name}}
+\begin{DoxyCompactList}\small\item\em output collection name (art\+::\+TReaction\+Info) \end{DoxyCompactList}\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a46d3c8d45439316ece9a58c86508dcee}{f\+Detector\+Parameter\+Name}}
+\begin{DoxyCompactList}\small\item\em detector parameter name (art\+::\+TDetector\+Parameter) \end{DoxyCompactList}\item 
+TString \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_aa1b9815772f3200ebf2f11aecbdf9793}{f\+Target\+Parameter\+Name}}
+\begin{DoxyCompactList}\small\item\em target parameter name (art\+::\+TTarget\+Parameter) \end{DoxyCompactList}\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a8d5af62b93664c211992b97a3dc15cc6}{f\+In\+Data}}
+\begin{DoxyCompactList}\small\item\em telescope input object (TClones\+Array(art\+::\+TTelescope\+Data)) \end{DoxyCompactList}\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a5d650cdeee04e805324a4036a54db4ee}{f\+In\+Track\+Data}}
+\begin{DoxyCompactList}\small\item\em tracking input object (TClones\+Array(art\+::\+TTrack)) \end{DoxyCompactList}\item 
+TClones\+Array $\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a2196500bb135474230e8e3d9b05dc665}{f\+Out\+Data}}
+\begin{DoxyCompactList}\small\item\em output object (TClones\+Array(art\+::\+TReaction\+Info)) \end{DoxyCompactList}\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_aa0b353992874a2953e5d2d37e58a7fed}{f\+Detector\+Prm}}
+\begin{DoxyCompactList}\small\item\em detector parameter object (TClones\+Array(art\+::\+TDetector\+Parameter)) \end{DoxyCompactList}\item 
+TClones\+Array $\ast$$\ast$ \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a85afdc2e79632f8cd223d42222cad2c3}{f\+Target\+Prm}}
+\begin{DoxyCompactList}\small\item\em target parameter obejct (TClones\+Array(art\+::\+TTarget\+Parameter)) \end{DoxyCompactList}\item 
+Int\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a2eccd5228ca3dca7dcd571f4aa0cc3f4}{f\+Particle\+ZArray}}
+\begin{DoxyCompactList}\small\item\em reaction particles Atomic num array \end{DoxyCompactList}\item 
+Int\+Vec\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a31a6edfab8d939136927967d78fec896}{f\+Particle\+AArray}}
+\begin{DoxyCompactList}\small\item\em reaction particles Mass num array \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a884f99feff0a1cd9e7b3d84a4bec4f35}{f\+Excited\+Energy}}
+\begin{DoxyCompactList}\small\item\em Excited Energy. \end{DoxyCompactList}\item 
+Bool\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_ade33b9bda1af13f8cec63bdd27b2e540}{f\+Do\+Center\+Pos}}
+\begin{DoxyCompactList}\small\item\em Flag of custom processor. \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a6683a7210b8684afd1cbe425a10d3301}{M1}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_ad69c4fae69e21105cd5333077dd3b79b}{M2}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a068521b46e71d1b5f8e2fbdf9ac658a6}{M3\+\_\+default}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_ab1c029223d814852bd0589c0f1534738}{M3}}
+\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_ad4efb0051ffc4997c73d2412db5c886f}{M4}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ Double\+\_\+t, Double\+\_\+t $>$ \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a31f296b3a0eb72e5d58077315049e888}{Get\+ELab\+ALab\+Pair}} (Double\+\_\+t z, const TTrack $\ast$track, const \mbox{\hyperlink{classart_1_1crib_1_1TTelescopeData}{TTelescope\+Data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Get LAB energy and angle from detected particle information. \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a3a8ec3d7c4a66d96dc8b33a74eb02224}{Get\+Ecm\+From\+Detect\+Particle}} (Double\+\_\+t z, const TTrack $\ast$track, const \mbox{\hyperlink{classart_1_1crib_1_1TTelescopeData}{TTelescope\+Data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Get Ecm from detected particle information. \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a7dec740ca1ecef051bfdacf7ebb18160}{Get\+Ecm\+\_\+kinematics}} (Double\+\_\+t energy, Double\+\_\+t theta, Double\+\_\+t low\+\_\+e, Double\+\_\+t high\+\_\+e)
+\begin{DoxyCompactList}\small\item\em Get Ecm from detected particle information (relativity kinematics) \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a0c1a4f5ccbaf53ffd0fe39064d10d03c}{Get\+Ecm\+\_\+classic\+\_\+kinematics}} (Double\+\_\+t energy, Double\+\_\+t theta)
+\begin{DoxyCompactList}\small\item\em Get Ecm from detected particle information (classic kinematics) \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_a29fe0c0e8ea84561302c3ca53ea9de5e}{Get\+CMAngle}} (Double\+\_\+t ELab, Double\+\_\+t Ecm, Double\+\_\+t ALab)
+\begin{DoxyCompactList}\small\item\em Get Lab Angle after reconstruction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_aa666ff1c484e4d0bb1fb8919b839ae7e}{TReconst\+Processor}} (const \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor}{TReconst\+Processor}} \&rhs)=delete
+\item 
+\mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor}{TReconst\+Processor}} \& \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor_ad7d7ec1133bb35a4351a3c105c230e23}{operator=}} (const \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor}{TReconst\+Processor}} \&rhs)=delete
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 23 of file TReconst\+Processor.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a3968836d9b88ef634d14ba640624d597}\label{classart_1_1crib_1_1TReconstProcessor_a3968836d9b88ef634d14ba640624d597}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!TReconstProcessor@{TReconstProcessor}}
+\index{TReconstProcessor@{TReconstProcessor}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{TReconstProcessor()}{TReconstProcessor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily TReconst\+Processor\+::\+TReconst\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+From telescope object and beam (tracking) object, it calculate the Ecm assuming reaction position is z = 0 for solid target.
+
+Need variables in the steering file\+:
+\begin{DoxyItemize}
+\item Input\+Collection\+: telescope object, inherit from art\+::\+TTelescope\+Data
+\item Input\+Track\+Collection\+: tracking object, inherit from art\+::\+TTrack
+\item Output\+Collection\+: name of output branch, inherit from art\+::\+TReaction\+Info
+\item Particle\+ZArray\+: \mbox{[}Z1, Z2, Z3, Z4\mbox{]}
+\item Particle\+AArray\+: \mbox{[}A1, A2, A3, A4\mbox{]}
+\begin{DoxyItemize}
+\item assuming two body reaction (NEED size 4 aray)
+\item \mbox{[}beam, target, fragment, residual\mbox{]}
+\item example\+: A(a,b)B reaction,
+\item the order is \mbox{[}a, A, b, B\mbox{]}
+\item this is \char`\"{}inverse kinematics\char`\"{}, so we assume the detected particle is \char`\"{}\+B\char`\"{}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Option\+:
+\begin{DoxyItemize}
+\item Excited\+Energy\+: if you want to treat excited state transition, input the excited energy (MeV) of Z3 particles
+\item Use\+Center\+Position\+: use center position at the detector.
+\begin{DoxyItemize}
+\item if DSSSD is not working, this flag is used. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line 47 of file TReconst\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_aa4db24af0e9cd173b0ce8781f4275d3b}\label{classart_1_1crib_1_1TReconstProcessor_aa4db24af0e9cd173b0ce8781f4275d3b}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!````~TReconstProcessor@{$\sim$TReconstProcessor}}
+\index{````~TReconstProcessor@{$\sim$TReconstProcessor}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{$\sim$TReconstProcessor()}{~TReconstProcessor()}}
+{\footnotesize\ttfamily TReconst\+Processor\+::$\sim$\+TReconst\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default destructor. 
+
+free the memory 
+
+Definition at line 72 of file TReconst\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_aa666ff1c484e4d0bb1fb8919b839ae7e}\label{classart_1_1crib_1_1TReconstProcessor_aa666ff1c484e4d0bb1fb8919b839ae7e}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!TReconstProcessor@{TReconstProcessor}}
+\index{TReconstProcessor@{TReconstProcessor}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{TReconstProcessor()}{TReconstProcessor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily art\+::crib\+::\+TReconst\+Processor\+::\+TReconst\+Processor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor}{TReconst\+Processor}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a29fe0c0e8ea84561302c3ca53ea9de5e}\label{classart_1_1crib_1_1TReconstProcessor_a29fe0c0e8ea84561302c3ca53ea9de5e}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!GetCMAngle@{GetCMAngle}}
+\index{GetCMAngle@{GetCMAngle}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{GetCMAngle()}{GetCMAngle()}}
+{\footnotesize\ttfamily Double\+\_\+t TReconst\+Processor\+::\+Get\+CMAngle (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{ELab,  }\item[{Double\+\_\+t}]{Ecm,  }\item[{Double\+\_\+t}]{ALab }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get Lab Angle after reconstruction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ELab} & (MeV) \\
+\hline
+{\em Ecm} & (MeV) \\
+\hline
+{\em ALab} & (radian) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+angle (radian)
+\end{DoxyReturn}
+Assuming Ecm and detected energy, calculate CM angle. This is also used classic kinematics 
+
+Definition at line 325 of file TReconst\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a0c1a4f5ccbaf53ffd0fe39064d10d03c}\label{classart_1_1crib_1_1TReconstProcessor_a0c1a4f5ccbaf53ffd0fe39064d10d03c}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!GetEcm\_classic\_kinematics@{GetEcm\_classic\_kinematics}}
+\index{GetEcm\_classic\_kinematics@{GetEcm\_classic\_kinematics}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{GetEcm\_classic\_kinematics()}{GetEcm\_classic\_kinematics()}}
+{\footnotesize\ttfamily Double\+\_\+t TReconst\+Processor\+::\+Get\+Ecm\+\_\+classic\+\_\+kinematics (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{energy,  }\item[{Double\+\_\+t}]{theta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get Ecm from detected particle information (classic kinematics) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em energy} & (MeV) \\
+\hline
+{\em theta} & (radian) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ecm (MeV)
+\end{DoxyReturn}
+From detected energy and angle, calculate kinematics using classic. This is used in Get\+Ecm\+From\+Detect\+Partice method. Please refer from okawa\textquotesingle{}s master thesis for an detail. 
+
+Definition at line 283 of file TReconst\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a7dec740ca1ecef051bfdacf7ebb18160}\label{classart_1_1crib_1_1TReconstProcessor_a7dec740ca1ecef051bfdacf7ebb18160}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!GetEcm\_kinematics@{GetEcm\_kinematics}}
+\index{GetEcm\_kinematics@{GetEcm\_kinematics}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{GetEcm\_kinematics()}{GetEcm\_kinematics()}}
+{\footnotesize\ttfamily Double\+\_\+t TReconst\+Processor\+::\+Get\+Ecm\+\_\+kinematics (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{energy,  }\item[{Double\+\_\+t}]{theta,  }\item[{Double\+\_\+t}]{low\+\_\+e,  }\item[{Double\+\_\+t}]{high\+\_\+e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get Ecm from detected particle information (relativity kinematics) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em energy} & (MeV) \\
+\hline
+{\em theta} & (radian) \\
+\hline
+{\em low\+\_\+e} & (minimum energy) \\
+\hline
+{\em high\+\_\+e} & (maxmum energy) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ecm (MeV)
+\end{DoxyReturn}
+From detected energy and angle, calculate kinematics using relativity. This is used in Get\+Ecm\+From\+Detect\+Partice method. currently not avalable. 
+
+Definition at line 274 of file TReconst\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a3a8ec3d7c4a66d96dc8b33a74eb02224}\label{classart_1_1crib_1_1TReconstProcessor_a3a8ec3d7c4a66d96dc8b33a74eb02224}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!GetEcmFromDetectParticle@{GetEcmFromDetectParticle}}
+\index{GetEcmFromDetectParticle@{GetEcmFromDetectParticle}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{GetEcmFromDetectParticle()}{GetEcmFromDetectParticle()}}
+{\footnotesize\ttfamily Double\+\_\+t TReconst\+Processor\+::\+Get\+Ecm\+From\+Detect\+Particle (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{z,  }\item[{const TTrack $\ast$}]{track,  }\item[{const \mbox{\hyperlink{classart_1_1crib_1_1TTelescopeData}{TTelescope\+Data}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get Ecm from detected particle information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & (mm) \\
+\hline
+{\em track} & (art\+::\+TTrack) \\
+\hline
+{\em data} & (art\+::\+TTelescope\+Data) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ecm (MeV)
+\end{DoxyReturn}
+From {\bfseries{assuming Z position (reaction position) = 0}}, calculate the Ecm from detected particle information. Currently it uses classsic kinematics. 
+
+Definition at line 211 of file TReconst\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a31f296b3a0eb72e5d58077315049e888}\label{classart_1_1crib_1_1TReconstProcessor_a31f296b3a0eb72e5d58077315049e888}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!GetELabALabPair@{GetELabALabPair}}
+\index{GetELabALabPair@{GetELabALabPair}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{GetELabALabPair()}{GetELabALabPair()}}
+{\footnotesize\ttfamily std\+::pair$<$ Double\+\_\+t, Double\+\_\+t $>$ TReconst\+Processor\+::\+Get\+ELab\+ALab\+Pair (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{z,  }\item[{const TTrack $\ast$}]{track,  }\item[{const \mbox{\hyperlink{classart_1_1crib_1_1TTelescopeData}{TTelescope\+Data}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get LAB energy and angle from detected particle information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & (mm) \\
+\hline
+{\em track} & (art\+::\+TTrack) \\
+\hline
+{\em data} & (art\+::\+TTelescope\+Data) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ecm (MeV)
+\end{DoxyReturn}
+From {\bfseries{assuming Z position (reaction position)}}, calculate the ELab and ALab of Z4 from detected particle information. It uses TSrim library. 
+
+Definition at line 228 of file TReconst\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a3adeb5121a1f387f764b3ad9fb286317}\label{classart_1_1crib_1_1TReconstProcessor_a3adeb5121a1f387f764b3ad9fb286317}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!Init@{Init}}
+\index{Init@{Init}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void TReconst\+Processor\+::\+Init (\begin{DoxyParamCaption}\item[{TEvent\+Collection $\ast$}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Initialization. 
+
+in this process, it prepares some variables 
+
+Definition at line 80 of file TReconst\+Processor.\+cc.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_ad7d7ec1133bb35a4351a3c105c230e23}\label{classart_1_1crib_1_1TReconstProcessor_ad7d7ec1133bb35a4351a3c105c230e23}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!operator=@{operator=}}
+\index{operator=@{operator=}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor}{TReconst\+Processor}}\& art\+::crib\+::\+TReconst\+Processor\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classart_1_1crib_1_1TReconstProcessor}{TReconst\+Processor}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a3f8a9c810846fd364719a7eaa32357de}\label{classart_1_1crib_1_1TReconstProcessor_a3f8a9c810846fd364719a7eaa32357de}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!Process@{Process}}
+\index{Process@{Process}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{Process()}{Process()}}
+{\footnotesize\ttfamily void TReconst\+Processor\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Main process. 
+
+
+
+Definition at line 151 of file TReconst\+Processor.\+cc.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a46d3c8d45439316ece9a58c86508dcee}\label{classart_1_1crib_1_1TReconstProcessor_a46d3c8d45439316ece9a58c86508dcee}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!fDetectorParameterName@{fDetectorParameterName}}
+\index{fDetectorParameterName@{fDetectorParameterName}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{fDetectorParameterName}{fDetectorParameterName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TReconst\+Processor\+::f\+Detector\+Parameter\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+detector parameter name (art\+::\+TDetector\+Parameter) 
+
+
+
+Definition at line 43 of file TReconst\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_aa0b353992874a2953e5d2d37e58a7fed}\label{classart_1_1crib_1_1TReconstProcessor_aa0b353992874a2953e5d2d37e58a7fed}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!fDetectorPrm@{fDetectorPrm}}
+\index{fDetectorPrm@{fDetectorPrm}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{fDetectorPrm}{fDetectorPrm}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::crib\+::\+TReconst\+Processor\+::f\+Detector\+Prm\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+detector parameter object (TClones\+Array(art\+::\+TDetector\+Parameter)) 
+
+
+
+Definition at line 55 of file TReconst\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_ade33b9bda1af13f8cec63bdd27b2e540}\label{classart_1_1crib_1_1TReconstProcessor_ade33b9bda1af13f8cec63bdd27b2e540}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!fDoCenterPos@{fDoCenterPos}}
+\index{fDoCenterPos@{fDoCenterPos}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{fDoCenterPos}{fDoCenterPos}}
+{\footnotesize\ttfamily Bool\+\_\+t art\+::crib\+::\+TReconst\+Processor\+::f\+Do\+Center\+Pos\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Flag of custom processor. 
+
+
+
+Definition at line 66 of file TReconst\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a884f99feff0a1cd9e7b3d84a4bec4f35}\label{classart_1_1crib_1_1TReconstProcessor_a884f99feff0a1cd9e7b3d84a4bec4f35}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!fExcitedEnergy@{fExcitedEnergy}}
+\index{fExcitedEnergy@{fExcitedEnergy}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{fExcitedEnergy}{fExcitedEnergy}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TReconst\+Processor\+::f\+Excited\+Energy\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Excited Energy. 
+
+
+
+Definition at line 64 of file TReconst\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a8d5af62b93664c211992b97a3dc15cc6}\label{classart_1_1crib_1_1TReconstProcessor_a8d5af62b93664c211992b97a3dc15cc6}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!fInData@{fInData}}
+\index{fInData@{fInData}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{fInData}{fInData}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::crib\+::\+TReconst\+Processor\+::f\+In\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+telescope input object (TClones\+Array(art\+::\+TTelescope\+Data)) 
+
+
+
+Definition at line 48 of file TReconst\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a3b794f5a9de9031c7ef7d483b77eecb7}\label{classart_1_1crib_1_1TReconstProcessor_a3b794f5a9de9031c7ef7d483b77eecb7}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!fInputColName@{fInputColName}}
+\index{fInputColName@{fInputColName}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{fInputColName}{fInputColName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TReconst\+Processor\+::f\+Input\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+input telescope collection name (art\+::\+TTelescope\+Data) 
+
+
+
+Definition at line 37 of file TReconst\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a36a9996b22d35173097d0c6f89f95273}\label{classart_1_1crib_1_1TReconstProcessor_a36a9996b22d35173097d0c6f89f95273}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!fInputTrackColName@{fInputTrackColName}}
+\index{fInputTrackColName@{fInputTrackColName}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{fInputTrackColName}{fInputTrackColName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TReconst\+Processor\+::f\+Input\+Track\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+input tracking collection name (art\+::\+TTrack) 
+
+
+
+Definition at line 39 of file TReconst\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a5d650cdeee04e805324a4036a54db4ee}\label{classart_1_1crib_1_1TReconstProcessor_a5d650cdeee04e805324a4036a54db4ee}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!fInTrackData@{fInTrackData}}
+\index{fInTrackData@{fInTrackData}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{fInTrackData}{fInTrackData}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::crib\+::\+TReconst\+Processor\+::f\+In\+Track\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+tracking input object (TClones\+Array(art\+::\+TTrack)) 
+
+
+
+Definition at line 50 of file TReconst\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a2196500bb135474230e8e3d9b05dc665}\label{classart_1_1crib_1_1TReconstProcessor_a2196500bb135474230e8e3d9b05dc665}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!fOutData@{fOutData}}
+\index{fOutData@{fOutData}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{fOutData}{fOutData}}
+{\footnotesize\ttfamily TClones\+Array$\ast$ art\+::crib\+::\+TReconst\+Processor\+::f\+Out\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+output object (TClones\+Array(art\+::\+TReaction\+Info)) 
+
+
+
+Definition at line 52 of file TReconst\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a64085c9ea9c2df20eaf256d76696e3da}\label{classart_1_1crib_1_1TReconstProcessor_a64085c9ea9c2df20eaf256d76696e3da}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!fOutputColName@{fOutputColName}}
+\index{fOutputColName@{fOutputColName}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{fOutputColName}{fOutputColName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TReconst\+Processor\+::f\+Output\+Col\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+output collection name (art\+::\+TReaction\+Info) 
+
+
+
+Definition at line 41 of file TReconst\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a31a6edfab8d939136927967d78fec896}\label{classart_1_1crib_1_1TReconstProcessor_a31a6edfab8d939136927967d78fec896}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!fParticleAArray@{fParticleAArray}}
+\index{fParticleAArray@{fParticleAArray}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{fParticleAArray}{fParticleAArray}}
+{\footnotesize\ttfamily Int\+Vec\+\_\+t art\+::crib\+::\+TReconst\+Processor\+::f\+Particle\+AArray\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+reaction particles Mass num array 
+
+
+
+Definition at line 62 of file TReconst\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a2eccd5228ca3dca7dcd571f4aa0cc3f4}\label{classart_1_1crib_1_1TReconstProcessor_a2eccd5228ca3dca7dcd571f4aa0cc3f4}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!fParticleZArray@{fParticleZArray}}
+\index{fParticleZArray@{fParticleZArray}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{fParticleZArray}{fParticleZArray}}
+{\footnotesize\ttfamily Int\+Vec\+\_\+t art\+::crib\+::\+TReconst\+Processor\+::f\+Particle\+ZArray\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+reaction particles Atomic num array 
+
+
+
+Definition at line 60 of file TReconst\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_aa1b9815772f3200ebf2f11aecbdf9793}\label{classart_1_1crib_1_1TReconstProcessor_aa1b9815772f3200ebf2f11aecbdf9793}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!fTargetParameterName@{fTargetParameterName}}
+\index{fTargetParameterName@{fTargetParameterName}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetParameterName}{fTargetParameterName}}
+{\footnotesize\ttfamily TString art\+::crib\+::\+TReconst\+Processor\+::f\+Target\+Parameter\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+target parameter name (art\+::\+TTarget\+Parameter) 
+
+
+
+Definition at line 45 of file TReconst\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a85afdc2e79632f8cd223d42222cad2c3}\label{classart_1_1crib_1_1TReconstProcessor_a85afdc2e79632f8cd223d42222cad2c3}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!fTargetPrm@{fTargetPrm}}
+\index{fTargetPrm@{fTargetPrm}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{fTargetPrm}{fTargetPrm}}
+{\footnotesize\ttfamily TClones\+Array$\ast$$\ast$ art\+::crib\+::\+TReconst\+Processor\+::f\+Target\+Prm\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+target parameter obejct (TClones\+Array(art\+::\+TTarget\+Parameter)) 
+
+
+
+Definition at line 57 of file TReconst\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a6683a7210b8684afd1cbe425a10d3301}\label{classart_1_1crib_1_1TReconstProcessor_a6683a7210b8684afd1cbe425a10d3301}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!M1@{M1}}
+\index{M1@{M1}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{M1}{M1}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TReconst\+Processor\+::\+M1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 68 of file TReconst\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_ad69c4fae69e21105cd5333077dd3b79b}\label{classart_1_1crib_1_1TReconstProcessor_ad69c4fae69e21105cd5333077dd3b79b}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!M2@{M2}}
+\index{M2@{M2}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{M2}{M2}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TReconst\+Processor\+::\+M2\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 69 of file TReconst\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_ab1c029223d814852bd0589c0f1534738}\label{classart_1_1crib_1_1TReconstProcessor_ab1c029223d814852bd0589c0f1534738}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!M3@{M3}}
+\index{M3@{M3}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{M3}{M3}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TReconst\+Processor\+::\+M3\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 71 of file TReconst\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_a068521b46e71d1b5f8e2fbdf9ac658a6}\label{classart_1_1crib_1_1TReconstProcessor_a068521b46e71d1b5f8e2fbdf9ac658a6}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!M3\_default@{M3\_default}}
+\index{M3\_default@{M3\_default}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{M3\_default}{M3\_default}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TReconst\+Processor\+::\+M3\+\_\+default\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 70 of file TReconst\+Processor.\+h.
+
+\mbox{\Hypertarget{classart_1_1crib_1_1TReconstProcessor_ad4efb0051ffc4997c73d2412db5c886f}\label{classart_1_1crib_1_1TReconstProcessor_ad4efb0051ffc4997c73d2412db5c886f}} 
+\index{art::crib::TReconstProcessor@{art::crib::TReconstProcessor}!M4@{M4}}
+\index{M4@{M4}!art::crib::TReconstProcessor@{art::crib::TReconstProcessor}}
+\doxysubsubsection{\texorpdfstring{M4}{M4}}
+{\footnotesize\ttfamily Double\+\_\+t art\+::crib\+::\+TReconst\+Processor\+::\+M4\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 72 of file TReconst\+Processor.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src-\/crib/reconst/\mbox{\hyperlink{TReconstProcessor_8h}{TReconst\+Processor.\+h}}\item 
+src-\/crib/reconst/\mbox{\hyperlink{TReconstProcessor_8cc}{TReconst\+Processor.\+cc}}\end{DoxyCompactItemize}

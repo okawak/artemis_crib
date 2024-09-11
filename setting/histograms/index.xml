@@ -3,7 +3,7 @@
   <channel>
     <title>Histograms :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/setting/histograms/index.html</link>
-    <description>last modified: 2023-11-14 by Kodai Okawa In the online analysis, it is important to have immediate access to data.</description>
+    <description>last modified: 2023-11-14 by Kodai Okawa In the online analysis, it is important to have immediate access to data. The artemis can produce TTree object but long commands are needed to access, for example,</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

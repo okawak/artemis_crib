@@ -44,6 +44,7 @@ var hierarchy =
       [ "art::crib::TMUXPositionValidator", "classart_1_1crib_1_1TMUXPositionValidator.html", null ],
       [ "art::crib::TNBodyReactionProcessor", "classart_1_1crib_1_1TNBodyReactionProcessor.html", null ],
       [ "art::crib::TRandomBeamGenerator", "classart_1_1crib_1_1TRandomBeamGenerator.html", null ],
+      [ "art::crib::TReconstProcessor", "classart_1_1crib_1_1TReconstProcessor.html", null ],
       [ "art::crib::TScalerMonitorProcessor", "classart_1_1crib_1_1TScalerMonitorProcessor.html", null ],
       [ "art::crib::TSegmentOutputProcessor", "classart_1_1crib_1_1TSegmentOutputProcessor.html", null ],
       [ "art::crib::TSolidAngleProcessor", "classart_1_1crib_1_1TSolidAngleProcessor.html", null ],

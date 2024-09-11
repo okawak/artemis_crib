@@ -3,7 +3,7 @@
   <channel>
     <title>Tref for V1190 :: CRIB artemis</title>
     <link>https://okawak.github.io/artemis_crib/example/preparation/tref/index.html</link>
-    <description>last modified: 2023-12-15 by Kodai Okawa CRIB uses a multi-hit TDC called V1190 to take timing data (manual).</description>
+    <description>last modified: 2023-12-15 by Kodai Okawa CRIB uses a multi-hit TDC called V1190 to take timing data (manual). When a trigger comes into this module, it opens a window with a set time width and records the timing of the data.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

@@ -12,14 +12,14 @@
       <link>https://okawak.github.io/artemis_crib/crib_parts/environment/index.html</link>
       <pubDate>Thu, 16 Nov 2023 16:36:56 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/crib_parts/environment/index.html</guid>
-      <description>last modified: 2023-12-12 by Kodai Okawa CRIB shares the analysis environment of all experiments under one user account (username crib).</description>
+      <description>last modified: 2023-12-12 by Kodai Okawa CRIB shares the analysis environment of all experiments under one user account (username crib). Therefore, when you want to check data from an old experiment or when several people are analysing the data, you need to log in to the same user account.</description>
     </item>
     <item>
       <title>Online-mode analysis</title>
       <link>https://okawak.github.io/artemis_crib/crib_parts/onlinemode/index.html</link>
       <pubDate>Tue, 12 Dec 2023 13:13:43 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/crib_parts/onlinemode/index.html</guid>
-      <description>last modified: 2023-12-12 by Kodai Okawa We often use “nssta” (non-save mode start) analysis in the beam tuning.</description>
+      <description>last modified: 2023-12-12 by Kodai Okawa We often use “nssta” (non-save mode start) analysis in the beam tuning. It is not necessary to take data, but we need to check the beam condition by using artemis. In this case, TRIDFEventStore can be used as online mode.</description>
     </item>
     <item>
       <title>User config</title>
@@ -33,7 +33,7 @@
       <link>https://okawak.github.io/artemis_crib/crib_parts/newcommand/index.html</link>
       <pubDate>Tue, 12 Dec 2023 13:53:50 +0900</pubDate>
       <guid>https://okawak.github.io/artemis_crib/crib_parts/newcommand/index.html</guid>
-      <description>last modified: 2024-01-20 by Kodai Okawa Various commands (mainly the same with ANAPAW commands) have been developed for CRIB experiment.</description>
+      <description>last modified: 2024-01-20 by Kodai Okawa Various commands (mainly the same with ANAPAW commands) have been developed for CRIB experiment. For more information, please click here (src-crib/commands). These commands are registered in userlogon.C. (See previous section.)</description>
     </item>
     <item>
       <title>Minor changes</title>

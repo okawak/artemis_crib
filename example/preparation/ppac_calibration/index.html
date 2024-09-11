@@ -3,24 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.133.1">
+    <meta name="generator" content="Hugo 0.134.2">
     <meta name="generator" content="Relearn 6.1.1">
-    <meta name="description" content="last modified: 2023-12-18 by Kodai Okawa CRIB use two kinds of PPAC (Parallel-Plate Avalanche Counter), charge division method or delay-readout method.">
+    <meta name="description" content="last modified: 2023-12-18 by Kodai Okawa CRIB use two kinds of PPAC (Parallel-Plate Avalanche Counter), charge division method or delay-readout method. The PPAC placed at the F1 focal plane is charge-devision type, and the parameters to be converted to position are fixed and do not need to be calibrated. Therefore we explain the calibration method for delay-line PPAC (dl-PPAC).">
     <meta name="author" content="Kodai Okawa">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="PPAC calibration :: CRIB artemis">
-    <meta name="twitter:description" content="last modified: 2023-12-18 by Kodai Okawa CRIB use two kinds of PPAC (Parallel-Plate Avalanche Counter), charge division method or delay-readout method.">
+    <meta name="twitter:description" content="last modified: 2023-12-18 by Kodai Okawa CRIB use two kinds of PPAC (Parallel-Plate Avalanche Counter), charge division method or delay-readout method. The PPAC placed at the F1 focal plane is charge-devision type, and the parameters to be converted to position are fixed and do not need to be calibrated. Therefore we explain the calibration method for delay-line PPAC (dl-PPAC).">
     <meta property="og:url" content="https://okawak.github.io/artemis_crib/example/preparation/ppac_calibration/index.html">
     <meta property="og:site_name" content="CRIB artemis">
     <meta property="og:title" content="PPAC calibration :: CRIB artemis">
-    <meta property="og:description" content="last modified: 2023-12-18 by Kodai Okawa CRIB use two kinds of PPAC (Parallel-Plate Avalanche Counter), charge division method or delay-readout method.">
+    <meta property="og:description" content="last modified: 2023-12-18 by Kodai Okawa CRIB use two kinds of PPAC (Parallel-Plate Avalanche Counter), charge division method or delay-readout method. The PPAC placed at the F1 focal plane is charge-devision type, and the parameters to be converted to position are fixed and do not need to be calibrated. Therefore we explain the calibration method for delay-line PPAC (dl-PPAC).">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Example">
     <meta property="article:published_time" content="2023-12-13T14:58:47+09:00">
     <meta property="article:modified_time" content="2023-12-18T16:34:36+09:00">
     <meta itemprop="name" content="PPAC calibration :: CRIB artemis">
-    <meta itemprop="description" content="last modified: 2023-12-18 by Kodai Okawa CRIB use two kinds of PPAC (Parallel-Plate Avalanche Counter), charge division method or delay-readout method.">
+    <meta itemprop="description" content="last modified: 2023-12-18 by Kodai Okawa CRIB use two kinds of PPAC (Parallel-Plate Avalanche Counter), charge division method or delay-readout method. The PPAC placed at the F1 focal plane is charge-devision type, and the parameters to be converted to position are fixed and do not need to be calibrated. Therefore we explain the calibration method for delay-line PPAC (dl-PPAC).">
     <meta itemprop="datePublished" content="2023-12-13T14:58:47+09:00">
     <meta itemprop="dateModified" content="2023-12-18T16:34:36+09:00">
     <meta itemprop="wordCount" content="1164">
@@ -28,23 +28,23 @@
     <link href="/artemis_crib/example/preparation/ppac_calibration/index.xml" rel="alternate" type="application/rss+xml" title="PPAC calibration :: CRIB artemis">
     <link href="/artemis_crib/example/preparation/ppac_calibration/index.print.html" rel="alternate" type="text/html" title="PPAC calibration :: CRIB artemis"><link rel="icon" href="/artemis_crib/images/crib_overlay.png" type="image/png">
 
-    <link href="/artemis_crib/css/fontawesome-all.min.css?1725329558" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1725329558" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/nucleus.css?1725329558" rel="stylesheet">
-    <link href="/artemis_crib/css/auto-complete.css?1725329558" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1725329558" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1725329558" rel="stylesheet">
-    <link href="/artemis_crib/css/fonts.css?1725329558" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1725329558" rel="stylesheet"></noscript>
-    <link href="/artemis_crib/css/theme.css?1725329558" rel="stylesheet">
-    <link href="/artemis_crib/css/theme-CRIB-theme.css?1725329558" rel="stylesheet" id="R-variant-style">
-    <link href="/artemis_crib/css/chroma-relearn-dark.css?1725329558" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/artemis_crib/css/variant.css?1725329558" rel="stylesheet">
-    <link href="/artemis_crib/css/print.css?1725329558" rel="stylesheet" media="print">
-    <script src="/artemis_crib/js/variant.js?1725329558"></script>
+    <link href="/artemis_crib/css/fontawesome-all.min.css?1726025687" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fontawesome-all.min.css?1726025687" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/nucleus.css?1726025687" rel="stylesheet">
+    <link href="/artemis_crib/css/auto-complete.css?1726025687" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/auto-complete.css?1726025687" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/perfect-scrollbar.min.css?1726025687" rel="stylesheet">
+    <link href="/artemis_crib/css/fonts.css?1726025687" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/artemis_crib/css/fonts.css?1726025687" rel="stylesheet"></noscript>
+    <link href="/artemis_crib/css/theme.css?1726025687" rel="stylesheet">
+    <link href="/artemis_crib/css/theme-CRIB-theme.css?1726025687" rel="stylesheet" id="R-variant-style">
+    <link href="/artemis_crib/css/chroma-relearn-dark.css?1726025687" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/artemis_crib/css/variant.css?1726025687" rel="stylesheet">
+    <link href="/artemis_crib/css/print.css?1726025687" rel="stylesheet" media="print">
+    <script src="/artemis_crib/js/variant.js?1726025687"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..\/..';
       window.relearn.absBaseUri='https:\/\/okawak.github.io\/artemis_crib';
-      window.index_js_url="/artemis_crib/index.search.js?1725329558";
+      window.index_js_url="/artemis_crib/index.search.js?1726025687";
       // variant stuff
       window.variants && variants.init( [ 'CRIB-theme', 'zen-dark', 'learn', 'relearn-dark' ] );
       // translations
@@ -176,63 +176,63 @@ First, define the parameters as follows</p>
 <span class="math align-center">$T_{Xout-offset}$</span>).</p>
 <p>The following is a list of dl-PPAC parameters used in CRIB experiment.</p>
 <table>
-<thead>
-<tr>
-<th>PPAC ID</th>
-<th>
+  <thead>
+      <tr>
+          <th style="text-align: left">PPAC ID</th>
+          <th style="text-align: left">
 <span class="math align-center">$k_x$</span> [mm/ns]</th>
-<th>
+          <th style="text-align: left">
 <span class="math align-center">$k_y$</span> [mm/ns]</th>
-<th>
+          <th style="text-align: left">
 <span class="math align-center">$T_{Xin-offset}$</span></th>
-<th>
+          <th style="text-align: left">
 <span class="math align-center">$T_{Yin-offset}$</span></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>#2</td>
-<td>1.256</td>
-<td>1.256</td>
-<td>0.29 mm</td>
-<td>0.18 mm</td>
-</tr>
-<tr>
-<td>#3</td>
-<td>1.264</td>
-<td>1.253</td>
-<td>0.22 mm</td>
-<td>0.30 mm</td>
-</tr>
-<tr>
-<td>#7</td>
-<td>1.240</td>
-<td>1.242</td>
-<td>0.92 ns</td>
-<td>1.58 ns</td>
-</tr>
-<tr>
-<td>#8</td>
-<td>1.241</td>
-<td>1.233</td>
-<td>0.17 ns</td>
-<td>0.11 ns</td>
-</tr>
-<tr>
-<td>#9</td>
-<td>1.257</td>
-<td>1.257</td>
-<td>0.05 mm</td>
-<td>0.04 mm</td>
-</tr>
-<tr>
-<td>#10</td>
-<td>1.257</td>
-<td>1.257</td>
-<td>0.05 mm</td>
-<td>0.04 mm</td>
-</tr>
-</tbody>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">#2</td>
+          <td style="text-align: left">1.256</td>
+          <td style="text-align: left">1.256</td>
+          <td style="text-align: left">0.29 mm</td>
+          <td style="text-align: left">0.18 mm</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">#3</td>
+          <td style="text-align: left">1.264</td>
+          <td style="text-align: left">1.253</td>
+          <td style="text-align: left">0.22 mm</td>
+          <td style="text-align: left">0.30 mm</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">#7</td>
+          <td style="text-align: left">1.240</td>
+          <td style="text-align: left">1.242</td>
+          <td style="text-align: left">0.92 ns</td>
+          <td style="text-align: left">1.58 ns</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">#8</td>
+          <td style="text-align: left">1.241</td>
+          <td style="text-align: left">1.233</td>
+          <td style="text-align: left">0.17 ns</td>
+          <td style="text-align: left">0.11 ns</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">#9</td>
+          <td style="text-align: left">1.257</td>
+          <td style="text-align: left">1.257</td>
+          <td style="text-align: left">0.05 mm</td>
+          <td style="text-align: left">0.04 mm</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">#10</td>
+          <td style="text-align: left">1.257</td>
+          <td style="text-align: left">1.257</td>
+          <td style="text-align: left">0.05 mm</td>
+          <td style="text-align: left">0.04 mm</td>
+      </tr>
+  </tbody>
 </table>
 
 <div class="box notices cstyle warning">
@@ -249,13 +249,13 @@ First, define the parameters as follows</p>
 </ul>
 <p>For example, it is like this:</p>
 
-<div class="tab-panel" data-tab-group="237d7c1347f50f50efd0216c62be3492">
+<div class="tab-panel" data-tab-group="ec040961bf7101500f371c0aa627446c">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="prmppacdlppacyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('237d7c1347f50f50efd0216c62be3492','prmppacdlppacyaml')"
+      onclick="switchTab('ec040961bf7101500f371c0aa627446c','prmppacdlppacyaml')"
     >
       <span class="tab-nav-text">prm/ppac/dlppac.yaml</span>
     </button>
@@ -384,13 +384,13 @@ I think all PPAC geometries used by CRIB are the same.</p>
 </ul>
 <p>When we set the parameter like this files, the XY figure can be obtained.</p>
 
-<div class="tab-panel" data-tab-group="00f1d2bd398715aafb94ae2f4bbfd168">
+<div class="tab-panel" data-tab-group="944a7fccf1629b59397c04b47ffc9c33">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="prmppacdlppacyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('00f1d2bd398715aafb94ae2f4bbfd168','prmppacdlppacyaml')"
+      onclick="switchTab('944a7fccf1629b59397c04b47ffc9c33','prmppacdlppacyaml')"
     >
       <span class="tab-nav-text">prm/ppac/dlppac.yaml</span>
     </button>
@@ -450,13 +450,13 @@ I think all PPAC geometries used by CRIB are the same.</p>
 </span></span><span class="line"><span class="cl">move parameters        : <span class="o">(</span>-1.41737, 0.382269<span class="o">)</span>
 </span></span><span class="line"><span class="cl"><span class="o">===================================================</span></span></span></code></pre></div><p>And please input this value to the dlppac.yaml.</p>
 
-<div class="tab-panel" data-tab-group="eaced4b2cd77a718750eaf32b1ce4c70">
+<div class="tab-panel" data-tab-group="d2db388679b13fb8043784f464992a03">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
       data-tab-item="prmppacdlppacyaml"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('eaced4b2cd77a718750eaf32b1ce4c70','prmppacdlppacyaml')"
+      onclick="switchTab('d2db388679b13fb8043784f464992a03','prmppacdlppacyaml')"
     >
       <span class="tab-nav-text">prm/ppac/dlppac.yaml</span>
     </button>
@@ -557,12 +557,12 @@ I think all PPAC geometries used by CRIB are the same.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/artemis_crib/js/auto-complete.js?1725329558" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.min.js?1725329558" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1725329558" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1725329558" defer></script>
-        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1725329558" defer></script>
-        <script src="/artemis_crib/js/search.js?1725329558" defer></script>
+        <script src="/artemis_crib/js/auto-complete.js?1726025687" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.min.js?1726025687" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.stemmer.support.min.js?1726025687" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.multi.min.js?1726025687" defer></script>
+        <script src="/artemis_crib/js/lunr/lunr.en.min.js?1726025687" defer></script>
+        <script src="/artemis_crib/js/search.js?1726025687" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -572,9 +572,7 @@ I think all PPAC geometries used by CRIB are the same.</p>
           <ul class="enlarge morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/installation/index.html" class=""><a class="padding" href="/artemis_crib/installation/index.html">Installation</a><ul id="R-subsections-d532c08ef757367cd12653650690f4a3" class="morespace collapsible-menu">
           <li data-nav-id="/artemis_crib/installation/requirements/index.html" class=""><a class="padding" href="/artemis_crib/installation/requirements/index.html">Requirements</a></li>
-          <li data-nav-id="/artemis_crib/installation/cmake/index.html" class=""><a class="padding" href="/artemis_crib/installation/cmake/index.html">cmake</a></li>
           <li data-nav-id="/artemis_crib/installation/root/index.html" class=""><a class="padding" href="/artemis_crib/installation/root/index.html">ROOT</a></li>
-          <li data-nav-id="/artemis_crib/installation/yaml-cpp/index.html" class=""><a class="padding" href="/artemis_crib/installation/yaml-cpp/index.html">yaml-cpp</a></li>
           <li data-nav-id="/artemis_crib/installation/artemis/index.html" class=""><a class="padding" href="/artemis_crib/installation/artemis/index.html">artemis</a></li>
           <li data-nav-id="/artemis_crib/installation/mount/index.html" class=""><a class="padding" href="/artemis_crib/installation/mount/index.html">mount setting</a></li>
           <li data-nav-id="/artemis_crib/installation/energyloss_calculator/index.html" class=""><a class="padding" href="/artemis_crib/installation/energyloss_calculator/index.html">energyloss calculator</a></li>
@@ -696,8 +694,8 @@ I think all PPAC geometries used by CRIB are the same.</p>
         </div>
       </div>
     </aside>
-    <script src="/artemis_crib/js/clipboard.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1725329558" defer></script>
+    <script src="/artemis_crib/js/clipboard.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/perfect-scrollbar.min.js?1726025687" defer></script>
     <script>
       function useMathJax( config ){
         window.MathJax = Object.assign( window.MathJax || {}, {
@@ -713,20 +711,20 @@ I think all PPAC geometries used by CRIB are the same.</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/artemis_crib/js/d3/d3-color.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/d3/d3-drag.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/d3/d3-ease.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/d3/d3-selection.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/d3/d3-timer.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/d3/d3-transition.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/js-yaml.min.js?1725329558" defer></script>
-    <script src="/artemis_crib/js/mermaid.min.js?1725329558" defer></script>
+    <script src="/artemis_crib/js/d3/d3-color.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/d3/d3-dispatch.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/d3/d3-drag.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/d3/d3-ease.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/d3/d3-interpolate.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/d3/d3-selection.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/d3/d3-timer.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/d3/d3-transition.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/d3/d3-zoom.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/js-yaml.min.js?1726025687" defer></script>
+    <script src="/artemis_crib/js/mermaid.min.js?1726025687" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{}");
     </script>
-    <script src="/artemis_crib/js/theme.js?1725329558" defer></script>
+    <script src="/artemis_crib/js/theme.js?1726025687" defer></script>
   </body>
 </html>
