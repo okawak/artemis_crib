@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:34:15
- * @note    last modified: 2024-08-23 21:12:51
+ * @note    last modified: 2024-09-18 15:55:36
  * @details
  */
 
@@ -46,7 +46,8 @@ class art::crib::TDetectParticleProcessor : public TProcessor {
     TString fTargetName;
     Double_t fTargetPressure;
 
-    DoubleVec_t fResolution; //! x 100 = %, index=telescope id
+    DoubleVec_t fEResolution; //! x 100 = %, index=telescope id
+    DoubleVec_t fTResolution; //! x 100 = %, index=telescope id
 
     TSrim *srim;
 

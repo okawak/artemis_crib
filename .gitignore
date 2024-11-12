@@ -20,6 +20,7 @@ build
 install
 model
 ana
+ana2
 
 # scripts logs
 .log_mux

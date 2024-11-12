@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2024-01-18 14:36:43
- * @note    last modified: 2024-08-23 21:10:55
+ * @note    last modified: 2024-09-18 15:57:31
  * @details
  */
 
@@ -33,7 +33,8 @@ TDetectParticleProcessor::TDetectParticleProcessor()
     RegisterProcessorParameter("TargetPressure", "Target presure", fTargetPressure, 0.0);
 
     DoubleVec_t init_d_vec;
-    RegisterProcessorParameter("EnergyResolution", "energy resolution \% unit", fResolution, init_d_vec);
+    RegisterProcessorParameter("EnergyResolution", "energy resolution MeV unit", fEResolution, init_d_vec);
+    RegisterProcessorParameter("TimingResolution", "timing resolution ns unit", fTResolution, init_d_vec);
 
     RegisterOptionalInputInfo("DetectorParameter", "name of telescope parameter", fDetectorParameterName,
                               TString("prm_detectors"), &fDetectorPrm, "TClonesArray", "art::crib::TDetectorParameter");
@@ -91,17 +92,31 @@ void TDetectParticleProcessor::Init(TEventCollection *col) {
     //     SetStateError(Form("not found target parameter object %s", fTargetParameterName.Data()));
     // }
 
-    if (fResolution.size() == 1) { /// same energy resolution for all detector
+    if (fEResolution.size() == 1) { /// same energy resolution for all detector
         for (Int_t iDet = 0; iDet < det_num - 1; iDet++) {
-            fResolution.emplace_back(fResolution[0]);
+            fEResolution.emplace_back(fEResolution[0]);
         }
-    } else if (fResolution.size() == 0) { /// ignore energy resolution
+    } else if (fEResolution.size() == 0) { /// ignore energy resolution
         for (Int_t iDet = 0; iDet < det_num; iDet++) {
-            fResolution.emplace_back(0.0);
+            fEResolution.emplace_back(0.0);
         }
-    } else if ((decltype(det_num))fResolution.size() != det_num) {
+    } else if ((Int_t)fEResolution.size() != det_num) {
         SetStateError(Form("Resolution parameter size is wrong, should be %d, but %ld",
-                           (*fDetectorPrm)->GetEntriesFast(), fResolution.size()));
+                           (*fDetectorPrm)->GetEntriesFast(), fEResolution.size()));
+        return;
+    }
+
+    if (fTResolution.size() == 1) { /// same timing resolution for all detector
+        for (Int_t iDet = 0; iDet < det_num - 1; iDet++) {
+            fTResolution.emplace_back(fTResolution[0]);
+        }
+    } else if (fTResolution.size() == 0) { /// ignore energy resolution
+        for (Int_t iDet = 0; iDet < det_num; iDet++) {
+            fTResolution.emplace_back(0.0);
+        }
+    } else if ((Int_t)fTResolution.size() != det_num) {
+        SetStateError(Form("Resolution parameter size is wrong, should be %d, but %ld",
+                           (*fDetectorPrm)->GetEntriesFast(), fTResolution.size()));
         return;
     }
 
@@ -212,7 +227,7 @@ void TDetectParticleProcessor::Process() {
         Double_t ion_mass = amdc::Mass(Data->GetAtomicNumber(), Data->GetMassNumber()) * amdc::amu;                // MeV
         Double_t duration = distance / (TMath::Sqrt(1.0 - TMath::Power(ion_mass / (ion_mass + energy), 2.0)) * c); // ns
         duration += Data->GetDurationTime();
-        outData->PushTimingArray(duration);
+        outData->PushTimingArray(gRandom->Gaus(duration, fTResolution[det_id.Atoi()]));
 
         // caliculate energy
         Double_t energy_total = 0.0;
@@ -227,7 +242,7 @@ void TDetectParticleProcessor::Process() {
                 outData->PushEnergyArray(0.0);
             }
         }
-        outData->SetEtotal(gRandom->Gaus(energy_total, energy_total * fResolution[det_id.Atoi()]));
+        outData->SetEtotal(gRandom->Gaus(energy_total, fEResolution[det_id.Atoi()]));
 
         // caliculate LAB angle
         const TDataObject *const inTrackData = static_cast<TDataObject *>((*fInTrackData)->At(0));

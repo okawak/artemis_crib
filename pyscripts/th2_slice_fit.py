@@ -25,8 +25,8 @@ def fit_and_get_width_gr(
 
         chi2 = gaus_tf1.GetChisquare()
         reduced_chi2 = chi2 / ndf
-        # one order
-        if reduced_chi2 > 10 or reduced_chi2 < 0.1:
+        # three order
+        if reduced_chi2 > 1000 or reduced_chi2 < 0.001:
             print(f"chi2 is far from 1: {reduced_chi2:.6f}")
             continue
 

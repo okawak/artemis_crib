@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:36:36
- * @note    last modified: 2024-09-03 14:07:05
+ * @note    last modified: 2024-10-30 16:22:33
  * @details for (angle) constant cross section
  */
 
@@ -13,6 +13,7 @@
 #include "TParticleInfo.h"
 #include <Mass.h> // TSrim library
 #include <TRandom.h>
+#include <filesystem>
 #include <fstream>
 #include <regex>
 
@@ -83,8 +84,8 @@ void TNBodyReactionProcessor::Init(TEventCollection *col) {
     }
 
     for (Int_t i = 0; i < fDecayNum; i++) {
-        Info("Init", "reaction products: id=%d, %s (A=%d, Z=%d)", i,
-             amdc::GetEl(fReacAtmNum[i]).c_str(), fReacMassNum[i], fReacAtmNum[i]);
+        Info("Init", "reaction products: id=%d, %s (A=%d, Z=%d), Ex = %lf", i,
+             amdc::GetEl(fReacAtmNum[i]).c_str(), fReacMassNum[i], fReacAtmNum[i], fExciteLevel[i]);
     }
 
     fInData = reinterpret_cast<TClonesArray **>(col->GetObjectRef(fInputColName.Data()));
@@ -290,8 +291,8 @@ void TNBodyReactionProcessor::InitGeneratingFunc() {
     auto gr_density_func = new TGraph();
     Int_t index = 0; // index for TGraph
     Double_t xmin = 0.0, xmax = 0.0;
-    std::ifstream fin(fCSDataPath.Data());
-    if (!fin) {
+    Bool_t is_exist = std::filesystem::exists(fCSDataPath.Data());
+    if (!is_exist) {
         Info("Init", "no input cross section file, use uniform energy distribution");
         for (auto e = 0.0; e < fBeamEnergy * 1.5; e += 0.5) {
             Double_t range = get_range(e);
@@ -303,6 +304,7 @@ void TNBodyReactionProcessor::InitGeneratingFunc() {
             }
         }
     } else {
+        std::ifstream fin(fCSDataPath.Data());
         Info("Init", "get cross section file: %s", fCSDataPath.Data());
         Double_t ene_factor = 0.0;
         if (fCSType == 0) {
@@ -359,7 +361,7 @@ void TNBodyReactionProcessor::InitGeneratingFunc() {
     // suppress error message when calculating the integral value
     __attribute__((unused)) auto *_dev_null = std::freopen("/dev/null", "w", stderr);
     index = 0;
-    Double_t x_step = (xmax - xmin) / 100.0; // 100 steps
+    Double_t x_step = (xmax - xmin) / 1000.0; // 1000 steps
     for (auto x = xmin; x < xmax; x += x_step) {
         gr_generating_func->SetPoint(index, x, f->Integral(xmin, x));
         gr_generating_func_inv->SetPoint(index, f->Integral(xmin, x), x);

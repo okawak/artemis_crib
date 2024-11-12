@@ -3,7 +3,7 @@
  * @brief
  * @author  Kodai Okawa <okawa@cns.s.u-tokyo.ac.jp>
  * @date    2023-08-01 22:35:07
- * @note    last modified: 2024-09-03 17:05:12
+ * @note    last modified: 2024-10-31 17:42:25
  * @details bisection method (not Newton method)
  */
 
@@ -207,6 +207,8 @@ void TTGTIKProcessor::Process() {
     Double_t excited_energy = 0.0;
     if (fDoCustom) {
         excited_energy = GetCustomExcitedEnergy(Data->GetTelID(), Data->GetEtotal());
+        if (excited_energy < -1.0)
+            return;
         M3 = M3_default + excited_energy;
     } else if (fExcitedEnergy > 0)
         excited_energy = fExcitedEnergy;
@@ -515,11 +517,12 @@ Double_t TTGTIKProcessor::GetCMAngle(Double_t ELab, Double_t Ecm, Double_t ALab)
 /// (almost all process can be included in Init function.)
 ///
 /// You can modify as you like.
+/// NOTE: current version seems to have memory leak
 
 Double_t TTGTIKProcessor::GetCustomExcitedEnergy(Int_t telID, Double_t Etotal) {
-    // up to 10th excited states of 29P
+    // up to 40th excited states of 29P
     Int_t ex_id = 0;
-    const Double_t ex_energys[11] = {
+    const Double_t ex_energys[42] = {
         0.0,
         1.38355,
         1.95391,
@@ -527,17 +530,48 @@ Double_t TTGTIKProcessor::GetCustomExcitedEnergy(Int_t telID, Double_t Etotal) {
         3.1059,
         3.4476,
         4.0805,
-        4.343,
-        4.642,
-        4.759,
-        4.9541,
+        4.343001,
+        4.642001,
+        4.759001,
+        4.95410142,
+        5.0470012,
+        5.293002,
+        5.527001,
+        5.583001,
+        5.716001,
+        5.740001,
+        5.826001,
+        5.968,
+        6.191,
+        6.328,
+        6.505,
+        6.577,
+        6.828,
+        6.956,
+        7.021,
+        7.148,
+        7.272,
+        7.361,
+        7.456,
+        7.523,
+        7.641,
+        7.755,
+        7.95,
+        7.998,
+        8.106,
+        8.234,
+        8.297,
+        8.379,
+        8.432,
+        8.51,
+        -100.0,
     };
     Double_t max_energy = 30.0; // MeV
     if (Etotal > max_energy)
         return 0.0;
 
     // initialization
-    TString filepath = "/home/okawa/art_analysis/develop/develop/ana/random_generator.root";
+    TString filepath = "/home/okawa/art_analysis/develop/develop/ana2/random_generator.root";
     TFile *file = TFile::Open(filepath);
     if (!file || file->IsZombie()) {
         std::cerr << "Error opening file! :\n"
@@ -571,7 +605,8 @@ Double_t TTGTIKProcessor::GetCustomExcitedEnergy(Int_t telID, Double_t Etotal) {
     for (Double_t ene = 5.0; ene < max_energy; ene += 0.1) {
         Double_t total = 0.0;
         for (const auto *gr : graphs) {
-            Double_t val = gr->Eval(ene, nullptr, "S");
+            // Double_t val = gr->Eval(ene, nullptr, "S");
+            Double_t val = gr->Eval(ene);
             if (val < 0.0)
                 val = 0.0;
             total += val;
@@ -579,7 +614,8 @@ Double_t TTGTIKProcessor::GetCustomExcitedEnergy(Int_t telID, Double_t Etotal) {
 
         // for (const auto *gr : graphs) {
         for (Size_t j = 0; j < graphs.size(); j++) {
-            Double_t raw_val = graphs[j]->Eval(ene, nullptr, "S");
+            // Double_t raw_val = graphs[j]->Eval(ene, nullptr, "S");
+            Double_t raw_val = graphs[j]->Eval(ene);
             if (raw_val < 0.0)
                 raw_val = 0.0;
             Double_t ratio = 0.0;
@@ -587,7 +623,7 @@ Double_t TTGTIKProcessor::GetCustomExcitedEnergy(Int_t telID, Double_t Etotal) {
             if (total > 0.001)
                 ratio = raw_val / total;
 
-            if (TString(graphs[j]->GetName()) == Form("tel%d(a,p0)", telID) && total < 0.001)
+            if (j == 0 && total < 0.001)
                 ratio = 1.0;
 
             grs_ratio[j]->SetPoint(i_point, ene, ratio);
@@ -599,7 +635,8 @@ Double_t TTGTIKProcessor::GetCustomExcitedEnergy(Int_t telID, Double_t Etotal) {
     Double_t uniform = gRandom->Uniform();
     Double_t tmp = 0.0;
     for (Size_t i = 0; i < grs_ratio.size(); i++) {
-        Double_t val = grs_ratio[i]->Eval(Etotal, nullptr, "S");
+        // Double_t val = grs_ratio[i]->Eval(Etotal, nullptr, "S");
+        Double_t val = grs_ratio[i]->Eval(Etotal);
         if (val < 0.0)
             val = 0.0;
         tmp += val;
